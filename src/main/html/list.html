@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://www.giantelectronicbrain.com/css/homl.css">
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+  </head>
+ 
+  <body>
+    <section class="section">
+      <h1>Characters</h1>
+      <div class="left">
+        <table id="data-table" class="bodytable">
+          <tr><th>Name</th><th>Species</th><th>Calling</th><th>Description</th></tr>
+        </table>
+      </div>
+    </section>
+<script>
+const firebaseConfig = {
+	    apiKey: "AIzaSyBUvzyIX-YQSEcQXdBdrHNgyOWTS5hVwx4",
+	    authDomain: "heroes-of-myth-and-legend.firebaseapp.com",
+	    projectId: "heroes-of-myth-and-legend",
+	    storageBucket: "heroes-of-myth-and-legend.appspot.com",
+	    messagingSenderId: "670305006733",
+	    appId: "1:670305006733:web:4086a48931a752cbf85ec4",
+	    measurementId: "G-PY517GF9BS"
+	  };
+
+const app = firebase.initializeApp(firebaseConfig);
+//const analytics = firebase.getAnalytics(app);
+
+var db = firebase.firestore();
+
+db.collection("characters").get().then((querySnapshot) => {
+	showData(querySnapshot);
+});
+
+  function showData(querySnapshot){
+    const table = document.getElementById('data-table');
+    querySnapshot.forEach(r => {
+      const rowData = r.data();
+      const row = table.insertRow(1);
+      var cell = row.insertCell(0);
+      cell.innerHTML = "<a href='charactersheet.html?characterName="+rowData.name+"'>"+rowData.name+"</A>";
+      cell = row.insertCell(1);
+      cell.innerHTML = rowData.species;
+      cell = row.insertCell(2);
+      cell.innerHTML = rowData.calling;
+      cell = row.insertCell(3);
+      cell.innerHTML = rowData.description;
+    });
+  }
+</script>
+</body>
+</html>

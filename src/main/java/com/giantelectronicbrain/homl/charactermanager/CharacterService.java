@@ -44,7 +44,11 @@ public class CharacterService {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public HoMLCharacter getCharacter(@QueryParam(value = "characterName") String characterName) throws InterruptedException, ExecutionException {
-		return repository.getCharacterByName(characterName);
-		
+//		if(characterName == null || characterName.isBlank())
+			return repository.getCharacterByName(characterName);
+//		else
+//			return repository.getCharacters();
 	}
+	
+
 }

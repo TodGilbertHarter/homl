@@ -16,6 +16,9 @@
 */
 package com.giantelectronicbrain.homl.charactermanager;
 
+import java.util.Map;
+
+import lombok.Builder;
 import lombok.Value;
 
 /**
@@ -23,9 +26,20 @@ import lombok.Value;
  *
  */
 @Value
+@Builder
 public class HoMLCharacter {
 	String name;
 	String species;
 	String calling;
 	String description;
+	Map<String,String> personality;
+	Map<String,String> background;
+	String wealth;
+	String strength;
+	String constitution;
+	String dexterity;
+	String intelligence;
+	String wisdom;
+	String charisma;
+	
 }

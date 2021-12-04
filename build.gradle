@@ -36,6 +36,10 @@ compileJava {
     options.compilerArgs << '-parameters'
 }
 
+test {
+	environment "GOOGLE_APPLICATION_CREDENTIALS", "homl_firebase_credentials.json"
+}
+
 compileTestJava {
     options.encoding = 'UTF-8'
 }
