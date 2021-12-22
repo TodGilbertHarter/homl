@@ -1,0 +1,24 @@
+/*
+This file is a PREFIX for the refmap.hairball file. We will GENERATE refmap.hairball by taking a copy of this
+file, and then appending to it the output of running genrefs.hairball against the main document. The result should
+be a hairball file which will populate a reference map of the main document, letting us do lookups from names of
+document content elements to recover their ids. This table can then be used during the main document generation
+pass to resolve internal links, etc. without needing to hand-code ids into document source.
+
+Note that I am putting all reference/id related code in here just to isolate things better. This way the main document
+code doesn't have to know anything about the 'black magic' of how references and IDs actually work.
+*/
+/NEWVOCABULARY /REFS
+/VOCABULARY /REFS /ACTIVE
+/VOCABULARY /REFS /CURRENT
+/:
+
+// :/ /* Prevent spurious <p> tags. */
+/VARIABLE /CURRENTID 
+#3 /CURRENTID /V!
+/VARIABLE /REFMAP /MAKEMAP /REFMAP /V! /* This creates the reference map in memory as a hairball variable */
+/: /MAKEREFERENCE /CURRENTID /V@ /SWAP /REFMAP /V@ /MAP! :/ /* add a reference to the map */
+/: /FETCHREFERENCE /TRIM /REFMAP /V@ /MAP@ /DUP /ISNULL /IF /DROP /[" badref "]/ /THEN :/
+/: /ID@ /CURRENTID /V@ :/
+/: /ID! /CURRENTID /V! :/
+/: /ID+ /ID@ /1+ /ID! :/

@@ -1,0 +1,214 @@
+/CALLING" Rogue"/
+/TRAITS
+/ROLE" Striker"/
+/POWERSOURCE" Martial"/
+/DAMAGEDIE" D8"/
+/WEAPONS" Any 2"/
+/IMPLEMENTS" None"/
+/KNACKS" Thievery, Stealth"/
+/HITPOINTS" 5"/
+/STARTHITPOINTS" 9"/
+TRAITS/
+The rogue is a character who survives by his quick wits, cunning, and a good eye with a shiv when push comes to shove. Rogues never like a fight that has even odds. They prefer to surprise their enemies, attack from the flanks, or snipe from the shadows. When not engaged in a fight they tend to be glib, fast talking, and freewheeling types. Many have a dark past, but many also hide a good heart beneath a hard exterior.
+/FEATURES
+/FLEXROW
+/FLEXCELL
+/BOON /BOONNAME Sneak Attack BOONNAME/
+/BOONTYPE Rogue Calling Feature BOONTYPE/
+/ASSOCIATION Rogue ASSOCIATION/
+/PREREQUISITES Rogue PREREQUISITES/
+/DESCRIPTION
+Your attacks are particularly deadly. You have learned to capitalize on any advantage to strike hard and decisively.
+DESCRIPTION/
+/BENEFITS
+Once per turn, when you hit with an attack using a light weapon and have advantage on your attack you may roll additional damage dice. At heroic tier you roll an extra 1DD, at legendary tier 3DD, and at mythic tier 5DD.
+BENEFITS/
+/RESTRICTIONS
+You may not be wearing armor heavier than reinforced leather and may not be using a shield.
+RESTRICTIONS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /BOONNAME Light Weapon Expert BOONNAME/
+/BOONTYPE Rogue Calling Feature BOONTYPE/
+/ASSOCIATION Rogue ASSOCIATION/
+/PREREQUISITES Rogue PREREQUISITES/
+/DESCRIPTION
+You are especially deadly with light weapons.
+DESCRIPTION/
+/BENEFITS
+You get a +1 permanent bonus to all attack and defense checks when you are wielding a light weapon.
+BENEFITS/
+/RESTRICTIONS
+You may not be wearing armor heavier than reinforced leather and may not be using a shield.
+RESTRICTIONS/
+BOON/
+FLEXCELL/
+FLEXROW/
+/SUBTOPIC" You may select one of the following features"/
+/FLEXROW
+/FLEXCELL
+/BOON /BOONNAME Alertness BOONNAME/
+/BOONTYPE Rogue Calling Feature BOONTYPE/
+/ASSOCIATION Rogue ASSOCIATION/
+/PREREQUISITES Rogue PREREQUISITES/
+/DESCRIPTION
+You are always ready for anything. Your danger instincts have been honed to a fine edge, making you very hard to catch flatfooted.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT You are not subject to the surprised condition. BENEFIT/
+/BENEFIT Whenever you roll for initiative you do so with advantage. BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /BOONNAME Brutal Blade BOONNAME/
+/BOONTYPE Rogue Calling Feature BOONTYPE/
+/ASSOCIATION Rogue ASSOCIATION/
+/PREREQUISITES Rogue PREREQUISITES/
+/DESCRIPTION
+Rogues know how to hit hard, you know how to hit even harder.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT Whenever you get an enhanced success result on an attack, you add an extra damage die of damage. BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+FLEXROW/
+SUBTOPIC/
+FEATURES/
+/BOONS
+/FLEXROW
+/FLEXCELL
+/BOON /BOONNAME Double Blade Fighter BOONNAME/
+/BOONTYPE Level: 1 Major BOONTYPE/
+/ASSOCIATION Rogue ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You are familiarized with the use of 2 light weapons in combination.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT If you attack while wielding a light weapon in each hand your weapon damage is increased by 2 points. BENEFIT/
+BENEFITS/
+BOON/
+/BOON /BOONNAME Quick Draw Artist BOONNAME/
+/BOONTYPE Level: 1 Major BOONTYPE/
+/ASSOCIATION Rogue ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You have perfected the art of the quick draw.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT 
+You gain access to the following feat: /BR
+/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Fast Draw FEATNAME/
+/ORIGIN Quick Draw Artist ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Free ACTION/
+/TAGS Weapon TAGS/
+/EFFECTS You draw a weapon and bring it to the ready. EFFECTS/
+/FLAVOR Your weapon leaps into your hand instantly. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+/BOON /BOONNAME Dirty Fighter BOONNAME/
+/BOONTYPE Level: 4 Major BOONTYPE/
+/ASSOCIATION Rogue ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You've learned your fighting techniques on the streets. It shows.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT 
+You gain access to the following feat: /BR
+/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Blinding Strike FEATNAME/
+/ORIGIN Dirty Fighter ORIGIN/
+/LEVEL 4 LEVEL/
+/ACTION Major ACTION/
+/TAGS Weapon TAGS/
+/TYPETARGET close blast 3, all opponents TYPETARGET/
+/ATTACK Weapon vs REF ATTACK/
+/ENHANCED 2DD + weapon + DEX damage and the target is blinded. ENHANCED/
+/COMPLETESUCCESS 1DD + weapon + DEX damage and the target is blinded. COMPLETESUCCESS/
+/SUCCESS 1DD + weapon + DEX damage. SUCCESS/
+/SPECIAL You must be wielding a one-handed ranged weapon. SPECIAL/
+/FLAVOR You rapidly disable as many opponents as possible with a flurry of missiles. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /BOONNAME Duelist BOONNAME/
+/BOONTYPE Level: 1 Major BOONTYPE/
+/ASSOCIATION Rogue ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You have learned the art of dueling.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Vicious Riposte FEATNAME/
+/ORIGIN Duelist ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Opportunity ACTION/
+/TAGS Weapon TAGS/
+/TRIGGER whenever an opponent attacks you with a melee weapon TRIGGER/
+/TYPETARGET close weapon, triggering opponent TYPETARGET/
+/ATTACK Weapon vs REF ATTACK/
+/COMPLETESUCCESS 2DD + weapon damage and the target is pushed one square. COMPLETESUCCESS/
+/SUCCESS 1DD + weapon damage. SUCCESS/
+/SPECIAL You can use this feat as a defense. SPECIAL/
+/FLAVOR You hit back hard and fast. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+/BOON /BOONNAME Master Duelist BOONNAME/
+/BOONTYPE Level: 4 Major BOONTYPE/
+/ASSOCIATION Rogue ASSOCIATION/
+/PREREQUISITES Duelist PREREQUISITES/
+/DESCRIPTION
+You have become a master of the art of dueling.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Flashing Blade FEATNAME/
+/ORIGIN Master Duelist ORIGIN/
+/LEVEL 4 LEVEL/
+/ACTION Free ACTION/
+/TRIGGER You hit an enemy and achieve an enhanced success. TRIGGER/
+/EFFECTS The enemy takes an additional 2DD + weapon + DEX damage and the target is pushed one square. You may shift into the vacated square. EFFECTS/
+/FLAVOR You hit back hard and fast. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+/BOON /BOONNAME Legendary Duelist BOONNAME/
+/BOONTYPE Level: 9 Major BOONTYPE/
+/ASSOCIATION Rogue ASSOCIATION/
+/PREREQUISITES Duelist PREREQUISITES/
+/DESCRIPTION
+You are one of the greatest duelists of your age.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT When you hit an opponent with a melee attack using a light sword weapon, you can slide the target one square. BENEFIT/
+/BENEFIT
+/FEAT /SOURCE martial SOURCE/ /TIER legendary TIER/ /FEATNAME Mark of the Legend FEATNAME/
+/ORIGIN Legendary Duelist ORIGIN/
+/LEVEL 9 LEVEL/
+/ACTION Free ACTION/
+/TAGS Weapon TAGS/
+/REQUIREMENTS you must be wielding a light weapon REQUIREMENTS/
+/TRIGGER you hit an opponent with a close weapon attack and get an enhanced success TRIGGER/
+/EFFECTS Weapon + CHA damage and your opponent is engaged until the end of the encounter. EFFECTS/
+/FLAVOR You have put a mark on your foe. He won't forget it anytime soon. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+FLEXROW/
+BOONS/
+CALLING/

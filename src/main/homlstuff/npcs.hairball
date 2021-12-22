@@ -1,0 +1,95 @@
+/CHAPTER" Non-Player Characters"/
+
+Non-Player Characters (NPCs) are those controlled by the GM, monsters and other opponents, as well as some which may be allies of the heroes; many are simply bystanders. In general NPCs follow many of the same rules as PCs. However there are some important differences. One of the main differences is in terms of how NPCs react. The players are in charge of the actions and reactions of their PCs, but the GM is in charge of NPCs. In order to assist the GM rules are presented here to determine the loyalty and morale of NPCs. In addition a number of other rules are presented which allow the customization of NPCs, provide for PCs to hire NPCs or buy their services, etc. 
+
+One other significant difference exists in how NPCs and PCs work, particularly in combat; the game is about PCs. When an NPC takes some sort of action, instead of the GM making a check to determine if the action succeeds, one of the players who's character is effected by that action will make a check to determine the result. This principle is most apparent in combat; an attack by an NPC is resolved by a defense check made by the player of the attacked PC. In some cases an NPC might act in a way which has an effect on other NPCs; this is resolved either indirectly as an action involving a PC, or the GM simply determines how the scene proceeds. If the NPC is, for instance, a companion of the PC, then this might be resolved by a defense check; but if the NPC is simply a bystander, or the action takes place remotely from any PC, then the GM may simply present the results as part of constructing a scene later, etc.
+
+/SECTION" NPC Attributes"/
+
+Mechanically NPCs use an abbreviated set of statistics, a monster stat block. The details of these attributes and rules for determining their values are found in Myths and Monsters. Many NPCs are simply bit players who's interactions with the PCs will be entirely casual. These kinds of NPCs notionally have attributes, but they are mostly left undefined. The GM might decide that the wisdom, charisma, and Insight of a particular innkeeper is relevant to the story, but in general few ordinary people have ability bonuses of more than +1 or +2 at most. The easiest way to handle these things is to simply set a DV of some sort for a PC to check against in order to successfully interact with the NPC and achieve some goal; this will generally be part of a challenge.
+
+NPCs might be given additional attributes which aren't reflected in the monster stat block format, which is mostly intended to provide a succinct summary of information for use in combat. For instance a given NPC might have various personality traits, history, equipment, alliances, etc which don't show up on the stat block. The stat block is not the character, and characters shouldn't be limited to what can be presented there. Likewise the monster presentations in Myths and Monsters are mostly intended to describe how monsters fight. Some of their powers and abilities may have aspects and implications far beyond what is presented in a stat block. Often the descriptive information on a monster will provide some ideas along these lines, but GMs should flesh out any monsters which play a really significant role in the story.
+SECTION/
+/SECTION" Reaction"/
+
+How do NPCs react to the PCs? Normally this is simply a matter of role play. When approached outside of a challenge situation the NPC simply reacts in an appropriate fashion based on its nature and the attitudes of the PCs. If a group of PCs approach an NPC priest of Salik to ask for the healing of one of their comrades then the priest will almost certainly oblige. His reaction to the PCs could still range from cold and indifferent all the way up to warm and friendly. 
+
+Should the reaction of an NPC be an important element in a conflict, then it would be resolved by one or more skill checks as indicated by the structure of the challenge it appears in.  Within a given setting there may be specific factors, racial or cultural animosities, fame or infamy of certain individuals, customs, etc which may influence NPC’s reactions; diplomatic, insightful, or streetwise are aspects which might frequently govern here.
+SECTION/
+/SECTION" Loyalty and Obedience"/
+
+Loyalty and obedience are factors in when and how NPCs will serve or follow orders. In a conflict situation an NPC may or may not carry out orders or advance his master's interest; this will generally be the subject of a check forming part of the challenge structure. Outside of challenge situations presumably NPCs remain faithful, or not depending on their nature; a guard will perform his duty; a corrupt castellan will continue to embezzle funds, etc.
+
+In a combat situation a PC can use the Command feat to attempt to assert authority over an NPC and make them act in a specific manner. Failure may indicate the NPC disobeys or fails to act. NPCs will generally act in accordance with their own self-interest, it isn’t necessary to command them to do things they would do anyway; but often this won’t be the case, or the NPC may have no way to know how they should work as part of a team. Leadership checks allow PCs to provide this kind of guidance.
+
+Note that obedience might also be a factor when troops are faced with an opportunity, such as to slaughter a hated foe, or acquire loot. Leadership checks are used in these scenarios as well.
+SECTION/
+/SECTION" Morale"/
+
+In terms of their own individual preservation hit points help to represent a creature's morale. When a creature reaches 0 hit points it might be slain; but it might also simply have reached a point where it believes further resistance is impossible and either surrenders or flees. In the larger sense however, when the NPC's entire team is likely to be defeated, a creature might elect to flee or surrender of its own accord. If an NPC ally of a PC might decide to surrender, then the PC might make an appropriate check governed by leadership to either rally them, or prevent the failure in the first place. The GM is free to impose the broken condition on any NPC, ally or enemy, which is deemed to have decided to quit the fight.
+SECTION/
+/SECTION" Allies"/
+
+Many NPCs will act as allies or associates of the player characters. They can fulfill a number of story roles, but those who join the PCs adventuring party will fall into 4 categories; follower, henchman, hireling, or associate. The above rules covering morale and loyalty specifically apply to all of these types. Sometimes these associates may also be other things, friends, enemies, spies, etc. It is up to the GM to ultimately decide how they will act and what their motives are. 
+/SUBSECTION" Followers"/
+
+A follower is a devoted character who takes a player character to be their inspiration/ideal/master/etc and will devotedly follow them anywhere. Boons will sometimes grant a PC followers. Certain rules apply to all followers. Followers cannot be replaced, if they die or for some reason leave the service of the PC they will not usually be replaced. Followers are extremely loyal, but they are still subject to morale and loyalty checks. A PC is responsible for the upkeep and well-being of his followers but they do not serve for pay, thus they don't require a share of treasure or a regular wage, but they will require food, clothing, etc. In general followers will put themselves at the disposal of their master, so they may perform appropriate work, etc. While followers are unusually loyal, bad treatment or a sudden change in their master's loyalties and nature could cause them to leave service; if this happens they are lost and will not return. Followers may be of lower level than the PCs they follow; but this is not always the case.
+
+In action sequences followers are independent actors. They have their own turns and take their own actions, which are decided by the GM; although he might allow a player to direct them for simplicity. 
+SUBSECTION/
+/SUBSECTION" Henchmen"/
+
+Henchmen are a player character's paid lieutenants. They are adventurers or sell swords who choose to work for hire. Henchmen can gain levels and acquire boons much like PCs can. They are subject to loyalty and morale at all times. Most henchmen are paid well and their needs are taken care of by their employers. They will provide whatever service their employer desires, as long as it is paid for. Henchmen who are well-treated may even go out of their way to aid their employers to their own detriment or at their own expense.
+
+Each player character may have a number of henchmen equal to their charisma bonus at any one time. If a character acquires more henchmen then he must release some to meet this restriction, though he is still free to employ former henchmen as hirelings.
+
+Henchmen generally require upkeep at the same rate as a PC of the same level, and will generally not tolerate a poor standard of living. In addition each henchman who is present on an adventure should receive 25% of a normal share of treasure. If a henchman incurs some loss or expense on behalf of his employer he will also expect this to be covered.
+
+In combat henchmen, just like followers, are simply NPC allies under the control of the GM; they get their own turns and actions, but follow the NPC rules.
+SUBSECTION/
+/SUBSECTION" Hirelings"/
+
+Hirelings are normal employees. PCs may hire people from time-to-time to perform various jobs for them. Hirelings are subject to morale and loyalty just as are other NPCs, but they often have a much less intimate association with their employer than a henchman has. Most hirelings will simply do their job but they won't put themselves at any great risk for their employer.
+
+If a PC employs a hireling in a permanent ongoing capacity then they are generally required to pay for that character's upkeep in a usual and customary fashion.  Thus if a PC hires a group of soldiers to act as his bodyguards then he will be expected to feed, clothe, and equip them as they require, as well as paying them some additional wage.
+/TOPIC" Experts"/
+
+Some hirelings may be considered experts. These are trained specialists in some field. If a PC hires an expert for a specific task then the cost will be a simple fee for the job being done. If a PC hires an expert on an ongoing basis then he will be required, as part of the expert's upkeep, to pay for their ordinary expenses and/or supply their needs. For example if a character hired an alchemist to be a member of his staff he would need to supply a laboratory, lab supplies, equipment, etc in addition to a place to live, food, etc of a quality level acceptable to a skilled expert as well as a wage. If said alchemist was then required to make a magical potion the character would pay for the ingredients and other expenses.
+TOPIC/
+/TOPIC" Skilled Labor"/
+
+There are many sorts of hirelings who are not experts, per se, but have valuable skills nevertheless. These would include skilled carpenters, bricklayers, masons, tailors, etc. As with experts they might simply be hired to perform a specific job, in which case they are paid a fee, or they might be taken on as longer-term employees. The requirements of skilled labor are less than that of experts, they have more modest living standards and wages.
+
+Specifically mercenaries and such fall into the category of skilled labor; they are characters with some skill at arms and the training required to use and care for military equipment, follow orders, and fight with some degree of discipline. A wise employer always makes sure his troops are paid well, and on time. Soldiers must also be equipped, just as all skilled laborers must. They also often expect to share in any booty which is acquired during wartime; this can be handled in the form of a 'campaign bonus'. Whenever a military operation is successful and the characters achieve their goals the troops will require a bonus, which is usually paid in the form of loot, or in some cases in even less savory fashion depending on the nature of the troops and their employer. Troops not paid this bonus are infamous for bad behavior and such an eventuality is sure to be grounds for a Leadership check!
+TOPIC/
+/TOPIC" Unskilled Labor"/
+
+These are the lowest sort of hirelings, basic construction workers, farm hands, haulers, etc. All they expect is a very basic wage and the most common sort of upkeep, a roof over their heads, hot meals, and basic tools and clothing. Raw military recruits with no training would be considered unskilled labor. Such soldiers still require a campaign bonus however since the only reason they are risking themselves is the hope of loot. This sort of soldiery is of questionable value, but may be useful as garrison troops or to bulk up a smaller force, freeing up more valuable troops for the decisive moment.
+TOPIC/
+/TOPIC" Animals"/
+
+Animals which characters own, those which are NOT companions (see below) fall into this category. They are essentially hirelings, working for their living. They will obey orders to the best of their ability and serve within the limits of their nature. As with other hirelings they are subject to morale, loyalty, and obedience checks. Most such animals are trained and will perform certain specific actions upon command. Training animals falls under the Nature knack; commanding them is also a function of Nature.
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Associates"/
+
+This is a catch-all for NPCs who associate with the PCs but don't fall into the above categories. This might include someone who has joined a party temporarily as an ally for their own reasons. Associates aren't in the pay of a PC, nor are they loyal followers. They may still be subject to morale checks as appropriate, but they don't follow orders, aren't paid, and have no obligation to follow the PCs lead; in fact they usually have their own ideas and agendas. Most such associates only remain with a party for all or part of a single adventure. Once their reason for associating is done they go on their own way.
+
+Associates will generally expect to share in any treasure obtained during their participation in an adventure at the same rate as a PC does.
+SUBSECTION/
+SECTION/
+/SECTION" Companions"/
+
+Companions are a special case of an NPC follower of a player character. They are creatures which, due to their nature, act in concert with a PC but are not independent. This category includes such things as a character's animal companion, familiar, etc.  They are not subject to obedience, loyalty or morale as they simply do as they are bid within the limits of their nature. Companions are always granted as part of a boon, they cannot be acquired in any other way.
+
+Companion characters act like other NPCs outside of action sequences. They can move, use powers, etc. However they normally only act in accordance with orders given by their masters. If a companion is in a situation where it is alone, or its master is killed, it will simply act according to its nature, just as any other NPC would. In this case it simply follows the normal rules and becomes subject to morale, etc.
+/SUBSECTION" Companion Action Economy"/
+
+During an action sequence a companion acts only on the orders of its master. The companion does not have a turn of its own, nor a place in the initiative order. Instead it acts on orders given to it by its master during the master's turn. Giving orders requires the master character to expend actions. The companion then uses the appropriate power. Ordering a companion to take a standard action requires a standard action. Ordering a companion to take a move action or a free action is itself a free action, but only one such order can be given per turn, and it can only be given during the master's turn.
+
+Companions may also be ordered to take free actions outside the master's turn, at the discretion of the GM. Companions may also get Opportunity, and can take an Opportunity Action. Doing so requires the master to expend an opportunity action (and can thus only be done outside the master's turn). 
+
+If the master becomes unable to take actions, the companion becomes unbound; when the initiative order reaches the master's turn, the companion gains a normal turn with a full complement of actions. However an unbound companion is under the control of the GM; it might act to help its master or his allies, acting as any other NPC would in accordance with the reaction, loyalty, morale, and obedience rules. It might also simply flee or attempt to rescue or protect its master.
+SUBSECTION/
+SECTION/
+CHAPTER/

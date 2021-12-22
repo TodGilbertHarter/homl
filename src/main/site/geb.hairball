@@ -1,0 +1,57 @@
+/*
+GEB site HTML definitions. These definitions define common markup syntax in the context
+of the GEB site. It can be included as the first input file when generating HTML output in
+Hairball.
+*/
+/NEWVOCABULARY /GEB
+/VOCABULARY /GEB /ACTIVE
+/VOCABULARY /GEB /CURRENT
+/:
+
+// :/ /* Prevent spurious <p> tags. */
+/: /SITE" <!DOCTYPE html><html><head>
+<base target="_top">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> /" /. </title> :/
+/: /BODY </head><body> :/
+/: BODY/ // :/
+/: SITE/ </body></html> :/
+/: /SIGNINDIALOG
+	<template id='signin-dialog'>
+	<div slot='contents' style='width: 350px;'>
+		<h1 class='dialogtitle'>Sign In to Giant Electronic Brain</h1>
+		<div class='loginfield'><label for='logindialogemail'>Email:</label><input type='text' id='logindialogemail'></div>
+      	<div class='loginfield'><label for='logindialogpassword'>Password:</label><input type='password' id='logindialogpassword'></div>
+      	<div style='clear: both;'><p>To create a new account, fill in your email and password, then <a href="#signup">click here</a> to sign up.</p></div>
+	</div>
+	<div slot='buttonbar'>
+		<button class='dialogbutton' id='logindialogsignin'>Sign In</button>
+		<button class='dialogbutton' id='logindialogcancel'>cancel</button>
+	</div>
+:/
+/: SIGNINDIALOG/ </template> :/
+/: /SCRIPT" <script src=' /" /. '></script> :/
+/: /STYLE" <link rel="stylesheet" type="text/css" href=" /" /. " media="screen"/> :/
+/: /TOPBAR <div class='topbar'> :/
+/: TOPBAR/ </div> :/
+/: /LOGO <img class='logo' src="images/logo.png"/> :/
+/: LOGO/ // :/
+/: /MAINMENU <div class='mainmenu'> :/
+/: MAINMENU/ </div> :/
+/: /APPLICATION <horizontal-sash id='applicationarea'> :/
+/: /LEFTSLOT <tab-panel slot='sashleft' id='leftslottabpanel'><ul class='tabbar' slot='tabs' id='leftslottabbar'></ul> :/
+/: LEFTSLOT/ </tab-panel> :/
+/: /RIGHTSLOT <span slot='sashright'> :/
+/: RIGHTSLOT/ </span> :/
+/: APPLICATION/ </horizontal-sash> :/
+/: /FOOTER <div class='footer'> :/
+/: FOOTER/ </div> :/
+/: /WIDGETPANEL <div class='widgetpanel'> :/
+/: /SESSION/ <session-widget id='sessionwidget'></session-widget> :/
+/: WIDGETPANEL/ </div> :/
+/* Enables double newline equivalency to a paragraph (implicit paragraphs). */
+/: /P <p> :/
+/:
+
+ /P :/

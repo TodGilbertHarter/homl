@@ -1,0 +1,59 @@
+/CHAPTER" Boons "/
+
+Boons are an important concept in HoML. They represent the things which heroes can obtain which will grant them level increases. Each time a hero acquires a major boon, she increases her level by one, and is granted all the benefits of leveling up. At the same time, the boon itself will grant the hero access to some sort of benefit, a new feat, some sort of proficiency, or something similar. There are also minor boons, which are similar to major boons but do not grant a level increase, and generally represent smaller, often mundane, benefits such as money or information.
+
+Boons are attributes which characters have or which they gain by virtue of their species, calling, level, and/or story. They may be rewards earned through adventuring, such as ancient magical treasures, they may represent knowledge gained by the character in the course of pursuing her career, or they may be things acquired by the character as a result of exposure to mystical forces beyond human ken.
+
+Every character has various boons; each boon is an attribute of the character which modifies the character in some way. Some may alter the values of other attributes, others may allow the character to do entirely new things that are not normally possible. Lists of possible boons are provided in various places. Each species has racial boons which a character may acquire. Each calling has calling boons which characters of that calling may acquire. In addition there are items, spells, etc., all of which are boons. The Game Master generally assigns most boons, but players may have a choice of boons granted by calling, species, and other player selected options. 
+
+The higher level the character is the more potent their boons may become. Some boons don't change with level (a permanent modifier for instance is equally valuable at all levels), but others such as the damage dealt by an attack might increase with each level to keep pace with the challenges the character faces. In many cases these boons grant feats, which are discussed separately in their own section.
+
+/SECTION" Boon Description "/
+
+Boons are described using a standard format which is explained here.
+
+/BOON /BOONNAME Sample BOONNAME/
+/BOONTYPE Source: 1 Major BOONTYPE/
+/ASSOCIATION None ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+This is a general description of the boon in terms of fiction. Use this to describe what the boon is and what it means in the story.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+The mechanical benefits of the boon are described here. If it grants the character who has it some attributes or something similar, then these are described here.
+BENEFIT/
+BENEFITS/
+/DISADVANTAGES
+Any negative mechanical aspects of the boon are described here. 
+DISADVANTAGES/
+/RESTRICTIONS
+Anything that restricts how the benefits can be used.
+RESTRICTIONS/
+BOON/
+/UL
+    /LI /LABEL Name LABEL/ This is the name of the boon. LI/
+    /LI /LABEL Type LABEL/ This is the source, level, and type (major, minor, or limitation) of the boon. Not all boons have a source or level. LI/
+    /LI /LABEL Association LABEL/ This indicates some other game element(s), tags, etc. which the boon is associated with. It is often a calling, species, etc. It may be 'None' indicating the boon has no associations. Association is merely an indicator intended to give some idea of what sort of category a boon might fall in. If it is a calling for instance, that might be a hint that members of that calling find the boon useful and might frequently acquire it. LI/
+    /LI /LABEL Prerequisites LABEL/ Indicates something that the boon cannot function properly without. A player character must have the required prerequisite, usually another boon, a calling, or a proficiency, in order to use this boon. LI/
+    /LI /LABEL Description LABEL/ This is the story of the boon, what it does in narrative terms. This may be purely flavor, or in some cases it may explain how the boon is used, restrictions on its use, etc. LI/
+    /LI /LABEL Benefits LABEL/ This is the actual rules text of the boon. It explains exactly what the mechanical effects are and how to use it in play. It might contain feats, attributes, or specific rules text which applies to a character who possesses this boon. LI/
+    /LI /LABEL Disadvantages LABEL/ If a boon has any negative effects, mechanical or narrative, then they are described here. In a few cases a boon might be better described as a 'curse', and its effects may be purely disadvantageous. Such boons are called limitations. LI/
+    /LI /LABEL Restrictions LABEL/ Any restrictions on the use of this boon.
+UL/
+SECTION/
+/SECTION" Manifestation "/
+
+Every boon has a manifestation when it is brought into play. Manifestation refers to the form which the boon takes in the game world. It could be an attribute of a character, or it could be an item, for example. Other possibilities might exist too. Thus a character might acquire Shield Expertise simply by virtue of training as a knight. Another character might acquire it by owning a Shield of Expertise, a magic item. A third character might acquire the boon temporarily by performing a ritual, and that ritual itself might be manifested in the form of a consumable, a potion for instance. 
+
+HoML has some specific rules, which are found in book three, describing certain types of manifestations, like magic items, which have additional mechanics. However, in general, the manifestation of a boon doesn't effect how it works. Boon descriptions are normally written in a manifestation-independent form. In a few cases the manifestation might be central to how the boon works, in which case it will be described in those terms in the Description section.
+
+Manifestations might also have some narrative implications. A boon manifested in the form of a sword might potentially be stolen or lost, etc.
+SECTION/
+/SECTION" Feats"/
+
+Many, perhaps most, major boons grant a character access to a feat; this is the main way by which heroes acquire feats. The feat will be listed as a benefit of the boon. Note that how the feat is used may depend on the manifestation of the boon. Thus a character might acquire a potion, which has the effect of granting the character the effects of a specific ritual. The potion must be drunk in order to access the ritual's effects. The same boon might be manifested in the form of a ritual formula book from which the character can instead perform the ritual. This will take longer, but is not consumable can be utilized more than once.
+
+In most cases, if a character possesses a feat by virtue of possessing the boon which grants it, they can simply use the feat whenever they wish, subject to other rules. This is usually the case with major boons that grant feats. /REF Feats REF/ themselves are covered in a later chapter of book 2.
+SECTION/
+CHAPTER/

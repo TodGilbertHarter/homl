@@ -1,0 +1,55 @@
+/*
+* Hairball vocabulary which generates a reference map from standard Hairball markup.
+* The result of running your markup with this vocabulary on top of the search order
+* will be to create an output which can then be sourced into in a second pass to populate
+* a map. This map can then be used to generate forward references, etc. Every element which
+* is assigned an ID is cross referenced on its name or contents as appropriate. The main 
+* purpose of this is intended to support the /REF syntax in html.hairball, but it could
+* be used for other purposes (IE building an index).
+*/
+/NEWVOCABULARY /GR
+/VOCABULARY /GR /ACTIVE
+/VOCABULARY /GR /CURRENT
+
+/VARIABLE /CURRENTID 
+#2 /CURRENTID /V!
+/: /GETMATCHING /DOER /DROP /W /W2L /MAKELITERAL /HERE! :/
+/' /DROP /SETEMITTER /* get rid of all literal text so we can control what we output exactly */
+/: /.NOW // :/
+/: /.VERSION // :/
+/: /INCID /CURRENTID /V@ /1+ /CURRENTID /V! :/
+/: /A /INCID :/
+/: /DOCUMENT" // :/
+/: /GENLITERAL /[" /" "]/ /. /SPACE /. /SPACE /[" "/ "]/ /. /SPACE :/ /* whatever is on the stack, create source that will push that literal on the stack again when it runs */
+/: /BUILDREF /GENLITERAL /MAKEREFERENCE /ID+ /INCID /SPACE /[" /* "]/ /. /SPACE /CURRENTID /V@ /. /SPACE /[" */ "]/ /.  /NEWLINE :/
+/: /BOOK" /" /BUILDREF :/
+/: BOOK/ // :/
+/: /CHAPTER" /" /BUILDREF :/
+/: /SECTION" /" /BUILDREF :/
+/: /SUBSECTION" /" /BUILDREF :/
+/: /TOPIC" /" /BUILDREF :/
+/: DOCUMENT/ // :/
+/: /BOON" /" /BUILDREF :/
+/: /BOONNAME /GETMATCHING BOONNAME/ /DELIMITED /BUILDREF :/
+/: BOONNAME/ // :/
+/: /FEAT" /" /BUILDREF :/
+/: /FEATNAME /GETMATCHING FEATNAME/ /DELIMITED /BUILDREF :/
+/: /SPECIES" /" /BUILDREF :/
+/: /SPECIESNAME /GETMATCHING SPECIESNAME/ /DELIMITED /BUILDREF :/ /* This doesn't actually exist as of now */
+/: /CALLING" /" /BUILDREF :/
+/: /CALLINGNAME /GETMATCHING CALLINGNAME/ /DELIMITED /BUILDREF :/ /* This doesn't actually exist as of now */
+/: /AFFLICTION" /" /BUILDREF :/
+/: /AFFLICTIONNAME /GETMATCHING AFFLICTIONNAME/ /DELIMITED /BUILDREF :/
+/: AFFLICTION/ // :/
+/: /FEATURES /INCID  /SPACE /ID+ /SPACE :/
+/: /BOONS /INCID  /SPACE /ID+ /SPACE :/
+/: /TABLE /INCID  /SPACE /ID+ /SPACE :/
+/: /REF /INCID  /SPACE /ID+ /SPACE :/
+/: /H1 // :/
+/: /LICENSE /INCID  /SPACE /ID+ /SPACE :/
+/: /INTRODUCTION /INCID  /SPACE /ID+ /SPACE :/
+/: /INTROSECTION /INCID  /SPACE /ID+ /SPACE :/
+/: /P=" /INCID  /SPACE /ID+ /SPACE :/
+/: /DIV=" /INCID  /SPACE /ID+ /SPACE :/
+
+/: "/ // :/

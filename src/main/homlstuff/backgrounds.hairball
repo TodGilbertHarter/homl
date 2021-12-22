@@ -1,0 +1,400 @@
+/CHAPTER" Backgrounds"/
+
+Characters may have associated background elements. Each character must have done something before becoming an adventurer, must have been born somewhere, had parents, etc. These background elements can be used to fill in these blanks. Backgrounds are organized into 5 categories from which to select. Normally a character will have up to one from each category, but in some cases a character might have more of one type or another type may not be germane. 
+
+For many background elements a minor boon is noted. Each character can select one minor boon from those noted for all of their backgrounds (you get one, not one from each background element). These are usually languages, skills, some special area of knowledge, a proficiency, or possibly some minor item or treasure.
+
+Additionally one or more knacks will be listed which are associated with the background element. These are added to any listed for the hero's class, species, etc. as being available for the player to choose from, see /REF Character Generation REF/ .
+
+/LABEL Backgrounds as Boons LABEL/ Sometimes a character may spend a lot of time in an area, work in a new profession, etc. When this happens the GM could grant a relevant background element as a minor boon. 
+
+/LABEL Knowledge LABEL/ Characters are assumed to have learned something from their background. Thus when they confront a situation where a check is required and it is related specifically to one of their background elements, they are assumed to have a +5 proficiency bonus, just as if they were proficient. Thus a character who was a farmer might get a +5 bonus to a check to figure out what is wrong with a cow, for example.
+
+/STRONG Note: STRONG/ The background elements are listed in tabular form with associated numbers. These could be used for random generation purposes. This isn't intended to provide a character background generation subsystem. It is just provided so that a player can make a random selection if they so choose. This is often a helpful way to kick-start the process of character backstory creation. Players are not obligated to roll on these tables, nor are they bound by any rolls they do make.
+/SECTION" Birth"/
+/LEFT
+/TABLE=" bodytable"/
+/TR /THS=" 2"/ Name TH/ TR/
+/TR /TD 1 /TD/ Orphan TD/ TR/ 
+/TR /TD 2 /TD/ Adopted TD/ TR/ 
+/TR /TD 3 /TD/ Omen TD/ TR/ 
+/TR /TD 4 /TD/ Curse TD/ TR/ 
+/TR /TD 5 /TD/ Prophesy TD/ TR/ 
+/TR /TD 6 /TD/ Legacy TD/ TR/ 
+TABLE/
+LEFT/
+
+Where and how were you born? Were their unusual circumstances involved in your birth? The following elements are possible interesting birth related elements. You will have to fill in the specific details.
+/TOPIC" Orphan"/ 
+
+You have no family that you know of. Instead you grew up on the streets or in a place provided by a local temple or ruler for orphaned children. You learned early on that you have to stick up for yourself because you have nobody else to depend on. Perhaps you are withdrawn and distrustful, or perhaps you are very outgoing and seek out friends to replace your missing family.
+/SUBTOPIC" Knacks"/
+
+Add Streetwise or Survival to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You gain a proficiency bonus related to special knowledge about the place you grew up. You know hiding places and shortcuts in your area.
+SUBTOPIC/
+TOPIC/
+/TOPIC" Adopted"/
+
+You grew up in a family other than your natural birth family. Are you grateful to them for taking you in? Did they treat you well? Do you know who your natural parents are? Did your adopted family make you work? Do they have other children?
+/SUBTOPIC" Knacks"/
+
+Add Diplomacy or Insight to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+TBD
+SUBTOPIC
+TOPIC/
+/TOPIC" Omen"/
+
+An omen occurred at the time of your birth, foretelling some great event or catastrophe. What was this omen? What does it foretell? How did your family react? Are you the only one affected by this omen?
+/SUBTOPIC" Knacks"/
+
+Add History or Religion to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may select the minor boon /REF Spooky Demeanor REF/ .
+SUBTOPIC/
+TOPIC/
+/TOPIC" Curse"/
+
+You were cursed at birth. Who cursed you? What are the details of the curse? Is it a real curse? How did other people react to this curse?
+/SUBTOPIC" Knacks"/
+
+Add Arcana or Religion to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may select the minor boon /REF Hexed REF/ .
+SUBTOPIC/
+TOPIC/
+/TOPIC" Prophesy"/
+
+A prophesy was foretold about your birth. What does the prophesy entail? Is it good or bad? Do you believe in it?
+/SUBTOPIC" Knacks"/
+
+Add Religion or Nature to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may select the minor boon /REF Appointed REF/ .
+SUBTOPIC/
+TOPIC/
+/TOPIC" Legacy"/
+
+Your family has bequeathed you with some sort of legacy. Is this an item or piece of property? Is it a duty or an obligation? Is it a reputation?
+/SUBTOPIC" Knacks"/
+
+Add Leadership or Diplomacy to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You have an item worth a major expense, or a small income.
+SUBTOPIC/
+TOPIC/
+SECTION/
+/SECTION" Occupation"/
+/LEFT
+/TABLE=" bodytable"/
+/TR /THS=" 2"/ Name TH/ TR/
+/TR /TD 1 /TD/ Farmer TD/ TR/ 
+/TR /TD 2 /TD/ Artisan TD/ TR/ 
+/TR /TD 3 /TD/ Entertainer TD/ TR/ 
+/TR /TD 4 /TD/ Criminal TD/ TR/ 
+/TR /TD 5 /TD/ Merchant TD/ TR/ 
+/TR /TD 6 /TD/ Soldier TD/ TR/ 
+/TR /TD 7 /TD/ Scholar TD/ TR/ 
+/TR /TD 8 /TD/ Priest TD/ TR/ 
+TABLE/
+LEFT/
+
+What did the character do before becoming an adventurer? Perhaps this is still the character's job.
+/TOPIC" Farmer"/
+
+You farmed the land. What did you grow? What happened to your farm?
+/SUBTOPIC" Knacks"/
+
+Add Nature or Perception to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may own an animal of some sort, it could be a riding horse, a dog, etc.
+SUBTOPIC/
+TOPIC/
+/TOPIC" Artisan"/
+
+You were a craftsman of some sort. What kind of things did you craft? Did you have your own business? Does it still exist?
+/SUBTOPIC" Knacks"/
+
+Add Engineering to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may select professional contacts as your minor background boon.
+SUBTOPIC/
+TOPIC/
+/TOPIC" Entertainer"/
+
+You were an entertainer. What kind of entertainment do you practice? Are you well known? Where did you ply your trade?
+/SUBTOPIC" Knacks"/
+
+Add Acrobatics or Bluff to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You can select /REF Acrobat REF/ as your starting major boon. You can select professional contacts as your minor background boon.
+SUBTOPIC/
+TOPIC/
+/TOPIC" Criminal"/
+
+You were on the wrong side of the law. Were you a career criminal? Why were you a criminal? Are you still a criminal? Do you have criminal associates?
+/SUBTOPIC" Knacks"/
+
+Add Thievery or Streetwise to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You can select the thief, pirate, or trickster boon as your starting major boon. You can select the criminal contacts boon as your minor background boon.
+SUBTOPIC/
+TOPIC/
+/TOPIC" Merchant"/
+
+You were a buyer and seller of goods. What was your business? Did you travel or did you have a shop? Was it a family business? Did you own it?
+/SUBTOPIC" Knacks"/
+
+Add Bluff or Insight to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You can select /REF Professional Contacts REF/ or take 75sp as your minor background boon.
+SUBTOPIC/
+TOPIC/
+/TOPIC" Soldier"/
+
+You were part of a military organization. Were you a rank-and-file soldier or a leader? Were you honorably discharged? Do you have friends who are soldiers? Where did you serve? Did you see action?
+/SUBTOPIC" Knacks"/
+
+Add Athletics or Leadership to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You can take professional contacts or a suit of mail as your minor background boon.
+SUBTOPIC/
+TOPIC/
+/TOPIC" Scholar"/
+
+You were involved in teaching, research, or some other area of knowledge. What was your job? What area of knowledge was your specialty? Were you well-respected? Controversial? Is your career over?
+/SUBTOPIC" Knacks"/
+
+Add Arcana or History to your list of available  knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may select one practice as a minor boon.
+SUBTOPIC/
+TOPIC/
+/TOPIC" Priest"/
+
+You were involved in the worship of one or more gods. What are your beliefs? What was the nature of your job? Were you associated with a temple? Do you still hold your beliefs?
+/SUBTOPIC" Knacks"/
+
+Add Religion or Insight to your list of available  knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may take /REF Temple Initiate REF/ as a minor boon.
+SUBTOPIC/
+TOPIC/
+SECTION/
+/SECTION" Society"/
+/LEFT
+/TABLE=" bodytable"/
+/TR /THS=" 2"/ Name TH/ TR/
+/TR /TD 1 /TD/ Poor TD/ TR/ 
+/TR /TD 2 /TD/ Middle Class TD/ TR/ 
+/TR /TD 3 /TD/ Wealthy TD/ TR/ 
+/TR /TD 4 /TD/ Nobility TD/ TR/ 
+/TR /TD 5 /TD/ Outcast TD/ TR/ 
+/TR /TD 6 /TD/ Outsider TD/ TR/ 
+TABLE/
+LEFT/
+What is the character's place in society? Is he an outcast? Does he have some sort of title or position? 
+
+/TOPIC" Poor"/
+
+You had little or no source of income. How did you survive? Where did you acquire your starting funds? Were your family poor peasants, laborers, refugees? Did you beg for a living?
+/SUBTOPIC" Knacks"/
+
+Add Streetwise or Survival to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may select the minor boon /REF Beggar REF/ .
+SUBTOPIC/
+TOPIC/
+/TOPIC" Middle Class"/
+
+You were neither wealthy nor poor. Were you a well-off farmer? A townsperson? Does your family own any property? Where do they live?
+/SUBTOPIC" Knacks"/
+
+Add Nature or Insight to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may take the minor boon /REF Townsman REF/ .
+SUBTOPIC/
+TOPIC/
+/TOPIC" Wealthy"/
+
+You had considerable amounts of wealth. How wealthy were you, fantastically or just modestly wealthy? Do you still have this wealth? How was your wealth acquired? Is it family wealth or personal wealth? 
+/SUBTOPIC" Knacks"/
+
+Add Diplomacy or Intimidate to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may take the minor boon /REF Political Connections REF/ .
+SUBTOPIC/
+TOPIC/
+/TOPIC" Nobility"/
+
+You were a member of the ruling caste of your homeland. Do you have a title? What sort of position does your family have? Why are you part of the party? 
+/SUBTOPIC" Knacks"/
+
+Add History, Diplomacy, or Leadership to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may take the minor boon /REF Body Servant REF/ .
+SUBTOPIC/
+TOPIC/
+/TOPIC" Outcast"/
+
+You were outside the normal order of society. How did you become an outcast? Is your family also outcast? Do you wish to attain some place in society? Are you jealous of those who have a more secure place in the world?
+/SUBTOPIC" Knacks"/
+
+Add Athletics or Intimidate to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may take the minor boon /REF Secret Knowledge REF/ .
+SUBTOPIC/
+TOPIC/
+/TOPIC" Outsider"/
+
+You are from some other society. Do you plan to return where you came from? What was your position in your own society? Why are you here now? Is your family here too? 
+/SUBTOPIC" Knacks"/
+
+Add Perception or Religion to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may take the minor boon /REF Foreigner REF/ .
+SUBTOPIC/
+TOPIC/
+SECTION/
+/SECTION" Geography"/
+/LEFT
+/TABLE=" bodytable"/
+/TR /THS=" 2"/ Name TH/ TR/
+/TR /TD 1 /TD/ Village TD/ TR/ 
+/TR /TD 2 /TD/ City TD/ TR/ 
+/TR /TD 3 /TD/ Forest TD/ TR/ 
+/TR /TD 4 /TD/ Mountain TD/ TR/ 
+/TR /TD 5 /TD/ Desert TD/ TR/ 
+/TR /TD 6 /TD/ Coast TD/ TR/ 
+TABLE/
+LEFT/
+Where did the character live? What country does he come from? Where is his home town?
+
+/TOPIC" Village"/
+
+You lived in a small community. What was your hometown like? Why don't you live there anymore? Do you want to go back? Is your family still there?
+/SUBTOPIC" Knacks"/
+
+Add Nature or Athletics to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may take the minor boon /REF Hinterland Wanderer REF/ .
+SUBTOPIC/
+TOPIC/
+/TOPIC" City"/
+
+You lived in a large community. What sort of place was it? Is your family still there? How well do you know the various parts of your city? Do you still have associates there? 
+/SUBTOPIC" Knacks"/
+
+Add Streetwise or Diplomacy to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may take the minor boon /REF Urban Knowledge REF/ .
+SUBTOPIC/
+TOPIC/
+
+/TOPIC" Forest"/
+
+You grew up in a heavily forested region. What sort of forest was it, tropical, temperate, or sub-arctic? Did you make your living in the forest? What is your relationship with your home like? 
+/SUBTOPIC" knacks"/
+
+Add Nature or Stealth to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may take the minor boon /REF Hunter REF/ .
+SUBTOPIC/
+TOPIC/
+
+/TOPIC" Mountain"/
+
+You grew up in a mountainous region. Did you venture into the high mountains? What sort of mountains are they? Do you love your mountain home? 
+/SUBTOPIC" Knacks"/
+
+Add Athletics or Survival to your list of available knacks.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may take the minor boon /REF Mountaineer REF/ .
+SUBTOPIC/
+TOPIC/
+
+/TOPIC" Desert"/
+
+You grew up in a harsh dry land. How did you survive? Do you wish to return to that land? What is your homeland like?
+/SUBTOPIC" Knacks"/
+
+Add Survival or Nature to your list of available skill proficiencies.
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may take the minor boon /REF Desert Survival REF/ .
+SUBTOPIC/
+TOPIC/
+
+/TOPIC" Coast"/
+
+You grew up on the edge of a large body of water, such as a lake or the ocean. Did you spend more time on land or on water? Is your homeland low-lying wetlands, high bluffs, or inviting beaches? What did you do there?
+/SUBTOPIC" Knacks"/
+
+Add Athletics or Nature to your list of available knacks. 
+SUBTOPIC/
+/SUBTOPIC" Boons and Limitations"/
+
+You may take the minor boon /REF Sailor REF/ .
+SUBTOPIC/
+TOPIC/
+SECTION/
+/SECTION" Bonds"/
+
+Who does the character know? Does he have any associates and what is their relationship with each other? Select or develop one or more NPCs or define your relationship with one or more of the other PCs in the group. What do you get out of these relationships? Do you have obligations to these people? Do they owe you anything? Are they friends or enemies? 
+/SUBTOPIC" Knacks"/
+
+Add an appropriate knack to the your list of available knacks.
+SUBTOPIC/
+SECTION/
+CHAPTER/

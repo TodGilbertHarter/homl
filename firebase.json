@@ -1,0 +1,18 @@
+{
+  "firestore": {
+    "rules": "src/main/firebase/charactercreator.rules",
+    "indexes": "src/main/firebase/charactercreator.indexes"
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "database": {
+      "port": 9000
+    },
+    "ui": {
+      "enabled": true,
+      "port": 9100
+    }
+  }
+}

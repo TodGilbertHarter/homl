@@ -1,7 +1,11 @@
 plugins {
     id 'java'
     id 'io.quarkus'
+	id "fr.brouillard.oss.gradle.jgitver" version "0.10.0-rc03"
 }
+
+group 'com.giantelectronicbrain'
+//version '0.0.1'
 
 repositories {
     mavenCentral()
@@ -23,9 +27,6 @@ dependencies {
     testImplementation 'io.rest-assured:rest-assured'
 }
 
-group 'com.giantelectronicbrain'
-version '0.0.1'
-
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
@@ -43,3 +44,30 @@ test {
 compileTestJava {
     options.encoding = 'UTF-8'
 }
+
+task disableGCPKey(type: Exec) {
+//	commandLine './scripts/disableGCPKey.sh', "${project.getProperty('keyId')}"
+}
+	
+task createGCPKey(type: Exec) {
+//	commandLine "./scripts/createGCPKey.sh", "${project.getProperty('keyFile')}"
+}
+
+task deployFirebaseRules(type: Exec) {
+	commandLine './scripts/deployFirebaseRules.sh'
+}
+
+task generateHoMLRules(type: Exec) {
+	commandLine './scripts/generateHoMLRules.sh', project.version
+}
+
+task deployHoMLRules(type: Exec) {
+	dependsOn 'generateHoMLRules'
+	commandLine './scripts/deployHoMLRules.sh'
+}
+
+task generateGEBSite(type: Exec) {
+//	dependsOn 'generateHoMLRules'
+	commandLine './scripts/generateGEBSite.sh', project.version
+}
+

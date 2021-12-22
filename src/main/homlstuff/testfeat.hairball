@@ -1,0 +1,12 @@
+/FEAT /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Fireball FEATNAME/
+/ORIGIN Fire Adept ORIGIN/
+/LEVEL 4 LEVEL/
+/ACTION Major ACTION/
+/TAGS Fire, Implement TAGS/
+/TYPETARGET ranged burst 3 within 10, all creatures TYPETARGET/
+/ATTACK Implement vs REF ATTACK/
+/COMPLETESUCCESS 3DD + INT + Implement damage and the target is pushed one square. COMPLETESUCCESS/
+/SUCCESS 3DD + INT + implement damage. SUCCESS/
+/FAILURE half damage. FAILURE/
+/FLAVOR You Conjure forth a blast of searing fire which burns anyone caught in the blast. FLAVOR/
+FEAT/

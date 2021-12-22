@@ -1,0 +1,255 @@
+/CHAPTER" Equipment and Wealth"/
+/SECTION" Equipment"/
+
+What hero would be complete without his trusty sword, staff, or shield? There are limitless varieties of possible equipment which characters may use and possess at different times. Four major categories are discussed below, armor, weapons, implements, and general equipment.
+
+/EM Note on prices: EM/ The prices given are representative and useful for providing color and determining what things are insignificant, significant, or major expenses for a given character. The exact price a character pays for something on a given day in a specific place will vary somewhat, perhaps even significantly. The numbers provided make a useful starting point when an exact price becomes significant enough to determine.
+
+/SUBSECTION" Armor"/
+
+/DIV=" floatleft"/
+/TABLE=" bodytable"/
+/THEAD
+/TR /TH Type /TH/ DR /TH/ Load /TH/ Cost /TH/ DEX /TH/ CON TH/ TR/
+THEAD/
+/TBODY
+/TR /TD Cloth /TD/ 0 /TD/ 0 /TD/ 0 /TD/ N /TD/ N TD/ TR/
+/TR /TD Leather /TD/ 1 /TD/ 20 /TD/ 10sp /TD/ N /TD/ N TD/ TR/
+/TR /TD Reinforced Leather /TD/ 2 /TD/ 25 /TD/ 40sp /TD/ N /TD/ N TD/ TR/
+/TR /TD Mail /TD/ 3 /TD/ 30 /TD/ 100sp /TD/ Y /TD/ N TD/ TR/
+/TR /TD Piece Metal /TD/ 4 /TD/ 35 /TD/ 300sp /TD/ Y /TD/ Y TD/ TR/
+/TR /TD Plate /TD/ 5 /TD/ 40 /TD/ 800sp /TD/ Y /TD/ Y TD/ TR/
+/TR /TD Shield /TD/ +1* /TD/ 5 /TD/ 5sp /TD/ Y /TD/ N TD/ TR/
+/TR /TD Buckler /TD/ +1* /TD/ 2 /TD/ 2sp /TD/ N /TD/ N TD/ TR/ 
+TBODY/
+TABLE/
+DIV/
+
+Many characters wear armor of various sorts. All armor reduces the number of points of damage which attacks inflict on the wearer. Armor does nothing to mitigate the non-damage effects of attacks. Armor also has a weight, which will count towards encumbrance.
+
+The armor table shows the attributes for several types of armor. Note that historically there have been many styles of armor manufactured, but all of them can be generalized to one of the types shown here. For instance “cloth” armors made of many layers of stiffened cloth are roughly equivalent to leather armor.
+
+/LABEL Type LABEL/
+The general name for this kind of armor. As noted above, this is just a general or typical descriptive name, many other styles of armor have existed, but they all have roughly the same attributes as one of the listed types.
+/UL
+    /LI /LABEL Cloth LABEL/ This is simply ordinary clothing of all types. It simply indicates that these materials provide no protection by default. Magical clothes however may act as armor and in that case they follow all the normal armor rules. LI/
+    /LI /LABEL Leather LABEL/ This covers all sorts of basic armors made from hides, heavy furs, as well as lightweight padding such as a gambeson or other similar items that provide limited protection. LI/
+    /LI /LABEL Reinforced Leather LABEL/ This covers improved versions of armors made from natural materials, including multiple layers, additional padding, and simple metal (or other material) reinforcements which only cover a few critical areas. LI/
+    /LI /LABEL Mail LABEL/ Woven metal fabric shaped into a suite of armor which covers most of the body. This is the basic form of metal armor, heavier grades of armor usually involve additions to a coat of mail. LI/
+    /LI /LABEL Piece Metal LABEL/ Brigandines, scale armors, and lamellar armors made by fastening together pieces of metal or affixing them to some sort of backing. Often includes some elements of mail. May also include earlier forms of 'plate' armor which involve affixing metal plates to critical areas of mail armor. LI/
+    /LI /LABEL Plate LABEL/ Solid metal plates carefully joined and covering extensive parts of the body. This was the ultimate form of pre-technological armor, being quite difficult for most weapons to penetrate. Note that shields do not add DR with plate armor! LI/
+    /LI /LABEL Shield LABEL/ This is a basic type of shield. It occupies one arm and hand completely, but isn't huge and bulky. It adds one point of DR to any type of armor except plate with which it is combined. Note that larger shields were sometimes employed by infantry formations and such, but they don't perform any better than this one as personal protection. LI/
+    /LI /LABEL Buckler LABEL/ This is a very small shield which is held in the off hand. It provides good defense in a compact form and can be used with 1.5-handed weapons. It adds one point of DR to anyone wearing cloth, leather, or reinforced leather armor. LI/
+UL/
+
+/LABEL Damage Reduction LABEL/
+Abbreviated as DR, damage reduction is the number of points of damage reduction the armor grants the wearer. This is a 'base' DR in the case of armor, and a DR bonus in the case of shields.
+
+/EM * EM/ Note that shields and bucklers won't stack with Plate armor. They will stack with other forms of DR however and in that case their bonus is considered a proficiency bonus.
+
+/LABEL Load LABEL/ The load of the armor in units. 
+
+/LABEL Cost LABEL/ How many silver pieces a basic suit of armor of this type might typically cost. Note that armor is often heavily decorated and stylized. Such suits may be vastly more expensive than indicated.
+
+/LABEL DEX LABEL/ Y in this column indicates that the armor forces the wearer to roll with disadvantage when making checks involving dexterity.
+
+/LABEL CON LABEL/ Y in this column indicates that the armor forces the wearer to roll with disadvantage when making checks involving constitution.
+
+SUBSECTION/
+/SUBSECTION" Weapons"/
+
+Weapons are a type of tools which are used in combat. In addition to the basic characteristics of all tools they have some additional ones of their own. The following table lists the attributes of weapons, the meanings of these values are discussed below.
+
+/TABLE=" bodytable"/
+/THEAD
+/TR /TH Name /TH/ Category /TH/ Load /TH/ Cost /TH/ Type /TH/ Ability /TH/ Tags /TH/ Range /TH/ Hands /TH/ Damage TH/ TR/
+THEAD/
+/TBODY
+/TR /TD Club /TD/ club /TD/ 2 /TD/ 1cp /TD/ melee /TD/ CON /TD/ /TD/ 1 /TD/ 1 /TD/ 1 TD/ TR/
+/TR /TD Mace /TD/ club /TD/ 2 /TD/ 1sp /TD/ melee /TD/ CON /TD/ /TD/ 1 /TD/ 1 /TD/ 2 TD/ TR/
+/TR /TD Great Club /TD/ club /TD/ 3 /TD/ 5cp /TD/ melee /TD/ CON /TD/ /TD/ 1 /TD/ 2 /TD/ 4 TD/ TR/
+/TR /TD Spear /TD/ spear /TD/ 2 /TD/ 1sp /TD/ melee, ranged /TD/ DEX /TD/ /TD/ 1, 5/20 /TD/ 1 /TD/ 2 TD/ TR/
+/TR /TD Long Spear /TD/ spear, polearm /TD/ 3 /TD/ 2sp /TD/ melee /TD/ CON /TD/ /TD/ 2 /TD/ 2 /TD/ 2 TD/ TR/
+/TR /TD Dagger /TD/ dagger /TD/ 1 /TD/ 4sp /TD/ melee, ranged /TD/ DEX /TD/ light, close /TD/ 1, 2/5 /TD/ 1 /TD/ 1 TD/ TR/
+/TR /TD Rapier /TD/ sword /TD/ 2 /TD/ 1sp /TD/ melee /TD/ DEX /TD/ light /TD/ 1 /TD/ 1 /TD/ 2 TD/ TR/
+/TR /TD Arming Sword /TD/ sword /TD/ 2 /TD/ 3sp /TD/ melee /TD/ STR /TD/ /TD/ 1 /TD/ 1 /TD/ 2 TD/ TR/
+/TR /TD Bastard Sword /TD/ sword /TD/ 2 /TD/ 10sp /TD/ melee /TD/ STR /TD/ /TD/ 1 /TD/ 1.5 /TD/ 3 TD/ TR/
+/TR /TD Great Sword /TD/ sword /TD/ 3 /TD/ 20sp /TD/ melee /TD/ STR /TD/ /TD/ 1 /TD/ 2 /TD/ 4 TD/ TR/
+/TR /TD Halberd /TD/ axe, polearm /TD/ 3 /TD/ 5sp /TD/ melee /TD/ STR /TD/ /TD/ 2 /TD/ 2 /TD/ 3 TD/ TR/
+/TR /TD Glaive /TD/ polearm /TD/ 3 /TD/ 3sp /TD/ melee /TD/ STR /TD/ /TD/ 2 /TD/ 2 /TD/ 3 TD/ TR/
+/TR /TD Flail /TD/ flexible /TD/ 3 /TD/ 1sp /TD/ melee /TD/ DEX /TD/ /TD/ 1 /TD/ 1 /TD/ 2 TD/ TR/
+/TR /TD Throwing Axe /TD/ axe /TD/ 1 /TD/ 1sp /TD/ melee, ranged /TD/ STR /TD/ light /TD/ 1, 2/5 /TD/ 1 /TD/ 2 TD/ TR/
+/TR /TD Battle Axe /TD/ axe /TD/ 2 /TD/ 3sp /TD/ melee /TD/ STR /TD/ /TD/ 1 /TD/ 1 /TD/ 3 TD/ TR/
+/TR /TD War Axe /TD/ axe /TD/ 3 /TD/ 6sp /TD/ melee /TD/ CON /TD/ /TD/ 1 /TD/ 2 /TD/ 4 TD/ TR/
+/TR /TD Throwing Hammer /TD/ hammer /TD/ 1 /TD/ 1sp /TD/ melee, ranged /TD/ STR /TD/ light /TD/ 1, 2/5 /TD/ 1 /TD/ 2 TD/ TR/
+/TR /TD War Hammer /TD/ hammer /TD/ 2 /TD/ 2sp /TD/ melee /TD/ CON /TD/ /TD/ 1 /TD/ 2 /TD/ 3 TD/ TR/
+/TR /TD Lance /TD/ spear /TD/ 3 /TD/ 2sp /TD/ melee /TD/ STR /TD/ mounted /TD/ 1 /TD/ 1 /TD/ 3 TD/ TR/
+/TR /TD Staff /TD/ staff /TD/ 2 /TD/ 2cp /TD/ melee /TD/ DEX /TD/ /TD/ 1 /TD/ 2 /TD/ 2 TD/ TR/
+/TR /TD Unarmed /TD/ unarmed /TD/ 0 /TD/ 0 /TD/ melee /TD/ pick /TD/ close, light /TD/ 1 /TD/ 1 /TD/ 0 TD/ TR/
+/TR /TD Light Bow /TD/ bow /TD/ 2 /TD/ 10sp /TD/ ranged /TD/ DEX /TD/ /TD/ 15/30 /TD/ 2 /TD/ 1 TD/ TR/
+/TR /TD Heavy Bow /TD/ bow /TD/ 3 /TD/ 20sp /TD/ ranged /TD/ DEX /TD/ /TD/ 15/40 /TD/ 2 /TD/ 2 TD/ TR/
+/TR /TD Hand Crossbow /TD/ crossbow /TD/ 1 /TD/ 4gp /TD/ ranged /TD/ DEX /TD/ light /TD/ 5/10 /TD/ 1.5 /TD/ 2 TD/ TR/
+/TR /TD Light Crossbow /TD/ crossbow /TD/ 4 /TD/ 2gp /TD/ ranged /TD/ DEX /TD/ /TD/ 15/30 /TD/ 2 /TD/ 3 TD/ TR/
+/TR /TD Heavy Crossbow /TD/ crossbow /TD/ 10 /TD/ 15gp /TD/ ranged /TD/ DEX /TD/ /TD/ 20/50 /TD/ 2 /TD/ 4 TD/ TR/
+/TR /TD Sling /TD/ sling /TD/ 1 /TD/ 5cp /TD/ ranged /TD/ DEX /TD/ /TD/ 10/20 /TD/ 2 /TD/ 1 TD/ TR/
+/TR /TD Dart /TD/ dart /TD/ 2 /TD/ 1cp /TD/ ranged /TD/ DEX /TD/ light /TD/ 3/6 /TD/ 1 /TD/ 1 TD/ TR/
+TBODY/
+TABLE/
+
+/TOPIC" Explanation of Weapon Attributes"/
+/UL
+    /LI /LABEL Name LABEL/ This is the name of the weapon. Note that these are very general weapons. Club for instance includes all basically club-like weapons of all sorts. While many historical flavors of weapons have existed, most of them will correspond to something in this table. LI/
+    /LI /LABEL Category LABEL/ Categories group weapons together for purposes of some feats and boons. Similar weapons will fall into a single category. Categories are considered to be a type of tag. LI/
+    /LI /LABEL Type LABEL/ Is it a melee weapon a ranged weapon, or both? Melee weapons can only be applied to attacks which don't have a range. Ranged weapons can only be applied to ranged and area attacks. Type is considered to be a tag. LI/
+    /LI /LABEL Ability LABEL/ The controlling ability score for the weapon. This is the ability used for attack or damage bonus when Weapon is specified in an attack or damage statement. LI/
+    /LI /LABEL Tags LABEL/ Some weapons have special tags. The only currently defined ones are: Light which indicates that the weapon can be wielded at the same time as another one-handed weapon if the character has a second free hand; and Close which allows the weapon to be wielded even at range 0 (close combat). LI/
+    /LI /LABEL Range LABEL/ This describes the range for the weapon. If the weapon is a melee weapon this is the range at which melee attacks may be made using it when range is 'Weapon'. If the weapon is a ranged weapon then the range is short/long. If a weapon has both types then both ranges will appear. LI/
+    /LI /LABEL Hands LABEL/ This describes how many hands are required to wield the weapon. One means the weapon requires only one hand. 2 means the weapon requires 2 hands. For melee weapons 1.5 means the weapon requires a free hand and the second hand may hold nothing bigger than a buckler. For ranged weapons 1.5 means that the weapon requires 2 hands to load, but only one hand to fire. LI/
+    /LI /LABEL Damage LABEL/ How many points of extra damage does this weapon do when used as part of an attack. LI/
+UL/
+TOPIC/
+/TOPIC" Weapon Descriptions"/
+/UL
+    /LI /LABEL Club LABEL/ This is the simplest of weapons, a heavy, blunt object which is balanced so that it can be swung with great force. Clubs come in many styles and are known by many names in different lands. They may be made of wood, stone, bone, or similar materials or combinations of material. They may even be simply a well-chosen chunk of wood. LI/
+    /LI /LABEL Mace LABEL/ A mace is simply a fancier and more robust club. Mace includes such weapons as morning stars. Anything which generally incorporates a metal head, spikes, etc. and is crafted as a weapon can qualify as a mace. LI/
+    /LI /LABEL Great Club LABEL/ A larger two-handed version of the club. These are often adorned with spikes and equipped with forged metal heads, metal bands, etc. As with its smaller cousin the great club is known by many names, but they are all essentially the same weapon. This includes large two-handed 'maces'. LI/
+    /LI /LABEL Spear LABEL/ Only slightly less basic than the club is the spear. This is a stick with one end sharpened. It has a length up to about 6' and can be handled with one hand. Spears are often thrown and can have considerable range. The smallest spears are often called javelins and may be optimized for throwing, but they are all basically the same weapon. LI/
+    /LI /LABEL Dart LABEL/ This covers anything which is small and intended only for throwing. This would include lighter and smaller spear-like items as well as some exotic variations like throwing stars. Their main advantage is they are cheap, small, and light, so many can be carried and they are easy to conceal. LI/
+    /LI /LABEL Dagger LABEL/ This covers all of the smaller knife-like weapons. Some daggers have two edges, others only one, or none at all. Daggers are particularly useful in close quarters fighting where they may be used even when normal weapons are impossible to employ. They may also be thrown with considerable effect. LI/
+    /LI /LABEL Flail LABEL/ This weapon is usually similar to a club, but instead of a heavy blunt head it has one or more heavy weights attached to the handle with chain or rope. Other similar weapons may have two weighted handles connected by a chain so that the weapon can be gripped by either or both handles. In any case they all function similarly. Flails reward speed and coordination where clubs rely on brute strength. LI/
+    /LI /LABEL Rapier LABEL/ This covers all types of light swords used only for stabbing and largely lacking any edge. Most such weapons also have elaborated hilts including a basket guard etc. These are largely self-defense weapons which are not used much in battle and have limited use against armored opponents. However, in skilled hands they can be quite deadly. LI/
+    /LI /LABEL Arming Sword LABEL/ This covers all of the smaller swords which are used one handed and range up to about 1 meter in length. They are light weapons which can be wielded without a lot of extra space and are easily carried. Swords of this general type have gone by a vast number of different names throughout history. The Roman hispanica or gladius, the later spatha and viking swords, the arming sword of the medieval knight, and other later types of 'dress' swords and similar weapons. Anything bigger than a dagger and intended purely for use one-handed falls into this category. LI/
+    /LI /LABEL Bastard Sword LABEL/ This covers all types of swords which are large and heavy enough to be gripped with 2 hands, but smaller than the massive great swords. They require the user to have one completely free hand and the second hand to be occupied only with a buckler or light weapon. These weapons are quite popular with warriors who fight outside of large battles where they have plenty of room to swing the weapon. Because these weapons are somewhat heavy and inconvenient to carry or use in close quarters they are generally considered to be a war weapon, not a self-defense weapon. LI/
+    /LI /LABEL Great Sword LABEL/  This is the largest of swords, a fully two-handed weapon. It is heavy enough to damage an opponent by sheer force, but also sharp and quick like any other sword. These weapons are bulky and quite inconvenient to carry around and are normally relegated to situations where a character expects heavy fighting. LI/
+    /LI /LABEL Long Spear LABEL/ This covers all sorts of pike-type weapons, which are all very long spears, sometimes up to 4 meters in length. Such weapons are difficult to employ and even more difficult to carry around, but they do allow for melee attacks at greater than one square range. These long spears however cannot be thrown, and in the open where an opponent can move past the point of the weapon are of limited use. One great advantage of these weapons is that they can be set against a charge, and a group of warriors equipped with set spears can be a great deterrent to mounted opponents. LI/
+    /LI /LABEL Halberd LABEL/ The halberd is an axe on a very long handle, usually about 2 meters long. Generally the axe head is backed by a piercing point or sometimes a blunt hammer. Most halberds are topped with a spear-like point. This weapon performs as an axe, but requires two hands to use. It also allows the character to attack at a range of 2 squares due to its length. LI/
+    /LI /LABEL Glaive LABEL/ This is a long pole with a heavy chopping and cutting type blade affixed. It generally has a point and some form of hook or fork used to fend off or dismount riders. It has a reach of 2 and requires two hands. LI/
+    /LI /LABEL Throwing Axe LABEL/ This covers all sorts of lighter weight throwable combat axes like the tomahawk, seaxe, etc. This type of weapon is very common and comes in a variety of shapes and sizes, but they all have some things in common, a handle and a weighted head with a sharp edge. This kind of weapon is particularly favored by woodsmen and less affluent warriors as it is cheap, fairly easy to make, and effective. LI/
+    /LI /LABEL Battle Axe LABEL/ The battle axe covers heavier one-handed combat axes of all types which are not thrown. Many of these are double-bitted and there are many minor variations, but they all function in the same way, as a heavy cutting/slashing weapon. LI/
+    /LI /LABEL War Axe LABEL/ This is the largest of axes, requiring two-hands to wield. They do both cutting and bludgeoning damage and are quite useful for hacking through the toughest armor. LI/
+    /LI /LABEL Light Bow LABEL/ The light bow includes most common everyday bows used for hunting and as auxiliary weapons. They are easy to draw, aren't overly bulky, much cheaper, and require less training than the heavier bows. LI/
+    /LI /LABEL Heavy Bow LABEL/ This is a highly specialized combat weapon with a very high pull and superior range. They are very expensive, require considerable training to master, and are quite deadly in skilled hands. This covers all the larger types of bow weapons such as the long bow, and various bows built of composite materials designed for use from horseback. LI/
+    /LI /LABEL Hand Crossbow LABEL/ This is a small steel bow with a single-handed grip. It is quite powerful but requires some time to reload. It is often used by warriors as an opening shot and is especially popular with heavily armed mounted warriors who quickly discharge the weapon and then charge into melee. They are also popular assassination weapons and shipboard auxiliary arms. It requires 2 hands to reload this weapon. LI/
+    /LI /LABEL Light Crossbow LABEL/ These are relatively lightweight crossbows used for hunting or war which can be carried and fired. Reloading this weapon is not too time-consuming but very difficult in a close fight, generally requiring a belt hook, placing a foot in a stirrup, or operating a lever. LI/
+    /LI /LABEL Heavy Crossbow LABEL/ These are very heavy and ungainly weapons. They can be carried around and fired, but are almost always equipped with a stand of some sort to support the weapon while being aimed. It is almost impossible to reload this kind of weapon in a close fight, but they put out considerable damage and have a very long range. For these reasons this sort of weapon is favored in situations where the user has protection such as atop a fortification. LI/
+    /LI /LABEL Sling LABEL/ This is a leather or cloth pouch attached to lengths of string of some sort and used to throw rocks or sometimes even lead bullets. Quite effective but requires a lot of training. These are simple to make and often used by poor folk. LI/
+    /LI /LABEL Lance LABEL/ The lance is a mounted warrior's spear. It is specialized for use from horseback, being somewhat longer and heavier than the average spear, but weighted and balanced for one-handed use from a mount. If used while dismounted the lance requires both hands to wield. LI/ 
+    /LI /LABEL Throwing Hammer LABEL/ This is a fairly lightweight hammer weapon which is balanced for throwing. It can be used as a thrown weapon or melee weapon. Some tomahawks are fairly good examples of throwing hammers. LI/
+    /LI /LABEL War Hammer LABEL/ While very similar in function to a mace/club the war hammer has a heavier head derived from mining tools. It is the favorite weapon of dwarves, who long ago adapted it from their stone masonry tools into a deadly weapon. LI/
+    /LI /LABEL Unarmed LABEL/ This is presented in order to provide the statistics for an unarmed attack, it isn’t an actual type of weapon characters can buy. Unarmed attacks represent kicks, punches, etc. A character who becomes proficient with this type of attack must choose from STR, CON, or DEX and becomes proficient with attacks using that ability score. A character could always choose to use a type of unarmed attack they are not proficient with. LI/
+UL/
+TOPIC/
+/TOPIC" Ammunition"/
+/DIV=" floatleft half"/
+/TABLE=" bodytable"/
+/THEAD
+/TR /TH Item /TH/ Load /TH/ Cost /TH/ Description TH/ TR/
+THEAD/
+/TBODY
+/TR /TD Light Crossbow bolts (20) /TD/ 1 /TD/ 1sp /TD/ A case load of bolts for a light crossbow TD/ TR/
+/TR /TD Heavy Crossbow bolts (20) /TD/ 2 /TD/ 2sp /TD/ A case load of bolts for a heavy crossbow TD/ TR/
+/TR /TD Hand Crossbow bolts (10) /TD/ .5 /TD/ 1sp /TD/ A case load of bolts for a hand crossbow TD/ TR/
+/TR /TD Light Bow arrows (12) /TD/ 1 /TD/ 1sp /TD/ A quiver load of arrows for a light bow TD/ TR/
+/TR /TD Heavy Bow arrows (12) /TD/ 1 /TD/ 2sp /TD/ A quiver load of arrows for a heavy bow TD/ TR/
+/TR /TD Sling Stones (20) /TD/ 1 /TD/ 1cp /TD/ Selected stones for a sling TD/ TR/
+TBODY/
+TABLE/
+DIV/
+
+Missile weapons such as bows, slings, etc. require ammunition such as arrows. Each type of weapon has its own ammunition type, and they are generally not interchangeable (in a pinch different types of bows might fire each other's arrows, though with reduced effectiveness).
+
+Generally when ammunition is fired, it is used up. However, some ammunition might be recovered. Sling stones in particular are likely to remain relatively undamaged when used. Slings can also use suitable small stones, which are likely to be available in many environments. Characters might also be able to fashion crude ammunition for other missile weapons in a pinch. Manufacturing proper arrows and such may require some time and raw materials are not available just anywhere. Heavy bolts and arrows in particular require high quality materials.
+
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Implements"/
+
+/DIV=" floatright half"/
+/TABLE=" bodytable"/
+/THEAD
+/TR /TH Implement Type /TH/ Cost /TH/ Hands /TH/ Damage /TH/ Ability TH/ TR/
+THEAD/
+/TBODY
+/TR /TD Rod /TD/ 10sp /TD/ 1 /TD/ 3 /TD/ CHA TD/ TR/
+/TR /TD Staff /TD/ 3cp /TD/ 2 /TD/ 4 /TD/ WIS TD/ TR/
+/TR /TD Wand /TD/ 8sp /TD/ 1 /TD/ 1 /TD/ INT TD/ TR/
+/TR /TD Tome /TD/ 15sp /TD/ 2 /TD/ 1 /TD/ INT TD/ TR/
+/TR /TD Orb /TD/ 20sp /TD/ 1 /TD/ 1 /TD/ CHA TD/ TR/
+/TR /TD Holy Symbol /TD/ 4cp /TD/ 1 /TD/ 0 /TD/ WIS TD/ TR/
+/TR /TD Totem /TD/ 1sp /TD/ 1 /TD/ 2 /TD/ WIS TD/ TR/
+/TR /TD Instrument /TD/ 15sp /TD/ 2 /TD/ 1 /TD/ CHA TD/ TR/
+/TR /TD Knife /TD/ 1cp /TD/ 1 /TD/ 3 /TD/ CHA TD/ TR/
+/TR /TD Rune Weapon /TD/ * /TD/ * /TD/ 3 /TD/ * TD/ TR/
+TBODY/
+TABLE/
+* Rune Weapons are specially prepared weapons which may be used as implements. To use a Rune Weapon the character must be proficient with it as an implement, weapon proficiency is not enough. The ability score associated with the implement is the same as that associated with the weapon, as is the number of hands required. Costs will be 15sp plus the cost of a normal weapon of that type.
+DIV/
+
+Implements are tools, similar to weapons, which can be used in combat. Feats with the implement keyword allow the use of an implement and an attack made with an implement which the character has proficiency with gains the +5 proficiency bonus. In other respects the implements work fairly similarly to weapons.
+/TOPIC" Implement Attributes"/
+/UL
+    /LI /LABEL Implement Type LABEL/ the form of the implement. LI/
+    /LI /LABEL Cost LABEL/ the cost of a basic non-magical version of this implement. LI/
+    /LI /LABEL Hands LABEL/ how many hands are required to wield this implement in combat. LI/
+    /LI /LABEL Damage LABEL/ amount of additional damage done by this implement when used to attack. LI/
+    /LI /LABEL Ability LABEL/ The ability score associated with the implement. LI/
+UL/
+TOPIC/
+SUBSECTION/
+SECTION/
+/SECTION" Wealth"/
+
+Wealth is one of the attributes of characters which can be useful in telling stories. Often players want to interact with money and by using the wealth mechanism this can be accomplished without needing to get into too many details of who has exactly what coins and whatever. All that is needed is to know the character's wealth in general terms on a scale similar to character abilities. The descriptors for wealth are slightly different than those for abilities. 
+
+/SUBSECTION" Wealth Attribute"/
+
+/DIV=" floatleft"/
+/TABLE=" bodytable"/
+/THEAD
+/TR /TH Wealth Modifier /TH/ Value /TH/ Description TH/ TR/
+THEAD/
+/TBODY
+/TR /TD None /TD/ Destitute /TD/ the character has no money whatsoever to his or her name and can purchase nothing. No credit is available to them and nobody will give them anything, except as charity. Making wealth checks is impossible. TD/ TR/
+/TR /TD 0 /TD/ Poor /TD/ the character has little wealth. This puts them on the same level as the lower sort of ordinary people. They can often afford insignificant expenses, but significant expenses are usually out of reach and require careful husbanding of whatever money is available. Credit might be available, but only in disadvantageous forms such as usurious lenders, carrying out tasks of dubious legality, etc. TD/ TR/
+/TR /TD 1 /TD/ Ordinary /TD/ the character can usually make necessary significant expenses. Major expenses are still generally out of reach, but might be accomplished with extreme difficulty on a one-time basis (IE you are going to owe someone big time and it will take a long time to pay off). TD/ TR/
+/TR /TD 2 /TD/ Adequate /TD/ the character has adequate monetary resources, can meet most significant expenses without trouble, and can achieve a major expense with difficulty and some risk of a permanent reduction in wealth. TD/ TR/
+/TR /TD 3 /TD/ Well Off /TD/ the character has enough wealth to live a high-class life. He can meet significant expenses without any trouble and can manage a major expense without serious issues, although a constant drain on his fortune or a serious financial setback could change things quickly. TD/ TR/
+/TR /TD 4 /TD/ Rich /TD/ the character has no problem with money at all. She is endowed with a very substantial fortune from which most any expense can be defrayed without concern. Her wealth provides here with significant economic power. TD/ TR/
+/TR /TD 5 /TD/ Vast Wealth /TD/ this character has more money than all but the most fantastically wealthy people of legend. No expense is beyond him. Even multiple major expenses can be born without serious problems. His wealth brings with it real significant political power. TD/ TR/
+/TR /TD * /TD/ Infinite Wealth /TD/ only elder dragons, divine figures, and the like have this sort of money. If something can be bought, they can buy it. Money means nothing to them because they can never run out. TD/ TR/
+TBODY/
+TABLE/
+DIV/
+Essentially characters may possess both portable wealth, coins, jewelry, and other similar small but valuable items, and non-portable wealth. Non-portable wealth may take many forms, from massive heavy items to real estate, businesses, mines, castles, etc. Normally characters can only spend portable wealth, at least easily, particularly when traveling to distant locations. However, even the mere possession of great wealth, portable or not, is often sufficient to create significant economic advantages for a character. Thus the character can leverage all of her wealth in any situation where the player can justify this in a narrative fashion. 
+SUBSECTION/
+/SUBSECTION" Using Wealth"/
+
+Proficiency - wealth is simply another area of knowledge and expertise. It can be seen as being similar to things like tools and weapons. A character may thus have 'Wealth Proficiency', in which case they get a +5 proficiency modifier to wealth checks. Certain backgrounds may provide this as a boon, or it might be acquired in other ways as a boon.
+
+/DIV=" floatright half"/
+/TABLE=" bodytable"/
+/TR /TH Tier /TH/ Insignificant /TH/ Significant /TH/ Major TH/ TR/
+/TR /TD Heroic /TD/ 10cp /TD/ 50sp /TD/ 20gp TD/ TR/
+/TR /TD Legendary /TD/ 10sp /TD/ 50gp /TD/ 200gp TD/ TR/
+/TR /TD Mythic /TD/ 100gp /TD/ 500gp /TD/ 5000gp TD/ TR/
+TABLE/
+DIV/
+
+/LABEL Expenditure sizes LABEL/ Exactly what constitutes an expenditure of a given magnitude is relative to the tier of play and roughly the level of the challenge. As an approximation this chart can be used to estimate what would be an insignificant, significant, or major expense for the character. When making wealth checks note this and determine whether advantage or disadvantage should be granted on the check based on the description of the character's wealth, and the size of the expense.
+/TOPIC" In an Interlude"/
+
+During unstructured play, Interludes, if a player decides her character will use his wealth, then the only consideration would be whether the character's wealth attribute falls within a range which would make the action feasible. A Rich character can buy an expensive horse, and this is simply within their means to accomplish using wealth. If the case becomes one where the character's fortunes are in danger or they wish to accomplish something which is likely to be beyond their means, then this is probably going to develop into a challenge, but it could also be that the GM could simply report that your finances are insufficient. That might set up a challenge in and of itself, or not depending on how important the goal is to the character.
+TOPIC/
+/TOPIC" In a Challenge"/
+
+Wealth works in a fairly obvious way during a challenge. If a character makes a move which involves utilizing their wealth, then the check is governed by a financial aspect, and the character's wealth attribute plays the role of an ability score. If the character simply spends some money within their reasonable means, then their wealth ability modifier applies. If the expenditure or other use is well within the character's means, then they should get advantage on the check. If the expenditure is somewhat beyond their means, then disadvantage is appropriate.
+
+Players can also use wealth reduction in the same sense that an affliction could be acquired (see /REF Afflictions REF/ ). That is, a character might avoid consequences of failing a wealth related check by accepting a downgrade of their wealth attribute. This would represent a decline in the character's fortunes, such as mortgaging the family estate, or taking a loan from a loanshark (which might be paid back later, recovering the character's fortunes, or not, making the change permanent). 
+TOPIC/
+/TOPIC" In Action"/
+
+Action sequences don't often revolve around things like money, but there's no reason why a PC couldn't, for instance, try to undermine an opponents morale by offering them cash to surrender or something similar. Minions might potentially be affected by insignificant bribes, while standard monsters would probably require at least a significant expense, and higher monster types would probably require major expense level expenditures to influence. The outcome of such an attempt is likely to be highly situational, but a wealth check is an obvious way to handle it. Certainly only intelligent opponents who value money (or something else of value) can be dealt with in this way, and without the ability to communicate back and forth such attempts are surely at disadvantage. On the other hand, offering extra incentives might gain advantage. In any case, such attempts should probably deliver non-lethal damage to the targets, but it might also induce them to take specific actions. This can be handled using the /REF Improvisation REF/ rules.
+TOPIC/
+SUBSECTION/
+SECTION/
+CHAPTER/

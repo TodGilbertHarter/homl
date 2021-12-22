@@ -1,0 +1,57 @@
+/*
+* Hairball vocabulary which generates tables of contents from standard Hairball markup.
+* The result of running your markup with this vocabulary on top of the search order
+* will be to create an output which can then be sourced into in a second pass.
+*/
+/NEWVOCABULARY /HTML
+/VOCABULARY /HTML /ACTIVE
+/VOCABULARY /HTML /CURRENT
+
+/VARIABLE /CURRENTID 
+#2 /CURRENTID /V!
+/' /DROP /SETEMITTER /* get rid of all literal text so we can control what we output exactly */
+/: /.NOW // :/
+/: /.VERSION // :/
+/: /INCID /CURRENTID /V@ /1+ /CURRENTID /V! :/
+/: /A <a href="# /INCID /CURRENTID /V@ /. "> :/
+/: A/ </a> :/
+/: /DOCUMENT" /SPACE /TOC /SPACE /FLEXROW :/
+/: /BOOK" /" /SPACE /FLEXCELL /SPACE /TOCTABLE /SPACE /CAPTION /SPACE /TOGGLEWIDGET /SPACE /A /. A/ /SPACE /CAPTION /SPACE :/
+/: BOOK/ TABLE/ /SPACE DIV/ /SPACE :/
+/: /CHAPTER" /" /SPACE /TR=" chapter " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/
+/: /SECTION" /" /SPACE /TR=" section " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/
+/: /SUBSECTION" /" /SPACE /TR=" subsection " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/
+/: /TOPIC" /" /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/
+/: DOCUMENT/ DIV/ /SPACE TOC/ :/
+/* /: /BOON" /" /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/
+/: /BOON /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A :/
+/: BOON/ A/ /SPACE TD/ /SPACE TR/ /SPACE :/
+/: /FEAT" /" /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/ */
+/: /BOON" /" /INCID  :/
+/: /BOON /INCID  :/
+/: BOON/ // :/
+/: /FEAT" /" /INCID :/
+/: /FEAT // :/
+/* /: /SOURCE /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A :/
+/: SOURCE/ A/ /SPACE TD/ /SPACE TR/ /SPACE :/ /* This is actually /FEAT, sort of */
+/: /SOURCE /INCID :/
+/: SOURCE/ // :/
+/: /SPECIES" /" /SPACE /TR=" section " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/
+/: /SPECIES /INCID :/ /* This doesn't actually exist as of now */
+/: /CALLING" /" /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/
+/: /CALLING /INCID :/ /* This doesn't actually exist as of now */
+/: /AFFLICTION" /INCID :/
+/: /AFFLICTION /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A :/
+/: AFFLICTION/ A/ /SPACE TD/ /SPACE TR/ /SPACE :/
+/: /FEATURES /INCID :/
+/: /BOONS /INCID :/
+/: /TABLE /INCID :/
+/: /REF /INCID :/
+/: /H1 // :/
+/: /LICENSE /INCID :/
+/: /INTRODUCTION /INCID :/
+/: /INTROSECTION /INCID :/
+/: /P=" /INCID :/
+/: /DIV=" /INCID :/
+
+/: "/ // :/

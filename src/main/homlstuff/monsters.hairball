@@ -1,0 +1,627 @@
+/CHAPTER" Monsters "/
+
+Monsters are the creatures of all sorts which the player characters will encounter in their adventures. NPCs, non-player characters, are the other people who inhabit the world. However, both monsters and NPCs use the same rules, and the two terms can be used interchangeably. A monster is simply a, usually non-human, generally hostile type of NPC. They are similar to player characters, but they are simpler and lack many of the features of a player character. All the rules for player characters also apply to monsters and NPCs unless otherwise noted. From now on we will simply use the term 'monster', but it is understood that this applies generally to every figure which is not a player character.
+/SECTION" Monster Types"/
+
+There are several general types of monsters which exist in HoML. Each one exists for a specific purpose. These types are Minion, Standard, Uncommon, and Singular. Each type plays a particular role in a story, particularly when combat is involved.
+/SUBSECTION" Minion"/
+
+These monsters are bit players, cannon fodder in the grand scheme of things. They exist to fill the ranks of the heroes foes with large numbers of opponents. Individually minions are very little challenge to the player characters. In large numbers, especially when reinforced by other stronger foes they can be somewhat dangerous. They are also easily wiped out.
+
+Minions always have one hit point. If they take any damage, from any source, they are killed unless the attack missed and does automatic damage on a miss, in which case the minion does not take any damage, but may still be subject to any other miss effects.
+/TOPIC" Design"/
+
+Minions are intended to be very simple to run in play; each one is counted as 1/4 of a monster for encounter design purposes. When creating a minion it should be kept simple. They won't normally have recharging powers, power points, or multiple types of attack. Most minions will have a basic attack of some kind; damage should be a static value somewhat lower than the average for standard monsters of that level, but it will be adjusted for role. Various traits, a secondary form of attack, some interesting movement ability, or something like this should be included in order to make the minion interesting. One frequently used design pattern is to give the minion some way to do extra damage or impose a condition, strengthen an ally, etc. which requires the minion to achieve some specific tactical positioning or objective. Such an ability could also key off something a likely ally can do, allowing the monsters to set up a 'whammy' if the heroes don't deal with the minions.
+
+Players should be a bit worried when they see a bunch of minions show up. They are not meant to be the primary danger, but they should be just threatening enough to make the heroes want to take action to deal with them; this will give the other monsters time to raise the threat level or carry out their other plans.
+
+A minion could also represent a non-heroic person, a bystander or even a person whom the heroes wish to rescue or avoid harming.
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Standard"/ 
+
+A standard monster is one which is roughly equivalent to a player character. It has a baseline amount of hit points (see below) and there are no special rules for standard monsters. These are the foot soldiers of the monster world. The vast majority of humanoid warriors and ordinary monsters are of this type. A standard monster will present a reasonable challenge to a PC which may require several rounds of combat to get past.
+/TOPIC" Design"/
+
+These are the meat and potatoes of the game. Each standard monster should be a character, albeit perhaps a bit player, in the story that represents their interaction with the heroes. While a standard monster is challenging, remember that it isn't going to represent a great threat to a player character which has power points, fate, and the ability to utilize an appropriate defense against each attack. This is fine, when a PC engages the monster, it will use its unique traits to present the characters with a problem to solve, or not solve.
+
+Each standard monster needs a reasonably engaging routine which it can employ against the PCs; since it will probably remain in play for at least 2-3 rounds. Most standard monsters should have some kind of attack or ability which allows them to push the PCs; thus the heroes will be in a dangerous situation, usually right near the start of a fight, in the first couple of rounds. The monster's 'thing' might simply be a big encounter attack, or it might involve putting some condition on one or more PCs so that they cannot easily employ their preferred tactics. It could simply be an ability to remain less exposed to countermeasures; thus the monster threatens to rain damage down without being threatened in return. 
+
+The best ideas are both subtle and obvious. It should be pretty clear what the challenge is; but meeting the challenge should require some enginuity and force the players to make tradeoffs when possible. Its OK if there are a few vanilla monsters in the mix, as long as they are given a way to shine indirectly, such as by taking advantage of an ability of another monster. 
+
+Standard monsters often have at least a couple of attacks, including one that can do extra damage and/or impose conditions in at least some situations. Other kinds of traits are likely to be useful as well, but any one given monster should probably stick to a single basic conceptual thing that it does, one set of tactics. Monsters are not usually generalists, a different monster, or a variation of a monster, can always be developed to cover other situations.
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Uncommon"/
+
+An uncommon monster is one which is unusually strong. It is roughly equivalent to two standard monsters. It will have twice the hit points of a standard monster, and will almost always be capable of doing significantly more damage and have other special abilities. The elite ranks of monsters are often filled with this type of creature. They are leaders, enforcers, special NPCs, etc. Most encounters feature no more than one uncommon monster. 
+
+Uncommon monsters often have some power points. A legendary uncommon monster generally has 1 power point, and a mythic uncommon monster often has 2. Heroic uncommon monsters may sometimes have one power point as well, depending on their nature.
+/TOPIC" Design"/
+
+These monsters are ones whom the heroes should remember, and probably not in a good way! They should always have something interesting and genuinely threatening about them. An uncommon monster should be likely to launch more than one sort of attack; remember, it is taking the place of two standard monsters, so it basically needs to do 2x the damage as well; while it is possible to simply give this kind of a monster one really big attack, that isn't usually a good strategy. In addition to its own attacks, give these monsters a way to interact with and enhance the standard monsters they are paired with. An uncommon monster might be able to entirely tie down a couple of heroes for 2-3 rounds, giving other monsters a chance to roam free; it could directly enhance other monsters which are around it; or it could give the other monsters an easy way to use their best tactics, making them a bit more dangerous.
+
+Note that the weakness of uncommon monsters is that they are just as subject to conditions and other disabling effects as standard monsters; however the effect is twice as big, since they are effectively two standard monsters in one. It is generally a good idea to provide the uncommon monster with a 'get out of jail free' kind of ability of some sort. That could be a way to disengage when put in a bad situation, an ability to shed conditions, or perhaps a way to avoid at least some of the parties more nasty attacks which will be aimed at them.
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Singular"/
+
+This is a special type of monster which is equivalent to four standard monsters. It has four times the hit points and usually has many attacks, high damage, and greater than normal defenses. Singular monsters represent the most threatening and dangerous of adversaries. Not every Singular monster is literally one-of-a-kind however. There may be many black dragons in the world, but each one is a unique monster which is unlikely to be encountered with others of its kind.
+
+Singular monsters always have some power points. At heroic levels they have 2 points, legendary ones have 3 points, and mythic ones have 4. They can use these points to gain an extra action and they may also have powers which require a power point to recharge. All Singular monsters can also use a power point to end one condition which is on them. They may do this at any time as no action.
+/TOPIC" Design"/
+
+All of the things which pertain to uncommon monsters pertain double for singular ones. Every singular monster needs ways to avoid being locked down or crippled by the use of multiple condition imposing feats. They also need ways to reshape the battlefield, avoid being pinned down, or escape from being ganged up on. Alternately a unique monster could sport a design which makes it extremely potent when all its enemies gather around it; thus making them wish not to do so. 
+
+Damage output for a unique monster needs to be high, but it is better to split it up amongst several attacks; one giant attack will simply crush an opponent. Alternatively area effects, bursts and blasts, are a great option. Few and far between are the unique monsters which lack additional interesting traits, auras, and triggers; all of these can increase damage and produce interesting tactical situations. Most unique monsters are also fighting in unique locations, often of their own choosing; they should take advantage of this. Traps and other terrain features are almost sure to exist and can synergize well with the creature itself.
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Stats"/
+
+This summarizes the differences typical between monsters of each type:
+/TABLE=" bodytable"/
+/TR /TH                  /TH/ Minion /TH/ Standard /TH/ Uncommon /TH/ Unique TH/ TR/
+/TR /TD Hit Points       /TD/ 1      /TD/ N        /TD/ 2*N      /TD/ 4*N    TD/ TR/
+/TR /TD Damage Reduction /TD/ 0      /TD/ 0        /TD/ +1       /TD/ +2     TD/ TR/
+/TR /TD Defenses         /TD/ 0      /TD/ 0        /TD/ +1       /TD/ +2     TD/ TR/
+/TR /TD Power Points     /TD/ 0      /TD/ 0        /TD/ 1        /TD/ 2      TD/ TR/
+TABLE/
+
+These are just general guidelines, except for the hit point numbers, which should generally be adhered to. Defenses refers to an overall increase to one defense, generally speaking. Power points are those at heroic tier, add another point or two at each tier. 
+
+SUBSECTION/
+SECTION/
+/SECTION" Monster Roles"/
+
+Monsters can be categorized by their combat role. Unlike player characters, monster's roles reflect the sort of tactics they use in combat as opposed to their tactical function. This makes it easy for the GM to select specific monsters to fit in an encounter. The monster roles are Skirmisher, Brute, Soldier, Lurker, Artillery, and Controller.
+
+/SUBSECTION" Skirmisher"/
+
+These are the faster and more mobile monsters. They use their mobility and speed to flank, make hit-and-run attacks, and generally try to isolate and pick off individual characters. Some skirmishers have ranged attacks, but most of them are capable melee combatants.
+/TOPIC" Design"/
+
+Skirmishers are pretty much baseline monsters in terms of their stats. They often move quickly; or have movement abilities which allow them to get to their preferred spot on the battlefield, attack, and potentially avoid retaliation. However they are not particularly well protected in most cases, nor do they have the inherent toughness of brutes. Skirmishers are best employed on the flanks, or as a reserve.
+
+When designing a skirmisher, think mobility. The skirmisher is a tactical asset which can get from A to B and engage on the run successfully. It should have some ability which reflects this.
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Brute"/
+
+Brutes are monsters which are tough and dish out a lot of damage. They are usually not especially fast or mobile, but they can deal serious amounts of damage. Many brutes are physically larger than average creatures. Most brutes lack much in the way of ranged attacks, they exist to close in with the heroes and destroy them.
+/TOPIC" Design"/
+
+The brute doesn't have a lot of armor in most cases, but they have a lot of hit points, and they hurt anything which comes close to them. They are employed right on the front line where their job is to act as the hammer to the soldier's anvil. As such the typical design for a brute features a limited number of higher damage melee attacks. Basic standard brutes probably just need a basic attack and an encounter or low recharge rate limited attack. They might also feature some kind of condition imposition or trait/aura that emphasizes their nature and makes them a bit more interesting to deal with.
+
+Effects like pushing are nicely applied to the brute; anything which gives it an impression of power and force works well. Now and then a brute might also sport a secondary function, such as having a minor ranged attack or leadership abilities. Remember, it is unlikely that brutes will survive too long, they're prime targets! Of course, a monster design could use this to advantage, say by punishing anyone who attacks the creature.
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Soldier"/
+
+Soldiers are similar to the PC defender. They are durable monsters which are able to engage in melee combat and keep an opponent pinned down fighting them. Most soldiers only do baseline damage, but they can often mark, grapple, slow, etc making it difficult for the PCs to get past them and accomplish their goals. Soldiers are usually found on the front lines of the fight, but they might also act as a bodyguard for another important monster.
+/TOPIC" Design"/
+
+As noted in the description, soldiers are all about pinning down the PCs and making their lives difficult. They should be reasonably tough; a soldier has the best DR and a good number of hit points, as well as generally good defenses. They are meant to stand at the front and mix it up with the heroes. Most soldier attacks feature more condition and effect imposition vs high damage. A soldier generally doesn't need the levels of mobility or mechanisms to help with disengaging to the extent that some other roles (lurker, skirmisher) do. 
+
+Soldiers often can synergize in some way with other monsters in their groups. A solid design concept involves soldiers who impose some condition and then another monster which can exploit that condition; another good design would be a 'glue monster' which holds enemies close while something like artillery hammers them. A soldier also makes a good bodyguard for a more important monster, intercepting any stray hero who happens to get close and keeping them tied up.
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Lurker"/
+
+Lurkers are ambush attackers. They generally have some form of potent attack which they can launch from surprise or when they have some sort of advantage. Usually in other respects lurkers are on the weak side. They may also possess some sort of power which allows them to set up their special attack, a way to disengage, invisibility, superior hiding ability, etc.
+/TOPIC" Design"/
+
+The lurker should have a very well-defined 'shtick' and its feats and other traits should be focused on executing that routine. Remember, a lurker might not attack every round, as it may need time to get into position or wait for its prey. For this reason lurkers often require some sort of ability to avoid damage and an attack which concentrates a lot of damage in one blow. Often these monsters have a deadly recharge type of attack, giving them the ability to strike, withdraw, and then set up and strike again. Since lurkers don't generally want to stick near the enemy they also usually have a 'get out of here' feature of some sort; a way to put on a burst of speed, flight, teleportation, an attack which has a movement effect built in; these are all good ways to design a lurker.
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Artillery"/
+
+These are monsters which rain down ranged and area attacks on the party from a safe distance. They are usually weak in melee combat, but their ranged attacks can be quite potent. Artillery monsters allow the bad guys to concentrate their firepower where it is needed.
+/TOPIC" Design"/
+
+As noted, artillery is all about concentrating firepower; they could also, however, be designed to provide an area effect, denying terrain to the heroes, but this shades into controller territory. Typical artillery are fairly simple monsters with a ranged attack. They may have a secondary higher damage limited version; and they will also typically have a minor melee or close capability to fend off attackers with if needed.
+
+Cleverly designed artillery will often have such features as a synergy with a defender or skirmisher; something like gaining an extra bit of damage or effect vs an opponent with a condition imposed by a soldier is typical. It can work in reverse too, with the artillery imposing an effect which enhances the melee attacking monsters effectiveness. Things like flying artillery are obvious design patterns, but should be used sparingly as they can produce unwinnable situations, which is usually not desirable.
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Controller"/
+
+Controllers are monsters which can interfere with the player characters, change the terrain, and otherwise spoil the party's tactics. Often these monsters work from range, but some are close-in melee opponents. 
+/TOPIC" Design"/
+
+Controllers are a highly varied role. When built to work close in they are pretty similar to soldiers, but they will not usually be so tough, and may sport higher mobility instead. The more classic design can operate at some range, imposing conditions, often through lasting zones, or even walls. A controller might sport a ranged condition imposition attack which slows or impairs heroes, preventing them from reaching their goals. This is the central concept of the controller, it is about breaking the heroes plans. A controller will ideally make the PCs do what it wants, instead of what they want to do. Naturally this will not be good for the heroes... 
+
+Note that area effect damage, especially ranged, is essentially a controller function. This is a very basic and effective design, punish any opponents who stick too close together. Adding some sort of durable zone to this is a pretty obvious addition. These sorts of attacks are most often encounter or recharged so they can do limited damage and give the heroes a chance to counteract them and prevail. 
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Monster Stats"/
+
+The following table outlines the basic statistics for monsters, and the variations which are to be included based on the monster's role. 
+
+/TABLE=" bodytable"/
+/TR /TH Roles                /TH/ Baseline /TH/ Skirmisher /TH/ Soldier /TH/ Artillery /TH/ Lurker /TH/ Brute TH/ TR/
+/TR /TD Base Hit Points      /TD/ 14       /TD/ 14         /TD/ 16      /TD/ 13        /TD/ 13     /TD/ 17    TD/ TR/
+/TR /TD Hit Points per level /TD/ 5        /TD/ 5          /TD/ 6       /TD/ 4         /TD/ 4      /TD/ 7     TD/ TR/
+/TR /TD Damage Type          /TD/ U/L      /TD/ U/L        /TD/ U/L     /TD/ U/L(M)    /TD/ U/M    /TD/ L/M   TD/ TR/
+/TR /TD Damage Reduction     /TD/ 2        /TD/ 1          /TD/ 3       /TD/ 1         /TD/ 1      /TD/ 0     TD/ TR/
+/TR /TD FORT                 /TD/ 0        /TD/ +1         /TD/ +2      /TD/ 0         /TD/ 0      /TD/ +1    TD/ TR/
+/TR /TD REF                  /TD/ 0        /TD/ +1         /TD/ 0       /TD/ +1        /TD/ +1     /TD/ 0     TD/ TR/
+/TR /TD WILL                 /TD/ 0        /TD/ 0          /TD/ +1      /TD/ 0         /TD/ +1     /TD/ 0     TD/ TR/
+TABLE/
+
+The table indicates for each role typical values for the following things:
+/UL
+    /LI /LABEL Base Hit Points LABEL/ This is a base number of hit points for a monster of this role, before any level additions. LI/
+    /LI /LABEL Hit Points per level LABEL/ Add this many hit points times the level of the monster, including first level. LI/
+    /LI /LABEL Damage Type LABEL/ This indicates which of the three types of damage are generally appropriate for this type of monster. U stands for unlimited, L for limited, and M for maximum. The first value is constant damage output, the second is peak effectiveness, usually an encounter or recharge power. LI/
+    /LI /LABEL Damage Reduction LABEL/ This is the typical DR of a monster of this type at first level. Higher level monsters will generally have increased DR. Monsters will generally gain 2 to 4 points of DR per tier. Note that monster types also have an effect here. LI/
+    /LI /LABEL FORT, REF, and WILL LABEL/ This indicates typical adjustments to these defenses for monsters of this role. Actual individual monsters are likely to vary somewhat, especially at higher tiers and for some monster types. LI/
+UL/
+
+All of the above are simply guidelines which are intended to help set values so as to give monsters an appropriate set of statistics for their role. Each specific type of monster, and each individual monster stat block, is likely to vary somewhat from these values. In order to insure that the challenge presented by each monster is not far out of line with others of its level significant increases should be avoided; although a modest variation, especially if increases and decreases are fairly balanced, can create more interesting monsters.
+SUBSECTION/
+SECTION/
+/SECTION" Monster Stat Block"/
+
+Each monster which is intended to be used in combat has a stat block which contains all the statistics necessary to run the monster in a fight or other action sequence. The stat block components are discussed below. Note that a stat block is meant to allow a creature to be quickly used in combat. It doesn't represent a complete categorical description of every capability each individual monster might have, just the ones that are relevant in a fight or action sequence. The description of the monster will explain any other capabilities, and may elaborate on those mentioned in the stat block. For example a monster might have a special ability which gives it an attack in combat, but this may be a more general ability which may factor into non-combat situations and might give the creature other capabilities there which aren't relevant in a fight.
+
+/LEFT=" half"/
+/MONSTER
+/MONSTERNAME Monster Name MONSTERNAME/ /MONSTERLEVEL Level MONSTERLEVEL/ /MONSTERROLE Role MONSTERROLE/
+/MONSTERSIZE Size MONSTERSIZE/ /MONSTERTAGS tags MONSTERTAGS/
+/MONSTERDEFENSES /MONSTERFORT nn MONSTERFORT/ /MONSTERREF nn MONSTERREF/ /MONSTERWILL nn MONSTERWILL/ MONSTERDEFENSES/
+/MONSTERPOWER n MONSTERPOWER/
+/MONSTERHITPOINTS max; bloodied MONSTERHITPOINTS/ /MONSTERINITIATIVE +n MONSTERINITIATIVE/
+/MONSTERIMMUNITY tags MONSTERIMMUNITY/ /MONSTERPROTECTION tags MONSTERPROTECTION/
+/MONSTERVULNERABILITY tags MONSTERVULNERABILITY/ /MONSTERDR nn MONSTERDR/
+/MONSTERSECTION /MONSTERSECTIONNAME Traits MONSTERSECTIONNAME/
+/MONSTERAURA /MONSTERAURANAME Aura MONSTERAURANAME/ /MONSTERAURATAGS tags MONSTERAURATAGS/ /MONSTERAURASIZE n MONSTERAURASIZE/
+/MONSTERAURAEFFECT This aura does something nasty MONSTERAURAEFFECT/ MONSTERAURA/
+/MONSTERTRAIT /MONSTERTRAITNAME Some trait or other MONSTERTRAITNAME/
+/MONSTERTRAITEFFECT What does this trait do MONSTERTRAITEFFECT/ MONSTERTRAIT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Move MONSTERSECTIONNAME/
+/MONSTERSPEED n; mode m MONSTERSPEED/
+/MONSTERFEAT /MONSTERFEATNAME Feat Name MONSTERFEATNAME/ /MONSTERFEATUSAGE Usage MONSTERFEATUSAGE/
+/MONSTERFEATEFFECT Whatever this feat does MONSTERFEATEFFECT/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Major MONSTERSECTIONNAME/
+/MONSTERFEAT /MONSTERFEATNAME An Attack MONSTERFEATNAME/ /MONSTERFEATTAGS tag, tag MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE Usage MONSTERFEATUSAGE/
+/MONSTERFEATATTACK type range DC; targets MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS damage plus effects MONSTERFEATSUCCESS/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Free MONSTERSECTIONNAME/
+/MONSTERFEAT /MONSTERFEATNAME Feat Name MONSTERFEATNAME/ /MONSTERFEATUSAGE Usage MONSTERFEATUSAGE/
+/MONSTERFEATEFFECT Whatever this feat does MONSTERFEATEFFECT/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Triggered MONSTERSECTIONNAME/
+/MONSTERFEAT /MONSTERFEATNAME Feat Name MONSTERFEATNAME/ /MONSTERFEATUSAGE Usage MONSTERFEATUSAGE/
+/MONSTERFEATEFFECT Whatever this feat does MONSTERFEATEFFECT/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Stats MONSTERSECTIONNAME/
+/MONSTERSTR nn MONSTERSTR/
+/MONSTERINT nn MONSTERINT/
+/MONSTERCON nn MONSTERCON/
+/MONSTERWIS nn MONSTERWIS/
+/MONSTERDEX nn MONSTERDEX/
+/MONSTERCHA nn MONSTERCHA/
+/MONSTERKNACKS
+/MONSTERKNACK knack (nn) MONSTERKNACK/
+/MONSTERKNACK knack2 (nn) MONSTERKNACK/
+MONSTERKNACKS/
+/MONSTERLANG lang1, lang2 MONSTERLANG/
+/MONSTEREQUIP some stuff MONSTEREQUIP/
+MONSTERSECTION/
+MONSTER/
+LEFT/
+
+/LABEL Monster Name LABEL/ The name of this specific monster type.
+
+/LABEL Level LABEL/ The level of the monster indicates how dangerous it is in combat. A monster's level indicates roughly the level of PCs which will find this monster a challenge.
+
+/LABEL Role LABEL/ The role of the monster as described above. If the monster has a type (minion, uncommon, Singular) this will also be indicated here.
+
+/LABEL Size LABEL/ The size of the monster, see space and size in the detailed action rules.
+
+/LABEL Tags LABEL/ All tags which apply to this monster.
+
+/LABEL FORT/REF/WILL LABEL/ Defenses, these are the DCs a character will need to achieve in order to hit the monster with attacks against
+the specific defense.
+
+/LABEL Power LABEL/ number of power points this creature has, if any.
+
+/LABEL HP LABEL/ creatures hit points; bloodied value.
+
+/LABEL Initiative LABEL/ The creature's initiative bonus
+
+/LABEL Immunity LABEL/ The creature is immune to damage caused by attack powers with these tags. It is also immune to the non-damaging effects of a power with that keyword.
+
+/LABEL Prot LABEL/ The creature is protected from each of the named types of damage. Any damage with one of these tags will do half damage to the creature.
+
+/LABEL Vulnerability LABEL/ The creature is vulnerable to each of the named types. Any damage with these tags will be doubled.
+
+/LABEL DR LABEL/ The creature has this amount of damage resistance, all damage will be reduced by this amount.
+
+/LABEL Aura LABEL/ The creature has an aura with the given size and tags. An aura is a zone which is centered on the creature. Any creature within the designated number of squares is within the aura. A creature may activate or deactivate its aura at the start of its turn as a free action. When a creature dies its aura ends immediately. In all other respects an aura is simply a zone. The effect line describes the effects of the zone.
+
+/LABEL Trait LABEL/ If a creature has other special traits they are described here, along with any tags and their effects. 
+
+/LABEL Move LABEL/ This section lists the movement modes and speeds of the creature and describes any powers which require a move action. 
+
+/LABEL Standard/Free LABEL/ These sections list powers which require the given action type. 
+
+/LABEL Triggered Actions LABEL/ This section lists the trigger conditions and powers which they can trigger. These are all Free or Opportunity Actions unless otherwise noted.
+
+/LABEL Abilities LABEL/ This section lists the monster's ability DCs. These are values that a PC would have to overcome to best the monster in a situation where that ability is relevant, such as when one of the monster's knacks is tested against, etc.
+
+/LABEL Knacks LABEL/ This lists any knacks the monster is proficient with and the DC required to overcome the monster's use of the knack. So, for example if the monster has a Perception knack value of 22, then a character must achieve success against a 22 in order to succeed in a stealth check against the monster to hide. Any other knack can be assumed to have the same DC as the related ability. Any other sort of knowledge or tool proficiency a monster has could be listed here, but usually these details are not needed for combat purposes.
+
+/LABEL Languages LABEL/ This lists all languages which the creature speaks, if any.
+
+/LABEL Equipment LABEL/ This lists the normal equipment possessed by a creature of this type. Note that this is not an exhaustive list, most intelligent creatures probably have other possessions and gear which is not usually germane in a combat encounter.
+SECTION/
+/SECTION" Monsters in Combat"/
+
+Monsters work a bit differently from PCs in combat. The rules related to this can be found in the /REF Action Sequences REF/ rules. This section simply notes what the differences are with player characters and how the rules treat monsters, since as NPCs they don't make checks themselves.
+
+In cases where a monster would be attempting something that would require a check if a player character attempted it, the monster will in general succeed if the odds are favorable. If OTOH the action bears directly on a PC, then the player of that PC can make a check and hope to exceed the DC required to beat the monster on a relevant knack or something similar. If the action is highly dangerous and not directly related to a specific PC, then the GM can either decide, or roll and try to get an 11+. This isn't exactly a check, it is just a way to adjudicate what happened. The GM can adjust this value as she sees fit. If there are enough monsters trying something, a proportional number could simply be declared to fail.
+/SUBSECTION" Feats"/
+
+Monsters have feats, as noted in the section above on stat blocks. If a feat doesn't involve an attack, see above. Usually this will be a case where this is part of a monster's routine, and it should simply succeed, but there may be a few cases where this will not be the case.
+
+When dealing with an attack, the PC being attacked will simply make a defense check. Monster attacks provide a DC which must be met in order to avoid the damage given in the 'hit' portion of the feat. Aside from the PC(s) making defense rolls things work similarly to PCs. Each feat requires an action, and monsters get the same allotment of actions PCs do. They also get Opportunity in the same way that PCs do, and free actions as well. They may also have /EM triggers EM/ which cause certain feats to be used. These work in the same way that PC feat triggers work.
+/TOPIC" Usage"/
+
+Monster feats have usage rates. These are:
+
+/SUBTOPIC" At-Will"/
+The feat can be used whenever the monster can take the requisite type of action. The feat can be used again and again throughout the encounter.
+SUBTOPIC/
+/SUBTOPIC" Encounter"/
+The feat can be used once during the action sequence or challenge. Once used it is expended, but if the monster is encountered again later it could use this power again. Monster's can expend a power point to recharge an encounter power and use it again, but only once in a given turn.
+SUBTOPIC/
+/SUBTOPIC" Power"/
+The feat requires the expenditure of a power point each time it is used.
+SUBTOPIC/
+/SUBTOPIC" Recharge"/
+The feat recharges. At the start of the monster's turn, roll a d6 for each recharge feat. if the number noted, or greater, is rolled on the die, the feat recharges and can be used again.
+SUBTOPIC/
+/SUBTOPIC" Bloodied"/
+Some monster feats recharge when the monster becomes bloodied. They can be used once, like an encounter feat, but automatically recharge the first time the monster's hit points go below its bloodied value.
+SUBTOPIC/
+/SUBTOPIC" Other"/
+It is possible that a feat might be recharged in some other way. The text of the feat will explain the recharge conditions. Sometimes some other trait or another feat will cause a recharge, this will be noted in the stat block somewhere.
+SUBTOPIC/
+TOPIC/
+SUBSECTION/
+SECTION/
+/SECTION" Monsters A-Z"/
+/SUBSECTION" G"/
+/TOPIC" Ghoul"/
+
+Ghouls are frightening undead monstrosities which arise in charnel places where the dead lie and the influence of the Shadow Realm is strong. Such places might include old battlefields, mass grave sites, and possibly even graveyards in some localities. 
+/SUBTOPIC" Ghoul Hungerer"/
+/LEFT=" half"/
+/MONSTER
+/MONSTERNAME Ghoul Hungerer MONSTERNAME/ /MONSTERLEVEL 3 MONSTERLEVEL/ /MONSTERROLE Minion Skirmisher MONSTERROLE/
+/MONSTERSIZE standard MONSTERSIZE/ /MONSTERTAGS natural, humanoid, undead MONSTERTAGS/
+/MONSTERDEFENSES /MONSTERFORT 19 MONSTERFORT/ /MONSTERREF 22 MONSTERREF/ /MONSTERWILL 17 MONSTERWILL/ MONSTERDEFENSES/
+/MONSTERPOWER 0 MONSTERPOWER/
+/MONSTERHITPOINTS 1; N/A MONSTERHITPOINTS/ /MONSTERINITIATIVE +0 MONSTERINITIATIVE/
+/MONSTERIMMUNITY poison, disease MONSTERIMMUNITY/ /MONSTERPROTECTION necrotic MONSTERPROTECTION/
+/MONSTERVULNERABILITY vital MONSTERVULNERABILITY/ /MONSTERDR 0 MONSTERDR/
+/MONSTERSECTION /MONSTERSECTIONNAME Move MONSTERSECTIONNAME/
+/MONSTERSPEED 7 MONSTERSPEED/
+/MONSTERFEAT /MONSTERFEATNAME Horrid Rush MONSTERFEATNAME/ /MONSTERFEATUSAGE At-Will MONSTERFEATUSAGE/
+/MONSTERFEATEFFECT The Ghoul Hungerer moves with a supernatural speed, shifting 4 squares. MONSTERFEATEFFECT/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Major MONSTERSECTIONNAME/
+/MONSTERFEAT /MONSTERFEATNAME Claws MONSTERFEATNAME/ /MONSTERFEATTAGS basic, weapon MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE At-Will MONSTERFEATUSAGE/
+/MONSTERFEATATTACK close 1 DC 18; one opponent MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 7 damage MONSTERFEATSUCCESS/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Stats MONSTERSECTIONNAME/
+/MONSTERSTR 20 MONSTERSTR/
+/MONSTERINT 14 MONSTERINT/
+/MONSTERCON 18 MONSTERCON/
+/MONSTERWIS 14 MONSTERWIS/
+/MONSTERDEX 21 MONSTERDEX/
+/MONSTERCHA 12 MONSTERCHA/
+/MONSTERKNACKS
+/MONSTERKNACK athletics(20) MONSTERKNACK/
+/MONSTERKNACK acrobatics(20) MONSTERKNACK/
+MONSTERKNACKS/
+/MONSTERLANG none MONSTERLANG/
+/MONSTEREQUIP N/A MONSTEREQUIP/
+MONSTERSECTION/
+MONSTER/
+LEFT/
+
+Ghoul Hungerers rush into battle without fear or thought, seeking to slake their thirst for the flesh and blood of the living. They will utilize their great speed to bypass harder targets if they can, going for the less well-protected victims preferentially. Individually these foul creatures are not a great hazard, but they often appear in droves. They tend to fall under the thrall of greater ghouls and other undead, as well as masters of necromancy, who sometimes raise them up from charnel sites using blasphemous rituals.
+
+While light is not directly harmful to ghouls they are not inclined to venture out except at night or possibly under very gloomy conditions. When not hunting and devouring living creatures they hide within the earth or concealed in dark places.
+SUBTOPIC/
+/SUBTOPIC" Ghoul Devourer"/
+/RIGHT=" half"/
+/MONSTER
+/MONSTERNAME Ghoul Devourer MONSTERNAME/ /MONSTERLEVEL 3 MONSTERLEVEL/ /MONSTERROLE Standard Lurker MONSTERROLE/
+/MONSTERSIZE standard MONSTERSIZE/ /MONSTERTAGS natural, humanoid, undead MONSTERTAGS/
+/MONSTERDEFENSES /MONSTERFORT 19 MONSTERFORT/ /MONSTERREF 24 MONSTERREF/ /MONSTERWILL 17 MONSTERWILL/ MONSTERDEFENSES/
+/MONSTERPOWER 0 MONSTERPOWER/
+/MONSTERHITPOINTS 25; 12 MONSTERHITPOINTS/ /MONSTERINITIATIVE +1 MONSTERINITIATIVE/
+/MONSTERIMMUNITY poison, disease MONSTERIMMUNITY/ /MONSTERPROTECTION necrotic MONSTERPROTECTION/
+/MONSTERVULNERABILITY vital MONSTERVULNERABILITY/ /MONSTERDR 0 MONSTERDR/
+/MONSTERSECTION /MONSTERSECTIONNAME Move MONSTERSECTIONNAME/
+/MONSTERSPEED 7 MONSTERSPEED/
+/MONSTERFEAT /MONSTERFEATNAME Carry Away MONSTERFEATNAME/ /MONSTERFEATUSAGE Recharge 5 MONSTERFEATUSAGE/
+/MONSTERFEATEFFECT The Ghoul Devourer can grab any incapacitated character of standard size and move at its full speed while carrying this victim. MONSTERFEATEFFECT/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Major MONSTERSECTIONNAME/
+/MONSTERFEAT /MONSTERFEATNAME Claws MONSTERFEATNAME/ /MONSTERFEATTAGS basic, weapon MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE At-Will MONSTERFEATUSAGE/
+/MONSTERFEATATTACK close 1 DC 18; one opponent MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 2d6+7 damage MONSTERFEATSUCCESS/
+MONSTERFEAT/
+/MONSTERFEAT /MONSTERFEATNAME Devouring Bite MONSTERFEATNAME/ /MONSTERFEATTAGS weapon MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE Recharge when Carry Away recharges MONSTERFEATUSAGE/
+/MONSTERFEATEFFECT The Ghoul Devourer suddenly makes a fantastic leap, it can move up to 7 squares, ignoring terrain and enemies in those squares and then it attacks. MONSTERFEATEFFECT/
+/MONSTERFEATATTACK close 1 DC 20; one opponent MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 4d6+5 damage MONSTERFEATSUCCESS/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Stats MONSTERSECTIONNAME/
+/MONSTERSTR 22 MONSTERSTR/
+/MONSTERINT 14 MONSTERINT/
+/MONSTERCON 18 MONSTERCON/
+/MONSTERWIS 14 MONSTERWIS/
+/MONSTERDEX 22 MONSTERDEX/
+/MONSTERCHA 12 MONSTERCHA/
+/MONSTERKNACKS
+/MONSTERKNACK stealth(20) MONSTERKNACK/
+/MONSTERKNACK athletics(20) MONSTERKNACK/
+/MONSTERKNACK acrobatics(20) MONSTERKNACK/
+MONSTERKNACKS/
+/MONSTERLANG none MONSTERLANG/
+/MONSTEREQUIP N/A MONSTEREQUIP/
+MONSTERSECTION/
+MONSTER/
+RIGHT/
+
+Devourers are far more deadly than Hungerers, lurking within packs of their weaker bretheren, and then suddenly springing to the attack, tearing a chunk out of their selected prey, and if it is disabled, then the devourer will simply pick up the body and run away! These creatures are very fast and can lurk in the shadows or any other hiding place which is available until the moment is right to strike. SUBTOPIC/
+/CLEAR <img src="graveyard.png" style="width: 100%; height: 84px"> CLEAR/
+TOPIC/
+SUBSECTION/
+/SUBSECTION" H"/
+/TOPIC" Human"/
+Humans are the most common of beings. In fact they usually form the bulk of the population in most lands. Humans are highly adaptable and they will adopt elements of culture from other species quite readily. They are somewhat warlike, and tend to spread into any area from which they aren't forcibly excluded. However they also value cooperation and usually conduct themselves in a peaceful fashion unless their interests are threatened.
+
+Humans which will likely be encountered by heroes might be of a few types. First are the basic inhabitants of the world These are typically peaceful unarmed or lightly-armed people who pose little threat individually to heroes. In fact higher level heroes can practically ignore them. This goes even for basic armed types such as guards and watchmen, or armed groups of inhabitants.
+
+There are also the more dangerous types, warriors and other trained individuals who are capable of putting up a fight. Some of these may be quite dangerous, though probably only to heroic tier PCs. Finally there are those rare individual humans who have obtained real power, becoming high level heroes and legends in their own right. These are often the sorts whom player characters come into conflict with.
+
+/LEFT=" half"/
+/MONSTER
+/MONSTERNAME Human Villager MONSTERNAME/ /MONSTERLEVEL 1 MONSTERLEVEL/ /MONSTERROLE Minion Brute MONSTERROLE/
+/MONSTERSIZE standard MONSTERSIZE/ /MONSTERTAGS natural, human, humanoid MONSTERTAGS/
+/MONSTERDEFENSES /MONSTERFORT 20 MONSTERFORT/ /MONSTERREF 19 MONSTERREF/ /MONSTERWILL 18 MONSTERWILL/ MONSTERDEFENSES/
+/MONSTERPOWER 0 MONSTERPOWER/
+/MONSTERHITPOINTS 1; N/A MONSTERHITPOINTS/ /MONSTERINITIATIVE +0 MONSTERINITIATIVE/
+/MONSTERIMMUNITY none MONSTERIMMUNITY/ /MONSTERPROTECTION none MONSTERPROTECTION/
+/MONSTERVULNERABILITY none MONSTERVULNERABILITY/ /MONSTERDR 0 MONSTERDR/
+/MONSTERSECTION /MONSTERSECTIONNAME Move MONSTERSECTIONNAME/
+/MONSTERSPEED 6 MONSTERSPEED/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Major MONSTERSECTIONNAME/
+/MONSTERFEAT /MONSTERFEATNAME Club MONSTERFEATNAME/ /MONSTERFEATTAGS basic, weapon MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE At-Will MONSTERFEATUSAGE/
+/MONSTERFEATATTACK close 1 DC 17; one opponent MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 5 damage MONSTERFEATSUCCESS/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Stats MONSTERSECTIONNAME/
+/MONSTERSTR 20 MONSTERSTR/
+/MONSTERINT 19 MONSTERINT/
+/MONSTERCON 19 MONSTERCON/
+/MONSTERWIS 19 MONSTERWIS/
+/MONSTERDEX 19 MONSTERDEX/
+/MONSTERCHA 19 MONSTERCHA/
+/MONSTERLANG common MONSTERLANG/
+/MONSTEREQUIP club MONSTEREQUIP/
+MONSTERSECTION/
+MONSTER/
+LEFT/
+/SUBTOPIC" Human Villager"/
+
+The human villager is simply a normal resident of a human village or town, armed with whatever is at hand. Presumably when met in a combat situation they are defending themselves or trying to deal with something threatening. Needless to say they are not very effective, but might pose some minor threat in large numbers, particularly with a strong leader.
+SUBTOPIC/
+/SUBTOPIC" Human Soldier"/
+/RIGHT=" half"/
+/MONSTER
+/MONSTERNAME Human Soldier MONSTERNAME/ /MONSTERLEVEL 1 MONSTERLEVEL/ /MONSTERROLE Standard Skirmisher MONSTERROLE/
+/MONSTERSIZE standard MONSTERSIZE/ /MONSTERTAGS natural, human, humanoid MONSTERTAGS/
+/MONSTERDEFENSES /MONSTERFORT 20 MONSTERFORT/ /MONSTERREF 20 MONSTERREF/ /MONSTERWILL 19 MONSTERWILL/ MONSTERDEFENSES/
+/MONSTERPOWER 0 MONSTERPOWER/
+/MONSTERHITPOINTS 19; 9 MONSTERHITPOINTS/ /MONSTERINITIATIVE +1 MONSTERINITIATIVE/
+/MONSTERIMMUNITY none MONSTERIMMUNITY/ /MONSTERPROTECTION none MONSTERPROTECTION/
+/MONSTERVULNERABILITY none MONSTERVULNERABILITY/ /MONSTERDR 2 MONSTERDR/
+/MONSTERSECTION /MONSTERSECTIONNAME Move MONSTERSECTIONNAME/
+/MONSTERSPEED 6 MONSTERSPEED/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Major MONSTERSECTIONNAME/
+/MONSTERFEAT /MONSTERFEATNAME Spear Thrust MONSTERFEATNAME/ /MONSTERFEATTAGS basic, weapon MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE At-Will MONSTERFEATUSAGE/
+/MONSTERFEATATTACK close 1 DC 19; one opponent MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 1d6+4 damage MONSTERFEATSUCCESS/
+MONSTERFEAT/
+/MONSTERFEAT /MONSTERFEATNAME Spear Toss MONSTERFEATNAME/ /MONSTERFEATTAGS basic, weapon MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE At-Will MONSTERFEATUSAGE/
+/MONSTERFEATATTACK ranged 5/20 DC 17; one opponent MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 1d6+4 damage MONSTERFEATSUCCESS/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Stats MONSTERSECTIONNAME/
+/MONSTERSTR 21 MONSTERSTR/
+/MONSTERINT 19 MONSTERINT/
+/MONSTERCON 19 MONSTERCON/
+/MONSTERWIS 19 MONSTERWIS/
+/MONSTERDEX 20 MONSTERDEX/
+/MONSTERCHA 19 MONSTERCHA/
+/MONSTERLANG common MONSTERLANG/
+/MONSTEREQUIP spear x3, leather armor, shield MONSTEREQUIP/
+MONSTERSECTION/
+MONSTER/
+RIGHT/
+
+The human soldier is a basic footsoldier armed with a spear, a shield, and some light armor. They can either throw their spear, or engage in melee combat with it. Most soldiers will have access to additional spears. They are generally not eager to take big risks in combat, though they will fight hard if pushed into a situation where they have no choice. This sort of human is probably used to hard physical work and is fairly tough and able to survive if provided with some equipment.
+SUBTOPIC/
+/SUBTOPIC" Human Knight"/
+/LEFT=" half"/
+/MONSTER
+/MONSTERNAME Human Knight MONSTERNAME/ /MONSTERLEVEL 4 MONSTERLEVEL/ /MONSTERROLE Standard Soldier MONSTERROLE/
+/MONSTERSIZE standard MONSTERSIZE/ /MONSTERTAGS natural, human, humanoid MONSTERTAGS/
+/MONSTERDEFENSES /MONSTERFORT 22 MONSTERFORT/ /MONSTERREF 20 MONSTERREF/ /MONSTERWILL 21 MONSTERWILL/ MONSTERDEFENSES/
+/MONSTERPOWER 0 MONSTERPOWER/
+/MONSTERHITPOINTS 40; 20 MONSTERHITPOINTS/ /MONSTERINITIATIVE +1 MONSTERINITIATIVE/
+/MONSTERIMMUNITY none MONSTERIMMUNITY/ /MONSTERPROTECTION none MONSTERPROTECTION/
+/MONSTERVULNERABILITY none MONSTERVULNERABILITY/ /MONSTERDR 4 MONSTERDR/
+/MONSTERSECTION /MONSTERSECTIONNAME Move MONSTERSECTIONNAME/
+/MONSTERSPEED 5 MONSTERSPEED/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Major MONSTERSECTIONNAME/
+/MONSTERFEAT /MONSTERFEATNAME Sword MONSTERFEATNAME/ /MONSTERFEATTAGS basic, weapon MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE At-Will MONSTERFEATUSAGE/
+/MONSTERFEATATTACK close 1 DC 20; one opponent MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 1d6+7 damage and the target is engaged MONSTERFEATSUCCESS/
+MONSTERFEAT/
+/MONSTERFEAT /MONSTERFEATNAME Powerful Blow MONSTERFEATNAME/ /MONSTERFEATTAGS basic, weapon MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE Encounter MONSTERFEATUSAGE/
+/MONSTERFEATATTACK close 1 DC 20; one opponent MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 3d6+7 damage and the target is dazed until the end of its next turn. MONSTERFEATSUCCESS/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Stats MONSTERSECTIONNAME/
+/MONSTERSTR 22 MONSTERSTR/
+/MONSTERINT 19 MONSTERINT/
+/MONSTERCON 20 MONSTERCON/
+/MONSTERWIS 19 MONSTERWIS/
+/MONSTERDEX 19 MONSTERDEX/
+/MONSTERCHA 20 MONSTERCHA/
+/MONSTERLANG common MONSTERLANG/
+/MONSTEREQUIP arming sword, mail, shield MONSTEREQUIP/
+MONSTERSECTION/
+MONSTER/
+LEFT/
+
+The Knight is a professional soldier with considerable experience. He will normally be encountered leading several other soldiers, or commanding some sort of important location, such as guarding his lord's gate or something similar. He will use his ability to keep opponents engaged to limit their ability to move past him, and will utilize his Powerful Blow to disable or temporarily neutralize the most dangerous of his opponents. 
+
+Knights will generally fight to the last when their mission is important, but may retreat or even surrender when they see the situation is hopeless or the opponent is honorable and willing to give terms. Knights vary in terms of their character, but most put their integrity and honor at high value and will honor their word when called upon to do so. Most are also land holders and they may be found mounted on warhorses and armed with lances in the field.
+SUBTOPIC/
+TOPIC/
+SUBSECTION/
+/SUBSECTION" S"/
+/TOPIC" Scarecrow"/
+
+The scarecrow is a frightening form of constructed monster. Originally created by local hedge wizards, allegedly to protect crops, their creators soon discovered that these things could be unpredictable. Other wizards discovered that it was convenient to have a servant which would not ask questions, even if they aren't totally reliable. 
+
+Scarecrows are made by means of ancient rituals passed down by the wisewomen of certain villages. When the crops are threatened they bring out their ancient knowledge to forge guardians. Often rogue spirits possess these nearly empty shells and they become threating, even to their nominal masters. When all goes well the scarecrow will obey simple orders, such as "drive off anything which enters this field unless the owner is present." They aren't good at following any order more complex than a sentence and can only understand what is right in front of them. 
+
+From time to time rogue scarecrows may terrorize the countryside, or be encountered aimlessly wandering in nearby woods and meadows. Depending on the sort of spirit influencing them, they might be violent, or not, but they are surely not animated by any human intellect and thus they are unpredictable at best. In this condition they often fail to follow orders.
+/SUBTOPIC" Scarecrow Guardian"/
+/LEFT=" half"/
+/MONSTER
+/MONSTERNAME Scarecrow Guardian MONSTERNAME/ /MONSTERLEVEL 2 MONSTERLEVEL/ /MONSTERROLE Standard Soldier MONSTERROLE/
+/MONSTERSIZE standard MONSTERSIZE/ /MONSTERTAGS magical, construct MONSTERTAGS/
+/MONSTERDEFENSES /MONSTERFORT 20 MONSTERFORT/ /MONSTERREF 19 MONSTERREF/ /MONSTERWILL 18 MONSTERWILL/ MONSTERDEFENSES/
+/MONSTERPOWER 0 MONSTERPOWER/
+/MONSTERHITPOINTS 28; 14 MONSTERHITPOINTS/ /MONSTERINITIATIVE +0 MONSTERINITIATIVE/
+/MONSTERIMMUNITY poison, disease MONSTERIMMUNITY/ /MONSTERPROTECTION none MONSTERPROTECTION/
+/MONSTERVULNERABILITY fire MONSTERVULNERABILITY/ /MONSTERDR 3 MONSTERDR/
+/MONSTERSECTION /MONSTERSECTIONNAME Move MONSTERSECTIONNAME/
+/MONSTERSPEED 5 MONSTERSPEED/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Major MONSTERSECTIONNAME/
+/MONSTERFEAT /MONSTERFEATNAME Staff MONSTERFEATNAME/ /MONSTERFEATTAGS basic, weapon MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE At-Will MONSTERFEATUSAGE/
+/MONSTERFEATATTACK close 1 DC 20; one opponent MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 1d6+5 damage and the target is engaged MONSTERFEATSUCCESS/
+MONSTERFEAT/
+/MONSTERFEAT /MONSTERFEATNAME Fearsome Gaze MONSTERFEATNAME/ /MONSTERFEATTAGS fear MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE Encounter MONSTERFEATUSAGE/
+/MONSTERFEATATTACK close blast 3 DC 18; all enemies in blast MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 1d6+3 damage and the target is slowed. MONSTERFEATSUCCESS/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Stats MONSTERSECTIONNAME/
+/MONSTERSTR 18 MONSTERSTR/
+/MONSTERINT 16 MONSTERINT/
+/MONSTERCON 20 MONSTERCON/
+/MONSTERWIS 16 MONSTERWIS/
+/MONSTERDEX 19 MONSTERDEX/
+/MONSTERCHA 16 MONSTERCHA/
+/MONSTERLANG common MONSTERLANG/
+/MONSTEREQUIP none MONSTEREQUIP/
+MONSTERSECTION/
+MONSTER/
+LEFT/
+
+The Guardian is the classic scarecrow. It will remain in position, usually in a field, until some sort of threat to the crops appears. It will then spring into action, attempting to drive the intruders out of the area it is assigned to guard. Having no sense of self preservation and very little intelligence this construct is not too selective in its tactics or choice of targets, nor will it retreat or try to save itself. If it goes rogue it will often simply wander the local area, attacking persons and animals at random until destroyed.
+SUBTOPIC/
+/SUBTOPIC" Scarecrow Lantern"/
+/LEFT=" half"/
+/MONSTER
+/MONSTERNAME Scarecrow Lantern MONSTERNAME/ /MONSTERLEVEL 2 MONSTERLEVEL/ /MONSTERROLE Uncommon Artillery MONSTERROLE/
+/MONSTERSIZE standard MONSTERSIZE/ /MONSTERTAGS magical, construct MONSTERTAGS/
+/MONSTERDEFENSES /MONSTERFORT 22 MONSTERFORT/ /MONSTERREF 19 MONSTERREF/ /MONSTERWILL 18 MONSTERWILL/ MONSTERDEFENSES/
+/MONSTERPOWER 2 MONSTERPOWER/
+/MONSTERHITPOINTS 42; 21 MONSTERHITPOINTS/ /MONSTERINITIATIVE +2 MONSTERINITIATIVE/
+/MONSTERIMMUNITY poison, disease MONSTERIMMUNITY/ /MONSTERPROTECTION none MONSTERPROTECTION/
+/MONSTERVULNERABILITY fire MONSTERVULNERABILITY/ /MONSTERDR 4 MONSTERDR/
+/MONSTERSECTION /MONSTERSECTIONNAME Move MONSTERSECTIONNAME/
+/MONSTERSPEED 6 MONSTERSPEED/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Major MONSTERSECTIONNAME/
+/MONSTERFEAT /MONSTERFEATNAME Razor Nails MONSTERFEATNAME/ /MONSTERFEATTAGS basic, weapon MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE At-Will MONSTERFEATUSAGE/
+/MONSTERFEATATTACK close 1 DC 18; one opponent MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 1d6+7 damage. MONSTERFEATSUCCESS/
+MONSTERFEAT/
+/MONSTERFEAT /MONSTERFEATNAME Lantern Light MONSTERFEATNAME/ /MONSTERFEATTAGS fear, necrotic MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE At-Will MONSTERFEATUSAGE/
+/MONSTERFEATATTACK ranged 10 DC 20; one enemy MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 1d6+3 damage and the target is immobilized. MONSTERFEATSUCCESS/
+MONSTERFEAT/
+/MONSTERFEAT /MONSTERFEATNAME Head Toss MONSTERFEATNAME/ /MONSTERFEATTAGS force, necrotic MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE Encounter MONSTERFEATUSAGE/
+/MONSTERFEATATTACK ranged burst 2 within 10 DC 20; all creatures MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 2d6+2 damage and the target is pushed 2 squares and slowed. MONSTERFEATSUCCESS/
+/MONSTERFEATEFFECT The Lantern can no longer use the power Lantern Light. MONSTERFEATEFFECT/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Stats MONSTERSECTIONNAME/
+/MONSTERSTR 16 MONSTERSTR/
+/MONSTERINT 16 MONSTERINT/
+/MONSTERCON 18 MONSTERCON/
+/MONSTERWIS 16 MONSTERWIS/
+/MONSTERDEX 22 MONSTERDEX/
+/MONSTERCHA 20 MONSTERCHA/
+/MONSTERKNACKS /MONSTERKNACK intimidate(22) MONSTERKNACK/ MONSTERKNACKS/
+/MONSTERLANG common MONSTERLANG/
+/MONSTEREQUIP none MONSTEREQUIP/
+MONSTERSECTION/
+MONSTER/
+LEFT/
+
+Sometimes a wild and powerful spirit inhabits a scarecrow and it arises as a Scarecrow Lantern. Its terrible Jack-O-Lantern head spreads fear amongst its enemies, and it possesses a strong force of will which makes it a dangerous foe. Often one of these will roam the fields of a small town or village, reinforcing the guardians and driving off more dangerous animals and monsters. They can be quite initimidating and dangerous when they go rogue.
+SUBTOPIC/
+TOPIC/
+SUBSECTION/
+SECTION/
+CHAPTER/

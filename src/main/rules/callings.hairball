@@ -1,0 +1,195 @@
+/CHAPTER" Callings "/
+
+As described in the /REF Callings REF/ topic of the chapter on player characters, callings are character archetypes. They describe the basic concept of what the character /EM is EM/ and what they do. Heroes come in many guises and the calling a player chooses for their hero will help determine how the character looks, thinks, acts, and what sorts of abilities they have. Each calling has certain elements in common which are discussed below.
+/SECTION" Attributes of Callings "/
+/SUBSECTION" Power Source "/
+
+One of the most significant aspects of a calling is its power source. Every calling has a power source. This is the wellspring from which characters of this calling draw their power. There are five power sources, and several callings draw from each of them. While their may be some similarities between callings which have the same source of power, they are all quite distinct.
+
+Mechanically every character is said to be attuned to the power source of their calling. The character's power points will be of this type and carry the power source's tag. Feats normally require power of a specific type, meaning a character may not be able to fully utilize a feat when they lack power of its source. However, it is possible for characters to attune to additional power sources, and there may be other ways to acquire or convert power from one source to another.
+
+For the most part power source is thematic, there is no specific difference between points of one source or another, but in some cases there may be feats which behave in different ways depending on the source used to power them.
+SUBSECTION/
+/SUBSECTION" Role "/
+
+Every calling has a role, which indicates the type of job that this calling is most suitable for in action situations, particularly combat. There are four of these roles and most characters of a given calling will fall into the role defined for their calling. That being said, roles are intended to help define the themes of callings, and to help the players develop a well-rounded team which can take on various opponents successfully. Roles are not meant to be absolute unbreakable things which every character must adhere to. It may well be that a given player creates a character with a given role, and then acquires boons and makes role playing choices which lead to the character acting more in a different role. This is fine, the character is simply not the most typical example of their calling. They should still be effective as played however.
+SUBSECTION/
+/SUBSECTION" Other Attributes "/
+
+/UL
+/LI /LABEL Proficiencies LABEL/ Each calling may have certain weapons, implements, and other tools with which they are especially capable. Characters of this calling are automatically granted proficiencies as described. LI/
+/LI /LABEL Defense modifier LABEL/ Every calling grants a permanent modifier to one or more defenses LI/
+/LI /LABEL Knacks LABEL/ This lists the knacks which typical characters of this calling are likely to have. These are suggestions, not requirements. LI/
+/LI /LABEL Damage die LABEL/ The size of the calling's damage die. LI/
+/LI /LABEL Features LABEL/ These are boons which every character of the given calling possesses, they don't count against the character's four starting boons. In some cases the calling asks the player to choose one choice out of several. Normally only characters with this calling may possess these boons, and they are normally only chosen during character creation. LI/
+/LI /LABEL Boons LABEL/ These are additional boons which might be selected by the character at start up. They might also be acquired later, like any other boon. LI/
+/LI /LABEL Hit points LABEL/ The number of hit points gained per level when taking this calling. LI/
+/LI /LABEL Starting hit points LABEL/ The base number of hit points a character with this calling starts with. LI/
+UL/
+SUBSECTION/
+SECTION/
+/SECTION" Descriptions "/
+/SUBSECTION" List of Callings "/
+
+The following table lists some of the basic attributes of each calling which is available.
+/DIVW=" 90%; margin-left: .5em"/
+/TABLE=" bodytable fixedtable"/
+/THEAD
+/TR /THW=" 34%"/ Power Source /THW/=" 33%"/ Calling /THW/=" 33%"/ Role TH/ TR/
+THEAD/
+/TBODY
+/TR=" martial"/ /TDR=" 3"/ Martial /TD/ Knight /TD/ Defender TD/ TR/
+/TR=" martial"/ /TD Rogue /TD/ Striker TD/ TR/
+/TR=" martial"/ /TD Monk /TD/ Defender TD/ TR/
+/TR=" elemental"/ /TDR=" 3"/ Elemental /TD/ Spell Blade /TD/ Defender TD/ TR/
+/TR=" elemental"/ /TD Alchemist /TD/ Enabler TD/ TR/
+/TR=" elemental"/ /TD Sorcerer /TD/ Striker TD/ TR/
+/TR=" spirit"/ /TD Spirit /TD/ Priest /TD/ Enabler TD/ TR/
+/TR=" life"/ /TD Life /TD/ Berserker /TD/ Striker TD/ TR/
+/TR=" shadow"/ /TD Shadow /TD/ Illusionist /TD/ Controller TD/ TR/
+/TR /TD Varies /TD/ Wizard /TD/ Controller TD/ TR/
+TBODY/
+TABLE/
+DIV/
+SUBSECTION/
+/SUBSECTION" Martial callings"/
+
+/RIGHT=" half"/
+/BOON /BOONNAME Martial Attunement BOONNAME/
+/BOONTYPE Level 1: Major BOONTYPE/
+/ASSOCIATION Martial ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION Through discipline and force of will you have tapped into the internal power of your being. DESCRIPTION/
+/BENEFITS 
+/BENEFIT
+You are attuned to the Martial power source. Your power points may be used with feats and effects having the martial source tag. You are considered a practitioner of martial power.
+BENEFIT/
+BENEFITS/
+BOON/
+RIGHT/
+
+Martial power draws from an individual's internal and inherent magical potential, and is accessed and controlled through will and discipline. Practitioners of martial power use endless practice and techniques such as shouts and the perfection of specific weapon and unarmed combat techniques. In most cases a martial hero will rely on weapons and/or her own body to prevail. For this reason they also tend to favor physical knacks such as athletics or acrobatics over intellectual pursuits. No one should be fooled however, many such heroes are quite clever, even brilliant.
+
+Martial power, being one of the most accessible sources at a basic level, has gone by many names, including Qi or Chi, etc. These are all examples of the same power source simply interpreted through the lens of different concepts and systems of thought through the ages.
+
+All characters with a martial calling gain the boon Martial Attunement.
+
+The following callings draw their power from the martial power source. 
+/SOURCE" knight.hairball"/
+/SOURCE" rogue.hairball"/
+/SOURCE" monk.hairball"/
+SUBSECTION/
+/SUBSECTION" Elemental Callings"/
+
+/RIGHT=" half"/
+/BOON /BOONNAME Elemental Infusion BOONNAME/
+/BOONTYPE Level 1: Major BOONTYPE/
+/ASSOCIATION Elemental ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION Your being has become infused with the raw power of creation, elemental power. Your body can now channel its power. DESCRIPTION/
+/BENEFITS 
+/BENEFIT
+You are attuned to the elemental power source. Your power points may be used with feats and effects having the elemental source tag. You are considered a vessel of elemental power.
+BENEFIT/
+BENEFITS/
+BOON/
+RIGHT/
+
+Elemental power is the raw power of physical creation and material existence. It both creates and destroys all that is physical. Mastery of elemental power is not easy, but it can bring great rewards and much direct power. Unfortunately it requires a highly developed mind to master the intricate power words and subtle vocal and somatic gestures required to bring forth and shape this power into a useful form. Thus many desciples of elemental power spend long periods of time in practice and research.
+
+There are actually many paths to elemental power. While all of them require study and control, some elementalists take the less disciplined approaches of merging themselves with the elements. Eventually they may entirely replace their bodies with elemental forms which are both exceedingly powerful, and often vulnerable. These beings are certainly frightening to mere mortals who can only look upon their power with awe and fear.
+
+In any case, every practitioner of elemental power must infuse a certain amount of this power into their being, taking elemental substances into their bodies in order to estblish links with the elemental chaos from which it emerges.
+
+All characters with an elemental calling gain the boon Elemental Infusion.
+
+The following callings draw their power from the elemental power source.
+/SOURCE" spellblade.hairball"/
+/SOURCE" alchemist.hairball"/
+/SOURCE" sorcerer.hairball"/
+SUBSECTION/
+/SUBSECTION" Life Callings"/
+/RIGHT=" half"/
+/BOON /BOONNAME Life Attunement BOONNAME/
+/BOONTYPE Level 1: Major BOONTYPE/
+/ASSOCIATION Life ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION 
+You are attuned to the life force which permeates all things and embues every living thing with life.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You are attuned to the life power source. Your power points may be used with feats and effects having the life source tag. You are considered a vessel of life power.
+BENEFIT/
+BENEFITS/
+BOON/
+RIGHT/
+
+Life is the power source which draws from the life energy of the Universe. It is a powerful source, which is close at hand, however it requires a fair amount of discipline to tap into. The greatest limitation with this source overall is that some areas are far removed from living beings, and thus it may require great discipline to draw power in those settings. Most practitioners find it much easier to surround themselves with life, and thus those who tap into this source are often found in densly populated areas, either human population, or animals and plant life.
+
+Life power is most effective in manipulating and enhancing the capabilities of living things. Thus practitioners of this power source, such as beast masters and druids exert a great deal of influence over animal and plant life. Bards on the other hand work mostly on humans and their ilk, though their magical music may also calm animals and even plants to a degree. Life practitioners may also manipulate the life force itself, which can prove to be deadly, though warlike or violent practitioners tend to focus on self-magic.
+
+All characters with a life calling gain the Life Attunement boon:
+
+The following callings draw their power from the life power source.
+/SOURCE" berserker.hairball"/
+SUBSECTION/
+/SUBSECTION" Spirit Callings"/
+/RIGHT=" half"/
+/BOON /BOONNAME Spiritual Attunement BOONNAME/
+/BOONTYPE Level 1: Major BOONTYPE/
+/ASSOCIATION Spirit ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION You have become connected to the spirit world and its denizens. DESCRIPTION/
+/BENEFITS 
+/BENEFIT
+You are attuned to the spirit power source. Your power points may be used with feats and effects having the spirit source tag. You are considered a practitioner of spirit power.
+BENEFIT/
+BENEFITS/
+BOON/
+RIGHT/
+
+Spirit is the source which is derived from contact with otherworldly entities. These beings hail from metaphysical realms of existence, and are able to manipulate and shape the matter and energies of the material world. Spirits have many names, including gods, demons, and ancestors. They are all beings who exhibit considerable power and influence in the world. By creating various types of relationships with these spirits heroes are able to gain access to power.
+
+Spirit power is one of the more readily accessible and frequently used types of power in the world. However, it can be dangerous, just like other power sources. Gods are sometimes jealous or demanding and always expect loyalty and fealty from their followers. Other beings may be less strict in their rules and more lenient in terms of behavior, but they are often unpredictable, vicious, profoundly alien, or lay cunning traps and schemes with which to cheat those who entreat with them.
+
+Most societies consider priests to be a vital link with gods whom they revere and worship. Other spirit power users may be more or less well-accepted. In some places certain gods may also be held in low esteem, thus even priests may find themselves unwelcome in a few places.
+
+All characters with a spirit calling gain the Spiritual Attunement boon:
+
+The following callings draw their power from the spirit power source.
+/SOURCE" priest.hairball"/
+SUBSECTION/
+/SUBSECTION" Shadow Callings"/
+
+Shadow is a power source with a dubious reputation. Shadow power is often taken to be the power of death. However death and dying are only one of the manifestations of shadow. Its primary aspect is the undoing and unknowing of things. Death brings oblivion and release from the world. Likwise shadow can undo men's thoughts, obliterate their memories, and conceal things from their minds. 
+
+While many see shadow as simply a negative force, it is a power unto itself. One can not only confuse the mind, one can actually negate the very life force with its power. Thus the necromantic arts are based on the use of shadow power, and skilled practitioners can use it to bind the bodies and spirits of the dead, creating undead beings and other similar constructions. 
+
+Practice of shadow power use is generally frowned on in many societies, as its most obvious uses involve deception and the undermining of trust and the relationships which make up a strong society. While not all societies have a negagive opinion of undeath, the practice of raising undead monsters is at best dangerous and thus necromancers and such are often shunned.
+
+And finally, mastering shadow power is difficult. The paths which one must follow in order to be initiated into the higher mysteries of shadow power are hard, well hidden, and open only to a select few. The price demanded for such knowledge can be terrifyingly high. Only those of great will power, or with extremely strong motivations, are likely to be attracted this life.
+
+All characters with a shadow calling gain the following boon:
+/BOON /BOONNAME Shadow Attunement BOONNAME/
+/BOONTYPE Level 1: Major BOONTYPE/
+/ASSOCIATION Shadow ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION You have walked the path of shadow, paid the price, and become attuned to shadow. DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You are attuned to the shadow power source. Your power points may be used with feats and effects having the shadow source tag. You are considered a practitioner of shadow power.
+BENEFIT/
+BENEFITS/
+BOON/
+
+The following callings draw their power from the shadow power source.
+/SOURCE" illusionist.hairball"/
+SUBSECTION/
+/SUBSECTION" Other"/
+
+There are a few rare callings which do not follow the path of access to a single power source. There are no general rules for these classes, each one has a unique approach to tapping into the power required to become a hero.
+/SOURCE" wizard.hairball"/
+SUBSECTION/
+SECTION/
+CHAPTER/

@@ -1,0 +1,967 @@
+/* HoML master stylesheet */
+
+:root {
+    --bodytable-header-bg: DarkBlue;
+    --bodytable-header-fg: white;
+    --bodytable-subheader-bg: blue;
+    --bodytable-subheader-fg: black;
+    --bodytable-bg: lightblue;
+    --bodytable-fg: black;
+    --atwill-bg: green;
+    --atwill-fg: white;
+    --intermittent-bg: sienna;
+    --intermittent-fg: black;
+    --vitality-bg: black;
+    --vitality-fg: white;
+    --martial-bg: red;
+    --martial-fg: black;
+    --elemental-bg: orange;
+    --elemental-fg: black;
+    --life-bg: DarkSeaGreen;
+    --life-fg: black;
+    --shadow-bg: grey;
+    --shadow-fg: black;
+    --spirit-bg: RoyalBlue;
+    --spirit-fg: white;
+    --heroic-bg: AliceBlue;
+    --heroic-fg: black;
+    --legendary-bg: Gainsboro;
+    --legendary-fg: black;
+    --mythic-bg: GoldenRod;
+    --mythic-fg: black;
+    --species-bg: LightSteelBlue;
+    --species-fg: black;
+    --calling-bg: LightYellow;
+    --calling-fg: black;
+    --companion-main-bg: DarkTurquoise;
+    --companion-main-fg: white;
+    --companion-secondary-bg: Turquoise;
+    --companion-secondary-fg: black;
+    --companion-bg: LightCyan;
+    --aquatic-bg: aqua;
+    --aquatic-fg: black;
+    --boon-title-bg: RoyalBlue;
+    --boon-title-fg: white;
+    --boon-fg: black;
+    --boon-bg: LightSteelBlue;
+    
+    --theme-bg: #e4e5d0;
+    --theme-fg: black;
+    --chapter-bg: #8a8d4e;
+    --chapter-fg: white;
+    --book-bg: #fdfdfc;
+    --book-fg: black;
+    --section-bg: #e4e5d0;
+    --section-fg: black;
+    --subsection-bg: #eaebda;
+    --subsection-fg: black;
+    --topic-bg: #eff0e3;
+    --topic-fg: black;
+    --document-bg: black;
+    --document-fg: GoldenRod;
+    --page-bg: Ivory;
+    --matte-bg: white;
+    --box-bg: #c4c798;
+    --box-fg: black;
+    --affliction-bg: MidnightBlue;
+    --affliction-fg: white;
+    --disease-bg: PaleGreen;
+    --disease-fg: black;
+    --wound-bg: Maroon;
+    --wound-fg: white;
+}
+
+.w3-theme-l5 {color:#000 !important; background-color:#fdfdfc !important}
+.w3-theme-l4 {color:#000 !important; background-color:#fafaf6 !important}
+.w3-theme-l3 {color:#000 !important; background-color:#f4f5ed !important}
+.w3-theme-l2 {color:#000 !important; background-color:#eff0e3 !important}
+.w3-theme-l1 {color:#000 !important; background-color:#eaebda !important}
+.w3-theme-d1 {color:#000 !important; background-color:#d4d6b5 !important}
+.w3-theme-d2 {color:#000 !important; background-color:#c4c798 !important}
+.w3-theme-d3 {color:#000 !important; background-color:#b4b77c !important}
+.w3-theme-d4 {color:#fff !important; background-color:#a4a760 !important}
+.w3-theme-d5 {color:#fff !important; background-color:#8a8d4e !important}
+
+.w3-theme-light {color:#000 !important; background-color:#fdfdfc !important}
+.w3-theme-dark {color:#fff !important; background-color:#8a8d4e !important}
+.w3-theme-action {color:#fff !important; background-color:#8a8d4e !important}
+
+.w3-theme {color:#000 !important; background-color:#e4e5d0 !important}
+.w3-text-theme {color:#e4e5d0 !important}
+.w3-border-theme {border-color:#e4e5d0 !important}
+
+.w3-hover-theme:hover {color:#000 !important; background-color:#e4e5d0 !important}
+.w3-hover-text-theme:hover {color:#e4e5d0 !important}
+.w3-hover-border-theme:hover {border-color:#e4e5d0 !important}
+
+body {
+    background-color: var(--page-bg);
+    
+}
+
+body > div {
+    width: 75%;
+    margin-right: auto;
+    margin-left: 23%;
+    padding: 1em;
+    background-color: var(--matte-bg);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 1000px;
+/*    margin: auto; */
+}
+
+body > div > div {
+    width: 100%;
+    background-color: var(--theme-bg);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3em;
+}
+
+body > div > div p {
+    padding-right: .25em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+nav {
+    width: 22%;
+    height: 100%;
+    position: fixed;
+    display: block;
+    overflow: auto;
+}
+
+nav > .flexrow {
+    flex-direction: column;
+}
+
+nav div.title {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: var(--chapter-bg);
+    color: var(--chapter-fg);
+    margin-bottom: .2em;
+    padding-left: .25em;
+    padding-right: .25em;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+h1 {
+    font-size: 1em;
+}
+
+header div.title {
+    display: block;
+    font-weight: bold;
+    font-size: 2em;
+    font-style: italic;
+    text-align: Right;
+    width: 98%;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-right: 2%;
+    background-color: black;
+    color: var(--document-fg);
+}
+
+header {
+    position: relative;
+    margin-bottom: .5em;
+}
+
+.headfillbox {
+    float: left;
+    width: 35%;
+    height: 7.8em;
+    clear: none;
+    margin-right: .5em;
+/*    border: 1px solid red; */
+}
+
+header > box {
+    display: block;
+    position: absolute;
+    width: 30%;
+    top: 3em;
+    left: 3em;
+    background-color: var(--box-bg);
+    border: 1px solid white;
+    transform-style: preserve-3d;
+}
+
+header > box::before {
+    position: absolute;
+    content: url('../vine-corner-green.svg');
+    top: -1.25em;
+    left: -1.25em;
+    width: 13em;
+    height: 13em;
+    transform: translateZ(10px)
+}
+
+header > div.mastertitle > div.topborder {
+    width: 100%;
+    background-image: url('../border1.png');
+    height: 25px;
+}
+
+header > div.mastertitle > div.bottomborder {
+    width: 100%;
+    background-image: url('../border1btm.png');
+    height: 25px;
+}
+
+header > box > subtitle {
+    display: block;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 1em;
+    text-align: center;
+    padding: 10px;
+    background-color: inherit;
+}
+
+author {
+    display: block;
+    font-weight: bold;
+    font-style: italic;
+    font-size: .8em;
+    text-align: center;
+    padding: 10px;
+    background-color: inherit;
+}
+
+copyright {
+    display: block;
+    font-weight: normal;
+    font-style: normal;
+    font-size: .6em;
+    text-align: center;
+    background-color: inherit;
+}
+
+section.chapter > details > summary > h1 {
+    display: inline-block;
+    font-size: 1.6em;
+    font-weight: bold;
+    background-color: var(--chapter-bg);
+    color: var(--chapter-fg);
+    margin-bottom: .2em;
+    margin-top: 0;
+    cursor: pointer;
+    padding-left: .25em;
+    padding-right: .25em;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+section.introduction > details > summary > h1 {
+    display: inline-block;
+    font-size: 1.6em;
+    font-weight: bold;
+    background-color: var(--chapter-bg);
+    color: var(--chapter-fg);
+    margin-bottom: .2em;
+    margin-top: 0;
+    cursor: pointer;
+    padding-left: .25em;
+    padding-right: .25em;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+section.section > h2 {
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    font-size: 1.4em;
+    text-decoration: underline;
+    font-style: italic;
+    background-color: var(--section-bg);
+    color: var(--section-fg);
+    margin-top: 0;
+    margin-bottom: .2em;
+    padding-left: .125em;
+}
+
+section.species > div.title {
+    display: block;
+    font-weight: bold;
+    font-size: 1.4em;
+    text-decoration: underline;
+    font-style: italic;
+    background-color: var(--section-bg);
+    color: var(--section-fg);
+    margin-bottom: .2em;
+    margin-left: .125em;
+}
+
+section.species > .traits {
+    display: block;
+    width: 30%;
+    float: left;
+    border: 1px solid var(--species-fg);
+    background-color: var(--species-bg);
+    color: var(--species-fg);
+    margin: .5em;
+    padding: .2em;
+}
+
+section.species > .traits > :not(:last-child) {
+    display: flex;
+    width: 100%;
+    padding-top: .1em;
+    padding-bottom: .1em;
+    border-bottom: 1px solid grey;
+}
+
+section.species > .traits > :last-child {
+    display: flex;
+    width: 100%;
+    padding-top: .1em;
+    padding-bottom: .1em;
+}
+
+section.species > .traits > .trait > .name {
+    width: 50%;
+    text-align: right;
+    padding-right: .2em;
+    border-right: 1px solid grey;
+}
+
+section.species > .traits > .trait > .value {
+    width: 50%;
+    text-align: left;
+    padding-left: .2em;
+}
+
+section.calling > div.title {
+    clear: both;
+    display: block;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-decoration: underline;
+    font-style: italic;
+    background-color: var(--section-bg);
+    color: var(--section-fg);
+    margin-bottom: .2em;
+    margin-left: .125em;
+}
+
+section.calling > .traits {
+    display: block;
+    width: 30%;
+    float: left;
+    border: 1px solid var(--calling-fg);
+    background-color: var(--calling-bg);
+    color: var(--calling-fg);
+    margin: .5em;
+    padding: .2em;
+}
+
+section.calling > .traits > :not(:last-child) {
+    display: flex;
+    width: 100%;
+    padding-top: .1em;
+    padding-bottom: .1em;
+    border-bottom: 1px solid grey;
+}
+
+section.calling > .traits > :last-child {
+    display: flex;
+    width: 100%;
+    padding-top: .1em;
+    padding-bottom: .1em;
+}
+
+section.calling > .traits > .trait > .name {
+    width: 50%;
+    text-align: right;
+    padding-right: .2em;
+    border-right: 1px solid grey;
+}
+
+section.calling > .traits > .trait > .value {
+    width: 50%;
+    text-align: left;
+    padding-left: .2em;
+}
+
+section.calling > section.topic {
+    clear: both;
+}
+
+section.boon {
+    border: 1px solid black;
+    margin-bottom: .5em;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+section.boon > .traits > :first-child {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    background-color: var(--boon-title-bg);
+    color: var(--boon-title-fg);
+    padding: .125em;
+    border-bottom: 1px solid grey;
+}
+
+section.boon > .traits > :not(:first-child) {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    background-color: var(--boon-bg);
+    color: var(--boon-fg);
+    padding: .125em;
+}
+
+section.boon > .traits > .widetrait {
+    width: 100%;
+    display: block;
+    background-color: var(--boon-bg);
+    color: var(--boon-fg);
+}
+
+section.boon > .traits > .widetrait > p {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+section.boon > .traits > .trait > div {
+    width: 50%;
+}
+
+section.boon > .traits > .trait > :not(:first-child) {
+    width: 50%;
+    text-align: right;
+}
+
+section.affliction {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: .5em;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+section.affliction > .traits > :first-child {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    padding: .125em;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+section.affliction > .traits > :not(:first-child) {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    padding: .125em;
+}
+
+section.affliction > .traits > .widetrait {
+    width: 100%;
+    display: block;
+}
+
+section.affliction > .traits > .widetrait > p {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+section.affliction > .traits > .trait > :first-child {
+/*    width: 50%; */
+    flex: auto;
+    font-weight: bold;
+}
+
+section.affliction > .traits > .trait > :not(:first-child) {
+/*    width: 50%; */
+    flex: auto;
+    text-align: right;
+}
+
+ul.compact {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+section.feat {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: .5em;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+section.feat > .traits > :first-child {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    padding: .125em;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+nav div.flexcell {
+    border: 1px solid grey;
+}
+
+table.toctable {
+    width: 100%;
+}
+
+table.toctable caption {
+    font-weight: bold;
+    border-bottom: 1px solid grey;
+    text-align: left;
+}
+
+table tr.section > td {
+    padding-left: 1em;
+}
+
+table tr.subsection > td {
+    padding-left: 2em;
+}
+
+table tr.topic > td {
+    padding-left: 3em;
+}
+
+.flexrow {
+    clear: both;
+    display: flex;
+}
+
+.flexcell {
+    flex: 1;
+}
+
+.flavortext {
+    display: block !important;
+    width: 100%;
+    font-style: italic;
+    text-align: center;
+}
+
+section.feat > .traits > :not(:first-child) {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    background-color: inherit;
+    color: inherit;
+    padding: .125em;
+}
+
+section.feat > .traits > .widetrait {
+    width: 100%;
+    display: block;
+    background-color: inherit;
+    color: inherit;
+}
+
+section.feat > .traits > .widetrait > p {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+section.feat > .traits > .trait > div {
+    width: 50%;
+}
+
+section.feat > .traits > .trait > :not(:first-child) {
+    width: 50%;
+    text-align: right;
+}
+
+section.monster {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: .5em;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+section.monster > .monsterheader {
+    box-sizing: border-box;
+    width: 100%;
+    padding: .125em;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    background-color: black;
+}
+
+div.mrow > div.value:not(:first-child) {
+    text-align: right;
+}
+
+section.monster > :last-child {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;    
+}
+
+section.monster > .monsterheader > :first-child {
+    font-weight: bold;
+}
+
+section.monster .value {
+    flex: 1;
+}
+
+div.mheader {
+    width: 100%;
+    border-bottom: 1px solid black;
+    background-color: darkred;
+    color: white;
+    font-weight: bold;
+}
+
+div.monstersection {
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid black;
+    background-color: darkgrey;
+}
+
+div.mrow {
+    box-sizing: border-box;
+    padding-left: .125em;
+    padding-right: .125em;
+    display: flex;
+    width: 100%;
+}
+
+section.subsection > h3 {
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-decoration: underline;
+    color: var(--subsection-fg);
+    background-color: var(--subsection-bg);
+    margin-top: 0;
+    margin-bottom: .5em;
+    padding-left: .125em;
+}
+
+section.topic {
+    margin-bottom: .25em;
+}
+
+section.subsection {
+    margin-bottom: .25em;
+}
+
+section.section {
+    margin-bottom: .25em;
+}
+
+section.chapter {
+    margin-bottom: .25em;
+    clear: both;
+}
+
+section.introduction {
+    margin-bottom: .25em;
+}
+
+section.topic > h4 {
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: var(--topic-fg);
+    background-color: var(--topic-bg);
+    margin-top: 0;
+    margin-bottom: .125em;
+    padding-left: .125em;
+}
+
+div.subtopic > span {
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    font-size: 1em;
+    text-decoration: none;
+    color: var(--topic-fg);
+/*    background-color: var(--topic-bg); */
+    margin-top: 0;
+    margin-bottom: .125em;
+    padding-left: .125em;
+}
+
+div.book {
+    width: 100%;
+    display: block;
+    margin-bottom: .5em;
+    clear: both;
+}
+
+div.book > div.title {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    position: relative;
+    width: 97%;
+    padding-left: 3%;
+    display: block;
+    font-weight: bold;
+    font-size: 1.8em;
+    text-decoration: none;
+    color: var(--book-fg);
+    background-color: var(--book-bg);
+    margin-bottom: .2em;
+/*    transform-style: preserve-3d; */
+}
+
+div.book > div.title::before {
+    content: url('../TrnsltLife-FlameKnot.svg');
+    position: absolute;
+    top: .15em;
+    left: -.1em;
+    width: 1em;
+    height: 1em;
+/*    transform: translateZ(-10px) */
+}
+
+div.book > subtitle {
+    display: block;
+    font-style: italic;
+    margin-bottom: .5em;
+    margin-left: .5em;
+}
+
+p {
+    margin-left: .5em;
+    text-indent: .5em;
+}
+
+.bodytable {
+    background-color: lightblue;
+    border-collapse: collapse;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+.fixedtable {
+    table-layout: fixed;
+    width: 100%;
+/*    padding-left: 2.25em;
+    padding-right: 2.25em;
+    box-sizing: border-box; */
+}
+
+.bodytable th {
+    color: white;
+    background-color: DarkBlue;
+    font-weight: bold;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.bodytable td {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.disease {
+    background-color: var(--disease-bg);
+    color: var(--disease-fg);
+}
+
+.wound {
+    background-color: var(--wound-bg);
+    color: var(--wound-fg);
+}
+
+.affliction {
+    background-color: var(--affliction-bg);
+    color: var(--affliction-fg);
+}
+
+.aquatic {
+    background-color: var(--aquatic-bg);
+}
+
+.martial {
+    background-color: var(--martial-bg);
+    color: var(--martial-fg);
+}
+
+.elemental {
+    background-color: var(--elemental-bg);
+    color: var(--elemental-fg);
+}
+
+.life {
+    background-color: var(--life-bg);
+    color: var(--life-fg);
+}
+
+.shadow {
+    background-color: var(--shadow-bg);
+    color: var(--shadow-fg);
+}
+
+.spirit {
+    background-color: var(--spirit-bg);
+    color: var(--spirit-fg);
+}
+
+.none {
+    background-color: lightgrey;
+    color: black;
+}
+
+.heroic {
+    color: var(--heroic-fg);
+    background-color: var(--heroic-bg);
+}
+
+.legendary {
+    color: var(--legendary-fg);
+    background-color: var(--legendary-bg);
+}
+
+.mythic {
+    color: var(--mythic-fg);
+    background-color: var(--mythic-bg);
+}
+
+.floatleft {
+    float: left;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+.floatright {
+    float: right;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+div.benefit {
+    width: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+.center {
+    text-align: center;
+}
+
+.reference {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.half {
+    width: 50%;
+}
+
+.bookfooter {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    clear: both;
+    width: 30%;
+    background-image: url('../Celtic-Knot-Line-Art-Divider.svg');
+    height: .5em;
+}
+
+.todo {
+    color: red;
+}
+
+/* Collapsible elements in TOC */
+
+.collapsible {
+  cursor: pointer;
+}
+
+#legendaryheroes {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-image: url('../perseus.jpg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: scroll;
+    background-size: cover;
+    width: 360px;
+    height: 520px;
+}
+
+#mythsandmonsters {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-image: url('../unknown_species.jpg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: scroll;
+    background-size: cover;
+    width: 650px;
+    height: 220px;
+}
+
+#livinglegends {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-image: url('../ancient_city.jpg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: scroll;
+    background-size: cover;
+    width: 650px;
+    height: 276px;
+}

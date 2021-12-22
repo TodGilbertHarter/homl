@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://www.giantelectronicbrain.com/css/homl.css">
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+	<title>HoML: Sign Up</title>
+  </head>
+ 
+  <body>
+    <section class="section">
+      <h1>Create Account</h1>
+      <p>Enter email and a password below to create an account. Don't reuse an existing password that works anywhere else!
+      This project is built in a secure fashion to the degree that I can achieve that, but it is <em>free</em> and there are no
+      hard guarantees! Be safe, make a unique password, if you lose it later or something, simply email me at 
+      <a href='mailto:tharter@giantelectronicbrain.com'>tharter@giantelectronicbrain.com</a> and we'll sort it out. Likewise
+      <em>do not</em> reveal any personal information here, I cannot be responsible for who signs up or what they do. I will
+      help you out if there's a problem, but this is a highly experimental and free project, and I'm not able to police every
+      interaction proactively or vet all users.</p>
+      <div>
+      	<div><label>Email:</label><input type='text' id='email'></div>
+      	<div><label>Password:</label><input type='password' id='password'></div>
+      	<div><button onclick='createClicked()'>Create</button></div>
+      </div>
+    </section>
+<script>
+const firebaseConfig = {
+	    apiKey: "AIzaSyBUvzyIX-YQSEcQXdBdrHNgyOWTS5hVwx4",
+	    authDomain: "heroes-of-myth-and-legend.firebaseapp.com",
+	    projectId: "heroes-of-myth-and-legend",
+	    storageBucket: "heroes-of-myth-and-legend.appspot.com",
+	    messagingSenderId: "670305006733",
+	    appId: "1:670305006733:web:4086a48931a752cbf85ec4",
+	    measurementId: "G-PY517GF9BS"
+	  };
+
+const app = firebase.initializeApp(firebaseConfig);
+
+function createClicked() {
+	const email = document.getElementById('email').value;
+	const password = document.getElementById('password').value;
+
+	createUserWithEmailAndPassword(email,password);
+}
+
+function createUserWithEmailAndPassword(email,password) {
+	firebase.auth().createUserWithEmailAndPassword(email, password)
+	  .then((userCredential) => {
+	    var user = userCredential.user;
+	    var player = {
+	    	email: email,
+	    	loggedin: Timestamp.fromDate(new Date())
+	    };
+	    var db = firebase.firestore();
+		db.collection('players').add(email);
+	  })
+	  .catch((error) => {
+	    var errorCode = error.code;
+	    var errorMessage = error.message;
+	    alert("Please correct the following error:" +errorMessage);
+	  });
+}
+</script>
+</body>
+</html>

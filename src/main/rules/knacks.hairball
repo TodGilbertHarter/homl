@@ -1,0 +1,212 @@
+/CHAPTER" Knacks and Aspects "/
+
+Knacks represent the major approaches which characters take when they attempt to solve problems, and aspects represent the corresponding way that a given problem is being solved. The following Aspects exist, and each one has a similarly named knack which it pairs with.
+
+/DIV=" floatleft "/
+/TABLE=" bodytable "/
+/THEAD
+/TR /TH Aspect /TH/ Knack /TH/ Ability Score TH/ TR/
+THEAD/
+/TBODY
+/TR /TD Acrobatic /TD/ Acrobatics /TD/ Dexterity TD/ TR/
+/TR /TD Arcane /TD/ Arcana /TD/ Intelligence TD/ TR/
+/TR /TD Athletic /TD/ Athletics /TD/ Strength TD/ TR/
+/TR /TD Bluffing /TD/ Bluff /TD/ Charisma TD/ TR/
+/TR /TD Diplomatic /TD/ Diplomacy /TD/ Charisma TD/ TR/
+/TR /TD Engineered /TD/ Engineering /TD/ Intelligence TD/ TR/
+/TR /TD Health /TD/ Healing /TD/ Wisdom TD/ TR/
+/TR /TD Historical /TD/ History /TD/ Intelligence TD/ TR/
+/TR /TD Insightful /TD/ Insight /TD/ Wisdom TD/ TR/
+/TR /TD Intimidating /TD/ Intimidation /TD/ Charisma TD/ TR/
+/TR /TD Leading /TD/ Leadership /TD/ Charisma TD/ TR/
+/TR /TD Natural /TD/ Nature /TD/ Wisdom TD/ TR/
+/TR /TD Perceptive /TD/ Perception /TD/ Wisdom TD/ TR/
+/TR /TD Religious /TD/ Religion /TD/ Intelligence TD/ TR/
+/TR /TD Stealthy /TD/ Stealth /TD/ Dexterity TD/ TR/
+/TR /TD Streetwise /TD/ Streetwise /TD/ Charisma TD/ TR/
+/TR /TD Surviving /TD/ Survival /TD/ Constitution TD/ TR/
+/TR /TD Thieving /TD/ Thievery /TD/ Dexterity TD/ TR/
+TBODY/
+TABLE/
+DIV/
+
+The chapter /REF How to Play REF/ contains the /REF Checks and Actions REF/ rules, which explain that when a player announces an action for his character, the GM will determine, based on the action and intent, which aspect is governing that check, and thus which Knack is appropriate. If the character has proficiency with that Knack, then they will gain a proficiency modifier on the resulting check. The character will also benefit from their ability modifier for the relevant ability, etc. as explained under /REF Checks and Actions REF/ .
+/SECTION" Aspect Descriptions "/
+
+Each Aspect describes an area of endeavor and style of action. The GM can use the following descriptions to determine which aspect is governing a specific action, and the players can use them to decide which knacks to give their characters proficiency in. As a result each character will generally favor certain approaches to problem solving and excel in different ways. 
+
+/SUBSECTION" Acrobatic "/
+/LABEL Knack LABEL/ Acrobatics, ability modifier DEX
+
+This aspect governs all sorts of situations in which a character might need to act in a highly coordinated and controlled manner, exercise good balance, precision, and similar kinds of actions. Tumbling, falling, narrow crossings, handling slippery or treacherous conditions, these are all the kinds of situations which would be governed by the acrobatic aspect. This aspect might also govern actions in combat such as dodging attacks or avoiding attempts to grab or restrain the character.
+SUBSECTION/
+
+/SUBSECTION" Arcane "/
+/LABEL Knack LABEL/ Arcana, ability modifier INT
+
+This aspect governs all sorts of situations in which a character needs esoteric or specialized knowledge of magical or otherworldly things. Reading magical writing, detecting magic, analyzing magic, or otherworldly forces. Performing research on magical topics and procedures, properly performing rituals, these are all topics related to arcana. 
+SUBSECTION/
+/SUBSECTION" Athletic "/
+/LABEL Knack LABEL/ Athletics, ability modifier STR
+
+This aspect deals with anything requiring strength, power, and overall athletic ability, such as running, jumping, climbing, swimming, etc. Anything that mostly requires a strong body and benefits from athletic practice is governed by the athletic aspect. This is particularly appropriate for actions which are mostly or completely strength related.
+SUBSECTION/
+/SUBSECTION" Bluffing "/
+/LABEL Knack LABEL/ Bluff, ability modifier CHA
+
+This aspect governs anything where deception is being employed. Anytime a character attempts to mislead, misdirect, fool, or simply outright lie to an NPC they will employ the Bluff knack. This included things like trying to pass off fake papers or other sorts of cons and scams as well. 
+SUBSECTION/
+/SUBSECTION" Diplomatic "/
+/LABEL Knack LABEL/ Diplomacy, ability modifier CHA
+
+The diplomatic aspect governs all situations involving befriending, negotiating with, or otherwise interacting with other people in which the character is relatively honest and not using threats or lies. Most business deals, alliances, and similar situations will be governed by this aspect. Diplomatic characters are able to make friends and allies, and get deals done.
+
+SUBSECTION/
+/SUBSECTION" Engineered "/
+/LABEL Knack LABEL/ Engineering, ability modifier INT
+
+The engineered aspect governs all situations involving a knowledge and practice of mechanics, construction, and similar. When a character builds something, assesses the function of a thing, repairs it, tries to understand it, etc. then the action is controlled by this aspect.
+SUBSECTION/
+/SUBSECTION" Health "/
+/LABEL Knack LABEL/ Healing, ability modifier WIS
+
+The health aspect governs all situations where a character is healing another, providing health advice, understanding a disease, curing a wound, treating poison, etc. 
+SUBSECTION/
+/SUBSECTION" Historical "/
+/LABEL Knack LABEL/ History, ability modifier INT
+
+The historical aspect governs all actions which relate to knowing, understanding, researching, or explaining anything historical, or an action where historical knowledge or understanding could be highly useful. Characters with a history knack tend to have an understanding of history and the nature of historical processes, and to use this to draw conclusions, reason about the current situation, etc. 
+SUBSECTION/
+/SUBSECTION" Insightful "/
+/LABEL Knack LABEL/ Insight, ability modifier WIS
+
+The insightful aspect deals with situations in which a character takes an action which relies on understanding another person, their motivations, personality, and likely behavior. It also deals with being able to spot information about people based on this understanding. Generally it can come into play when determining the truthfulness of a statement, reliability of an NPC, etc.
+SUBSECTION/
+/SUBSECTION" Intimidating "/
+/LABEL Knack LABEL/ Intimidation, ability modifier CHA
+
+The intimidating aspect deals with actions related to frightening, cowing, or threatening others. Any time a character attempts to get what he wants by threat, then the intimidation knack could be used.
+SUBSECTION/
+/SUBSECTION" Leading "/
+/LABEL Knack LABEL/ Leadership, ability modifier CHA
+
+The leading aspect comes into play whenever a character attempts to command others, or when attempting to understand a command situation, such as knowing what commands an NPC might follow or not follow, or who is in command in a given situation.
+SUBSECTION/
+/SUBSECTION" Natural "/
+/LABEL Knack LABEL/ Nature, ability modifier WIS
+
+The natural aspect governs when an action is taken which relies on understanding or utilizing the natural aspect of a thing. This could be taming an animal, finding food in the wilderness, orienteering, or coming up with information on things in nature.
+SUBSECTION/
+/SUBSECTION" Perceptive "/
+/LABEL Knack LABEL/ Perception, ability modifier WIS
+
+The perceptive aspect governs whenever a character is looking for something, watching something, or attempting to notice some clue or attribute of a place or situation. It could be used if a character searched an area, or attempted to track an enemy, etc.
+SUBSECTION/
+/SUBSECTION" Religious "/
+/LABEL Knack LABEL/ Religion, ability modifier INT
+
+The religious aspect governs any situation where a character is exercising spiritual or religious understanding or knowledge. This would be the case when needing to know facts about a religion or religious or spiritual practice or ritual.
+SUBSECTION/
+/SUBSECTION" Stealthy "/
+/LABEL Knack LABEL/ Stealth, ability modifier DEX
+
+The stealthy aspect governs all attempts to hide, sneak, conceal, or ambush. 
+/TOPIC" Hiding"/
+
+A character can become hidden by making a Stealth check. This check will produce a result, which remains in effect until the character stops being hidden for some reason. The character will be hidden from NPCs if his check result exceeds the DV of the NPC's perception, which is their level's DV + WIS + proficiency bonus; it may appear in the knacks section of some monster's stat blocks if they are proficient. When PCs are trying to spot a hidden NPC they use either an active perception check, or a passive perception check may be employed if the character is not actively attempting to spot hidden things. The DV is creature level + DEX + proficiency bonus. Again, a stealth proficiency bonus will usually be noted in the knacks section of monster stat blocks.
+
+In order for a character to become hidden she must have cover or concealment, be out of the line of sight of the character she is attempting to hide from; or be unseen due to invisibility, darkness or some other circumstance. If one of these conditions is not met, then hiding is impossible; but note that the conditions may be met with respect to some characters and not others. A character may become hidden only from some of its opponents.
+
+If a character makes an attack or uses a power on a target which has an effect on that target then he becomes visible to the target at the end of that action. If a hidden character moves into the line of sight of another character and lacks cover or concealment and is not unseen, then he becomes visible immediately and loses the benefits of being hidden at the end of his current action (IE for the duration of the action any attacks against him still suffer disadvantage and the character may claim to be hidden for other rules purposes). If a character makes a significant noise (talking, shouting, etc, but not whispering) then she is no longer hidden. If a character has a light source in a dark area then she cannot hide and is no longer hidden as soon as the light is manifested.
+
+If a hidden character moves, then it may be detected. Movement of less than 3 squares in a turn will not reveal the character, but any movement of three or more squares requires making a new stealth check, with disadvantage.
+
+Outside of action sequences stealth might be employed without concealment, as long as the character is out of the normal line of sight of another the check can be made and the other character will not notice them if it is successful. Alert characters are hard to sneak up on, and inattentive ones might be quite easy.
+
+Stealth could be used to hide things besides a character. It could be used to conceal tracks, to camouflage something, etc. These checks work essentially in the same fashion outlined above. The feasibility and amount of time required, and any possible adjustments to the check result are up to the GM.
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Streetwise "/
+/LABEL Knack LABEL/ Streetwise, ability modifier CHA
+
+This aspect governs all situations where an action is taken which relies on understanding or utilizing the social and political organization of some sort of inhabited location. It might come into play when determining who has influence, where things are located, how the power structure and politics of an urban area work, etc. 
+SUBSECTION/
+/SUBSECTION" Surviving "/
+/LABEL Knack LABEL/ Survival, ability modifier CON
+
+This aspect governs situations where a character is enduring, resisting, or fortifying himself against an environmental condition, resisting an affliction, or attempting accomlish some action despite adverse conditions.
+SUBSECTION/
+/SUBSECTION" Thieving "/
+/LABEL Knack LABEL/ Thievery, ability modifier DEX
+
+This aspect governs attempts to steal, legerdemain, slight of hand, and dealing with the common situations encountered by those who appropriate the goods of others by nefarious means. 
+SUBSECTION/
+SECTION/
+/SECTION" Proficiency"/
+
+Characters will have proficiency with certain knacks, based on their calling, possibly race, and granted by some boons. For example, a character might have stealth proficiency. In this case, they will get a proficiency modifier of +5 when they carry out an action governed by the stealthy aspect. As described in the rules for making checks, proficiency always grants a +5 bonus.
+/SUBSECTION" Boons"/
+
+The following boons exist which can give a character a proficiency bonus. There are also many other boons which can incidentally grant these things. These may be granted whenever a character spends time in a situation where they may learn something.
+/FLEXROW
+/FLEXCELL
+/BOON /BOONNAME Knack BOONNAME/
+/BOONTYPE Level: 1 Major BOONTYPE/
+/ASSOCIATION None ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You have a knack for handling situations governed by a certain aspect.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT Pick a knack, you have proficiency with this knack. BENEFIT/
+BENEFITS/
+BOON/
+/BOON /BOONNAME Knowledge BOONNAME/
+/BOONTYPE Level: 1 Minor BOONTYPE/
+/ASSOCIATION None ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You are knowledgeable on some specific subject, such as the history of a given place, area, or family; or a given activity, such as hunting, farming, bow making, etc.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT Pick an area to be knowledgeable about, you gain a proficiency bonus when dealing with things in that domain. BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /BOONNAME Proficiency BOONNAME/
+/BOONTYPE Level: 1 Minor BOONTYPE/
+/ASSOCIATION None ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You are proficient in the use of a tool, weapon, or implement.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT Pick a tool, weapon, or implement, you have proficiency with this item. BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+FLEXROW/
+SUBSECTION/
+SECTION/
+/SECTION" Other Proficiencies"/
+
+Beyond a character's knacks, they may also be good at certain specific things. In particular the use of tools, weapons, and implements are subject to proficiency bonuses.
+/SUBSECTION" Tools"/
+
+Any category of equipment might be the subject of proficiency. For example a given character might be an expert with all sorts of climbing gear. This character would gain a proficiency bonus on checks related to using this sort of gear, that is ropes, pitons, carabiners, grappling hooks, etc. Another character might have proficiency with lockpicking tools, etc.
+SUBSECTION/
+/SUBSECTION" Professions"/
+
+Some characters may be specifically experts in certain fields of knowledge. While knacks will provide access to a certain amount of general knowledge proficiency, a character might also have very specific types of information, probably related to some sort of profession or similar life activity. Thus a character who is a farmer has specific knowledge of local crops, domestic animals, and farming implements and techniques.
+SUBSECTION/
+/SUBSECTION" Weapons"/
+
+This is a very significant area of expertise. Some characters will have specific knowledge in the use of particular weapons, granting them a proficiency bonus when using the weapon in combat. In order to gain the bonus, the character must have the weapon in hand. Note that there are some restrictions here, the weapon must actually be a valid weapon for use in the specific type of attack being made. If the weapon is used defensively, then again, it must be appropriate, you cannot use a bow against close attacks for example.
+SUBSECTION/
+/SUBSECTION" Implements"/
+
+Implements are magical instruments which are used with some feats. They are virtually identical to weapons in terms of the rules governing them, and some implements actually make reasonable weapons (and vice versa). Use of implements on the defensive is possible, but note that having implement proficiency with a specific item is not interchangeable with weapon proficiency with the same item. Thus a wizard with staff implement proficiency won't be able to claim the proficiency bonus when parrying a weapon attack with the staff, unless some sort of feat which dictates otherwise is in play.
+SUBSECTION/
+SECTION/
+CHAPTER/

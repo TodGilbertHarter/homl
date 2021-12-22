@@ -1,0 +1,42 @@
+/CALLING" Sorcerer"/
+/TRAITS
+/ROLE" Striker"/
+/POWERSOURCE" Elemental"/
+/DAMAGEDIE" D8"/
+/WEAPONS" Any 1"/
+/IMPLEMENTS" TBD"/
+/KNACKS" Survival, Arcana"/
+/HITPOINTS" 5"/
+/STARTHITPOINTS" 9"/
+TRAITS/
+
+Sorcerers have taken attunement to the elemental forces to an extreme; they are endowed by some peculiarity of their heritage, exposure to some sort of powerful magic, etc with the ability to generate magical effects. Different types of sorcerers tap into their power source in different ways and their powers come from different circumstances. Some sorcerers have a magical heritage, such as the blood of dragons in their ancestry; other sorcerers have been exposed to extreme magic; some perhaps have interacted with powerful elemental beings, either serving them or being served by them. Some sorcerers might be channeling elemental power emanating from a certain location, such as a volcano or the deep ocean. 
+/FEATURES
+/LABEL Choose one of the following LABEL/
+/FLEXROW
+/FLEXCELL
+/BOON /BOONNAME Draconic Bloodline BOONNAME/
+/BOONTYPE Sorcerer Calling Feature BOONTYPE/
+/ASSOCIATION Sorcerer Calling ASSOCIATION/
+/PREREQUISITES Sorcerer Calling PREREQUISITES/
+/DESCRIPTION
+Somewhere in your ancestry is the blood of dragons. Members of your family sometimes exhibit astonishing natural magical power. 
+DESCRIPTION/
+/BENEFITS
+/BENEFIT 
+Choose one of the following damage types: Fire, Cold, Lightning, and Caustic.You gain the following benefits.
+    •  You gain a +1 permanent bonus to attack rolls of attacks doing the chosen damage type.
+    • Once per turn you may inflict 2d10 bonus damage to one target of an attack doing the chose damage type. This damage bonus increases to 3d10 at legendary levels and 5d10 at mythic levels.
+    • Spend one Vitality Point and exchange any one selected power you have for another power choice granted by a boon or class feature possessed by you of a level you could use. Your selection reverts to your usual selection after the next recovery.
+    • You have protection from the same damage type selected above.
+You gain the Dragon tag
+BENEFIT/
+/BENEFIT
+You can speak with dragons; they may or may not listen.
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+FLEXROW/
+FEATURES/
+CALLING/

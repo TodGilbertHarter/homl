@@ -1,0 +1,351 @@
+/CHAPTER" Player Characters "/
+
+Player characters, PCs or heroes, are the alter-egos of the players in HoML. Each player normally plays the role of a single hero which they utilize in a HoML session; although they might switch characters or play different characters at different times. The rules in this chapter explain how to construct a PC and then discusses what happens when a PC advances in level.
+/SECTION" Overview of PCs "/
+
+Player characters have a number of standard attributes which are used to define them. Some of these are more significant than others. Four things are particularly significant and will be noted here.
+/SUBSECTION" Species "/
+
+Every character belongs to some species. This defines the character's basic physical parameters. A detailed description of various possible choices of species is presented in a later chapter. Species choice is generally up to the players. The choice will make certain boons available, and apply some adjustments to the character. For example dwarves move more slowly than other characters, but are also extremely resistant to certain kinds of effects. Humans are the most common type of character; other species might be allowable depending on the desires of the participants in the game.
+SUBSECTION/
+/SUBSECTION" Calling "/
+
+Every PC has a calling, which is a general indication of the character's role in the world; a knight is a member of a hereditary caste of specialists in fighting with weapons; a wizard is a practitioner and student of magic, etc. Most callings will define a power source for the character; this is the characters primary source of power. They might also call on other sources at times, but the source associated with their calling is the basis of their power as a hero.
+
+Calling defines the character's core combat role; each calling is associated with a particular role, and a character will generally function well in that role, although they may also be capable of filling other roles. Thus a knight calling has a defender role, and a wizard calling has a controller role. In a fight most knights will stand in the front lines against their opponents, prevent them from going where they please, and engage in melee combat with them. A wizard on the other hand will use magical means to shape the battlefield, disrupt the plans of opponents and generally restrict their options. Both roles will certainly also directly work to defeat the enemy, applying damage against their hit points; but they each have their own unique way of operating in a fight.
+
+Finally each calling has some unique boons which are only available to those who choose that calling. These are generally related to the role associated with the calling, but also give the character general competency in areas which relate to the calling, such as a proficiency modifier with appropriate tools and knacks.
+SUBSECTION/
+/SUBSECTION" Power and Source"/
+/TOPIC" Power "/
+
+Each character has a power attribute. This has a numeric value which represents the number of power points the character can expend. Power points may be used for a wide variety of things. They can be used to power an extra action, as a reserve of durability which a hero can dig into in order to restore his or her hit points, or a resource which can be used to power magic items, feats, or for other extraordinary purposes. Generally speaking only PCs have non-zero power. Most NPCs lack the connections to fate and destiny which translate into power points. However some mighty monsters and particularly important NPCs might possess a small amount of power.
+
+PCs each receive 8 power points at first level and receive another 1 at each of 9th and 17th levels. Power points are recovered as determined by the recovery rules, see the /REF Rest and Recovery REF/ section of the rules; thus when a player decides to expend his heroe's power points, the current total is reduced accordingly.
+TOPIC/
+/TOPIC" Power Source"/
+
+Every character has a power source which they are attuned to, which is determined initially by their calling. This is one of the five sources of power within the game which are the motivating energies of the world. These are discussed in detail in their chapter /REF Power Sources REF/ . The sources are:
+/UL
+    /LI /LABEL Martial LABEL/ Also known by other names, such as chi, this is the interior force of character, will, and discipline. It is often called 'martial' because it is the easiest of all sources to attune, though also the most difficult to fully master. Thus many warriors are trained to apply it to their weapon skills, and the traditions of this power source are mostly martial. It can also accomplish other things however, such as control of the body, self-healing, etc. LI/
+    /LI /LABEL Spirit LABEL/ This is the power of the spirit world. It is raw psychic energy given form and purpose. Spirit power flows from the spirit world and is accessed by making contact with the spirits. This can take the form of shamanism, worship of gods, making pacts with the spirits, etc. It is a powerful force which gives access to many capabilities. However, the spirits and gods don't do anything entirely for free. What power they give, they can also take. LI/
+    /LI /LABEL Elemental LABEL/ This is the raw force of physical creation and matter. All things which have a material existence flow with elemental power. There is also said to be an infinite realm of elemental chaos from which this energy, and all matter, originates. Characters can tap into this power but it is dangerous and unpredictable. Great care, knowledge, and study are required in order to master the forms and words required in order to command it. Mistakes can have unfortunate consequences. LI/
+    /LI /LABEL Life LABEL/ The life force is a universal force which binds together living things and gives them the ability to grow and heal. It is sometimes confused with nature, but the life force exists everywhere, not only in wild places. However, it is strongest where there is life, or perhaps life is strongest where this force is most present. Those who attune to the life force are great healers and masters of living and growing things. LI/
+    /LI /LABEL Shadow LABEL/ This is the force of both animation and of dissolution and death. It is a complement to the life force in that life without motion towards its end is mere static existence. It is the most difficult of all the forces to understand and master, but it also grants great powers. Its practitioners can cloud the mind, misdirect the senses, and even whither the living or bring about undeath. Its practitioners are rare, and often ostracized in many lands. LI/
+UL/
+TOPIC/
+/TOPIC" Using Power"/
+
+When a character needs power to enable a feat, they will need power of the correct type. A character can only spend power points on feats which are associated with power sources they are attuned to. Thus a knight can spend points to enhance martial feats. A priest can spend them to enhance a blessing, but not to conjure up a fireball; however, characters can acquire additional attunements in the form of boons. This is generally difficult, but many heroes are able to tap into more than one power source. There may also be magical objects, places, or effects which can grant access to additional sources of power. These are quite difficult to find.
+
+When a player desires to expend her character's power points, she can do so in any situation where this is allowed. The character's power point total is simply reduced by the requisite amount. It can be restored to its original value by rest and recovery, as detailed later.
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Ability Scores "/
+
+Every character has each of the six ability score attributes. These scores have ability modifiers associated with them, which will apply whenever an aspect associated with that ability is governing a check. Ability scores also apply to some other attributes such as initiative modifier. These scores are a significant part of defining the nature of a character and the player will have to decide their values during character construction. They generally don't change in play often, unless something fundamentally alters the character's nature.
+SUBSECTION/
+/SUBSECTION" Personality traits "/
+
+Each PC starts the game with at least three character traits; these attributes describe the character in narrative terms. Players are free to invent any specific traits they wish, but three are suggested, a strength, a weakness, and a goal. Other traits may be generated as desired by the players and GM as well during the course of play. Options might include beliefs, interests, fears, etc.
+
+Character traits are the attributes which are used to drive the character’s story. They should be evocative, interesting, and speak to the character’s nature, agenda, and needs. When the GM creates challenges for the PCs he will use these traits to decide what will engage a given character.
+For example: If a player describes his character as ‘honest to a fault’ then the GM is likely to test his honesty. What price will he pay to remain honest? Is he naive, or highly principled? How will he cope with a situation where his honesty will hurt others?
+
+Traits are also used to govern the use of fate.
+SUBSECTION/
+SECTION/
+/SECTION" Character Attributes "/
+
+This section lists all the major attributes commonly possessed by PCs. Rules for determining their values are given under the /REF  Character Generation REF/ and /REF Character Advancement REF/ sections.
+/SUBSECTION" Ability Scores "/
+
+These are the most basic attributes of all characters. They help to define the basic capabilities of the character. Each of the six abilities listed below has a value from the following table. The value for each attribute determines its associated ability modifier.
+
+/TABLE=" bodytable "/
+/THEAD
+/TR /TH Value /TH/ Modifier /TH/ Description TH/ TR/
+THEAD/
+/TBODY
+/TR /TD None /TD/ * /TD/ The creature has no ability in this area at all, it has no strength, is completely unintelligent, etc. Usually this applies when an attribute simply doesn't apply to a creature or it is completely lacking in a certain area. Insects have no strength, they can't lift or carry anything, etc. None doesn't imply that no capability exists, ants for instance can collectively move things over time, they just can't lift a heavy rock or leap a chasm. The character will never pass checks based on this ability. Player characters don't normally have a rating of None in any of their abilities. TD/ TR/
+/TR /TD Poor /TD/ 0 /TD/ This is the lowest normally possible value for a PC and represents a creature with little ability in this area. The character can function in any everyday sense, but has no extraordinary ability and is weaker/slower/stupider than the average person. TD/ TR/
+/TR /TD Average /TD/ 1 /TD/ The creature is roughly in the normal human range. Most humans and animals of about human size will be average in most abilities.  TD/ TR/
+/TR /TD Above Average /TD/ 2 /TD/ The creature is above average in this attribute, but not truly exceptional. This is roughly the baseline level of performance for heroes. Most people will be above average in at least one ability. TD/ TR/
+/TR /TD Strong /TD/ 3 /TD/ The creature is much better than most humans. Most creatures of larger than human size will have Strong strength. Only the best humans will have an ability beyond this level and a human with Strong level is unusual. PCs are often rated Strong, as are some exceptional NPCs. TD/ TR/
+/TR /TD Exceptional /TD/ 4 /TD/ Only the very best humans achieve this level in any ability. An Exceptional intelligence human is a genius, etc.  TD/ TR/
+/TR /TD Mighty /TD/ 5 /TD/ This is a legendary level of ability. Only mighty heroes, extraordinary creatures, and higher beings have Mighty ability scores. Only the gods themselves can over-top a Mighty hero or exceed the constitution of a dragon or the strength of a giant. TD/ TR/
+/TR /TD Godlike /TD/ * /TD/ This level of ability is reserved for NPCs and designates a creature of divine stature. Such creatures simply pass all checks based on this ability automatically unless the GM decides otherwise for story reasons. Huge giants for instance might have Godlike strength and constitution, they can lift or carry anything the GM wants them to. If a PC opposes a Godlike NPC, they will generally lose in a straight up contest. TD/ TR/
+TBODY/
+TABLE/
+/TOPIC" Strength "/
+
+This ability represents a character's physical power. It determines his modifier to checks involving lifting, pulling, pushing, holding onto things, and any other similar sort of test of brute force. Tasks such as climbing, leaping, swimming, etc are all mainly governed by strength.
+TOPIC/
+/TOPIC" Constitution "/
+
+This ability represents the character's ability to withstand physical punishment, endure extreme conditions, resist disease, and perform feats of extreme physical endurance such as extremely long distance running, surviving outdoors in a raging blizzard with no shelter, holding his breath underwater for 9 minutes, etc.
+TOPIC/
+/TOPIC" Dexterity "/
+
+This ability represents both coordination and reaction speed. It determines the character's modifier in any task requiring speed or coordination, such as slight of hand, acrobatics, or aiming missile weapons.
+TOPIC/
+/TOPIC" Intelligence "/
+
+This ability represents a character's reasoning power and ability to study and absorb abstract knowledge, remember lore, and generally perform any feat of intellect such as solving a puzzle or researching an unusual ritual.
+TOPIC/
+/TOPIC" Wisdom "/
+
+This represents a character's intuition, willpower, and self-control. It is used to understand situations, make leaps of intuition, and perform feats of mental or spiritual discipline and control.
+TOPIC/
+/TOPIC" Charisma "/
+
+This represents a character's emotional and social reasoning and skill. It is used to lead and inspire other people, convince them to do things, negotiate, and generally to get by in social situations of all types.
+TOPIC/
+/TOPIC" Ability Modifier Notations "/
+
+Ability modifiers are generally noted by a 3 letter abbreviation, STR for Strength, CON for Constitution, DEX for Dexterity, INT for Intelligence, WIS for Wisdom, and CHA for Charisma. For instance an attack might have a damage expression of 1d8+STR, meaning that the character's strength ability modifier is added to the results of a roll of 1d8.
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Fate "/
+
+Fate is an attribute which can be used by players to shift the fiction in their favor. Every character starts with positive fate, and that can change to neutral fate and back. This attribute will be used to allow the player to make changes in the fiction based on one of the character's attributes. This is discussed in detail under /REF Fate REF/ .
+SUBSECTION/
+/SUBSECTION" Hit Points "/
+
+Each character has hit points. This attribute has a numeric value which is used to measure how close the character is to defeat and how much more physical and mental punishment the character can take before dying, surrendering, or giving up as the situation dictates. Each character begins with a specific number of hit points based on her constitution and other factors; the character’s maximum hit points. Each calling indicates a base number of hit points for that calling. As the character increases in level her maximum hit point value will also increase based on the calling.
+SUBSECTION/
+/SUBSECTION" Damage Resistance "/
+
+Each character has a damage resistance attribute. Whenever a character takes damage its damage resistance value is subtracted from the damage taken. Damage resistance is primarily provided by armor, but may also be a result of various boons, the effects of feats, etc. Note that damage resistance values may or may not stack, depending on how they are worded. A power might grant “Damage resistance 5”, which sets the character's damage resistance at this value. A magic ring might grant a +1 permanent modifier to damage resistance, which is added to whatever the character has already. A character with both of the above effects in play would have a damage resistance of 6, the highest specific value acts as a base, but modifiers stack on top of that, subject to the general stacking rule (only one modifier of each type). Damage Resistance is usually abbreviated 'DR'. 
+SUBSECTION/
+/SUBSECTION" Protection and Vulnerability "/
+
+A character may have protection from certain types of damage. If so then the character takes half damage whenever the damage tag matches the tag for the protection. For instance a character with Protection from Fire would take half damage from all damage with the fire tag. Likewise a character may have vulnerability to certain types of damage. Whenever a character takes damage with the corresponding tag the damage is doubled. 
+In any case where damage has multiple tags, the character is protected from it if any one tag matches his protection. Likewise the character is vulnerable if any one tag matches his vulnerability. If a character is both vulnerable and protected, then the two cancel. 
+SUBSECTION/
+/SUBSECTION" Calling "/
+
+Every character has exactly one calling. This is the central defining feature of the character which represents the archetype of the character. Calling is selected when the character is created. It determines the character's power source.
+SUBSECTION/
+/SUBSECTION" Species "/
+
+Every character has a species, which is selected at character creation.
+SUBSECTION/
+/SUBSECTION" Background "/
+
+Each character may have additional background elements. These help to round out the character and fill in details of his or her story. They may also point out areas where the character has some special knowledge, or other minor boon, which may be noted. There are several categories of background element:
+/OL
+    /LI /LABEL Parentage LABEL/ Who were the characters parents, what was their position in society, etc. LI/
+    /LI /LABEL Occupation LABEL/ What did the character do before he became a hero? LI/
+    /LI /LABEL Society LABEL/ What was the character's role and position in society? LI/
+    /LI /LABEL Geography LABEL/ Where did the character live? LI/
+    /LI /LABEL Bonds LABEL/ Who did the character know? LI/
+OL/
+Most characters will have at most one of each of these five categories of background element, but these are only suggestions, players should feel free to add other types, forgo using some of these, or even use more than one of the same type if it works for them.
+SUBSECTION/
+/SUBSECTION" Boons and Limitations "/
+
+Boons are attributes which characters have or which they gain by virtue of their species, calling, background, and/or story. They may be rewards earned through adventuring, such as ancient magical treasures, they may represent knowledge gained by the character in the course of pursuing her career, or they may be attributes acquired by the character as a result of exposure to mystical forces beyond human ken.
+
+Boons come in several types, including items, special training, and divine favor. Some of them may provide permanent modifiers, feats, or other benefits which apply to the character's other attributes.
+
+Limitations are similar to boons, but have a negative effect on a character. They are recorded in the same way.
+All characters start the game with one or more boons or limitations as a result of choices of calling, species, background, GM decree, story considerations, etc. Usually more boons are acquired during the course of a character's adventures.
+SUBSECTION/
+/SUBSECTION" Size "/
+
+All creatures have a size, which is usually determined by the creature's species or type. For player characters this is determined by species. Each species describes the size of its members. This should be noted on the character sheet. See the action rules for the effects of character size. The vast majority of PCs are of size Medium, but a few races deviate from this norm. The sizes are tiny, small, medium, large, huge, and gargantuan.
+SUBSECTION/
+/SUBSECTION" Space "/
+
+Each character also has a space, which is the set of squares it takes up in action sequences; for tiny, small, and medium creatures this is simply one square; for large creatures it is 2-4 contiguous squares; for huge creatures it is 5-9 contiguous squares; and for gargantuan creatures it is more than 9 contiguous squares. Most races which are large or larger will specify the space of characters who belong to them. If no other space is specified then a large character has a 2x2 square space, a huge creature 3x3, and a gargantuan creature 4x4.
+SUBSECTION/
+/SUBSECTION" Speed "/
+
+Each creature has a speed. The value of speed determines how fast the character moves in units of distance in action sequences. This value will be determined by a character's species and encumbrance. Characters may also have other speed values corresponding to additional modes of movement. A character could have a Swim Speed, and/or a Fly Speed, or possibly other more esoteric speeds. If no other indication is given then the character's speed is a land speed used to walk/run. These modes will be indicated by a tag associated with the speed, thus for example: speed = 6, flying, would indicate that the character can fly at a speed of 6. When no mode tag is provided it is assumed the speed is a walking speed. Note that flying and swimming speeds may also have an associated maneuverability class.
+
+Normal humans and similar creatures have a speed of 6. A horse would have a speed of about 8, and a cheetah a speed of about 12.
+SUBSECTION/
+/SUBSECTION" Encumbrance "/
+
+This is a measure of how much the character is carrying. Each character is either unencumbered, encumbered, or overloaded. The exact amount of total load which represents each value depends on the character's maximum load, which is determined primarily by strength and size.
+SUBSECTION/
+/SUBSECTION" Maximum Load "/
+
+Maximum load indicates the total load that the character can carry before becoming encumbered. If a character is carrying less than or equal to this value, they are unencumbered. If they are carrying less than twice this value, they are encumbered. If they attempt to carry more than twice this value they are overloaded.
+
+Normally a character can carry a load of items equal to 40 load plus 20 times the character's STR modifier without being encumbered. This assumes the weight is reasonably distributed and easy to carry. 40 lbs of pillows might encumber anyone, a 40 lb piece of iron carried in a backpack probably wouldn't. 
+
+If a character carries more than her maximum load then she is encumbered. When encumbered her speed is reduced by one and she has disadvantage on all
+checks based on Dexterity governed aspects.
+SUBSECTION/
+/SUBSECTION" Load"/
+
+This is simply how much load the character is currently carrying. It is the sum of the load of each item in the character's equipment.
+SUBSECTION/
+/SUBSECTION" Equipment"/
+
+Characters have equipment. These are the possessions which they carry around with them. This may include things like tools, weapons, armor, adventuring gear, etc. A later chapter goes into more detail on equipment. Note that changes to equipment also changes load, and possibly encumbrance.
+SUBSECTION/
+/SUBSECTION" Wealth"/
+
+Every character has a wealth. This attribute is a basic description of how much purchasing power the character has. Wealth can vary from none to practically unlimited. When a character needs to buy something, or when money is important to the story, the player will generally make a wealth check to determine the outcome. The wealth check modifier is applied to this check, and the character’s wealth helps to determine the types of outcomes which are feasible (IE a penniless character cannot pay a large bribe, but even a moderately well-off one won’t always succeed).
+SUBSECTION/
+/SUBSECTION" Level"/
+
+Every character has a level. This determines the level of challenges which the character can face.
+SUBSECTION/
+/SUBSECTION" Proficiencies"/
+
+Every character has proficiencies, either knacks, knowledge, or skill with tools. These will give the player bonuses to checks related to them in play, see /REF How To Play REF/
+SUBSECTION/
+/SUBSECTION" Other Attributes"/
+
+Characters also have other less important attributes which are generally just descriptive. These include name, gender, orientation, height, weight, age, ethnicity, social class, and appearance. There are no specific rules for generating these attributes, nor do they have any mechanical effect in the game (although size is obviously related to height and weight it is up to the players to decide the details as they see fit). The GM may decide to factor these attributes into certain situation as she wishes. They might form the basis for boons, limitations, or simple story elements. GMs are of course free to attach novel mechanics to any attribute. 
+
+In general if a player wants to specify something, they can. They could use it as a narrative explanation for what happens in the story, etc. My position, as the author of this work, is that these are all simply personal choices which allow players to envisage the hero they wish to play in the game. Nobody should feel that they are 'supposed' to be a certain way, or that some choices are 'optimum'. Be what you want to be! Have fun! If some rule gets in the way of that, fun trumps rules too.
+SUBSECTION/
+SECTION/
+/SECTION" Character Generation"/
+
+The previous section detailed most of the things which appear on character sheets. This section details how to build a character from scratch.
+/SUBSECTION" Level"/
+
+Normally characters start at level 1. Sometimes you may generate a character which is higher level. This will require allocating a boon for each level beyond first. Note that in this case the character will have a non-zero level modifier, remember to incorporate this.
+SUBSECTION/
+/SUBSECTION" Species"/
+
+The first thing a player will want to determine is the species of his character. Is it a human, an eldar, or maybe a wose? This choice might be dictated by setting convention or other choices of specific genre which the participants have already made. Otherwise it will be up to the player. The chosen species is noted, it will be significant later.
+SUBSECTION/
+/SUBSECTION" Calling"/
+
+Second the player will pick a calling for their character. Is it a knight, a wizard, a priest perhaps? As with species this choice might be dictated by circumstances. Players will probably want to discuss with each other who wishes to play what. Pay attention to the combat role of the calling, it is a good idea for the players to make sure they cover all the bases. A party will work fine without characters of every role, but a player might want to keep in mind which ones are and are not represented in the party when picking starting boons.
+SUBSECTION/
+/SUBSECTION" Abilities"/
+
+Once you know what species and calling the character will have, it is time to determine their abilities. 
+
+/STRONG Standard Array: STRONG/ The simplest way to do this is to take the standard sequence of modifiers, +3, +2, +1, +1, +1, +1 and apply them in any order to your characters abilities. Another option is to use the point system outlined below
+
+/STRONG Point Value: STRONG/ Start with 9 points. Each point of ability modifier costs one point. A character could be Strong in 3 areas and poor in the other 3, or any other combination adding up to 9 points of modifiers.
+
+Using this system you can produce a character with potentially up to a +5 starting modifier in a given ability, although this will probably limit the character significantly in other areas. Consider applying a 'well rounded character' rule when using point buy. This limits all starting ability modifiers to at most +4. Doing so makes +5 an aspirational goal instead of an optimum starting bonus.
+
+Record the value for each ability and its modifier.
+SUBSECTION/
+/SUBSECTION" Background"/
+
+Characters may have up to five background elements, one each of the types discussed above in the character attributes section. Not all five must be chosen, the character may not be distinctive in all of these ways, although every character certainly has a place of birth a family of some sort, and a social station in life.
+SUBSECTION/
+/SUBSECTION" Hit points and healing value"/
+
+Characters starting hit points are calculated as CON + calling starting hit point value. Divide this number by 4, rounding down; this is your healing Value. The character's bloodied value can also be noted as 1/2 their maximum hit points, rounded down.
+SUBSECTION/
+/SUBSECTION" Power"/
+
+You start with 8 power, plus anything provided by any starting boons which might alter that.
+SUBSECTION/
+/SUBSECTION" Boons"/
+
+Each character starts with the boons described under their calling's class features. You may select another major boon chosen from their calling's level 1 boons, or any major boon listed as available to their species or background. The character also receives one minor boon listed from among their background elements, and any minor boons listed as being provided by their species. Additionally the GM may allow characters to pick one or more of these from any other boons that are available to level 1 characters. 
+SUBSECTION/
+/SUBSECTION" Record Proficiencies"/
+
+The character's calling, species, and background, as well as their boons, may designate certain proficiencies which the character will have. In some cases this may be a choice amongst multiple alternatives. Make any indicated choices and note them all. Every character should have four knacks they are proficient with. If it happens that a character's other choices don't provide for four knacks, then the player should simply select additional ones until they reach four; likewise characters which have more than four listed should remove one or more in order to reach the limit of four. If the character is starting at higher than first level then this 4 knack limit does not apply.
+SUBSECTION/
+/SUBSECTION" Character traits"/
+
+Note at least three character traits, each should have a one or two word name, and a short value giving a bit more depth.
+SUBSECTION/
+/SUBSECTION" Wealth"/
+
+Wealth is essentially a sort of background detail of characters. Most characters are going to have ordinary, adequate, or possible well off as a wealth attribute (+1 to +3 ability modifier). A few might be poor, or even destitute, and there could be some rare rich or even vast wealth characters. A PC’s wealth attribute should be selected with the character’s entire background and concept in mind. The details of the story genre being played may also be a factor. You may want to consult with the GM about what makes the most sense, but players should generally be allowed to decide this detail for themselves.
+SUBSECTION/
+/SUBSECTION" Feats"/
+
+Various boons will give the character access to feats. These should be noted.
+SUBSECTION/
+/SUBSECTION" Equipment"/
+
+Select equipment which is appropriate to your character and backstory. If a player wishes his character to begin with something of higher than trivial value, then a wealth check should be made to determine whether or not the character was able to afford the item. Some characters may have certain items as a result of boons or backgrounds. The participants in the game might decide to limit or add to the standard equipment lists based on the needs of their game as well. Record what your character is carrying and note its encumbrance.
+SUBSECTION/
+/SUBSECTION" Maximum load"/
+
+This is normally 40 + 20 * STR for medium sized creatures. Large creatures should start at 60 + 20 * STR, small at 30 + 20 * STR, and tiny creatures at 10 + 10 * STR. 
+SUBSECTION/
+/SUBSECTION" Load"/
+
+Add up all the loads of each piece of equipment being carried by the character and note the total.
+SUBSECTION/
+/SUBSECTION" Encumbrance"/
+
+Note if the character is unencumbered, encumbered, or overloaded.
+SUBSECTION/
+/SUBSECTION" Movement"/
+
+Note the movement rate(s) and mode(s) of the character; base rates come from the character's species. If not otherwise specified characters have a walking mode speed of 6; other modes will always be noted specifically.
+SUBSECTION/
+/SUBSECTION" Attacks"/
+
+All characters will have some form of attack. If nothing else every character can use the feat /REF Basic Attack REF/ . Attack modifiers and damage expressions can be calculated as given in the section on feats.
+SUBSECTION/
+/SUBSECTION" Defenses"/
+
+All characters will have various options available to them in terms of defenses as well. They can simply employ their knacks as defenses, or they can utilize the defense element of some feats. These can be noted on the character sheet.
+SUBSECTION/
+
+/SUBSECTION" Knack Modifiers "/
+
+Each character will have a specific modifier when employing a given knack to make a check. These modifiers will generally only change if the character levels up. They should be recorded on the character sheet for easy reference. Each knack's modifier is equal to the character's level modifier (0 for most starting characters) plus the character's proficiency modifier with that knack plus the character's ability modifier for the ability associated with that knack plus any permanent modifier they might get from other sources.
+SUBSECTION/
+SECTION/
+/SECTION" Character Advancement"/
+
+As explained above, each character has a level, which determines the sorts of challenges the character should be capable of facing. As characters have adventures, they will inevitably increase in level. The following rules govern this process.
+
+Whenever a character receives a major boon she also advances to the next character level. At the participant's option a character might also lose a level under some circumstances, such as losing a particularly significant signature item or ability permanently. Perhaps a hero has retired and put aside his heroic attributes. Such a character might be reduced to a more appropriate level if he returns to the action at a later time. Mere separation of a character from objects or other temporary losses of access to boons don't normally involve reducing the character's level. Level is more a measure of what a character has accomplished in a heroic sense, and his standing and connections to fate than what is currently in their possession or their current circumstances.
+/SUBSECTION" Advancement Process"/
+
+When a character has achieved a new major boon he will be eligible to advance to the next level. It is up to the GM to decide exactly how and when this will happen. Normally, for convenience and to better fit the narrative of the game, the player and GM will advance the character after the end of the current session of play, and/or whatever action the character is currently engaged in. However it is perfectly legitimate to raise a character's level in the middle of the action, this might represent some sudden and profound change in the character, access to a whole new feat, etc. 
+SUBSECTION/
+/SUBSECTION" Effects of Gaining a Level"/
+
+When a character acquires a new level the character immediately gains additional hit points equal to the  amount specified for his calling. The character's bloodied and healing values will need to be recalculated. If the character's level modifier has changed, it will require recalculation of most of the other values on the character sheet, including defense modifiers, attack modifiers, etc. A character's damage dice may also increase.
+
+These increases are summarized on the table below:
+/DIVW=" 90%; margin-left: .5em"/
+/TABLE=" bodytable fixedtable"/
+/THEAD
+/TR /THW=" 7%"/ Level /THW/=" 20%"/ Damage Dice /THW/=" 20%"/ Level Modifier /THW/=" 40%"/ Benefit /THW/=" 13%"/ Tier TH/ TR/
+THEAD/
+/TBODY
+/TR=" heroic"/ /TD=" center"/ 1 /TD/=" center"/ 1 /TD/=" center"/ 0 /TD/ /TDR/=" 8"/ Heroic TD/ TR/
+/TR=" heroic"/ /TD=" center"/ 2 /TD/=" center"/ 1 /TD/=" center"/ 1 /TD/ /TD/ TD/ TR/
+/TR=" heroic"/ /TD=" center"/ 3 /TD/=" center"/ 1 /TD/=" center"/ 1 /TD/ /TD/ TD/ TR/
+/TR=" heroic"/ /TD=" center"/ 4 /TD/=" center"/ 1 /TD/=" center"/ 2 /TD/ /TD/ TD/ TR/
+/TR=" heroic"/ /TD=" center"/ 5 /TD/=" center"/ 1 /TD/=" center"/ 3 /TD/ /TD/ TD/ TR/
+/TR=" heroic"/ /TD=" center"/ 6 /TD/=" center"/ 1 /TD/=" center"/ 3 /TD/ /TD/ TD/ TR/
+/TR=" heroic"/ /TD=" center"/ 7 /TD/=" center"/ 2 /TD/=" center"/ 4 /TD/ Gain one damage die TD/ TR/
+/TR=" heroic"/ /TD=" center"/ 8 /TD/=" center"/ 2 /TD/=" center"/ 5 /TD/ /TD/ TD/ TR/
+/TR=" legendary"/ /TD=" center"/ 9 /TD/=" center"/ 2 /TD/=" center"/ 5 /TD/ Increase one ability modifier by 1 /TDR/=" 8"/ Legendary TD/ TR/
+/TR=" legendary"/ /TD=" center"/ 10 /TD/=" center"/ 2 /TD/=" center"/ 6 /TD/ TD/ TR/
+/TR=" legendary"/ /TD=" center"/ 11 /TD/=" center"/ 2 /TD/=" center"/ 7 /TD/ TD/ TR/
+/TR=" legendary"/ /TD=" center"/ 12 /TD/=" center"/ 2 /TD/=" center"/ 7 /TD/ TD/ TR/
+/TR=" legendary"/ /TD=" center"/ 13 /TD/=" center"/ 2 /TD/=" center"/ 8 /TD/ TD/ TR/
+/TR=" legendary"/ /TD=" center"/ 14 /TD/=" center"/ 2 /TD/=" center"/ 9 /TD/ TD/ TR/
+/TR=" legendary"/ /TD=" center"/ 15 /TD/=" center"/ 2 /TD/=" center"/ 9 /TD/ TD/ TR/
+/TR=" legendary"/ /TD=" center"/ 16 /TD/=" center"/ 3 /TD/=" center"/ 10 /TD/ Gain one damage die TD/ TR/
+/TR=" mythic"/ /TD=" center"/ 17 /TD/=" center"/ 3 /TD/=" center"/ 11 /TD/ Increase one ability modifier by 1 /TDR/=" 4"/ Mythic TD/ TR/
+/TR=" mythic"/ /TD=" center"/ 18 /TD/=" center"/ 3 /TD/=" center"/ 11 /TD/ TD/ TR/
+/TR=" mythic"/ /TD=" center"/ 19 /TD/=" center"/ 3 /TD/=" center"/ 12 /TD/ TD/ TR/
+/TR=" mythic"/ /TD=" center"/ 20 /TD/=" center"/ 3 /TD/=" center"/ 13 /TD/ TD/ TR/
+TBODY/
+TABLE/
+DIV/
+SUBSECTION/
+
+If the character's new level falls within a higher tier than their previous level, then note that the player can employ a different combat scale than before, see /REF Action Sequences REF/ for more information on this. If the character's damage dice number has changed, make sure to note this under any attacks, and note the new DD number on the character sheet. The table also indicates the character's level modifier at this level. 
+
+If an ability modifier increase is noted, then the player should pick one of the character's six abilities and increase it by one rank, giving the character one better ability modifier with that ability and all associated knacks, attack bonuses, damage, defenses, etc. 
+SECTION/
+CHAPTER/

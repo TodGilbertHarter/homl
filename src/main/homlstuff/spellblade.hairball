@@ -1,0 +1,126 @@
+/CALLING" Spell Blade"/
+/TRAITS
+/ROLE" Defender"/
+/POWERSOURCE" Elemental"/
+/DAMAGEDIE" D8"/
+/WEAPONS" Any 2"/
+/IMPLEMENTS" Any Rune Weapon"/
+/KNACKS" Arcana, Survival"/
+/HITPOINTS" 6"/
+/STARTHITPOINTS" 10"/
+TRAITS/
+The spell blade is a magic infused warrior who utilizes elemental power in order to give her weapon attacks great force. The arcane magics bound up into this rune weapon also give her fantastical powers with which to confront her enemies.
+
+Spell blades follow ancient traditions once perfected by lost races who used arts long forgotten by all others to empower themselves. By studying the arcane secrets of magic they were able to harness the power of elements to both attack and defend. Only a very few of these mighty warriors still exist, and you have been granted access to their secrets.
+/FEATURES
+/FLEXROW
+/FLEXCELL
+/BOON /BOONNAME Elemental Defender BOONNAME/
+/BOONTYPE Spell Blade Calling Feature BOONTYPE/
+/ASSOCIATION Spell Blade ASSOCIATION/
+/PREREQUISITES Spell Blade PREREQUISITES/
+/DESCRIPTION
+You can conjure up a shield of elemental energy to protect an ally.
+DESCRIPTION/
+/BENEFITS
+/FEAT /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Elemental Shield FEATNAME/
+/ORIGIN Elemental Defender ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Free ACTION/
+/TRIGGER When an enemy engaged by you attacks someone other than you. TRIGGER/
+/EFFECTS The target of the attack receives a bonus of +2 DR, +5 DR at legendary tier, and +8 DR at mythic tier. EFFECTS/
+/FLAVOR A shield of elemental material appears wherever your enemy focuses his attention. FLAVOR/
+FEAT/
+BENEFITS/
+BOON/
+/BOON /BOONNAME Combat Focus BOONNAME/
+/BOONTYPE Spell Blade Calling Feature BOONTYPE/
+/ASSOCIATION Spell Blade ASSOCIATION/
+/PREREQUISITES Spell Blade PREREQUISITES/
+/DESCRIPTION
+You are able to focus your magical energies on your current target
+DESCRIPTION/
+/BENEFITS
+Whenever you attack a target, that target becomes engaged. Only one target can be engaged at a time. This condition lasts until the start of your next turn, or you attack another target, whichever comes first.
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /BOONNAME Arcane Duelist BOONNAME/
+/BOONTYPE Spell Blade Calling Feature BOONTYPE/
+/ASSOCIATION Spell Blade ASSOCIATION/
+/PREREQUISITES Spell Blade PREREQUISITES/
+/DESCRIPTION
+You have learned to project the magic flowing through your blade at your most immediate enemy.
+DESCRIPTION/
+/BENEFITS
+/FEAT /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Elemental Defense FEATNAME/
+/ORIGIN Arcane Duelist ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Free ACTION/
+/TAGS rune weapon TAGS/
+/TRIGGER When an enemy engaged by you attacks someone other than you. TRIGGER/
+/TYPETARGET range 5, triggering opponent TYPETARGET/
+/ATTACK arcane vs REF ATTACK/
+/COMPLETESUCCESS 1DD and the target's triggering attack automatically fails. COMPLETESUCCESS/
+/SUCCESS 1DD and the target gains disadvantage on the triggering attack. SUCCESS/
+/SPECIAL This feat does not grant an opportunity to opponents when used. SPECIAL/
+/FLAVOR You keep your opponent engaged, even at a distance. FLAVOR/
+FEAT/
+BENEFITS/
+BOON/
+/BOON
+/BOONNAME Weapon Bond BOONNAME/
+/BOONTYPE Spell Blade Calling Feature BOONTYPE/
+/ASSOCIATION Spell Blade ASSOCIATION/
+/PREREQUISITES Spell Blade PREREQUISITES/
+/DESCRIPTION
+A spell blade's weapon is an extension of his power to which he is forever bonded by arcane forces of elemental power.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You gain access to the ofllowing feat.
+/FEAT
+/SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Call Weapon FEATNAME/
+/ORIGIN Weapon Bond ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Free ACTION/
+/TAGS summoning TAGS/
+/EFFECTS Your rune weapon appears in your hand. EFFECTS/
+/FLAVOR When you call, your faithful weapon answers the summons. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+FLEXROW/
+FEATURES/
+/BOONS
+/FLEXROW
+/FLEXCELL
+/BOON
+/BOONNAME Line of Defense BOONNAME/
+/BOONTYPE Level: 1 Major BOONTYPE/
+/ASSOCIATION Spell Blade ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You have learned to spread elemental fire wherever you move.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You gain access to the ofllowing feat.
+/FEAT
+/SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Wall of Fire FEATNAME/
+/ORIGIN Line of Defense ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Move ACTION/
+/TAGS evocation TAGS/
+/EFFECTS You may move, using your land movement mode, as normal. In every square which you enter you create a terrain effect which persists until the start of your next turn. Any opponent starting its turn in one of the effected squares, or moving into one of them will take damage equal to CON + implement +1. EFFECTS/
+/FLAVOR You draw a line of fire. Do any of your opponents dare to cross it? FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+
+FLEXCELL/
+FLEXROW/
+BOONS/
+CALLING/

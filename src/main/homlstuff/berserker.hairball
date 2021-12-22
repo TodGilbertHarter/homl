@@ -1,0 +1,153 @@
+/CALLING" Berserker"/
+/TRAITS
+/ROLE" Striker"/
+/POWERSOURCE" Life"/
+/DAMAGEDIE" D8"/
+/WEAPONS" Any 3"/
+/IMPLEMENTS" None"/
+/KNACKS" Survival, Intimidation"/
+/HITPOINTS" 5"/
+/STARTHITPOINTS" 9"/
+TRAITS/
+
+The berserker is a warrior who is able to enter into a special mental state in which he can fight with extraordinary ferocity. Usually hailing from less urbanized warrior cultures berserkers often charge recklessly into battle with little regard for their own safety. While they wield weapons in battle and consider themselves to be warriors, their power comes primarily from their relationship to the life force within themselves and others, as distinct from the martial traditions of discipline and practice common to knights and such. Thus they don't come across, generally, as disciplined or thoughtful fighters, instead relying on frontal attacks, shock tactics, and the sheer power of their aura and reputation for ferocity.
+
+Most berserkers associate themselves with a totemic animal tradition, such as the wolf, or bear, which gives them additional benefits. Others might tap more directly into the natural world, becoming something like the essence of the life force in their chosen environment. This sort of berserker might take on verious sorts of transformations.
+/FEATURES
+/FLEXROW
+/FLEXCELL
+/BOON /BOONNAME Combat Trance BOONNAME/
+/BOONTYPE Berserker Calling Feature BOONTYPE/
+/ASSOCIATION Berserker ASSOCIATION/
+/PREREQUISITES Berserker PREREQUISITES/
+/DESCRIPTION
+Through long practice you have learned how to enter a special mental state during combat.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+/FEAT /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Battle Frenzy FEATNAME/ 
+/ORIGIN Combat Trance ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Free ACTION/
+/TAGS enchantment, ritual TAGS/
+/CHECK Survival CHECK/
+/TYPETARGET self TYPETARGET/
+/EFFECTS You enter into the state of Battle Frenzy. You gain protection from all force damage until the end of the encounter. You do not gain the dying condition until you have reached -5 hit points. This increases to -10 hit points at Legendary tier, and -15 hit points at Mythic tier.
+
+You gain bonus damage on all melee weapon attacks equal to 1 extra DD at Heroic tier, 2 extra DD at Legendary tier, and 3 extra DD at Mythic tier.
+EFFECTS/
+/DURATION This effect lasts until you take a rest or recovery. DURATION/
+/COMPONENTS Significant Life ritual components. COMPONENTS/
+/COSTS 1 power point required to automatically pass the check. COSTS/
+/SPECIAL If you are brought below 0 hit points, you lose a power point automatically. When the effect wears off you enter the dying condition as normal. SPECIAL/
+/FLAVOR You have entered into the mysterious battle frenzy of the berserker. Let all who oppose you cower in fear!
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /BOONNAME Natural Warrior BOONNAME/
+/BOONTYPE Berserker Calling Feature BOONTYPE/
+/ASSOCIATION Berserker ASSOCIATION/
+/PREREQUISITES Berserker PREREQUISITES/
+/DESCRIPTION
+You have learned to channel the life force around you through your weapon.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+When using the Basic Attack feat you can treat it as a life feat instead of a martial feat for purposes of spending power points.
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+FLEXROW/
+/SUBTOPIC" Choose one of the following"/
+/FLEXROW
+/FLEXCELL
+/BOON /BOONNAME Order of the Wolf BOONNAME/
+/BOONTYPE Berserker Calling Feature BOONTYPE/
+/ASSOCIATION Berserker ASSOCIATION/
+/PREREQUISITES Berserker PREREQUISITES/
+/DESCRIPTION
+You have been initiated into the Order of the Wolf, a secret and mysterious cult of powerful warriors who have taken the wolf as their totem animal.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You gain access to the following power: /BR
+/FEAT /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Howl FEATNAME/ 
+/ORIGIN Order of the Wolf ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Major ACTION/
+/TAGS enchantment TAGS/
+/TYPETARGET close blast 3, all opponents in range TYPETARGET/
+/ATTACK Intimidation vs WILL ATTACK/
+/ENHANCED 2DD + CHA psychic damage  and the opponent gets disadvantage on its next check. ENHANCED/
+/COMPLETESUCCESS 1DD + CHA psychic damage  and the opponent gets disadvantage on its next check. COMPLETESUCCESS/
+/SUCCESS CHA psychic damage and the opponent gets disadvantage on its next check. SUCCESS/
+/EFFECTS 
+Each ally in the area of effect gains advantage on his or her next attack check.
+EFFECTS/
+/FLAVOR Your cry freezes the very blood of your enemies and instills some of your combat fury in your allies. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /BOONNAME Order of the Bear BOONNAME/
+/BOONTYPE Berserker Calling Feature BOONTYPE/
+/ASSOCIATION Berserker ASSOCIATION/
+/PREREQUISITES Berserker PREREQUISITES/
+/DESCRIPTION
+You have been initiated into the Order of the Bear, a secret and mysterious cult of powerful warriors who have taken the bear as their totem animal.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You gain access to the following power: /BR
+/FEAT /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Crush FEATNAME/ 
+/ORIGIN Order of the Bear ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Free ACTION/
+/TAGS enchantment TAGS/
+/TRIGGER You achieve an enhanced success with a close weapon attack TRIGGER/
+/EFFECTS
+The enemy takes an additional 2DD + STR damage.
+EFFECTS/
+/FLAVOR You crush the life out of your enemy. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+
+/BOON /BOONNAME Order of the Boar BOONNAME/
+/BOONTYPE Berserker Calling Feature BOONTYPE/
+/ASSOCIATION Berserker ASSOCIATION/
+/PREREQUISITES Berserker PREREQUISITES/
+/DESCRIPTION
+You have been initiated into the Order of the Boar, a secret and mysterious cult of powerful warriors who have taken the boar as their totem animal.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You become proficient with the stealth knack.
+BENEFIT/
+/BENEFIT
+You gain access to the following power: /BR
+/FEAT /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Sudden Attack FEATNAME/ 
+/ORIGIN Order of the Boar ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Major ACTION/
+/TAGS enchantment TAGS/
+/REQUIREMENTS You must be hidden from your enemy when you use this feat. REQUIREMENTS/
+/EFFECTS Shift up to 3 squares. EFFECTS/
+/TYPETARGET close weapon, one enemy TYPETARGET/
+/ATTACK weapon vs REF ATTACK/
+/ENHANCED 3DD + weapon + STR damage and push your enemy 1 square and knock him prone. ENHANCED/
+/COMPLETESUCCESS 2DD + weapon + STR damage and push your enemy one square. COMPLETESUCCESS/
+/SUCCESS 2DD + weapon + STR damage. SUCCESS/
+/FLAVOR You suddenly ambush your opponent. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+
+
+FLEXCELL/
+FLEXROW/
+SUBTOPIC/
+FEATURES/
+/BOONS
+BOONS/
+CALLING/

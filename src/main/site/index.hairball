@@ -1,0 +1,34 @@
+/SITE" Giant Electronic Brain"/
+/STYLE" css/geb.css"/
+/STYLE" css/glyphicons.css"/
+/SCRIPT" https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"/
+/SCRIPT" https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"/
+/SCRIPT" https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"/
+/SCRIPT" https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"/
+/SCRIPT" js/fbconfig.js"/
+/SCRIPT" js/sash.js"/
+/SCRIPT" js/tabs.js"/
+/SCRIPT" js/session.js"/
+/SCRIPT" js/controller.js"/
+/SCRIPT" js/view.js"/
+/SCRIPT" js/authenticator.js"/
+/SCRIPT" js/dialog.js"/
+/SCRIPT" js/router.js"/
+/SIGNINDIALOG SIGNINDIALOG/
+/BODY
+/TOPBAR
+/LOGO LOGO/ /MAINMENU this is the menu, it refuses to be centered :( MAINMENU/ /WIDGETPANEL /SESSION/ WIDGETPANEL/
+TOPBAR/
+/APPLICATION
+/LEFTSLOT 
+/*	<ul class='tabbar' slot='tabs' id='leftslottabbar'><li class='active'>tab 1</li><li>tab 2</li></ul> 
+	<div id='tab1' class='tabcontents active'>Tab 1 contents</div><div id='tab2' class='tabcontents'>Tab 2 contents</div> */
+LEFTSLOT/
+/RIGHTSLOT The right one RIGHTSLOT/
+APPLICATION/
+/FOOTER
+Copyright &copy; Tod G. Harter 2021 All rights reserved.
+FOOTER/
+/SCRIPT" js/start.js"/
+BODY/
+SITE/

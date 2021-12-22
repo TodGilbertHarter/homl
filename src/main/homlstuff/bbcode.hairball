@@ -1,0 +1,68 @@
+/*
+Hairball BB Code, this is just so we can do some quick and dirty pastes of stuff into EnWorld. 
+*/
+/NEWVOCABULARY /HTML
+/VOCABULARY /HTML /ACTIVE
+/VOCABULARY /HTML /CURRENT
+/:
+
+// :/ /* Prevent spurious <p> tags. */
+
+/: /TABLE [table] :/
+/: TABLE/ [/table] :/
+/: /TR [TR] :/
+/: /TR=" <tr class=" /" /. "> :/ 
+/: TR/ [/TR] :/
+/: /TH [TH] :/
+/: /TH=" <th class=" /" /. "> :/
+/: TH/ [/TH] :/
+/: /TD [TD] :/
+/: /TD=" <td class=" /" /. "> :/
+/: TD/ [/TD] :/
+/: /TH/ TH/ /TH :/
+/: /TH/=" </th><th class=" /" /. "> :/
+/: /THW=" <th style="width: /" /. ;"> :/
+/: /THW/=" TH/ <th style="width: /" /. ;"> :/
+/: /TD/ TD/ /TD :/
+/: /TD/=" </td><td class=" /" /. "> :/
+/: /TDR=" /" <td rowspan=" /. "> :/
+/: /TDR/=" TD/ /TDR=" :/
+/: /BOLD [B] :/
+/: BOLD/ [/B] :/
+/: /TRAITS // :/
+/: TRAITS/ // :/
+
+/: /FEAT [TABLE] :/
+/: /SOURCE /TR /TD /BOLD Power Source: BOLD/ /TD/ :/ /: SOURCE/ TD/ TR/  :/ 
+/: /TIER  /TR /TD /BOLD Tier: BOLD/ /TD/ :/ /: TIER/ TD/ TR/ :/
+/: /FEATNAME /TR /TD /BOLD Name: BOLD/ /TD/ :/ /: FEATNAME/ TD/ TR/ :/
+/: /ORIGIN /TR /TD /BOLD Level: BOLD/ /TD/ :/ /: ORIGIN/ // :/
+/: /LEVEL /SPACE :/ /: LEVEL/ // :/
+/: /ACTION /SPACE - /SPACE :/ /: ACTION/ TD/ TR/ :/
+/: /TAGS /TR /TD /BOLD Tags: BOLD/ /TD/ :/ 
+/: TAGS/ TD/ TR/ :/
+/: /TYPETARGET /TR /TD /BOLD Type/Target BOLD/ /TD/ :/ /: TYPETARGET/ TD/ TR/ :/
+/: /ATTACK /TR /TD /BOLD Attack BOLD/ /TD/ :/ /: ATTACK/ TD/ TR/ :/
+/: /CHECK /TR /TD /BOLD Check BOLD/ /TD/ :/ /: CHECK/ TD/ TR/ :/
+/: /ENHANCED /TR /TD /BOLD Enhanced Success BOLD/ /TD/ :/ /: ENHANCED/ TD/ TR/ :/
+/: /COMPLETESUCCESS /TR /TD /BOLD Complete Success BOLD/ /TD/ :/ /: COMPLETESUCCESS/  TD/ TR/ :/
+/: /SUCCESS /TR /TD /BOLD Success BOLD/ /TD/ :/ /: SUCCESS/  TD/ TR/ :/
+/: /FAILURE /TR /TD /BOLD Failure BOLD/ /TD/ :/ /: FAILURE/  TD/ TR/ :/
+/: /REQUIREMENTS /TR /TD /BOLD Requirements: BOLD/ /TD/ :/
+/: REQUIREMENTS/  TD/ TR/ :/
+/: /TRIGGER /TR /TD /BOLD Trigger: BOLD/ /TD/ :/
+/: TRIGGER/  TD/ TR/ :/
+/: /EFFECTS /TR /TD /BOLD Effects: BOLD/ /TD/ :/
+/: EFFECTS/  TD/ TR/ :/
+/: /SPECIAL /TR /TD /BOLD Special: BOLD/ /TD/ :/
+/: SPECIAL/  TD/ TR/ :/
+/: /DURATION /TR /TD /BOLD Duration: BOLD/ /TD/ :/
+/: DURATION/  TD/ TR/ :/
+/: /FLAVOR /TR /TD /BOLD Flavor: BOLD/ /TD/ :/
+/: FLAVOR/  TD/ TR/ :/
+/: FEAT/ TRAITS/ TABLE/ :/
+
+/* Enables double newline equivalency to a paragraph (implicit paragraphs). */
+/:
+
+ /P :/

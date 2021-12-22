@@ -1,0 +1,43 @@
+/CALLING" Illusionist"/
+/TRAITS
+/ROLE" Controller"/
+/POWERSOURCE" Shadow"/
+/DAMAGEDIE" D6"/
+/WEAPONS" Any 1"/
+/IMPLEMENTS" orb"/
+/KNACKS" Arcana, Bluff"/
+/HITPOINTS" 5"/
+/STARTHITPOINTS" 8"/
+TRAITS/
+The illusionist is a wielder of shadow magic, but unlike the necromancer he focuses on the mind-affecting aspects of shadow. Thus illusionists are masters of deception, illusion, and misdirection. When in the presence of an illusionist, nothing is as it seems! 
+
+Illusion magic has a reputation for being frightening and its practitioners are often held in ill-repute. This reputation may be often deserved, but some of those with a talent for this kind of magic have resolved to use it for good ends. It is a difficult path to follow as suspicion will never be far away, and the temptation to cloud the minds and judgment of even one's friends and allies can be a deadly temptation. As ever, the path of shadow is both powerful and treacherous.
+/FEATURES
+/FLEXROW
+/FLEXCELL
+/BOON /BOONNAME Mental Confusion BOONNAME/
+/BOONTYPE Illusionist Calling Feature BOONTYPE/
+/ASSOCIATION Illusionist ASSOCIATION/
+/PREREQUISITES Illusionist PREREQUISITES/
+/DESCRIPTION
+Your enemies are trapped in shadowy confusion.
+DESCRIPTION/
+/BENEFITS
+Once per encounter you may impose the slowed condition on the targets of one of your feats. You may cause these characters to stop moving if they try to exit the area of effect of a shadow feat you have used which is still in effect. This effect lasts until the end of the encounter.
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /BOONNAME Phantasmist Initiate BOONNAME/ 
+/BOONTYPE Level 1: Major BOONTYPE/
+/ASSOCIATION Illusionist ASSOCIATION/
+/PREREQUISITES Shadow Initiate PREREQUISITES/
+/DESCRIPTION DESCRIPTION/
+/BENEFITS BENEFITS/
+BOON/
+FLEXCELL/
+FLEXROW/
+FEATURES/
+/BOONS
+BOONS/
+CALLING/

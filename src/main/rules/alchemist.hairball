@@ -1,0 +1,67 @@
+/CALLING" Alchemist"/
+/TRAITS
+/ROLE" Enabler"/
+/POWERSOURCE" Elemental"/
+/DAMAGEDIE" D6"/
+/WEAPONS" Dagger"/
+/IMPLEMENTS" Wand, Tome"/
+/KNACKS" Arcana, Engineering"/
+/HITPOINTS" 5"/
+/STARTHITPOINTS" 10"/
+TRAITS/
+Alchemists are experimenters with magical substances and devices. Using their mastery of elemental forces they are experts at combining ingredients and infusing them with magical power. Many alchemists create items as well as infusing ritual magic into consumables. Often their experiments are dangerous, or require strange ingredients. 
+
+As an alchemist a character may be driven to study unusual creatures, substances, devices, and such in order to increase her knowledge and power. Often this calling is a way for those who simply love knowledge for its own sake to make their way in the world. Others have more focused agendas or merely seek power.
+/FEATURES
+/FLEXROW
+/FLEXCELL
+/BOON /BOONNAME Elemental Infusion BOONNAME/
+/BOONTYPE Alchemist Calling Feature BOONTYPE/
+/ASSOCIATION Alchemist ASSOCIATION/
+/PREREQUISITES Alchemist PREREQUISITES/
+/DESCRIPTION
+You have learned to infuse your allies with some of your elemental energy.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT Whenever you target an ally with any feat, that ally heals 1d6 hit points. This is in addition to any other healing effect which may be produced by the feat. BENEFIT/
+BENEFITS/
+BOON/
+/BOON /BOONNAME Elemental Contamination BOONNAME/
+/BOONTYPE Alchemist Calling Feature BOONTYPE/
+/ASSOCIATION Alchemist ASSOCIATION/
+/PREREQUISITES Alchemist PREREQUISITES/
+/DESCRIPTION
+Your attacks contaminate your opponents with your elemental power.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT When you make a single-target attack against an enemy and hit, that enemy will take an extra 1d6 damage from the next attack which hits it. This effect ends at end of the target's turn. BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /BOONNAME Protective Elixir BOONNAME/
+/BOONTYPE Alchemist Calling Feature BOONTYPE/
+/ASSOCIATION Alchemist ASSOCIATION/
+/PREREQUISITES Alchemist PREREQUISITES/
+/DESCRIPTION
+You brew a protective elixir for your allies.
+DESCRIPTION/
+/BENEFITS
+You are able to produce an elixir any time you have a recovery. You can produce up to 4 doses of this substance at a time. When imbibed it produces the following effect:
+/FEAT /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Elemental Protection FEATNAME/
+/ORIGIN Protective Elixir ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION No Action ACTION/
+/TAGS enchantment TAGS/
+/TRIGGER When you take damage. TRIGGER/
+/EFFECTS The damage is reduced by 1d6 points. EFFECTS/
+FEAT/
+BENEFITS/
+BOON/
+FLEXCELL/
+FLEXROW/
+FEATURES/
+/BOONS
+
+BOONS/
+CALLING/
