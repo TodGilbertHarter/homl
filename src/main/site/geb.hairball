@@ -31,19 +31,27 @@ Hairball.
 	</div>
 :/
 /: SIGNINDIALOG/ </template> :/
+/: /TEMPLATE" <template id=" /" /. "> :/
+/: TEMPLATE/ </template> :/
+/: /TABCONTENTS <div class='tabcontents'> :/
+/: TABCONTENTS/ </div> :/
+/: /GAMESEARCH <game-search class='search' id='lefttabgamesearch' displayid='leftgametablist'> :/
+/: GAMESEARCH/ </game-search> :/
+/: /GAMELIST <game-list id='leftgametablist'> :/
+/: GAMELIST/ </game-list> :/
 /: /SCRIPT" <script src=' /" /. '></script> :/
 /: /STYLE" <link rel="stylesheet" type="text/css" href=" /" /. " media="screen"/> :/
 /: /TOPBAR <div class='topbar'> :/
 /: TOPBAR/ </div> :/
-/: /LOGO <img class='logo' src="images/logo.png"/> :/
+/: /LOGO <a href='./index.html'><img class='logo' src="images/logo.png"/></a> :/
 /: LOGO/ // :/
 /: /MAINMENU <div class='mainmenu'> :/
 /: MAINMENU/ </div> :/
 /: /APPLICATION <horizontal-sash id='applicationarea'> :/
 /: /LEFTSLOT <tab-panel slot='sashleft' id='leftslottabpanel'><ul class='tabbar' slot='tabs' id='leftslottabbar'></ul> :/
 /: LEFTSLOT/ </tab-panel> :/
-/: /RIGHTSLOT <span slot='sashright'> :/
-/: RIGHTSLOT/ </span> :/
+/: /RIGHTSLOT <div slot='sashright' id='mainappview'> :/
+/: RIGHTSLOT/ </div> :/
 /: APPLICATION/ </horizontal-sash> :/
 /: /FOOTER <div class='footer'> :/
 /: FOOTER/ </div> :/

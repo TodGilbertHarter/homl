@@ -15,19 +15,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 class Controller {
-	#view;
-	#authenticator;
-	#router;
-	
-	constructor(view,authenticator,router) {
+	/** @private */ view;
+	/** @private */ authenticator;
+	/** @private */ router;
+	/** @private */ gameRepo;
+	/** @private */ gamesListener;
+		
+	constructor(view,authenticator,router,gameRepo) {
 		this.view = view;
 		view.controller = this;
 		this.authenticator = authenticator;
 		this.router = router;
+		this.gameRepo = gameRepo
 		this.router.add(/signup/,() => { this.view.displaySignUpUI(); });
 		this.router.add(/signin/,() => { this.view.displaySignInUI(); });
 		this.router.add(/signout/,() => { this.view.displaySignOutUI(); });
 		this.router.add(/authenticated/,() => { this.view.displayAuthenticatedUI(); });
+		this.router.add(/showgame\/(.*)/,(gameid) => {this.view.displayGameInfo(gameid); });
 	}
 	
 	authenticated() {
@@ -68,5 +72,26 @@ class Controller {
 	
 	doSignOut() {
 		this.authenticator.signOut();
+	}
+	
+	doGameSearch(name) {
+		this.gameRepo.getGamesByName(name,this.onGamesChanged.bind(this));
+//		this.#gameRepo.getGameByName(name,this.onGamesChanged.bind(this));
+	}
+	
+	registerGamesListener(handler) {
+		this.gamesListener = handler;
+	}
+	
+	onGamesChanged(games) {
+		this.gamesListener(games);
+	}
+	
+	displayGameViewClicked(gameId) {
+		window.location.hash = `/showgame/${gameId}`;
+	}
+	
+	doGameInfoDisplay(gameview) {
+		this.gameRepo.getGameById(gameview.gameId,gameview.render.bind(gameview));
 	}
 }

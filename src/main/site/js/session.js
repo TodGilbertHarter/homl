@@ -14,17 +14,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
+/** @private */ const SessionWidgettemplate = document.createElement('template');
+SessionWidgettemplate.innerHTML = `<div class='sessionwidget' part='button' id='button'><slot name='text'><button>Sign In</button></slot></div>`;
+
 class SessionWidget extends HTMLElement {
 	/**
 	Implements a widget which shows login status and initiates login and logout.
 	 */
-	static #template;
-	static {
-		this.template = document.createElement('template');
-		this.template.innerHTML = `<div class='sessionwidget' part='button' id='button'><slot name='text'><button>Sign In</button></slot></div>`;
-		}
-	#bch;
-	#signedInState = false;
+
+	/** @private */ static template = SessionWidgettemplate;
+	/** @private */ bch;
+	/** @private */ signedInState = false;
 
 	constructor() {
 		super();

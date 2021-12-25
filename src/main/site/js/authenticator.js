@@ -15,19 +15,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 class Authenticator {
-	#fb;
-	#user;
-	authenticated = false;
-	#errorCode;
-	#player;
+	/** @private */ fb;
+	/** @private */ playerRepo;
+	user;
+	/** @private */ authenticated = false;
+	errorCode;
+	player;
 	
-	constructor(firebase) {
+	constructor(firebase,playerRepo) {
 		this.fb = firebase;
+		this.playerRepo = playerRepo;
 	}
 	
-	getPlayer(onSuccess,onFailure) {
-		this.player = null; //TODO: implement this
-		onSuccess(this.user,this.player);
+	/** @private */ getPlayerFromRepo(onSuccess,onFailure) {
+		this.playerRepo.getPlayerByEmail(this.user.email,(data) => {
+			this.player = data;
+			onSuccess(this.user,this.player);
+		}, (message) => onFailure(message));
 	}
 	
 	signOut(onComplete) {
@@ -38,8 +42,8 @@ class Authenticator {
 				onComplete();
 			}
 		)
-		.catch((error) => {
-			console.log("Sign Out failed");
+		.catch((e) => {
+			console.log("Sign Out failed "+e.message);
 		});
 	}
 	
@@ -49,7 +53,7 @@ class Authenticator {
 			this.authenticated = true;
 		    this.user = userCredential.user;
 			this.errorCode = 0;
-			this.getPlayer(onSuccess,onFailure);
+			this.getPlayerFromRepo(onSuccess,onFailure);
 		  })
 		  .catch((error) => {
 		    this.errorCode = error.code;
@@ -68,11 +72,11 @@ class Authenticator {
 			this.errorCode = 0;
 		    this.player = {
 		    	email: email,
-		    	loggedin: Timestamp.fromDate(new Date())
+		    	loggedin: this.fb.firestore.Timestamp.fromDate(new Date())
 		    };
 		    var db = this.fb.firestore();
 			db.collection('players').add(email);
-			onSuccess(this.user,player);
+			onSuccess(this.user,this.player);
 		  })
 		  .catch((error) => {
 		    var errorCode = error.code;
@@ -81,15 +85,4 @@ class Authenticator {
 		  });
 	}
 
-	get ErrorCode() {
-		return this.errorCode;
-	}
-
-	get User() {
-		return this.user;
-	}
-	
-	set User(value) {
-		this.user = value;
-	}
 }

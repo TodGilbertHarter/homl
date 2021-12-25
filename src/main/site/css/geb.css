@@ -110,6 +110,9 @@ body {
 .mainmenu {
 	display: inline-block;
 	vertical-align: middle;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .topbar {
@@ -124,6 +127,7 @@ body {
 	clear: both;
 	padding: 3px;
 	box-sizing: border-box;
+	position: relative;
 }
 
 .footer {
@@ -230,7 +234,11 @@ tab-panel::part(tabcontents) {
 .widgetpanel {
 	text-align: right;
 	width: 10em;
-	float: right;
+	right: 5px;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .dialogbutton {

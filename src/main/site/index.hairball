@@ -10,11 +10,24 @@
 /SCRIPT" js/tabs.js"/
 /SCRIPT" js/session.js"/
 /SCRIPT" js/controller.js"/
-/SCRIPT" js/view.js"/
+/SCRIPT" js/notview.js"/
 /SCRIPT" js/authenticator.js"/
 /SCRIPT" js/dialog.js"/
 /SCRIPT" js/router.js"/
+/SCRIPT" js/playerrepository.js"/
+/SCRIPT" js/game.js"/
+/SCRIPT" js/gamerepository.js"/
+/SCRIPT" js/gamelist.js"/
+/SCRIPT" js/gamesearch.js"/
+/SCRIPT" js/gameview.js"/
 /SIGNINDIALOG SIGNINDIALOG/
+/TEMPLATE" gamesearchtemplate"/
+/TABCONTENTS
+/GAMESEARCH GAMESEARCH/
+/GAMELIST
+GAMELIST/
+TABCONTENTS/
+TEMPLATE/
 /BODY
 /TOPBAR
 /LOGO LOGO/ /MAINMENU this is the menu, it refuses to be centered :( MAINMENU/ /WIDGETPANEL /SESSION/ WIDGETPANEL/
@@ -29,6 +42,7 @@ APPLICATION/
 /FOOTER
 Copyright &copy; Tod G. Harter 2021 All rights reserved.
 FOOTER/
+/* /SCRIPT" js/library.js"/ */
 /SCRIPT" js/start.js"/
 BODY/
 SITE/

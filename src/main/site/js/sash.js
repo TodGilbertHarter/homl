@@ -14,26 +14,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
+/** @private */ const HorizontalSashtemplate = document.createElement('template');
+HorizontalSashtemplate.innerHTML = `<div class='sash' style='display: flex;' part='container'>
+				<div class='sashleft' part='sashleft' id='sashleft'><slot name='sashleft'>LEFT SLOT</slot></div>
+				<div class='dragbar' part='dragbar' id='dragbar' style='cursor: col-resize;'>&nbsp;</div>
+				<div class='sashright' part='sashright' id='sashright' style='flex: 1;'><slot name='sashright'>RIGHT SLOT</slot></div>
+			</div>`;
+
 class HorizontalSash extends HTMLElement {
 	/**
 	Sash component, provides two slots, one for the left and one for the right, and allows dragging of the middle bar between the two in
 	order to resize them.
 	 */
-	static #template;
-	static {
-		this.template = document.createElement('template');
-		this.template.innerHTML = `<div class='sash' style='display: flex;' part='container'>
-				<div class='sashleft' part='sashleft' id='sashleft'><slot name='sashleft'>LEFT SLOT</slot></div>
-				<div class='dragbar' part='dragbar' id='dragbar' style='cursor: col-resize;'>&nbsp;</div>
-				<div class='sashright' part='sashright' id='sashright' style='flex: 1;'><slot name='sashright'>RIGHT SLOT</slot></div>
-			</div>`;
-		}
-	#leftwidth = 0;
-	#x = 0;
-	#y = 0;
-	#mmh;
-	#muh;
-	#mdh;
+	/** @private */ static template = HorizontalSashtemplate;
+	/** @private */ leftWidth = 0;
+	/** @private */ x = 0;
+	/** @private */ y = 0;
+	/** @private */ mmh;
+	/** @private */ muh;
+	/** @private */ mdh;
 	
 	constructor() {
 		super();

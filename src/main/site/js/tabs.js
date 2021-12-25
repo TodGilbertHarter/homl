@@ -14,18 +14,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-class TabPanel extends HTMLElement {
-	static #template;
-	static {
-		this.template = document.createElement('template');
-		this.template.innerHTML = `<div class='tabpanel' part='container'>
+
+/** @private */ const TabPaneltemplate = document.createElement('template');
+TabPaneltemplate.innerHTML = `<div class='tabpanel' part='container'>
 				<div part='tabs' id='tabs'><slot name='tabs'></slot></div>
 				<div part='tabcontents' id='tabcontents'><slot></slot></div>
 			</div>`;
-		}
-	#tch;
-	#tabList;
-	#tabContents;
+
+class TabPanel extends HTMLElement {
+	/** @private */ static template = TabPaneltemplate;
+	/** @private */ tch;
+	/** @private */ tabList;
+	/** @private */ tabContents;
 
 	constructor() {
 		super();
@@ -41,10 +41,12 @@ class TabPanel extends HTMLElement {
 			const s = e.target;
 			const assigned = s.assignedElements();
 			const tablist = assigned[0];
-			this.tabList = tablist.childNodes;
-			this.tabList.forEach(element => { 
-				element.addEventListener('click',this.tch);
-			});
+			if(typeof tablist !== 'undefined') {
+				this.tabList = tablist.childNodes;
+				this.tabList.forEach(element => { 
+					element.addEventListener('click',this.tch);
+				});
+			}
 		});
 		const views = this.shadowRoot.getElementById('tabcontents');
 		const slot2 = views.firstChild;

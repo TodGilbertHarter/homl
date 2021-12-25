@@ -14,18 +14,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-class View {
+
+class NotView { /* Closure Compiler had fits about the class name 'View', hence the weird name... */
 	/**
 	This class represents the application view. It should be used by all the other code to interface with
 	the DOM, etc. This allows us to abstract away the structure and organization of the UI's look.
 	 */
-	#theDocument;
+	/** @private */ theDocument;
 	controller;
 	
 	constructor(adocument) {
 		this.theDocument = adocument;
 	}
-	
+
 	addTabToLeftPanel(tab,tabContents) {
 		this.theDocument.getElementById('leftslottabbar').appendChild(tab);
 		this.theDocument.getElementById('leftslottabpanel').appendChild(tabContents);
@@ -41,6 +42,7 @@ class View {
 			dialog.dismiss();
 			this.controller.goBack();
 		});
+		var myDoc = this.theDocument;
 		this.theDocument.getElementById('logindialogsignin').addEventListener('click',(e) => { 
 			console.log('clicked sign in');
 			const email = this.theDocument.getElementById('logindialogemail').value;
@@ -61,12 +63,9 @@ class View {
 		li.innerText = 'Games';
 		li.classList.add('active');
 		tbar.appendChild(li);
-		const content = this.theDocument.createElement('div');
-		content.classList.add('tabcontents');
-		content.classList.add('active');
-		content.innerText = 'some games';
+		const content = this.theDocument.getElementById('gamesearchtemplate').content.cloneNode(true);
+		content.firstChild.classList.add('active');
 		tabs.appendChild(content);
-		
 	}
 	
 	displayTabs() {
@@ -79,7 +78,7 @@ class View {
 		const tbar = this.theDocument.getElementById('leftslottabbar');
 		tbar.innerHTML = '';
 		const tabs = this.theDocument.getElementById('leftslottabpanel');
-		tabs.innerHTML = '';
+		tabs.childNodes.forEach((t) => { if(t.nodeName === 'DIV') { t.parentElement.removeChild(t) } });
 	}
 	
 	displaySignOutUI() {
@@ -98,6 +97,10 @@ class View {
 		return this.theDocument.getElementById('sessionwidget');
 	}
 	
+	getElement(id) {
+		return this.theDocument.getElementById(id);
+	}
+	
 	displaySignUpUI() {
 		const dialog = this.theDocument.getElementById('signin-dialog');
 		const email = this.theDocument.getElementById('logindialogemail').value;
@@ -113,5 +116,12 @@ class View {
 		const dialog = this.theDocument.createElement('dialog-widget');
 		dialog.innerHTML = `<div slot='contents' class='errordialogmessage'>${message}</div>`;
 		this.theDocument.getElementsByTagName('body')[0].appendChild(dialog);
+	}
+	
+	displayGameInfo(gameId) {
+		const displayarea = this.theDocument.getElementById('mainappview');
+		displayarea.innerHTML = `<game-view gameid='${gameId}' id='gv${gameId}'></game-view>`;
+		const gameview = this.theDocument.getElementById(`gv${gameId}`);
+		this.controller.doGameInfoDisplay(gameview);
 	}
 }

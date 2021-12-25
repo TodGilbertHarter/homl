@@ -14,11 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-class DialogWidget extends HTMLElement {
-	static #template;
-	static {
-		this.template = document.createElement('template');
-		this.template.innerHTML = `<style>
+
+/** @private */ const DialogWidgettemplate = document.createElement('template');
+DialogWidgettemplate.innerHTML = `<style>
 			div.dialog {
 				position: fixed;
 				left: 500px; /* make this 50% at some point */
@@ -55,8 +53,10 @@ class DialogWidget extends HTMLElement {
 				<slot name='buttonbar'><button id='dismiss' style='float: right;'>dismiss</button></slot>
 			</div>
 		</div>`;
-		}
-	#dch;
+
+class DialogWidget extends HTMLElement {
+	/** @private */ static template = DialogWidgettemplate;
+	/** @private */ dch;
 
 	constructor() {
 		super();

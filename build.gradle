@@ -1,3 +1,9 @@
+buildscript {
+	dependencies {
+		classpath "com.google.javascript:closure-compiler:v20211201"
+	}
+}
+
 plugins {
     id 'java'
     id 'io.quarkus'
@@ -13,10 +19,10 @@ repositories {
 }
 
 dependencies {
-	compileOnly 'org.projectlombok:lombok:1.18.20'
-	annotationProcessor 'org.projectlombok:lombok:1.18.20'
-	testCompileOnly 'org.projectlombok:lombok:1.18.20'
-	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+	compileOnly 'org.projectlombok:lombok:1.18.22'
+	annotationProcessor 'org.projectlombok:lombok:1.18.22'
+	testCompileOnly 'org.projectlombok:lombok:1.18.22'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
     implementation 'io.quarkus:quarkus-arc'
     implementation 'io.quarkus:quarkus-resteasy'
@@ -28,8 +34,8 @@ dependencies {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 compileJava {
@@ -66,8 +72,24 @@ task deployHoMLRules(type: Exec) {
 	commandLine './scripts/deployHoMLRules.sh'
 }
 
+task copyGEBSite(type: Exec) {
+	commandLine './scripts/copyGEBSite.sh', project.version
+}
+
 task generateGEBSite(type: Exec) {
 //	dependsOn 'generateHoMLRules'
+	dependsOn 'copyGEBSite'
+	dependsOn 'closureCompile'
 	commandLine './scripts/generateGEBSite.sh', project.version
 }
 
+task getCCJar(type: Copy) {
+	from buildscript.configurations.classpath
+	into "${project.buildDir}/cc"
+}
+
+task closureCompile(type: Exec) {
+	dependsOn 'getCCJar'
+	dependsOn 'copyGEBSite'
+	commandLine './scripts/runClosureCompiler.sh', project.version
+}
