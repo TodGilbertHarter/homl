@@ -15,7 +15,7 @@ Illusion magic has a reputation for being frightening and its practitioners are 
 /FEATURES
 /FLEXROW
 /FLEXCELL
-/BOON /BOONNAME Mental Confusion BOONNAME/
+/BOON /ID" cc2216b2-69f0-11ec-95c0-74d02b9c2012"/ /BOONNAME Mental Confusion BOONNAME/
 /BOONTYPE Illusionist Calling Feature BOONTYPE/
 /ASSOCIATION Illusionist ASSOCIATION/
 /PREREQUISITES Illusionist PREREQUISITES/
@@ -28,7 +28,7 @@ BENEFITS/
 BOON/
 FLEXCELL/
 /FLEXCELL
-/BOON /BOONNAME Phantasmist Initiate BOONNAME/ 
+/BOON /ID" de0a27ca-69f0-11ec-b8c9-74d02b9c2012"/ /BOONNAME Phantasmist Initiate BOONNAME/ 
 /BOONTYPE Level 1: Major BOONTYPE/
 /ASSOCIATION Illusionist ASSOCIATION/
 /PREREQUISITES Shadow Initiate PREREQUISITES/

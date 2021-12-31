@@ -1,25 +1,35 @@
 /SITE" Giant Electronic Brain"/
 /STYLE" css/geb.css"/
 /STYLE" css/glyphicons.css"/
-/SCRIPT" https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"/
+<script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
+    import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
+</script>
+/* /SCRIPT" https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"/
 /SCRIPT" https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"/
 /SCRIPT" https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"/
-/SCRIPT" https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"/
-/SCRIPT" js/fbconfig.js"/
-/SCRIPT" js/sash.js"/
-/SCRIPT" js/tabs.js"/
-/SCRIPT" js/session.js"/
-/SCRIPT" js/controller.js"/
-/SCRIPT" js/notview.js"/
-/SCRIPT" js/authenticator.js"/
-/SCRIPT" js/dialog.js"/
-/SCRIPT" js/router.js"/
-/SCRIPT" js/playerrepository.js"/
-/SCRIPT" js/game.js"/
-/SCRIPT" js/gamerepository.js"/
-/SCRIPT" js/gamelist.js"/
-/SCRIPT" js/gamesearch.js"/
-/SCRIPT" js/gameview.js"/
+/SCRIPT" https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"/ */
+/MODULE" js/fbconfig.js"/
+/MODULE" js/sash.js"/
+/MODULE" js/tabs.js"/
+/MODULE" js/session.js"/
+/MODULE" js/controller.js"/
+/MODULE" js/notview.js"/
+/MODULE" js/authenticator.js"/
+/MODULE" js/dialog.js"/
+/MODULE" js/router.js"/
+/MODULE" js/player.js"/
+/MODULE" js/playerrepository.js"/
+/MODULE" js/characterrepository.js"/
+/MODULE" js/rules.js"/
+/MODULE" js/character.js"/
+/MODULE" js/charactersheet.js"/
+/MODULE" js/game.js"/
+/MODULE" js/gamerepository.js"/
+/MODULE" js/gamelist.js"/
+/MODULE" js/gamesearch.js"/
+/MODULE" js/gameview.js"/
 /SIGNINDIALOG SIGNINDIALOG/
 /TEMPLATE" gamesearchtemplate"/
 /TABCONTENTS
@@ -28,6 +38,7 @@
 GAMELIST/
 TABCONTENTS/
 TEMPLATE/
+/SOURCE" embedded_charactersheet.html"/
 /BODY
 /TOPBAR
 /LOGO LOGO/ /MAINMENU this is the menu, it refuses to be centered :( MAINMENU/ /WIDGETPANEL /SESSION/ WIDGETPANEL/
@@ -43,6 +54,6 @@ APPLICATION/
 Copyright &copy; Tod G. Harter 2021 All rights reserved.
 FOOTER/
 /* /SCRIPT" js/library.js"/ */
-/SCRIPT" js/start.js"/
+/MODULE" js/start.js"/
 BODY/
 SITE/

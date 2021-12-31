@@ -12,7 +12,7 @@ The higher level the character is the more potent their boons may become. Some b
 
 Boons are described using a standard format which is explained here.
 
-/BOON /BOONNAME Sample BOONNAME/
+/BOON /ID" ff1622d0-69ef-11ec-9d2d-74d02b9c2012"/ /BOONNAME Sample BOONNAME/
 /BOONTYPE Source: 1 Major BOONTYPE/
 /ASSOCIATION None ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
@@ -24,12 +24,8 @@ DESCRIPTION/
 The mechanical benefits of the boon are described here. If it grants the character who has it some attributes or something similar, then these are described here.
 BENEFIT/
 BENEFITS/
-/DISADVANTAGES
-Any negative mechanical aspects of the boon are described here. 
-DISADVANTAGES/
-/RESTRICTIONS
-Anything that restricts how the benefits can be used.
-RESTRICTIONS/
+/DISADVANTAGES Any negative mechanical aspects of the boon are described here. DISADVANTAGES/
+/RESTRICTIONS Anything that restricts how the benefits can be used. RESTRICTIONS/
 BOON/
 /UL
     /LI /LABEL Name LABEL/ This is the name of the boon. LI/

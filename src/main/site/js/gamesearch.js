@@ -36,9 +36,9 @@ class GameSearch extends HTMLElement {
 	
 	onNameChange(e) {
 		const displayId = this.getAttribute('displayid');
-		const viewer = view.getElement(displayId);
-		controller.registerGamesListener(viewer.getRenderFn());
-		controller.doGameSearch(e.target.value);
+		const viewer = window.gebApp.view.getElement(displayId);
+		window.gebApp.controller.registerGamesListener(viewer.getRenderFn());
+		window.gebApp.controller.doGameSearch(e.target.value);
 	}
 }
 

@@ -32,7 +32,7 @@ GameViewtemplate.innerHTML = `
 		</div>`;
 
 class GameView extends HTMLElement {
-	static template = GameViewtemplate;
+	/** @private */static template = GameViewtemplate;
 	/** @private */ model;
 	/** @type {string} @private */ gameId;
 	
@@ -50,7 +50,24 @@ class GameView extends HTMLElement {
 	
 	render(game) {
 		const gameview = this.shadowRoot.getElementById('gameview');
-		gameview.innerHTML = `<p>Displaying data for game ${game.name} with id ${game.id}</p>`;
+		game.getCharacters((characters) => {
+			var listHTML = '<ul class="characterlist" id="characterlist">';
+			characters.forEach((character) => { 
+				listHTML = listHTML + `<li><span>${character.name}</span><button id='cvbtn${character.id}' data-id='${character.id}'>view</button></li>`; 
+				});
+			listHTML = listHTML + '</ul>';
+			gameview.innerHTML = `<div class='fieldlabel'>Game Name:</div><div class='fieldvalue'>${game.name}</div>
+			${listHTML}`;
+			const clist = this.shadowRoot.getElementById('characterlist');
+			clist.childNodes.forEach((li) => {
+				li.childNodes[1].addEventListener('click',(e) => { 
+					const id = e.target.getAttribute('data-id');
+					console.log("clicked on a character "+id);
+					window.gebApp.controller.displayCharacterViewClicked(id);
+				});
+			});
+		});
+
 	}
 		
 }

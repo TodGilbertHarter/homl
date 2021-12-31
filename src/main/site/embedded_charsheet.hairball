@@ -1,0 +1,20 @@
+/*
+Hairball HTML character sheet. These definitions define common markup syntax in the context
+of HTML. Include this and a character data document, the result will be an HTML character sheet.
+*/
+/SOURCE" charsheet.hairball"/
+/:
+
+// :/ /* Prevent spurious <p> tags. */
+
+/: /CHARACTER
+<template id='charactersheettemplate'>
+<style>
+@import "css/embedded_charactersheet.css";
+</style>
+<div class='container' id='characterview'>
+:/
+
+/: CHARACTER/ FLEXCELL/ FLEXROW/ FLEXROW/ <div class="panel"><button id='savebutton'>Save</button><button id='refreshbutton'>Refresh</button></div></div>
+</div> 
+</template> :/

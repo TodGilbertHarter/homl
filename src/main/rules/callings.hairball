@@ -55,7 +55,7 @@ SUBSECTION/
 /SUBSECTION" Martial callings"/
 
 /RIGHT=" half"/
-/BOON /BOONNAME Martial Attunement BOONNAME/
+/BOON /ID" 18ab0436-69f0-11ec-9330-74d02b9c2012"/ /BOONNAME Martial Attunement BOONNAME/
 /BOONTYPE Level 1: Major BOONTYPE/
 /ASSOCIATION Martial ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
@@ -82,7 +82,7 @@ SUBSECTION/
 /SUBSECTION" Elemental Callings"/
 
 /RIGHT=" half"/
-/BOON /BOONNAME Elemental Infusion BOONNAME/
+/BOON /ID" 2b49a084-69f0-11ec-ba61-74d02b9c2012"/ /BOONNAME Elemental Infusion BOONNAME/
 /BOONTYPE Level 1: Major BOONTYPE/
 /ASSOCIATION Elemental ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
@@ -110,7 +110,7 @@ The following callings draw their power from the elemental power source.
 SUBSECTION/
 /SUBSECTION" Life Callings"/
 /RIGHT=" half"/
-/BOON /BOONNAME Life Attunement BOONNAME/
+/BOON /ID" 427fa2ee-69f0-11ec-8aa3-74d02b9c2012"/ /BOONNAME Life Attunement BOONNAME/
 /BOONTYPE Level 1: Major BOONTYPE/
 /ASSOCIATION Life ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
@@ -136,7 +136,7 @@ The following callings draw their power from the life power source.
 SUBSECTION/
 /SUBSECTION" Spirit Callings"/
 /RIGHT=" half"/
-/BOON /BOONNAME Spiritual Attunement BOONNAME/
+/BOON /ID" 56a18c10-69f0-11ec-a6ae-74d02b9c2012"/ /BOONNAME Spiritual Attunement BOONNAME/
 /BOONTYPE Level 1: Major BOONTYPE/
 /ASSOCIATION Spirit ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
@@ -171,7 +171,7 @@ Practice of shadow power use is generally frowned on in many societies, as its m
 And finally, mastering shadow power is difficult. The paths which one must follow in order to be initiated into the higher mysteries of shadow power are hard, well hidden, and open only to a select few. The price demanded for such knowledge can be terrifyingly high. Only those of great will power, or with extremely strong motivations, are likely to be attracted this life.
 
 All characters with a shadow calling gain the following boon:
-/BOON /BOONNAME Shadow Attunement BOONNAME/
+/BOON /ID" 69f6b5ec-69f0-11ec-ae88-74d02b9c2012"/ /BOONNAME Shadow Attunement BOONNAME/
 /BOONTYPE Level 1: Major BOONTYPE/
 /ASSOCIATION Shadow ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/

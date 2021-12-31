@@ -19,6 +19,7 @@ code doesn't have to know anything about the 'black magic' of how references and
 /VARIABLE /REFMAP /MAKEMAP /REFMAP /V! /* This creates the reference map in memory as a hairball variable */
 /: /MAKEREFERENCE /CURRENTID /V@ /SWAP /REFMAP /V@ /MAP! :/ /* add a reference to the map */
 /: /FETCHREFERENCE /TRIM /REFMAP /V@ /MAP@ /DUP /ISNULL /IF /DROP /[" badref "]/ /THEN :/
+/: /SETREFERENCE /REFMAP /V@ /MAP! :/
 /: /ID@ /CURRENTID /V@ :/
 /: /ID! /CURRENTID /V! :/
 /: /ID+ /ID@ /1+ /ID! :/

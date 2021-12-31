@@ -14,12 +14,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+import { collection, doc, setDoc, query, where, getDocs, getDoc } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
+import { Game } from './game.js';
+
 const gameConverter = {
 	toFirestore(game) {
 		
 	},
 	
 	fromFirestore(snapshot, options) {
+		console.log("converting and id is "+snapshot.id);
 		const id = snapshot.id;
 		const data = snapshot.data(options);
 //		const owner = data.owner.get().data();
@@ -32,42 +36,33 @@ class GameRepository {
 	Game repo, this fetches games for us from Firebase.
 	*/
     /** @private */ db;
-//    static #converter = new GameConverter();
-
-    constructor(firebase) {
-        this.db = firebase.firestore();
+    /** @private */ gebApp;
+    
+    constructor(gebApp,firestore) {
+		this.gebApp = gebApp;
+        this.db = firestore;
     }
 
 	getGameById(id,onDataAvailable) {
-		this.db.collection("games")
-		.withConverter(gameConverter).get(id)
-		.then((doc) => {
+		console.log("WTF IS THE ID "+id);
+		var docRef = doc(this.db,"games",id);
+		docRef = docRef.withConverter(gameConverter);
+		getDoc(docRef).then((doc) => {
 				console.log("GOT SOME DATA "+doc);
 				const results = [];
-				doc.forEach((gdata) => {
+/*				doc.forEach((gdata) => {
 					results.push(gdata.data());
-				});
+				}); */
+				results.push(doc.data());
 				onDataAvailable(results[0]); 
 		});
 	}
 	
-    getGameByName(name,onDataAvailable) {
-        this.db.collection("games")
-        .where("name", "==", name).get().then((doc) => { 
-            doc.forEach(r => { 
-                console.log("GOT "+r.id);
-                var data = r.data();
-                data.id = r.id;
-                console.log("Game data is:"+JSON.stringify(data));
-                onDataAvailable(data);
-            } ) });
-    }
-    
     getGamesByName(name,onDataAvailable) {
-		this.db.collection("games")
-			.where("name", "==", name)
-			.withConverter(gameConverter).get()
-			.then((doc) => { 
+		const gamesRef = collection(this.db,"games");
+		var q = query(gamesRef,where("name", "==", name));
+		q = q.withConverter(gameConverter);
+		getDocs(q).then((doc) => { 
 				console.log("GOT SOME DATA "+doc);
 				const results = [];
 				doc.forEach((gdata) => {
@@ -94,8 +89,20 @@ class GameRepository {
 
 	getPlayerGames(player,onDataAvailable,onFailure) {
 //		const categoryDocRef = this.#db.collection('games').doc('players');
-		this.db.collection('games').where('players.id','==',player.id).get().then(doc => onDataAvailable(doc))
-			.catch((e) => { onFailure(e.message)});
+		var docRef = collection(this.db,'games');
+		docRef = docRef.withConverter(gameConverter);
+		const q = query(docRef,where('players.id','==',player.id));
+		getDocs(q).then((doc) => {
+				const results = [];
+				doc.forEach((gdata) => {
+					results.push(gdata.data());
+				});
+			onDataAvailable(results);
+			}).catch((e) => { 
+				onFailure(e.message);
+			});
 	}
 }
+
+export { GameRepository };
 

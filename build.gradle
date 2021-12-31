@@ -1,14 +1,32 @@
 buildscript {
+	repositories {
+		maven {
+			name 'localRepo'
+			url uri('../localrepo')
+		}
+	}
+	
 	dependencies {
 		classpath "com.google.javascript:closure-compiler:v20211201"
+		classpath group: 'com.timgroup',
+		name: 'gradle-webpack-plugin',
+		version: '1.1.0'
+		classpath 'com.sun.net.httpserver:http:20070405'
+//		classpath "io.ratpack:ratpack-gradle:1.10.0-milestone-3"
 	}
+	
 }
 
 plugins {
     id 'java'
     id 'io.quarkus'
 	id "fr.brouillard.oss.gradle.jgitver" version "0.10.0-rc03"
+	id "com.github.node-gradle.node" version "3.1.1"
+//	id "com.timgroup.webpack" version "1.1.0"
 }
+
+//apply plugin: "io.ratpack.ratpack-groovy"
+apply plugin: com.timgroup.gradle.webpack.WebpackPlugin
 
 group 'com.giantelectronicbrain'
 //version '0.0.1'
@@ -18,7 +36,16 @@ repositories {
     mavenLocal()
 }
 
+task installClosureCompiler(type: NpmTask) {
+	args = ['install', 'google-closure-compiler']
+}
+	
+task installFirebase(type: NpmTask) {
+	args = ['install', 'firebase', 'firebase-admin', 'fakedb']
+}
+
 dependencies {
+	runtimeOnly "org.slf4j:slf4j-simple:1.7.30"
 	compileOnly 'org.projectlombok:lombok:1.18.22'
 	annotationProcessor 'org.projectlombok:lombok:1.18.22'
 	testCompileOnly 'org.projectlombok:lombok:1.18.22'
@@ -73,17 +100,130 @@ task deployHoMLRules(type: Exec) {
 }
 
 task copyGEBSite(type: Exec) {
+	inputs.files(fileTree('src/main/site'))
+	inputs.file('scripts/copyGEBSite.sh')
+	outputs.dir('build/site')
 	commandLine './scripts/copyGEBSite.sh', project.version
+}
+
+task generateEmptyCharacterSheet(type: Exec) {
+	commandLine './scripts/generate_character.sh', project.version, 'empty'
 }
 
 task generateGEBSite(type: Exec) {
 //	dependsOn 'generateHoMLRules'
+	dependsOn 'generateEmptyCharacterSheet'
+	inputs.file('scripts/generateGEBSite.sh')
+	outputs.dir('build/geb')
 	dependsOn 'copyGEBSite'
-	dependsOn 'closureCompile'
+//	dependsOn 'closureCompile'
 	commandLine './scripts/generateGEBSite.sh', project.version
 }
 
-task getCCJar(type: Copy) {
+import com.sun.net.httpserver.*
+import java.nio.file.Files
+import java.nio.file.Paths
+import java.nio.file.Path
+import java.io.InputStream
+import java.io.OutputStream
+import java.io.FileInputStream
+
+class HttpPlugin implements Plugin<Project>, HttpHandler {
+	
+	private void sendFile(String fileName, OutputStream os) {
+		InputStream is = new FileInputStream(fileName);
+		is.transferTo(os);
+		os.flush();
+		os.close();
+	}
+	
+	private void setMIMEType(Headers h, String filename) {
+		int extInd = filename.lastIndexOf(".");
+		if(extInd != -1) {
+			String mimeType = "";
+			String extension = filename.substring(extInd);
+			println("extension is "+extension);
+			if(".html".equals(extension)) {
+				mimeType = "text/html; charset=UTF-8";
+			} else if(".js".equals(extension)) {
+				mimeType = "application/javascript; charset=UTF-8";
+			} else if(".css".equals(extension)) {
+				mimeType = "text/css; charset=UTF-8";
+			}
+			if(!"".equals(mimeType))
+				h.set("Content-Type", mimeType);
+		}
+	}
+	
+	public void handle(HttpExchange t) throws IOException {
+		OutputStream os;
+		boolean sentRH = false;
+		try {
+			println("handling request");
+			String path = t.requestURI.decodedPath;
+			println("got path of "+path);
+			if("/".equals(path))
+				path = "/index.html";
+			println("path is now "+path);
+			String filename = "/home/tharter/projects/homl/build/geb/geb-0.0.0-4-firebase_v9"+path;
+			println("filename is "+filename);
+			println("CWD is "+System.getProperty('user.dir'));
+			Path p = Path.of(filename);
+			this.setMIMEType(t.responseHeaders,filename);
+			println("got past getting the path");
+			if(!Files.exists(p)) {
+				t.sendResponseHeaders(404, -1);
+				os = t.getResponseBody();
+				os.close();
+				return;
+			}
+			long size = Files.size(p);
+			println("Size is "+size);
+			t.sendResponseHeaders(200, size);
+			sentRH = true;
+			println("sent response headers "+size);
+			os = t.getResponseBody();
+			this.sendFile(filename, os);
+			println("done");
+		} catch(Throwable e) {
+			e.printStackTrace();
+			if(!sentRH) t.sendResponseHeaders(500, -1);
+			if(os != null) os.close();
+		}
+	}
+	
+	void apply(Project project) {
+		project.task('startWebServer') {
+			doLast {
+				HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+				server.createContext("/", this);
+				server.setExecutor(null);
+				server.start();
+			}
+		}
+	}
+}
+
+apply plugin: HttpPlugin
+
+task uploadData(type: NodeTask) {
+	script = file('./scripts/upload_data.js')
+	args = ['build/rules/compendium.json']
+}
+
+task closureCompile(type: NpxTask) {
+	dependsOn 'npm_install'
+	dependsOn 'copyGEBSite'
+	command = 'google-closure-compiler'
+	args = ['--language_in', 'ES_NEXT', 
+		'--js_module_root', 'node_modules',
+		'-O', 'SIMPLE', 
+		'--js', 'build/site/js/*.js', 
+		'--js_output_file', "build/geb/geb-${project.version}/js/library.js"]
+//	args = ['--version']
+}
+	
+/* task getCCJar(type: Copy) {
 	from buildscript.configurations.classpath
 	into "${project.buildDir}/cc"
 }
@@ -92,4 +232,4 @@ task closureCompile(type: Exec) {
 	dependsOn 'getCCJar'
 	dependsOn 'copyGEBSite'
 	commandLine './scripts/runClosureCompiler.sh', project.version
-}
+} */

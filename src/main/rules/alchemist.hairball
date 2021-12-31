@@ -15,7 +15,7 @@ As an alchemist a character may be driven to study unusual creatures, substances
 /FEATURES
 /FLEXROW
 /FLEXCELL
-/BOON /BOONNAME Elemental Infusion BOONNAME/
+/BOON /ID" eee858bc-69ed-11ec-b2a1-74d02b9c2012"/ /BOONNAME Elemental Infusion BOONNAME/
 /BOONTYPE Alchemist Calling Feature BOONTYPE/
 /ASSOCIATION Alchemist ASSOCIATION/
 /PREREQUISITES Alchemist PREREQUISITES/
@@ -26,7 +26,7 @@ DESCRIPTION/
 /BENEFIT Whenever you target an ally with any feat, that ally heals 1d6 hit points. This is in addition to any other healing effect which may be produced by the feat. BENEFIT/
 BENEFITS/
 BOON/
-/BOON /BOONNAME Elemental Contamination BOONNAME/
+/BOON /ID" 3a5cec94-69ef-11ec-9eb2-74d02b9c2012"/ /BOONNAME Elemental Contamination BOONNAME/
 /BOONTYPE Alchemist Calling Feature BOONTYPE/
 /ASSOCIATION Alchemist ASSOCIATION/
 /PREREQUISITES Alchemist PREREQUISITES/
@@ -39,7 +39,7 @@ BENEFITS/
 BOON/
 FLEXCELL/
 /FLEXCELL
-/BOON /BOONNAME Protective Elixir BOONNAME/
+/BOON /ID" 582ca714-69ef-11ec-ab53-74d02b9c2012"/ /BOONNAME Protective Elixir BOONNAME/
 /BOONTYPE Alchemist Calling Feature BOONTYPE/
 /ASSOCIATION Alchemist ASSOCIATION/
 /PREREQUISITES Alchemist PREREQUISITES/

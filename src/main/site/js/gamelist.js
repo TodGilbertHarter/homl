@@ -14,6 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+import { getDoc } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
 
 /** @private */ const GameListtemplate = document.createElement('template');
 GameListtemplate.innerHTML = `
@@ -61,18 +62,18 @@ class GameList extends HTMLElement {
 		if(model != 'undefined') {
 			list.innerHTML = '';
 			model.forEach((game) => {
-				game.owner.get().then((owner) => {
-				const gRow = document.createElement('div');
+				getDoc(game.owner).then((owner) => {
+				const gRow = window.gebApp.theDocument.createElement('div');
 				gRow.innerHTML = `<div class='clickable'>${game.name}</div><div>${owner.data().email}</div>` // game.data().name;
 				list.appendChild(gRow);
 				gRow.firstChild.addEventListener('click',(e) => { 
 					console.log(`clicked on game named ${game.name} with id ${game.id}`);
-					controller.displayGameViewClicked(game.id);
+					window.gebApp.controller.displayGameViewClicked(game.id);
 					});
 				});
 			});
 		} else {
-			list.nnerHTML = 'no results';
+			list.innerHTML = 'no results';
 		}
 	}
 	

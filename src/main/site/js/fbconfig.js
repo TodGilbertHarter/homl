@@ -1,3 +1,6 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
 const firebaseConfig = {
 	    apiKey: "AIzaSyBUvzyIX-YQSEcQXdBdrHNgyOWTS5hVwx4",
 	    authDomain: "heroes-of-myth-and-legend.firebaseapp.com",
@@ -8,4 +11,5 @@ const firebaseConfig = {
 	    measurementId: "G-PY517GF9BS"
 	  };
 
-const app = firebase.initializeApp(firebaseConfig);
+window.fbProject = initializeApp(firebaseConfig);
+window.firestore = getFirestore(window.fbProject);

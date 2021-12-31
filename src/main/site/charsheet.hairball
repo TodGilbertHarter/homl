@@ -1,0 +1,216 @@
+/*
+Hairball HTML character sheet. These definitions define common markup syntax in the context
+of HTML. Include this and a character data document, the result will be an HTML character sheet.
+*/
+/NEWVOCABULARY /CHARACTER
+/VOCABULARY /CHARACTER /ACTIVE
+/VOCABULARY /CHARACTER /CURRENT
+/:
+
+// :/ /* Prevent spurious <p> tags. */
+/: /GETMATCHING /DOER /DROP /W /W2L /MAKELITERAL /HERE! :/
+/: /VERSION <!-- character version :/
+/: VERSION/ --!><title> :/
+/: /FIELD <attribute-field value=" /. " :/
+/: /FIELDNAME /SPACE label=" :/
+/: FIELDNAME/ " :/
+/: /FIELDWIDTH /SPACE style="width: /SPACE :/
+/: FIELDWIDTH/ ;" :/
+/: /FIELDID /SPACE id=" :/
+/: FIELDID/ "> :/
+/: FIELD/ </attribute-field> :/
+/: /SHEETTITLE <header>
+    <div class='mastertitle'>
+        <div class='topborder'></div>
+        <div class='title'>Heroes of Myth &amp; Legend Character Sheet</div>
+        <div class='bottomborder'></div>
+    </div>
+</header> :/
+/: /SHEETROW <div class="sheetrow"> :/
+/: SHEETROW/ </div> :/
+/: /FLEXROW <div class="flexrow"> :/
+/: /FLEXCELL <div class="flexcell" style="flex: 1"> :/
+/: /FLEXCELL.8 <div class="flexcell" style="flex: .8"> :/
+/: /FLEXCELL2.5 <div class="flexcell" style="flex: 2.5"> :/
+/: /FLEXCELL1 <div class="flexcell" style="flex: .4"> :/
+/: /FLEXCELL2 <div class="flexcell" style="flex: .6"> :/
+/: FLEXROW/ </div> :/
+/: FLEXCELL/ </div> :/
+
+/: /CHARACTER <!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/charactersheet.css" media="screen"/>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script> :/
+/* Yes, I know there are mysteriously, multiple FLEXROW/ here, whatever frigging works */
+/: CHARACTER/ FLEXCELL/ FLEXROW/ FLEXROW/ <div class="panel"><button onclick="saveCharacter()">Save</button><button onclick="refreshCharacter()">Refresh</button></div></div>
+<script src="js/charactersheet.js"></script>
+<script>
+const controller = new CharacterController(firebase);
+function saveCharacter() {
+    controller.saveCharacter();
+}
+function refreshCharacter() {
+    controller.refreshCharacter();
+}
+</script>
+</body></html> :/
+
+/: /NAME /GETMATCHING NAME/ /DELIMITED /DUP /. </title></head><body><div><div> /SHEETTITLE /SHEETROW /FIELD /FIELDNAME Name: FIELDNAME/ /FIELDWIDTH 20em FIELDWIDTH/ /FIELDID charactername FIELDID/ FIELD/ :/
+/: NAME/ /[" Mismatch, NAME/ must follow /NAME "]/ /ABORT :/
+
+/: /LEVEL /GETMATCHING LEVEL/ /DELIMITED /FIELD /FIELDNAME Level: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterlevel FIELDID/ FIELD/ :/
+/: LEVEL/ /[" Mismatch, LEVEL/ must follow /LEVEL "]/ /ABORT :/
+
+/: /LEVEL /GETMATCHING LEVEL/ /DELIMITED /FIELD /FIELDNAME Level: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterlevel FIELDID/ FIELD/ :/
+/: LEVEL/ /[" Mismatch, LEVEL/ must follow /LEVEL "]/ /ABORT :/
+
+/: /CALLING /GETMATCHING CALLING/ /DELIMITED /FIELD /FIELDNAME Calling: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID charactercalling FIELDID/ FIELD/ :/
+/: CALLING/ /[" Mismatch, CALLING/ must follow /CALLING "]/ /ABORT :/
+
+/: /SPECIES /GETMATCHING SPECIES/ /DELIMITED /FIELD /FIELDNAME Species: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterspecies FIELDID/ FIELD/ :/
+/: SPECIES/ /[" Mismatch, SPECIES/ must follow /SPECIES "]/ /ABORT :/
+
+/: /VISION /GETMATCHING VISION/ /DELIMITED /FIELD /FIELDNAME Vision: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID charactervision FIELDID/ FIELD/ :/
+/: VISION/ /[" Mismatch, VISION/ must follow /VISION "]/ /ABORT :/
+
+/: /FATE /GETMATCHING FATE/ /DELIMITED /FIELD /FIELDNAME Fate: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterfate FIELDID/ FIELD/ SHEETROW/ :/
+/: FATE/ /[" Mismatch, FATE/ must follow /FATE "]/ /ABORT :/
+
+/: /DESCRIPTION /GETMATCHING DESCRIPTION/ /DELIMITED /SHEETROW /FIELD /FIELDNAME Description: FIELDNAME/ /FIELDWIDTH 55em FIELDWIDTH/ /FIELDID characterdescription FIELDID/ FIELD/ :/
+/: DESCRIPTION/ /[" Mismatch, DESCRIPTION/ must follow /DESCRIPTION "]/ /ABORT :/
+
+/: /SIZE /GETMATCHING SIZE/ /DELIMITED /FIELD /FIELDNAME Size: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID charactersize FIELDID/ FIELD/ SHEETROW/ :/
+/: SIZE/ /[" Mismatch, SIZE/ must follow /SIZE "]/ /ABORT :/
+
+
+/: /ATTRIBUTES /FLEXROW /FLEXCELL1 <div class="attributetable"> :/
+/: /ATTRIBUTE <ability-field style="width: 10em;" /SPACE :/ /: ATTRIBUTE/ </ability-field> :/
+/: /STRENGTH /ATTRIBUTE label='Strength:' name="characterstrength" id="characterstrength" modifier='' value=" :/
+/: STRENGTH/ "/> ATTRIBUTE/ :/
+/: /CONSTITUTION /ATTRIBUTE label='Constitution:' name='characterconstitution' id='characterconstitution' modifier='' value=" :/
+/: CONSTITUTION/ "/> ATTRIBUTE/ :/
+/: /DEXTERITY /ATTRIBUTE label='Dexterity:' name='characterdexterity' id='characterdexterity' modifier='' value=" :/
+/: DEXTERITY/ "/> ATTRIBUTE/ :/
+/: /INTELLIGENCE /ATTRIBUTE label='Intelligence:' name='characterintelligence' id='characterintelligence' modifier='' value=" :/
+/: INTELLIGENCE/ "/> ATTRIBUTE/ :/
+/: /WISDOM /ATTRIBUTE label='Wisdom:' name='characterwisdom' id='characterwisdom' modifier='' value=" :/
+/: WISDOM/ "/> ATTRIBUTE/ :/
+/: /CHARISMA /ATTRIBUTE label='Charisma:' name='charactercharisma' id='charactercharisma' modifier='' value=" :/
+/: CHARISMA/ "/> ATTRIBUTE/ :/
+/: ATTRIBUTES/ </div> :/
+
+/: /PASSIVEPERCEPTION /GETMATCHING PASSIVEPERCEPTION/ /DELIMITED /FLEXCELL2 /SHEETROW /FIELD /FIELDNAME Perception: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterperception FIELDID/ FIELD/ :/
+/: PASSIVEPERCEPTION/ /[" Mismatch, PASSIVEPERCEPTION/ must follow /PASSIVEPERCEPTION "]/ /ABORT :/
+/: /MAXHITPOINTS /GETMATCHING MAXHITPOINTS/ /DELIMITED /FIELD /FIELDNAME / FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID charactermaxhitpoints FIELDID/ FIELD/ :/
+/: MAXHITPOINTS/ /[" Mismatch, MAXHITPOINTS/ must follow /MAXHITPOINTS "]/ /ABORT :/
+/: /HITPOINTS /GETMATCHING HITPOINTS/ /DELIMITED /FIELD /FIELDNAME Hit Points: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterhitpoints FIELDID/ FIELD/ :/
+/: HITPOINTS/ /[" Mismatch, HITPOINTS/ must follow /HITPOINTS "]/ /ABORT :/
+/: /SPEED /GETMATCHING SPEED/ /DELIMITED /FIELD /FIELDNAME Speed: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterspeed FIELDID/ FIELD/ SHEETROW/ :/
+/: SPEED/ /[" Mismatch, SPEED/ must follow /SPEED "]/ /ABORT :/
+
+/: /PASSIVEINSIGHT /GETMATCHING PASSIVEINSIGHT/ /DELIMITED /SHEETROW /FIELD /FIELDNAME Insight: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterinsight FIELDID/ FIELD/ :/
+/: PASSIVEINSIGHT/ /[" Mismatch, PASSIVEINSIGHT/ must follow /PASSIVEINSIGHT "]/ /ABORT :/
+/: /HEALINGVALUE /GETMATCHING HEALINGVALUE/ /DELIMITED /FIELD /FIELDNAME Healing Value: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterhealingvalue FIELDID/ FIELD/ :/
+/: HEALINGVALUE/ /[" Mismatch, HEALINGVALUE/ must follow /HEALINGVALUE "]/ /ABORT :/
+/: /ENCUMBRANCE /GETMATCHING ENCUMBRANCE/ /DELIMITED /FIELD /FIELDNAME Encumbrance: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterencumbrance FIELDID/ FIELD/ SHEETROW/ :/
+/: ENCUMBRANCE/ /[" Mismatch, ENCUMBRANCE/ must follow /ENCUMBRANCE "]/ /ABORT :/
+
+/: /INITIATIVE /GETMATCHING INITIATIVE/ /DELIMITED /SHEETROW /FIELD /FIELDNAME Initiative: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterinitiative FIELDID/ FIELD/ :/
+/: INITIATIVE/ /[" Mismatch, INITIATIVE/ must follow /INITIATIVE "]/ /ABORT :/
+/: /POWER /GETMATCHING POWER/ /DELIMITED /FIELD /FIELDNAME Power: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterpower FIELDID/ FIELD/ :/
+/: POWER/ /[" Mismatch, POWER/ must follow /POWER "]/ /ABORT :/
+/: /MAXPOWER /GETMATCHING MAXPOWER/ /DELIMITED /FIELD /FIELDNAME / FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID charactermaxpower FIELDID/ FIELD/ :/
+/: MAXPOWER/ /[" Mismatch, MAXPOWER/ must follow /MAXPOWER "]/ /ABORT :/
+/: /LOAD /GETMATCHING LOAD/ /DELIMITED /FIELD /FIELDNAME Load: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterload FIELDID/ FIELD/ :/
+/: LOAD/ /[" Mismatch, LOAD/ must follow /LOAD "]/ /ABORT :/
+/: /MAXLOAD /GETMATCHING MAXLOAD/ /DELIMITED /FIELD /FIELDNAME / FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID charactermaxload FIELDID/ FIELD/  SHEETROW/ :/
+/: MAXLOAD/ /[" Mismatch, MAXLOAD/ must follow /MAXLOAD "]/ /ABORT :/
+
+
+/: /DAMAGEREDUCTION /GETMATCHING DAMAGEREDUCTION/ /SHEETROW /DELIMITED /FIELD /FIELDNAME DR: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterdr FIELDID/ FIELD/  :/
+/: DAMAGEREDUTION/ /[" Mismatch, DAMAGEREDUCTION/ must follow /DAMAGEREDUCTION "]/ /ABORT :/
+/: /WEALTH /GETMATCHING WEALTH/ /DELIMITED /FIELD /FIELDNAME Wealth: FIELDNAME/ /FIELDWIDTH 10em FIELDWIDTH/ /FIELDID characterwealth FIELDID/ FIELD/ :/
+/* /: WEALTH/ /[" Mismatch, WEALTH/ must follow /WEALTH "]/ /ABORT :/
+/: /WEALTHBONUS /GETMATCHING WEALTHBONUS/ /DELIMITED /FIELD /FIELDNAME / FIELDNAME/ /FIELDWIDTH 3em FIELDWIDTH/ /FIELDID characterwealthbonus FIELDID/ FIELD/ :/
+/: WEALTHBONUS/ /[" Mismatch, WEALTHBONUS/ must follow /WEALTHBONUS "]/ /ABORT :/ */
+
+/: /KNACKS /SHEETROW <div class='knacktable'> /FLEXROW  
+<div style="flex: 2.3">Name</div> 
+<div style="flex: 1.1">Ability</div> 
+<div style="flex: .8">Prof</div> 
+<div style="flex: 1">Level</div> 
+<div style="flex: 1">Perm</div> 
+<div style="flex: 1">Total</div> 
+FLEXROW/ :/
+/: KNACKS/ </div> SHEETROW/ FLEXCELL/ :/
+/: /ACROBATICS <knack-field label='Acrobatics (DEX)' ability='' level='' permanent='' total='' value=' :/
+/: ACROBATICS/ ' id='characteracrobatics'></knack-field> :/
+/: /ARCANA <knack-field label='Arcana (INT)' ability='' level='' permanent='' total='' value=' :/
+/: ARCANA/ ' id='characterarcana'></knack-field> :/
+/: /ATHLETICS <knack-field label='Athletics (STR)' ability='' level='' permanent='' total='' value=' :/
+/: ATHLETICS/ ' id='characterathletics'></knack-field> :/
+/: /BLUFF <knack-field label='Bluff (CHA)' ability='' level='' permanent='' total='' value=' :/
+/: BLUFF/ ' id='characterbluff'></knack-field> :/
+/: /DIPLOMACY <knack-field label='Diplomacy (CHA)' ability='' level='' permanent='' total='' value=' :/
+/: DIPLOMACY/ ' id='characterdiplomacy'></knack-field> :/
+/: /ENGINEERING <knack-field label='Engineering (INT)' ability='' level='' permanent='' total='' value=' :/
+/: ENGINEERING/ ' id='characterengineering'></knack-field> :/
+/: /HEALING <knack-field label='Healing (WIS)' ability='' level='' permanent='' total='' value=' :/
+/: HEALING/ ' id='characterhealing'></knack-field> :/
+/: /HISTORY <knack-field label='History (INT)' ability='' level='' permanent='' total='' value=' :/
+/: HISTORY/ ' id='characterhistory'></knack-field> :/
+/: /INSIGHT <knack-field label='Insight (WIS)' ability='' level='' permanent='' total='' value=' :/
+/: INSIGHT/ ' id='characterinsight'></knack-field> :/
+/: /INTIMIDATION <knack-field label='Intimidation (CHA)' ability='' level='' permanent='' total='' value=' :/
+/: INTIMIDATION/ ' id='characterintimidation'></knack-field> :/
+/: /LEADERSHIP <knack-field label='Leadership (CHA)' ability='' level='' permanent='' total='' value=' :/
+/: LEADERSHIP/ ' id='characterleadership'></knack-field> :/
+/: /NATURE <knack-field label='Nature (WIS)' ability='' level='' permanent='' total='' value=' :/
+/: NATURE/ ' id='characternature'></knack-field> :/
+/: /PERCEPTION <knack-field label='Perception (WIS)' ability='' level='' permanent='' total='' value=' :/
+/: PERCEPTION/ ' id='characterperception'></knack-field> :/
+/: /RELIGION <knack-field label='Religion (WIS)' ability='' level='' permanent='' total='' value=' :/
+/: RELIGION/ ' id='characterreligion'></knack-field> :/
+/: /STEALTH <knack-field label='Stealth (DEX)' ability='' level='' permanent='' total='' value=' :/
+/: STEALTH/ ' id='characterstealth'></knack-field> :/
+/: /STREETWISE <knack-field label='Streetwise (CHA)' ability='' level='' permanent='' total='' value=' :/
+/: STREETWISE/ ' id='characterstreetwise'></knack-field> :/
+/: /SURVIVAL <knack-field label='Survival (CON)' ability='' level='' permanent='' total='' value=' :/
+/: SURVIVAL/ ' id='charactersurvival'></knack-field> :/
+/: /THIEVERY <knack-field label='Thievery (DEX)' ability='' level='' permanent='' total='' value=' :/
+/: THIEVERY/ ' id='characterthievery'></knack-field> :/
+
+/: /BOX <div class="box"> :/
+/: BOX/ </div> :/
+/: /PERSONALITY /BOX <span class="boxlabel">Personality:</span> :/
+/: PERSONALITY/ BOX/ :/
+/: /ATTRIBUTE <div class="attribute"> :/
+/: /ATTRIBUTENAME <span class="name"> :/
+/: ATTRIBUTENAME/ </span> :/
+/: /ATTRIBUTEVALUE <span class="value"> /SPACE :/
+/: ATTRIBUTEVALUE/ </span> :/
+/: ATTRIBUTE/ </div> :/
+
+/: /BACKGROUND /BOX <span class="boxlabel">Background:</span> :/
+/: BACKGROUND/ BOX/ :/
+/: /BACKGROUNDITEM <div> :/
+/: BACKGROUNDITEM/ </div> :/
+/: /BACKGROUNDELEMENT <span class="name"> :/
+/: BACKGROUNDELEMENT/ :</span> /SPACE :/
+/: /BACKGROUNDVALUE <span class="value"> :/
+/: BACKGROUNDVALUE/ /SPACE -</span> /SPACE :/
+/: /BACKGROUNDTEXT <span> :/
+/: BACKGROUNDTEXT/ </span> :/
+/: /PROFICIENCIES /BOX <span class="boxlabel">Proficiencies:</span> :/
+/: PROFICIENCIES/ BOX/ :/
+/: /PROFICIENCY /SPACE <span class="value"> :/
+/: PROFICIENCY/ ,</span> :/
+/: /BOONS /BOX <span class="boxlabel">Boons:</span> :/
+/: BOONS/ BOX/ :/
+/: /BOON /SPACE <span class="value"> :/
+/: BOON/ </span> :/
+/: /EQUIPMENT /BOX <span class="boxlabel">Equipment:</span> :/
+/: EQUIPMENT/ BOX/ :/
+/: /ITEM /SPACE <span class="value"> :/
+/: ITEM/ ,</span> :/

@@ -91,3 +91,5 @@ class Router {
     });
   }
 }
+
+export { Router };

@@ -14,18 +14,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+import { collection, doc, setDoc, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
+
 class PlayerRepository {
 	/*
-	Game repo, this fetches games for us from Firebase.
+	Game repo, this fetches players for us from Firebase.
 	*/
     /** @private */ db;
+    /** @private */ gebApp;
 
-    constructor(firebase) {
-        this.db = firebase.firestore();
+    constructor(gebApp,firestore) {
+		this.gebApp = gebApp;
+        this.db = firestore;
     }
 
     getPlayerByEmail(email,onDataAvailable, onFailure) {
-        this.db.collection("players").where("email", "==", email).get().then((doc) => { 
+		console.log("GOT to getPLayerByEmail");
+        const playersRef = collection(this.db,"players");
+        const q = query(playersRef,where("email", "==", email));
+        getDocs(q).then((doc) => { 
             doc.forEach(r => { 
                 console.log("GOT "+r.id);
                 var data = r.data();
@@ -33,9 +40,8 @@ class PlayerRepository {
                 console.log("Player data is:"+JSON.stringify(data));
                 onDataAvailable(data);
             } ) }).catch((e) => {
+				console.log(e);
 				onFailure(e.message);
-//				console.log(e.message);
-//				onDataAvailable(null); //WARNING: This is sheer hackery because something is porked.
 			});
     }
     
@@ -55,3 +61,6 @@ class PlayerRepository {
     }
 
 }
+
+export { PlayerRepository };
+

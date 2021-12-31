@@ -14,23 +14,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-class Game {
+class Player {
 	id;
-	name;
-	owner;
+	email;
 	characters;
-	players;
 	
-	constructor(id, name, owner, characters, players) {
+	constructor(id, email, characters) {
 		this.id = id;
-		this.name = name;
-		this.owner = owner;
+		this.email = email;
 		this.characters = characters;
-		this.players = players;
 	}
 	
 	toString() {
-		return this.name + ", owner "+ this.owner;
+		return this.email;
 	}
 	
 	/**
@@ -42,4 +38,4 @@ class Game {
 	}
 }
 
-export { Game };
+export { Player };

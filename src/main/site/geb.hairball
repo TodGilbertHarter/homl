@@ -40,6 +40,7 @@ Hairball.
 /: /GAMELIST <game-list id='leftgametablist'> :/
 /: GAMELIST/ </game-list> :/
 /: /SCRIPT" <script src=' /" /. '></script> :/
+/: /MODULE" <script type='module' src=' /" /. '></script> :/
 /: /STYLE" <link rel="stylesheet" type="text/css" href=" /" /. " media="screen"/> :/
 /: /TOPBAR <div class='topbar'> :/
 /: TOPBAR/ </div> :/

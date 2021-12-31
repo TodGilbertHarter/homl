@@ -21,9 +21,11 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 	the DOM, etc. This allows us to abstract away the structure and organization of the UI's look.
 	 */
 	/** @private */ theDocument;
+	/** @private */ gebApp;
 	controller;
 	
-	constructor(adocument) {
+	constructor(gebApp,adocument) {
+		this.gebApp = gebApp;
 		this.theDocument = adocument;
 	}
 
@@ -124,4 +126,15 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 		const gameview = this.theDocument.getElementById(`gv${gameId}`);
 		this.controller.doGameInfoDisplay(gameview);
 	}
+	
+	displayCharacterInfo(characterId) {
+		const displayarea = this.theDocument.getElementById('mainappview');
+		displayarea.innerHTML = `<character-sheet characterid='${characterId}' id='cv${characterId}'></character-sheet>`;
+		const characterview = this.theDocument.getElementById(`cv${characterId}`);
+		this.controller.doCharacterInfoDisplay(characterview);
+	}
+	
 }
+
+export { NotView };
+

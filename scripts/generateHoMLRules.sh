@@ -16,8 +16,12 @@ cp src/main/rules/js/* ./build/$PUBDIR/js
 cp src/main/rules/images/* ./build/$PUBDIR/images
 cd ./build/rules
 hairball genrefs.hairball homl.hairball | tail -n +2 >>./refs.hairball
+echo '{' >./compendium.json
+hairball refs.hairball gencompendium.hairball genboons.hairball homl.hairball | tail -n +2 >>./compendium.json
+echo '}' >>./compendium.json
 hairball gencontents.hairball homl.hairball | tail -n +2 >./toc.hairball
 hairball refs.hairball html.hairball homl.hairball | tail -n +2 >./homl.html
+#hairball refs.hairball gencompendium_old.hairball homl.hairball | tail -n +2 >./compendium.js 
 cd ..
 cp ./rules/homl.html ./$PUBDIR
 cd ./pub

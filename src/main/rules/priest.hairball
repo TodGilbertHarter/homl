@@ -17,7 +17,7 @@ Each priest should select a god, or possibly several gods, to which she is dedic
 /FEATURES
 /FLEXROW
 /FLEXCELL
-/BOON /BOONNAME Healing Hands BOONNAME/
+/BOON /ID" a25f9550-69f2-11ec-8102-74d02b9c2012"/ /BOONNAME Healing Hands BOONNAME/
 /BOONTYPE Priest Calling Feature BOONTYPE/
 /ASSOCIATION Priest ASSOCIATION/
 /PREREQUISITES Priest PREREQUISITES/
@@ -28,7 +28,7 @@ DESCRIPTION/
 Gain a bonus to the healing value provided by all effects with the healing keyword equal to your WIS.
 BENEFITS/
 BOON/
-/BOON /BOONNAME Spirit Channeler BOONNAME/
+/BOON /ID" b004946c-69f2-11ec-beb5-74d02b9c2012"/ /BOONNAME Spirit Channeler BOONNAME/
 /BOONTYPE Priest Calling Feature BOONTYPE/
 /ASSOCIATION Priest ASSOCIATION/
 /PREREQUISITES Priest PREREQUISITES/
@@ -50,7 +50,7 @@ BENEFITS/
 BOON/
 FLEXCELL/
 /FLEXCELL
-/BOON /BOONNAME Healer BOONNAME/
+/BOON /ID" be2417c0-69f2-11ec-9b4a-74d02b9c2012"/ /BOONNAME Healer BOONNAME/
 /BOONTYPE Priest Calling Feature BOONTYPE/
 /ASSOCIATION Priest ASSOCIATION/
 /PREREQUISITES Priest PREREQUISITES/

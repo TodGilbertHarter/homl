@@ -42,9 +42,9 @@ class SessionWidget extends HTMLElement {
 	
 	buttonClickHandler() {
 		if(this.signedInState) {
-			controller.signOutClicked();
+			window.gebApp.controller.signOutClicked();
 		} else {
-			controller.signInClicked();
+			window.gebApp.controller.signInClicked();
 		}
 	}
 	

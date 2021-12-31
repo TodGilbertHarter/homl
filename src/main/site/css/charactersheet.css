@@ -1,0 +1,195 @@
+/* Character Sheet CSS */
+
+:root {
+    --document-bg: black;
+    --document-fg: GoldenRod;
+    --page-bg: Ivory;
+    --matte-bg: white;
+    --theme-bg: #e4e5d0;
+    --theme-fg: black;
+}
+
+body {
+    background-color: var(--page-bg);
+    
+}
+
+body > div {
+    width: 75%;
+    margin-right: auto;
+    margin-left: 23%;
+    padding: 1em;
+    background-color: var(--matte-bg);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 1000px;
+/*    margin: auto; */
+}
+
+body > div > div {
+    width: 100%;
+    background-color: var(--theme-bg);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3em;
+}
+
+header div.title {
+    display: block;
+    font-weight: bold;
+    font-size: 2em;
+    font-style: italic;
+    text-align: Right;
+    width: 98%;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-right: 2%;
+    background-color: black;
+    color: var(--document-fg);
+}
+
+header > div.mastertitle > div.topborder {
+    width: 100%;
+    background-image: url('../border1.png');
+    height: 25px;
+}
+
+header > div.mastertitle > div.bottomborder {
+    width: 100%;
+    background-image: url('../border1btm.png');
+    height: 25px;
+}
+
+button {
+    margin: .25em;
+    background-color: green;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: var(--document-fg);
+}
+
+span.sheetfield > input {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid black;
+    margin-left: .125em;
+    margin-right: .125em;
+}
+
+.panel {
+    clear:both;
+    width: 25em;
+    margin-top: .25em;
+    margin-bottom: .25em;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+/*    display: block;
+    margin-left: auto;
+    margin-right: auto; */
+}
+
+ability-field::part(wrapper) {
+    width: 100%;
+}
+
+ability-field::part(label) {
+    width: 45%;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: right;
+}
+
+.knacktable {
+    border: 1px solid grey;
+    width: 100%;
+    font-weight: bold;
+}
+
+knack-field::part(wrapper) {
+    clear: both;
+    display: flex;
+    margin-top: .25em;
+    font-weight: normal;
+}
+
+knack-field::part(label) {
+    flex: 2.3;
+    font-size: .8em;
+    text-align: right;
+}
+
+knack-field::part(abilitybonus) {
+    flex: 1.1;
+    text-align: center;
+}
+
+knack-field::part(check) {
+    flex: .8;
+    text-align: center;
+}
+
+knack-field::part(levelbonus) {
+    flex: 1;
+    text-align: center;
+}
+
+knack-field::part(permanentbonus) {
+    flex: 1;
+    text-align: center;
+}
+
+knack-field::part(totalbonus) {
+    flex: 1;
+    text-align: center;
+}
+
+.boxlabel {
+    font-weight: bold;
+    font-size: .75em;
+}
+
+.attributetable {
+    border: 1px solid grey;
+}
+
+.left {
+    float: left;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+.attributes {
+    width: 40%;
+}
+
+.flexrow {
+    clear: both;
+    display: flex;
+    margin-top: .25em;
+}
+
+.flexcell {
+    flex: 1;
+}
+
+.sheetrow {
+    margin-top: .25em;
+    margin-bottom: .25em;
+}
+
+span.name {
+    font-weight: bold;
+}
+
+.box {
+    padding: .125em;
+    margin: .25em;
+    border: 1px solid grey;
+}

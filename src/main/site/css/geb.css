@@ -93,6 +93,7 @@
 .hover-border-theme:hover {border-color:#e4e5d0 !important}
 
 body {
+	min-height: 100vh;
 	width: 100%;
     background-color: var(--theme-bg);
     margin-left: auto;
@@ -148,6 +149,12 @@ body {
     display: flex;
 }
 
+horizontal-sash {
+	display: block;
+	overflow: automatic;
+	height: 100%;
+}
+
 horizontal-sash::part(sashleft) {
 	clear: left;
 	float: left;
@@ -171,7 +178,7 @@ horizontal-sash::part(dragbar) {
 horizontal-sash::part(container) {
 	clear: both;
 	width: 100%;
-	height: 500px;
+	height: 100%;
 }
 
 tab-panel::part(tabcontents) {

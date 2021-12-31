@@ -14,15 +14,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
+
 class Authenticator {
 	/** @private */ fb;
+	/** @private */ gebApp;
 	/** @private */ playerRepo;
 	user;
 	/** @private */ authenticated = false;
 	errorCode;
 	player;
 	
-	constructor(firebase,playerRepo) {
+	constructor(gebApp,firebase,playerRepo) {
 		this.fb = firebase;
 		this.playerRepo = playerRepo;
 	}
@@ -48,7 +51,8 @@ class Authenticator {
 	}
 	
 	signInWithEmailAndPassword(email,password, onSuccess, onFailure) {
-		this.fb.auth().signInWithEmailAndPassword(email, password)
+//		this.fb.auth().signInWithEmailAndPassword(email, password)
+		signInWithEmailAndPassword(getAuth(), email, password)
 		  .then((userCredential) => {
 			this.authenticated = true;
 		    this.user = userCredential.user;
@@ -65,7 +69,8 @@ class Authenticator {
 	}
 
 	createUserWithEmailAndPassword(email,password, onSuccess, onFailure) {
-		this.fb.auth().createUserWithEmailAndPassword(email, password)
+//		this.fb.auth().createUserWithEmailAndPassword(email, password)
+		createUserWithEmailAndPassword(getAuth(), email, password)
 		  .then((userCredential) => {
 			this.authenticated = true;
 		    this.user = userCredential.user;
@@ -86,3 +91,5 @@ class Authenticator {
 	}
 
 }
+
+export { Authenticator };

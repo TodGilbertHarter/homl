@@ -13,6 +13,7 @@ Hairball.
 #0 /CURRENTID /V! /* restore the id count, refs break it */
 /: /LINKREFERENCE <a href="# /DUP /FETCHREFERENCE /. "> /. </a> :/
 /: /ID /SPACE /ID+ id=" /ID@ /. " :/
+/: /ID" /" id=" /. " :/
 /: /GETMATCHING /DOER /DROP /W /W2L /MAKELITERAL /HERE! :/
 /: /REF /SPACE <span class="reference" /ID > /GETMATCHING REF/ /DELIMITED /LINKREFERENCE </span> /SPACE :/
 /: REF/ /[" Mismatch, REF/ must follow /REF "]/ /ABORT :/
@@ -191,8 +192,8 @@ for (i = 0; i < coll.length; i++) {
 
 /* Boon related stuff */
 /: /BOON" <section class="boon" /ID > /TRAITS <div class="trait"><div> /" /. DIV/ :/ /* Deprecated */
-/: /BOON <section class="boon" /ID > /TRAITS <div class="trait"> :/ 
-/: /BOONNAME <div> :/ /: BOONNAME/ DIV/ :/
+/: /BOON <section class="boon" /ID+ :/ 
+/: /BOONNAME  > /TRAITS <div class="trait"><div> :/ /: BOONNAME/ DIV/ :/
 /: /BOONTYPE" <div> /" /. DIV/ DIV/ :/ /* Deprecated */
 /: /BOONTYPE <div> :/ /: BOONTYPE/ DIV/ DIV/ :/
 /: /ASSOCIATION" <div class="trait"> <div> /BOLD Association: BOLD/ /SPACE /" /. DIV/ :/ /* Deprecated */
@@ -277,6 +278,8 @@ for (i = 0; i < coll.length; i++) {
 /: STAGENAME/ BOLD/ /SPACE - /SPACE :/
 /: /CURE <div class="widetrait"> /BOLD Cure: BOLD/ /SPACE :/
 /: CURE/ DIV/ :/
+/: /AFFLICTIONDESCRIPTION <div class="widetrait"> /BOLD Description: BOLD/ /SPACE :/
+/: AFFLICTIONDESCRIPTION DIV/ :/
 
 /* Monster stat block */
 /: /MONSTER <section class="monster"> :/

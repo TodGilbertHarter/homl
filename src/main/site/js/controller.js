@@ -15,23 +15,32 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 class Controller {
+	/** @private */ gebApp;
 	/** @private */ view;
 	/** @private */ authenticator;
 	/** @private */ router;
 	/** @private */ gameRepo;
 	/** @private */ gamesListener;
+	/** @private */ characterRepo;
+	/** @private */ characterController;
+	/** @private */ rules;
 		
-	constructor(view,authenticator,router,gameRepo) {
+	constructor(gebApp,view,authenticator,router,gameRepo,characterRepo,characterController,rules) {
+		this.gebApp = gebApp;
 		this.view = view;
 		view.controller = this;
 		this.authenticator = authenticator;
 		this.router = router;
-		this.gameRepo = gameRepo
+		this.gameRepo = gameRepo;
+		this.characterRepo = characterRepo;
+		this.characterController = characterController;
+		this.rules = rules;
 		this.router.add(/signup/,() => { this.view.displaySignUpUI(); });
 		this.router.add(/signin/,() => { this.view.displaySignInUI(); });
 		this.router.add(/signout/,() => { this.view.displaySignOutUI(); });
 		this.router.add(/authenticated/,() => { this.view.displayAuthenticatedUI(); });
-		this.router.add(/showgame\/(.*)/,(gameid) => {this.view.displayGameInfo(gameid); });
+		this.router.add(/showgame\/(.*)/,(gameid) => { this.view.displayGameInfo(gameid); });
+		this.router.add(/showcharacter\/(.*)/,(characterid) => { this.view.displayCharacterInfo(characterid); });
 	}
 	
 	authenticated() {
@@ -94,4 +103,18 @@ class Controller {
 	doGameInfoDisplay(gameview) {
 		this.gameRepo.getGameById(gameview.gameId,gameview.render.bind(gameview));
 	}
+	
+	displayCharacterViewClicked(characterId) {
+		window.location.hash = `/showcharacter/${characterId}`;
+	}
+	
+	doCharacterInfoDisplay(characterview) {
+		this.characterRepo.getCharacterById(characterview.characterId,(character) => {
+			characterview.model = character;
+			this.characterController.render(characterview,character);
+		});
+	}
 }
+
+export { Controller };
+

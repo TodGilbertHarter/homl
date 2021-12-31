@@ -28,7 +28,7 @@ Humans are associated with the following boons.
 /TOPIC" Major Boons"/
 
 Human characters may select from the following boons at first level.
-/BOON /BOONNAME Resourceful BOONNAME/
+/BOON /ID" 888b294a-69f3-11ec-9e79-74d02b9c2012"/ /BOONNAME Resourceful BOONNAME/
 /BOONTYPE Species: Major BOONTYPE/
 /ASSOCIATION Human ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
@@ -109,7 +109,7 @@ The following boons are associated with the wose species:
 Wose characters may choose one of the following major boons at first level
 /FLEXROW
 /FLEXCELL
-/BOON /BOONNAME Child of the Wood BOONNAME/
+/BOON /ID" 97e76066-69f3-11ec-af3f-74d02b9c2012"/ /BOONNAME Child of the Wood BOONNAME/
 /BOONTYPE Species: Major BOONTYPE/
 /ASSOCIATION Wose ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
@@ -137,7 +137,7 @@ BENEFITS/
 BOON/
 FLEXCELL/
 /FLEXCELL
-/BOON /BOONNAME Web of Nature BOONNAME/
+/BOON /ID" a43dcd46-69f3-11ec-bdb5-74d02b9c2012"/ /BOONNAME Web of Nature BOONNAME/
 /BOONTYPE Species: Major BOONTYPE/
 /ASSOCIATION Wose ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/

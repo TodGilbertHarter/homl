@@ -88,9 +88,9 @@ While, for story reasons, there are four types of afflictions, these types large
     /STAGE /STAGENAME 2 STAGENAME/ Its really bad now! STAGE/
     /STAGE /STAGENAME Final STAGENAME/ The victim is pushing up daisies. STAGE/
 STAGES/
-/DESCRIPTION
+/AFFLICTIONDESCRIPTION
 This is a very nasty and virulent blight which is contracted due to GM delight in torturing PCs.
-DESCRIPTION/
+AFFLICTIONDESCRIPTION/
 /CURE
 You must make a poltice from the infamous yellow fungus and apply it to the patient before stage three is reached.
 CURE/
@@ -123,11 +123,11 @@ These are the effects of physical trauma, and are thus fundamentally non-magical
     /STAGE /STAGENAME 2 STAGENAME/ The victim is helpless. STAGE/
     /STAGE /STAGENAME Final STAGENAME/ The victim enters a helpless vegetative state from which only powerful healing magic can bring recovery. Even then the victim will almost surely suffer effects such as permanent memory loss. STAGE/
 STAGES/
-/DESCRIPTION
+/AFFLICTIONDESCRIPTION
 The victim has damage to the brain, usually caused by head trauma. Depending on the severity of the trauma the victim might actully begin at a later stage such as stage 1 or 2. Immediate medical care is urgent. If the victim continues to attempt to carry out activities they are extremely likely to aggravate the condition, thus failed checks when attempting other actions may count as failures here too. 
 
 Note that the affliction level should be set to reflect the level of the source of the wound, generally. Once the character is wounded they will need to make a Survival check every eight hours. This check will have disadvantage unless they are resting. Treatments, such as medical checks may also improve or worsen the patient's condition.
-DESCRIPTION/
+AFFLICTIONDESCRIPTION/
 /CURE
 Healing herbs and poultices can be used to improve the patient's condition. If the wound reaches stage 2 then it may be necessary to resort to trepanning or other extreme measures. Less severe cases which receive reasonable care under favorable conditions should be treated as low complexity, but most head injuries are medium complexity challenges, and they may be high complexity in cases of severe injury in a remote location under poor conditions.
 CURE/
@@ -145,9 +145,9 @@ FLEXCELL/
     /STAGE /STAGENAME 2 STAGENAME/ The victim is prone. STAGE/
     /STAGE /STAGENAME Final STAGENAME/ The victim permanently loses the use of one leg. With the aid of a prosthesis they may move at their original speed -2 squares. This only effects land movement. Only major regenerative healing can cure this. STAGE/
 STAGES/
-/DESCRIPTION
+/AFFLICTIONDESCRIPTION
 The victim's leg is broken or otherwise seriously injured. At stage 0 the limb is still marginally useful, but serious versions of this wound may start at stage 1 or even 2, in which case the wound is probably something like a major/compound fracture, etc. Increases in severity represent the onset of infection, circulation failure, etc. The wound will naturally progress every 2 days, with a Survival check determining if it is better or worse. Stage 3 represents a point where the limb must be amputated or is otherwise permanently unusable.
-DESCRIPTION/
+AFFLICTIONDESCRIPTION/
 /CURE
 Healing herbs and poultices can be used to improve the patient's condition. Surgery, casts and splints, etc. are generally recommended for the more serious cases. Infections may need to be cauterized, etc. This can all be accomplished with healing checks, and/or checks to obtain the required medications and such. Complete rest and proper care usually result in recovery, but natural healing will require considerable time, up to a month or more per stage.
 CURE/

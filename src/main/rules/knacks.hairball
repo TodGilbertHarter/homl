@@ -150,7 +150,7 @@ Characters will have proficiency with certain knacks, based on their calling, po
 The following boons exist which can give a character a proficiency bonus. There are also many other boons which can incidentally grant these things. These may be granted whenever a character spends time in a situation where they may learn something.
 /FLEXROW
 /FLEXCELL
-/BOON /BOONNAME Knack BOONNAME/
+/BOON /ID" fe60d1d6-69f0-11ec-a4a0-74d02b9c2012"/ /BOONNAME Knack BOONNAME/
 /BOONTYPE Level: 1 Major BOONTYPE/
 /ASSOCIATION None ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
@@ -161,7 +161,7 @@ DESCRIPTION/
 /BENEFIT Pick a knack, you have proficiency with this knack. BENEFIT/
 BENEFITS/
 BOON/
-/BOON /BOONNAME Knowledge BOONNAME/
+/BOON /ID" 0e3c33e8-69f1-11ec-979f-74d02b9c2012"/ /BOONNAME Knowledge BOONNAME/
 /BOONTYPE Level: 1 Minor BOONTYPE/
 /ASSOCIATION None ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
@@ -174,7 +174,7 @@ BENEFITS/
 BOON/
 FLEXCELL/
 /FLEXCELL
-/BOON /BOONNAME Proficiency BOONNAME/
+/BOON /ID" 1cfe2ecc-69f1-11ec-a5cd-74d02b9c2012"/ /BOONNAME Proficiency BOONNAME/
 /BOONTYPE Level: 1 Minor BOONTYPE/
 /ASSOCIATION None ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
