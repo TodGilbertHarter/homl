@@ -1,5 +1,9 @@
 # Project
 keys/
+node_modules/
+package.json
+package-lock.json
+firebase.json
 
 # Gradle
 .gradle/
