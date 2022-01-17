@@ -1,0 +1,34 @@
+/ARTICLE" Bane Midge (Jermlaine) "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/Monsters.html REFNAME/ 
+	/REFTEXT Monsters REFTEXT/
+ARTICLEREF/ PARENT/
+/RIGHT /IMAGE JermlaineMinimus.png IMAGE/ RIGHT/ Jermlaine or bane-midges are foul and diminutive humanoids who lair in underground warrens. They frequently cohabit these warrens with rats and other vermin of all types. These creatures are cowardly and will always avoid combat unless their adversaries are weak or helpless. Strong enemies will instead by harrassed and tormented simply out of pure spite. Jermlaine are very crafty and cunning. Often they will lurk, following their prey and attacking while they are asleep, injured or incapacitated.
+/SECTION Jermlaine Minimus tactics SECTION/ 
+
+These creatures will always try to attack with darts from hiding, then rush forth in numbers to swarm over any injured or down opponents. If the enemy appears to be too strong to attack several of them will sneak up and attempt to cut bootlaces, pack straps, etc. or steal some loose item. If they are attacked forcefully they will almost always flee.
+/SECTION Jermlaine Skulk SECTION/ 
+
+Skulks are particularly experienced and evil jermlaine who have mastered the art of making vicious ambush attacks. While almost as cowardly as the standard minimus they are considerably more deadly and will constantly harrass those misfortunate enough to come to their attention.
+/SECTION Jermlaine Skulk tactics SECTION/ 
+
+/RIGHT /IMAGE JermlaineSkulk.png IMAGE/ RIGHT/  Skulks will lurk in the shadows throwing darts tipped with a weakening poison at their enemies, hoping to wear them down. If an attempt is made to melee them they will shift into the attacker's square, stab with their darts and then skitter away into a convenient bolt hole, only to emerge again moments later to begin again.
+/SECTION Jermlaine Foulcaster SECTION/ 
+
+Foulcasters are vile creatures who relish using their magical talents to wreak havoc on anyone weaker them. Just as cowardly as other jermlaine the foulcasters support their bretheren and perpetrate evil tricks on their victims by use of tainting magic.
+/SECTION Foulcaster tactics SECTION/ 
+
+Foulcasters use their Foul Inspiration power to incide their allies to greater boldness, punishing any enemy who happens to be adjacent to an ally. Foulcasters avoid melee combat, employing skitter whenever they are engaged in order to move away. At any opportunity they will utilize their Befoulment power to cripple opponents attempting to use magic items against them.
+/SECTION Jermlaine lore SECTION/ 
+
+A character knows the following information with a successful Dungeoneering check
+
+(% style="font-weight: bold;" %)DC 15:(%%) Jermlaine, or bane-midges are tiny cowardly humanoids which sometimes infest underground locations.
+
+(% style="font-weight: bold;" %)DC 20:(%%) Jermlaine are especially loathed by dwarves as it is known that they are almost impossible to wipe out, breed rapidly, and will destroy or foul almost anything they touch. Bane-midges are known to brew a poison with which they tip their tiny darts. This poison causes pain and weakness.
+
+(% style="font-weight: bold;" %)DC 25:(%%) Some Jermlaine are known to be able to harness foul magic which can make the use of magic items against them a dangerous gamble.
+
+[[image:JermlaineFoulcaster.png /TD/  /TD/ style="float: left;"]]
+ARTICLE/

@@ -1,0 +1,31 @@
+/ARTICLE" Nomok Worshiper "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/Monsters.html REFNAME/ 
+	/REFTEXT Monsters REFTEXT/
+ARTICLEREF/ PARENT/
+/CHAPTER Hammer Maiden of Nomok CHAPTER/
+
+/RIGHT /IMAGE HammerMaidenOfNomok.png IMAGE/ RIGHT/ These fell warrior women are the fanatical dedicated followers of Nomok, the Lord of Battle. They are generally found as an elite guard force in his temples, but may also serve as a shock force in battle. They are rather few in number and have a tendency to fight to the death, so they are not encountered often except in rare circumstances. A Hammer Maiden or two will often act as the personal guards for a priest of Nomok or as the standard bearers of an army.
+/SECTION Tactics SECTION/ 
+
+Hammer Maidens tactics are simple. They attack quickly and with maximum force, unleashing their Hammerfall power as soon as they are faced with an opponent capable of standing up to them. They have no fear of death in battle and will only withdraw if commanded to do so.
+
+/EM NOTE: EM/ Hammerfall should be an encounter power, not an at-will.
+
+
+/CHAPTER Battle Archer of Nomok CHAPTER/
+
+Battle Archers are an elite force of warriors who complement the Hammer Maiden of Nomok, providing them with artillery support. Like the Hammer Maidens they can often be found in the guard force of a temple of Nomok. While not as fanatical as the Hammer Maidens they are tough opponents who will not yield easily in a fight.
+
+/SECTION Tactics SECTION/ 
+
+[[image:BattleArcherofNomok.png /TD/  /TD/ style="float: left;"]]A Battle Archer will generally open a fight with his Triple Shot power, attempting to take out key opponents such as archers and spell casters. They will then simply rain death with Lightning-Fast Shots, using Charger Arrow to either keep the enemy at a distance or open up gaps in his line for their own forces to exploit. They can fight competently with a sword and may charge into battle if the situation requires it, otherwise they will use their Quick Dodge to avoid being flanked and to allow them to regain enough range to employ their bows.
+
+/CHAPTER Nomok Temple Guard CHAPTER/
+
+Nomok Temple Guards are well-trained soldiers who form the rank and file of the warrior corps serving the Lord of Battle's temples. They enjoy a well-earned reputation as a tough infantry force, often making up the front ranks of the vanguard of forces marching under temple banners. Most temples will have a cadre of these troops supplemented with a few Battle Archer of Nomok and Hammer Maiden of Nomok.
+/SECTION Tactics SECTION/ 
+
+Temple Guards will attack aggressively, moving into positions where they can use their glaives to pin down and flank enemy combatants or threaten ranged attackers. When working with Battle Archers they will use their threatening reach to prevent the enemy from closing with the archers. When working with Hammer Maidens they will provide flanking and help prevent the enemy from maintaining a strong defensive line. They will often use their attacks to assist the Hammer Maidens and increase their chances to hit./RIGHT /IMAGE NomokTempleGuard.png IMAGE/ RIGHT/ 
+ARTICLE/

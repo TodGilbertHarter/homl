@@ -1,0 +1,16 @@
+/ARTICLE" Half-Orc Grog "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/NPCs.html REFNAME/ 
+	/REFTEXT DungeonMaster.NPCs REFTEXT/
+ARTICLEREF/ PARENT/
+/RIGHT /IMAGE Grog.png IMAGE/ RIGHT/ Grog is a barbarian of questionable heritage, possible half-orc. He currently 
+lives in Tisloch and is an associate of the dwarf 
+/ARTICLEREF /REFNAME ./DwarfGilladian.html REFNAME/  /REFTEXT  Gilladian REFTEXT/ ARTICLEREF/ . 
+He claims to have come from /ARTICLEREF /REFNAME ./Erklond.html REFNAME/  /REFTEXT Erklond REFTEXT/ ARTICLEREF/  and 
+has adventured widely in various areas of Erithnoi. He makes his living as an adventurer, mercenary, and bodyguard. 
+Grog is legendary for his dim wits and love of battle. In general he is good natured and tends to work for good 
+employers, but with his feeble intellect he may well fall in with shady types. When not otherwise occupied he can 
+be found spending his earnings in various gambling and drinking establishments around Tisloch. However as he has 
+few attachments he might potentially be found wandering anywhere in western Erithnoi.
+ARTICLE/

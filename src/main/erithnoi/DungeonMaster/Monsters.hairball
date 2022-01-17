@@ -1,0 +1,22 @@
+/ARTICLE" Monsters "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/WebHome.html REFNAME/ 
+	/REFTEXT DungeonMaster.WebHome REFTEXT/
+ARTICLEREF/ PARENT/
+Many monsters make their homes in Erithnoi. Some of them are unique to this world.
+/UL 
+/LI  /ARTICLEREF /REFNAME ./FoxWoman.html REFNAME/  /REFTEXT Fox Woman REFTEXT/ ARTICLEREF/ - The fox woman is a cunning shape changer who inhabits lonely places. LI/
+/LI  /ARTICLEREF /REFNAME ./MilitiaMan.html REFNAME/  /REFTEXT Militia Man REFTEXT/ ARTICLEREF/ - A standard human, member of a local militia LI/
+/LI  /ARTICLEREF /REFNAME ./BaneMidge.html REFNAME/  /REFTEXT Bane Midge REFTEXT/ ARTICLEREF/ - Tiny evil humanoids who prey on the weak and helpless LI/
+/LI  /ARTICLEREF /REFNAME ./BoneHeap.html REFNAME/  /REFTEXT Bone Heap REFTEXT/ ARTICLEREF/ - An undead heap of old bones LI/
+/LI  /ARTICLEREF /REFNAME ./Troglodyte.html REFNAME/  /REFTEXT Troglodyte Scavenger REFTEXT/ ARTICLEREF/ - A young troglodyte LI/
+/LI  /ARTICLEREF /REFNAME ./MonstrosityOfGrin.html REFNAME/  /REFTEXT Monstrosity of Grin REFTEXT/ ARTICLEREF/ - Something lives deep in the woods LI/
+/LI  /ARTICLEREF /REFNAME ./HillGiantPriestess.html REFNAME/  /REFTEXT Hill Giant Priestess REFTEXT/ ARTICLEREF/ - Hill giant women practice primitive shamanistic magic LI/
+/LI  /ARTICLEREF /REFNAME ./GiantHound.html REFNAME/  /REFTEXT Giant Hound REFTEXT/ ARTICLEREF/ - A huge hunting dog used by hill giants. LI/
+/LI  /ARTICLEREF /REFNAME ./PazuzuWarlock.html REFNAME/  /REFTEXT Pazuzu Warlock REFTEXT/ ARTICLEREF/ - Foul spellcasters dedicated to the demon lord Pazuzu LI/
+/LI  /ARTICLEREF /REFNAME ./NomokWorshiper.html REFNAME/  /REFTEXT Hammer Maiden of Nomok REFTEXT/ ARTICLEREF/ - Warrior maidens dedicated to the Lord of Battle LI/
+/LI  /ARTICLEREF /REFNAME ../DungeonMaster/BattleArcherOfNomok.html /TD/  /TD/ class="twikiLink" REFNAME/ /REFTEXT BattleArcherOfNomok REFTEXT/ ARTICLEREF/  - Expert bowmen in the service of the Lord of Battle LI/
+/LI  /ARTICLEREF /REFNAME ./NomokTempleGuard.html /TD/  /TD/ class="twikiLink" REFNAME/ /REFTEXT NomokTempleGuard REFTEXT/ ARTICLEREF/  - Warriors trained to guard the temples of the Lord of Battle LI/ 
+UL/
+ARTICLE/

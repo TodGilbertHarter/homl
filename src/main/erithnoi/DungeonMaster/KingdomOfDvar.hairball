@@ -1,0 +1,9 @@
+/ARTICLE" The Kingdom of Dvar "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/Midrealms.html REFNAME/ 
+	/REFTEXT Midrealms REFTEXT/
+ARTICLEREF/ PARENT/
+This is a dwarvish kingdom located in the 
+/ARTICLEREF /REFNAME ./Midrealms.html REFNAME/  /REFTEXT Midrealms REFTEXT/ ARTICLEREF/ .
+ARTICLE/

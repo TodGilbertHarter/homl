@@ -1,0 +1,42 @@
+/ARTICLE" Erithnoi Dungeon Master Info "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME  REFNAME/ 
+	/REFTEXT  REFTEXT/
+ARTICLEREF/ PARENT/
+This space is inaccessible to and hidden from players! Members of the DmGroup may access this content.
+
+/EM Note: EM/ The style for this space is distinct from the /ARTICLEREF /REFNAME ../Player/WebHome.html REFNAME/  /REFTEXT Player space REFTEXT/ ARTICLEREF/  to avoid confusion as to who can access specific content.
+/SECTION General Topics SECTION/ 
+
+General information and background knowledge of Erithnoi.
+/UL 
+/LI  /ARTICLEREF /REFNAME Erithnoi History REFNAME/ /REFTEXT History  REFTEXT/ ARTICLEREF/ - The history of Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./Cosmology.html REFNAME/  /REFTEXT Cosmology REFTEXT/ ARTICLEREF/  - The cosmology of the world of Erth. LI/
+/LI  /ARTICLEREF /REFNAME ./Geography.html REFNAME/  /REFTEXT Geography REFTEXT/ ARTICLEREF/  - The geography of Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./Cosmology.html REFNAME/  /REFTEXT Religion REFTEXT/ ARTICLEREF/  - The gods of Erth. LI/
+/LI  /ARTICLEREF /REFNAME ../Player/Races.html REFNAME/  /REFTEXT Races REFTEXT/ ARTICLEREF/  - Intelligent races of Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ../Player/Calendar.html REFNAME/  /REFTEXT Calendar REFTEXT/ ARTICLEREF/  - The seasons, the sky, and related things. LI/
+/LI  /ARTICLEREF /REFNAME ../Player/Languages.html REFNAME/  /REFTEXT Languages REFTEXT/ ARTICLEREF/  - The languages of Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./Organizations.html REFNAME/  /REFTEXT Organizations REFTEXT/ ARTICLEREF/  - Organizations of Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./Monsters.html REFNAME/  /REFTEXT Monsters REFTEXT/ ARTICLEREF/  - Monsters unique to Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./NPCs.html REFNAME/  /REFTEXT NPCs REFTEXT/ ARTICLEREF/  - Some major NPCs of Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./MagicItems.html REFNAME/  /REFTEXT Magic Items REFTEXT/ ARTICLEREF/  - Items and artifacts specific to Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./GeneralKnowledge.html REFNAME/  /REFTEXT General Knowledge REFTEXT/ ARTICLEREF/  - General catch-all for other articles about Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./Fragments.html REFNAME/  /REFTEXT Fragments REFTEXT/ ARTICLEREF/  - Incomplete stuff and design notes. LI/ UL/
+/SECTION Campaigns SECTION/ 
+
+Various campaigns which are active or have been run in Erithnoi.
+/UL 
+/LI  /ARTICLEREF /REFNAME ./KinerghCampaign.html REFNAME/  /REFTEXT Kinergh Campaign REFTEXT/ ARTICLEREF/  - Gillian, Tara, and Nate. Run online from 2008-2011. LI/
+/LI  /ARTICLEREF /REFNAME ./MidrealmsCampaign.html REFNAME/  /REFTEXT Midrealms Campaign REFTEXT/ ARTICLEREF/  - Krystal, Tim, Don, and List. The 'Tuesday Night Group'. LI/
+/LI  fall crest Campaign LI/
+/LI  /ARTICLEREF /REFNAME ./EldoranIslesCampaign.html REFNAME/  /REFTEXT Eldoran Isles Campaign REFTEXT/ ARTICLEREF/  - Tara and Gillian in the Eldoran Isles pirate campaign. LI/
+/LI  /ARTICLEREF /REFNAME ./ThirdMidrealmsCampaign.html REFNAME/  /REFTEXT Third Midrealms Campaign REFTEXT/ ARTICLEREF/  - Tara and Gillian in The Midrealms/Fallcrest. LI/ UL/
+/SECTION Geography and Locations SECTION/ 
+
+Locations in Erithnoi. This is for DM info on locations, player info should go in the player space and can be linked to from these articles.
+/UL 
+/LI  /ARTICLEREF /REFNAME ./Kinergh.html REFNAME/  /REFTEXT Kinergh REFTEXT/ ARTICLEREF/  - Locations in Kinergh and some surrounding areas. LI/
+/LI  /ARTICLEREF /REFNAME ./Midrealms.html REFNAME/  /REFTEXT Midrealms REFTEXT/ ARTICLEREF/  - Locations in the Midrealms and some surrounding areas. LI/ UL/
+ARTICLE/

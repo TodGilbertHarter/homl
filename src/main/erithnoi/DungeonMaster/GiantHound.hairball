@@ -1,0 +1,11 @@
+/ARTICLE" Giant Hound "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/Monsters.html REFNAME/ 
+	/REFTEXT Monsters REFTEXT/
+ARTICLEREF/ PARENT/
+/RIGHT /IMAGE GiantHound.png IMAGE/ RIGHT/ Like their smaller cousins kept by humans these hounds serve as hunting animals for hill giants and sometimes other large humanoids.
+/SECTION Tactics SECTION/ 
+
+Giant hounds attempt to attack targets in pairs so they can grip hold of the target and worry it to death.
+ARTICLE/

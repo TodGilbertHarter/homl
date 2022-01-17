@@ -1,0 +1,15 @@
+/ARTICLE" Hill Giant Priestess "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/Monsters.html REFNAME/ 
+	/REFTEXT DungeonMaster.Monsters REFTEXT/
+ARTICLEREF/ PARENT/
+/RIGHT /IMAGE HillGiantPriestess.png IMAGE/ RIGHT/ Female Hill Giants often practice a form of shamanistic magic. 
+They can be quite deadly. Adventurers invading the hill giants lairs may quickly discover that the brutish male hill 
+giants are the least of their problems.
+/SECTION Tactics SECTION/ 
+
+Hill Giant Priestesses will usually stand back and use their Earth Lash and Earth Wave powers to slow down and 
+confuse the enemy as their brutish husbands wade into battle. If necessary they will use their clubs to defend 
+themselves and can do so quite competently. In defense of their dwellings and children they will fight to the death.
+ARTICLE/

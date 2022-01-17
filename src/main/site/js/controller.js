@@ -41,6 +41,9 @@ class Controller {
 		this.router.add(/authenticated/,() => { this.view.displayAuthenticatedUI(); });
 		this.router.add(/showgame\/(.*)/,(gameid) => { this.view.displayGameInfo(gameid); });
 		this.router.add(/showcharacter\/(.*)/,(characterid) => { this.view.displayCharacterInfo(characterid); });
+		this.router.add(/creategame/,() => { this.view.displayCreateGameUI(); });
+		const mm = this.view.getElement('mainmenu');
+		mm.menuHandler = (e) => { this.menuItemSelectionHandler(e) };
 	}
 	
 	authenticated() {
@@ -70,6 +73,21 @@ class Controller {
 			window.location.hash = "/signout";
 		}
 	}
+	
+	menuItemSelectionHandler(item) {
+		console.log("got a menu item selected event for item named "+item);
+		switch(item) {
+			case 'new game':
+				this.handleNewGame();
+				break;
+			default:
+				console.error("no handler for menu selection "+item);
+		}
+	}
+	
+	handleNewGame() {
+		window.location.hash = '/creategame';
+	}
 
 	doSignUp(email, password, onSuccess, onFailure) {
 		this.authenticator.createUserWithEmailAndPassword(email,password,onSuccess,onFailure);
@@ -81,6 +99,10 @@ class Controller {
 	
 	doSignOut() {
 		this.authenticator.signOut();
+	}
+	
+	getGamesByOwner(owner) {
+		this.gameRepo.getGamesByOwner(owner.id,this.onGamesChanged.bind(this));
 	}
 	
 	doGameSearch(name) {

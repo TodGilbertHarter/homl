@@ -1,0 +1,37 @@
+/ARTICLE" The Younger Gods "/
+/WEB Player WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../Player/Religion.html REFNAME/ 
+	/REFTEXT Religion REFTEXT/
+ARTICLEREF/ PARENT/
+/CHAPTER The Younger Gods CHAPTER/
+
+The younger, or everyday, gods are of two origins. The mightiest among them are the children of the Elemental Gods, who overthrew the rule of their parents long ago. Others are once mortal beings which have ascended to immortal status. A few are the result of liaisons between mortals and the gods or between gods and other lesser immortal beings.
+
+These gods are those which are worshiped every day by ordinary mortals of the younger races. These beings receive and sustain their powers primarily from the mental energies of lesser beings, their worshipers. Thus is very important to the gods to receive the worship, adulation, and loyalty of their worshipers. In order to achieve their exalted position and command the loyalty of their worshipers most gods have found it useful or necessary to form an aspect or sphere of influence. Thus one god might concern itself with law, truthfulness and oath taking, while another might focus on healing, and another striking down ones enemies. To a large extent a god's aspect dictates the areas in which it can be effective. A god of death will not be very good at calming storms at sea for example, but would be able to raise the dead or slay the living very effectively.
+
+Amongst these gods there are those of all different alignments. The gods are not in any large sense unified or organized. Many of them, such as the main human worshiped gods, tend to band together and may often share goals, but they can also at times oppose one another. The only thing which generally unites the gods is even a hint of an attempt by the Elemental Gods to escape from their imprisonment and return to power.
+
+
+/TABLE 
+/TR /TH Name /TH/ Domains /TH/ Rank /TH/ Alignment /TH/ Notes TH/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./GodOtillis.html REFNAME/  /REFTEXT Otillis REFTEXT/ ARTICLEREF/  /TD/ hunting, forest /TD/ god /TD/ good /TD/ patron of rangers, foresters, and hunters\\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./GodTeala.html REFNAME/  /REFTEXT Teala REFTEXT/ ARTICLEREF/  /TD/ arts, oracles/prophesy, homes /TD/ god /TD/ good /TD/ \\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./GodUtule.html REFNAME/  /REFTEXT Utule REFTEXT/ ARTICLEREF/  /TD/ seasons, time /TD/ god /TD/ unaligned /TD/ watcher of the skies, keeper of time\\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./GodKlay.html REFNAME/  /REFTEXT Klay REFTEXT/ ARTICLEREF/  /TD/ guardianship, protection /TD/ god /TD/ lawful /TD/ \\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./GodLir.html REFNAME/  /REFTEXT Lir REFTEXT/ ARTICLEREF/  /TD/ sun, wisdom /TD/ god /TD/ good /TD/ \\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./GodNomok.html REFNAME/  /REFTEXT Nomok REFTEXT/ ARTICLEREF/  /TD/ war /TD/ god /TD/ unaligned /TD/ \\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./GodJerok.html REFNAME/  /REFTEXT Jerok REFTEXT/ ARTICLEREF/  /TD/ mischief, adventure, brewing, roads /TD/ demigod /TD/ neutral /TD/ patron of thieves and brewers\\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./GodGelin.html REFNAME/  /REFTEXT Gelin REFTEXT/ ARTICLEREF/  /TD/ vengeance /TD/ god /TD/ good /TD/ \\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./GodHurn.html REFNAME/  /REFTEXT Hurn REFTEXT/ ARTICLEREF/  /TD/ animal life /TD/ god /TD/ unaligned /TD/ The son of Yilliki, known as the horned one\\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./GodAtur.html REFNAME/  /REFTEXT Atur REFTEXT/ ARTICLEREF/  /TD/ law, rulership /TD/ god /TD/ lawful good /TD/ The god of kings, the lawgiver\\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./GodAura.html REFNAME/  /REFTEXT Aura REFTEXT/ ARTICLEREF/  /TD/ dawn,archery /TD/ demigod /TD/ good /TD/ \\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./GodDaag.html REFNAME/  /REFTEXT Daag REFTEXT/ ARTICLEREF/  /TD/ trade,prosperity /TD/ demigod /TD/ unaligned /TD/ \\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./GodSawk.html REFNAME/  /REFTEXT Sawk REFTEXT/ ARTICLEREF/  /TD/ healing /TD/ god /TD/ good /TD/ \\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./GodThrul.html REFNAME/  /REFTEXT Thrul REFTEXT/ ARTICLEREF/  /TD/ strength, wrestling, boxing /TD/ demigod /TD/ good /TD/ \\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./Imotnoi.html REFNAME/  /REFTEXT Imotnoi REFTEXT/ ARTICLEREF/  /TD/ messengers,gates /TD/ demigod /TD/ unaligned /TD/ patron of those who travel, especially by magical means\\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./GodOlorin.html REFNAME/  /REFTEXT Olorin REFTEXT/ ARTICLEREF/  /TD/ night,sleep,magic /TD/ god /TD/ unaligned /TD/ \\ TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./Corellon.html REFNAME/  /REFTEXT Corellon REFTEXT/ ARTICLEREF/  /TD/ elves /TD/ god /TD/ unaligned /TD/ lord of the fey TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./Moradin.html REFNAME/  /REFTEXT Moradin REFTEXT/ ARTICLEREF/  /TD/ dwarves, the forge, craft /TD/ god /TD/ lawful good /TD/ lord of the forge and patron of dwarves and craftsmen TD/ TR/
+/TR  /TD  /ARTICLEREF /REFNAME ./Gruumsh.html REFNAME/  /REFTEXT Gruumsh REFTEXT/ ARTICLEREF/  /TD/ orcs, destruction /TD/ god /TD/ chaotic evil /TD/   TD/ TR/ TABLE/
+ARTICLE/

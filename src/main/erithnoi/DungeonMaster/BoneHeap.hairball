@@ -1,0 +1,18 @@
+/ARTICLE" Bone Heap "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/Monsters.html REFNAME/ 
+	/REFTEXT Monsters REFTEXT/
+ARTICLEREF/ PARENT/
+/RIGHT /IMAGE BoneHeap.png IMAGE/ RIGHT/ A Bone Heap is an undead monstrosity which may sometimes arise when a large number of bones are left unburied. They are especially likely to occur in areas which are contaminated with necrotic energy. Like their relatives, Bone Yards, they can be fearsome opponents, seeking to destroy any other living being which approaches them.
+/SECTION Bone Heap Lore SECTION/ 
+
+A character knows the following information with a successful Religion check
+
+/EM DV 15: EM/ Bone Heaps sometimes arise in areas tainted with necrotic energy from the shadowfell when large numbers of bones are present.
+
+/EM DC 20: EM/ Bone Heaps are known to be vulnerable to fire and radiant attacks.
+/SECTION Greater Bone Heaps SECTION/ 
+
+Some bone heaps have more shadow energy than others. The Greater Boneheap behaves in a fashion similar to its weaker cousin but is considerably harder to destroy./RIGHT /IMAGE BoneHeapGreater.png IMAGE/ RIGHT/ 
+ARTICLE/

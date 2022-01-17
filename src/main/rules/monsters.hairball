@@ -301,6 +301,57 @@ SUBSECTION/
 SECTION/
 /FORMAT" MONSTERS"/
 /SECTION" Monsters A-Z"/
+/SUBSECTION" D"/
+/TOPIC" Dvarg"/
+
+Dvarg are a race of humanoid creatures, about man-sized though tending to be a bit shorter and stouter than humans generally. They generally live in organized communities with established laws, trade, industry, and other features of civilization. The exact details of any given Dvargen community will depend on its specific culture and other socioeconomic factors. In general they tend to be rather lawful creatures, valuing organization, hierarchy and stability in their lives. It is said that they are the 'Children of Duron', who is the patron deity of most Dvargen. Due to this connection crafts generally, and particularly those involving metalwork and stonemasonry are highly valued. Dvargen also have a penchant for building and living underground, often constructing delves which serve as both mines and living space. 
+
+Dvarg are generally not highly hostile to anyone who is non-threatening and willing to obey their rules. When outside their communities most of them travel armed and armored, believing in being safe rather than sorry. A Dvarg encountered outside their own community or group is often an outcast. These individuals may be of almost any disposition, but are often far more dangerous and unpredictable than an ordinary dvarg.
+/SUBTOPIC" Dvarg Trooper"/
+
+/LEFT=" half"/
+/MONSTER
+/MONSTERNAME Dvarg Trooper MONSTERNAME/ /MONSTERLEVEL 1 MONSTERLEVEL/ /MONSTERROLE Minion Soldier MONSTERROLE/
+/MONSTERSIZE standard MONSTERSIZE/ /MONSTERTAGS natural, humanoid, dvarg MONSTERTAGS/
+/MONSTERDEFENSES /MONSTERFORT 19 MONSTERFORT/ /MONSTERREF 15 MONSTERREF/ /MONSTERWILL 17 MONSTERWILL/ MONSTERDEFENSES/
+/MONSTERPOWER 0 MONSTERPOWER/
+/MONSTERHITPOINTS 1; N/A MONSTERHITPOINTS/ /MONSTERINITIATIVE +0 MONSTERINITIATIVE/
+/MONSTERIMMUNITY none MONSTERIMMUNITY/ /MONSTERPROTECTION poison MONSTERPROTECTION/
+/MONSTERVULNERABILITY none MONSTERVULNERABILITY/ /MONSTERDR 4 MONSTERDR/
+/MONSTERSECTION /MONSTERSECTIONNAME Traits MONSTERSECTIONNAME/
+/MONSTERTRAIT /MONSTERTRAITNAME steady feat MONSTERTRAITNAME/
+/MONSTERTRAITEFFECT Whenever the dvarg trooper is adjacent to another dvarg any push, pull, or slide effects it is subject to are reduced by 1 square. MONSTERTRAITEFFECT/ MONSTERTRAIT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Move MONSTERSECTIONNAME/
+/MONSTERSPEED 5 MONSTERSPEED/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Major MONSTERSECTIONNAME/
+/MONSTERFEAT /MONSTERFEATNAME Axe blow MONSTERFEATNAME/ /MONSTERFEATTAGS basic, weapon MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE At-Will MONSTERFEATUSAGE/
+/MONSTERFEATATTACK close 1 DC 17; one opponent MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 5 damage and the target is engaged MONSTERFEATSUCCESS/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Stats MONSTERSECTIONNAME/
+/MONSTERSTR 18 MONSTERSTR/
+/MONSTERINT 16 MONSTERINT/
+/MONSTERCON 18 MONSTERCON/
+/MONSTERWIS 16 MONSTERWIS/
+/MONSTERDEX 14 MONSTERDEX/
+/MONSTERCHA 13 MONSTERCHA/
+/MONSTERKNACKS
+/MONSTERKNACK athletics(20) MONSTERKNACK/
+/MONSTERKNACK survival(20) MONSTERKNACK/
+MONSTERKNACKS/
+/MONSTERLANG Dvargish MONSTERLANG/
+/MONSTEREQUIP battle axe, mail coat, shield MONSTEREQUIP/
+MONSTERSECTION/
+MONSTER/
+LEFT/
+The trooper is an ordinary dvarg who is armed
+SUBTOPIC/
+TOPIC/
+SUBSECTION/
 /SUBSECTION" G"/
 /TOPIC" Ghoul"/
 
@@ -693,6 +744,80 @@ MONSTER/
 LEFT/
 
 Sometimes a wild and powerful spirit inhabits a scarecrow and it arises as a Scarecrow Lantern. Its terrible Jack-O-Lantern head spreads fear amongst its enemies, and it possesses a strong force of will which makes it a dangerous foe. Often one of these will roam the fields of a small town or village, reinforcing the guardians and driving off more dangerous animals and monsters. They can be quite initimidating and dangerous when they go rogue.
+SUBTOPIC/
+TOPIC/
+/CLEAR CLEAR/
+/TOPIC" Snake"/
+
+Many snakes are simply innocuous natural creatures. However some are endowed with mysterious power. These may be messengers from the spirit world, or
+could be set as guardians by powerful beings.
+/SUBTOPIC" Squamous Guardian"/
+/LEFT=" half"/
+/MONSTER
+/MONSTERNAME Squamous Guardian MONSTERNAME/ /MONSTERLEVEL 2 MONSTERLEVEL/ /MONSTERROLE Uncommon Lurker MONSTERROLE/
+/MONSTERSIZE standard MONSTERSIZE/ /MONSTERTAGS magical, beast MONSTERTAGS/
+/MONSTERDEFENSES /MONSTERFORT 16 MONSTERFORT/ /MONSTERREF 19 MONSTERREF/ /MONSTERWILL 17 MONSTERWILL/ MONSTERDEFENSES/
+/MONSTERPOWER 1 MONSTERPOWER/
+/MONSTERHITPOINTS 42; 21 MONSTERHITPOINTS/ /MONSTERINITIATIVE +3 MONSTERINITIATIVE/
+/MONSTERIMMUNITY poison MONSTERIMMUNITY/ /MONSTERPROTECTION none MONSTERPROTECTION/
+/MONSTERVULNERABILITY none MONSTERVULNERABILITY/ /MONSTERDR 0 MONSTERDR/
+/MONSTERSECTION /MONSTERSECTIONNAME Move MONSTERSECTIONNAME/
+/MONSTERSPEED 6 MONSTERSPEED/
+/MONSTERFEAT /MONSTERFEATNAME Slither MONSTERFEATNAME/ /MONSTERFEATTAGS MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE At-Will MONSTERFEATUSAGE/
+/MONSTERFEATEFFECT The snake is able to move normally through difficult terrain featuring stones, vegetation, 
+or other such obstacles without penalty, and pass through cracks and small openings without squeezing. When using this power
+the snake does not grant opponents an opportunity. MONSTERFEATEFFECT/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Major MONSTERSECTIONNAME/
+/MONSTERFEAT /MONSTERFEATNAME Poison Bite MONSTERFEATNAME/ /MONSTERFEATTAGS poison MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE At-Will MONSTERFEATUSAGE/
+/MONSTERFEATATTACK close 1 DC 18; one opponent MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 3d6+7 poison damage and the target is afflicted with Poison Snake Bite. MONSTERFEATSUCCESS/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Stats MONSTERSECTIONNAME/
+/MONSTERSTR 16 MONSTERSTR/
+/MONSTERINT 16 MONSTERINT/
+/MONSTERCON 16 MONSTERCON/
+/MONSTERWIS 16 MONSTERWIS/
+/MONSTERDEX 20 MONSTERDEX/
+/MONSTERCHA 20 MONSTERCHA/
+/MONSTERKNACKS /MONSTERKNACK stealth(22) MONSTERKNACK/ MONSTERKNACKS/
+/MONSTERLANG none MONSTERLANG/
+/MONSTEREQUIP none MONSTEREQUIP/
+MONSTERSECTION/
+MONSTER/
+LEFT/
+
+/RIGHT=" half"/
+/AFFLICTION /AFFLICTIONTYPE poison AFFLICTIONTYPE/
+/AFFLICTIONNAME Poison Snake Bite AFFLICTIONNAME/
+/AFFLICTIONLEVEL 2 AFFLICTIONLEVEL/
+/TAGS Poison TAGS/
+/ONSET Stage 0 is manifested 1 round after poisoning. Checks are required at least every hour from then on. ONSET/
+/STAGES
+    /STAGE /STAGENAME 0 STAGENAME/ The victim is dazed. STAGE/
+    /STAGE /STAGENAME 1 STAGENAME/ The victim loses 1/4 of starting hit points. STAGE/
+    /STAGE /STAGENAME 2 STAGENAME/ The victim is helpless! STAGE/
+    /STAGE /STAGENAME Final STAGENAME/ The victim dies. STAGE/
+STAGES/
+/AFFLICTIONDESCRIPTION
+When bitten by a poisonous snake this affliction results. The victim becomes progressively weaker and more disoriented,
+finally becoming helpless before expiring. Note that this is simply a generic, though toxic, bite. There are worse forms which
+are higher level, require higher complexity challenges to survive, and may inflict different effects. This one should suffice to
+represent most serious snake bites.
+AFFLICTIONDESCRIPTION/
+/CURE
+The affliction is cured by succeeding on 4 checks before dying. Once the victim succeeds they will remain in their current state for
+approximately 8 hours, before recovering to the next lower stage, until all the effects have faded. Healing skill can be used to make
+the checks, otherwise they are basic CON checks. Nature could be used to devise an antidote, which will grant advantage on a Healing
+check. Likewise certain rituals or preparations may allow for use of Arcana or Religion checks.
+CURE/
+AFFLICTION/
+RIGHT/
+
 SUBTOPIC/
 TOPIC/
 SUBSECTION/

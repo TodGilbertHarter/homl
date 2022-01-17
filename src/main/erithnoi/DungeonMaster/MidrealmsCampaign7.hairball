@@ -1,0 +1,46 @@
+/ARTICLE" MidrealmsCampaign7 "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/MidrealmsCampaign.html REFNAME/ 
+	/REFTEXT DungeonMaster.MidrealmsCampaign REFTEXT/
+ARTICLEREF/ PARENT/
+=/SECTION Recapitulation SECTION/ =
+
+TBD
+/SUBSECTION Heroes SUBSECTION/ 
+/UL 
+/LI  Deorai - Elf ranger of the woods of Urieth. Exiled from his tribe and his love, who was then slain by orcs. LI/
+/LI  Celery - Human cavalier of Avandra (a minor aspect of Jerok) who was 'slumming' in Gurig's Haven 'seeking adventure' when she met Malachite. LI/
+/LI  Moose - A halfling native of Fallcrest. Moose is an orphan who has no clan, making his way by his wits. LI/
+/LI  Penelope - A Pixie wizard from the pixie tree. LI/ UL/
+/SUBSECTION NPCs SUBSECTION/ 
+/UL 
+/LI  Rat - Kobold Vermin Handler. Released by the party Akitaka ordered him to follow the party and await orders. Rat may not be entirely loyal to Akitaka. He is currently tailing the party. LI/
+/LI  Akitaka - Oni who often goes by the alter ego Throckmorton. He starts out pretending to be a river rat so he can keep an eye on the party. LI/ UL/
+/SUBSECTION Summary SUBSECTION/ 
+
+The party spends some time in Fallcrest at the Septarch's Tower spending some money on making new magic items and forming a plan to get the Adamatine Horse of Xarn from the lair of Vertithrax. Meanwhile Akitaka has returned to Fallcrest, knowing that the party may go after the horse and wanting to insure that the PCs don't acquire it. Ideally he wants to acquire the artifact himself, which will allow him to dominate Om-Vertithrax and defeat Ulharthrain.
+
+When Barstom's thugs move in on the rats Akitaka is forced to reveal himself and his presence comes to the attention of the PCs. This forces him to flee town and he comes up with a new plan. He recruits a bunch of ogres to lurk near the lair waiting for the party, and assigns the kobold Rat to track the party and warn him when they come near.
+
+/SUBSECTION Events SUBSECTION/ 
+
+1. Barstomen's men break up the rats - This happens offstage, though one of the PCs may witness the action at a distance. Either way the PCs soon hear about Akitaka taking his true form and harshly manhandling Barstomen and his men.
+1. The party is tracked by Rat. They may detect his presence with DC23 Nature check or spot him if they look with a DC23 Perception check. If Rat is captured he will squeal on Akitaka, though it will require some bribes and/or intimidation (a moderate complexity SC success will reveal the truth amidst his various lies, otherwise the party will believe his "I'm just a poor kobold" or "I am spying for the Dragon Om-Vertithrax" story, which is partly true).
+1. The PCs arrive at the lair. They will either have to defeat the ogres who will be loitering there if they have turned Rat, or else the area will seem deserted (but a DC23 Nature or Perception check to look around could reveal that ogres have been camping here).
+1. The party must recover the Horse from the lair (see the lair).
+
+==/SECTION Ogres SECTION/ ==
+/UL 
+/LI  Verbeeg Rowdy - Level 9 Standard Skirmisher /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/display.aspx?page=monster&id=5018 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Verbeeg Rowdy REFTEXT/ ARTICLEREF/  LI/
+/LI  Ogre - Level 6 Standard Brute /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/display.aspx?page=monster&id=115845 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Ogre REFTEXT/ ARTICLEREF/  LI/
+/LI  Brohg Hurler - Level 10 Standard Artillery /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/display.aspx?page=monster&id=5330 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Brohg Hurler REFTEXT/ ARTICLEREF/  LI/
+/LI  Ogre Hunter - Level 7 Standard Skirmisher /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/display.aspx?page=monster&id=115846 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Ogre Hunter REFTEXT/ ARTICLEREF/  LI/
+/LI  Ogre Mercenary - Level 8 Soldier /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/display.aspx?page=monster&id=115847 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Ogre Mercenary REFTEXT/ ARTICLEREF/  LI/
+/LI  Oni Devourer - Level 7 Soldier /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/display.aspx?page=monster&id=3048 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Akitaka REFTEXT/ ARTICLEREF/  LI/ UL/
+
+==/SECTION Wolves SECTION/ ==
+/UL 
+/LI  Warg - Level 9 Brute /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/display.aspx?page=monster&id=487 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Warg REFTEXT/ ARTICLEREF/  LI/
+/LI  Vicious Dire Wolf Level 7 Skirmisher /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/display.aspx?page=monster&id=1094 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Vicious Dire Wolf REFTEXT/ ARTICLEREF/  LI/ UL/
+ARTICLE/

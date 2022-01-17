@@ -1,0 +1,79 @@
+/ARTICLE" Prodigal Jack "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/NPCs.html REFNAME/ 
+	/REFTEXT DungeonMaster.NPCs REFTEXT/
+ARTICLEREF/ PARENT/
+Prodigal Jack is a half elven Beast Master Ranger. He is 16 years old. 2-3 years ago Jack's home, /ARTICLEREF /REFNAME ./WildWoodManor.html REFNAME/  /REFTEXT Wild Wood Manor REFTEXT/ ARTICLEREF/  was overrun by hobgoblins allied with the Green Adept and his family was killed, lost, or enslaved. Since then he has lived on his own and has developed great skill at fighting the various evil humanoids in the area, as well as surviving.
+
+Jack has limited experience with other people of late. He is willing to cooperate with anyone who demonstrably is willing and capable of killing goblinoids of all types. Otherwise he is mostly interested in his companion, Eaooow. From time to time he has been known to show up at the Otillis lodge west of Lad in order to acquire supplies.
+/UL 
+/LI *Half-Elf Archer Ranger [Level 3 Skirmisher]  LI/
+/LI *Medium natural humanoid [XP 150/200] LI/ UL/
+
+Initiative +4; Senses Perception +7; low-light vision
+HP 46; Bloodied 23
+Healing Surges (+11 hp) 1
+AC 18; Fortitude 15, Reflex 16, Will 13
+Speed 6
+
+[r] Longbow (standard; at-will) * Weapon
+Ranged 20/40; +7 vs. AC; 1d10 + 4 damage.
+
+[m] Longsword (standard; at-will) * Weapon
++7 vs. AC; 1d8 + 3 damage.
+
+[m] Off-hand Short Sword (standard; at-will) * Weapon
++7 vs. AC; 1d6 + 3 damage.
+
+[M/R] Twin Strike (standard; at-will) * Weapon
+Two attacks on one or two creatures. 
+Longsword/Short Sword: +7/+7 vs. AC; 1d8 + 1 damage (main)/1d6 + 1 damage (off-hand). 
+Longbow: Ranged 20/40; +7 vs. AC (twice); 1d10 + 1 damage.
+
+[M] Circling Strike (standard; at-will) * Beast, Martial, Weapon
+
+The ranger attacks with his longsword; +7 vs AC; 1d8 + 1 damage; before or after the attack the ranger's beast companion may shift 1 square.
+
+[R] Split the Tree (standard; Daily) * Weapon
+Ranged 20/40; targets two creatures within 3 squares of each other; +7 vs. AC; 2d10 + 4 damage. Make two attack rolls, take the higher result, and apply it to both targets.
+
+Commander’s Strike (standard; encounter) * Weapon
+Choose a target that the half-elf ranger could attack with a melee attack. One of the half-elf ranger’s ally can make a melee basic attack with a +0 bonus to damage against that target as a free action.
+
+Hunter’s Quarry (minor; at-will) 
+The half-elf ranger can designate the nearest visible enemy as the half-elf ranger’s quarry. Once per round when hitting this quarry, the half-elf ranger can deal an extra 1d6 damage. This effect remains active until the end of the encounter or until the half-elf ranger designates a different target as the quarry. The half-elf ranger can only designate one enemy as quarry at a time.
+
+[M/R] Disruptive Strike (immediate interrupt; encounter) * Weapon
+When the half-elf ranger or an ally is attacked by a creature. 
+Targets the attacking creature. 
+Longsword: +7 vs. AC; 1d8 + 3 damage. 
+Longbow: Ranged 20/40; +7 vs. AC; 1d10 + 4 damage. 
+Hit: The target takes a -4 penalty to its attack roll for the triggering attack.
+
+Pack Alertness (minor; at-will) * Beast, Martial 
+Close burst 10; The ranger and his beast companion make a Perception check at +2 and share the better result. Also, if the beast companion becomes aware of a target, the ranger does as well, and vice versa.
+
+Skills Nature +7, Stealth +8, Perception +7
+Str 14 (+3); Dex 16 (+4); Wis 13 (+2);
+Con 14 (+3); Int 10 (+1); Cha 13 (+2)
+Equipment hide armor, longsword, short sword, longbow
+/SECTION Eaooow SECTION/ 
+
+Eaooow is Jack's Beast Companion. It is an albino mountain lion. The two are rarely separated for long.
+
+Mountain Lion [Level 3 Beast Companion]
+ Medium natural beast (XP/150)
+ Initiative +4; Senses Perception +2; low-light vision
+ HP 38; Bloodied 19
+ Healing Surges (+9) 1
+ AC 17; Fort 14; Ref 16; Will 15
+ Speed 7
+
+[m] (standard; at-will) * Weapon
+ Claw +7 vs AC; 1d8+2 damage
+
+Skills Athletics +7; Stealth +8
+ Str 14 (+2) Dex 16 (+3) Wis 14 (+2)
+ Con 12 (+1) Int 6 (-1) Cha 6 (-1)
+ARTICLE/

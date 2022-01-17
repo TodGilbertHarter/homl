@@ -45,7 +45,8 @@ THEAD/
 /TR=" elemental"/ /TD Alchemist /TD/ Enabler TD/ TR/
 /TR=" elemental"/ /TD Sorcerer /TD/ Striker TD/ TR/
 /TR=" spirit"/ /TD Spirit /TD/ Priest /TD/ Enabler TD/ TR/
-/TR=" life"/ /TD Life /TD/ Berserker /TD/ Striker TD/ TR/
+/TR=" life"/ /TDR=" 2" Life /TD/ Beast Master /TD/ Defender TD/ TR/
+/TR=" life"/ /TD /TD/ Berserker /TD/ Striker TD/ TR/
 /TR=" shadow"/ /TD Shadow /TD/ Illusionist /TD/ Controller TD/ TR/
 /TR /TD Varies /TD/ Wizard /TD/ Controller TD/ TR/
 TBODY/
@@ -133,6 +134,7 @@ All characters with a life calling gain the Life Attunement boon:
 
 The following callings draw their power from the life power source.
 /SOURCE" berserker.hairball"/
+/SOURCE" beastmaster.hairball"/
 SUBSECTION/
 /SUBSECTION" Spirit Callings"/
 /RIGHT=" half"/

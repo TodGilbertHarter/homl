@@ -1,0 +1,44 @@
+/ARTICLE" NPCs "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/WebHome.html REFNAME/ 
+	/REFTEXT WebHome REFTEXT/
+ARTICLEREF/ PARENT/
+/CHAPTER Non Player Characters CHAPTER/
+/UL 
+/LI  /ARTICLEREF /REFNAME ./ProdigalJack.html REFNAME/  /REFTEXT Prodigal Jack REFTEXT/ ARTICLEREF/  - The last inhabitant of /ARTICLEREF /REFNAME ./WildWoodManor.html REFNAME/  /REFTEXT Wild Wood Manor REFTEXT/ ARTICLEREF/ . LI/
+/LI  /ARTICLEREF /REFNAME ./AkothMagog.html REFNAME/  /REFTEXT Akoth-Magog REFTEXT/ ARTICLEREF/  - Leader of the hobgoblin tribes of the /ARTICLEREF /REFNAME ./HobgoblinHills.html REFNAME/  /REFTEXT Hobgoblin Hills REFTEXT/ ARTICLEREF/ . LI/
+/LI  /ARTICLEREF /REFNAME ./NomogGea.html REFNAME/  /REFTEXT Nomog-Gea REFTEXT/ ARTICLEREF/  - Rival to Akoth-Magog. LI/
+/LI  /ARTICLEREF /REFNAME ./DragonCarholtha.html REFNAME/  /REFTEXT Carholtha REFTEXT/ ARTICLEREF/  - A powerful adult white dragon living in the /ARTICLEREF /REFNAME ./AlconPass.html REFNAME/  /REFTEXT Alcon Pass REFTEXT/ ARTICLEREF/ . LI/
+/LI  /ARTICLEREF /REFNAME ./DragonAmaranth.html REFNAME/  /REFTEXT Amaranth REFTEXT/ ARTICLEREF/  - The Great Silver Dragon of Dalcaroth. LI/
+/LI  /ARTICLEREF /REFNAME ./DragonTuratha.html REFNAME/  /REFTEXT Turatha REFTEXT/ ARTICLEREF/  - The green dragon which lurks in the northen /ARTICLEREF /REFNAME ./ForestOfGrin.html REFNAME/  /REFTEXT Forest of Grin REFTEXT/ ARTICLEREF/ . LI/
+/LI  /ARTICLEREF /REFNAME ./SummerTwilight.html REFNAME/  /REFTEXT Summer Twilight REFTEXT/ ARTICLEREF/  - A priest of Yilliki. Leader of the moderate faction in Kinergh. LI/
+/LI  /ARTICLEREF /REFNAME ./KondTheBerzerk.html REFNAME/  /REFTEXT Berzerkond REFTEXT/ ARTICLEREF/  - The current ruler of the /ARTICLEREF /REFNAME ./CountyOfMorkend.html REFNAME/  /REFTEXT County of Morkend REFTEXT/ ARTICLEREF/ . LI/
+/LI  /ARTICLEREF /REFNAME ./EmothEguagnol.html REFNAME/  /REFTEXT Emoth Eguagnol REFTEXT/ ARTICLEREF/  - The true ruler of the DuchyOfHar. An ancient vampire lord who rules his domain from the shadows. LI/
+/LI  /ARTICLEREF /REFNAME ./SharnKellionII.html REFNAME/  /REFTEXT Duke Sharn Kellion II REFTEXT/ ARTICLEREF/  - The Duke of the /ARTICLEREF /REFNAME ../Player/GrandDuchyOfTisloch.html REFNAME/  /REFTEXT Grand Duchy of Tisloch REFTEXT/ ARTICLEREF/ . LI/
+/LI  /ARTICLEREF /REFNAME ./HaldenMarsh.html REFNAME/  /REFTEXT Sir Halden Marsh REFTEXT/ ARTICLEREF/  - The Marshal of Tisloch. He is in charge of the army of the /ARTICLEREF /REFNAME ../Player/GrandDuchyOfTisloch.html REFNAME/  /REFTEXT Grand Duchy of Tisloch REFTEXT/ ARTICLEREF/ . LI/
+/LI  /ARTICLEREF /REFNAME ./BarandOfFortunato.html REFNAME/  /REFTEXT Barand Of Fortunato REFTEXT/ ARTICLEREF/  - Pretender to the throne of /ARTICLEREF /REFNAME ../Main/ErithnoiGilduin.html REFNAME/  /REFTEXT The Kingdom of Gilduin REFTEXT/ ARTICLEREF/ . LI/
+/LI  /ARTICLEREF /REFNAME ./WizardessTalia.html REFNAME/  /REFTEXT Talia REFTEXT/ ARTICLEREF/  - The daughter of a famous magician, /ARTICLEREF /REFNAME ./ZorbOfOrb.html REFNAME/  /REFTEXT Zorb of Orb REFTEXT/ ARTICLEREF/ . Talia lives in a tower within Tisloch, which is now the secret headquarters of /ARTICLEREF /REFNAME ./SilverCompany.html REFNAME/  /REFTEXT The Silver Company REFTEXT/ ARTICLEREF/ . She is also a member of the /ARTICLEREF /REFNAME ./OrderOfTravelingMagi.html REFNAME/  /REFTEXT Order of Traveling Magi REFTEXT/ ARTICLEREF/ . LI/
+/LI  /ARTICLEREF /REFNAME ./RangerMurthond.html REFNAME/  /REFTEXT Murthond REFTEXT/ ARTICLEREF/  - A /ARTICLEREF /REFNAME ./RangerOfOtillis.html REFNAME/  /REFTEXT Ranger of Otillis REFTEXT/ ARTICLEREF/  and also involved in the organization of The /ARTICLEREF /REFNAME ./SilverCompany.html REFNAME/  /REFTEXT Silver Company REFTEXT/ ARTICLEREF/ . His brothers are Chilthond and Silthond, also rangers of Otillis. LI/
+/LI  /ARTICLEREF /REFNAME ./KingOfTheSewers.html REFNAME/  /REFTEXT The King of the Sewers REFTEXT/ ARTICLEREF/  - The leader of the wererats living in the sewers under Tisloch LI/
+/LI * /ARTICLEREF /REFNAME ./ShlekGnarl.html REFNAME/  /REFTEXT Shlek Gnarl REFTEXT/ ARTICLEREF/  - A wererat Priest of Jerok who serves The King of the Sewers LI/
+/LI  /ARTICLEREF /REFNAME ./SteelDragonBaranax.html REFNAME/  /REFTEXT Baranax REFTEXT/ ARTICLEREF/  - A Steel Dragon who makes his lair secretly in Tisloch. LI/
+/LI  /ARTICLEREF /REFNAME ./BlackDragonRaxitar.html REFNAME/  /REFTEXT Raxitar REFTEXT/ ARTICLEREF/  - A Black Dragon who lairs in the Relch Bog within the /ARTICLEREF /REFNAME ./ForestOfGrin.html REFNAME/  /REFTEXT Forest of Grin REFTEXT/ ARTICLEREF/ . LI/
+/LI  /ARTICLEREF /REFNAME ./RangerSilthond.html REFNAME/  /REFTEXT Silthond REFTEXT/ ARTICLEREF/  - A Ranger of Otillis assigned to the lodge near Vim. Brother of Murthond and Chilthond. LI/
+/LI  /ARTICLEREF /REFNAME ./GreenAdept.html REFNAME/  /REFTEXT The Green Adept REFTEXT/ ARTICLEREF/  - A powerful evil mage thought to have been recently destroyed. LI/
+/LI  /ARTICLEREF /REFNAME ./DraelekTuroth.html REFNAME/  /REFTEXT Draelek Turoth REFTEXT/ ARTICLEREF/  - The Warden of /ARTICLEREF /REFNAME ./SuriNatha.html REFNAME/  /REFTEXT Suri Natha REFTEXT/ ARTICLEREF/ . LI/
+/LI  /ARTICLEREF /REFNAME ./GalarNut.html REFNAME/  /REFTEXT Galar Nut REFTEXT/ ARTICLEREF/  - The Treelord of Grin. LI/
+/LI  /ARTICLEREF /REFNAME ./StableMasterMeltheniar.html REFNAME/  /REFTEXT Stable Master Meltheniar REFTEXT/ ARTICLEREF/  - The Griffon Lady. LI/
+/LI  /ARTICLEREF /REFNAME ./LarnKellTurion.html REFNAME/  /REFTEXT Larn Kell-Turion REFTEXT/ ARTICLEREF/  - A spy for the Green Adept and possible pretender to the throne of Kinergh LI/
+/LI  /ARTICLEREF /REFNAME ./LordAndoth.html REFNAME/  /REFTEXT Lord Andoth REFTEXT/ ARTICLEREF/  - The /ARTICLEREF /REFNAME ./GreenAdept.html REFNAME/  /REFTEXT Green Adept REFTEXT/ ARTICLEREF/ 's chief lieutenant. Mightiest of the /ARTICLEREF /REFNAME ./AirKnights.html REFNAME/  /REFTEXT Air Knights REFTEXT/ ARTICLEREF/  of Pazuzu. LI/
+/LI  /ARTICLEREF /REFNAME ./SirGlarHalath.html REFNAME/  /REFTEXT Sir Glar Halath REFTEXT/ ARTICLEREF/  - Seneschal of the Air Knights. A fell opponent. LI/
+/LI  /ARTICLEREF /REFNAME ./HalfOrcGrog.html REFNAME/  /REFTEXT Half-Orc Grog REFTEXT/ ARTICLEREF/  - A Half-Orc barbarian of questionable heritage living in /ARTICLEREF /REFNAME ./TownOfTisloch.html REFNAME/  /REFTEXT Tisloch REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME ./HagDugh.html REFNAME/  /REFTEXT Hag Dugh REFTEXT/ ARTICLEREF/  - A powerful hag and enemy of the Fomorians. LI/
+/LI  /ARTICLEREF /REFNAME ./DudleyWhitehelm.html REFNAME/  /REFTEXT Dudley Whitehelm REFTEXT/ ARTICLEREF/  - A paladin dedicated to Atur, but has he become corrupted? LI/
+/LI  /ARTICLEREF /REFNAME ./DwarfGilladian.html REFNAME/  /REFTEXT Dwarf Gilladian REFTEXT/ ARTICLEREF/  - An old campaigner, now mostly retired. Good for some tall tales LI/
+/LI  /ARTICLEREF /REFNAME ./CopperDragonXartialimax.html REFNAME/  /REFTEXT Copper Dragon Xartialimax REFTEXT/ ARTICLEREF/  - A wiley beast, makes his lair near /ARTICLEREF /REFNAME ./HighHold.html REFNAME/  /REFTEXT High Hold REFTEXT/ ARTICLEREF/  and spins many webs. LI/
+/LI  /ARTICLEREF /REFNAME ./GuillameJohannson.html REFNAME/  /REFTEXT Guillame Johannson REFTEXT/ ARTICLEREF/  - High Priest of Nomok in Bend. A follower of /ARTICLEREF /REFNAME ./BarandOfFortunato.html REFNAME/  /REFTEXT Barand of Fortunato REFTEXT/ ARTICLEREF/  and minion of The /ARTICLEREF /REFNAME ./HeadOfObothNai.html REFNAME/  /REFTEXT Head Of Oboth Nai REFTEXT/ ARTICLEREF/ . LI/
+/LI  /ARTICLEREF /REFNAME ./LarsJohannson.html REFNAME/  /REFTEXT Lars Johannson REFTEXT/ ARTICLEREF/  - Baron of the Eastern March of Gilduin. Brother of Guillame Johannson and also associated with /ARTICLEREF /REFNAME ./BarandOfFortunato.html REFNAME/  /REFTEXT Barand of Fortunato REFTEXT/ ARTICLEREF/  et al. LI/
+/LI  /ARTICLEREF /REFNAME ./ElishaTheWhip.html REFNAME/  /REFTEXT Elisha The Whip REFTEXT/ ARTICLEREF/  - Elisha is the captain of the /ARTICLEREF /REFNAME ./HammerMaidenOfNomok.html REFNAME/  /REFTEXT Hammer Maidens of Nomok REFTEXT/ ARTICLEREF/  in Bend and is another follower of /ARTICLEREF /REFNAME ./BarandOfFortunato.html REFNAME/  /REFTEXT BarandOfFortunato REFTEXT/ ARTICLEREF/ . LI/
+/LI  RogueGoro - Goro is a famous rogue halfling who was recently living in Bend, until some adventurers got him kicked out of the area. LI/ UL/
+ARTICLE/

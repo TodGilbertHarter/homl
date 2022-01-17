@@ -1,0 +1,16 @@
+/ARTICLE" Geography of Kinergh "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ErithnoiGeography.html REFNAME/ 
+	/REFTEXT ErithnoiGeography REFTEXT/
+ARTICLEREF/ PARENT/
+See also /ARTICLEREF /REFNAME ../Player/Kinergh.html REFNAME/  /REFTEXT Kinergh REFTEXT/ ARTICLEREF/ .
+/SECTION Locations in Kinergh SECTION/ 
+/UL 
+/LI  /ARTICLEREF /REFNAME ./TownOfLad.html REFNAME/  /REFTEXT Town Of Lad REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME ./VillageOfLys.html REFNAME/  /REFTEXT Village of Lys REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME ./ForestOfGrin.html REFNAME/  /REFTEXT Forest of Grin REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME ./RoseCourtOfTiliniel.html REFNAME/  /REFTEXT The Rose Court of Tiliniel REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME ./CastleHalys.html REFNAME/  /REFTEXT Castle Halys REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME ./TownOfDinford.html REFNAME/  /REFTEXT Town of Dinford REFTEXT/ ARTICLEREF/  LI/ UL/
+ARTICLE/

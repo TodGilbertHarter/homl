@@ -1,0 +1,16 @@
+/ARTICLE" Erithnoi Main "/
+/CHAPTER Erithnoi Web CHAPTER/
+
+Welcome to Erithnoi, this web provides information on the setting of Erithnoi, which has been used as a location for a variety of 
+fantasy role-playing game campaigns using a number of different sets of rules. There are three main parts:
+
+/SECTION Erithnoi Player Information SECTION/
+
+/ARTICLEREF /REFNAME ./Player/WebHome.html REFNAME/ /REFTEXT This section REFTEXT/ ARTICLEREF/ has information that is interesting to players.
+/SECTION Erithnoi GM Information SECTION/
+
+/ARTICLEREF /REFNAME ./DungeonMaster/WebHome.html REFNAME/ /REFTEXT This section REFTEXT/ ARTICLEREF/ has more detailed information that is useful to GMs, it isn't secret, secret backstory isn't really a thing here, but it might be more in depth, and less useful to most players.
+/SECTION Heroes of Myth and Legend SECTION/
+
+This section is being developed to describe the /ARTICLEREF /REFNAME /homl.html REFNAME/ /REFTEXT Heroes of Myth and Legend game rules REFTEXT/ ARTICLEREF/ which can be used with Erithnoi.
+ARTICLE/

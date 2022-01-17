@@ -29,6 +29,11 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 		this.theDocument = adocument;
 	}
 
+	displayCreateGameUI() {
+		const displayarea = this.theDocument.getElementById('mainappview');
+		displayarea.innerHTML = `<game-create id='gamecreate'></game-create>`;
+	}
+	
 	addTabToLeftPanel(tab,tabContents) {
 		this.theDocument.getElementById('leftslottabbar').appendChild(tab);
 		this.theDocument.getElementById('leftslottabpanel').appendChild(tabContents);
@@ -93,6 +98,11 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 		console.log('got to authenticated UI');
 		this.getSessionWidget().signedIn(true);
 		this.displayTabs();
+	}
+	
+	gameListAttached(list) {
+		this.controller.registerGamesListener(list.getRenderFn());
+		this.controller.getGamesByOwner(window.gebApp.authenticator.player);
 	}
 	
 	getSessionWidget() {

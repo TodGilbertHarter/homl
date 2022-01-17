@@ -2,14 +2,11 @@
 /STYLE" css/geb.css"/
 /STYLE" css/glyphicons.css"/
 <script type="module">
+	import { html } from 'https://unpkg.com/lit@2.0.2/index.js?module';
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
     import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
 </script>
-/* /SCRIPT" https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"/
-/SCRIPT" https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"/
-/SCRIPT" https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"/
-/SCRIPT" https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"/ */
 /MODULE" js/fbconfig.js"/
 /MODULE" js/sash.js"/
 /MODULE" js/tabs.js"/
@@ -30,6 +27,8 @@
 /MODULE" js/gamelist.js"/
 /MODULE" js/gamesearch.js"/
 /MODULE" js/gameview.js"/
+/MODULE" js/gamecreate.js"/
+/MODULE" js/menubar.js"/
 /SIGNINDIALOG SIGNINDIALOG/
 /TEMPLATE" gamesearchtemplate"/
 /TABCONTENTS
@@ -41,12 +40,16 @@ TEMPLATE/
 /SOURCE" embedded_charactersheet.html"/
 /BODY
 /TOPBAR
-/LOGO LOGO/ /MAINMENU this is the menu, it refuses to be centered :( MAINMENU/ /WIDGETPANEL /SESSION/ WIDGETPANEL/
+/LOGO LOGO/ 
+/MAINMENU 
+<div id='gamemenu' class='barmenu leftmenu'><span>game</span><ul><li id='new game'>New</li><li id='find game'>Find</li><li id='recent games'>Recent</li></ul></div> 
+<div id='charactermenu' class='barmenu middlemenu'><span>Character</span><ul><li id='new character'>New</li><li id='save character'>Save</li><li id='close character'>Close</li></ul></div>
+<div id='prefsmenu' class='barmenu rightmenu'><span>settings</span><ul><li id='player settings'>Player</li></ul></div> 
+MAINMENU/ 
+/WIDGETPANEL /SESSION/ WIDGETPANEL/
 TOPBAR/
 /APPLICATION
 /LEFTSLOT 
-/*	<ul class='tabbar' slot='tabs' id='leftslottabbar'><li class='active'>tab 1</li><li>tab 2</li></ul> 
-	<div id='tab1' class='tabcontents active'>Tab 1 contents</div><div id='tab2' class='tabcontents'>Tab 2 contents</div> */
 LEFTSLOT/
 /RIGHTSLOT The right one RIGHTSLOT/
 APPLICATION/

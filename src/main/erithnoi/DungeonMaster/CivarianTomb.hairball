@@ -1,0 +1,80 @@
+/ARTICLE" Tomb of the Civarian Kings "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/ForestOfGrin.html REFNAME/ 
+	/REFTEXT DungeonMaster.ForestOfGrin REFTEXT/
+ARTICLEREF/ PARENT/
+Deep in the /ARTICLEREF /REFNAME ./ForestOfGrin.html REFNAME/  /REFTEXT Forest Of Grin REFTEXT/ ARTICLEREF/  
+lies the tomb of the last of the kings of Civari. The following encounter areas exist.
+/SECTION Swift Flow Crossing SECTION/ 
+
+The ancient road leading to the area of the tomb once crossed this stream by a stone bridge. The stream itself 
+runs in a gorge about 30 feet deep, its waters boiling and foaming over great boulders and ledges of rock. The 
+road appears to continue on the other side of the stream. Only the eastern (far) half of the bridge still stands. 
+A 20' wide section on the western end has long since fallen into the water below.
+
+Several methods of crossing are possible. A tree growing at the western side of the bridge could be cut and 
+allowed to fall across the gap. Or a character may notice that a large tree on the other side has a sturdy 
+limb which hangs out over the gap which could be taken advantage of. A third possibility would be climbing 
+down into the gorge, crossing on chunks of rock, and climbing back up.
+
+Each of these is a level 8 skill challenge of complexity 1. Success using any of the options allows the party to 
+cross without incident (though they may loose some surges).
+/SUBSECTION Cutting the Tree SUBSECTION/ 
+
+Cutting the tree will require a DC14 Perception check to see where the tree should be cut and a DC14 Nature check 
+to make the proper cut. A DC14 Athletics check will help guide the tree into place. A DC14 History check will give 
++2 (one time) on one of these rolls. At least one success must come from Nature, Athletics, and Perception each. 
+Failure in the challenge means the tree falls into the ravine and the noise of its fall alerts the dryads in the 
+next encounter area.
+/SUBSECTION Swinging Across SUBSECTION/ 
+
+The overhanging limb can be used in various ways to get across. A rope could be hooked to it via a grapple, etc. 
+A DC14 Nature check is required to recognize which limb is ideal. Use of a grapple will require a DC14 Perception 
+check in order to determine if the hook has bitten. Failure means the rope comes loose. Success means it is safely 
+anchored. A DC14 Acrobatics check can be used to swing across. A DC14 Athletics check can be used to climb the rope 
+to the branch and then down the tree. Once a character gets across with a rope the rest of the party can cross by 
+making DC14 Endurance, Athletics, or Acrobatics checks. Each failure in this challenge costs the failing character 
+a healing surge due to falling, bruising etc. Failure of the entire challenge means the last character to make a 
+check falls into the ravine, suffering a loss of 2 healing surges.
+/SUBSECTION Climbing Down and Back Up SUBSECTION/ 
+
+This is the most basic way to cross. DC14 Athletics checks allow the PCs to climb down and back up again. DC14 
+Perception checks allow them to find the best way forward. DC14 Nature checks allow them to avoid loose rock or 
+slippery spots. DC14 Endurance checks allow them to endure wading through the cold water. DC14 Acrobatics checks 
+allow them to hop across on rocks. No more than 2 checks can be attempted with each of the above skills. Each failure 
+costs the failing character 1 healing surge. Failure costs the last character to make a check to loose 2 healing 
+surges as he takes a bad fall or is swept downstream and nearly drowned.
+/SECTION The Other Side SECTION/ 
+
+On the east side of the bridge the ground rises a bit, cutting off the view of what is ahead. The ancient path 
+climbs for about 40 feet and then veers to the north where it opens into a clear area about 60' across. This 
+area is ringed with small stones and 4 larger menhirs. Within the circle are 3 large trees spaced about 40' apart.
+
+The following creatures are present:
+
+/TABLE 
+/TR /TH Creature /TH/ Level /TH/ XP /TH/ Book TH/ TR/
+/TR  /TD Shambling Mound /TD/ 9 /TD/ 400 /TD/ MM TD/ TR/
+/TR  /TD Dryad /TD/ 9 /TD/ 400 /TD/ MM TD/ TR/
+/TR  /TD Vine Horror /TD/ 5 /TD/ 200 /TD/ MM TD/ TR/
+/TR  /TD Vine Horror Spellfiend /TD/ 7 /TD/ 300 /TD/ MM TD/ TR/
+/TR  /TD Hamadryad /TD/ 11 /TD/ 150 /TD/ DRAC TD/ TR/
+/TR  /TD Hamadryad /TD/ 11 /TD/ 150 /TD/ DRAC TD/ TR/
+/TR  /TD Total XP /TD/  /TD/ %CALC{"$SUM( $ABOVE() )"}% /TD/ The party can achieve surprise against the enemy if they can each achieve a stealth check roll of TBD. TD/ TR/ TABLE/
+
+As soon as the creatures become aware of the party they will attack.
+/SECTION Tomb Entrance SECTION/ 
+
+At the northwest corner of the clearing a rushing waterfall can be seen plunging down the sheer face of the hill to 
+the north and into the ravine to the west. At this point there is a space where the clearing approaches the edge of 
+the ravine. Upon inspection it will be seen that a steep stone stair carved into the side of the ravine leads down to 
+the level of a pool at the base of the falls. A path appears to lead around to the edge of the falls themselves.
+
+Behind the falls is the entrance to the tomb itself. The entrance has been worn partially away by time and the flow 
+of water but a DC14 Dungeoneering check will reveal that it is not natural.
+/SECTION The Upper Vaults SECTION/ 
+
+Once the entrance has been passed the tomb quickly opens out into a chamber. Three
+/SECTION The Lower Vault SECTION/ 
+ARTICLE/

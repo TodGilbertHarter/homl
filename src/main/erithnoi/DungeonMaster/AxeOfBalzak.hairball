@@ -1,0 +1,64 @@
+/ARTICLE" AxeOfBalzak "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/MagicItems.html REFNAME/ 
+	/REFTEXT MagicItems REFTEXT/
+ARTICLEREF/ PARENT/
+The Axe of Balzak is appropriate for mid-heroic tier characters.
+
+ 
+ <table cellspacing="0" cellpadding="3" border="0"> <tr style="background-color: darkred; color: white"><td> <table width="100%" cellspacing="0" cellpadding="3" border="0"> <tr> <td><span style="font-weight: bold; font-size: 1.2em">Axe of Balzak</span></td><td style="text-align: right">Heroic Level</td> </tr> </table> </td></tr> <tr style="background-color: #b3b300; color: black; font-style: italic"><td>The Axe of Balzak was forged by the mighty hero Balzak Balor Slayer far in the legendary past of the dwarves. It is said that he used it to slay the mighty Balor Tarash at the culmination of a great battle. Long ago Balzak's city fell into ruins but it is reported that the Axe was wielded by at least one dwarven hero of Alcon. When the Kingdom of Civari fell the Axe was apparently lost and has not reappeared in almost 2,000 years. Perhaps one day it will be recovered and once again fight for the dwarves.</td></tr> <tr><td>The <i>Axe of Balzak</i> is a +2 Demonbane Waraxe with the the following properties and powers.</td></tr> <tr><td><span style="font-weight: bold">Enhancement:</span> Attack rolls and damage rolls</td></tr> <tr><td><span style="font-weight: bold">Critical:</span> +2d8 damage or +2d10 damage vs demons and the demon is slowed until the start of the wielder's next turn.</td></tr> <tr><td><span style="font-weight: bold">Property:</span> You gain +2 resistance to all damage dealt by demons.</td></tr> <tr><td><span style="font-weight: bold">Property:</span> You gain +2 to all saving throws vs demonic effects.</td></tr> <tr><td><span style="font-weight: bold">Power (at-will; standard action):</span> You can use the fighter power <i>dual strike</i>(fighter 1 MP).</td></tr> <tr><td><span style="font-weight: bold">Power (at-will; free action):</span> add the fire keyword to any attack made with this weapon.</td></tr> </table>
+ 
+/SECTION Goals of The Axe of Balzak SECTION/ 
+/UL 
+/LI  Destroy demons LI/
+/LI  Defeat enemies of the dwarves LI/ UL/
+/SECTION Roleplaying The Axe of Balzak SECTION/ 
+
+The Axe constantly urges its bearer to seek out and destroy demons. Whenever demons are present the Axe is provoked into a berzerk fury and screams bloody vengeance. If denied the opportunity to fight demons it will howl in anger and berate its bearer. When confronted with other enemies of the dwarves the Axe will urge its bearer to attack, but in a much more reasonable tone.
+
+ 
+ <table> <caption>CONCORDANCE</caption> <tr style="background-color: darkred; color: white"><td>Starting Score</td><td>5</td></tr> <tr style="background-color: #b3b300; color: black"><td>Owner gains a level</td><td>+1d10</td></tr> <tr style="background-color: #b3b300; color: black"><td>Owner is a dwarf</td><td>+2</td></tr> <tr style="background-color: #b3b300; color: black"><td>Owner defeats a demon (maximum 1/day)</td><td>+2</td></tr> <tr style="background-color: #b3b300; color: black"><td>Owner defeats dwarven enemies (maximum 1/day)</td><td>+1</td></tr> <tr style="background-color: #b3b300; color: black"><td>Owner attacks dwarves (maximum 1/encounter)</td><td>-1</td></tr> <tr style="background-color: #b3b300; color: black"><td>Owner retreats from battle against demons</td><td>-2</td></tr> </table>
+ 
+/SUBSECTION Pleased (16-20) SUBSECTION/ 
+
+ /QUOTE We are the bane of all demonkind! QUOTE/ 
+
+The Axe and its owner are fulfilling their mission to destroy demons and defeat enemies of the dwarves.
+
+The Axe's enhancement bonus increases to +3
+ /EM Critical: EM/ +3d6 damage or +3d10 damage vs demons and the demon is dazed until the start of the wielder's next turn.
+ /EM Property: EM/ You gain +5 resistance to all damage dealt by demons.
+ /EM Power (At-will): EM/ Add any one of the following keywords to attacks with the Axe: Fire, lightning, thunder, cold, acid.
+/SUBSECTION Satisfied (12-15) SUBSECTION/ 
+
+ /QUOTE Enemies of the dwarves, flee in fear! The dwarves are upon you! QUOTE/ 
+
+The world is a safer place for the dwarven race because of our work. The wielder has proven his ability to the Axe.
+
+/EM Property: EM/ You gain +3 to saves vs the effects of attacks made by demons.
+/SUBSECTION Normal (5-11) SUBSECTION/ 
+
+ /QUOTE We must rid Erth of the foul demons. QUOTE/ 
+
+The Axe is hopeful that its new wielder will prove to be a great demon slayer.
+/SUBSECTION Unsatisfied (1-4) SUBSECTION/ 
+
+ /QUOTE The Axe finds you lacking. QUOTE/ 
+
+The Axe believes that its wielder is not capable or willing to carry out its mission. If the relationship does not improve soon the Axe will leave.
+
+/EM Special: EM/ The Axe refuses to use any of its powers or properties except against demons.
+/SUBSECTION Angered (0 or lower) SUBSECTION/ 
+
+ /QUOTE You are not a hero, I shall find one who is worthy. QUOTE/ 
+
+The wielder has failed to prove his worth and the Axe will not remain for long.
+
+/EM Special: EM/ The Axe's enhancement bonus drops to +1.
+/SUBSECTION Moving On SUBSECTION/ 
+
+ /QUOTE We have done all we can here, it is time for me to seek out other heroes. QUOTE/ 
+
+The Axe has done all it can against the Abyssal Hordes in this time and place. Impatient to carry on its mission it departs for other places and the hands of other heroes who are more in need. When the character next gains a level the Axe vanishes. If the Axe is at least satisfied it leaves behind a normal +2 Demonbane Waraxe for the wielder.
+ARTICLE/

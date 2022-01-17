@@ -1,0 +1,28 @@
+/CHAPTER" Appendix A: List of Boons"/
+
+The following alphabetical list of boons provides a quick way to find any boon. While many boons are associated with a specific calling, species, etc. many are also less specific and might be appropriate to a wide variety of characters. Note that features of callings don't appear in this list. Although they are technically boons; they are tied directly to a specific calling and can be found in the description of the associated calling.
+/SECTION" N"/
+/FLEXROW
+/FLEXCELL
+/BOON /ID" 0f0db346-704a-11ec-92d3-74d02b9c2012"/ /BOONNAME Natural Companion BOONNAME/
+/BOONTYPE Source: 1 Major BOONTYPE/
+/ASSOCIATION Life ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You have formed a deep bond with a natural creature.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You gain a companion creature. This may be any creature with the Natural and Beast keywords which is of your level or lower. If the creature's level is lower than your own, then it is raised to your level. The companion operates according to the /REF Companions REF/ rules.
+BENEFIT/
+BENEFITS/
+/RESTRICTIONS
+If your companion ever dies you may either give up this boon, or the GM may allow you to acquire another companion to replace the old one as circumstances allow. 
+
+Special: The GM might let you have several lower level animals in lieu of a single companion of your own level.
+RESTRICTIONS/
+BOON/
+FLEXCELL/
+FLEXROW/
+SECTION/
+CHAPTER/

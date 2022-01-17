@@ -1,0 +1,51 @@
+/ARTICLE" MossGrotto "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/MidrealmsCampaign5.html REFNAME/ 
+	/REFTEXT MidrealmsCampaign5 REFTEXT/
+ARTICLEREF/ PARENT/
+/SECTION Locations SECTION/
+/RIGHT /IMAGE dungeon.png IMAGE/ RIGHT/  
+/UL 
+/LI  Poison Dart Trap DMG 89. This trap uses pressure plates. Each plate attacks one square with 2 darts whenever a PC enters the square unless he makes a DC15 DEX check to avoid the trigger plate. P is a 20' deep open pit (2d10 falling damage). The X's are trigger plates for the swinging spike rack concealed to the southwest. DC20 Perception to see the pressure plates from the other side. The spike trap is DMG 87. Any character hit by it must make a DEX check or be swept into the pit, DC12. LI/
+/LI  Secret Door Trap. This is a false-floor elite pit trap DMG 87 which will only trigger after the door is opened. The door is a secret door, DC20 Perception check to find the door and DC20 Thievery check to determine how to open it. The door opens via a catch at the bottom. When the door is unlatched it opens inward. A rope is attached to the door which holds up a log. Once the log is free it swings on the rope through the door +8 vs REF 1d6+2 damage and the target is pushed one square (into the pit, which may also drop anyone behind them in as well). LI/
+/LI  Ball Room (see below) LI/
+/LI  Vine Hallway (see below) LI/
+/LI  Gate Key Room (see below) LI/ 
+UL/
+/SUBSECTION Ball Room SUBSECTION/ 
+
+The hallway enters on the east end of a long 30' wide room. The center 10' of floor is 5' lower than the east and west portions. At the western end is a set of steps leading up to a raised section 10' higher than the middle floor. The raised section contains a carved wooden pedestal on which rests a golden key. There are 2 statues in the northeast and southeast corners of the room.
+
+The statues depict elvish archers with bows drawn and arrows nocked. They are made of Bronze. Each one is a magical crossbow turret (DMG 88), except they are triggered when the ball trap is activated. The control panel is in the middle of the north wall.
+
+If the key is removed from the pedestal the ball trap will activate. The west wall behind the raised section of floor is actually a false wall made of cleverly painted canvas, DC20 Perception check to notice this. A DC15 Thievery check will determine that removing the key will set off this trap. When it goes off the ball will crash through the canvas, roll all the way down the hall and finally plunge into the pit at 1. The ball moves at initiative 12, speed 7, and if it rolls through a square containing a character it attacks at +9 vs REF 2d8+6 damage and the character is knocked prone. If the character is in an area where the hallway is, then no miss is possible, otherwise a miss means the character leapt onto the higher floor.
+
+The golden key is worth 250gp (maybe this is a magical skeleton key, have to look that up). It is otherwise just a decoy.
+/SUBSECTION Vine Hallway SUBSECTION/ 
+
+This hallway contains 1 inert Vine Horror (MM P260, reduce immobilize to CB1 and ongoing 5 damage), and 2 bloodthorn vines (MM2 204). These creatures are concealed along the walls amongst carvings of vines (DC20 Perception to spot). They will obey the holder of the thorn wand. Otherwise they will attack anyone attempting to leave the Gate Key Room unless attacked first.
+/SUBSECTION Gate Key Room SUBSECTION/ 
+
+This huge chamber is dominated by a cracked stone archway at the southern end. 2 vine horrors (as above) lurk under the east and west balconies. The balconies are 10' above the floor and have a 3' stone rail. F is a firepit. This pit is currently empty, but can be filled with fire. The fire will do 2d6+3 damage to anyone starting their turn in the pit when the fire is burning, or in the pit when it is ignited. The fire provides concealment (lightly obscuring terrain).
+
+Each G represents a stone golem. These will only attack someone attempting to damage the room itself. Otherwise they simply stand, carved in the shape of mighty stone giants carrying large mattocks (MM1 p142).
+
+/EM Valanar EM/: Elf, warlock, level 5 elite skirmisher (refluff Kenku Assassin MM2 p154). Valanar starts on the control pedestal.
+
+/EM Wilden EM/: (MM3 p207), these could come through the gate. Up 2 5 destroyers, 3 hunters, and an ancient. They will obey the holder of the thorn wand.
+
+/SECTION The platform SECTION/
+
+The platform is 10' above the floor. On it is a console which controls the planar organ. Playing a correct chord to move the gate requires a DC20 Arcana check. Failure means the gate doesn't move. Failure by 5 means it simply closes. lying on the center of the console is the thorn wand (wand of accuracy +2 with some enchantment on it, determine later). Places it can open to:
+/UL 
+/LI  The Wilden, these buggers will come through and obey the holder of the wand. LI/
+/LI  Hag Duug, she will provide the key, but will demand a service (later, could be a pact, etc). LI/
+/LI  Om Vertithrax's lair. He will be happy to provide the key as well, also will require a service. LI/
+/LI  Red Queen? This one could get interesting... LI/ 
+UL/
+
+Playing a gate chord requires 3 standard actions.
+
+The console can also play a discord (DC15 INT check to perform) which takes one standard action. This will make an attack +8 vs WILL against every creature in the room 1d6+2 psychic damage and slowed for 1 round. Lighting the fire pit is another standard action (Arcana DC15), it can also be put out the same way
+ARTICLE/

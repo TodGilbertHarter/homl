@@ -1,0 +1,148 @@
+/ARTICLE" Of Dogs and Men "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/MidrealmsCampaign.html REFNAME/ 
+	/REFTEXT DungeonMaster.MidrealmsCampaign REFTEXT/
+ARTICLEREF/ PARENT/
+=/SECTION Recapitulation SECTION/ =
+
+The party decided to move north after researching the /ARTICLEREF /REFNAME ./PigIdol.html REFNAME/ /REFTEXT PigIdol REFTEXT/ ARTICLEREF/  in the /ARTICLEREF /REFNAME ./BookOfVertithrax.html REFNAME/ /REFTEXT BookOfVertithrax REFTEXT/ ARTICLEREF/ , where they discovered that the idol corrupts things. They made for /ARTICLEREF /REFNAME ./CastleDrolon.html REFNAME/ /REFTEXT CastleDrolon REFTEXT/ ARTICLEREF/  instead of /ARTICLEREF /REFNAME ./FallCrest.html REFNAME/ /REFTEXT FallCrest REFTEXT/ ARTICLEREF/ . When they got near the castle they buried the /ARTICLEREF /REFNAME ./PigIdol.html REFNAME/ /REFTEXT PigIdol REFTEXT/ ARTICLEREF/  under a tree. Once they had done that they sought an audience with /ARTICLEREF /REFNAME ./SirMichaelEverdawn.html REFNAME/ /REFTEXT SirMichaelEverdawn REFTEXT/ ARTICLEREF/ . Sir Michael offered them a reward of 150gp for discovering why people had vanished from Smick's Knob, a small lumber camp/village/mill up in the northeast corner of /ARTICLEREF /REFNAME ./FarLond.html REFNAME/ /REFTEXT FarLond REFTEXT/ ARTICLEREF/  between the forest and the border with Blar. The party proceeded north and arrived at a cabin just south of the village around dusk. The woman at the cabin was in fear and told the party she had lost her husband 3 days earlier. Soon after the husband and his dog returned, claiming to have been lost. In the middle of the night, with Moose in the barn, Penelope in a tree, and the others inside wolf-men (jackalwere) attacked. The people inside the cabin transformed and attacked Celery and Deorai, while the dog and a couple other wolf-men attacked the group outside. After a stiff fight the party prevailed. After this they rested for the rest of the night and into the morning to recover their strength.
+/SUBSECTION Heroes SUBSECTION/ /UL 
+/LI  Deorai - Elf ranger of the woods of Urieth. Exiled from his tribe and his love, who was then slain by orcs. LI/
+/LI  Celery - Human cavalier of Avandra (a minor aspect of Jerok) who was 'slumming' in Gurig's Haven 'seeking adventure' when she met Malachite. LI/
+/LI  Moose - A halfling native of Fallcrest. Moose is an orphan who has no clan, making his way by his wits. He was once a gardener. LI/
+/LI  Penelope - a pixie from the pixie tree. LI/ UL/
+/SUBSECTION NPCs SUBSECTION/ /UL 
+/LI  /ARTICLEREF /REFNAME ./SirMichaelEverdawn.html REFNAME/ /REFTEXT Sir Michael Everdawn REFTEXT/ ARTICLEREF/  - Knight Commander of Castle Drolon, a vassal of Baron Faran Markelhay of /ARTICLEREF /REFNAME ./FarLond.html REFNAME/ /REFTEXT FarLond REFTEXT/ ARTICLEREF/ . LI/
+/LI  Vuulgar - King of the /ARTICLEREF /REFNAME ./TheVuul.html REFNAME/ /REFTEXT Vuul REFTEXT/ ARTICLEREF/ . Attempting to achieve some sort of apotheosis. LI/ UL/
+/SUBSECTION Summary SUBSECTION/ 
+
+The party travels to /ARTICLEREF /REFNAME ./CastleDrolon.html REFNAME/ /REFTEXT CastleDrolon REFTEXT/ ARTICLEREF/  in search of adventure and /ARTICLEREF /REFNAME ./SirMichaelEverdawn.html REFNAME/ /REFTEXT SirMichaelEverdawn REFTEXT/ ARTICLEREF/  sends them to Smick's Nob to find out what happened to some of the local lumberjacks. Before reaching the castle the party buried the /ARTICLEREF /REFNAME ./PigIdol.html REFNAME/ /REFTEXT PigIdol REFTEXT/ ARTICLEREF/  under a tree. After visiting Sir Michael they proceeded to the area of Smick's Nob. Here they ran into a pack of jackalwere's who tried to ambush them. After resting the party will approach the village where they will run into a refugee who will tell them the lay of the land. They will have a choice of going directly to the mill where Penelope is held by the jackalwere big bad guy, or rescuing the priest being tortured at the Otillis Lodge nearby. Once this is resolved a big action scene will happen with the party going to the mill, duking it out with the big bad, and then escaping with the lovers after fighting one last desperate skirmish with the jackalweres. Once the big bad is defeated the jackalweres will fade back into the spirit world from which they came.
+/SECTION Adventure SECTION/ 
+
+The party is hired by SirMichaelEverdawn for 150gp to go to Smick's Nob and determine what happened to 3 lumberjacks who disappeared. Sir Michael has no extra information beyond a report from the proprietor of the mill at Smick's Nob indicating that several men had disappeared and that the villagers were becoming anxious and refusing to work in the forest, delaying lumber deliveries. An inquiry about the owner will reveal that he is one /ARTICLEREF /REFNAME ./DorumicHador.html REFNAME/  /REFTEXT Dorumic Hador REFTEXT/ ARTICLEREF/ , a dwarf of reputable family and even disposition not prone to flights of fancy (DC12 Streetwise check).
+
+Proceeding to the village requires most of a day's travel on foot from CastleDrolon. The journey can be described as follows:
+
+ <div style='border:2px solid black; background-color:LightGray'> //As you move north along the bank of a large creek the trees to the west come down to edge of the water and overhang the path, great ancient trunks which look as though they have stood for centuries. The land rises into folds and hills dark with massive oaks and stands of pine. Finally, as the light begins to fade, an opening can be seen ahead. A log cabin stands in a clearing, with a small barn and garden behind it. A woman in peasant garb spots you advancing and turns to retreat into the cabin, slamming and barring the door behind her.// </div>  
+/SUBSECTION Encounter 1 (Ambush in the night) SUBSECTION/ 
+
+(The woman and her husband turn out to be Vuul who ambush the party during the night)
+/SUBSECTION Encounter 2 SUBSECTION/ 
+
+If the party approaches the village in the open they will have this encounter as they approach. If they move stealthily and approach indirectly they will need to undertake the following Skill Challenge in order to avoid the encounter.
+
+==/SECTION Stealthy Approach Skill Challenge SECTION/ ==
+
+  <div style='border:2px solid black; background-color:LightGray'> //You can hear occasional wolf-like cries in the woods and once spot a humanoid form lurking along the trail leading towards the village. Clearly it is not safe to approach directly and there are many more of the creatures you killed in the night nearby. So far they don't appear to be aware of your presence.// </div>  
+
+This is a level 2 complexity 3 skill challenge requiring 8 successes before 3 failures to pass. The party must find a good spot to observe and approach the village from in order to avoid an all-out fight with the Vuul. Now and then the PCs will hear wolf-cries and may spot tracks in the woods from time-to-time. Clearly there are a considerable number of Vuul in the area, and they are on the watch.
+
+  <div style='border:2px solid black; background-color:LightGray'> //You proceed stealthily towards the village, moving through the trees.// </div>  
+
+/EM DC13(Medium) Stealth Check EM/ - You can move quietly through the woods without making any significant noise.
+
+/EM DC20(Hard) Nature Check EM/ - You cleverly conceal all signs of your passage through the trees.
+
+  <div style='border:2px solid black; background-color:LightGray'> //As you get closer you come to an area where the trees have been cut, leaving the area more open. You will have to cross this open area.// </div> {[/html}}
+
+/EM DC13(Medium) Perception Check EM/ - You carefully scan the area for watching eyes, insuring that the coast is clear.
+
+/EM DC20(Hard) Endurance Check EM/ - You swiftly cross the open area, spending the least amount of time possible in the open.
+
+  <div style='border:2px solid black; background-color:LightGray'> //Rough ground, fallen trees, and steep folds in the earth make progress slow and difficult, threatening to force you to go substantially out of your way or cross the broken ground with effort.// </div>  
+
+/EM DC13(Medium) Endurance Check EM/ - You speed your pace in order to get to your destination before anyone can see you.
+
+/EM DC13(Medium) Athletics Check EM/ - You push through the broken ground, making good time.
+
+/EM DC20(Hard) Acrobatics Check EM/ - You nimbly scramble over obstacles.
+
+  <div style='border:2px solid black; background-color:LightGray'> //You come near the village, crossing several small footpaths until you reach a point with a good view of the village.// </div>  
+
+/EM DC13(Medium) Nature Check EM/ - The spot you choose for an observation point is not easily spotted.
+
+/EM DC20(Hard) Stealth Check EM/ - You conceal yourselves well as you take up your vantage point, erasing any traces of your passage and concealing yourselves well.
+
+/EM Advantages EM/ - Twice during the challenge the party may acquire an advantage.    1 A DC13(Medium) Stealth check can remove a failure by allowing the party to hide and lie low for a time, wipe out their trail, etc.     1 A DC13(Medium) Insight check allows the party to acquire a success. If the check passed a DC20(Hard) then 2 successes are achieved as the party figures out the search pattern of the Vuul.
+
+/EM Individual Failures EM/ - At each individual failure Vuul sentinels become suspicious and approach the party. These Vuul will be spotted or heard nearby. They will begin to track the party, but can be thrown off using an advantage (hiding or figuring out where the Vuul are most likely to search).
+
+/EM Individual Successes EM/ - The party moves closer to the village without being spotted.
+
+/EM Failure EM/ - The party is attacked by a Vuul Patrol.
+
+/EM Success EM/ - The party reaches a good point to observe and plan their next move and can approach whatever point in the village they decide to move on without being detected.
+
+==/SECTION Vuul Patrol SECTION/ ==
+
+This encounter is the result of failure in the Skill Challenge, or if the party approaches the village directly they will have this encounter along the path just before they come within sight of the village. This is a level 1 encounter, 500 xp. 8 jackalwere harriers and one jackalwere bravo. If the party is moving openly then the vuul will conceal themselves. A DC18 Perception check will detect their presence before they attack, otherwise they will achieve surprise. If the party conceals itself this will require a successful group Stealth check with DC13. The vuul will initially take human form, appearing similar to villagers. If not gaining surprise they will initially be at a range of 15 squares. If the party waits to determine their nature they will approach as if non-threatening (unless they gain surprise). In this case a DC26 Insight check will reveal their true nature. Once the vuul patrol sustains several casualties the rest of its members will attempt to split up and flee. If any of them escape then the vuul in town will be on alert when the party arrives at the village.
+
+[[image:url:/twiki/pub/DungeonMaster/MidrealmsCampaign4/forest-encounter.jpg]]
+/SUBSECTION Meeting with Artur Smick SUBSECTION/ 
+
+However the party approaches the village they will encounter Artur Smick fleeing from the vuul. If they approach openly along the path he will be fleeing in the opposite direction. If they find a vantage point then Artur will be spotted nearby fleeing into the woods with vuul in pursuit. In either case it should be clear what is happening (A DC9 Insight check can be used to understand the situation if no players figure it out immediately). The pursuers are 8 jackalwere harriers. The harriers are 10 squares behind Artur and he will be 30 squares from the party when spotted. The harriers will follow until they come under attack at which point they will retreat. As with the patrol if the pursuers are not all eliminated they will alert the rest of the vuul. The forest encounter map may be used or another similar one if that map has already been used.
+
+Artur knows a number of things about the vuul, how to get into the village, etc:    1 The vuul leader, Vuulgar, intends to sacrifice Artur's girlfriend Cecily at the sawmill. Artur learned this when he was hiding with a number of villagers in the basement of the mill. This sacrifice will take place at moonrise (several hours from now).     1 The village priest of Otillis, Father Barmin, is holed up with another group of villagers in the Otillis Lodge above the mill. Cecily is his daughter. Artur slipped out of the lodge to spy on what was going on in the mill, but was spotted trying to get back. Father Barmin is trying to plan some sort of rescue. He claims to have some sort of weapon to use against the vuul.     1 You can ride the log flume down to the pond from next to the Otillis Lodge. This is tricky but would allow the party to appear at the mill without encountering vuul patrols.     1 There are quite a few vuul located in the village itself. Approaching the village by the bridge will encounter stiff resistance.     1 A number of vuul were positioned around the Otillis Lodge. They seemed to have withdrawn back into the village.     1 Father Barmin will open the back door of the lodge if the challenge phrase "Who is my uncle" with "Hurn of the forest".
+/SUBSECTION The Otillis Lodge SUBSECTION/ 
+
+The Otillis lodge is located a ways upstream from the mill near a point where the log flume can be accessed. It is a strong building containing a shrine to Otillis, quarters for the priest, and 2 Rangers of Otillis along with some weapons and equipment. While not designed as a fort it is built to withstand attack and act as a base of operations for the rangers. The priest, Father Barmin, 2 rangers, 6 lumberjacks, and 8 other villagers are located there. Father Barmin is trying to make a plan to rescue his daughter Cecily from the sawmill, but lacks the resources to pull this off himself (although he will try if not presented with a better plan). Outside the lodge a number of vuul are gathered, trapping the villagers inside. There are 2 wagons and 4 cart horses here as well.
+
+==/SECTION Outside the Lodge SECTION/ ==
+
+While the vuul appear to have withdrawn from around the lodge in fact they have been attempting to use subterfuge to flush the people inside out where they can be easily captured or killed. There are 2 ploys they can try to use. First of all vuul can pose as villagers and try to gain entrance to the lodge by trickery. Secondly the vuul sub-leader, Uulrad, will have several of his followers pretend to be villagers and he will make a show of threatening to murder them if the people inside do not surrender.
+
+If the party approaches the lodge they will first of all need to pass a DC13 group Stealth check in order to get close. If they pass this check the party may attack with surprise. Otherwise the vuul will spot them and surprise will be lost. The vuul are split into 2 groups, one covering the back of the lodge and one covering the front. The front group is stronger but the party will only be able to determine this if they are able to watch for a while and pass a DC20 Perception check.
+
+If the party does sneak up and watches for about half an hour Uulrad and the group at the front of the lodge will reveal themselves in the guise of villagers and try to gain entrance. If the people inside the lodge hesitate 2 more vuul will approach in their hybrid form and 'capture' the 'villagers'. At this point they will threaten to kill the 'villagers' unless granted entrance. They will proceed to carry out a mock execution of one of their number (DC13 Insight check to determine this is faked). The 'victim' will simply play possum. Those inside the lodge are not going to be fooled and after a few minutes Uulrad will bring up a REAL villager and kill him unless someone intervenes.
+
+/EM At the rear EM/ - Here the vuul are simply hiding (DC18 Perception check to detect them). They lurk in the underbrush and trees within 20 squares of the back door of the lodge. They are not really paying much attention to what is going on behind them. This is a level 3 encounter, 750xp. 2 jackalwere bravos, a jackalwere deceiver, and 4 jackalwere harriers. These figures will fight, but they will also make enough noise to attract the attention of the jackalwere at the front of the building. Those figures will arrive at the back 8 rounds after a fight starts (probably after it is over, if the PCs are clever they will get inside the lodge before this happens).
+
+/EM At the front EM/ - Here Uulrad lurks with his forces. They include Uulrad (Use statblock for Hesskin, Dragonborn Hunter, refluff crossbow as +5 vs Will and psychic damage, visions of shadow; dragon breath as wail of despair +5 vs Fort and necrotic damage). This is a level 5 encounter, 800xp. In addition to Uulrad, a jackalwere deceiver, and 3 jackalwere bravos. As with the rear, if the party remains in this area for more than 8 rounds the figures from the rear will show up.
+
+/EM In either case EM/ - If the party does engage the second group of figures the people inside the lodge will begin to fire arrows in an attempt to help them out. Each round on an initiative count of 12 the following 2 attacks will be made: Range 15/30, +6 vs AC 1d10+2 damage. These attacks come from arrow slits above the door of the lodge.
+
+Any surviving figures who manage to flee this encounter will simply hide nearby shapechange to the form of a villager, and then cry out in pain and beg for rescue. They will then attempt to sabotage whatever the party's plans are from that point. If nothing else they will attack and slaughter other villagers at an opportune moment.
+/SUBSECTION Inside the Lodge SUBSECTION/ 
+
+Conditions inside the lodge are none too good. Nobody is 100% sure exactly who might be a disguised vuul that has slipped in, and all the occupants are both desperate to get away, afraid to leave the shelter of the lodge, and worried about their loved ones. Tempers are frayed and accusations may fly. The situation could in fact turn ugly fast. Father Barmin is trying to keep things on an even keel, figure out how to save people, and trying to come up with a way to fight the vuul. The arrival of the PCs both helps and hurts the situation. In the long run the powerful help of the adventurers is a great boon, but it is also likely to upset the delicate balance of tensions that has prevailed for the past 2 days inside the lodge.
+
+Once the PCs get into the Lodge they will be met by a great deal of suspicion. Luckily Father Barmin is pretty level-headed. Noting the eclectic variety of characters in the party, their obvious wounds, and the damage they have done to the vuul around the Lodge will be enough to convince him. However, he will realize that others may need more convincing. Thus he will devise a 'ritual' to detect vuul. This will have 2 purposes. One will be to convince the villagers, but the other will be to try to flush out any vuul who may have actually snuck into the Lodge. He will thus suggest that everyone except a few lookouts retire to the chapel and carry out a ritual which he says will detect any vuul. A DC13(Medium) Insight check by a PC will reveal that Father Barmin is being untruthful about this ritual. A DC20(Hard) Insight check (may be the same check) will allow a character to realize what the father is trying to do.
+
+Making the ritual convincing will require passing a Complexity 2 skill challenge (200xp). The father will ask one or more of the PCs to help him, along with a couple of his normal assistants (2 villagers). All the skill checks required are medium difficulty (DC13) and Religion, History, Insight, and Bluff are all useful skills. 6 successes before 3 failures will make the ritual convincing. If it succeeds then the PCs will be trusted. If it fails then some of the villagers will not be convinced. In addition there is a vuul (jackalwere deceiver) who is already pretending to be one of the villagers. If the 'ritual' succeeds he will attempt to flee and open up the back door instead of allowing himself to be subjected to the effect. This monster, if undetected, will later cause problems.
+
+==/SECTION Father Barmin SECTION/ ==
+
+Father Barmin is a druidic priest of Otillis. He is also an Alan Taug (longtooth shifter). His family have lived in this area since ancient times and have maintained at least some knowledge of the lore of the vuul. He knows the details of the Tale of Vuulgar and Tessa. Enough to understand Vuulgar's motives and to know that he wants to sacrifice Barmin's daughter Cecily through some belief that she is Tessa reincarnated. He also knows that the vuul are dark spirits from the world of shadow. His understanding of the shadow gate however is imperfect. In fact it was the actions of Father Barmin in retrieving one of the sealing stones from the great barrow on the nob which allowed the vuul to enter the world.
+
+Father Barmin is a level 3 leader. He has armor and a weapon which he can use (see statblock).
+
+==/SECTION Plans SECTION/ ==
+
+Barmin is determined to rescue his daughter from Vuulgar. He will insist that the party should try to help him because whatever ritual Vuulgar is going to perform will have some kind of dire consequences (the father is not sure what those are exactly). He will thus offer to go with the PCs to the sawmill and use their combined talents to defeat Vuulgar. Barmin's plan is that the villagers and the rangers should remain at the lodge while the party sneaks out, slides down the log flume to the mill, and attacks. The distraction of the attack will allow the villagers and the rangers to take the 2 wagons hitched in the yard of the lodge and escape, proceed to the sawmill's loading dock, pick up the party, and then escape across the bridge.
+
+==/SECTION Tools SECTION/ ==
+
+Not only does Father Barmin have plans, he also has some resources. Hanging on the wall of the main hall in the Lodge is a retributive longbow +1 [[image:url:/twiki/pub/DungeonMaster/MidrealmsCampaign4/RetributiveWeapon.png]]
+
+He also has 2 potions of Cure Light Wounds. [[image:url:/twiki/pub/DungeonMaster/MidrealmsCampaign4/potionofhealing.png]]
+/SUBSECTION The Flume SUBSECTION/ 
+
+The flume is a V-shaped wooden channel about 15' wide through which stream water is directed to form a sort of canal. It climbs up fairly steeply from its lower end at the sawmill's pond for about 200 yards, being elevated on a trestle structure. From that point onward it runs across an area of fairly level ground for another 300 yards until it passes the lodge. Here a landing is built where logs can easily be dragged up to the flume and tossed in. It then continues on up hill for another mile until it ends at the source of the stream, a large spring and beaver pond below the upper part of the hill of Smick's Nob where the water is drawn from. There are rough log platforms at several points along the way where logs can be piled and pushed into the flume. A log travels at about 10mph for most of the way down the flume, going from the vicinity of the lodge to the millpond in about 2 minutes. The last part of this is a real rollercoaster ride and the logs plunge into the pond at the end.
+
+Several vuul are approaching the landing and they will attack anyone there who isn't one of them. This is a level 2 encounter (625xp). There is one jackalwere deceiver and 3 jackalwere bravos. The vuul will show up just as the PCs are getting ready to push a log into the flume and ride it down. They will happily jump on as well! The pile of logs on the platform is stacked 4 high and is not completely stable. A DC13 STR check can be used to dislodge a log. If it is pushed towards the flume it will roll to the edge and can be pushed in with another DC13 STR check (these are standard actions). A log pushed the other way will roll 1 square per 5 points by which the STR check exceeds 13. If it enters a creature's space it will make an attack +5 vs Reflex; 2d6+3 damage and the target is knocked prone and dazed until the end of it's next turn.
+
+The water in the flume is cold and anyone riding down the flume without a log will need to make a DC20(Hard) Endurance check to avoid losing one HS. Anyone riding a log the entire way has an easier time, DC9(Easy) Endurance check to avoid losing one HS. It requires a DC13(Medium) Athletics check to hang on to the log down the last steep part of the ride though. It is possible to fight while on the logs. Standing up requires a DC9(Easy) Acrobatics check, as does moving, and all movement is at half speed (difficult terrain). Climbing from the water onto a log requires a DC9(Easy) Athletics check and a move action. Each log moves downstream at a speed of 6 squares per turn at the end of each round. Each character also moves downstream 6 squares while in the water at the start of their turns. Any fight starting on the platform will last 6 rounds before the logs hit the steep part of the flume. Any character not prone on their log at this point will be knocked prone.
+
+[[image:url:/twiki/pub/DungeonMaster/MidrealmsCampaign4/flumelanding.png]]
+/SUBSECTION The Sawmill SUBSECTION/ 
+
+The sawmill is a wooden barn-like 2 story structure. The first story is stone and sits below the level of the water in the pond. When the party arrives at the sawmill this is what they see:
+
+<sticky> <div style='border:2px solid black; background-color:LightGray'> //The end of the log flume drops you into the water of a millpond. A large two-story building lies ahead of you at the edge of the water. A large opening in the wall of the building at water level leads into the interior. You can see one large and several smaller humanoid creatures inside by the light of flickering torches. The figures seem to be working around some kind of machinery and you can hear a loud screeching sound coming from inside, drowning out any other sound. To your right you can see a millrace where a large mill wheel turns.// </div> </sticky>
+
+[[image:url:/twiki/pub/DungeonMaster/MidrealmsCampaign4/mill.png]]
+
+/EM Cecily EM/ Cecily is tied to a large plank lying on the righthand saw. A lever on the northeast corner of the saw will start the plank moving through the saw. It will take 5 rounds for the blade to reach the maiden and cut her in half.
+/SUBSECTION Getting Out of Dodge SUBSECTION/ 
+ARTICLE/

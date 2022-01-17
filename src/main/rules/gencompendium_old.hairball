@@ -1,0 +1,41 @@
+/*
+* Hairball vocabulary which generates a 'compendium', which is a set of Javascript data structures which can be used to 
+* perform calculations and display information of different sorts.
+*/
+/NEWVOCABULARY /FEATS
+/NEWVOCABULARY /COMPENDIUM
+/VOCABULARY /COMPENDIUM /ACTIVE
+/VOCABULARY /COMPENDIUM /CURRENT
+
+/VARIABLE /FIRST
+/TRUE /FIRST /V!
+/: /GETMATCHING /DOER /DROP /W /W2L /MAKELITERAL /HERE! :/
+/' /DROP /SETEMITTER /* get rid of all literal text so we can control what we output exactly */
+
+/: /.NOW // :/
+/: /.VERSION // :/
+/: /DOCUMENT" /" /DROP /NEWLINE
+compendium = { boons: [], feats: [], species: [], callings: [] }; /NEWLINE :/ /* basic 'table' structure, will add more as-needed */
+
+/: /BOON compendium.boons.push( { type: 'boon', version: '1.0', :/
+/: /BOONNAME /GETMATCHING BOONNAME/ /DELIMITED name: /SPACE " /TRIM /DUP /. ", id: /SPACE " /FETCHREFERENCE /. " :/
+/: /BOONTYPE /GETMATCHING BOONTYPE/ /DELIMITED , boontype: /SPACE " /TRIM /. " :/
+/: /ASSOCIATION /GETMATCHING ASSOCIATION/ /DELIMITED , association: /SPACE " /TRIM /. " :/
+/: /PREREQUISITES /GETMATCHING PREREQUISITES/ /DELIMITED , prerequisites: /SPACE " /TRIM /. " :/
+/: /DESCRIPTION /GETMATCHING DESCRIPTION/ /DELIMITED , description: /SPACE " /TRIM /. " :/
+/: /BENEFITS /TRUE /FIRST /V! , benefits: /SPACE [ /[" /FEATS "]/ /VOCAB@ /ACTIVE :/
+/: /BENEFIT /FIRST /V@ /NOT /IF , /THEN /FALSE /FIRST /V! " /GETMATCHING BENEFIT/ /DELIMITED /TRIM /. " :/
+/: BENEFITS/ ] /[" /FEATS "]/ /VOCAB@ /INACTIVE :/
+/: /DISADVANTAGES /GETMATCHING DISADVANTAGES/ /DELIMITED , disadvantages: /SPACE " /. " :/
+/: /RESTRICTIONS /GETMATCHING RESTRICTIONS/ /DELIMITED , restrictions: /SPACE " /. " :/
+/: BOON/ }); /NEWLINE :/
+
+/VOCABULARY /FEATS /CURRENT
+/: /FEAT /GETMATCHING FEAT/ /DELIMITED /DROP :/
+/VOCABULARY /COMPENDIUM /CURRENT
+
+/: /FEAT compendium.feats.push( { type: 'feat', version: '1.0', :/
+/: /FEATNAME /GETMATCHING FEATNAME/ /DELIMITED name: /SPACE " /TRIM /DUP /. ", id: /SPACE " /FETCHREFERENCE /. " :/
+/: FEAT/ }); /NEWLINE :/
+
+/: "/ // :/

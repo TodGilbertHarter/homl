@@ -1,0 +1,10 @@
+/ARTICLE" Troglodyte "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/Monsters.html REFNAME/ 
+	/REFTEXT DungeonMaster.Monsters REFTEXT/
+ARTICLEREF/ PARENT/
+/CHAPTER Troglodyte Scavanger CHAPTER/
+
+/RIGHT /IMAGE TroglodyteScavenger.png IMAGE/ RIGHT/ Troglodyte scavengers are young troglodytes. They are just as ferocious as their elders.
+ARTICLE/

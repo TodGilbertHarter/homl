@@ -1,0 +1,66 @@
+/ARTICLE" The Shield of Kinnis "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME MagicItems REFNAME/ 
+	/REFTEXT MagicItems REFTEXT/
+ARTICLEREF/ PARENT/
+Long ago the kings of Kinergh possessed the shield of Kinnis, a powerful relic of the mighty hero who's defeat of the necromancer Ugar laid the foundation for the kingdom. Centuries ago the kingdom itself fell into chaos during the times of the fall of the CardolanEmpire. Since then Kinergh has rebuilt itself and prospered but without the shield no man can pass the test of Atur and claim the kingship. For 400 years the descendants of the royal house have ruled the /ARTICLEREF /REFNAME ../Player/GrandDuchyOfTisloch.html REFNAME/  /REFTEXT Grand Duchy of Tisloch REFTEXT/ ARTICLEREF/ . Now as evil grows strong again the current Duke, Sharn Kellion II, urgently seeks for the lost shield which will allow him to claim the ancient throne and bring the rivalrous houses of Kinergh together again under one leadership.
+
+ 
+ <table cellspacing="0" cellpadding="3" border="0"> <tr style="background-color: darkred; color: white"><td> <table width="100%" cellspacing="0" cellpadding="3" border="0"> <tr> <td><span style="font-weight: bold; font-size: 1.2em">Shield of Kinnis</span></td><td style="text-align: right">Paragon Level</td> </tr> </table> </td></tr> <tr style="background-color: #b3b300; color: black; font-style: italic"><td>The Shield of Kinnis is the sheild which was carried by the epic hero Kinnis. Kinnis either perished or ascended after defeating the necromancer Ugar. The Shield then became the symbol of the Kings of Kinergh. It has been lost for about 400 years, having gone missing in battle when the king was killed fighting orcs.</td></tr> <tr><td>The <i>Shield of Kinnis</i> is a Level 13 Sun Shield (heavy shield) with the following properties and powers.</td></tr> <tr><td><span style="font-weight: bold">Enhancement:</span> Attack rolls and damage rolls</td></tr> <tr><td><span style="font-weight: bold">Critical:</span> +3d12 radiant damage.</td></tr> <tr><td><span style="font-weight: bold">Property:</span> You gain +3 resistance to all necrotic damage.</td></tr> <tr><td><span style="font-weight: bold">Property:</span> You gain +3 to all saving throws vs effects created by the undead.</td></tr> <tr><td><span style="font-weight: bold">Property:</span> This shield can be used as a one-handed melee weapon with +3 proficiency, 1d6 damage, heavy blade, off-hand. It grants a +3 enhancement bonus to attack rolls and damage rolls when used as a melee weapon, and it deals 3d12 extra radiant damage on a critical hit.</td></tr> <tr><td><span style="font-weight: bold">Power (At-Will, Radiant):</span> Minor Action. The shield sheds bright light within 10 squares, and melee attacks made with the shield deal radiant damage instead of other damage types. You can end this effect as a minor action.</td></tr>
+
+</table> 
+ 
+/SECTION Goals of The Shield of Kinnis SECTION/ 
+/UL 
+/LI  Destroy undead LI/
+/LI  Uphold the Kingship of Kinergh LI/ UL/
+/SECTION Roleplaying The Shield of Kinnis SECTION/ 
+
+The shield communicates its feelings to its owner via empathy. When undead are present it will radiate a feeling of loathing and a desire to destroy them. Likewise if it senses an opportunity to advance its goals it will radiate a desire to do so. If it is displeased with its owner it will radiate a sense of displeasure, etc. The shield is fairly intelligent and can often determine if someone is helping or thwarting its goals, in which case it will make its likes or dislikes known to its owner.
+
+ 
+ <table> <caption>CONCORDANCE</caption> <tr style="background-color: darkred; color: white"><td>Starting Score</td><td>5</td></tr> <tr style="background-color: #b3b300; color: black"><td>Owner gains a level</td><td>+1d10</td></tr> <tr style="background-color: #b3b300; color: black"><td>Owner is a priest of Lir</td><td>+2</td></tr> <tr style="background-color: #b3b300; color: black"><td>Owner defeats undead (maximum 1/day)</td><td>+2</td></tr> <tr style="background-color: #b3b300; color: black"><td>Owner defeats enemies of Kinergh (maximum 1/day)</td><td>+1</td></tr> <tr style="background-color: #b3b300; color: black"><td>Owner attacks allies of Kinergh (maximum 1/encounter)</td><td>-1</td></tr> <tr style="background-color: #b3b300; color: black"><td>Owner retreats from battle against undead</td><td>-2</td></tr> </table> 
+ 
+/SUBSECTION Pleased (16-20) SUBSECTION/ 
+
+ /QUOTE We will purge the world of the undead! QUOTE/ 
+
+The shield and its owner are fulfilling the shields goals and it is very pleased.
+
+The Shield's enhancement bonus (when used as a weapon) increases to +4
+  /EM Critical: EM/ +4d12 damage or +4d12 radiant damage vs undead and the target is immobilized (save ends).
+  /EM Property: EM/ You gain +5 resistance to all necrotic damage.
+  /EM Power (Daily): EM/ Burst 5; one undead creature within the burst gains vulnerability 5 to radiant damage until the end of the encounter.
+/SUBSECTION Satisfied (12-15) SUBSECTION/ 
+
+ /QUOTE We are a bastion against the undead, let them beware! QUOTE/ 
+
+The wielder has proven himself to be a steadfast enemy of the undead and supporter of the Kingdom of Kinergh.
+
+/EM Property: EM/ You gain +4 to saves vs the effects of attacks made by the undead.
+/SUBSECTION Normal (5-11) SUBSECTION/ 
+
+ /QUOTE We must purge the undead from the world and save Kinergh. QUOTE/ 
+
+The shield urges its owner to greater exploits in pursuit of its goals.
+/SUBSECTION Unsatisfied (1-4) SUBSECTION/ 
+
+ /QUOTE You have not proven yourself. QUOTE/ 
+
+The shield does not find its owner to be a satisfactory champion. If the wielder does not begin to advance the shield's goals soon it will depart.
+
+/EM Special: EM/ The shield refuses to be wielded against any opponents except the undead and will only use its powers against them.
+/SUBSECTION Angered (0 or lower) SUBSECTION/ 
+
+ /QUOTE I must find a true champion, you are not worthy. QUOTE/ 
+
+The wielder has failed to prove his worth and the shield will not remain for long.
+
+/EM Special: EM/ The Sheild's enhancement bonus drops to +1.
+/SUBSECTION Moving On SUBSECTION/ 
+
+ /QUOTE Kinergh is safe now from the undead. I must await the next call. QUOTE/ 
+
+The shield has done all it can in the hands of this wielder. It will now return to the treasure horde of the Kings of Kinergh or some other safe place until it is needed again. When the character next gains a level the shield vanishes. If the Shield is at least satisfied it leaves behind a normal Level 13 Sun Shield (heavy shield) for the wielder. If the shield is pleased it grants the wielder the feat Shield Proficiency (heavy shield) as a boon. This boon will last until the wielder gains another feat slot.
+ARTICLE/

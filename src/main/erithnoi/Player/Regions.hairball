@@ -1,0 +1,25 @@
+/ARTICLE" Geographical Regions of Erithnoi "/
+/WEB Player WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../Player/WebHome.html REFNAME/ 
+	/REFTEXT WebHome REFTEXT/
+ARTICLEREF/ PARENT/
+/RIGHT /ARTICLEREF /REFNAME Erithnoi_Large.png REFNAME/ /REFTEXT /IMAGE=" 500px"/ Erithnoi_Large.png  IMAGE/ REFTEXT/ ARTICLEREF/ RIGHT/
+/UL 
+/LI  /ARTICLEREF /REFNAME ./Kinergh.html REFNAME/  /REFTEXT Kinergh REFTEXT/ ARTICLEREF/  - A small kingdom to the northeast of Gilduin. LI/
+/LI  /ARTICLEREF /REFNAME ./ElfanHolds.html REFNAME/  /REFTEXT Elfan Holds REFTEXT/ ARTICLEREF/  - The ancient lands of the elves in Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./Holburgs.html REFNAME/  /REFTEXT Holburgs REFTEXT/ ARTICLEREF/  - A mountainous upland area on western border of Kinergh centered on the dwarven city of Dalcaroth. LI/
+/LI  /ARTICLEREF /REFNAME ./MelthianMountains.html REFNAME/  /REFTEXT The Melthian Mountains REFTEXT/ ARTICLEREF/  - A mighty mountain range to the north of Kinergh. LI/
+/LI  /ARTICLEREF /REFNAME Vye-Elek REFNAME/ /REFTEXT Vye-Elek REFTEXT/ ARTICLEREF/  - A small barony north of the Holburgs. LI/
+/LI  /ARTICLEREF /REFNAME ./Midrealms.html REFNAME/  /REFTEXT The Midrealms REFTEXT/ ARTICLEREF/  - A chaotic area to the east of the Elfan Holds. LI/
+/LI  /ARTICLEREF /REFNAME ./Othan.html REFNAME/  /REFTEXT Othan REFTEXT/ ARTICLEREF/  - A mighty human nation on the east coast of Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./Gilduin.html REFNAME/  /REFTEXT Gilduin REFTEXT/ ARTICLEREF/  - A wartorn kingdom on the western borders of Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./Khem.html REFNAME/  /REFTEXT Khem REFTEXT/ ARTICLEREF/  - A land of nomads to the west of Gilduin. LI/
+/LI  /ARTICLEREF /REFNAME ./Sildune.html REFNAME/  /REFTEXT Sildune REFTEXT/ ARTICLEREF/  - A wild land north of the Midrealms which is sparsely inhabited and subject to humanoid incursions. LI/
+/LI  /ARTICLEREF /REFNAME ./GreatBorealForest.html REFNAME/  /REFTEXT Great Boreal Forest REFTEXT/ ARTICLEREF/  - A vast northern forest spanning the whole northern part of Erithnoi.  LI/
+/LI  /ARTICLEREF /REFNAME Ta-Al-Erg REFNAME/ /REFTEXT Ta-Al-Erg REFTEXT/ ARTICLEREF/  - The Middle Sea to the south of Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./Kazan.html REFNAME/  /REFTEXT Kazan REFTEXT/ ARTICLEREF/  - A land in the far northeast of Erithnoi where doughty warriors battle giants. LI/
+/LI  /ARTICLEREF /REFNAME ./Kanth.html REFNAME/  /REFTEXT Kanth REFTEXT/ ARTICLEREF/  - The southeastern corner of Erithnoi. This land contains strong orc tribes and small human kingdoms. LI/
+/LI  /ARTICLEREF /REFNAME ./PrincipalityOfEk.html REFNAME/  /REFTEXT Principality of Ek REFTEXT/ ARTICLEREF/  - A land to the south of Gilduin which is ruled by the Grey Order of Mages. LI/
+/LI  /ARTICLEREF /REFNAME ./EldoranIsles.html REFNAME/  /REFTEXT Eldoran Isles REFTEXT/ ARTICLEREF/  - A pair of islands along the south coast of Gilduin known for their pirates and other strange and magical things. LI/ UL/
+ARTICLE/

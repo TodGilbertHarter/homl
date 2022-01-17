@@ -46,8 +46,8 @@ Hairball.
 /: TOPBAR/ </div> :/
 /: /LOGO <a href='./index.html'><img class='logo' src="images/logo.png"/></a> :/
 /: LOGO/ // :/
-/: /MAINMENU <div class='mainmenu'> :/
-/: MAINMENU/ </div> :/
+/: /MAINMENU <menu-bar id='mainmenu' class='mainmenu'> :/
+/: MAINMENU/ </menu-bar> :/
 /: /APPLICATION <horizontal-sash id='applicationarea'> :/
 /: /LEFTSLOT <tab-panel slot='sashleft' id='leftslottabpanel'><ul class='tabbar' slot='tabs' id='leftslottabbar'></ul> :/
 /: LEFTSLOT/ </tab-panel> :/

@@ -1,0 +1,25 @@
+/ARTICLE" Midrealms Campaign "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/WebHome.html REFNAME/ 
+	/REFTEXT WebHome REFTEXT/
+ARTICLEREF/ PARENT/
+/CHAPTER Midrealms Campaign CHAPTER/
+
+This campaign takes place in the southwestern area of the /ARTICLEREF /REFNAME ./Midrealms.html REFNAME/  /REFTEXT Midrealms REFTEXT/ ARTICLEREF/ , known locally as /ARTICLEREF /REFNAME ./Farlond.html REFNAME/  /REFTEXT Farlond REFTEXT/ ARTICLEREF/ .
+/SECTION Episodes SECTION/ 
+/UL 
+/LI  /ARTICLEREF /REFNAME ./MidrealmsCampaign1.html REFNAME/  /REFTEXT Episode 1 REFTEXT/ ARTICLEREF/  - A Dragon's Trail LI/
+/LI  /ARTICLEREF /REFNAME ./MidrealmsCampaign2.html REFNAME/  /REFTEXT Episode 2 REFTEXT/ ARTICLEREF/  - Tastes Like Chicken LI/
+/LI  /ARTICLEREF /REFNAME ./MidrealmsCampaign3.html REFNAME/  /REFTEXT Episode 3 REFTEXT/ ARTICLEREF/  - To the Dragon Lair LI/
+/LI  /ARTICLEREF /REFNAME ./MidrealmsCampaign4.html REFNAME/  /REFTEXT Episode 4 REFTEXT/ ARTICLEREF/  - Of Dogs and Men LI/
+/LI  /ARTICLEREF /REFNAME ./MidrealmsCampaign5.html REFNAME/  /REFTEXT Episode 5 REFTEXT/ ARTICLEREF/  - What Price Logs LI/
+/LI  /ARTICLEREF /REFNAME ./MidrealmsCampaign6.html REFNAME/  /REFTEXT Episode 6 REFTEXT/ ARTICLEREF/  - Against the Pirates LI/
+/LI  /ARTICLEREF /REFNAME ./MidrealmsCampaign7.html REFNAME/  /REFTEXT Episode 7 REFTEXT/ ARTICLEREF/  - A mount my kingdom for a mount! LI/
+/LI  /ARTICLEREF /REFNAME ./MidrealmsCampaign8.html REFNAME/  /REFTEXT Episode 8 REFTEXT/ ARTICLEREF/  - Pursuit of Om-Vertithrax LI/ UL/
+/SECTION Dragon Mountain SECTION/ 
+/SUBSECTION The Altar of Kargarax SUBSECTION/ 
+
+The orc shaman Druugstak will direct the party to the altar, where he demands that they pay their respects to the dragon 
+god, Kargarax.
+ARTICLE/

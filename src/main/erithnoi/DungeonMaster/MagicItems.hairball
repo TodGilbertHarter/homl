@@ -1,0 +1,12 @@
+/ARTICLE" Magic Items "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/WebHome.html REFNAME/ 
+	/REFTEXT WebHome REFTEXT/
+ARTICLEREF/ PARENT/
+Magic items unique to Erithnoi.
+/SECTION Artifacts SECTION/ 
+/UL 
+/LI  /ARTICLEREF /REFNAME ./AxeOfBalzak.html REFNAME/  /REFTEXT Balzak's Axe REFTEXT/ ARTICLEREF/  - The legendary weapon of an ancient dwarven hero. LI/
+/LI  /ARTICLEREF /REFNAME ./TheShieldofKinnis.html REFNAME/  /REFTEXT Shield of Kinnis REFTEXT/ ARTICLEREF/  - This legendary artifact is the ancient symbol of the kings of Kinergh. LI/ UL/
+ARTICLE/

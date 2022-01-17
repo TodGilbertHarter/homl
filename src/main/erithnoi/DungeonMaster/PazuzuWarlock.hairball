@@ -1,0 +1,8 @@
+/ARTICLE" Pazuzu Warlock "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/Monsters.html REFNAME/ 
+	/REFTEXT Monsters REFTEXT/
+ARTICLEREF/ PARENT/
+/RIGHT /IMAGE PazuzuWarlock.png IMAGE/ RIGHT/ Foul spell casters who have dedicated themselves to the demon lord Pazuzu.
+ARTICLE/

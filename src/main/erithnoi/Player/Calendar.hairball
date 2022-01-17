@@ -1,0 +1,76 @@
+/ARTICLE" The Calendar of Erithnoi "/
+/WEB Player WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../Player/WebHome.html REFNAME/ 
+	/REFTEXT WebHome REFTEXT/
+ARTICLEREF/ PARENT/
+/CHAPTER The Calendar of Erithnoi CHAPTER/
+
+Time in Erithnoi is divided into basic units as follows: 1 year = 12 months + 4 festivals or 364 days. 1 month = 4 weeks or 28 days, 1 week = 7 days. The months of the year and the festivals are as follows.
+
+
+/TABLE 
+/TR /TH Common Name /TH/ Cardolan Form /TH/ Season /TH/ Moon TH/ TR/
+/TR  /TD New Year* /TD/ Ter Darg /TD/ Spring /TD/ None TD/ TR/
+/TR  /TD Planting /TD/ Melen Than /TD/ Spring /TD/ Melen TD/ TR/
+/TR  /TD Erithnoi /TD/ Erithnoithan /TD/ Spring /TD/ Melen TD/ TR/
+/TR  /TD High Sun /TD/ Atai Than /TD/ Spring /TD/ Melen TD/ TR/
+/TR  /TD Council* /TD/ Edarg /TD/ Summer /TD/ None TD/ TR/
+/TR  /TD Sitwall /TD/ Bro Than /TD/ Summer /TD/ Kor TD/ TR/
+/TR  /TD Reaping /TD/ Kor Than /TD/ Summer /TD/ Kor TD/ TR/
+/TR  /TD Fastal /TD/ Fek Than /TD/ Summer /TD/ Kor TD/ TR/
+/TR  /TD Harfest* /TD/ Torek Darg /TD/ Fall /TD/ None TD/ TR/
+/TR  /TD Bracing /TD/ Zee Than /TD/ Fall /TD/ Uroc TD/ TR/
+/TR  /TD Biting /TD/ Qur Than /TD/ Fall /TD/ Uroc TD/ TR/
+/TR  /TD Crackrock /TD/ Uroc Than /TD/ Fall /TD/ Uroc TD/ TR/
+/TR  /TD Needfest* /TD/ Pro Darg /TD/ Winter /TD/ None TD/ TR/
+/TR  /TD Newsun /TD/ Sista Than /TD/ Winter /TD/ Sista TD/ TR/
+/TR  /TD Goag /TD/ Goag Than /TD/ Winter /TD/ Sista TD/ TR/
+/TR  /TD Thawing /TD/ Ord Than /TD/ Winter /TD/ Sista TD/ TR/ TABLE/
+
+The days of the week have the following names
+/TABLE 
+/TR /TH Common Name /TH/ Cardolan Name TH/ TR/
+/TR  /TD Firstday /TD/ Ter Hag TD/ TR/
+/TR  /TD Moonday /TD/ Feldag TD/ TR/
+/TR  /TD Starday /TD/ Eldag TD/ TR/
+/TR  /TD Midweek /TD/ Kren Hag TD/ TR/
+/TR  /TD Sunday /TD/ Atai Hag TD/ TR/
+/TR  /TD Unnersday /TD/ Unners Hag TD/ TR/
+/TR  /TD Lastday /TD/ Dor Hag TD/ TR/ TABLE/
+/SECTION Festivals SECTION/ 
+
+There are 4 periods, sometimes known as intercalary periods, each year, which do not belong to any month. Each of these periods is 7 days long, the length of a normal week. During these times none of the four moons of Erth are visible.
+
+The first period falls at the beginning of the year and is called Ter Darg or New year. The old year is held to end on the last day that the Winter Moon, Sista, is visible. Seven days later the Spring Moon, Melen, can first be seen and this is the first day of Melen Than. The time between is the festival of the New Year.
+
+The next festival is Edarg or Council This falls between the setting Melen and the rising of Kor, the summer moon. This is followed by the Harfest or Tork Darg between the setting of Kor and rise of Uroc, the fall moon. Last is the Needfest or Pro Darg when Uroc sets and Sista rises.
+
+/CHAPTER The Celestial Sphere CHAPTER/
+
+The sky above Erth is rather complex and effects the reconing of time in several ways. First there are the fixed stars.
+
+The stars are set in the sky in patterns which do not change. Each star rises and sets at a specific time each day which varies throughout the year so that some are visible only in the summer and others only in the winter, etc. It is possible to determine from their positions what the present day of the year is. Determining the exact day is a DC 20 check, determining the week is a DC 15 check, and determining the month is a DC 10 check against the nature skill. Determination of distance north and south is not so easy but may be determined by noting the rising point of the sun with respect to a particular star or the position of a moon with respect to the stars. This is a DC 20 nature check to get within an accuracy of 50 miles. Failure means the estimate is off by approximately 20 miles. Navigators often use mechanical aids for each of these calculations which reduce the DC by 5. Such equipment can be purchased for 100 gp in most ports.
+
+The sun rises in the east and sets in the west. It follows the same path throughout the year, but moves more quickly during the winter, thus the days are shorter and the nights longer. The longest day of the year the first day of Council. The shortest day is the first day of Needfest. These are the traditional first day of winter and of summer.
+
+The situation of the moons is more complex. During the four festivals no moon is visible at all. During spring months the Spring Moon, Melen, is visible. During the summer months Kor, and the lesser moon Nomok are visible. In the fall Uroc can be seen, and in winter Sista is in the sky.
+
+Each of these moons is different in appearance and motion, but all share some common features. Each goes through a monthly phase, waxing and waning. the details of the phases vary from one moon to the next. Each rises first very close to the horizon in the north and proceeds to rise further to the south as the season progresses. until it finally disappears below the southern horizon. This event signals the start of one of the four festivals, which lasts until the first rising of the next moon.
+
+Melen rises in the east each evening and sets in the west each morning. It is never in the sky at the same time as the sun. It is a large green moon and appears as another world, hanging in the skies of Erth. It is said that wise men using instruments of magic to aid their sight can discern mightly forests, rivers, lakes, and oceans upon its surface. To the naked eye it appears as a mottled green disk with bluish marks and white patches moving across its face.
+
+Legends speak of great heroes who have spanned the gulf of air which separates Erth from Melen. They speak of great cities, terrible monsters and lost magics which are to be found there. The accuracy of these legends is not known and no living man who claims to have visited Melen can be believed.
+
+Kor moves in reverse from Melen across the sky, rising in the west and setting in the east. It rises at noon on the first day of its cycle and is visible for between 5 and 11 hours per day. Each day it rises about 1 hour later, a little further to the south and remains in the sky about 4 minutes longer.
+
+Its companion, Nomok, the Moon of War, rises sometimes a little before or after Kor. It appears always at a fixed distance from Kor. Sometimes it precedes Kor in the sky, sometimes follows it. The phases of Kor are reckoned by these movements. Nomok circles Kor once each month. High Moon is the day Nomok rises first directly ahead of Kor, and Low Moon is the day it rises last directly behind Kor.
+
+Kor appears as a silver disk with darker markings on its face. Legend says that the markings record the history of the world, both past and future. If so there is no one wise enough on Erth to understand the meaning of these markings. They appear as irregular grey spots, dark lines, and rings covering much of the surface.
+
+Nomok is reddish in color with yellow spots visible in places. These spots constantly shift and change. Many beings believe that the spots are divine messages, but again it has proven impossible to reliably determine their meaning.
+
+Uroc, the Fall Moon, appears as a great ringed sphere which rises slowly from the northeast, travels majestically across the sky, and sets 3 months later in the southwest. Phases of Uroc are indicated by changes in the hue of its rings. At the new moon the rings become invisible. As the moon waxes the rings gradually become blue, then green, yellow, orange and finally red, then fade again. The moon itself is an unchanging dull orange in color.
+
+Sista, the Winter Moon, is sometimes also called the winter sun or little sun. Sista rises like Kor in the west and sets in the east. Like Melen it rises when the sun sets and sets when the sun rises. Sista appears as a disk slightly larger than Melen. Its appearance is determined by its phase. It goes through three changes or phases. It begins its time in the heavens with a silvery light. Gradually a metallic blue color moves across the surface, replacing the silver. A gold light in turn replaces the blue in the same way.
+ARTICLE/

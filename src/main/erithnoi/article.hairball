@@ -1,0 +1,117 @@
+/*
+Hairball HTML definitions. These definitions define common markup syntax in the context
+of HTML. It can be included as the first input file when generating HTML output in
+Hairball.
+*/
+/NEWVOCABULARY /ART
+/VOCABULARY /ART /ACTIVE
+/VOCABULARY /ART /CURRENT
+/:
+
+// :/ /* Prevent spurious <p> tags. */
+
+/* #0 /CURRENTID /V! /* restore the id count, refs break it */
+/: /GETMATCHING /DOER /DROP /W /W2L /MAKELITERAL /HERE! :/
+/: /P <p> :/
+/: P/ </p> :/
+/: DIV/ </div> :/
+/: /H1 <h1> :/
+/: H1/ </h1> :/
+/: /H2 <h2> :/
+/: H2/ </h2> :/
+/: /H3 <h3> :/
+/: H3/ </h3> :/
+/: /H4 <h4> :/
+/: H4/ </h4> :/
+/: /ARTICLE" <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/article.css" media="screen"/>
+<title> /" /DUP /. </title>
+</head><body><div><div>
+<article> /. </article>
+ :/
+/: ARTICLE/ </div></div></body></html> :/
+/: /WEB <div class='crumbs'><a href="../erithnoi.html">Home</a><web class='web'> /GETMATCHING WEB/ /DELIMITED /STRIP <a href=" /DUP /. /WebHome.html "> /. </a></web> :/
+/: WEB/ /[" Mismatch, WEB/ must follow /WEB "]/ /ABORT  :/
+/: /PARENT <parent class='parent'> :/
+/: PARENT/ </parent></div> :/
+/: /UL <ul> :/
+/: UL/ </ul> :/
+/: /LI <li> :/
+/: LI/ </li> :/
+/: /CHAPTER <section class='chapter'> :/
+/: CHAPTER/ </section> :/
+/: /SECTION <section class="section" > :/
+/: SECTION/ </section> :/
+/: /EM /SPACE <em> :/
+/: EM/ </em> /SPACE :/
+/: /SUBSECTION <section class="subsection" > :/
+/: SUBSECTION/ </section> :/
+
+/* Table support */
+/: /TABLE <table /ID > :/
+/: /TABLE=" <table class=" /" /. "> :/ 
+/: TABLE/ </table> :/
+/: /TR <tr> :/
+/: /TR=" <tr class=" /" /. "> :/ 
+/: TR/ </tr> :/
+/: /THS=" <th colspan=" /" /. "> :/
+/: /TH <th> :/
+/: /TH=" <th class=" /" /. "> :/
+/: TH/ </th> :/
+/: /TD <td> :/
+/: /TD=" <td class=" /" /. "> :/
+/: TD/ </td> :/
+/: /TH/ </th><th> :/
+/: /TH/=" </th><th class=" /" /. "> :/
+/: /THW=" <th style="width: /" /. ;"> :/
+/: /THW/=" TH/ <th style="width: /" /. ;"> :/
+/: /TD/ </td><td> :/
+/: /TD/=" </td><td class=" /" /. "> :/
+/: /TDR=" /" <td rowspan=" /. "> :/
+/: /TDR/=" TD/ /TDR=" :/
+/: /THEAD <thead> :/
+/: THEAD/ </thead> :/
+/: /TBODY <tbody> :/
+/: TBODY/ </tbody> :/
+/: /TFOOT <tfoot> :/
+/: TFOOT/ </tfoot> :/
+/: /CAPTION <caption> :/
+/: CAPTION/ </caption> :/
+/: /COLGROUP <colgroup> :/
+/: COLGROUP/ </colgroup> :/
+/: /COL=" <col class=" /" /. " span=" /TOKEN /. "> :/
+/: COL/ </col> :/
+
+/: /IMAGE <img src=" :/
+/: /IMAGE=" /" <img style="width: /. " src=" :/
+/: IMAGE/ "/> :/
+/: /ARTICLEREF /SPACE <a href=" :/
+/: ARTICLEREF/ </a> /SPACE :/ 
+/: /REFNAME // :/
+/: REFNAME/ "> :/
+/: /REFTEXT <span class='reftext'> :/
+/: REFTEXT/ </span> :/
+/: /LEFT <div class="floatleft"> :/
+/: /LEFT=" <div class="floatleft /SPACE /" /. "> :/
+/: LEFT/ DIV/ :/
+/: /RIGHT <div class="floatright"> :/
+/: /RIGHT=" <div class="floatright /SPACE /" /. "> :/
+/: RIGHT/ DIV/ :/
+/: /FLEXROW <div class="flexrow"> :/
+/: /FLEXCELL <div class="flexcell"> :/
+/: FLEXROW/ DIV/ :/
+/: FLEXCELL/ DIV/ :/
+/: /.VERSION /SPACE <span class="version"> /VERSION /. </span> /SPACE :/
+/: /.NOW /SPACE <span class="date"> /.NOW </span> /SPACE :/
+/* set a bit more sane format for /.NOW to use */
+/" YYYY-MM-dd "/ /MAKEFORMATTER /'DATEFORMAT /V!
+
+
+/* Enables double newline equivalency to a paragraph (implicit paragraphs). */
+/:
+
+ /P :/

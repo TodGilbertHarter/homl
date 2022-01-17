@@ -45,6 +45,7 @@ class GameList extends HTMLElement {
  	}
 
 	connectedCallback() {
+		window.gebApp.view.gameListAttached(this);
 	}
 	
 	setModel(model) {

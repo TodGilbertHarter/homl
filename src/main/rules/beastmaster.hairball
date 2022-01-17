@@ -1,0 +1,43 @@
+/CALLING" Beastmaster"/
+/TRAITS
+/ROLE" Defender"/
+/POWERSOURCE" Life"/
+/DAMAGEDIE" D6"/
+/WEAPONS" Any 3"/
+/IMPLEMENTS" None"/
+/KNACKS" Insight, Nature"/
+/HITPOINTS" 6"/
+/STARTHITPOINTS" 12"/
+TRAITS/
+
+The beastmaster is at home with all types of animals. She has a deep connection with them, and they are her natural allies. In particular most beastmasters form an mystic bond with at least one individual animal, and sometimes more than one. They are often found far from civilization, living in a natural setting. However, there are some beastmasters who are quite at home in civilized places.
+
+/FEATURES
+/FLEXROW
+/FLEXCELL
+/BOON /ID" 277dbbd2-7046-11ec-8eae-74d02b9c2012"/ /BOONNAME Animal Companion BOONNAME/
+/BOONTYPE Beastmaster Calling Feature BOONTYPE/
+/ASSOCIATION Beastmaster ASSOCIATION/
+/PREREQUISITES Beastmaster PREREQUISITES/
+/DESCRIPTION
+A beastmaster and his companion are an unbreakable team.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+Gain all the benefits of the Natural Companion boon. Select one of the animal types provided by this boon.
+BENEFIT/
+/BENEFIT
+A beastmaster's companion is even more closely aligned with the character than a standard Natural Companion. The beastmaster may call his companion to him from any distance, and it will come, using its normal means of locomotion, if it is able.
+BENEFIT/
+/BENEFIT
+A Beast Master's companion can communicate simple ideas to its master, and understand most simple directions and instructions given to it. It will always do its best to fulfill its master’s wishes.
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+FLEXROW/
+SUBTOPIC/
+FEATURES/
+/BOONS
+BOONS/
+CALLING/

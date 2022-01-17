@@ -1,0 +1,21 @@
+/ARTICLE" Erithnoi Geography "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/Geography.html REFNAME/ 
+	/REFTEXT DungeonMaster.Geography REFTEXT/
+ARTICLEREF/ PARENT/
+Erithnoi can be divided into a number of regions.
+/UL 
+/LI  /ARTICLEREF /REFNAME ./Kinergh.html REFNAME/  /REFTEXT Kinergh REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME ./Midrealms.html REFNAME/  /REFTEXT Midrealms REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME ../Player/Othan.html REFNAME/  /REFTEXT Othan REFTEXT/ ARTICLEREF/  LI/
+/LI  Gilduin LI/
+/LI  Elfan Holds LI/
+/LI  Silduin LI/
+/LI  Khem LI/
+/LI  Principality of Ek LI/
+/LI  Zond LI/
+/LI  Kanth LI/
+/LI  Great Boreal Forest LI/ 
+UL/
+ARTICLE/

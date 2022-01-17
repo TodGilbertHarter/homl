@@ -1,0 +1,8 @@
+/ARTICLE" Duchy of Har "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ./Kinergh.html REFNAME/ 
+	/REFTEXT Kinergh REFTEXT/
+ARTICLEREF/ PARENT/
+Player info for the Duchy of Har can be found /ARTICLEREF /REFNAME ../Player/DuchyOfHar.html REFNAME/  /REFTEXT here REFTEXT/ ARTICLEREF/ .
+ARTICLE/

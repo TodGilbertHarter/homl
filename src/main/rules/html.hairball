@@ -279,7 +279,7 @@ for (i = 0; i < coll.length; i++) {
 /: /CURE <div class="widetrait"> /BOLD Cure: BOLD/ /SPACE :/
 /: CURE/ DIV/ :/
 /: /AFFLICTIONDESCRIPTION <div class="widetrait"> /BOLD Description: BOLD/ /SPACE :/
-/: AFFLICTIONDESCRIPTION DIV/ :/
+/: AFFLICTIONDESCRIPTION/ DIV/ :/
 
 /* Monster stat block */
 /: /MONSTER <section class="monster"> :/

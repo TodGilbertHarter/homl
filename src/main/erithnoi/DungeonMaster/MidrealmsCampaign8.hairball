@@ -1,0 +1,25 @@
+/ARTICLE" MidrealmsCampaign8 "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/MidrealmsCampaign.html REFNAME/ 
+	/REFTEXT DungeonMaster.MidrealmsCampaign REFTEXT/
+ARTICLEREF/ PARENT/
+/CHAPTER Other side of the gate CHAPTER/
+/SECTION Creatures SECTION/ 
+/UL 
+/LI  /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/monster.aspx?id=1442 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Young Blazeworm, level 4 Elite Brute REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/monster.aspx?id=2928 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Flamespiker, level 5 Soldier REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/monster.aspx?id=6019 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Elemental Evil Mudborn, level 6 Controller REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/monster.aspx?id=4841 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Young Blizzard Dragon, level 7 Elite Controller REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/monster.aspx?id=3116 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Xorn, level 9 Skirmisher REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/monster.aspx?id=4846 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Young Earthquake Dragon, level 9 Elite Soldier REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/monster.aspx?id=5585 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Silt Elemental, level 11 Skirmisher REFTEXT/ ARTICLEREF/  LI/ UL/
+/SECTION Terrain SECTION/ 
+/UL 
+/LI  /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/terrain.aspx?id=50 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Primordial Font REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/terrain.aspx?id=35 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Acidic Mire REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/terrain.aspx?id=5 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Bolt Stone REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/terrain.aspx?id=38 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Crawling Earth REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/terrain.aspx?id=41 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Earth Flow REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME url:http://www.wizards.com/dndinsider/compendium/terrain.aspx?id=47 /TD/  /TD/ rel="__blank" REFNAME/ /REFTEXT Lightning Mist REFTEXT/ ARTICLEREF/  LI/ UL/
+ARTICLE/

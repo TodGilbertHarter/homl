@@ -1,0 +1,19 @@
+/ARTICLE" EncounterAtDwarfRoadGate "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/RouteToAlconStoryArc.html REFNAME/ 
+	/REFTEXT RouteToAlconStoryArc REFTEXT/
+ARTICLEREF/ PARENT/
+This encounter uses the Hobgoblin Camp map. Presumably the party will wipe out the hobgoblins and gain 956XP for defeating them. If the encounter goes against the party and they retreat then hobgoblins will withdraw back in the direction of the /ARTICLEREF /REFNAME url:http://www.giantelectronicbrain.com/twiki/bin/view/DungeonMaster/OldFort /TD/  /TD/ class="twikiLink" REFNAME/ /REFTEXT OldFort REFTEXT/ ARTICLEREF/  to report to the garrison there. In this case the surviving hobgoblins will reinforce the garrison there.
+
+If the party is defeated they will be captured by the hobgoblins and may attempt to escape at a later date as the hobgoblins again withdraw in the direction of the /ARTICLEREF /REFNAME url:http://www.giantelectronicbrain.com/twiki/bin/view/DungeonMaster/OldFort /TD/  /TD/ class="twikiLink" REFNAME/ /REFTEXT OldFort REFTEXT/ ARTICLEREF/ . In this case they will skip the /ARTICLEREF /REFNAME url:http://www.giantelectronicbrain.com/twiki/bin/view/DungeonMaster/InPursuitOfABugbear /TD/  /TD/ class="twikiLink" REFNAME/ /REFTEXT InPursuitOfABugbear REFTEXT/ ARTICLEREF/  encounter. /ARTICLEREF /REFNAME url:http://www.giantelectronicbrain.com/twiki/bin/view/DungeonMaster/ProdigalJack /TD/  /TD/ class="twikiLink" REFNAME/ /REFTEXT ProdigalJack REFTEXT/ ARTICLEREF/  will in this case show up during their escape attempt and they can withdraw to (% class="twikiNewLink" %)WildWoodManor/ARTICLEREF /REFNAME url:http://www.giantelectronicbrain.com/twiki/bin/edit/DungeonMaster/WildWoodManor?topicparent=DungeonMaster.EncounterAtDwarfRoadGate /TD/  /TD/ rel="nofollow" title="Create this topic" REFNAME/ /REFTEXT ? REFTEXT/ ARTICLEREF/ (%%) , stumbling upon the /ARTICLEREF /REFNAME url:http://www.giantelectronicbrain.com/twiki/bin/view/DungeonMaster/LairOfTheFoxWoman /TD/  /TD/ class="twikiLink" REFNAME/ /REFTEXT LairOfTheFoxWoman REFTEXT/ ARTICLEREF/  in the process.
+
+Any result in which the party fails to wipe out the hobgoblins will count as failing the /ARTICLEREF /REFNAME url:http://www.giantelectronicbrain.com/twiki/bin/view/DungeonMaster/InPursuitOfABugbear /TD/  /TD/ class="twikiLink" REFNAME/ /REFTEXT InPursuitOfABugbear REFTEXT/ ARTICLEREF/  encounter (the hobgoblins will attack the manor almost immediately).
+/SECTION  Treasure SECTION/ 
+
+The hobgoblins have the following treasure:
+
+500gp, these are all old Civarian coins minted in Alcon.
+
+Level 3 shield of protection.
+ARTICLE/

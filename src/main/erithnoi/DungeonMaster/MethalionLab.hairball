@@ -1,0 +1,59 @@
+/ARTICLE" Methalion's Lab "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/MidrealmsCampaign6.html REFNAME/ 
+	/REFTEXT MidrealmsCampaign6 REFTEXT/
+ARTICLEREF/ PARENT/
+/SECTION 1) Entrance/RIGHT /IMAGE Methalion_underground.png IMAGE/ RIGHT/  SECTION/ 
+
+This area is a rough hewn passage, partially natural. The floor appears slightly slick and wet in places.
+/SUBSECTION Features SUBSECTION/ 
+
+1. Outer Door - A heavy iron door on the south wall allows entry from Methalion's secret passage, which leads back to the bathhouse. The door is locked with a strong lock built into its structure. The key for this lock is in Methalion's possession. Picking the lock is a DC22 Thievery check. If the lock is picked or the key is used a Glyph of Warding is set off. A DC28 Perception check or a DC24 Arcana check will detect the glyph. This glyph does 4d6+4 cold damage and immobilizes the target (DMG p91). In the center of the door is a boss with a metal button mounted on it. If the button is pressed the door opens and the glyph does not go off. The other side of the door also has an identical button, which DOES set off the trap, from the inside the key must be used to safely pass.
+1. Cave Slime - Several squares (blue) are filled with cave slime (DMG p67). Entering a square of slime requires a DC15 Acrobatics check to avoid falling prone. A DC15 active Perception check will reveal the existence of the slime, and a DC15 Dungeoneering check will reveal its nature.
+1. Illusion - The small branch leading off to the east is concealed by an illusion of a wall. A passive Insight check of DC14 will allow a character to notice that this section of wall appears slightly different than the rest. A character who examines the area carefully and made the passive check can then make a DC15 active Insight check as a minor action to determine that this section of wall is an illusion.
+1. Door to area 2 - This door is of heavy wood and has a lock on it. The lock is of rather low quality and requires a DC15 Thievery check to unlock.
+/SECTION 2) Decoy SECTION/ 
+
+This room is a rough walled 15x15 space. Most of the room is thickly covered in what appear to be spider webs. Close examination (DC20 Nature check, minor action) will reveal that the 'webs' are actually some sort of cotton cloth. Above the door hangs a LARGE spider, about 5' across. This 'spider' is actually a constructed of paper mache. It is fairly convincing but surprisingly it won't move. If a character attempts to examine it closely a DC20 Nature check will reveal it to be a fake, and a DC20 Perception check will spot a fuse jutting from the bottom of the spider which is tied to the 'web'. Any attempt to burn the web or spider will cause the 'web' (treated with flammable material) to burst into flame, igniting the fuse. Any PC who makes a DC15 Dexterity check may attempt to run before the fuse sets off the spider-bomb (note the cave slimes in area 1, running isn't easy). The bomb will detonate, making an attack at +10 vs FORT hit: 3d6+4 fire damage; Miss half damage.
+
+Setting off the spider-bomb alerts the guards in area 3 to the presence of intruders and they prepare themselves...
+/SECTION 3) Guard Room SECTION/ 
+
+A large rectangular room with a 30' high ceiling. A small table and two chairs occupy the center of the room. There is a door in the north wall, and two in the east wall.
+
+This rather large room contains the guardians of Methalion's lab. They consist of 2 Wrack Abishai (D:CD p210) and 2 Rage Drakes (MM1 p92). They will attack anyone except Methalion entering from area 1. If the spider-bomb went off in area 2 or the party is particularly loud then the Abishai will be alerted. In this case they will take up stations against the west wall and use their Shadow Meld power to become invisible and hidden (DC20 Passive or active Perception check to detect). They will also release the Rage Drakes from their chains.
+
+If the area is entered quietly then the Abishai will be found sitting at the table gambling with one another, too involved in arguing over which one cheated the other at cards to react and will be caught by surprise. In this case the drakes are chained to the north wall on either side of the north door. The chains are 10' long and each require a DC16 STR check (as a minor action) to break. The drakes will attempt this once per round until they get free. An abashi can also release a drake by moving adjacent to the north door and spending a standard action.
+/SECTION 4) Tricks and Traps SECTION/ 
+
+This room is approximately 20' square, the ceiling is about 20' above. The floor is paved with a pattern of interlocking stone tiles of various sizes. A wooden door is in the east wall. The room is dusty and appears rather empty and disused.
+
+This room is empty, but contains 4 Kissing Maiden traps, (DMG2 p66). In addition there are 3 Dire Stirges which hang from the ceiling in the shadows above the western door (MM1 P248). A narrow crevice high in the ceiling allows the stirges to enter and exit somewhere on the cliffs to the west. Even a small character will not fit through this crevice, though a pixie might...
+/SECTION 5) Stairway SECTION/ 
+
+This irregularly shaped room contains a spiral stone staircase going up located in the middle of the room towards the east wall. The stairs rise for about 40' before letting out into the basement of the south eastern tower of the northern fortification. A stout iron door, barred from the far side blocks entry into the tower from below.
+/SECTION 6) Passage SECTION/ 
+
+There is nothing special about this passageway, except a couple of everburning torches illuminate it. An iron door at the easternmost end lets into the lab proper. This door is barred shut by an Arcane Lock ritual. A DC25 STR or Thievery check will break the lock. The door glows faintly in darkness. Only Methalion can pass through when the door is closed.
+/SECTION 7) Lab SECTION/ 
+
+This room is approximately 20x20 with a 10' ceiling. Taking up the center of the room is an altar of some sort, made from some sort of reddish stone and consisting of a block about 2x2x3' high. Atop the alter rests a piece of gold cloth, upon which a black fang-like dagger sits. Surrounding the altar the floor is marked with various occult signs and diagrams written in chalk. 4 tall candle holders and an incense burner on a stand occupy various positions nearby. In the far corner of the room from door rests an iron trunk.
+
+The altar can be determined to be an altar to Tiamat with a DC15 Religion check. A DC20 Arcana check will determine that this is a setup intended to perform the enchantment of some sort of item. The dagger itself is faintly magical, with a necromantic tinge. This is a Soul Knife, a blade enchanted for the purpose of killing a specific individual with a single blow and damning their soul for all eternity. The enchantment of the knife has barely begun however, as Methalion required a large amount more residuum in order to complete it.
+
+When and if the PCs break the ritual circle surrounding the altar an evil spirit will make its way into the knife, creating a cursed item. Whomever first handles the knife will be struck with a form of delusionary paranoid madness. They will become convinced that everyone is out to get them and that their allies are really disguised shape changers, etc. The victim will suffer a -2 to their WILL defense and whenever they are adjacent to an ally who makes an attack of any kind they will react by making an MBA on that ally, convinced that the attack is directed at them. (Exact effects of the curse TBD, I am running out of time...).
+
+The iron trunk is locked with the same key which "opens" the door in area 1. Methalion has this key. Picking the lock is quite difficult and requires a DC24 Thievery check. There are no traps on the trunk, and it can be broken either by doing 200 points of damage to it (AC20, FORT20, REF15) or breaking the lock by force (DC22 STR check). Inside is Methalion's main treasure.
+
+200 platinum pieces
+
+A Pair of magical boots
+
+A +2 neck slot item
+
+A copy of a contract made between Methalion and Ulthredain the Blue Dragon stipulating that Methalion will kill Gurig and rule the town under the vassalage of Ulthredain, paying 10% of all treasure gained by piracy and taxes to the dragon. In return the dragon will enforce Methalion's rule and refrain from attacking his ships, the town, etc.
+/SECTION 8) Drake Lair SECTION/ 
+
+This room is used to house the Rage Drakes when they are not in area 3. At the western end of the room is a 10x10' square 20' deep offal pit. This pit is filled with 10' of garbage and stagnant water. It also smells bad. Anyone approaching the edge of the pit will be attacked by the Otyugh (MM p211) within. A character looking into the pit must pass a DC28 Perception check to notice the otyugh's eyestalk. If the stalk is not noticed then the monster will attack by surprise. It will grasp one character at random using its reach 3 tentacle and pull them into the pit, where it will try to devour them.
+ARTICLE/

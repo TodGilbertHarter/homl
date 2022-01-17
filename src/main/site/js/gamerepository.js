@@ -87,11 +87,27 @@ class GameRepository {
         }
     }
 
-	getPlayerGames(player,onDataAvailable,onFailure) {
-//		const categoryDocRef = this.#db.collection('games').doc('players');
+	getGamesByOwner(playerId,onDataAvailable,onFailure) {
+		const playerDocRef = doc(this.db,'players',playerId);
 		var docRef = collection(this.db,'games');
 		docRef = docRef.withConverter(gameConverter);
-		const q = query(docRef,where('players.id','==',player.id));
+		const q = query(docRef,where('owner','==',playerDocRef));
+		getDocs(q).then((doc) => {
+				const results = [];
+				doc.forEach((gdata) => {
+					results.push(gdata.data());
+				});
+			onDataAvailable(results);
+			}).catch((e) => { 
+				onFailure(e.message);
+			});
+	}
+	
+	getPlayerGames(player,onDataAvailable,onFailure) {
+		const playerDocRef = doc(this.db,'players',player.id);
+		var docRef = collection(this.db,'games');
+		docRef = docRef.withConverter(gameConverter);
+		const q = query(docRef,where('players','contains',playerDocRef));
 		getDocs(q).then((doc) => {
 				const results = [];
 				doc.forEach((gdata) => {

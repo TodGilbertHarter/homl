@@ -1,0 +1,14 @@
+/ARTICLE" General Knowledge "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/WebHome.html REFNAME/ 
+	/REFTEXT WebHome REFTEXT/
+ARTICLEREF/ PARENT/
+Collect stuff here. It can be moved and recategorized later.
+/UL 
+/LI  /ARTICLEREF /REFNAME ./Karkath.html REFNAME/  /REFTEXT Karkath REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME ./ArraKleth.html REFNAME/  /REFTEXT Arra Kleth REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME ./CultOfPazuzu.html REFNAME/  /REFTEXT Cult of Pazuzu REFTEXT/ ARTICLEREF/  LI/
+/LI  /ARTICLEREF /REFNAME ./FirstWorld.html REFNAME/  /REFTEXT The First World REFTEXT/ ARTICLEREF/  - also known as the Shadowfell. LI/
+/LI  /ARTICLEREF /REFNAME ./WellOfStars.html REFNAME/  /REFTEXT The Well of Stars REFTEXT/ ARTICLEREF/  - an ancient bridge between worlds. LI/ UL/
+ARTICLE/

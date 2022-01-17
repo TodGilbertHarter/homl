@@ -1,0 +1,12 @@
+/ARTICLE" Human Militia Man "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/Monsters.html REFNAME/ 
+	/REFTEXT Monsters REFTEXT/
+ARTICLEREF/ PARENT/
+/RIGHT /IMAGE MilitiaMan.png IMAGE/ RIGHT/ The human militia man is an ordinary human who is performing military service. He has been trained in the use of an effective weapon and in basic military tactics. Militia will often be encountered as part of a garrison of a castle or town. They will defend their home bravely against monsters but will not usually fight to the death otherwise.
+
+/SECTION Human Militia Man tactics SECTION/ 
+
+A militia man will generally not initiate combat unless the party is openly aggressive or ordered to do so. If possible they will fight from a tactical position which allows them to use the reach of their halberds while staying out of reach of their opponents.
+ARTICLE/

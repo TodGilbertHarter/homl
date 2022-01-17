@@ -1,0 +1,25 @@
+/ARTICLE" Geography "/
+/WEB DungeonMaster WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../DungeonMaster/WebHome.html REFNAME/ 
+	/REFTEXT WebHome REFTEXT/
+ARTICLEREF/ PARENT/
+/SECTION Player Info SECTION/ 
+
+Player info is /ARTICLEREF /REFNAME ../Player/Regions.html REFNAME/  /REFTEXT here REFTEXT/ ARTICLEREF/ .
+
+/CHAPTER Geography of Erth CHAPTER/
+
+Erth, also sometimes known as the /ARTICLEREF /REFNAME ./Cosmology.html REFNAME/  /REFTEXT Second World REFTEXT/ ARTICLEREF/ , is the home of humanity and most other demi-human races. Travel is dangerous and most of the inhabitants of Erth have knowledge of only their local region, perhaps only the area near the town in which they live. Some individuals are better educated or more widely traveled, but few of them have any deep knowledge of areas far from their homes. What lies beyond the edges and in the blank spaces of the few available maps is largely unknown. Since the campaign takes place largely in the region/continent known as Erithnoi this area is considered the 'known world' for most purposes.
+
+Erth itself is a vast plane which rides atop the ElementalChaos, occupying a borderland between the chaos and the /ARTICLEREF /REFNAME ./Cosmology.html REFNAME/  /REFTEXT Star Sea REFTEXT/ ARTICLEREF/  or Astral Space. The heavens above Erth occupy the closest parts of the StarSea. Sages have speculated for ages on the nature of the world, its shape, etc. What is known is that the various moons of Erth and the Sun all appear to travel across the skies of Erth in some fashion. Flight between Erth and the various moons IS possible, but requires strong magic and has many dangers. There are reputed to be ships and flying creatures capable of making this journey.
+/SECTION Major Regions of Erth SECTION/ 
+/UL 
+/LI  /ARTICLEREF /REFNAME ./ErithnoiGeography.html REFNAME/  /REFTEXT Erithnoi REFTEXT/ ARTICLEREF/  - The regions on the northern shores of the Ta-Al-Erg are known as Erithnoi, so called in reference to the leader of the Cardolan people who discovered the land. It also has had other names in the past. Generally speaking Erithnoi corresponds to the area occupied by the CardolanEmpire at its greatest extent. LI/
+/LI  Mnaria - The lands to the south of the Ta-Al-Erg are generally known as Mnaria or Minaria to the inhabitants of Erithnoi. These strange lands contain many ancient cities, ruins, and empires. Intrepid traders and explorers often cross the sea to reach these lands. The inhabitants of Erithnoi thus have some knowledge of the south, though much of it is inaccurate, outdated, or simply pure fantasy. Likewise Minaria's inhabitants have some limited knowledge of Erithnoi. Travelers are sometimes encountered who hail from the south. LI/
+/LI  The /ARTICLEREF /REFNAME Player.Ta-Al-Erg REFNAME/ /REFTEXT Ta-Al-Erg REFTEXT/ ARTICLEREF/  - The great Sea-Between-the-Land lies between Erithnoi and the south. To the east the great peninsulas of Kanth and Lanth almost close off this middle ocean from the UntreadWaters which lie further east. The western shore of this sea is a narrow land beyond which rise the vast bulk of the /ARTICLEREF /REFNAME ./HighPeaks.html REFNAME/  /REFTEXT High Peaks REFTEXT/ ARTICLEREF/ . LI/
+/LI  /ARTICLEREF /REFNAME ../Player/Khem.html REFNAME/  /REFTEXT Khem REFTEXT/ ARTICLEREF/  - Directly to the west of Erithnoi lie vast plains on which the Khemites live. LI/
+/LI  The far west - Beyond the /ARTICLEREF /REFNAME ./HighPeaks.html REFNAME/  /REFTEXT High Peaks REFTEXT/ ARTICLEREF/  and the lands of Khem knowledge grows dim. It is said that a land inhabited by a race of DragonBorn is located on the far west coast. Everything west of Khem is generally referred to in Erithnoi as Ya Mashata. Expeditions have investigated this area and some trade makes its way across these lands, but maps, lore, etc are fragmentary. LI/
+/LI  The GreatDesert - to the south even of Minaria is known to be a vast region of desert. Legends tell of an ancient civilization which once existed in this region, until it was swallowed up by the desert in some terrible curse. These legends are mostly correct. The far southern edge of the desert is still home to the remnants of this people. LI/
+/LI  The far east - to the east lie the /ARTICLEREF /REFNAME ./UntreadWaters.html REFNAME/  /REFTEXT UntreadWaters REFTEXT/ ARTICLEREF/ , the vast ocean which is said by some to be endless. Lying somewhere within this ocean is the LandOfTheStar, the original home of the Cardolans. Whatever lore they brought with them of this land when they arrived in Erithnoi however is now lost. Some sages believe that this land was swallowed up by the ocean, while others are convinced that it can be reached by sailing far enough east. In truth it is a land which was long ago largely destroyed in a magical cataclysm. LI/ UL/
+ARTICLE/

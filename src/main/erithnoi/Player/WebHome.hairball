@@ -1,0 +1,35 @@
+/ARTICLE" Player Information "/
+/WEB Player WEB/
+/PARENT /ARTICLEREF 
+	/REFNAME ../erithnoi.html REFNAME/ 
+	/REFTEXT Erithnoi REFTEXT/
+ARTICLEREF/ PARENT/
+/CHAPTER Welcome to Erithnoi CHAPTER/
+
+Erithnoi is the northwestern sub-continent of the vast land-mass of Ergh, the Earth. Erithnoi is named after the first Cardolan Emperor, Erithnoi the Great. The Cardolans arrived in Erithnoi 1004 years ago, refugees from a land far across the Untread Waters. For 600 years the Cardolans built an empire. Strong just Emperors first conquered easternmost Erithnoi and then gradually conquered most of the continent. 650 years later internal dissension and humanoid invasions destroyed the empire. Dark ages followed. In most areas humans eventually expelled the humanoid tribes. Now small kingdoms, humanoid dominated regions, and nascent empires control patchwork territories. Vast regions still exist where no humans normally travel. Expanding frontier areas encroach on areas that were barely explored in the days of the empire. Ancient monuments and artifacts give proof that long before the Empire there were other peoples, other nations, nations which possessed Lost knowledge...
+
+Please explore!
+/SECTION Topics SECTION/ 
+
+These topics provide general background information about Erithnoi which is common knowledge to its inhabitants.
+/UL 
+/LI  /ARTICLEREF /REFNAME ./History.html REFNAME/  /REFTEXT History REFTEXT/ ARTICLEREF/  - The history of Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./Religion.html REFNAME/  /REFTEXT Religion REFTEXT/ ARTICLEREF/  - The gods of Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./Races.html REFNAME/  /REFTEXT Races REFTEXT/ ARTICLEREF/  - The inhabitants of Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./Regions.html REFNAME/  /REFTEXT Regions REFTEXT/ ARTICLEREF/  - The lay of the land. This includes knowledge of geography, politics, history, etc of all the different areas of Erithnoi which is common knowledge amongst its inhabitants. You can find maps here too! LI/
+/LI  /ARTICLEREF /REFNAME ./Calendar.html REFNAME/  /REFTEXT Calendar REFTEXT/ ARTICLEREF/  - The seasons, sky, and related things. How time is kept in Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./Languages.html REFNAME/  /REFTEXT Languages REFTEXT/ ARTICLEREF/  - The speech of the inhabitants of Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./Money.html REFNAME/  /REFTEXT Money REFTEXT/ ARTICLEREF/  - Currency of Erithnoi, past and present. LI/
+/LI  /ARTICLEREF /REFNAME ./CharacterBackgrounds.html REFNAME/  /REFTEXT Character Backgrounds REFTEXT/ ARTICLEREF/  - Detailed geographic backgrounds for Erithnoi PCs (using 4th Edition Background rules). LI/ UL/
+/SECTION Useful Stuff SECTION/ 
+
+/ARTICLEREF /REFNAME ./UsefulInfo.html REFNAME/  /REFTEXT Some generally useful links and handy references. REFTEXT/ ARTICLEREF/ 
+/SECTION Campaigns SECTION/ 
+
+Work areas and logs for campaigns
+/UL 
+/LI  /ARTICLEREF /REFNAME ./MidrealmsCampaign.html REFNAME/  /REFTEXT Midrealms Campaign REFTEXT/ ARTICLEREF/  - Deorai, Celery, Moose, and Penelope and their amusing adventures in the Midrealms. LI/
+/LI  /ARTICLEREF /REFNAME ./EldoranIslesCampaign.html REFNAME/  /REFTEXT Eldoran Isles Campaign REFTEXT/ ARTICLEREF/  - The Magnusson's seek their fortunes on the high seas. LI/
+/LI  /ARTICLEREF /REFNAME ./SecondMidrealmsCampaign.html REFNAME/  /REFTEXT Second Midrealms Campaign REFTEXT/ ARTICLEREF/  - Jeorai, Moore, Ore, Les, and more LI/
+/LI  /ARTICLEREF /REFNAME ./ThirdMidrealmsCampaign.html REFNAME/  /REFTEXT Third Midrealms Campaign REFTEXT/ ARTICLEREF/  - Gillian LI/ UL/
+ARTICLE/
