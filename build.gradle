@@ -22,11 +22,16 @@ plugins {
     id 'io.quarkus'
 	id "fr.brouillard.oss.gradle.jgitver" version "0.10.0-rc03"
 	id "com.github.node-gradle.node" version "3.1.1"
+	id 'com.github.eerohele.saxon-gradle' version '0.9.0-beta4'
 //	id "com.timgroup.webpack" version "1.1.0"
 }
 
 //apply plugin: "io.ratpack.ratpack-groovy"
 apply plugin: com.timgroup.gradle.webpack.WebpackPlugin
+
+configurations {
+	saxon
+}
 
 group 'com.giantelectronicbrain'
 //version '0.0.1'
@@ -37,11 +42,54 @@ repositories {
 }
 
 task installClosureCompiler(type: NpmTask) {
+	description 'npm install the google-closure-compiler module'
 	args = ['install', 'google-closure-compiler']
 }
 	
 task installFirebase(type: NpmTask) {
+	description 'npm install the firebase and firebase-admin npm modules'
 	args = ['install', 'firebase', 'firebase-admin', 'fakedb']
+}
+
+task copySaxon(type: Copy) {
+	description 'get a copy of saxon binary into build dir'
+	from configurations.saxon
+	into "$buildDir/saxon"
+}
+
+task xsltErithnoiDM(type: Exec) {
+	description 'run XSLT transforms on the DM content exported from xwiki to produce hairball code'
+	dependsOn 'copySaxon'
+	commandLine 'scripts/runSaxon.sh', 'src/main/xwiki/DungeonMaster', 'src/main/xwiki/article_to_hairball.xslt', 'build/etmp/DungeonMaster'
+}
+
+task xsltErithnoiPlayer(type: Exec) {
+	description 'run XSLT transforms on the Player content exported from xwiki to produce hairball code'
+	dependsOn 'copySaxon'
+	commandLine 'scripts/runSaxon.sh', 'src/main/xwiki/Player', 'src/main/xwiki/article_to_hairball.xslt', 'build/etmp/Player'
+}
+
+task buildErithnoiDM(type: Exec) {
+	description 'build the DM content directory to hold hairball version of xwiki content'
+	dependsOn 'xsltErithnoiDM'
+	commandLine 'scripts/buildErithnoi.sh', 'build/erithnoi/DungeonMaster', 'build/etmp/DungeonMaster'
+}
+
+task buildErithnoiPlayer(type: Exec) {
+	description 'build the Player content directory to hold hairball version of xwiki content'
+	dependsOn 'xsltErithnoiPlayer'
+	commandLine 'scripts/buildErithnoi.sh', 'build/erithnoi/Player', 'build/etmp/Player'
+}
+
+task buildErithnoi {
+	description 'build the content directory of all xwiki-derived hairball'
+	dependsOn 'buildErithnoiPlayer'
+	dependsOn 'buildErithnoiDM'	
+}
+
+task generateErithnoi(type: Exec) {
+	description 'compile all the xwiki-derived hairball to HTML'
+	commandLine 'scripts/generateErithnoi.sh', project.version
 }
 
 dependencies {
@@ -58,6 +106,17 @@ dependencies {
     implementation "io.quarkiverse.googlecloudservices:quarkus-google-cloud-firestore:${googleCloudServicesVersion}"
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
+	saxon 'net.sf.saxon:Saxon-HE:10.6'
+}
+
+xslt {
+	stylesheet 'src/main/erithnoi/article_to_hairball.xslt'
+	input fileTree(dir: 'src/main/erithnoi/DungeonMaster', include: '*.xml')
+	output "${buildDir}/erithnoi"
+	parameters(
+		debug: true,
+		version: project.version
+		)
 }
 
 java {
@@ -87,19 +146,23 @@ task createGCPKey(type: Exec) {
 }
 
 task deployFirebaseRules(type: Exec) {
+	description 'deploy security rules to firebase'
 	commandLine './scripts/deployFirebaseRules.sh'
 }
 
 task generateHoMLRules(type: Exec) {
+	description 'generate the HOML rules from hairball source'
 	commandLine './scripts/generateHoMLRules.sh', project.version
 }
 
 task deployHoMLRules(type: Exec) {
+	description 'deploy generated HOML rules to cloud'
 	dependsOn 'generateHoMLRules'
-	commandLine './scripts/deployHoMLRules.sh'
+	commandLine './scripts/deployHoMLRules.sh', project.version
 }
 
 task copyGEBSite(type: Exec) {
+	description 'copy source files for GEB to temp area in build directory'
 	inputs.files(fileTree('src/main/site'))
 	inputs.file('scripts/copyGEBSite.sh')
 	outputs.dir('build/site')
@@ -107,10 +170,12 @@ task copyGEBSite(type: Exec) {
 }
 
 task generateEmptyCharacterSheet(type: Exec) {
+	description 'generate an empty character sheet from the source'
 	commandLine './scripts/generate_character.sh', project.version, 'empty'
 }
 
 task generateGEBSite(type: Exec) {
+	description 'build the GEB site from sources'
 //	dependsOn 'generateHoMLRules'
 	dependsOn 'generateEmptyCharacterSheet'
 	inputs.file('scripts/generateGEBSite.sh')
@@ -120,6 +185,11 @@ task generateGEBSite(type: Exec) {
 	commandLine './scripts/generateGEBSite.sh', project.version
 }
 
+/**
+ * Plugin which implements a very basic web server using the old Sun httpserver package. This is well-supported
+ * and will work in any version of Java. The server is pretty low-tech, but it works well. Start it via the supplied
+ * startWebServer task, it will run in the background as long as the gradle daemon does.
+ */
 import com.sun.net.httpserver.*
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -165,7 +235,8 @@ class HttpPlugin implements Plugin<Project>, HttpHandler {
 			if("/".equals(path))
 				path = "/index.html";
 			println("path is now "+path);
-			String filename = "/home/tharter/projects/homl/build/geb/geb-0.0.0-4-firebase_v9"+path;
+//			String filename = "/home/tharter/projects/homl/build/geb/geb-0.0.0-6-main"+path;
+			String filename = "/home/tharter/projects/homl/build/erithnoipub/erithnoi-0.0.0-6-main"+path;
 			println("filename is "+filename);
 			println("CWD is "+System.getProperty('user.dir'));
 			Path p = Path.of(filename);
@@ -195,7 +266,7 @@ class HttpPlugin implements Plugin<Project>, HttpHandler {
 	void apply(Project project) {
 		project.task('startWebServer') {
 			doLast {
-				HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+				HttpServer server = HttpServer.create(new InetSocketAddress(8081), 0);
 				server.createContext("/", this);
 				server.setExecutor(null);
 				server.start();
@@ -207,11 +278,13 @@ class HttpPlugin implements Plugin<Project>, HttpHandler {
 apply plugin: HttpPlugin
 
 task uploadData(type: NodeTask) {
+	description 'upload data to firestore, this needs more work!'
 	script = file('./scripts/upload_data.js')
 	args = ['build/rules/compendium.json']
 }
 
 task closureCompile(type: NpxTask) {
+	description 'use closure-compiler to build a production version of GEB js library, this will fail until we understand module imports'
 	dependsOn 'npm_install'
 	dependsOn 'copyGEBSite'
 	command = 'google-closure-compiler'
