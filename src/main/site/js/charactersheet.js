@@ -20,10 +20,16 @@
 class CharacterSheet extends HTMLElement {
 	/** @private */static template = CharacterSheettemplate;
 	model;
+	rules;
+	speciesRepo;
+	callingsRepo;
 	/** @type {string} @private */ characterId;
 	
 	constructor() {
 		super();
+		this.speciesRepo = window.gebApp.speciesRepo;
+		this.coallingsRepo = window.gebApp.callingsRepo;
+		
 		const content = CharacterSheet.template.content;
         const shadowRoot = this.attachShadow({mode: 'open'}).appendChild(content.cloneNode(true));
  	}
