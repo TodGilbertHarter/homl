@@ -23,9 +23,9 @@ class Controller {
 	/** @private */ gamesListener;
 	/** @private */ characterRepo;
 	/** @private */ characterController;
-	/** @private */ rules;
+	/** @private */ callingRepo;
 		
-	constructor(gebApp,view,authenticator,router,gameRepo,characterRepo,characterController,rules) {
+	constructor(gebApp,view,authenticator,router,gameRepo,characterRepo,characterController,callingRepo,speciesRepo) {
 		this.gebApp = gebApp;
 		this.view = view;
 		view.controller = this;
@@ -34,7 +34,8 @@ class Controller {
 		this.gameRepo = gameRepo;
 		this.characterRepo = characterRepo;
 		this.characterController = characterController;
-		this.rules = rules;
+		this.callingRepo = callingRepo;
+		this.speciesRepo = speciesRepo;
 		this.router.add(/signup/,() => { this.view.displaySignUpUI(); });
 		this.router.add(/signin/,() => { this.view.displaySignInUI(); });
 		this.router.add(/signout/,() => { this.view.displaySignOutUI(); });
@@ -46,26 +47,56 @@ class Controller {
 		mm.menuHandler = (e) => { this.menuItemSelectionHandler(e) };
 	}
 	
+	/**
+	 * Set up everything which needs to happen after logon, and then head to the route
+	 * which displays the logged in UI.
+	 */
 	authenticated() {
+		this.callingRepo.addListener(this.onCallingsChanged);
+		this.callingRepo.loadAllCallings();
+		this.speciesRepo.addListener(this.onSpeciesChanged);
+		this.speciesRepo.loadAllSpecies();
 		window.location.hash = '/authenticated';
 	}
 	
+	onCallingsChanged(callings) {
+		this.characterController.onCallingsChanged(callings);
+	}
+	
+	onSpeciesChanged(species) {
+		this.characterController.onSpeciesChanged(species);
+	}
+	/**
+	 * Signed up implies we are authenticated, so just do the same thing.
+	 */
 	signedUp() {
 		this.authenticated();
 	}
 	
+	/**
+	 * Invoke the back button functionality.
+	 */
 	goBack() {
 		window.history.back();
 	}
-	
+
+	/**
+	 * Handle sign out. After the user is actually signed out, the route will update to reflect that.
+	 */	
 	signOutClicked() {
 		this.authenticator.signOut(() => { window.location.hash = '/signout'; });
 	}
 	
+	/**
+	 * Display the signup UI.
+	 */
 	signUpClicked() {
 		window.location.hash = "/signup";
 	}
 	
+	/**
+	 * Handle the user trying to sign in or out.
+	 */
 	signInClicked() {
 		if(!this.authenticator.getAuthenticated) {
 			window.location.hash = "/signin";
@@ -74,50 +105,99 @@ class Controller {
 		}
 	}
 	
+	/**
+	 * Handle menuitem selections on the main application menu.
+	 */
 	menuItemSelectionHandler(item) {
 		console.log("got a menu item selected event for item named "+item);
 		switch(item) {
 			case 'new game':
 				this.handleNewGame();
 				break;
+			case 'homl':
+				this.openHoML();
+				break;
+			case 'erithnoi':
+				this.openErithnoi();
+				break;
 			default:
 				console.error("no handler for menu selection "+item);
 		}
 	}
 	
+	/**
+	 * Open a copy of the rules in a separate window/tab.
+	 */
+	openHoML() {
+		window.open("/homl.html");
+	}
+	
+	/**
+	 * Open a copy of the setting wiki in a separate window/tab.
+	 */
+	openErithnoi() {
+		window.open("/erithnoi.html");
+	}
+	
+	/**
+	 * Handle creating a new game.
+	 */
 	handleNewGame() {
 		window.location.hash = '/creategame';
 	}
 
+	/**
+	 * Handle the actual signup process via the authenticator.
+	 */
 	doSignUp(email, password, onSuccess, onFailure) {
 		this.authenticator.createUserWithEmailAndPassword(email,password,onSuccess,onFailure);
 	}
 	
+	/**
+	 * Handle signin using the authenticator.
+	 */
 	doSignIn(email, password, onSuccess, onFailure) {
 		this.authenticator.signInWithEmailAndPassword(email,password, onSuccess, onFailure);
 	}
 	
+	/**
+	 * Command the authenticator to sign the user out.
+	 */
 	doSignOut() {
 		this.authenticator.signOut();
 	}
 	
+	/**
+	 * Initiate a search for all games owned by a given player.
+	 */
 	getGamesByOwner(owner) {
 		this.gameRepo.getGamesByOwner(owner.id,this.onGamesChanged.bind(this));
 	}
 	
+	/**
+	 * Initiate a search for a game by name.
+	 */
 	doGameSearch(name) {
 		this.gameRepo.getGamesByName(name,this.onGamesChanged.bind(this));
-//		this.#gameRepo.getGameByName(name,this.onGamesChanged.bind(this));
 	}
 	
+	/**
+	 * Register a handler to handle an update to the list of games.
+	 */
 	registerGamesListener(handler) {
 		this.gamesListener = handler;
 	}
 	
+	/**
+	 * Call the listener for updates to the list of games.
+	 */
 	onGamesChanged(games) {
 		this.gamesListener(games);
 	}
 	
+	/**
+	 * Handle a request to display a specific id of game in the main view.
+	 */
 	displayGameViewClicked(gameId) {
 		window.location.hash = `/showgame/${gameId}`;
 	}

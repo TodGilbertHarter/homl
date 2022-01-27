@@ -7,6 +7,8 @@
     --matte-bg: white;
     --theme-bg: #e4e5d0;
     --theme-fg: black;
+    --calculated-bg: #FF9999;
+    --calculated-fg: black;
 }
 
 body {
@@ -92,6 +94,14 @@ h1 {
 /*    display: block;
     margin-left: auto;
     margin-right: auto; */
+}
+
+calculated-field::part(text) {
+	display: inline-block;
+	background-color: var(--calculated-bg);
+	color: var(--calculated-fg);
+    border-bottom: 1px solid black;
+    vertical-align: bottom;
 }
 
 ability-field::part(wrapper) {

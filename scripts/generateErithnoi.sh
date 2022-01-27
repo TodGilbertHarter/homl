@@ -1,4 +1,5 @@
 #!/bin/bash
+# create the entire Erithnoi site content from the hairball sources
 # Argument is the HOML version number
 HOML_NAME="erithnoi-$1"
 PUBDIR="erithnoipub/$HOML_NAME"
@@ -21,12 +22,14 @@ echo "Files are copied, now in directory: " `pwd`
 hairball article.hairball erithnoi.hairball | tail -n +2 >./erithnoi.html
 cd DungeonMaster
 echo "built the index file, now going to build dungeon master stuff " `pwd`
-find . -name '*.hairball' -exec sh -c "hairball ../article.hairball {} | tail -n +2 > {}.out" \;
+#find . -name '*.hairball' -exec sh -c "hairball ../article.hairball {} | tail -n +2 > {}.out" \;
+find . -name '*.hairball' | parallel "hairball ../article.hairball {} | tail -n +2 > {}.out"
 echo "built all the DM files, going to rename them"
 for i in *.out; do mv -- "$i" "${i%.hairball.out}.html"; done
 echo "DM hairball files renamed correctly, going to do player files now"
 cd ../Player
-find . -name '*.hairball' -exec sh -c "hairball ../article.hairball {} | tail -n +2 > {}.out" \;
+#find . -name '*.hairball' -exec sh -c "hairball ../article.hairball {} | tail -n +2 > {}.out" \;
+find . -name '*.hairball' | parallel "hairball ../article.hairball {} | tail -n +2 > {}.out"
 echo "built all the Player files, going to rename them"
 for i in *.out; do mv -- "$i" "${i%.hairball.out}.html"; done
 echo "Player hairball files renamed correctly, time to build everything"
@@ -34,11 +37,13 @@ cd ..
 echo "we are now in directory " `pwd`
 cp *.html ../$PUBDIR
 mkdir -p ../$PUBDIR/DungeonMaster
+cp -r DungeonMaster/css ../$PUBDIR/DungeonMaster
 cp DungeonMaster/*.html ../$PUBDIR/DungeonMaster
 cp DungeonMaster/*.png ../$PUBDIR/DungeonMaster
 cp DungeonMaster/*.pdf ../$PUBDIR/DungeonMaster
 cp DungeonMaster/*.jpg ../$PUBDIR/DungeonMaster
 mkdir -p ../$PUBDIR/Player
+cp -r Player/css ../$PUBDIR/Player
 cp Player/*.html ../$PUBDIR/Player
 cp Player/*.png ../$PUBDIR/Player
 cp Player/*.pdf ../$PUBDIR/Player

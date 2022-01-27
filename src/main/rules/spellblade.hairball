@@ -1,13 +1,14 @@
-/CALLING" Spell Blade"/
+/CALLING /ID" 11f2f67e-794c-11ec-8200-74d02b9c2012"/
+/CALLINGNAME Spell Blade CALLINGNAME/
 /TRAITS
-/ROLE" Defender"/
-/POWERSOURCE" Elemental"/
-/DAMAGEDIE" D8"/
-/WEAPONS" Any 2"/
-/IMPLEMENTS" Any Rune Weapon"/
-/KNACKS" Arcana, Survival"/
-/HITPOINTS" 6"/
-/STARTHITPOINTS" 10"/
+/ROLE Defender ROLE/
+/POWERSOURCE Elemental POWERSOURCE/
+/DAMAGEDIE D8 DAMAGEDIE/
+/WEAPONS Any 2 WEAPONS/
+/IMPLEMENTS Any Rune Weapon IMPLEMENTS/
+/KNACKS Arcana, Survival KNACKS/
+/HITPOINTS 6 HITPOINTS/
+/STARTHITPOINTS 10 STARTHITPOINTS/
 TRAITS/
 The spell blade is a magic infused warrior who utilizes elemental power in order to give her weapon attacks great force. The arcane magics bound up into this rune weapon also give her fantastical powers with which to confront her enemies.
 
@@ -23,7 +24,8 @@ Spell blades follow ancient traditions once perfected by lost races who used art
 You can conjure up a shield of elemental energy to protect an ally.
 DESCRIPTION/
 /BENEFITS
-/FEAT /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Elemental Shield FEATNAME/
+/BENEFIT
+/FEAT /ID" 2f15afdc-77ab-11ec-bf99-74d02b9c2012"/ /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Elemental Shield FEATNAME/
 /ORIGIN Elemental Defender ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Free ACTION/
@@ -31,6 +33,7 @@ DESCRIPTION/
 /EFFECTS The target of the attack receives a bonus of +2 DR, +5 DR at legendary tier, and +8 DR at mythic tier. EFFECTS/
 /FLAVOR A shield of elemental material appears wherever your enemy focuses his attention. FLAVOR/
 FEAT/
+BENEFIT/
 BENEFITS/
 BOON/
 /BOON /ID" c65a981e-69f3-11ec-a8c9-74d02b9c2012"/ /BOONNAME Combat Focus BOONNAME/
@@ -54,7 +57,8 @@ FLEXCELL/
 You have learned to project the magic flowing through your blade at your most immediate enemy.
 DESCRIPTION/
 /BENEFITS
-/FEAT /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Elemental Defense FEATNAME/
+/BENEFIT
+/FEAT /ID" 3bd6046a-77ab-11ec-839a-74d02b9c2012"/ /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Elemental Defense FEATNAME/
 /ORIGIN Arcane Duelist ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Free ACTION/
@@ -67,6 +71,7 @@ DESCRIPTION/
 /SPECIAL This feat does not grant an opportunity to opponents when used. SPECIAL/
 /FLAVOR You keep your opponent engaged, even at a distance. FLAVOR/
 FEAT/
+BENEFIT/
 BENEFITS/
 BOON/
 /BOON /ID" f00d1bf2-69fb-11ec-b335-74d02b9c2012"/
@@ -79,8 +84,8 @@ A spell blade's weapon is an extension of his power to which he is forever bonde
 DESCRIPTION/
 /BENEFITS
 /BENEFIT
-You gain access to the ofllowing feat.
-/FEAT
+You gain access to the following feat.
+/FEAT /ID" 319bf284-780a-11ec-b82e-74d02b9c2012"/
 /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Call Weapon FEATNAME/
 /ORIGIN Weapon Bond ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Free ACTION/
 /TAGS summoning TAGS/
@@ -107,7 +112,7 @@ DESCRIPTION/
 /BENEFITS
 /BENEFIT
 You gain access to the ofllowing feat.
-/FEAT
+/FEAT /ID" 457d3ef2-780a-11ec-952e-74d02b9c2012"/
 /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Wall of Fire FEATNAME/
 /ORIGIN Line of Defense ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Move ACTION/
 /TAGS evocation TAGS/

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>GeneralKnowledge</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>DungeonMaster.WebHome</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1336374748000</creationDate>
+<date>1336992845000</date>
+<contentUpdateDate>1336992845000</contentUpdateDate>
+<version>4.1</version>
+<title>General Knowledge</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>Collect stuff here. It can be moved and recategorized later.
+
+* [[Karkath&gt;&gt;doc:Karkath]]
+* [[Arra Kleth&gt;&gt;doc:ArraKleth]]
+* [[Cult of Pazuzu&gt;&gt;doc:CultOfPazuzu]]
+* [[The First World&gt;&gt;doc:FirstWorld]] - also known as the Shadowfell.
+* [[The Well of Stars&gt;&gt;doc:WellOfStars]] - an ancient bridge between worlds.</content></xwikidoc>

@@ -14,14 +14,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+import { Rules } from './rules.js';
+
 class Character {
 	id;
 	chardata;
 	dData;
+	rules;
 		
 	constructor(id,data) {
 		this.id = id;
-		this.chardata = data;
+		this.characterData = data;
 		if(typeof this.proficiencies === 'undefined') {
 			this.proficiencies = { knacks: {}, tools: [], other: []};
 		}
@@ -31,6 +34,7 @@ class Character {
 		if(typeof this.equipment === 'undefined') {
 			this.equipment = {};
 		}
+
         this.dData = {
             levelbonus: 0,
             proficiencies: {
@@ -59,7 +63,11 @@ class Character {
 
 	}
 	
-    get proficiencies() {
+    calculate() {
+        this.rules.calculate(this);
+    }
+    
+   get proficiencies() {
         return this.characterData.proficiencies;
     }
     
@@ -93,14 +101,12 @@ class Character {
     
     set characterData(data) {
         this.chardata = data;
+		this.rules = new Rules(window.gebApp.callingRepo);
+		this.rules.getCalling(this);
     }
     
     get characterData() {
         return this.chardata;
-    }
-    
-    calculate(rules) {
-        rules.calculate(this);
     }
     
     get name() {

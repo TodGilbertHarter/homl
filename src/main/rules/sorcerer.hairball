@@ -1,13 +1,14 @@
-/CALLING" Sorcerer"/
+/CALLING /ID" 0240256c-794c-11ec-8314-74d02b9c2012"/
+/CALLINGNAME Sorcerer CALLINGNAME/
 /TRAITS
-/ROLE" Striker"/
-/POWERSOURCE" Elemental"/
-/DAMAGEDIE" D8"/
-/WEAPONS" Any 1"/
-/IMPLEMENTS" TBD"/
-/KNACKS" Survival, Arcana"/
-/HITPOINTS" 5"/
-/STARTHITPOINTS" 9"/
+/ROLE Striker ROLE/
+/POWERSOURCE Elemental POWERSOURCE/
+/DAMAGEDIE D8 DAMAGEDIE/
+/WEAPONS Any 1 WEAPONS/
+/IMPLEMENTS TBD IMPLEMENTS/
+/KNACKS Survival, Arcana KNACKS/
+/HITPOINTS 5 HITPOINTS/
+/STARTHITPOINTS 9 STARTHITPOINTS/
 TRAITS/
 
 Sorcerers have taken attunement to the elemental forces to an extreme; they are endowed by some peculiarity of their heritage, exposure to some sort of powerful magic, etc with the ability to generate magical effects. Different types of sorcerers tap into their power source in different ways and their powers come from different circumstances. Some sorcerers have a magical heritage, such as the blood of dragons in their ancestry; other sorcerers have been exposed to extreme magic; some perhaps have interacted with powerful elemental beings, either serving them or being served by them. Some sorcerers might be channeling elemental power emanating from a certain location, such as a volcano or the deep ocean. 

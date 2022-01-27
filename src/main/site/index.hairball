@@ -19,6 +19,9 @@
 /MODULE" js/player.js"/
 /MODULE" js/playerrepository.js"/
 /MODULE" js/characterrepository.js"/
+/MODULE" js/calling.js"/
+/MODULE" js/callingrepository.js"/
+/MODULE" js/speciesrepository.js"/
 /MODULE" js/rules.js"/
 /MODULE" js/character.js"/
 /MODULE" js/charactersheet.js"/
@@ -44,6 +47,7 @@ TEMPLATE/
 /MAINMENU 
 <div id='gamemenu' class='barmenu leftmenu'><span>game</span><ul><li id='new game'>New</li><li id='find game'>Find</li><li id='recent games'>Recent</li></ul></div> 
 <div id='charactermenu' class='barmenu middlemenu'><span>Character</span><ul><li id='new character'>New</li><li id='save character'>Save</li><li id='close character'>Close</li></ul></div>
+<div id='placesmenu' class='barmenu middlemenu'><span>Places</span><ul><li id='erithnoi'>Erithnoi</li><li id='homl'>HoML Rules</li></ul></div>
 <div id='prefsmenu' class='barmenu rightmenu'><span>settings</span><ul><li id='player settings'>Player</li></ul></div> 
 MAINMENU/ 
 /WIDGETPANEL /SESSION/ WIDGETPANEL/

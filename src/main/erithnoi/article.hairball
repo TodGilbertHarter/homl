@@ -29,17 +29,36 @@ Hairball.
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/css/article.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="css/web.css" media="screen"/>
 <title> /" /DUP /. </title>
 </head><body><div><div>
 <article> /. </article>
  :/
-/: ARTICLE/ </div></div></body></html> :/
-/: /WEB <div class='crumbs'><a href="../erithnoi.html">Home</a><web class='web'> /GETMATCHING WEB/ /DELIMITED /STRIP <a href=" /DUP /. /WebHome.html "> /. </a></web> :/
+/: SUMMARY/ </summary> :/
+/: /COPYRIGHT <copyright> :/
+/: COPYRIGHT/ </copyright> :/
+/: /COPY/ &copy; :/
+/: /LICENSE <section class="license"> /H1 License H1/ :/
+/: LICENSE/ </section> :/
+/: /.VERSION /SPACE <span class="version"> /VERSION /. </span> /SPACE :/
+/: /.NOW /SPACE <span class="date"> /.NOW </span> /SPACE :/
+/: /LEGAL/ 
+/LICENSE
+/P Copyright /SPACE /COPY/ /SPACE 2022 Tod G. Harter. All rights reserved. P/
+/P No unauthorized distribution without the express written permission 
+of the copyright holder. P/
+/P This document was prepared using Hairball version /.VERSION on /.NOW P/
+LICENSE/
+:/ 
+/: ARTICLE/ /LEGAL/ </div></div></body></html> :/
+/: /WEB <div class='crumbs'><a href="../erithnoi.html">Home</a><web class='web'> /GETMATCHING WEB/ /DELIMITED /TRIM <a href=" ../ /DUP /. /WebHome.html "> /. </a></web> :/
 /: WEB/ /[" Mismatch, WEB/ must follow /WEB "]/ /ABORT  :/
 /: /PARENT <parent class='parent'> :/
 /: PARENT/ </parent></div> :/
 /: /UL <ul> :/
 /: UL/ </ul> :/
+/: /OL <ol> :/
+/: OL/ </ol> :/
 /: /LI <li> :/
 /: LI/ </li> :/
 /: /CHAPTER <section class='chapter'> :/
@@ -87,7 +106,7 @@ Hairball.
 /: COL/ </col> :/
 
 /: /IMAGE <img src=" :/
-/: /IMAGE=" /" <img style="width: /. " src=" :/
+/: /IMAGE=" /" <img style=" /. " src=" :/
 /: IMAGE/ "/> :/
 /: /ARTICLEREF /SPACE <a href=" :/
 /: ARTICLEREF/ </a> /SPACE :/ 
@@ -105,8 +124,6 @@ Hairball.
 /: /FLEXCELL <div class="flexcell"> :/
 /: FLEXROW/ DIV/ :/
 /: FLEXCELL/ DIV/ :/
-/: /.VERSION /SPACE <span class="version"> /VERSION /. </span> /SPACE :/
-/: /.NOW /SPACE <span class="date"> /.NOW </span> /SPACE :/
 /* set a bit more sane format for /.NOW to use */
 /" YYYY-MM-dd "/ /MAKEFORMATTER /'DATEFORMAT /V!
 

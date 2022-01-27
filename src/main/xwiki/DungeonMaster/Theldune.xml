@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>Theldune</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>DungeonMaster.Midrealms</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1336883794000</creationDate>
+<date>1336883823000</date>
+<contentUpdateDate>1336883823000</contentUpdateDate>
+<version>1.1</version>
+<title>Theldune</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment>Copied from xwiki:DungeonMaster.ThelduneBorkBorkBork</comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>Theldune is an area in the northern part of the Midrealms.</content></xwikidoc>

@@ -1,13 +1,14 @@
-/CALLING" Rogue"/
+/CALLING /ID" f16af456-794b-11ec-a1bc-74d02b9c2012"/
+/CALLINGNAME Rogue CALLINGNAME/
 /TRAITS
-/ROLE" Striker"/
-/POWERSOURCE" Martial"/
-/DAMAGEDIE" D8"/
-/WEAPONS" Any 2"/
-/IMPLEMENTS" None"/
-/KNACKS" Thievery, Stealth"/
-/HITPOINTS" 5"/
-/STARTHITPOINTS" 9"/
+/ROLE Striker ROLE/
+/POWERSOURCE Martial POWERSOURCE/
+/DAMAGEDIE D8 DAMAGEDIE/
+/WEAPONS Any 2 WEAPONS/
+/IMPLEMENTS None IMPLEMENTS/
+/KNACKS Thievery, Stealth KNACKS/
+/HITPOINTS 5 HITPOINTS/
+/STARTHITPOINTS 9 STARTHITPOINTS/
 TRAITS/
 The rogue is a character who survives by his quick wits, cunning, and a good eye with a shiv when push comes to shove. Rogues never like a fight that has even odds. They prefer to surprise their enemies, attack from the flanks, or snipe from the shadows. When not engaged in a fight they tend to be glib, fast talking, and freewheeling types. Many have a dark past, but many also hide a good heart beneath a hard exterior.
 /FEATURES
@@ -101,7 +102,7 @@ DESCRIPTION/
 /BENEFITS
 /BENEFIT 
 You gain access to the following feat: /BR
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Fast Draw FEATNAME/
+/FEAT /ID" c3562420-77aa-11ec-8732-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Fast Draw FEATNAME/
 /ORIGIN Quick Draw Artist ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Free ACTION/
@@ -122,7 +123,7 @@ DESCRIPTION/
 /BENEFITS
 /BENEFIT 
 You gain access to the following feat: /BR
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Blinding Strike FEATNAME/
+/FEAT /ID" d17a2e02-77aa-11ec-8a53-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Blinding Strike FEATNAME/
 /ORIGIN Dirty Fighter ORIGIN/
 /LEVEL 4 LEVEL/
 /ACTION Major ACTION/
@@ -149,7 +150,7 @@ You have learned the art of dueling.
 DESCRIPTION/
 /BENEFITS
 /BENEFIT
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Vicious Riposte FEATNAME/
+/FEAT /ID" de876236-77aa-11ec-8fc7-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Vicious Riposte FEATNAME/
 /ORIGIN Duelist ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Opportunity ACTION/
@@ -174,7 +175,7 @@ You have become a master of the art of dueling.
 DESCRIPTION/
 /BENEFITS
 /BENEFIT
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Flashing Blade FEATNAME/
+/FEAT /ID" ed72765a-77aa-11ec-bc4a-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Flashing Blade FEATNAME/
 /ORIGIN Master Duelist ORIGIN/
 /LEVEL 4 LEVEL/
 /ACTION Free ACTION/
@@ -195,7 +196,7 @@ DESCRIPTION/
 /BENEFITS
 /BENEFIT When you hit an opponent with a melee attack using a light sword weapon, you can slide the target one square. BENEFIT/
 /BENEFIT
-/FEAT /SOURCE martial SOURCE/ /TIER legendary TIER/ /FEATNAME Mark of the Legend FEATNAME/
+/FEAT /ID" fb3fe95c-77aa-11ec-9c1c-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER legendary TIER/ /FEATNAME Mark of the Legend FEATNAME/
 /ORIGIN Legendary Duelist ORIGIN/
 /LEVEL 9 LEVEL/
 /ACTION Free ACTION/

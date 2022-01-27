@@ -11,6 +11,7 @@ of HTML. Include this and a character data document, the result will be an HTML 
 /: /GETMATCHING /DOER /DROP /W /W2L /MAKELITERAL /HERE! :/
 /: /VERSION <!-- character version :/
 /: VERSION/ --!><title> :/
+
 /: /FIELD <attribute-field value=" /. " :/
 /: /FIELDNAME /SPACE label=" :/
 /: FIELDNAME/ " :/
@@ -19,6 +20,16 @@ of HTML. Include this and a character data document, the result will be an HTML 
 /: /FIELDID /SPACE id=" :/
 /: FIELDID/ "> :/
 /: FIELD/ </attribute-field> :/
+
+/: /CALCULATEDFIELD <calculated-field value=" /. " :/
+/: /FIELDNAME /SPACE label=" :/
+/: FIELDNAME/ " :/
+/: /FIELDWIDTH /SPACE style="width: /SPACE :/
+/: FIELDWIDTH/ ;" :/
+/: /FIELDID /SPACE id=" :/
+/: FIELDID/ "> :/
+/: CALCULATEDFIELD/ </calculated-field> :/
+
 /: /SHEETTITLE <header>
     <div class='mastertitle'>
         <div class='topborder'></div>
@@ -71,7 +82,7 @@ function refreshCharacter() {
 /: /SPECIES /GETMATCHING SPECIES/ /DELIMITED /FIELD /FIELDNAME Species: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterspecies FIELDID/ FIELD/ :/
 /: SPECIES/ /[" Mismatch, SPECIES/ must follow /SPECIES "]/ /ABORT :/
 
-/: /VISION /GETMATCHING VISION/ /DELIMITED /FIELD /FIELDNAME Vision: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID charactervision FIELDID/ FIELD/ :/
+/: /VISION /GETMATCHING VISION/ /DELIMITED /CALCULATEDFIELD /FIELDNAME Vision: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID charactervision FIELDID/ CALCULATEDFIELD/ :/
 /: VISION/ /[" Mismatch, VISION/ must follow /VISION "]/ /ABORT :/
 
 /: /FATE /GETMATCHING FATE/ /DELIMITED /FIELD /FIELDNAME Fate: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterfate FIELDID/ FIELD/ SHEETROW/ :/
@@ -102,7 +113,7 @@ function refreshCharacter() {
 
 /: /PASSIVEPERCEPTION /GETMATCHING PASSIVEPERCEPTION/ /DELIMITED /FLEXCELL2 /SHEETROW /FIELD /FIELDNAME Perception: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterperception FIELDID/ FIELD/ :/
 /: PASSIVEPERCEPTION/ /[" Mismatch, PASSIVEPERCEPTION/ must follow /PASSIVEPERCEPTION "]/ /ABORT :/
-/: /MAXHITPOINTS /GETMATCHING MAXHITPOINTS/ /DELIMITED /FIELD /FIELDNAME / FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID charactermaxhitpoints FIELDID/ FIELD/ :/
+/: /MAXHITPOINTS /GETMATCHING MAXHITPOINTS/ /DELIMITED /CALCULATEDFIELD /FIELDNAME / FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID charactermaxhitpoints FIELDID/ CALCULATEDFIELD/ :/
 /: MAXHITPOINTS/ /[" Mismatch, MAXHITPOINTS/ must follow /MAXHITPOINTS "]/ /ABORT :/
 /: /HITPOINTS /GETMATCHING HITPOINTS/ /DELIMITED /FIELD /FIELDNAME Hit Points: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterhitpoints FIELDID/ FIELD/ :/
 /: HITPOINTS/ /[" Mismatch, HITPOINTS/ must follow /HITPOINTS "]/ /ABORT :/

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>GalarNut</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>DungeonMaster.NPCs</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1337496049000</creationDate>
+<date>1337496307000</date>
+<contentUpdateDate>1337496307000</contentUpdateDate>
+<version>3.1</version>
+<title>GalarNut</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>= The Treelord Galar Nut =
+
+Galar Nut is a [[sarduni&gt;&gt;SarduniElves]] [[TreeLord&gt;&gt;TreeLord]] with an ancestral claim in the [[ForestOfGrin&gt;&gt;ForestOfGrin]]. Clan Nut legendarily holds the now defunct title of Lords of the Valley of Kings, the ancient burial grounds of the later kings of Civari. This clan also has unusually close ties with the eldar as its ancestors were amongst a small group of eldar who joined the sarduni after the fall of Civari rather than return to the Fey. Legend has it that this was due to some sort of curse.
+
+Currently Galar Nut is the Tree Lord of the Tree of Readiness at [[Hath Iilikki&gt;&gt;HathIilikki]]. In this position she has a secondary responsibility to [[Draelek Turoth&gt;&gt;DraelekTuroth]], the Warden of [[Suri Natha&gt;&gt;SuriNatha]], who's clan has a small holding in the tree due to a technical responsibility for security in the northern area of the [[Vale of Tears&gt;&gt;ValeOfTears]]. While Galar has no particular loyalty to Draelek she is inclined to assist him for 2 reasons. Her own claims are founded on a basis similar to those of Draelek's and she sees no reason to be at odds with Clan Turoth. Thus she is willing to help him out as long as it doesn't involve any significant cost to herself.
+
+== Characteristics ==
+
+**Personality:** Galar Nut is stubborn and obsessed with her personal mission and also quite sensitive to perceived encroachments on her prerogatives. Getting on her bad side is easy, simply hold a different opinion than she does. Getting on her good side is more difficult but she will honor obligations and return good will. She most enjoys studying history and tree lore. Those with similar interests can engage her. When she puts her mind to it she can be quite convincing and commands the loyalty of her followers.
+
+**Appearance:** Galar is fairly plain looking for an elf. In the field she dresses in typical elf garb and sports a medallion indicating her status as a tree lord. She also wears an ancient bracelet inscribed with eldar script and symbology of the high tree lords of ancient Civari, a relic of her family's distant past.
+
+**Mannerisms:** Galar is quiet amongst people she does not know but when she speaks she expects to be heard. She can be quite loud when necessary and may become bossy. She tends to use archaic mannerisms of speech and enjoys displaying a knowledge of ancient eldar and elf traditions and etiquette.
+
+{{html}} &lt;div id="detail"&gt; &lt;h1 class="monster"&gt;Galar Nut&lt;br/&gt; &lt;span class="type"&gt;Medium   fey humanoid, elf&lt;/span&gt;&lt;br/&gt; &lt;span class="level"&gt;Level 9 Soldier (Leader)&lt;span class="xp"&gt; XP 400&lt;/span&gt;&lt;/span&gt; &lt;/h1&gt;  &lt;p class="flavor"&gt;&lt;b&gt;Initiative&lt;/b&gt; +11 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;Senses&lt;/b&gt; Perception +13; low-light vision&lt;br/&gt; &lt;b&gt;HP&lt;/b&gt; 97; &lt;b&gt;Bloodied&lt;/b&gt; 48&lt;br/&gt; &lt;b&gt;AC&lt;/b&gt; 25; &lt;b&gt;Fortitude&lt;/b&gt; 20, &lt;b&gt;Reflex&lt;/b&gt; 22, &lt;b&gt;Will&lt;/b&gt; 20&lt;br/&gt; &lt;b&gt;Speed&lt;/b&gt; 7&lt;/p&gt;&lt;p class="flavor alt"&gt;&lt;img src="http://www.wizards.com/dnd/images/symbol/S2.gif" /&gt; &lt;b&gt;Rapier&lt;/b&gt; (standard, at-will) &lt;img src="http://www.wizards.com/dnd/images/symbol/x.gif" /&gt; &lt;b&gt;Weapon&lt;/b&gt;&lt;/p&gt; &lt;p class="flavorIndent"&gt;+16 vs AC; 1d8+8 damage, and the target is marked until the end of Galar's next turn.&lt;/p&gt; &lt;p class="flavor alt"&gt;&lt;img src="http://www.wizards.com/dnd/images/symbol/S3.gif" /&gt; &lt;b&gt;Shortbow&lt;/b&gt; (standard, at-will) &lt;img src="http://www.wizards.com/dnd/images/symbol/x.gif" /&gt; &lt;b&gt;Weapon&lt;/b&gt;&lt;/p&gt;&lt;p class="flavorIndent"&gt;Ranged 15/30; +16 vs AC; 1d8+8 damage, and the target is marked until the end of Galar's next turn.&lt;/p&gt; &lt;p class="flavor alt"&gt;&lt;img src="http://www.wizards.com/dnd/images/symbol/Z2a.gif" /&gt; &lt;b&gt;Twin Fang Charge&lt;/b&gt; (standard, at-will) &lt;/p&gt; &lt;p class="flavorIndent"&gt;Galar charges and then makes two rapier attacks.&lt;/p&gt; &lt;p class="flavor alt"&gt;&lt;img src="http://www.wizards.com/dnd/images/symbol/Z2a.gif" /&gt; &lt;b&gt;Twin Fang Strike&lt;/b&gt; (standard, at-will) &lt;/p&gt; &lt;p class="flavorIndent"&gt;Galar makes two rapier attacks.&lt;/p&gt; &lt;p class="flavor alt"&gt;&lt;img src="http://www.wizards.com/dnd/images/symbol/Z3a.gif" /&gt; &lt;b&gt;Draw Attention&lt;/b&gt; (standard; requires a shortbow, encounter) &lt;img src="http://www.wizards.com/dnd/images/symbol/x.gif" /&gt; &lt;b&gt;Weapon&lt;/b&gt;&lt;/p&gt; &lt;p class="flavorIndent"&gt;Ranged 15/30; +16 vs Fortitude; 3d8+5 damage; the target is marked, and any creature currently marked by the target is no longer marked by the target.&lt;/p&gt;&lt;p class="flavor alt"&gt; &lt;b&gt;Sustained Mark&lt;/b&gt;&lt;/p&gt;&lt;p class="flavorIndent"&gt;If Galar ends her turn adjacent to a target marked by her, that target remains marked until the end of her next turn.&lt;/p&gt; &lt;p class="flavor alt"&gt; &lt;b&gt;Elven Accuracy &lt;/b&gt; (free; encounter) &lt;/p&gt; &lt;p class="flavorIndent"&gt;Galar can reroll an attack roll. She must use the second roll, even if it%u2019s lower.&lt;/p&gt; &lt;p class="flavor alt"&gt; &lt;b&gt;Wild Step&lt;/b&gt;&lt;/p&gt; &lt;p class="flavorIndent"&gt;Galar ignores difficult terrain when she shifts.&lt;/p&gt; &lt;p class="flavor alt"&gt; &lt;b&gt;Born in the Saddle&lt;/b&gt;&lt;/p&gt;&lt;p class="flavorIndent"&gt;Galar bestows her wild step power on any mount she rides.&lt;/p&gt; &lt;p class="flavor alt"&gt;&lt;b&gt;Alignment&lt;/b&gt; Unaligned&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt; Languages&lt;/b&gt; Common, Elven&lt;br/&gt;&lt;b&gt;Skills&lt;/b&gt; Nature +13, Stealth +14&lt;br/&gt;&lt;b&gt;Str&lt;/b&gt; 14 (+6)  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;Dex&lt;/b&gt; 20 (+9)  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;Wis&lt;/b&gt; 14 (+6)&lt;br/&gt;&lt;b&gt;Con&lt;/b&gt; 17 (+7)  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;Int&lt;/b&gt; 13 (+5)  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;Cha&lt;/b&gt; 17 (+7)&lt;/p&gt; &lt;p class="flavor alt"&gt;&lt;b&gt;Equipment&lt;/b&gt;: arrow x20, leather armor, rapier, shortbow.&lt;/p&gt;&lt;br/&gt; &lt;/div&gt; {{/html}}
+
+== The Curse ==
+
+In fact there is a curse on the Nut clan. During the last days of Civari one of their ancestors betrayed the last king in an attempt to save the grove of Arra Kleth which once grew at the head of the Valley of Kings. The tree lord Kalash Nut, an elf, was the high grove lord of the grove of Habach Iilikki . This was one of two master groves from which the nuts of the Arra Kleth were traditionally grown. He loved an eldar woman, Milicashi, who was the sister of the last high eldar king of Civari, Falas Nathar. Nathar however would not permit them to be together.
+
+As Civari collapsed into chaos and disorder the three kings retreated to Habach Iilikki where they made their last stand. Fearing the destruction of his grove and desiring freedom from the dictates of Falas Nathar Kalash Nut arranged to lock the king's party out of their refuge as they returned from a battle with their enemies hot on their heels. The human king Orman Tarash perished in the aftermath and when Falas Nathar confronted Kalash Nut the tree lord slew the king himself. In retribution Falas Nathar cursed Nut and all that would come from him to bare no issue. This curse was in fact so potent that it caused the grove of Habach Iilikki to whither. As the seed of every grove of Arra Kleth came ultimately from this one master grove the entire race of trees was made barren. Nathar however had no reason to curse his sister because he did not know that she bore Nut's child and thus the clan partially escaped the curse.
+
+Kalash Nut himself however was devastated by the realization that he had sown the seeds of the destruction of the Arra Kleth. Becoming wild and suicidal he was soon killed in battle when a [[ShadowFall&gt;&gt;ShadowFall]] overwhelmed Habach Iilikki. Milicashi and his son escaped to [[Hath Iilikki&gt;&gt;HathIilikki]] where he took up his father's craft.
+
+This curse is little known of even amongst the eldar. Nut himself saw to the burial of the last of the kings. The scribe Sarash Telar was one of the few who knew something of these events and when Nut found that the history he had written revealed his part in things he ordered it too sealed in Nathar's tomb. The scribe however penned another account of these last events which is one of only a very few documents which have survived to this day. The [[Account of Sarash Telar&gt;&gt;AccountOfSarashTelar]] is held in the library of the [[Hulamic Academy of Magic&gt;&gt;HulamicAcademyOfMagic]] in the [[Town of Dinford&gt;&gt;TownOfDinford]] currently.
+
+Galar Nut herself is obsessed with the family history. Milicashi passed the tale of the curse down to her children and it has remained a secret lore of the family. However she knew nothing of the effect of the</content></xwikidoc>

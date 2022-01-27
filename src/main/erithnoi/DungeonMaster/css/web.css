@@ -1,0 +1,7 @@
+body > div > div {
+	background-color: #8a8d4e;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3em;
+}

@@ -4,12 +4,13 @@ Every character is a member of some species, which the player will choose when f
 
 Instead think of species as a starting point. If your character is human, he's probably similar to other humans. He probably has parents, and he probably looks like them and his personality and other attributes are probably similar to theirs. However, the world of HoML is magical, and fantastic, and it is possible he's a changeling, or somehow touched by fate. Maybe he was raised by elves and shares some traits with them. As with other categories, these are intended more as a starting point, baseline, and something you can use when elaborating on this character element isn't desired. Your character could be a generic dwarf, or he could be a very special unique dwarf with characteristics different from other dwarves.
 /SOURCE" dvarg.hairball"/
-/SPECIES" Human "/
+/SPECIES /ID" b740aeda-7a57-11ec-aad9-74d02b9c2012"/
+/SPECIESNAME Human SPECIESNAME/
 /TRAITS
-/SIZE" Medium "/
-/SPEED" 6 "/
-/HEIGHT" 152cm - 185cm "/
-/WEIGHT" 45kg - 100kg "/ 
+/SIZE Medium SIZE/
+/SPEED 6 SPEED/
+/HEIGHT 152cm - 185cm HEIGHT/
+/WEIGHT 45kg - 100kg WEIGHT/ 
 TRAITS/
 Humans are typical inhabitants of the world. They are ordinary people. In many settings humans are the most common or even the only race which exists. Humans are the assumed baseline for player characters. Where other races differ from humans they are provided with racial attributes and limitations which illustrate those differences. Human heroes are likely to have any calling.
 /SUBSECTION" Culture "/
@@ -22,10 +23,10 @@ Humans adopt a wide variety of different social organization types. Some live in
 
 In game terms backgrounds of any social class, occupation, etc. are potentially open to all humans.
 SUBSECTION/
-/SUBSECTION" Boons"/
+/SUBSECTION" Benefits"/
 
 Humans are associated with the following boons.
-/TOPIC" Major Boons"/
+/SPECIESBOONS
 
 Human characters may select from the following boons at first level.
 /BOON /ID" 888b294a-69f3-11ec-9e79-74d02b9c2012"/ /BOONNAME Resourceful BOONNAME/
@@ -41,7 +42,7 @@ You gain an added knack proficiency. Pick any knack, you are proficient in it.
 BENEFIT/
 /BENEFIT
 You gain access to the following feat: /BR
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Adapt to Circumstances FEATNAME/
+/FEAT /ID" 1062e3ca-77ab-11ec-ab00-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Adapt to Circumstances FEATNAME/
 /ORIGIN Human ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION No Action ACTION/
@@ -52,19 +53,18 @@ FEAT/
 BENEFIT/
 BENEFITS/
 BOON/
-TOPIC/
-/TOPIC" Minor Boons"/
 
 All human characters gain access to the following boons.
-TOPIC/
+SPECIESBOONS/
 SUBSECTION/
 SPECIES/
-/SPECIES" Wose"/
+/SPECIES /ID" ce795782-7a57-11ec-8957-74d02b9c2012"/
+/SPECIESNAME Wose SPECIESNAME/
 /TRAITS
-/SIZE" Medium "/
-/SPEED" 6 "/
-/HEIGHT" 152cm - 230cm "/
-/WEIGHT" 50kg - 150kg "/ 
+/SIZE Medium SIZE/
+/SPEED 6 SPEED/
+/HEIGHT 152cm - 230cm HEIGHT/
+/WEIGHT 50kg - 150kg WEIGHT/ 
 TRAITS/
 The wose are a race of beings unlike the more fleshly races of men, eldar, and dwarves. Their bodies are more vegetable in nature than those of the other races, and they look quite plantlike, with skin which resembles, bark, moss, or sometimes stone. 
 
@@ -101,10 +101,10 @@ TOPIC/
 appear stony and there skin has the consistency of rock, usually looking a bit like lichen-stained granite or sometimes limestone. The eyes of guardians have a dry stony look to them as well, though they do appear slightly polished. The iris is usually grayish red to dark red in color. Guardians are usually the shortest of the wose, and are very heavily built, being almost dwarf-like in their proportions. Their fingers and toes are short, stubby, and stone-like, with a powerful grip.
 TOPIC/
 SUBSECTION/
-/SUBSECTION" Boons"/
+/SUBSECTION" Benefits"/
 
 The following boons are associated with the wose species:
-/TOPIC" Major Boons"/
+/SPECIESBOONS
 
 Wose characters may choose one of the following major boons at first level
 /FLEXROW
@@ -123,7 +123,7 @@ DESCRIPTION/
 /BENEFIT Your knowledge of plantlife is extensive, gain a proficiency bonus to any check relating to plants or knowledge about plants. BENEFIT/
 /BENEFIT You gain access to the following feats:
 
-/FEAT /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Silence of the Ancients FEATNAME/
+/FEAT /ID" 1dc7c454-77ab-11ec-b82b-74d02b9c2012"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Silence of the Ancients FEATNAME/
 /ORIGIN Child of the Wood ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Major ACTION/
@@ -149,11 +149,9 @@ DESCRIPTION/
 BENEFITS/
 BOON/
 FLEXCELL/
-TOPIC/
-/TOPIC" Minor Boons"/
-
+FLEXROW/
 All wose characters receive the following minor boons.
-TOPIC/
+SPECIESBOONS/
 SUBSECTION/
 SPECIES/
 CHAPTER/

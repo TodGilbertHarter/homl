@@ -6,11 +6,23 @@
 ARTICLEREF/ PARENT/
 /CHAPTER The Younger Gods CHAPTER/
 
-The younger, or everyday, gods are of two origins. The mightiest among them are the children of the Elemental Gods, who overthrew the rule of their parents long ago. Others are once mortal beings which have ascended to immortal status. A few are the result of liaisons between mortals and the gods or between gods and other lesser immortal beings.
+The younger, or everyday, gods are of two origins. The mightiest among them are the children of the Elder Gods, 
+who overthrew the rule of their parents long ago. Others are once mortal beings which have ascended to immortal status. 
+A few are the result of liaisons between mortals and the gods or between gods and other lesser immortal beings.
 
-These gods are those which are worshiped every day by ordinary mortals of the younger races. These beings receive and sustain their powers primarily from the mental energies of lesser beings, their worshipers. Thus is very important to the gods to receive the worship, adulation, and loyalty of their worshipers. In order to achieve their exalted position and command the loyalty of their worshipers most gods have found it useful or necessary to form an aspect or sphere of influence. Thus one god might concern itself with law, truthfulness and oath taking, while another might focus on healing, and another striking down ones enemies. To a large extent a god's aspect dictates the areas in which it can be effective. A god of death will not be very good at calming storms at sea for example, but would be able to raise the dead or slay the living very effectively.
+These gods are those which are worshiped every day by ordinary mortals of the younger races. These beings receive and 
+sustain their powers primarily from the mental energies of lesser beings, their worshipers. Thus is very important to 
+the gods to receive the worship, adulation, and loyalty of their worshipers. In order to achieve their exalted position 
+and command the loyalty of their worshipers most gods have found it useful or necessary to form an aspect or sphere of 
+influence. Thus one god might concern itself with law, truthfulness and oath taking, while another might focus on 
+healing, and another striking down ones enemies. To a large extent a god's aspect dictates the areas in which it can 
+be effective. A god of death will not be very good at calming storms at sea for example, but would be able to raise 
+the dead or slay the living very effectively.
 
-Amongst these gods there are those of all different alignments. The gods are not in any large sense unified or organized. Many of them, such as the main human worshiped gods, tend to band together and may often share goals, but they can also at times oppose one another. The only thing which generally unites the gods is even a hint of an attempt by the Elemental Gods to escape from their imprisonment and return to power.
+Amongst these gods there are those of all different alignments. The gods are not in any large sense unified or organized. 
+Many of them, such as the main human worshiped gods, tend to band together and may often share goals, but they can 
+also at times oppose one another. The only thing which generally unites the gods is even a hint of an attempt by the 
+Elder Gods to escape from their imprisonment and return to power.
 
 
 /TABLE 
@@ -31,7 +43,7 @@ Amongst these gods there are those of all different alignments. The gods are not
 /TR  /TD /ARTICLEREF /REFNAME ./GodThrul.html REFNAME/  /REFTEXT Thrul REFTEXT/ ARTICLEREF/  /TD/ strength, wrestling, boxing /TD/ demigod /TD/ good /TD/ \\ TD/ TR/
 /TR  /TD /ARTICLEREF /REFNAME ./Imotnoi.html REFNAME/  /REFTEXT Imotnoi REFTEXT/ ARTICLEREF/  /TD/ messengers,gates /TD/ demigod /TD/ unaligned /TD/ patron of those who travel, especially by magical means\\ TD/ TR/
 /TR  /TD /ARTICLEREF /REFNAME ./GodOlorin.html REFNAME/  /REFTEXT Olorin REFTEXT/ ARTICLEREF/  /TD/ night,sleep,magic /TD/ god /TD/ unaligned /TD/ \\ TD/ TR/
-/TR  /TD /ARTICLEREF /REFNAME ./Corellon.html REFNAME/  /REFTEXT Corellon REFTEXT/ ARTICLEREF/  /TD/ elves /TD/ god /TD/ unaligned /TD/ lord of the fey TD/ TR/
-/TR  /TD /ARTICLEREF /REFNAME ./Moradin.html REFNAME/  /REFTEXT Moradin REFTEXT/ ARTICLEREF/  /TD/ dwarves, the forge, craft /TD/ god /TD/ lawful good /TD/ lord of the forge and patron of dwarves and craftsmen TD/ TR/
-/TR  /TD  /ARTICLEREF /REFNAME ./Gruumsh.html REFNAME/  /REFTEXT Gruumsh REFTEXT/ ARTICLEREF/  /TD/ orcs, destruction /TD/ god /TD/ chaotic evil /TD/   TD/ TR/ TABLE/
+/TR  /TD /ARTICLEREF /REFNAME ./Alegast.html REFNAME/  /REFTEXT Alegast REFTEXT/ ARTICLEREF/  /TD/ elves /TD/ god /TD/ unaligned /TD/ lord of the fey TD/ TR/
+/TR  /TD /ARTICLEREF /REFNAME ./Duron.html REFNAME/  /REFTEXT Duron REFTEXT/ ARTICLEREF/  /TD/ dwarves, the forge, craft /TD/ god /TD/ lawful good /TD/ lord of the forge and patron of dwarves and craftsmen TD/ TR/
+/TR  /TD  /ARTICLEREF /REFNAME ./Yrrch.html REFNAME/  /REFTEXT Yrrch REFTEXT/ ARTICLEREF/  /TD/ orcs, destruction /TD/ god /TD/ chaotic evil /TD/   TD/ TR/ TABLE/
 ARTICLE/

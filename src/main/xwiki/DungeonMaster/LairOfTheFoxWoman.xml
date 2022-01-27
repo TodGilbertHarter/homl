@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>LairOfTheFoxWoman</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>DungeonMaster.EncounterAtDwarfRoadGate</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1337584542000</creationDate>
+<date>1337584701000</date>
+<contentUpdateDate>1337584701000</contentUpdateDate>
+<version>2.1</version>
+<title>LairOfTheFoxWoman</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>= Lair of the Fox Woman =
+
+Deep in the woods of western Har is a lonely cottage nestled in a small clearing in the piney woods. Anyone approaching the cottage will see what appears to be a simple domestic scene with several men loitering around the front porch or going about their chores.This is the lair of Lalikani, the legendary [[fox woman&gt;&gt;doc:FoxWoman]].
+
+Depending on how the party approaches this encounter, it may resolve as either a simple outright combat encounter or as a skill challenge/puzzle. There are two ways to defeat Lalikani, either by main force, or by unravelling her secret and escaping. In fact the process of discovering who and what she is is likely to involve elements of both. Should the party simply take the inhabitants of the lair at face value then the encounter can proceed as a skill challenge. In this case the PCs can take turns describing what sorts of things they do and what skills they try to use in a fairly free-form fashion as they wander about the homestead and talk to the residents. Many skills could be useful here and the descriptions of the cottage and surroundings will suggest appropriate possibilities. Should the party make 12 successful skill rolls in 18 attempts this will indicate they have observed enough clues to allow them to come to the firm conclusion that the residents are suspicious and dangerous, at which point they can simply leave. Any character at that point who is under Lalikani's influence can be hit with enough evidence to convince them to stay with their tried and true friends and resist her charm. Likewise Lalikani at this point will decide that it is impossible to continue to put one over on anyone and will simply try to convince them to leave. Diplomacy, bluff, and Intimidate are all options at that point.
+
+== The surrounding area ==
+
+The cottage itself is located near the banks of a small brook in a clearing in the forest. Large pine trees surround the area and no easily discernable trails lead either into or out of the clearing. The trees will provide concealment, but give way to gardens and a grazing area for several goats, a pig pen, and a small outbuilding within 20 squares of the cottage itself. At the southern edge of this cleared area is a small creek, while on the north side a low tree covered ridge rises steeply. Anyone observing the ridge carefully or exploring it may notice the entrance to the small cave where the Lalikani's rage drake is kept.
+
+== Approaching ==
+
+If a party approaches the cottage openly during the day they will be spotted by the two human guards who are always working around the yard. These guards are not normally fully armed and armored. Their weapons and equipment are in the cottage. As soon as they spot intruders one of them will go inside and begin donning his armor while the other one takes up station on the front porch with his halberd. His job is to occupy the visitors while the rest of the inhabitants prepare for any battle. He will do this by engaging them in conversation. If asked he will state that he lives here with his brother and sister, inviting the visitors to sit on the porch. He claims his 'sister' is "out gathering berries in the forest" if asked and volunteers that she will probably be back home before too long.
+
+Meanwhile Lalikani herself (who is inside) will transform into her fox form, slip out the back window, and head at top speed to the rage drake's cave. The elvish archers are somewhere in the vicinity of the cave and she will detail them to take the rage drake around the edge of the clearing until they are on the west side, where they will have a fairly clear view of the porch. Then she will herself move back to the east side of the clearing, transform back into elven form, and approach openly. All this will require about 10 minutes of time.
+
+Once Lalikani, the elves, and the rage drake are in position the second human guard should have completed arming himself. He will then come out onto the porch as well and introduce himself as the first guard's brother. He will suggest that his 'brother' "go and get our visitors some refreshments" which will give the first guard an excuse to go inside and armor up. Meanwhile Lalikani will be showing up and also greeting the visitors. The elves and the drake will simply remain hidden at the edge of the clearing unless the party attacks, at which point they will use their bows and the drake will charge into battle.
+
+Lalikani herself will not risk being attacked at a tactical disadvantage. If a fight develops before she is ready she will simply either run inside, transform to fox form and go out the back window, or transform to fox form and go under the porch, where she can avoid attack until she can do so with advantage.
+
+== Party Options ==
+
+Adventuring parties will generally adopt one or more of the following tactics when they encounter the fox woman.
+
+1. They may observe the location for a considerable time from cover before approaching. The fox woman has keen senses and may make a perception check in case intruders lurk in the trees nearby for any length of time. Additionally the elven archers constantly patrol the area hunting for game and looking for anything unusual. Within 30 minutes they will be entitled to a perception check as well. In the meantime the guards and Lalikani will simply go about their business. Near nightfall Lalikani will go out to the drake cave to feed her drake and soon after the two elves will return to the cottage as well. If the party is detected by the elves one will go to the drake cave and the other will go to the cabin to warn the guards. If Lalikani detects them then she will go to the cave and meet the elves there.
+1. The party may circle the area. In this case they will certainly come across one of the elven archers, who are to the east and west of the cottage. If the elf is detected he will simply greet the party in a friendly manner and accompany them to the cottage, remaining 10 squares from the front porch. The other figures will behave as in the direct approach.
+1. Guns blazing - In this case Lalikani will flee to the drake cave while the guards will attempt to bar themselves inside the cottage and use their crossbows to defend themselves until help arrives. 5 rounds after this battle starts the elf archers will appear, one to the east and one to west and begin firing from the cover of the trees. Lalikani will show up riding the rage drake on round 7.
+1. Stealthy approach - The party may attempt to use invisibility or some similar technique to approach without being noticed. Lalikani will still get a passive perception check to smell or hear them with her sensitive fox senses. If this fails then the party could spy on her inside the cottage. If they do so they will see her going about her domestic activities in her vixen form.
+1. Waiting for nightfall - Assuming the party is stealthy enough to avoid detection until nightfall they could also approach under cover of darkness. The cottage will be shuttered at night, but a PC with low-light vision could peek in a crack. All five inhabitants of the cottage will be asleep upstairs. Breaking in will naturally provoke a battle.
+
+== Lalikani's Tactics ==
+
+Lalikani is interested in aquiring more male slave/lovers. Elves, eldarin, humans, and half-elves are all considered acceptable to her. To this end her goal will be to charm the pants off anyone eligible and meanwhile figure out how to get rid of the rest of the party. Her most immediate concern however will be insuring that the adventurers are not overtly hostile and assuaging any suspicions they may have about her and her household. She will thus NOT initiate any sort of attack, at least not until her target is under her influence and even then only if the rest of the party proves to be unwilling to leave without him (or them).
+
+Her options are (in order of preference):
+
+1. Entice the target away from the rest of the party and kidnap him. This can be done by taking him alone to the drake cave, seducing him, and having the drake guard him. She will do this very carefully, insuring by use of active perception checks that she is not being followed. However if one party member follows she will set the drake on them, using her beguilement power to neutralize her target, then seducing him.
+1. Simply seduce the target at the cottage and then have him tell the party he is going to stay. This is a bit riskier as they may object, suspecting something.
+1. Allow the target to leave, track the party, wait for him to be on watch or otherwise separated from help and then kidnap him. If the target has already been seduced this should not be too hard. If not it is still possible using beguilement. She will undertake this mission with the drake and the elves for backup.
+1. Trick non-target party members into following her into the woods, the outbuilding, or even just upstairs where she can beguile and then kill them one at a time. Naturally she will try to arrange it so that one or more of her guards or the drake are available to help her with this, and she may even leave it up to them. For example the elves might take a ranger 'hunting' with them, lead him to the drake cave, and kill him.
+
+Lalikani will try to keep her pet drake a secret from the party. If they discover its existence she will simply explain that the drake is her pet/guard. This is true, but an insight check at DC20 will allow an observer to note her displeasure and nervousness at this revelation.
+
+Should Lalikani's plans be thwarted and she is put in danger of her life, or the rage drake is threatened with death, then she will decide to cut her losses and bargain with her opponents. Her first bargaining position will be to provide information. She can tell the party there is a hobgoblin camp directly across the dwarf road from the path to [[WildWood&gt;&gt;url:http://www.giantelectronicbrain.com/twiki/bin/view/DungeonMaster/WildWood||class="twikiLink"]] Manor. If this is not sufficient then she will offer the items in the outbuilding and/or those in the common room. As a last resort she will give up her other treasures.
+
+== The Cottage and Yard ==
+
+The cottage itself consists of a front porch and 3 rooms, a kitchen, a main room, and an upstairs loft/bedroom. The cottage is constructed of local wood with a stone foundation. The walls are sturdy. The only exterior entry is by the front door. There are two windows on each side of the cottage and 2 more windows in the upstairs loft, one at the back and one at the front. All windows are 4' off the ground, 3' wide, 3' high, and equipped with heavy interior shutters which can be barred. Each shutter is pierced by a cross shaped slit which the human guards can fire their crossbows through while maintaining superior cover. The front door opens outward and can be barred from the inside as well. When barred and shuttered the doors and windows can only be forced open by doing a total of 70 points of damage to them. The entire cottage could be set afire, but this will require 50 points of fire damage to be done to one square of the structure, at which point it will begin to burn down, forcing anyone inside to either leave or suffer ongoing 5 fire damage.
+
+A small stair leads from the common room to the loft. There is nothing exceptional in the cottage, but a keen observer may note certain things which might make them doubt her innocent appearance. First of all there are a number of objects in the common room which are unusual for a simple woodland homestead. There is a banner mounted on the wall above the main fireplace. A history check at DC20 will show that this banner is that of an elvish prince who vanished without a trace about 20 years ago. There are also several objects, a fine silver tea service (200gp), a gold chalice (400gp), and a valuable onyx statuette (600gp) which might seem out of place here. A streetwise roll can be used to assess their value and one might wonder at it. Other than these things however the furnishings and fixtures are fairly ordinary, though of good quality. They include a table and six chairs, some lamps, a rug, and some ordinary everday utilitarian objects.
+
+The front porch runs along the front of the cottage (the south side). It is a raised plank deck about 2 feet off the ground. A set of steps leads onto the porch at each end and a 3' high railing runs along the front. On the porch are 2 chairs, a small table and a bench. Lalikani can, in fox form, quite easily dart under this porch from any side. Conversely even a small sized character will have extreme difficulty getting underneath. He or she would have to crawl, granting CA and allowing only use of a small weapon. A medium sized character could slide underneath but will be entirely unable to fight and can only move one square per round.
+
+Going through the items in the loft could be revelatory as well. Lalikani has an unusually large and luxurious wardrobe for a country woman. There are several silk dresses and some fine jewelry (a necklace and a brooch of 200gp value each). In addition she has several books, one of which contains the rituals Tenser's Floating Disk and Magic Circle. She also has 2 potions of healing and a scroll containing the Commune With Nature ritual. These items are all in a locked chest (DC20 to open) in her closet. Aside from the contents of the closet the room has a dresser, a fine mirror, a large bed and 2 small beds, and 3 storage chests containing extra blankets and other similar mundane items.
+
+Inside the outbuilding is a fine set of horse barding, saddle, bridle, etc. These are of eldarin design and belonged to one of her earlier victims. If asked about these she will lie (opposed check Insight vs +8 to detect) about their origin, explaining they "belonged to my father". Behind the outbuilding a careful examination of the ground will reveal that something has been buried here (DC20 nature or perception check). In fact there are 4 bodies buried in rather shallow graves at this location. While all of them are quite old and mostly just bones it is plain that they are those of a dwarf, a halfling, and two women. A nature check at DC15 will indicate that they were buried within the last couple of years.
+
+== Experience and Rewards ==
+
+Lalikani and her minions have a total XP value of 1,050. This amount is awarded if the party defeats her entirely, either in combat or by discovering her true nature and forcing her to let them all go on pain of death or similar options (ie winning the encounter as a skill challenge). If the party simply manages to escape from Lalikani's lair without loosing anyone to her guiles they are awarded 600 XP. If any party members are lost to Lalikani then the survivors are awarded a 300 XP survival award.
+
+Other rewards. Lalikani seduced and then eventually killed the son of a lord of the Elfan Holds some 20 years ago. Returning the banner above her fireplace and/or the horse barding in the outbuilding to High Hold with an explanation of where it came from will result in the party receiving a reward of 500gp. In addition the characters will gain the high regard of the clan, which will allow them to receive aid or some other moderately valuable benefit at a later time.</content></xwikidoc>

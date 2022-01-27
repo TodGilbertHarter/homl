@@ -2,27 +2,49 @@
 /WEB DungeonMaster WEB/
 /PARENT /ARTICLEREF 
 	/REFNAME ../DungeonMaster/Monsters.html REFNAME/ 
-	/REFTEXT DungeonMaster.Monsters REFTEXT/
+	/REFTEXT Monsters REFTEXT/
 ARTICLEREF/ PARENT/
 /CHAPTER Fox Woman CHAPTER/
 
-/RIGHT /IMAGE FoxWoman.png IMAGE/ RIGHT/ A fox woman is a shape changer which has three forms, an elven woman, a natural hybrid fox/woman (vixen) form, and a fox form. They are extremely self-centered and vain. Fox women are solitary creatures preferring to live in areas remote from civilization where they usually lair in an isolated cottage or other similar structure. They are almost never found with other's of their kind although they may occasionally be encountered as a mother/daughter pair.
+/RIGHT /IMAGE FoxWoman.png IMAGE/ RIGHT/ A fox woman is a shape changer which has three forms, an elven woman, a 
+natural hybrid fox/woman (vixen) form, and a fox form. They are extremely self-centered and vain. Fox women are solitary 
+creatures preferring to live in areas remote from civilization where they usually lair in an isolated cottage or other 
+similar structure. They are almost never found with other's of their kind although they may occasionally be encountered 
+as a mother/daughter pair.
 
-In their elven form they appear as a beautiful elven woman. If examined carefully they will exhibit some telltale signs of their actual nature, a small fox tail and silver streaked hair. In their vixen form they have the head of a fox and their bodies are covered in soft fur. In their fox form they appear to be a normal fox of somewhat large size and their eyes show a spark of unnatural intelligence. Both the elven and vixen forms are capable of using weapons. In the fox form their only melee attack is their bite.
+In their elven form they appear as a beautiful elven woman. If examined carefully they will exhibit some telltale signs 
+of their actual nature, a small fox tail and silver streaked hair. In their vixen form they have the head of a fox and 
+their bodies are covered in soft fur. In their fox form they appear to be a normal fox of somewhat large size and their 
+eyes show a spark of unnatural intelligence. Both the elven and vixen forms are capable of using weapons. In the fox 
+form their only melee attack is their bite.
 /SECTION Fox Woman Tactics SECTION/ 
 
-A fox woman will initially use her beguile power on the strongest or closest character and then use the character to kill or occupy the attention of enemy strikers. She will then use her daggers and beguile again once it recharges to fight from a distance. If forced into melee combat she will use her bite. If possible she will flee from melee combat, using her Dazzling Flash if necessary. Fox women usually try to escape any encounter which is going badly for them by transforming to fox form and escaping via some terrain which normal sized opponents cannot traverse.
+A fox woman will initially use her beguile power on the strongest or closest character and then use the character to 
+kill or occupy the attention of enemy strikers. She will then use her daggers and beguile again once it recharges to 
+fight from a distance. If forced into melee combat she will use her bite. If possible she will flee from melee combat, 
+using her Dazzling Flash if necessary. Fox women usually try to escape any encounter which is going badly for them by 
+transforming to fox form and escaping via some terrain which normal sized opponents cannot traverse.
 /SECTION Seduction SECTION/ 
 
-Fox women are able to use their beguiling power in a non-combat situation to produce a powerful charming influence on male humans, half-elves, elves, and eldarin. They will use this power to make these men suggestible and easy to manipulate, playing on their greed, lust, and desire in order to enslave them. This can be roll played using the fox woman's bluff skill vs the victim's insight. When a victim is first under her thrall (for the first several days or weeks) it is possible to break the spell by removing the victim or presenting them with sufficiently convincing evidence of the true situation. After a while the victim will become totally under the influence of the fox woman and might even kill his friends and would certainly sacrifice himself without thought to save his 'love'. This is usually a good mechanism to use as a plot hook, but DMs should feel free to encourage players to go along with it, forcing their friends to rescue their moonstruck comrade(s)!
+Fox women are able to use their beguiling power in a non-combat situation to produce a powerful charming influence on 
+male humans, half-elves, elves, and eldar. They will use this power to make these men suggestible and easy to manipulate, 
+playing on their greed, lust, and desire in order to enslave them. This can be roll played using the fox woman's bluff 
+skill vs the victim's insight. When a victim is first under her thrall (for the first several days or weeks) it is 
+possible to break the spell by removing the victim or presenting them with sufficiently convincing evidence of the true 
+situation. After a while the victim will become totally under the influence of the fox woman and might even kill his 
+friends and would certainly sacrifice himself without thought to save his 'love'. This is usually a good mechanism to 
+use as a plot hook, but DMs should feel free to encourage players to go along with it, forcing their friends to rescue 
+their moonstruck comrade(s)!
 /SECTION Fox woman lore SECTION/ 
 
 A character knows the following information with a successful Nature or Arcana check
 
-DC 15: Fox women are fey lycanthropic elven women who seek to charm attractive members of the opposite sex and keep them as lovers. They are adept at magic use. A fox woman in elven form always has a fox tail.
+DC 15: Fox women are fey lycanthropic elven women who seek to charm attractive members of the opposite sex and keep them 
+as lovers. They are adept at magic use. A fox woman in elven form always has a fox tail.
 /SECTION Encounter Groups SECTION/ 
 
-A fox woman is typically encountered with several loyal slaves and may also have other trained guardians to assist her in defending her lair.
+A fox woman is typically encountered with several loyal slaves and may also have other trained guardians to assist her 
+in defending her lair.
 
 Level 4 Encounter (XP 1,050)
 /UL 

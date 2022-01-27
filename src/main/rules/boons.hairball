@@ -12,7 +12,7 @@ The higher level the character is the more potent their boons may become. Some b
 
 Boons are described using a standard format which is explained here.
 
-/BOON /ID" ff1622d0-69ef-11ec-9d2d-74d02b9c2012"/ /BOONNAME Sample BOONNAME/
+/BOON /ID" ff1622d0-69ef-11ec-9d2d-74d02b9c2012"/ /BOONNAME Sample Boon BOONNAME/
 /BOONTYPE Source: 1 Major BOONTYPE/
 /ASSOCIATION None ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/

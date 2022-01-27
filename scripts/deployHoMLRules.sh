@@ -1,4 +1,5 @@
 #!/bin/bash
+# Deploy the homl rules file to the web
 # Argument is the HOML version number
 HOML_NAME="homl-$1"
 PUBDIR="pub/$HOML_NAME"

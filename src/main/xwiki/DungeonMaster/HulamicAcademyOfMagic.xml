@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>HulamicAcademyOfMagic</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>DungeonMaster.TownOfDinford</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1339292062000</creationDate>
+<date>1339294293000</date>
+<contentUpdateDate>1339294293000</contentUpdateDate>
+<version>8.1</version>
+<title>Hulamic Academy Of Magic</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>This is the only organization in the Kinergh which offers instruction in the magical arts. It is located in the town of Dinford. The school has existed for the last 100 years in its present form, but was founded on the grounds of a previous academy which was originally built by The Order of Yellow Magi.
+
+The current school is loosely affiliated with the Order of Traveling Magi, providing them with access to their records and other facilities on a limited basis in return for services. Any member in good standing of the Order who applies to the school to use their library or laboratory will require a large damage deposit of 1500 gold pieces or the promise of a new spell formula or minor magic item of equivalent value. Other services such as disclosure of spell formulas, casting of spells on behalf of a character, use of a magic item, etc. are difficult or impossible to obtain unless the character is highly influential and has large amounts of money to spend.
+
+Graduates of the academy may be able to acquire these services somewhat more easily. In terurn for a new spell formula the academy will grant a character access to the formula to one of the spells known to its faculty in return. The character must pay the cost of any materials needed to perform the transcriptions as well as a fee of 100 gp per spell level. Only under extremely unusual conditions will the academy grant access to spell books containing magic of above {{{5th level. 9th level spells may be traded in order to further the ends of the academy if there is enough incentive. }}}{{{}}}12th level spells have almost never been revealed. Although the academy does possess the formulas for a few higher level spells no one currently in the organization is able to utilize them and they are therefor not available for examination. Like any other practitioners of magic, the academy's mages are not eager to give their secrets away to outsiders. Knowledge tends to fall into the wrong hands if it is not carefully guarded. In this respect the academy is very different in philosophy from the ancient order which originally founded it centuries ago.
+
+=== Academy Staff and Faculty ===
+
+**President:** Salantar Ermegion of Clois. Level 4 Wizard.
+
+Salmantar is the younger son of one of Elethia's most important nobles. He is 56 years old and has served for 12 years While not an exceptional mage he represents the political interests of the school at court. Any major Academy decisions are made by him. He has no teaching duties. Salantar is kindly if treated with exaggerated respect. If not he is a stuffed shirt and able to veto any plans of the faculty. He will need to be consulted on any business matters beyond access to minor (1^^st^^ or 2^^nd^^ level) spells or any other matter involving more than a few 100 gp etc.
+
+**Chancellor:** Kelarak Trimage. Level 8 Wizard.
+
+Kelarak is the most accomplished mage at the Academy. His father was Court Mage and the family was elevated to the nobility. Kelarak's younger brother Greg looks after the family holding while Kelarak pursues his father's career. He is responsible for all day-to-day administration of the Academy. Anyone needing access to Academy resources will have their application sent through his office for approval. He also handles minor matters of discipline. Kelarak is wise but cautious with those he does not know.
+
+**Treasurer:** Gorom Tellir. Normal human.
+
+Gorom and two clerks keep all the books of the Academy. Any release of funds, transactions involving Academy property etc are handled through him. Gorom is capable and totally businesslike. He has no knowledge nor interest in magic.
+
+**Librarian:** Lalee Hilu. Level 6 Wizard.
+
+Lalee is in charge of the Academy's most important resource, it's spell library. Lalee has read many of these volumes and is familiar with the contents of most of them. Lalee's expertise is in reading magical writings, codes, and other similar things. 4 copyists and 2 assistant librarians work for her. Lalee is always preoccupied and will be quick to brush off those lacking any useful knowledge, but friendly to other scholars. Anyone who requires access to the library for any purpose will have to interact with Lalee. If the request is minor then she will send them to Gorom in order to make payment. More significant requests will be referred to Kelarak and/or possibly Salantar.
+
+**Alchemist:** Tindar Lage. Level 5 Wizard (specializing in transmutations).
+
+Tindar is in charge of all the labs and equipment of the Academy. All use is coordinated by and through him. He is responsible for purchasing all supplies and also supervises construction of special equipment. The glass making operations fall under his authority. Tindar is more of a politician than anything else. He aims to eventually run the Academy and will never miss an opportunity to try to advance himself.
+
+**Historian:** Armagil Thren. Level 5 Half-Elven Wizard.
+
+Armagil once pursued the study of magic related to the alchemical arts but Tindar Lage (who was his understudy at one time) was able to outmaneuver him and became the Academy's Alchemist. There is no love lost between these two and Armagil will be happy enough to do anything that might show up Tindar. He has become quite interested in spellcraft, magical philosophy and the history of magic, and now acts as the Academy's historian. Unless someone has something interesting to discuss with him or he senses some way of showing up Tindar he will be rather vague and distant.
+
+**Chaplain:** Mael Rebka. Level 5 Priest of Imotni.
+
+Mael oversees the spiritual welfare of the faculty, staff, and students. She councils all in need and performs weekly devotions. The shrine of Imotni on campus is her responsibility. Despite the fact that she has no significant expertise in magic and teaches no classes she is in fact the sharpest person in the Academy and will go to great lengths to protect her charges.
+
+There are a total of 10 faculty at the Academy, including the chancellor, librarian, alchemist, and historian. The other 6 are low level Wizards who were all trained at the Academy. They are as follows: 
+
+{{html}}
+&lt;table width="100%" bordercolor="#000000" cellspacing="0" cellpadding="3" border="1"&gt;&lt;tbody&gt;&lt;tr valign="top"&gt;&lt;th width="20%"&gt;
+Level&lt;/th&gt;&lt;th width="20%"&gt;Specialty&lt;/th&gt;&lt;th width="20%"&gt;Name&lt;/th&gt;&lt;th width="20%"&gt;Master&lt;/th&gt;&lt;th width="20%"&gt;Race&lt;/th&gt;&lt;/tr&gt;&lt;tr valign="top"&gt;&lt;td width="20%"&gt;3&lt;/td&gt;&lt;td width="20%"&gt;&lt;/td&gt;&lt;td width="20%"&gt;Oscar Ganen&lt;/td&gt;&lt;td width="20%"&gt;chancellor&lt;/td&gt;&lt;td width="20%"&gt;human&lt;/td&gt;&lt;/tr&gt;&lt;tr valign="top"&gt;&lt;td width="20%"&gt;2&lt;/td&gt;&lt;td width="20%"&gt;&lt;/td&gt;&lt;td width="20%"&gt;Mira Shalar&lt;/td&gt;&lt;td width="20%"&gt;alchemist&lt;/td&gt;&lt;td width="20%"&gt;human&lt;/td&gt;&lt;/tr&gt;&lt;tr valign="top"&gt;&lt;td width="20%"&gt;3&lt;/td&gt;&lt;td width="20%"&gt;history of magic orders&lt;/td&gt;&lt;td width="20%"&gt;Turon Nargash&lt;/td&gt;&lt;td width="20%"&gt;historian&lt;/td&gt;&lt;td width="20%"&gt;half elf&lt;/td&gt;&lt;/tr&gt;&lt;tr valign="top"&gt;&lt;td width="20%"&gt;3&lt;/td&gt;&lt;td width="20%"&gt;Conjurations&lt;/td&gt;&lt;td width="20%"&gt;Salae Thegn&lt;/td&gt;&lt;td width="20%"&gt;none&lt;/td&gt;&lt;td width="20%"&gt;human&lt;/td&gt;&lt;/tr&gt;&lt;tr valign="top"&gt;&lt;td width="20%"&gt;4&lt;/td&gt;&lt;td width="20%"&gt;Illusions&lt;/td&gt;&lt;td width="20%"&gt;Imir Beglarbeg&lt;/td&gt;&lt;td width="20%"&gt;none&lt;/td&gt;&lt;td width="20%"&gt;gnome&lt;/td&gt;&lt;/tr&gt;&lt;tr valign="top"&gt;&lt;td width="20%"&gt;2&lt;/td&gt;&lt;td width="20%"&gt;Divinations&lt;/td&gt;&lt;td width="20%"&gt;Slal Joron&lt;/td&gt;&lt;td width="20%"&gt;librarian&lt;/td&gt;&lt;td width="20%"&gt;human&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+{{/html}}
+
+In addition to the above there are also some routine staff. These include a doorman, Rolf Nungratem, a cook, a stable master, and 10 servants who perform all the mundane chores.
+
+=== Students ===
+
+There are always around 100 students at the Academy. The majority of them are normal humans. 30 are upperclassmen who are able to perform one cantrip per day. 2 of the upperclassmen are dwarves. While dwarves generally rarely study Wizardry the leaders of Dalcaroth have lately determined that it would be wise to enhance their magical resources and these 2 are studying human magic. One other is a gnome from Cil who is Imir Beglarbeg's cousin.
+
+The majority of these students are younger children of noble families. Most of the rest of them come from rich families. The remainder are common people who showed a special aptitude for magic and have either the sponsorship of an important family or in the case of the most talented few have been accepted on scholarship alone. Generally the students will only interact with visitors if they happen to know them or are tasked with helping out on a project, etc. Occasionally a more advanced student will use their cantrip power to play a practical joke, but rarely on a visitor. If approached they may react in a friendly manner but will not be able to do anything useful on their own.
+
+There are 3 graduate students, one of level 5 and 2 of level 1. Except for their more advanced abilities they are similar to the other students.
+
+=== Academy Library ===
+
+The library is by far the Academy's most important asset. The Academy maintains an extensive library of reference works on all aspects of magic. This is available for use by the faculty and, with some restrictions, the students. The library contains some 600 reference works and is a suitable reference for research on most magical topics, including original spell research.
+
+A character with access to the library can find enough information to copy any heroic tier ritual by passing an arcana check with a DC of 10 plus the level of the ritual. Rituals of epic tier require a DC 20 check, and those of paragon tier require a DC 30 check. Some rituals may not be available or access to them may be entirely forbidden depending on the character and the perceived advantage to the Academy. Wizards may also find non-ritual spells which they can transcribe into their spell book in a similar fashion. In addition to the normal costs of transcription the Academy charges a fee equal to the listed market value of the ritual or 100 gp per spell level. The fee may in some cases be waived if the President or Chancellor can be convinced that is in the greater interest of the Academy.
+
+Other types of research, historical, etc. may also be performed at the library. The fee for general research is 100 gp per day of access. Such access also entitles the researcher to assistance from the librarian or possibly other faculty members as appropriate. Such assistance only extends to helping with research, not the performance of any type of magic etc. As with spell research the fee may be waived in some cases.
+
+Characters wishing to do spell research will need to consult with the librarian, and for advanced research (anything beyond 3^^rd^^ level spells or rituals) have the permission of the Chancellor. Proof of ability to pay will be required, and the character must convince the librarian or other faculty member of his or her competence. Ranking in the Order of Traveling Magi, an Academy diploma, or a letter of introduction from another recognized master wizard are all acceptable. Otherwise the character will generally have to make a DC 15 arcana, religion, or history skill check and pay a 100 gp examination fee to be recognized as a practitioner (for access to spells up to 3^^rd^^ level), a 500 gp fee to be recognized as a journeyman (for access to spells of up to 9^^th^^ level), or a 1000 gp fee to be recognized as a master wizard (for access to spells of higher than 9^^th^^ level).
+
+=== Academy Grounds ===
+
+The Academy grounds are located about 100 yards directly west of the Lad Gate within the walls of the town proper. They consist of several buildings, including the tower, the student dormitory, faculty quarters, servant's quarters, a kitchen, a glass works, the shrine of Imotni, and a small stable. These buildings surround a good sized courtyard and access to the grounds is gained via an archway in a wall. Several of the other buildings also have back entrances.
+
+The tower is the most important building on the grounds. It contains the library, treasury, and most important offices, labs, etc. Originally the tower was the entire facility and the other buildings have been added on over the years.
+
+=== Tower Key ===
+
+1. **1st Floor:** This contains an entry hall, the student lounge, and the auditorium.
+11. **Entry Hall** - This is a dimly lit room which is decorated with old portraits, several tapestries, banners, statues and busts of famous mages, etc. A man-at-arms watches the doors and directs visitors to the receptionist. The receptionist is seated behind a long counter which is set near the middle of the north wall. There are various papers, inkwells, etc on the counter and he will normally be found here performing routine tasks. There are numerous cubbyholes behind the counter of all sizes which contain supplies and ordinary items of little value. A small bag containing 30 sp is hidden with a DC of 12 towards the back of one of a drawer. The receptionist is a standard 0 level human. The man-at-arms is a standard human guard. If there is trouble he will either retreat up the stairs or fight depending on the odds. The receptionist will exit by the door into area 4.
+11. **Cloakroom** - This contains 4 rows of hangers for garments. 9 cloaks currently hang here unless a lecture is in progress in which case there may be as many as 40. None are of any particular value but searching their pockets will net about 1 sp per cloak, mostly in the form of coppers. One cloak right at the front of the 1st rack has been enchanted via a magic mouth ritual. If anyone reaches into its pocket a very loud voice will shout 'Stop thieves!', which will alert anyone in areas 1 and 3.
+11. **Student Area** - This room has 4 large tables, many chairs, several old sofas and many lamps etc arranged around it. Books are scattered about along with some food and other minor items. At any given time between 3 and 10 (1d8+2) students will be found here studying and talking. This room is set aside for them to use because library books are never allowed outside the tower. At night it is likely to be deserted. The students are all 0 level humans, though about 1/3rd of them can use a cantrip. If there is trouble they will quickly flee through the north door, tossing cantrips to confuse attackers and making lots of noise.
+11. **Auditorium** - Large lectures are given here. There is enough seating for up to 200 people. The rostrum is 4' above floor level and a heavy wooden podium sits on it. 8' above floor level on the north, east, and west walls are large window casements. Each one is about 10' across and 10' deep. They can only be reached by climbing the wall. On the north side of the room, behind the last row of seats, is a very heavily reinforced door, which can be barred from inside the room. It leads into a small passage which ends in another similar door to the outside. The inner door is not usually barred, but the outer one is. This is one of the back ways into the Academy as the door opens into an alley outside the grounds.
+1. **Second Floor:** This floor contains the offices of the faculty. Each member of the faculty has an office here as do the President and Treasurer. Two extra rooms serve for administering examinations and holding meetings.
+11. **Hallway** - The hall runs in 4 directions and is lined with doors on all sides.
+1. **Third Floor:** This floor holds the Academy Library.
+11. **Study and copying room** - This room holds 20 desks and 10 tables and 30 or so chairs. Book shelves line the north wall. Supplies of ink, pens, paper etc are all present in various cabinets around the room. During the day 20 students will be found here being supervised by the librarian. They spend their time copying texts and learning how to inscribe arcane formulas, etc. The students are all normal 0 level humans. 2 of them can use the cantrip power. The books here are quite valuable. There are 15 volumes and each would be worth as much as 1000 gp if they could be sold. All are prominently marked as property of the Academy.
+11. **General Collection** - This room contains works of all types not directly dealing with magic. These cover history, philosophy, religion, geology, medicine, language, geography, fiction, poetry, drama, and science. They are organized on shelves running across all the walls as high as 12 ft above the floor. 3 shorter rows of shelves run east to west in the center of the room, with a small space near the doors which contains a desk, chair, and 12' high ladder on wheels which is used to access the higher shelves. These books are the less valuable ones in the library in general, but will still fetch between 100 and 500 gp each if they can be sold. All are marked property of the Academy.
+11. **Hallway** - There is nothing special here. Held in a bracket on the north wall is an everburning torch, which provides light in the hallway.
+11. **Special Collections** - Here are held such things as old Academy papers, journals, correspondence, maps, oversized books, and highly valuable editions. None of these are magical in nature, but they do contain a considerable amount of information which might be of use to historians, adventurers, etc. Access to this collection is difficult to obtain. Some of the items may be worth as much as several 1000 gp. The layout of the room is similar to room 2 except there are 2 larger desks in the center of the room and a cart. The shelves are glass fronted cases which are normally locked.
+11. **Main Collection** - Here are to be found all the volumes directly dealing with the subject of magic. Each aspect of magic has an area of the room dedicated to it. They cover a huge range of subjects and represent one of only a few such collections which exist in all of Erithnoi. Using this collection it is possible to develop new and original magic or rediscover many old and forgotten magics.
+11. **Spell Books** - This room is locked and the door is protected by a wizard lock which only the librarian can pass. The entire room is enchanted with a powerful ward against scrying or magical entry. All the books are kept locked in strong cabinets. There are 42 spell books in total. They contain at least one version of each and every Wizard spell found in the PHB of up to 9th level, and may contain copies of spells beyond that level as desired. No access is ever granted. If a character can pay the fees he or she would use area 1 and the librarian would bring the books. 
+11. **Supply Room** - This room holds all the supplies and tools required for doing the work of the library, including binding materials, inks, pens, etc. These supplies are not of immense value but are of very high quality suitable for transcribing magical works.
+1. **Fourth Floor:** This contains the research labs of the Academy.
+1. **Fifth Floor:** The fifth floor is the highest floor within the tower. It is a single large open space with a vaulted ceiling reaching 50' in height at the center. The only items in the entire room are some tall candle holders, a single chair, and a small trunk, which are all near the southeast stair. In the center of the room is inscribed permanently into the floor a magical circle. Around the edge of the circle run characters which are written in Old High Cardolan. They identify this circle as a teleportation target. Nobody is allowed onto the fifth floor at any time without the approval of the President and supervision by the Chancellor. It is forbidden to discuss the existence of the circle or to copy down the text, which would be required in order to actually teleport to the spot from elsewhere. Magical wards also protect the room from scrying etc (TBD).</content></xwikidoc>

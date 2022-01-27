@@ -1,6 +1,5 @@
 /*
-* Hairball vocabulary which generates a 'compendium', which is a set of Javascript data structures which can be used to 
-* perform calculations and display information of different sorts.
+* Generate data needed to populate the firestore 'boons' collection.
 */
 /* /SOURCE" gencompendium.hairball"/ */
 /VARIABLE /FIRSTBOON
@@ -17,11 +16,14 @@
 /: /RESTRICTIONS /GETMATCHING RESTRICTIONS/ /DELIMITED , "restrictions": /SPACE " /TRIM /. " :/
 
 /: /BENEFITS /TRUE /FIRST /V! , "benefits": /SPACE [ /[" /FEATS "]/ /VOCAB@ /ACTIVE :/
-/: /BENEFIT /FIRST /V@ /NOT /IF , /THEN /FALSE /FIRST /V! " /GETMATCHING BENEFIT/ /DELIMITED /TRIM /. " :/
-/: BENEFITS/ ] /[" /FEATS "]/ /VOCAB@ /INACTIVE :/
+/: /BENEFIT /FIRST /V@ /NOT /IF , /THEN /FALSE /FIRST /V! " /EMITON :/
+/: BENEFIT/ " /EMITOFF :/
+/: BENEFITS/ ] /[" /FEATS "]/ /VOCAB@ /INACTIVE :/ 
 
 /: BOON/ } /NEWLINE :/
 
+/NEWVOCABULARY /FEATS
 /VOCABULARY /FEATS /CURRENT
-/: /FEAT /GETMATCHING FEAT/ /DELIMITED /DROP :/
+/: /ID" /" id=[ /. ] /GETMATCHING FEAT/ /DELIMITED /DROP :/
+/: /FEAT // :/
 /VOCABULARY /COMPENDIUM /CURRENT

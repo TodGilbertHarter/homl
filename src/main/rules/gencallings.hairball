@@ -1,0 +1,39 @@
+/*
+* Generate calling entries for compendium
+*/
+/VARIABLE /FIRSTBOON /TRUE /FIRSTBOON /V!
+/NEWVOCABULARY /CALLINGS
+/VOCABULARY /CALLINGS /CURRENT
+/: /ID" /" " /DUP /. ": { "version": "1.0", "id": " /. " :/
+/: /ROLE , "role": " :/
+/: ROLE/ " :/
+/VOCABULARY /COMPENDIUM /CURRENT
+/NEWVOCABULARY /BOONS
+/VOCABULARY /BOONS /CURRENT
+/VOCABULARY /BOONS /ACTIVE
+/: /ID" /FIRSTBOON /V@ /NOT /IF , /THEN /FALSE /FIRSTBOON /V! /" " /. " :/
+/VOCABULARY /BOONS /INACTIVE
+/VOCABULARY /COMPENDIUM /ACTIVE
+/VOCABULARY /COMPENDIUM /CURRENT
+
+/: /DOCUMENT" /" /DROP /NEWLINE "callings": { :/ 
+/: DOCUMENT/ /NEWLINE } :/
+
+/VARIABLE /FIRSTCALLING
+/TRUE /FIRSTCALLING /V!
+/: /CALLING /FIRSTCALLING /V@ /NOT /IF , /THEN /FALSE /FIRSTCALLING /V! /[" /CALLINGS "]/ /VOCAB@ /ACTIVE /EMITON :/
+/: CALLING/ } /[" /CALLINGS "]/ /VOCAB@ /INACTIVE /NEWLINE /EMITOFF /TRUE /FIRSTBOON /V! :/
+/: /CALLINGNAME , "name": " :/ /: CALLINGNAME/ " :/
+/: /POWERSOURCE , "powerSource": " :/ /: POWERSOURCE/ " :/
+/: /DAMAGEDIE , "damageDie": " :/ /: DAMAGEDIE/ " :/
+/: /WEAPONS , "weapons": " :/ /: WEAPONS/ " :/
+/: /IMPLEMENTS , "implements": " :/ /: IMPLEMENTS/ " :/
+/: /KNACKS , "knacks": " :/ /: KNACKS/ " :/
+/: /HITPOINTS , "hitPoints": :/ /: HITPOINTS/ // :/
+/: /STARTHITPOINTS , "startingHitPoints": :/ /: STARTHITPOINTS/ // :/
+/: /FEATURES , "features": /[" /BOONS "]/ /VOCAB@ /ACTIVE [ /TRUE /FIRSTBOON /V! :/ 
+/: FEATURES/ ] /[" /BOONS "]/ /VOCAB@ /INACTIVE :/
+/: /BOONS , "boons": /[" /BOONS "]/ /VOCAB@ /ACTIVE [ /TRUE /FIRSTBOON /V! :/ /: BOONS/ ] /[" /BOONS "]/ /VOCAB@ /INACTIVE :/
+/: /TRAITS // :/ /: TRAITS/ /[" /CALLINGS "]/ /VOCAB@ /INACTIVE /NEWLINE /EMITOFF :/
+
+/: "/ // :/

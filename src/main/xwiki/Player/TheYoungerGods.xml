@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>Player</web>
+<name>TheYoungerGods</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Player.Religion</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1335696807000</creationDate>
+<date>1335738257000</date>
+<contentUpdateDate>1335738257000</contentUpdateDate>
+<version>6.1</version>
+<title>The Younger Gods</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>= The Younger Gods =
+
+The younger, or everyday, gods are of two origins. The mightiest among them are the children of the Elemental Gods, who overthrew the rule of their parents long ago. Others are once mortal beings which have ascended to immortal status. A few are the result of liaisons between mortals and the gods or between gods and other lesser immortal beings.
+
+These gods are those which are worshiped every day by ordinary mortals of the younger races. These beings receive and sustain their powers primarily from the mental energies of lesser beings, their worshipers. Thus is very important to the gods to receive the worship, adulation, and loyalty of their worshipers. In order to achieve their exalted position and command the loyalty of their worshipers most gods have found it useful or necessary to form an aspect or sphere of influence. Thus one god might concern itself with law, truthfulness and oath taking, while another might focus on healing, and another striking down ones enemies. To a large extent a god's aspect dictates the areas in which it can be effective. A god of death will not be very good at calming storms at sea for example, but would be able to raise the dead or slay the living very effectively.
+
+Amongst these gods there are those of all different alignments. The gods are not in any large sense unified or organized. Many of them, such as the main human worshiped gods, tend to band together and may often share goals, but they can also at times oppose one another. The only thing which generally unites the gods is even a hint of an attempt by the Elemental Gods to escape from their imprisonment and return to power.
+
+
+
+|=Name|=Domains|=Rank|=Alignment|=Notes
+|[[Otillis&gt;&gt;GodOtillis]]|hunting, forest|god|good|patron of rangers, foresters, and hunters\\
+|[[Teala&gt;&gt;GodTeala]]|arts, oracles/prophesy, homes|god|good|\\
+|[[Utule&gt;&gt;GodUtule]]|seasons, time|god|unaligned|watcher of the skies, keeper of time\\
+|[[Klay&gt;&gt;GodKlay]]|guardianship, protection|god|lawful|\\
+|[[Lir&gt;&gt;GodLir]]|sun, wisdom|god|good|\\
+|[[Nomok&gt;&gt;GodNomok]]|war|god|unaligned|\\
+|[[Jerok&gt;&gt;GodJerok]]|mischief, adventure, brewing, roads|demigod|neutral|patron of thieves and brewers\\
+|[[Gelin&gt;&gt;GodGelin]]|vengeance|god|good|\\
+|[[Hurn&gt;&gt;GodHurn]]|animal life|god|unaligned|The son of Yilliki, known as the horned one\\
+|[[Atur&gt;&gt;GodAtur]]|law, rulership|god|lawful good|The god of kings, the lawgiver\\
+|[[Aura&gt;&gt;GodAura]]|dawn,archery|demigod|good|\\
+|[[Daag&gt;&gt;GodDaag]]|trade,prosperity|demigod|unaligned|\\
+|[[Sawk&gt;&gt;GodSawk]]|healing|god|good|\\
+|[[Thrul&gt;&gt;GodThrul]]|strength, wrestling, boxing|demigod|good|\\
+|[[Imotnoi&gt;&gt;Imotnoi]]|messengers,gates|demigod|unaligned|patron of those who travel, especially by magical means\\
+|[[Olorin&gt;&gt;GodOlorin]]|night,sleep,magic|god|unaligned|\\
+|[[Corellon&gt;&gt;doc:Corellon]]|elves|god|unaligned|lord of the fey
+|[[Moradin&gt;&gt;doc:Moradin]]|dwarves, the forge, craft|god|lawful good|lord of the forge and patron of dwarves and craftsmen
+| [[Gruumsh&gt;&gt;doc:Gruumsh]]|orcs, destruction|god|chaotic evil| </content></xwikidoc>

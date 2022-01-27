@@ -4,14 +4,14 @@
 	/REFNAME  REFNAME/ 
 	/REFTEXT  REFTEXT/
 ARTICLEREF/ PARENT/
-This space is inaccessible to and hidden from players! Members of the DmGroup may access this content.
+This space is mostly intended to be useful to GMs using Erithnoi as a setting.
 
-/EM Note: EM/ The style for this space is distinct from the /ARTICLEREF /REFNAME ../Player/WebHome.html REFNAME/  /REFTEXT Player space REFTEXT/ ARTICLEREF/  to avoid confusion as to who can access specific content.
+/EM Note: EM/ The style for this space is distinct from the /ARTICLEREF /REFNAME ../Player/WebHome.html REFNAME/ /REFTEXT Player space REFTEXT/ ARTICLEREF/  to avoid confusion as to who can access specific content.
 /SECTION General Topics SECTION/ 
 
 General information and background knowledge of Erithnoi.
 /UL 
-/LI  /ARTICLEREF /REFNAME Erithnoi History REFNAME/ /REFTEXT History  REFTEXT/ ARTICLEREF/ - The history of Erithnoi. LI/
+/LI  /ARTICLEREF /REFNAME ./ErithnoiHistory.html REFNAME/ /REFTEXT History  REFTEXT/ ARTICLEREF/ - The history of Erithnoi. LI/
 /LI  /ARTICLEREF /REFNAME ./Cosmology.html REFNAME/  /REFTEXT Cosmology REFTEXT/ ARTICLEREF/  - The cosmology of the world of Erth. LI/
 /LI  /ARTICLEREF /REFNAME ./Geography.html REFNAME/  /REFTEXT Geography REFTEXT/ ARTICLEREF/  - The geography of Erithnoi. LI/
 /LI  /ARTICLEREF /REFNAME ./Cosmology.html REFNAME/  /REFTEXT Religion REFTEXT/ ARTICLEREF/  - The gods of Erth. LI/
@@ -32,7 +32,9 @@ Various campaigns which are active or have been run in Erithnoi.
 /LI  /ARTICLEREF /REFNAME ./MidrealmsCampaign.html REFNAME/  /REFTEXT Midrealms Campaign REFTEXT/ ARTICLEREF/  - Krystal, Tim, Don, and List. The 'Tuesday Night Group'. LI/
 /LI  fall crest Campaign LI/
 /LI  /ARTICLEREF /REFNAME ./EldoranIslesCampaign.html REFNAME/  /REFTEXT Eldoran Isles Campaign REFTEXT/ ARTICLEREF/  - Tara and Gillian in the Eldoran Isles pirate campaign. LI/
-/LI  /ARTICLEREF /REFNAME ./ThirdMidrealmsCampaign.html REFNAME/  /REFTEXT Third Midrealms Campaign REFTEXT/ ARTICLEREF/  - Tara and Gillian in The Midrealms/Fallcrest. LI/ UL/
+/LI  /ARTICLEREF /REFNAME ./ThirdMidrealmsCampaign.html REFNAME/  /REFTEXT Third Midrealms Campaign REFTEXT/ ARTICLEREF/  - Tara and Gillian in The Midrealms/Fallcrest. LI/
+/LI /ARTICLEREF /REFNAME ./DvergheimCampaign.html REFNAME/ /REFTEXT Dvergheim (Kingdom of Dvar) Campaign REFTEXT/ ARTICLEREF/ - Gillian and Lance online in the The Midrealms LI/
+UL/
 /SECTION Geography and Locations SECTION/ 
 
 Locations in Erithnoi. This is for DM info on locations, player info should go in the player space and can be linked to from these articles.

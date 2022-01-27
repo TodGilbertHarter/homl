@@ -6,24 +6,29 @@ import { NotView } from './notview.js';
 import { Controller } from './controller.js';
 import { CharacterRepository } from './characterrepository.js';
 import { CharacterController } from './charactersheet.js';
-import { Rules } from './rules.js';
+import { CallingRepository } from './callingrepository.js';
+import { SpeciesRepository } from './speciesrepository.js';
+import { Rules, Calculation } from './rules.js';
+
 
 class Application {
 	playerRepo;
 	gameRepo;
 	characterRepo;
+	callingRepo;
+	speciesRepo;
 	authenticator;
 	router;
 	view;
 	controller;
 	theDocument;
-	rules;
 	characterController;
 	
 	constructor(firestore,fbProject,aDocument) {
 		this.theDocument = aDocument;
-		this.rules = new Rules();
-		this.characterController = new CharacterController(this.rules);
+		this.callingRepo = new CallingRepository(this,firestore);
+		this.speciesRepo = new SpeciesRepository(this,firestore);
+		this.characterController = new CharacterController();
 		this.playerRepo = new PlayerRepository(this,firestore);
 		this.gameRepo = new GameRepository(this,firestore);
 		this.characterRepo = new CharacterRepository(this,firestore);
@@ -31,7 +36,8 @@ class Application {
 		this.router = new Router({ mode: 'hash', root: '/'});
 		this.view = new NotView(this,this.theDocument);
 		this.controller = new Controller(this,this.view,this.authenticator,
-			this.router,this.gameRepo,this.characterRepo,this.characterController,this.rules);
+			this.router,this.gameRepo,this.characterRepo,this.characterController,
+			this.callingRepo,this.speciesRepo);
 	}
 }
 

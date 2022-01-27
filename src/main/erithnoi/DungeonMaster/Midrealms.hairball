@@ -4,7 +4,7 @@
 	/REFNAME ErithnoiGeography.html REFNAME/ 
 	/REFTEXT ErithnoiGeography REFTEXT/
 ARTICLEREF/ PARENT/
-/RIGHT /ARTICLEREF /REFNAME Midrealms-dm.jpg REFNAME/ /REFTEXT /IMAGE Midrealms-dm.jpg IMAGE/ REFTEXT/ ARTICLEREF/ RIGHT/ 
+/RIGHT=" half"/ /ARTICLEREF /REFNAME Midrealms-dm.jpg REFNAME/ /REFTEXT /IMAGE=" max-width:100%; height: auto; display: inline-block;"/ Midrealms-dm.jpg IMAGE/ REFTEXT/ ARTICLEREF/ RIGHT/ 
 The /ARTICLEREF /REFNAME ../Player/Midrealms.html REFNAME/ /REFTEXT Midrealms REFTEXT/ ARTICLEREF/ 
 are a dangerous and disorganized area in central Erithnoi. Lying between the 
 /ARTICLEREF /REFNAME ../Player/ElfanHolds.html REFNAME/ /REFTEXT Elfan Holds REFTEXT/ ARTICLEREF/  
@@ -209,5 +209,6 @@ villages. In northwestern Theldune orcs are still quite common.
 /LI  /ARTICLEREF /REFNAME ./ThelduneBorkBorkBork.html REFNAME/  /REFTEXT Theldune REFTEXT/ ARTICLEREF/  LI/ UL/
 /SUBSECTION Other Things of Interest SUBSECTION/ 
 /UL 
-/LI  /ARTICLEREF /REFNAME ./OferGenga.html REFNAME/  /REFTEXT Ofer Genga REFTEXT/ ARTICLEREF/  LI/ UL/
+/LI  /ARTICLEREF /REFNAME ./OferGenga.html REFNAME/  /REFTEXT Ofer Genga REFTEXT/ ARTICLEREF/  LI/ 
+UL/
 ARTICLE/

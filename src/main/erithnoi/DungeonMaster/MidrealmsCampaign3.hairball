@@ -2,47 +2,141 @@
 /WEB DungeonMaster WEB/
 /PARENT /ARTICLEREF 
 	/REFNAME ../DungeonMaster/MidrealmsCampaign.html REFNAME/ 
-	/REFTEXT DungeonMaster.MidrealmsCampaign REFTEXT/
+	/REFTEXT Midrealms Campaign REFTEXT/
 ARTICLEREF/ PARENT/
-=/SECTION Recapitulation SECTION/ =
+/SECTION Recapitulation SECTION/
 
-After negotiating passage from the foul bullywugs in exchange for recovering their idol the party proceeded to the pixie lair and recovered the strange pink quartz figure which the bullywugs adore. However, the bullywugs were being treacherous and attacked instead of exchanging the idol. Malachite was killed in the fight and Throkmorten transformed into some sort of bullywug-looking thing and dragged off Burrrup, the surviving bullywug leader. Where they went is unknown, but Throkmorten didn't seem to fit his role as a priest of Moradin particularly well... The party is now at the top of an escarpment. To the south is forest and hills leading up into the mountains where the dragon lair is reputed to be located. To the north is the bullywug swamp.
+After negotiating passage from the foul bullywugs in exchange for recovering their idol the party proceeded to the pixie lair 
+and recovered the strange pink quartz figure which the bullywugs adore. However, the bullywugs were being treacherous and 
+attacked instead of exchanging the idol. Malachite was killed in the fight and Throkmorten transformed into some sort of 
+bullywug-looking thing and dragged off Burrrup, the surviving bullywug leader. Where they went is unknown, but Throkmorten 
+didn't seem to fit his role as a priest of Duron particularly well... The party is now at the top of an escarpment. To the 
+south is forest and hills leading up into the mountains where the dragon lair is reputed to be located. To the north is the 
+bullywug swamp.
 /SUBSECTION Heroes SUBSECTION/ 
 /UL 
 /LI  Deorai - Elf ranger of the woods of Urieth. Exiled from his tribe and his love, who was then slain by orcs. LI/
-/LI  Celery - Human cavalier of Avandra (a minor aspect of Jerok) who was 'slumming' in Gurig's Haven 'seeking adventure' when she met Malachite. LI/
+/LI  Celery - Human cavalier of Avandra (a minor aspect of Jerok) who was 'slumming' in Gurig's Haven 'seeking adventure' 
+when she met Malachite. LI/
 /LI  Moose - A halfling native of Fallcrest. Moose is an orphan who has no clan, making his way by his wits. LI/
 /LI  Pixie - Name not known yet, a pixie from the pixie tree. LI/ UL/
 /SUBSECTION NPCs SUBSECTION/ 
 /UL 
-/LI  Rat - Kobold Vermin Handler. Released by the party Akitaka ordered him to follow the party and await orders. Rat may not be entirely loyal to Akitaka. LI/ UL/
+/LI  Rat - Kobold Vermin Handler. Released by the party Akitaka ordered him to follow the party and await orders. Rat may not 
+be entirely loyal to Akitaka. LI/ UL/
 /SUBSECTION Summary SUBSECTION/ 
 
-The PCs make their way to the lair of the deceased dragon Vertithrax, following a map they acquired at the wizard's tower in /ARTICLEREF /REFNAME url:http://www.giantelectronicbrain.com/twiki/bin/view/DungeonMaster/FallCrest /TD/  /TD/ class="twikiLink" REFNAME/ /REFTEXT FallCrest REFTEXT/ ARTICLEREF/ . Meanwhile, Rat the kobold, still follows them, keeping an eye on the party for Akitaka. When they arrive at the main entrance to the lair they are greeted with the sight of several kobolds lying dead near the entrance. Within a roiling green mist seems to hover. Investigating further they will come upon a small encampment of kobolds, sent by Om-Vertithrax to explore the lair, but thwarted by the living breath in the entrance. If one of the kobolds is captured it could decipher the scrap of parchment they acquired at the Kobold Hall, allowing them to discover that there is a back entrance.
+The PCs make their way to the lair of the deceased dragon Vertithrax, following a map they acquired at the wizard's 
+tower in /ARTICLEREF /REFNAME FallCrest.html REFNAME/ /REFTEXT FallCrest REFTEXT/ ARTICLEREF/ . Meanwhile, Rat the kobold, still 
+follows them, keeping an eye on the party for Akitaka. When they arrive at the main entrance to the lair they are greeted 
+with the sight of several kobolds lying dead near the entrance. Within a roiling green mist seems to hover. Investigating 
+further they will come upon a small encampment of kobolds, sent by Om-Vertithrax to explore the lair, but thwarted by the 
+living breath in the entrance. If one of the kobolds is captured it could decipher the scrap of parchment they acquired at 
+the Kobold Hall, allowing them to discover that there is a back entrance.
 /SUBSECTION Events SUBSECTION/ 
 
-1. Rat: Rat is following the party. Each day the most alert party member (probably Deorai) can spot Rat or some sign of his presence on a DC20 Perception check. If he is spotted then he can be surprised/captured using a level 2, complexity one skill challenge (4 successes before 3 failures). Most checks will be moderate, some less likely possibilities will be difficult. If captured and interrogated Rat will claim to be innocently traveling through the area. If questioned further via Intimidation (medium DC13) he will admit he was told to follow by 'the boss'. He can interpret the parchment containing instructions on how to find the back entrance to the lair, but is not too useful otherwise. If released he will find the other kobolds in their camp and appraise them of the party's presence in the area. He will also tell them about the back entrance if he learns of it.
-1. The party arrives at the front entrance to the lair. This is area v1 on the map. 2 dead kobolds lie near the entrance. If a character looks within he or she will immediately notice the green roiling form of Vertithrax's Mindfire Miasma, all that remains of the powerful dragon. The miasma will simply remain in place unless a character attacks it or attempts to enter area v2. In that case the miasma will move to a location within 2 squares of the character and make a Caustic Wisp attack (Reach 2: +10 vs FORT; 2d8+3 poison damage and ongoing 5 poison damage (save ends)). While the miasma is not invulnerable to attack it IS far to powerful to be destroyed by the party's limited capabilities.
-1. A DC13 Perception check reveals that there are many kobold tracks around the entrance area. The tracks lead back to the west about a quarter mile. The kobolds have set up camp in a fairly defensible spot near a small stream. A DC13 group Stealth check is required to avoid being spotted by any kobold sentries. The party could confront the kobolds, capture one, or assault their camp, or they could simply avoid the camp entirely. If a kobold is captured he will tell basically the same information and have the same ability to decipher the parchment as Rat does.
-1. The back entrance - Since the front entrance to the lair is blocked the party will need to find the back entrance. The easy way is to interrogate a kobold and show them the parchment. If this isn't done then the party could search for a back way in. Searching for the back entrance is a skill challenge of level 2, complexity 2. The party will eventually find the back entrance if they persist in searching for it. The only variable is really how much stomping around the area they have to do. Success in the challenge means they arrive at the back entrance without alerting any of the local ettercap. Failure indicates they will have to fight to get in. Physical/Nature type skills are medium (DC13) checks. Other checks or powers could work with the right idea, but they're going to be hard (DC20) checks in most cases. If the party has the map to the back entrance then they will avoid the ettercap entirely.
-1. Within the back entrance - Inside the back entrance is area v8. The PCs will encounter 3 Ambush Spiders within area v8. One spider lurks within each of the east and west alcoves and the third lurks just out of sight in the shaft leading to v7. Each spider requires a DC20 Perception check to spot before it attacks, which they will do when the PCs move into the area. If not spotted first they will gain surprise.
-1. The shaft - The shaft from v8 to v7 is a narrow, steep passage that is about 3' by 6' and slants to the east at a 45' angle. A DC9 Athletics check is required to move in this shaft. Any character failing the check is stuck until the start of their next turn.
-1. Area v7 - This was once a room where Vertithrax stored his 'less valuable' treasures. There are still remnants of items which looters of a century or more ago didn't find to be worth transporting. The ceiling of the cave is about 20' overhead, except in the south part around the shaft entrance where it is only around 5'. The shaft deposits one on a shelf that is 15' above the rest of the floor. Climbing down requires a DC9 Athletics check. Heaped on the eastern side of the room are a large number of barrels, bales, bolts of cloth, and crates which once held goods. Along the western wall a number of dusty and decaying tapestries hang, concealing the wall itself. 3 phase spider hatchlings and a spider swarm lurk in the room. One hatchling is behind a rock just west of the shaft, another is behind the tapestry a couple squares further north, and a third is concealed inside a barrel. The entire pile of goods is infested with small spiders which will swarm as soon as the PCs come within 5' of the pile. Spotting any of these spiders requires a DC20 Perception check. Once the spiders are dispatched the room can be searched. 20 minutes of searching will uncover a fine blue cloak with rust-colored trim. This is a Cloak of the Walking Wounded (AV1 p151).
-1. Area v6 - This was the main resting place and treasure room of Vertithrax. Originally the chamber was dry and was mostly taken up by Vertithrax and the main part of his horde. Sometime after the room was looted water began to seep in and pool on the west side. At the edge of the water lurks a Green Slime. Nearby 2 gray ooze blend in with the stone floor, all require a DC20 Perception check to spot and will attack with surprise if not detected as soon as a character moves adjacent to the water. The room is otherwise rather bare, with a few fallen bits of rock and accumulations of sand and silt here and there. Lying in the mud near the entrance to area v7 are a few gold coins (10gp) and 2 hoard scarabs, leftovers from the treasure which was once here. The scarabs will attack whomever picks them up thinking they are coins 2-3 rounds after they are placed in a purse, burrowing out of the purse and biting into their victim. They can be detected for what they are with a DC19 Perception check. If not disturbed they will remain where they are.
-1. Area v5 - This room was once used by Vertithrax's kobold minions as a cooking area, lab, and storage. The contents now consist of upturned wooden trestles and broken storage vessels and shelving. Interspersed amongst the debris can be found several items of value. 2 tanglefoot bags, a small jar containing 100gp worth of residuum, and a healing potion. It will require about 10 minutes of searching to uncover these items.
-1. Area v4 - Trapped side-passage. This passage leads to area v3. At the south end it is filled to about 3' depth with water. Just north of the water the passage is wet, partly floored with silty mud, and generally slippery. An old kobold trap consisting of 2 trip wires (DC15 Perception check to detect) are each rigged to a heavy wooden framework carrying sharpened spikes suspended in the darkness above. Tripping either wire will cause the corresponding framework to crash down on whomever set it off (+6 vs REF 2d8+8 damage and the target is restrained (save ends). A DC9 Thievery check can be used to delay the trap for one round, or a DC15 Thievery check can be used to disarm the trap. Anyone damaged by either of these traps must make a saving throw or contract filth fever.
-1. Area v3 - Old kobold lair. Kobolds once laired in this room. All of their goods have long since mouldered away and all that remains is some loose brush and rotting wood. 4 centipede swarms infest the room, attacking anyone who enters. On the northwest side of the room is a narrow fissure through which light shines. It is possible to gain entry and exit from the lair at this point to the north.
-1. Area v2 - The entrance hall. This high and wide area of cave was once the entrance hall to Vertithrax's lair. Now it is the haunt of his last creation, the Mindfire Miasma. This roiling green cloud normally remains just a bit inside the entrance, blocking any ingress or egress. If anyone enters area v2 the miasma will move at a speed of 8 in their direction. Once it is within 2 squares of the trespasser it will unleash an attack each round as described above for area v1. Anyone leaving area v2 will not be pursued. The Miasma is practically impossible to kill, or even hit. The only way to explore the room at all would be to have different individuals enter from different sides of the room, but this procedure would be very dangerous. In the middle of the room is a great treasure, the Adamantine Horse of Xarn. The horse appears to be an intricate statue of a warhorse, saddled, armored, ready for battle, standing at the ready. If a character with Mounted Combat and of good alignment were to mount the horse (which requires standing next to the horse and spending a full round to mount) then the horse MIGHT, depending on the initial artifact concordance check, obey the rider's commands. The miasma will surely attack anyone attempting this action.
+/OL
+/LI Rat: Rat is following the party. Each day the most alert party member (probably Deorai) can spot Rat or some sign of his 
+presence on a DC20 Perception check. If he is spotted then he can be surprised/captured using a level 2, complexity one skill 
+challenge (4 successes before 3 failures). Most checks will be moderate, some less likely possibilities will be difficult. 
+If captured and interrogated Rat will claim to be innocently traveling through the area. If questioned further via Intimidation 
+(medium DC13) he will admit he was told to follow by 'the boss'. He can interpret the parchment containing instructions on how 
+to find the back entrance to the lair, but is not too useful otherwise. If released he will find the other kobolds in their 
+camp and appraise them of the party's presence in the area. He will also tell them about the back entrance if he learns of it. LI/
+/LI The party arrives at the front entrance to the lair. This is area v1 on the map. 2 dead kobolds lie near the entrance. If 
+a character looks within he or she will immediately notice the green roiling form of Vertithrax's Mindfire Miasma, all that 
+remains of the powerful dragon. The miasma will simply remain in place unless a character attacks it or attempts to enter area 
+v2. In that case the miasma will move to a location within 2 squares of the character and make a Caustic Wisp attack 
+(Reach 2: +10 vs FORT; 2d8+3 poison damage and ongoing 5 poison damage (save ends)). While the miasma is not invulnerable to 
+attack it IS far to powerful to be destroyed by the party's limited capabilities. LI/
+/LI A DC13 Perception check reveals that there are many kobold tracks around the entrance area. The tracks lead back to the 
+west about a quarter mile. The kobolds have set up camp in a fairly defensible spot near a small stream. A DC13 group Stealth 
+check is required to avoid being spotted by any kobold sentries. The party could confront the kobolds, capture one, or 
+assault their camp, or they could simply avoid the camp entirely. If a kobold is captured he will tell basically the same 
+information and have the same ability to decipher the parchment as Rat does. LI/
+/LI The back entrance - Since the front entrance to the lair is blocked the party will need to find the back entrance. The easy 
+way is to interrogate a kobold and show them the parchment. If this isn't done then the party could search for a back way in. 
+Searching for the back entrance is a skill challenge of level 2, complexity 2. The party will eventually find the back entrance 
+if they persist in searching for it. The only variable is really how much stomping around the area they have to do. Success in 
+the challenge means they arrive at the back entrance without alerting any of the local ettercap. Failure indicates they will 
+have to fight to get in. Physical/Nature type skills are medium (DC13) checks. Other checks or powers could work with the right 
+idea, but they're going to be hard (DC20) checks in most cases. If the party has the map to the back entrance then they will 
+avoid the ettercap entirely. LI/
+/LI Within the back entrance - Inside the back entrance is area v8. The PCs will encounter 3 Ambush Spiders within area v8. 
+One spider lurks within each of the east and west alcoves and the third lurks just out of sight in the shaft leading to v7. 
+Each spider requires a DC20 Perception check to spot before it attacks, which they will do when the PCs move into the area. 
+If not spotted first they will gain surprise.
+/LI The shaft - The shaft from v8 to v7 is a narrow, steep passage that is about 3' by 6' and slants to the east at a 45' angle. 
+A DC9 Athletics check is required to move in this shaft. Any character failing the check is stuck until the start of their 
+next turn. LI/
+/LI Area v7 - This was once a room where Vertithrax stored his 'less valuable' treasures. There are still remnants of items 
+which looters of a century or more ago didn't find to be worth transporting. The ceiling of the cave is about 20' overhead, 
+except in the south part around the shaft entrance where it is only around 5'. The shaft deposits one on a shelf that is 15' 
+above the rest of the floor. Climbing down requires a DC9 Athletics check. Heaped on the eastern side of the room are a large 
+number of barrels, bales, bolts of cloth, and crates which once held goods. Along the western wall a number of dusty and 
+decaying tapestries hang, concealing the wall itself. 3 phase spider hatchlings and a spider swarm lurk in the room. One 
+hatchling is behind a rock just west of the shaft, another is behind the tapestry a couple squares further north, and a third 
+is concealed inside a barrel. The entire pile of goods is infested with small spiders which will swarm as soon as the PCs 
+come within 5' of the pile. Spotting any of these spiders requires a DC20 Perception check. Once the spiders are dispatched 
+the room can be searched. 20 minutes of searching will uncover a fine blue cloak with rust-colored trim. This is a Cloak of 
+the Walking Wounded (AV1 p151). LI/
+/LI Area v6 - This was the main resting place and treasure room of Vertithrax. Originally the chamber was dry and was mostly 
+taken up by Vertithrax and the main part of his horde. Sometime after the room was looted water began to seep in and pool on 
+the west side. At the edge of the water lurks a Green Slime. Nearby 2 gray ooze blend in with the stone floor, all require a 
+DC20 Perception check to spot and will attack with surprise if not detected as soon as a character moves adjacent to the water. 
+The room is otherwise rather bare, with a few fallen bits of rock and accumulations of sand and silt here and there. Lying 
+in the mud near the entrance to area v7 are a few gold coins (10gp) and 2 hoard scarabs, leftovers from the treasure which 
+was once here. The scarabs will attack whomever picks them up thinking they are coins 2-3 rounds after they are placed in a 
+purse, burrowing out of the purse and biting into their victim. They can be detected for what they are with a DC19 Perception 
+check. If not disturbed they will remain where they are. LI/
+/LI Area v5 - This room was once used by Vertithrax's kobold minions as a cooking area, lab, and storage. The contents now 
+consist of upturned wooden trestles and broken storage vessels and shelving. Interspersed amongst the debris can be found 
+several items of value. 2 tanglefoot bags, a small jar containing 100gp worth of residuum, and a healing potion. It will require 
+about 10 minutes of searching to uncover these items. LI/
+/LI Area v4 - Trapped side-passage. This passage leads to area v3. At the south end it is filled to about 3' depth with water. 
+Just north of the water the passage is wet, partly floored with silty mud, and generally slippery. An old kobold trap 
+consisting of 2 trip wires (DC15 Perception check to detect) are each rigged to a heavy wooden framework carrying sharpened 
+spikes suspended in the darkness above. Tripping either wire will cause the corresponding framework to crash down on whomever 
+set it off (+6 vs REF 2d8+8 damage and the target is restrained (save ends). A DC9 Thievery check can be used to delay the trap 
+for one round, or a DC15 Thievery check can be used to disarm the trap. Anyone damaged by either of these traps must make a 
+saving throw or contract filth fever. LI/
+/LI Area v3 - Old kobold lair. Kobolds once laired in this room. All of their goods have long since mouldered away and all 
+that remains is some loose brush and rotting wood. 4 centipede swarms infest the room, attacking anyone who enters. On the 
+northwest side of the room is a narrow fissure through which light shines. It is possible to gain entry and exit from the lair 
+at this point to the north. LI/
+/LI Area v2 - The entrance hall. This high and wide area of cave was once the entrance hall to Vertithrax's lair. Now it is 
+the haunt of his last creation, the Mindfire Miasma. This roiling green cloud normally remains just a bit inside the 
+entrance, blocking any ingress or egress. If anyone enters area v2 the miasma will move at a speed of 8 in their direction. 
+Once it is within 2 squares of the trespasser it will unleash an attack each round as described above for area v1. Anyone 
+leaving area v2 will not be pursued. The Miasma is practically impossible to kill, or even hit. The only way to explore the 
+room at all would be to have different individuals enter from different sides of the room, but this procedure would be very 
+dangerous. In the middle of the room is a great treasure, the Adamantine Horse of Xarn. The horse appears to be an intricate 
+statue of a warhorse, saddled, armored, ready for battle, standing at the ready. If a character with Mounted Combat and of 
+good alignment were to mount the horse (which requires standing next to the horse and spending a full round to mount) then 
+the horse MIGHT, depending on the initial artifact concordance check, obey the rider's commands. The miasma will surely attack 
+anyone attempting this action.
+OL/
+/SECTION Ettercaps SECTION/
 
-==/SECTION Ettercaps SECTION/ ==
+If the party fails to find the back entrance quickly enough they will be assailed by the following encounter near the base of 
+the slope leading up to the back entrance cave. 1 Ettercap Vermin Handler (E), 1 Tree Spider (T), and 2 Ambush Spiders (A). 
+See the map below. The spiders and the ettercap are all concealed (DC19 Perception check to spot). The webs can be 
+spotted with a DC13 Perception check before reaching the ambush point, in which case the party will avoid being surprised.
+/SECTION Kobolds SECTION/
 
-If the party fails to find the back entrance quickly enough they will be assailed by the following encounter near the base of the slope leading up to the back entrance cave. 1 Ettercap Vermin Handler (E), 1 Tree Spider (T), and 2 Ambush Spiders (A). See the map below. The spiders and the ettercap are all concealed (DC19 Perception check to spot). The webs can be spotted with a DC13 Perception check before reaching the ambush point, in which case the party will avoid being surprised.
+The kobold camp contains 5 kobold cleavers (C), 2 kobold slingers (S), one kobold piker (P), and one kobold slyblade (K). 
+They have 5 crude tents and a firepit. On the north edge of the camp is a steep slope, which is about 10' high and requires 
+a DC13 Athletics check to climb. On the south edge the kobolds have dug a shallow trench about 3' deep and 4' wide, which is 
+filled with stakes. A character can jump over, landing on the low mound on the other side with a DC9 Athletics check, or move 
+through the stakes at full speed with a DC13 Acrobatics check. Otherwise movement at half speed is required with no check. 
+The 'logs' are actually piles of earth, rocks, and log which provide superior cover for anyone who is prone (crouching down). 
+They provide cover otherwise. These require a DC9 Athletics check to cross and count as difficult terrain. The tents are 
+simple skins and sticks and can be knocked over with a move action. Running through them requires a DC9 Acrobatics check 
+to avoid falling prone and they count as difficult terrain. The water also counts as difficult terrain.
 
-==/SECTION Kobolds SECTION/ ==
-
-The kobold camp contains 5 kobold cleavers (C), 2 kobold slingers (S), one kobold piker (P), and one kobold slyblade (K). They have 5 crude tents and a firepit. On the north edge of the camp is a steep slope, which is about 10' high and requires a DC13 Athletics check to climb. On the south edge the kobolds have dug a shallow trench about 3' deep and 4' wide, which is filled with stakes. A character can jump over, landing on the low mound on the other side with a DC9 Athletics check, or move through the stakes at full speed with a DC13 Acrobatics check. Otherwise movement at half speed is required with no check. The 'logs' are actually piles of earth, rocks, and log which provide superior cover for anyone who is prone (crouching down). They provide cover otherwise. These require a DC9 Athletics check to cross and count as difficult terrain. The tents are simple skins and sticks and can be knocked over with a move action. Running through them requires a DC9 Acrobatics check to avoid falling prone and they count as difficult terrain. The water also counts as difficult terrain.
-
-The kobolds are moderately alert but the camp can be approached as close as the nearest cover without an alarm with a DC9 Stealth check (group check for the whole party to do so). 3 of the kobolds are in their tents and will only come out on round 3 of an attack.
+The kobolds are moderately alert but the camp can be approached as close as the nearest cover without an alarm with a DC9 
+Stealth check (group check for the whole party to do so). 3 of the kobolds are in their tents and will only come out on 
+round 3 of an attack.
 /SUBSECTION What Happened SUBSECTION/ 
 
 TBD

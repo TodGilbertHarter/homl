@@ -1,13 +1,14 @@
-/CALLING" Monk"/
+/CALLING /ID" d2d19dba-794b-11ec-a8ac-74d02b9c2012"/
+/CALLINGNAME Monk CALLINGNAME/
 /TRAITS
-/ROLE" Defender"/
-/POWERSOURCE" Martial"/
-/DAMAGEDIE" D6"/
-/WEAPONS" Unarmed, Any 3"/
-/IMPLEMENTS" None"/
-/KNACKS" Athletics, Acrobatics"/
-/HITPOINTS" 6"/
-/STARTHITPOINTS" 12"/
+/ROLE Defender ROLE/
+/POWERSOURCE Martial POWERSOURCE/
+/DAMAGEDIE D6 DAMAGEDIE/
+/WEAPONS Unarmed, Any 3 WEAPONS/
+/IMPLEMENTS None IMPLEMENTS/
+/KNACKS Athletics, Acrobatics KNACKS/
+/HITPOINTS 6 HITPOINTS/
+/STARTHITPOINTS 12 STARTHITPOINTS/
 TRAITS/
 
 Monks are individuals who seek to perfect their inner selves by means of meditation and practice. Those who become heroes rely on this extreme training and esoteric techniques learned through long practice in ancient fighting traditions. They usually belong to schools or traditions of study and are generally very loyal to their teachers. They may decide to go out into the world for various reasons, leaving their isolated training locations. This could be because of some quest given to them by their teachers, a disaster or attack which destroys their home, or simply because they have a desire to accomplish some goal out in the world.
@@ -65,7 +66,7 @@ DESCRIPTION/
 /BENEFITS
 /BENEFIT 
 You gain access to the following feat:
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Defensive Mobility FEATNAME/
+/FEAT /ID" 595e6532-77aa-11ec-bcfa-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Defensive Mobility FEATNAME/
 /ORIGIN Mobile Defender ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Free ACTION/
@@ -110,7 +111,7 @@ You have studied the art of staff fighting.
 DESCRIPTION/
 /BENEFITS
 /BENEFIT
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Spinning Attack FEATNAME/
+/FEAT /ID" 66ebe378-77aa-11ec-b84e-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Spinning Attack FEATNAME/
 /ORIGIN Staff Fighter ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Major ACTION/
@@ -135,7 +136,7 @@ You are an expert staff fighter.
 DESCRIPTION/
 /BENEFITS
 /BENEFIT
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Vaulting Attack FEATNAME/
+/FEAT /ID" 74f7720c-77aa-11ec-97da-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Vaulting Attack FEATNAME/
 /ORIGIN Staff Expert ORIGIN/
 /LEVEL 4 LEVEL/
 /ACTION Major ACTION/
@@ -163,7 +164,7 @@ You have mastered the core elements of the Dragon Technique of unarmed combat.
 DESCRIPTION/
 /BENEFITS
 /BENEFIT
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME The Claw FEATNAME/
+/FEAT /ID" 8290b0e0-77aa-11ec-abda-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME The Claw FEATNAME/
 /ORIGIN Dragon Technique ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Major ACTION/

@@ -1,13 +1,14 @@
-/CALLING" Beastmaster"/
+/CALLING /ID" 84470d6a-794b-11ec-83d7-74d02b9c2012"/
+/CALLINGNAME Beastmaster CALLINGNAME/
 /TRAITS
-/ROLE" Defender"/
-/POWERSOURCE" Life"/
-/DAMAGEDIE" D6"/
-/WEAPONS" Any 3"/
-/IMPLEMENTS" None"/
-/KNACKS" Insight, Nature"/
-/HITPOINTS" 6"/
-/STARTHITPOINTS" 12"/
+/ROLE Defender ROLE/
+/POWERSOURCE Life POWERSOURCE/
+/DAMAGEDIE D6 DAMAGEDIE/
+/WEAPONS Any 3 WEAPONS/
+/IMPLEMENTS None IMPLEMENTS/
+/KNACKS Insight, Nature KNACKS/
+/HITPOINTS 6 HITPOINTS/
+/STARTHITPOINTS 12 STARTHITPOINTS/
 TRAITS/
 
 The beastmaster is at home with all types of animals. She has a deep connection with them, and they are her natural allies. In particular most beastmasters form an mystic bond with at least one individual animal, and sometimes more than one. They are often found far from civilization, living in a natural setting. However, there are some beastmasters who are quite at home in civilized places.

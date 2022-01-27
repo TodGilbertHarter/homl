@@ -1,13 +1,14 @@
-/CALLING" Wizard"/
+/CALLING /ID" 214c6e20-794c-11ec-b7ed-74d02b9c2012"/
+/CALLINGNAME Wizard CALLINGNAME/
 /TRAITS
-/ROLE" Controller"/
-/POWERSOURCE" Varies"/
-/DAMAGEDIE" D6"/
-/WEAPONS" Any 1"/
-/IMPLEMENTS" Any 3 of orb, staff, wand, or tome"/
-/KNACKS" Arcana, History"/
-/HITPOINTS" 5"/
-/STARTHITPOINTS" 8"/
+/ROLE Controller ROLE/
+/POWERSOURCE Varies POWERSOURCE/
+/DAMAGEDIE D6 DAMAGEDIE/
+/WEAPONS Any 1 WEAPONS/
+/IMPLEMENTS Any 3 of orb, staff, wand, or tome IMPLEMENTS/
+/KNACKS Arcana, History KNACKS/
+/HITPOINTS 5 HITPOINTS/
+/STARTHITPOINTS 8 STARTHITPOINTS/
 TRAITS/
 Wizards are pure students of the magic of the cosmos. Without entirely limiting themselves to one power source, they study and utilize all of them in some measure. This requires a great deal of mental discipline and constant study and practice. The wizard must also seek out and gain access to the information which they need to master in order to command the power sources without becoming attuned to a given one. Often they will be found wandering in far lands, strange worlds, or dark regions of the earth in search of this knowledge.
 

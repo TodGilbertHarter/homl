@@ -1,0 +1,33 @@
+/*
+* Generate species entries for compendium
+*/
+/VARIABLE /FIRSTBOON /TRUE /FIRSTBOON /V!
+/NEWVOCABULARY /SPECIES
+/VOCABULARY /SPECIES /CURRENT
+/: /ID" /" " /DUP /. ": { "version": "1.0", "id": " /. " :/
+/VOCABULARY /COMPENDIUM /CURRENT
+/NEWVOCABULARY /BOONS
+/VOCABULARY /BOONS /CURRENT
+/VOCABULARY /BOONS /ACTIVE
+/: /ID" /FIRSTBOON /V@ /NOT /IF , /THEN /FALSE /FIRSTBOON /V! /" " /. " :/
+/VOCABULARY /BOONS /INACTIVE
+/VOCABULARY /COMPENDIUM /ACTIVE
+/VOCABULARY /COMPENDIUM /CURRENT
+
+/: /DOCUMENT" /" /DROP /NEWLINE "species": { :/ 
+/: DOCUMENT/ /NEWLINE } :/
+
+/VARIABLE /FIRSTSPECIES
+/TRUE /FIRSTSPECIES /V!
+/: /SPECIES /FIRSTSPECIES /V@ /NOT /IF , /THEN /FALSE /FIRSTSPECIES /V! /[" /SPECIES "]/ /VOCAB@ /ACTIVE /EMITON :/
+/: SPECIES/ } /[" /SPECIES "]/ /VOCAB@ /INACTIVE /NEWLINE /EMITOFF /TRUE /FIRSTBOON /V! :/
+/: /SPECIESNAME , "name": " :/ /: SPECIESNAME/ " :/
+/: /SIZE , "size": " :/ /: SIZE/ " :/
+/: /SPEED , "speed": :/ /: SPEED/ // :/
+/: /VISION , "vision": " :/ /: VISION/ " :/
+/: /HEIGHT , "height": " :/ /: HEIGHT/ " :/
+/: /WEIGHT , "weight": " :/ /: WEIGHT/ " :/
+/: /SPECIESBOONS , "boons": /[" /BOONS "]/ /VOCAB@ /ACTIVE [ /TRUE /FIRSTBOON /V! :/ /: SPECIESBOONS/ ] /[" /BOONS "]/ /VOCAB@ /INACTIVE :/
+/: /TRAITS // :/ /: TRAITS/ /[" /SPECIES "]/ /VOCAB@ /INACTIVE /NEWLINE /EMITOFF :/
+
+/: "/ // :/

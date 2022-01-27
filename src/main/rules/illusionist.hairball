@@ -1,13 +1,14 @@
-/CALLING" Illusionist"/
+/CALLING /ID" b03367e8-794b-11ec-b8cf-74d02b9c2012"/
+/CALLINGNAME Illusionist CALLINGNAME/
 /TRAITS
-/ROLE" Controller"/
-/POWERSOURCE" Shadow"/
-/DAMAGEDIE" D6"/
-/WEAPONS" Any 1"/
-/IMPLEMENTS" orb"/
-/KNACKS" Arcana, Bluff"/
-/HITPOINTS" 5"/
-/STARTHITPOINTS" 8"/
+/ROLE Controller ROLE/
+/POWERSOURCE Shadow POWERSOURCE/
+/DAMAGEDIE D6 DAMAGEDIE/
+/WEAPONS Any 1 WEAPONS/
+/IMPLEMENTS orb IMPLEMENTS/
+/KNACKS Arcana, Bluff KNACKS/
+/HITPOINTS 5 HITPOINTS/
+/STARTHITPOINTS 8 STARTHITPOINTS/
 TRAITS/
 The illusionist is a wielder of shadow magic, but unlike the necromancer he focuses on the mind-affecting aspects of shadow. Thus illusionists are masters of deception, illusion, and misdirection. When in the presence of an illusionist, nothing is as it seems! 
 

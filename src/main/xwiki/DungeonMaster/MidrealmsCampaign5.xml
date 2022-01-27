@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>MidrealmsCampaign5</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>DungeonMaster.MidrealmsCampaign</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1336994635000</creationDate>
+<date>1339398410000</date>
+<contentUpdateDate>1339398410000</contentUpdateDate>
+<version>5.1</version>
+<title>MidrealmsCampaign5</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>=== Recapitulation ===
+
+The attack of the Vuul on Smick's Knob appears to have been defeated as the PCs killed Vuulthar, rescued the girl Cecily, and retreated with 2 wagons of villagers towards Castle Drolon. Before reaching the Castle the party ran into Umburth the dwarf who owns the sawmill and Sir Jargosh with 5 mounted troopers. The party, the troopers, Jargosh and the dwarf headed back to Smick's Knob, but ran into the elf Valan and his men, who took them to see the elder Dorthas. Dorthas claims the whole village is a violation of an agreement with the elves and that the forest is there sacred land.
+
+After explaining to the elves the events at the village and some revelations by Father Barmin it was determined that a shadowgate must exist and that it should be closed. The party has agreed to close the gate and has discovered its location. Father Barmin also told them where to find lore they will require at the Otillis Temple in Gurig's Haven. The party has horses lent by Jargosh and is proceeding to the pirate town to find the lore. They have a week to do so.
+
+~*~*Further Developments~*~*
+
+The party returned from Gurig's Haven after recovering the required lore books. It was then determined that the MossGrotto would have to be explored in order to recover a key required to finish a closing ritual. The PCs proceeded to the grotto, where they confronted Valanar, captain of the elvish rangers, who is also a warlock.
+
+=== Heroes ===
+
+* Deorai - Elf ranger of the woods of Urieth. Exiled from his tribe and his love, who was then slain by orcs.
+* Celery - Human cavalier of Avandra (a minor aspect of Jerok) who was 'slumming' in Gurig's Haven 'seeking adventure' when she met Malachite.
+* Moose - A halfling native of Fallcrest. Moose is an orphan who has no clan, making his way by his wits.
+* Penelope - A pixie wizard from the pixie tree.
+
+=== NPCs ===
+
+* Valanar - Elf Warlock pacted to Vuulthar. He passes as an elvish ranger captain.
+* Ereglion - Elf elder of the Ralanion clan.
+* Umburth - Dwarvish sawmill owner.
+* Father Barmin - Priest of Otillis.
+* Cecily - Barmin's daughter and reincarnation of Seelia.
+* Mali - Elf apprentice of Valanar, has a secret crush on him. Acts as Valanar's messenger in the ranger company.
+* Vuulthar - Evil lord of the Vuul.
+* Jargosh - Knight of Farlond.
+* Ardur - Cecily's boyfriend and son of John Smick, the founder of the village.
+
+=== Summary ===
+
+The party travels back to Fallcrest and talks to the High Priest of the Moonsong Temple. They then contact Moose's 'cousin' Vinnie, who ferries them into Gurig's Haven with his raft. The party sneaks into the old Temple of Otillis, where they acquire the books written by Barmin's uncle. In the process Moose is blinded and Celery is cursed by sigils of warding. Escaping the town they go back to Fallcrest and acquire cures from Moonsong Temple in return for some extra lore books they acquired.
+
+The party then returns to Smick's Knob, where they decipher enough lore to determine that they must have a knife and a key in order to seal the shadow gate at the barrow. They also learn that the elvish priests of Hurn had custody of the key, which was held in a grotto temple nearby, which has long since fallen into ruin. Unknown to the party Valanar already has the knife, which he used to forge a pact with Vuulthar. As soon as Valanar learns where to look for the key he will have Mali lead the party astray while he tries to acquire it himself, but the PCs will probably arrive in time to tangle with him.
+
+Once the key and the knife are available the party must figure out how to perform the required ritual at the barrow. Valanar, or his minion Mali if Valanar is out of action, will kidnap Cecily and try to use her as a hostage to get the knife and key for their own purposes (Summon Vuulthar and sacrifice Cecily to destroy the gate ward and release the Vuul).
+
+=== Events ===
+
+1. The party arrives back at Smick's Knob and encounter several Vuul attempting to assault a couple of lumberjacks. One of the Vuul reveals that Vuulthar "will return, when the light of the Moon shines bright". The PCs know this will happen in 3 days.
+1. The party, Barmin, and Ereglion interpret enough of the lore book to understand that Cecily is Seelia reincarnated and Vuulthar wants to sacrifice her to get back his lover and break the ward. They will also learn that the ritual needed to fix the ward requires a key and a knife. They will learn that the key may be located at the ancient Moss Grotto.
+1. Valanar will disappear and Mali will offer to lead the party to the grotto, but will in fact lead them far astray. If the PCs paid enough attention to Ereglion's description of where the grotto is located they should be able to detect the subterfuge. Otherwise the PCs will be delayed and arrive after Valanar has acquired the key. In any case, when the party arrives Mali will misdirect them so that they encounter the Oblivion Moss.
+1. If the party arrived at the grotto ahead of Valanar they will recover the key. Otherwise they will have the warlock's trail to follow. In the former case Valanar will head back to the town in order to capture Cecily. In the later case he will set a Vuul ambush for the party and slip away to await the full Moon when he will be able to try his ritual.
+1. If Valanar has the ritual objects then the PCs will be forced to attempt to interrupt his ritual. They will have some amount of time to prepare, depending on how much time they spent in pursuit etc. Valanar will proceed to the barrow area and dig in. He has several rangers who will follow his lead, and possibly Mali who will try to slip away and join him. Valanar will simply tell them he intends to close the gate himself and rely on their loyalty, playing up the violation of the sacred forest by the humans as a just cause. However not all the elvish rangers will be convinced and at least one, Dorthas, will dramatically warn the party of Valanar's plans. The PCs have 3 choices, they can try to set up a defense against Valanar, they can attack Valanar before the ritual will be cast, or they can attempt to disrupt the ritual itself.
+1. If Valanar does NOT have both ritual objects then there are several possibilities.
+1. Valanar will attempt to convince the PCs that he can help them and they should cooperate to cast the closing ritual at the proper moment. He will betray them during casting, having some of his rangers attack and perverting the ritual to open the gate permanently and empower Vuulthar.
+1. The PCs can try to track down Valanar with the help of some of the elves, if they can convince them that they're on the up-and-up. Mali will try to undermine this approach if she is still attached to the group.
+1. The PCs can try to set up at the barrow before Valanar arrives and capture him or kill him in order to get the knife.
+1. Valanar could attempt to kidnap Cecily and use her as a bargaining chip to get the key. This might work if he can get Mali and a couple of rangers to pull a betrayal during a hostage exchange. Valanar will then go back to his plan A.
+
+== Rules of the Road ==
+
+There are a few things that can possibly happen.
+
+1. A ritual directed according to the lore by a group in possession of the key and the knife can be used to seal the shadow gate. This will prevent the Vuul from gaining access to the world, at least until someone damages the ward again, which is unlikely to happen in the near future as the elves will arrange for it to be watched.
+1. A ritual using the key and the knife can be used to destroy the ward permanently. In this case the Vuul cannot be sealed away, at least with any magic currently available to the PCs. The area of the forest will become exceedingly dangerous and the Vuul will make war on the surrounding human and elf communities. Vuulthar will be able to manifest his full power and the Vuul in general will be stronger and more dangerous than they are currently.
+1. A ritual could be performed using the knife in order to sacrifice Cecily. This won't affect the ward on the barrow, but will empower Vuulthar and give him what he most desires, his love Seelia's reincarnation. This will be even more effective if the ward is also destroyed entirely.
+
+Certain things are givens:
+
+1. Vuulthar in his present incarnation can only manifest once per full moon and once 'killed' will be out of play until the next full moon. Vuul can only manifest within a few miles of the shadow gate.
+1. If the ward is destroyed Vuulthar will simply be subject to normal rules, he can be killed but will be much more powerful and his Vuul followers will be much more dangerous. They will also not be tied down to remaining in the vicinity of the gate.
+1. Gate related rituals only work at the full moon. Sacrifice rituals may work at any time.
+
+== Moss Grotto ==
+
+The MossGrotto adventure where the key can be acquired.
+
+== Closing the Shadowgate ==
+
+The ClosingTheShadowgate adventure. The party tries to close Vuulthar's shadowgate.</content></xwikidoc>

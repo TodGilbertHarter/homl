@@ -1,48 +1,44 @@
 /*
-* Hairball vocabulary which generates tables of contents from standard Hairball markup.
-* The result of running your markup with this vocabulary on top of the search order
-* will be to create an output which can then be sourced into in a second pass.
+* Hairball vocabulary which generates tables of contents from standard Hairball markup plus
+* the refs.hairball reference table. This version is more reliable than the 'old' version which
+* relied on reference counting everything and was easy to break.
 */
 /NEWVOCABULARY /HTML
 /VOCABULARY /HTML /ACTIVE
 /VOCABULARY /HTML /CURRENT
 
-/VARIABLE /CURRENTID 
-#2 /CURRENTID /V!
 /' /DROP /SETEMITTER /* get rid of all literal text so we can control what we output exactly */
+/: /GETMATCHING /DOER /DROP /W /W2L /MAKELITERAL /HERE! :/
 /: /.NOW // :/
 /: /.VERSION // :/
-/: /INCID /CURRENTID /V@ /1+ /CURRENTID /V! :/
-/: /A <a href="# /INCID /CURRENTID /V@ /. "> :/
+/: /INCID // :/
+/: /ID" /" :/
+/: /A <a href="# /TRIM /DUP /FETCHREFERENCE /. "> :/
 /: A/ </a> :/
 /: /DOCUMENT" /SPACE /TOC /SPACE /FLEXROW :/
-/: /BOOK" /" /SPACE /FLEXCELL /SPACE /TOCTABLE /SPACE /CAPTION /SPACE /TOGGLEWIDGET /SPACE /A /. A/ /SPACE /CAPTION /SPACE :/
-/: BOOK/ TABLE/ /SPACE DIV/ /SPACE :/
-/: /CHAPTER" /" /SPACE /TR=" chapter " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/
-/: /SECTION" /" /SPACE /TR=" section " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/
-/: /SUBSECTION" /" /SPACE /TR=" subsection " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/
-/: /TOPIC" /" /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/
+/: /BOOK" /" /SPACE /FLEXCELL /SPACE /TOCTABLE /SPACE /CAPTION /SPACE /TOGGLEWIDGET /SPACE /A /. A/ /SPACE /CAPTION /SPACE /NEWLINE :/
+/: BOOK/ TABLE/ /SPACE DIV/ /SPACE /NEWLINE :/
+/: /CHAPTER" /" /SPACE /TR=" chapter " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE /NEWLINE :/
+/: /SECTION" /" /SPACE /TR=" section " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE /NEWLINE :/
+/: /SUBSECTION" /" /SPACE /TR=" subsection " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE /NEWLINE :/
+/: /TOPIC" /" /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE /NEWLINE :/
 /: DOCUMENT/ DIV/ /SPACE TOC/ :/
-/* /: /BOON" /" /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/
-/: /BOON /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A :/
-/: BOON/ A/ /SPACE TD/ /SPACE TR/ /SPACE :/
-/: /FEAT" /" /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/ */
 /: /BOON" /" /INCID  :/
 /: /BOON /INCID  :/
 /: BOON/ // :/
 /: /FEAT" /" /INCID :/
 /: /FEAT // :/
-/* /: /SOURCE /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A :/
-/: SOURCE/ A/ /SPACE TD/ /SPACE TR/ /SPACE :/ /* This is actually /FEAT, sort of */
 /: /SOURCE /INCID :/
 /: SOURCE/ // :/
-/: /SPECIES" /" /SPACE /TR=" section " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/
-/: /SPECIES /INCID :/ /* This doesn't actually exist as of now */
-/: /CALLING" /" /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE :/
-/: /CALLING /INCID :/ /* This doesn't actually exist as of now */
+/: /SPECIES" /" /SPACE /TR=" section " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE  /NEWLINE :/
+/: /SPECIES // :/ /* This doesn't actually exist as of now */
+/: /SPECIESNAME /TR=" section " // / /SPACE /TD /SPACE /GETMATCHING SPECIESNAME/ /DELIMITED /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE /NEWLINE :/
+/: /CALLING" /" /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE /NEWLINE :/
+/: /CALLING // :/
+/: /CALLINGNAME /TR=" topic " // / /SPACE /TD /SPACE /GETMATCHING CALLINGNAME/ /DELIMITED /A /. A/ /SPACE TD/ /SPACE TR/ /SPACE /NEWLINE :/
 /: /AFFLICTION" /INCID :/
-/: /AFFLICTION /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A :/
-/: AFFLICTION/ A/ /SPACE TD/ /SPACE TR/ /SPACE :/
+/* /: /AFFLICTION /SPACE /TR=" topic " // / /SPACE /TD /SPACE /A :/
+/: AFFLICTION/ A/ /SPACE TD/ /SPACE TR/ /SPACE /NEWLINE :/ */
 /: /FEATURES /INCID :/
 /: /BOONS /INCID :/
 /: /TABLE /INCID :/

@@ -102,7 +102,7 @@ body {
 body > div {
     width: 75%;
     margin-right: auto;
-    margin-left: 23%;
+    margin-left: auto;
     padding: 1em;
     background-color: var(--matte-bg);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -122,6 +122,9 @@ body > div > div p {
     padding-right: .25em;
     margin-top: .5em;
     margin-bottom: .5em;
+    font-size: 1em;
+    font-weight: normal;
+    font-style: normal;
 }
 
 article::before {
@@ -161,11 +164,17 @@ div.crumbs {
 web {
 	display: inline;
 	color: black;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 parent {
 	display:inline;
 	color: black;
+}
+
+section.license {
+	font-size: .8em;
 }
 
 section.subsection {

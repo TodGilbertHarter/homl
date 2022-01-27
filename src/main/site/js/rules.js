@@ -1,3 +1,20 @@
+/**
+ * This software is Copyright (C) 2021 Tod G. Harter. All rights reserved.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 /*
 Represents a 'rule' to be applied to a character in order to calculate one of the derived values.
 Every Calculation has a TARGET, a piece of the derived character which it updates. It also has
@@ -17,15 +34,18 @@ class Calculation {
 }
 
 const proficiencyBonus = 5;
+const baseDifficultyValue = 16;
 
 /*
 This is the rules container. Every rule which can be applied to perform the calculations for the character
 sheet is embodied here.
 */
 class Rules {
+	callingRepo;
     rulesList;
     
-    constructor() {
+    constructor(callingRepo) {
+		this.callingRepo = callingRepo;
         this.rulesList = [];
         
         const ltarget = 'levelbonus';
@@ -37,6 +57,8 @@ class Rules {
         }
         const levelbonuscalculator = new Calculation(ltarget,lsources,lcalc);
         this.addRule(levelbonuscalculator);
+
+//		this.getCallings();
         
         const calcProficiency = function(name,proficiencies,knacks,levelbonus,abilitybonus) {
             const knack = {};
@@ -83,6 +105,32 @@ class Rules {
         this.addRule(knackCalculator);
     }
     
+    /**
+     * Get callings from the database. This will just get ALL of the callings, no doubt we will
+     * likely use them all, and there shouldn't be too many anyway. calls createCallingCalculators
+     * when the data is available.
+     */
+    getCalling(character) {
+		this.callingRepo.getReferencedCalling(character.calling,(calling) => {
+			this.createCallingCalculators(calling);
+			this.calculate(character);
+		});
+	}
+	
+	/**
+	 * Callback which sets up the calling calculations once we get data back.
+	 */
+    createCallingCalculators(calling) {
+		this.addRules(calling.calculators);
+	}
+	
+	addRules(calculations) {
+		calculations.forEach((calculation) => {
+			this.rulesList.push(calculation);
+		});
+		this.sortRules();
+	}
+	
     addRule(calculation) {
         this.rulesList.push(calculation);
         this.sortRules();
@@ -124,4 +172,4 @@ class Rules {
     }
 }
 
-export { Rules };
+export { Rules, Calculation };

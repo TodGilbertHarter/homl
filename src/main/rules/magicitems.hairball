@@ -112,14 +112,14 @@ DIV/
 FLEXCELL/
 /FLEXCELL
 /DIVW=" 100%; padding-left: .5em; padding-right: .5em"/
-/FEAT /SOURCE spirit SOURCE/ /TIER legendary TIER/ /FEATNAME Accuracy FEATNAME/ 
+/FEAT /ID" ac4c3266-77a9-11ec-accb-74d02b9c2012"/ /SOURCE spirit SOURCE/ /TIER legendary TIER/ /FEATNAME Accuracy FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 9 LEVEL/ /ACTION Major ACTION/
 /TAGS divination TAGS/
 /EFFECTS You may take advantage on any three checks made before the next rest. EFFECTS/
 /COMPONENTS Major spiritual components COMPONENTS/
 /COSTS One power point of any source COSTS/
 FEAT/
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Aptitude FEATNAME/ 
+/FEAT /ID" ba79f666-77a9-11ec-99d6-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Aptitude FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment TAGS/
 /EFFECTS 
@@ -128,7 +128,7 @@ EFFECTS/
 /COMPONENTS Major martial components COMPONENTS/
 /COSTS One power point of any source COSTS/
 FEAT/
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Chameleon FEATNAME/ 
+/FEAT /ID" cdf5df16-77a9-11ec-b98f-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Chameleon FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 5 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment TAGS/
 /EFFECTS 
@@ -138,7 +138,7 @@ EFFECTS/
 /COSTS One power point of any source COSTS/
 FEAT/
 
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Clairaudience FEATNAME/ 
+/FEAT /ID" dc71e076-77a9-11ec-8d5d-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Clairaudience FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 4 LEVEL/ /ACTION Major ACTION/
 /TAGS conjuration, enchantment TAGS/
 /EFFECTS 
@@ -148,7 +148,7 @@ EFFECTS/
 /COSTS One power point of any source COSTS/
 FEAT/
 
-/FEAT /SOURCE spirit SOURCE/ /TIER legendary TIER/ /FEATNAME Clarity FEATNAME/ 
+/FEAT /ID" ea66fbc6-77a9-11ec-9127-74d02b9c2012"/ /SOURCE spirit SOURCE/ /TIER legendary TIER/ /FEATNAME Clarity FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 9 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment TAGS/
 /EFFECTS 
@@ -158,7 +158,7 @@ EFFECTS/
 /COSTS One power point of any source COSTS/
 FEAT/
 
-/FEAT /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Dimunition FEATNAME/ 
+/FEAT /ID" f9484082-77a9-11ec-bd6e-74d02b9c2012"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Dimunition FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 4 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment TAGS/
 /EFFECTS 
@@ -173,7 +173,7 @@ DIV/
 FLEXCELL/
 /FLEXCELL
 /DIVW=" 100%; padding-left: .5em; padding-right: .5em"/
-/FEAT /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Animal Control FEATNAME/ 
+/FEAT /ID" 07dfa388-77aa-11ec-acb0-74d02b9c2012"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Animal Control FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment TAGS/
 /EFFECTS 
@@ -183,7 +183,7 @@ EFFECTS/
 /COSTS One power point of any source COSTS/
 FEAT/
 
-/FEAT /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Climbing FEATNAME/ 
+/FEAT /ID" 18802b0e-77aa-11ec-a67a-74d02b9c2012"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Climbing FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment TAGS/
 /EFFECTS 
@@ -193,7 +193,7 @@ EFFECTS/
 /COSTS One power point of any source COSTS/
 FEAT/
 
-/FEAT /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Clairvoyance FEATNAME/ 
+/FEAT /ID" 28acc1ae-77aa-11ec-976c-74d02b9c2012"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Clairvoyance FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 7 LEVEL/ /ACTION Major ACTION/
 /TAGS conjuration, enchantment TAGS/
 /EFFECTS 
@@ -203,7 +203,7 @@ EFFECTS/
 /COSTS One power point of any source COSTS/
 FEAT/
 
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Defense FEATNAME/ 
+/FEAT /ID" 38334e18-77aa-11ec-94bf-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Defense FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 4 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment TAGS/
 /EFFECTS 
@@ -214,7 +214,7 @@ EFFECTS/
 FEAT/
 
 
-/FEAT /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Dragon Breath FEATNAME/ 
+/FEAT /ID" 474c66d2-77aa-11ec-951b-74d02b9c2012"/ /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Dragon Breath FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 3 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment, fire*, cold*, acid*, poison*, lightning* TAGS/
 /SPECIAL Pick one of fire, cold, acid, lightning, or poison when the potion is made. SPECIAL/
@@ -265,11 +265,22 @@ Keepers can take almost infinite forms. They might appear as beings, as spirits 
 SUBSECTION/
 /SUBSECTION" Destruction"/
 
-Artifacts are ancient relics of power and might, containing extremely potent magic. They were created under extraordinary unique conditions. Destroying them will require equally extraordinary circumstances. In a few cases destruction might not truly be possible, such as a case where an artifact represents a universal principle. However, even items of this sort can generally be unmade, even if they will reappear in some future time. If the players decide that they wish to destroy an artifact, then the GM should come up with a way for them to do so. It should be difficult and involve great risk. The artifact itself will surely oppose such a plan, and any keeper might also, although other keepers might actually assist! 
+Artifacts are ancient relics of power and might, containing extremely potent magic. They were created under extraordinary unique 
+conditions. Destroying them will require equally extraordinary circumstances. In a few cases destruction might not truly be possible, 
+such as a case where an artifact represents a universal principle. However, even items of this sort can generally be unmade, even 
+if they will reappear in some future time. If the players decide that they wish to destroy an artifact, then the GM should come up 
+with a way for them to do so. It should be difficult and involve great risk. The artifact itself will surely oppose such a plan, and 
+any keeper might also, although other keepers might actually assist! 
 
-The actual destruction should involve either titanic forces, such as volcanoes or something of the sort, or else some situation or circumstance related to the artiface. Thus a weapon might be destroyed when its nemesis breaks it. A suit of armor might be unmade on the forge where its plates were first created. A book might be consumed by a vat of universal acid. A mighty magical war machine might be undone by simply commanding it to self-destruct in some long forgotten language. Some artifacts may come with a fated ending, a prophesy of some situation or circumstance under which they will be undone. Finding the method of destruction is unlikely to be a simple task!
+The actual destruction should involve either titanic forces, such as volcanoes or something of the sort, or else some situation 
+or circumstance related to the artifact. Thus a weapon might be destroyed when its nemesis breaks it. A suit of armor might be 
+unmade on the forge where its plates were first created. A book might be consumed by a vat of universal acid. A mighty 
+magical war machine might be undone by simply commanding it to self-destruct in some long forgotten language. Some artifacts may come 
+with a fated ending, a prophesy of some situation or circumstance under which they will be undone. Finding the method of destruction 
+is unlikely to be a simple task!
 
-Should a hero destroy an artifact, then there could be a reward. This is unlikely to fully compensate for the great cost of carrying out the destruction, but it may provide the character with a happy ending of sorts.
+Should a hero destroy an artifact, then there could be a reward. This is unlikely to fully compensate for the great cost of carrying 
+out the destruction, but it may provide the character with a happy ending of sorts.
 SUBSECTION/
 /SUBSECTION" Sample Artifacts"/
 /TOPIC" Balzak's Axe"/

@@ -1,4 +1,7 @@
 #!/bin/bash
+# builds Hairball source of Erithnoi docs by reprocessing the exported xwiki sources
+# this should be obsolete, but I'll keep it around in case there's ever a need to 
+# revisit this process.
 # arguments are output, and input
 mkdir -p $1
 ORIG=`pwd`

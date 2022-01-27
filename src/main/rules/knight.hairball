@@ -1,13 +1,14 @@
-/CALLING" Knight"/
+/CALLING /ID" c0b0e488-794b-11ec-b075-74d02b9c2012"/
+/CALLINGNAME Knight CALLINGNAME/
 /TRAITS
-/ROLE" Defender"/
-/POWERSOURCE" Martial"/
-/DAMAGEDIE" D6"/
-/WEAPONS" Any 4"/
-/IMPLEMENTS" None"/
-/KNACKS" Athletics, Leadership"/
-/HITPOINTS" 6"/
-/STARTHITPOINTS" 12"/
+/ROLE Defender ROLE/
+/POWERSOURCE Martial POWERSOURCE/
+/DAMAGEDIE D6 DAMAGEDIE/
+/WEAPONS Any 4 WEAPONS/
+/IMPLEMENTS None IMPLEMENTS/
+/KNACKS Athletics, Leadership KNACKS/
+/HITPOINTS 6 HITPOINTS/
+/STARTHITPOINTS 12 STARTHITPOINTS/
 TRAITS/
 The knight is a classic warrior who specializes in close melee fighting. He may or may not be mounted, and in some cultures he might sport heavy armor, a bow, or other variations, but his primary focus is his ability to go toe-to-toe with his enemies and beat them. As a defender his main purpose is to keep the enemy occupied, damage them, and prevent them from moving past him or attacking his allies.
 
@@ -28,7 +29,7 @@ DESCRIPTION/
 /BENEFIT Whenever you attack an opponent you may inflict the engaged condition on that opponent. If the engaged opponent makes any attack which does not include you as a target it will take 4 points of damage. This increases to 12 points at legendary tier, and 24 points at Mythic tier. This condition ends at the start of your next turn. 
 BENEFIT/
 /BENEFIT
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Hold the Line FEATNAME/
+/FEAT /ID" 2534976e-77a9-11ec-99e4-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Hold the Line FEATNAME/
 /ORIGIN Mighty Defender ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Free ACTION/
@@ -94,7 +95,7 @@ DESCRIPTION/
 BENEFIT/
 /BENEFIT If you charge while mounted, using a lance, then you get advantage on your attack. BENEFIT/
 /BENEFIT
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Lance FEATNAME/
+/FEAT /ID" 34d4b4ec-77a9-11ec-bd6d-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Lance FEATNAME/
 /ORIGIN Mounted Combat Expert ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Major ACTION/
@@ -142,7 +143,7 @@ You gain proficiency with a shield. This allows you to use your shield as an act
 BENEFIT/
 /BENEFIT
 You gain access to the following feat: /BR
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Shield Block FEATNAME/
+/FEAT /ID" 46f8f188-77a9-11ec-b9fe-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Shield Block FEATNAME/
 /ORIGIN Shield Expert ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Free ACTION/
@@ -176,7 +177,7 @@ You can declare a risky attack when you use your sword in an attack. If you achi
 BENEFIT/
 /BENEFIT
 You gain access to the following feat: /BR
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Vigorous Riposte FEATNAME/
+/FEAT /ID" 58cb87c2-77a9-11ec-a0b0-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Vigorous Riposte FEATNAME/
 /ORIGIN Student of the Sword ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Opportunity ACTION/
@@ -213,7 +214,7 @@ You can declare a risky attack when you use your axe in an attack. If you achiev
 BENEFIT/
 /BENEFIT
 You gain access to the following feat: /BR
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Vicious Chop FEATNAME/
+/FEAT /ID" 68984b4a-77a9-11ec-bdb4-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Vicious Chop FEATNAME/
 /ORIGIN Axe Fighter ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Free ACTION/
@@ -244,7 +245,7 @@ You gain a +1 permanent bonus to damage when making an attack with a two-handed 
 BENEFIT/
 /BENEFIT
 You gain access to the following feat: /BR
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Sweeping Blow FEATNAME/
+/FEAT /ID" 7658861e-77a9-11ec-be03-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Sweeping Blow FEATNAME/
 /ORIGIN Two-handed Weapon Expert ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Rider ACTION/
@@ -267,7 +268,7 @@ DESCRIPTION/
 /BENEFITS
 /BENEFIT
 You gain access to the following feat: /BR
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Press the Attack FEATNAME/
+/FEAT /ID" 8306dd52-77a9-11ec-a3e9-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Press the Attack FEATNAME/
 /ORIGIN Sword Master ORIGIN/
 /LEVEL 4 LEVEL/
 /ACTION Rider ACTION/
@@ -292,7 +293,7 @@ DESCRIPTION/
 /BENEFITS
 /BENEFIT
 You gain access to the following feat: /BR
-/FEAT /SOURCE martial SOURCE/ /TIER legendary TIER/ /FEATNAME Legendary Swordplay FEATNAME/
+/FEAT /ID" 963802fc-77a9-11ec-bf48-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER legendary TIER/ /FEATNAME Legendary Swordplay FEATNAME/
 /ORIGIN Legendary Swordsman ORIGIN/
 /LEVEL 9 LEVEL/
 /ACTION Major ACTION/

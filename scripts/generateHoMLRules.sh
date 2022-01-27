@@ -1,4 +1,6 @@
 #!/bin/bash
+# generate the HoML rules from the hairball source.
+# Note, this also constructs a corresponding compendium.json 
 # Argument is the HOML version number
 HOML_NAME="homl-$1"
 PUBDIR="pub/$HOML_NAME"
@@ -18,10 +20,16 @@ cd ./build/rules
 hairball genrefs.hairball homl.hairball | tail -n +2 >>./refs.hairball
 echo '{' >./compendium.json
 hairball refs.hairball gencompendium.hairball genboons.hairball homl.hairball | tail -n +2 >>./compendium.json
+echo "," >>./compendium.json
+hairball refs.hairball gencompendium.hairball genfeats.hairball homl.hairball | tail -n +2 >>./compendium.json
+echo "," >>./compendium.json
+hairball refs.hairball gencompendium.hairball gencallings.hairball homl.hairball | tail -n +2 >>./compendium.json
+echo "," >>./compendium.json
+hairball refs.hairball gencompendium.hairball genspecies.hairball homl.hairball | tail -n +2 >>./compendium.json
 echo '}' >>./compendium.json
-hairball gencontents.hairball homl.hairball | tail -n +2 >./toc.hairball
+#hairball gencontents.hairball homl.hairball | tail -n +2 >./toc.hairball
+hairball refs.hairball gencontents.hairball homl.hairball | tail -n +2 >./toc.hairball
 hairball refs.hairball html.hairball homl.hairball | tail -n +2 >./homl.html
-#hairball refs.hairball gencompendium_old.hairball homl.hairball | tail -n +2 >./compendium.js 
 cd ..
 cp ./rules/homl.html ./$PUBDIR
 cd ./pub

@@ -1,13 +1,14 @@
-/CALLING" Alchemist"/
+/CALLING /ID" 636d2700-7941-11ec-9423-74d02b9c2012"/
+/CALLINGNAME Alchemist CALLINGNAME/
 /TRAITS
-/ROLE" Enabler"/
-/POWERSOURCE" Elemental"/
-/DAMAGEDIE" D6"/
-/WEAPONS" Dagger"/
-/IMPLEMENTS" Wand, Tome"/
-/KNACKS" Arcana, Engineering"/
-/HITPOINTS" 5"/
-/STARTHITPOINTS" 10"/
+/ROLE Enabler ROLE/
+/POWERSOURCE Elemental POWERSOURCE/
+/DAMAGEDIE D6 DAMAGEDIE/
+/WEAPONS Dagger WEAPONS/
+/IMPLEMENTS Wand, Tome IMPLEMENTS/
+/KNACKS Arcana, Engineering KNACKS/
+/HITPOINTS 5 HITPOINTS/
+/STARTHITPOINTS 10 STARTHITPOINTS/
 TRAITS/
 Alchemists are experimenters with magical substances and devices. Using their mastery of elemental forces they are experts at combining ingredients and infusing them with magical power. Many alchemists create items as well as infusing ritual magic into consumables. Often their experiments are dangerous, or require strange ingredients. 
 
@@ -47,8 +48,9 @@ FLEXCELL/
 You brew a protective elixir for your allies.
 DESCRIPTION/
 /BENEFITS
+/BENEFIT
 You are able to produce an elixir any time you have a recovery. You can produce up to 4 doses of this substance at a time. When imbibed it produces the following effect:
-/FEAT /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Elemental Protection FEATNAME/
+/FEAT /ID" 71678fc0-77a8-11ec-9972-74d02b9c2012"/ /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Elemental Protection FEATNAME/
 /ORIGIN Protective Elixir ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION No Action ACTION/
@@ -56,6 +58,7 @@ You are able to produce an elixir any time you have a recovery. You can produce 
 /TRIGGER When you take damage. TRIGGER/
 /EFFECTS The damage is reduced by 1d6 points. EFFECTS/
 FEAT/
+BENEFIT/
 BENEFITS/
 BOON/
 FLEXCELL/

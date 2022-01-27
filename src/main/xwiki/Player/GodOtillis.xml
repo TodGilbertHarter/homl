@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>Player</web>
+<name>GodOtillis</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Player.TheYoungerGods</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1335731913000</creationDate>
+<date>1335734154000</date>
+<contentUpdateDate>1335734154000</contentUpdateDate>
+<version>18.1</version>
+<title>Otillis</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>== (hunting, forest, god, good) ==
+
+Otillis Arteies, The Fire Bringer is the friend of those who carve a life out of the forest. He clears the forest and helps to keep down the numbers of evil humanoids and monsters. He is the special god of frontiersmen. Many great warriors have fought bravely in the name of Otillis. Rangers however are his favored followers. In the Kinergh the great Ranger Lord Lacol is the head of a powerful order of lawful good rangers, The Sons of Kinis, who keep a vigilant eye out for evil and protect those living on the edge of civilization.
+
+Priests of Otillis are usually found on the frontiers of civilization. They help protect the frontier's inhabitants from the hazards of the wilderness and frontier life. Almost any outpost or frontier village will have a small shrine to Otillis. Slightly larger communities or any spot where frontiersmen congregate will have a priest. Otillis' followers frequently find themselves opposed to those of Yilliki.
+
+Otillis is worshipped on the four corners of the year. These are:
+
+1. Day 1 of Ter Darg (New Year).    
+1. Day 1 of Edarg (Council).    
+1. Day 1 of Tork Darg (Harfest).    
+1. Day 1 of Pro Darg (Needfest).
+
+Temples to Otillis are usually log structures containing a shrine to the god and quarters for the priests and staff. In many places these temples are the only lodging. Those in need of protection from weather, beasts, or monsters will be housed in the temple if no other space is available. Rangers dedicated to Otillis frequently have lodgings attached to one of these temples. Often temples will have a small stock of emergency supplies and even some light weapons. In a few particularly dangerous and uncivilized areas temples have been built as fortified outposts unto themselves, and may be garrisoned.
+
+== Priests of Otillis ==
+
+Priests of Otillis are standard clerics. Their sign is the double axe head, universal tool of frontiersmen everywhere. They favor the axe as a weapon and may use an axe as a holy symbol. Priests of Otillis may take the following Channel Divinity feat.
+
+Resolve of Otillis [Divinity]
+**Prerequisites:** Channel Divinity class feature, must worship Otillis
+**Benefit:** You can invoke the power of your deity to use the Resolve of Otillis power
+
+|(% style="background-color: red;" %)**Resolve of Otillis**|(% style="background-color: red; text-align: right;" %)**Feat Utility**
+|(% colspan="2" %) Otillis grants increased resolve to those he favors.
+|**Encounter** |**Channel Divinity, Divine**
+|**Minor Action** |**Close** Burst 3
+|(% colspan="2" %)**Target:** One ally within burst.
+|(% colspan="2" style="background-color: goldenrod;" %)**Effect:** Target ally gains +5 to Fortitude defense until the start of your next turn.
+|(% colspan="2" %)**Special:** You can use only one channel divinity power per encounter.</content></xwikidoc>

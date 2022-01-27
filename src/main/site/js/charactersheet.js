@@ -39,12 +39,16 @@ class CharacterSheet extends HTMLElement {
 //		const characterview = this.shadowRoot.getElementById('characterview');
 	}
 	
+	disconnectedCallback() {
+		
+	}
+	
 	saveButtonHandler(e) {
 		window.gebApp.characterController.save(this.model);
 	}
 	
 	refreshButtonHandler(e) {
-		window.gebApp.characterController.refresh(this,this.model);
+		window.gebApp.characterController.refreshCharacter(this,this.model);
 	}
 	
 	getElement(id) {
@@ -121,6 +125,31 @@ class AttributeField extends SheetField {
     
     
 }
+
+const template_CalculatedField = document.createElement('template');
+template_CalculatedField.innerHTML = `<label id='label'></label><span part='text' id='input' type='text'>`;
+
+class CalculatedField extends SheetField {
+    constructor() {
+        super(template_CalculatedField);
+    }
+    
+    connectedCallback() {
+        const value = this.getAttribute('value');
+        const n = this.getAttribute('name');
+        const style = this.getAttribute('style');
+        const id = this.getAttribute('id');
+        const input = this.shadowRoot.getElementById('input');
+//        input.setAttribute('data-bind','value: '+id);
+        input.setAttribute('style',style);
+        input.innerHTML = value;
+        const ltext = this.getAttribute('label');
+        const label = this.shadowRoot.getElementById('label');
+        label.innerHTML = ltext;
+    }
+}
+
+
 
 const template_AbilityField = document.createElement('template');
 template_AbilityField.innerHTML = `<div class='abilityfield' part='wrapper'>
@@ -255,6 +284,7 @@ class KnackField extends SheetField {
 }
 
 window.customElements.define('attribute-field',AttributeField);
+window.customElements.define('calculated-field',CalculatedField);
 window.customElements.define('ability-field',AbilityField);
 window.customElements.define('knack-field',KnackField);
 
@@ -262,10 +292,8 @@ window.customElements.define('knack-field',KnackField);
 CharacterController is the controller, responsible for carrying out all the character sheet logical operations.
 */      
 class CharacterController {
-    rules;
     
-    constructor(rules) {
-        this.rules = rules;
+    constructor() {
     }
 
 	/**
@@ -298,7 +326,7 @@ class CharacterController {
     display(sheet,character) {
         sheet.setCharacterData('charactername',character.name);
         sheet.setCharacterData('characterlevel',character.level);
-        sheet.setCharacterData('charactercalling',character.calling);
+        sheet.setCharacterData('charactercalling',character.calling.name); //TODO: create picklist fields
         sheet.setCharacterData('characterspecies',character.species);
         sheet.setCharacterData('characterfate',character.fate);
         sheet.setCharacterData('characterdescription',character.description);
@@ -330,6 +358,8 @@ class CharacterController {
         this.displayKnack('streetwise','characterstreetwise',sheet,character);
         this.displayKnack('survival','charactersurvival',sheet,character);
         this.displayKnack('thievery','characterthievery',sheet,character);
+        // other calculated values
+        sheet.setCharacterData('charactermaxhitpoints',character.derivedData.maxHitPoints);
     }
 
 	/**
@@ -341,7 +371,7 @@ class CharacterController {
     readForm(sheet,character) {
         character.name = sheet.getCharacterData('charactername');
         character.level = parseInt(sheet.getCharacterData('characterlevel'),10);
-        character.calling = sheet.getCharacterData('charactercalling');
+//TODO: fix this        character.calling = sheet.getCharacterData('charactercalling');
         character.species = sheet.getCharacterData('characterspecies');
         character.fate = sheet.getCharacterData('characterfate');
         character.description = sheet.getCharacterData('characterdescription');
@@ -377,7 +407,7 @@ class CharacterController {
     }
     
     calculate(character) {
-       character.calculate(this.rules);
+       character.calculate();
     }
     
     save(character) {

@@ -45,8 +45,8 @@ THEAD/
 /TR=" elemental"/ /TD Alchemist /TD/ Enabler TD/ TR/
 /TR=" elemental"/ /TD Sorcerer /TD/ Striker TD/ TR/
 /TR=" spirit"/ /TD Spirit /TD/ Priest /TD/ Enabler TD/ TR/
-/TR=" life"/ /TDR=" 2" Life /TD/ Beast Master /TD/ Defender TD/ TR/
-/TR=" life"/ /TD /TD/ Berserker /TD/ Striker TD/ TR/
+/TR=" life"/ /TDR=" 2"/ Life /TD/ Beast Master /TD/ Defender TD/ TR/
+/TR=" life"/ /TD Berserker /TD/ Striker TD/ TR/
 /TR=" shadow"/ /TD Shadow /TD/ Illusionist /TD/ Controller TD/ TR/
 /TR /TD Varies /TD/ Wizard /TD/ Controller TD/ TR/
 TBODY/
@@ -83,11 +83,11 @@ SUBSECTION/
 /SUBSECTION" Elemental Callings"/
 
 /RIGHT=" half"/
-/BOON /ID" 2b49a084-69f0-11ec-ba61-74d02b9c2012"/ /BOONNAME Elemental Infusion BOONNAME/
+/BOON /ID" 2b49a084-69f0-11ec-ba61-74d02b9c2012"/ /BOONNAME Elemental Fusion BOONNAME/
 /BOONTYPE Level 1: Major BOONTYPE/
 /ASSOCIATION Elemental ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
-/DESCRIPTION Your being has become infused with the raw power of creation, elemental power. Your body can now channel its power. DESCRIPTION/
+/DESCRIPTION Your being has become fused with the raw power of creation, elemental power. Your body can now channel its power. DESCRIPTION/
 /BENEFITS 
 /BENEFIT
 You are attuned to the elemental power source. Your power points may be used with feats and effects having the elemental source tag. You are considered a vessel of elemental power.

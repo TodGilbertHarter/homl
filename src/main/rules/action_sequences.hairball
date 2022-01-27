@@ -85,7 +85,7 @@ Opportunity actions represent a character's ability to do something in response 
 Certain actions are most easily described in terms of feats. Any character may invoke any of the following feats using the correct action type.
 /FLEXROW
 /FLEXCELL
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Basic Attack FEATNAME/
+/FEAT /ID" 06f5128e-77a8-11ec-af5d-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Basic Attack FEATNAME/
 /ORIGIN basic ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Major ACTION/
@@ -98,10 +98,11 @@ Certain actions are most easily described in terms of feats. Any character may i
 /SPECIAL melee weapons are close attacks vs FORT, and ranged weapons are ranged attacks vs REF SPECIAL/
 /FLAVOR You attack your opponent fiercely. FLAVOR/
 FEAT/
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Grab FEATNAME/
+/FEAT /ID" 2dc3902a-77a8-11ec-a899-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Grab FEATNAME/
 /ORIGIN basic ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Major ACTION/
+/TAGS unarmed TAGS/
 /TYPETARGET close 1, one opponent TYPETARGET/
 /ATTACK Unarmed vs REF or FORT ATTACK/
 /ENHANCED 2DD + STR damage and your opponent is grabbed. ENHANCED/
@@ -112,7 +113,7 @@ FEAT/
 FEAT/
 FLEXCELL/
 /FLEXCELL
-/FEAT /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Opportunity Attack FEATNAME/
+/FEAT /ID" 4e73beb2-77a8-11ec-92c3-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Opportunity Attack FEATNAME/
 /ORIGIN basic ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Opportunity ACTION/

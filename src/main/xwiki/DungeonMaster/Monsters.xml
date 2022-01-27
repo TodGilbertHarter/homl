@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>Monsters</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>DungeonMaster.WebHome</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1336276508000</creationDate>
+<date>1336281349000</date>
+<contentUpdateDate>1336281349000</contentUpdateDate>
+<version>2.1</version>
+<title>Monsters</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>Many monsters make their homes in Erithnoi. Some of them are unique to this world.
+
+* [[Fox Woman&gt;&gt;doc:FoxWoman]]- The fox woman is a cunning shape changer who inhabits lonely places.
+* [[Militia Man&gt;&gt;doc:MilitiaMan]]- A standard human, member of a local militia
+* [[Bane Midge&gt;&gt;doc:BaneMidge]]- Tiny evil humanoids who prey on the weak and helpless
+* [[Bone Heap&gt;&gt;doc:BoneHeap]]- An undead heap of old bones
+* [[Troglodyte Scavenger&gt;&gt;doc:Troglodyte]]- A young troglodyte
+* [[Monstrosity of Grin&gt;&gt;doc:MonstrosityOfGrin]]- Something lives deep in the woods
+* [[Hill Giant Priestess&gt;&gt;doc:HillGiantPriestess]]- Hill giant women practice primitive shamanistic magic
+* [[Giant Hound&gt;&gt;doc:GiantHound]]- A huge hunting dog used by hill giants.
+* [[Pazuzu Warlock&gt;&gt;doc:PazuzuWarlock]]- Foul spellcasters dedicated to the demon lord Pazuzu
+* [[Hammer Maiden of Nomok&gt;&gt;doc:NomokWorshiper]]- Warrior maidens dedicated to the Lord of Battle
+* [[BattleArcherOfNomok&gt;&gt;url:http://www.giantelectronicbrain.com/twiki/bin/view/DungeonMaster/BattleArcherOfNomok||class="twikiLink"]] - Expert bowmen in the service of the Lord of Battle
+* [[NomokTempleGuard&gt;&gt;url:http://www.giantelectronicbrain.com/twiki/bin/view/DungeonMaster/NomokTempleGuard||class="twikiLink"]] - Warriors trained to guard the temples of the Lord of Battle</content></xwikidoc>

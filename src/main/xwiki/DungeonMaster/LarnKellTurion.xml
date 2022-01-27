@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>LarnKellTurion</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>DungeonMaster.NPCs</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1337556258000</creationDate>
+<date>1337556611000</date>
+<contentUpdateDate>1337556611000</contentUpdateDate>
+<version>5.1</version>
+<title>Larn Kell-Turion</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>Larn is a Half-Elf ostensibly in the service of [[Draelek Turoth&gt;&gt;DraelekTuroth]] and located at [[Hath Iilikki&gt;&gt;HathIilikki]]. In fact Larn knows that his family, Kell-Turion, has a claim on the throne of Kinergh. As the heir to this claim he desires to find the [[The Shield of Kinnis&gt;&gt;TheShieldofKinnis]]. Unknown to anyone in Kinergh the Green Adept is actually his cousin. The two planned to use the Adept's magical prowess and evil forces to seize Kinergh and put Larn on the throne. This requires finding the Shield.
+
+Larn suspected the shield was carried off to [[Hath Iilikki&gt;&gt;HathIilikki]] and possibly hidden at [[Suri Natha&gt;&gt;SuriNatha]]. Thus 4 years ago he took up service as Draelek's Lieutenant and began to systematically search for its hiding place. He also cultivated a relationship with the [[Loremistress Laelithi&gt;&gt;LoremistressLaelithi]] and through this connection recently discovered the hidden archive in the Tree of Remembrance. He was not aware that The Arcanum had warded this area.
+
+After accessing certain journals in the archive he found proof that the shield was in fact at Suri Natha, but Vach Elesmar showed up before he could determine its exact location. Fearing that the Vach would uncover him or disrupt his plans he decided to move quickly. The Green Adept's forces seizure of Suri Natha is the result.
+
+Larn will attempt to find a way to get to Suri Natha himself and will otherwise attempt to undermine and sabatoge other attempts to acquire the Shield. Outwardly he appears helpful in keeping with his assumed role. In fact he will throw various obstacles in the path of the PCs. They will probably eventually discover his duplicity, at which point he will attempt to warn the evil forces of impending danger and escape.
+
+== Characteristics ==
+
+**Personality:** Larn is thoroughly depraved but is very good at hiding his true nature. He will appear to be simply officious. He is quite sensitive about his status and is in fact an officious and annoying person. This is a manifestation of a deep vicious streak in his personality. However he is quite good at deception and has so far completely fooled the inhabitants of Hath Iilikki. His weakness is his temper. Once he is crossed or thwarted he may lose control and show his vicious side. If he can express this part of his character secretly he will do so. Otherwise it may only be noticed in his rather harsh approach to his job, punishing his charges for minor infractions, humiliating them, etc.
+
+**Appearance:** Larn is quite careful to appear to be exactly what he pretends to be, a minor functionary charged with the day-to-day running of the Warden's Aerie. He dresses in a fairly ordinary fashion but has one affectation. He wears a signet ring on his right hand upon which are the arms of Kell-Turion.
+
+**Mannerisms:** Larn is sarcastic and sometimes rude to inferiors but fains deference to his superiors. Maintaining an aloof air he simply goes about his business. Now and then when nervous he can be seen to fiddle with his ring. Often he uses rather archaic mannerisms of speech.
+
+== Larn's Plot ==
+
+Unknown to either his commander, the Warden, or those under his authority, or the inhabitants of Hath Iilikki, Larn is actually the cousin of the infamous evil wizard [[The Green Adept&gt;&gt;GreenAdept]]. He is also the most senior member of the Kell-Turion family and thus at least nominally a claimant to the throne of the [[KingdomOfKinergh&gt;&gt;KingdomOfKinergh]]. Larn is fixated with this claim. Encouraged by his cousin (for his own reasons) Larn has spent the last 5 years searching for [[The Shield of Kinnis&gt;&gt;TheShieldofKinnis]].
+
+First he made himself indispensable to [[Draelek Turoth&gt;&gt;DraelekTuroth]]. This allowed him to take up the post of Warden's Lieutenant. He made many inspections of Suri Natha under this guise but was never able to determine if the shield was there or not. 3 years ago his cousin made a powerful charm which he used to enspell the Lormistress, giving him access to the various archives of the Tree of Remembrance.
+
+Finally only 3 months ago this act bore fruit, he stumbled upon an archive of material which had been magically sealed away centuries ago. Within was contained a description written by Narthoff Turoth indicating that he had indeed hidden the Shield at Suri Natha. Unfortunately Larn did not realize that opening this archive had caused a spell of warning to trigger, alerting [[The Arcanum&gt;&gt;TheArcanum]] to his disturbance of the archive.
+
+== Stats ==
+
+{{html}}
+ &lt;div id="detail"&gt; &lt;h1 class="monster"&gt;Larn Kell-Turion&lt;br/&gt; &lt;span class="type"&gt;Medium   fey humanoid, elf&lt;/span&gt;&lt;br/&gt; &lt;span class="level"&gt;Level 7 Elite Controller (Leader)&lt;span class="xp"&gt; XP 600&lt;/span&gt;&lt;/span&gt; &lt;/h1&gt;  &lt;p class="flavor"&gt;&lt;b&gt;Initiative&lt;/b&gt; +6 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;Senses&lt;/b&gt; Perception +9; low-light vision&lt;br/&gt; &lt;b&gt;Aura 5&lt;/b&gt; Shield of Abyssal Majesty - Allies within the aura gain Larn's resistance to lightning.&lt;br/&gt; &lt;b&gt;HP&lt;/b&gt; 160; &lt;b&gt;Bloodied&lt;/b&gt; 80&lt;br/&gt; &lt;b&gt;AC&lt;/b&gt; 20; &lt;b&gt;Fortitude&lt;/b&gt; 18, &lt;b&gt;Reflex&lt;/b&gt; 21, &lt;b&gt;Will&lt;/b&gt; 22&lt;br/&gt; &lt;b&gt;Resist&lt;/b&gt; 5 lightning&lt;br/&gt; &lt;b&gt;Saving Throws&lt;/b&gt; +2&lt;br/&gt; &lt;b&gt;Speed&lt;/b&gt; 7&lt;br/&gt; &lt;b&gt;Action Points&lt;/b&gt; 1&lt;/p&gt; &lt;p class="flavor alt"&gt;&lt;img src="%MBA%" /&gt; &lt;b&gt;Short Sword&lt;/b&gt; (standard, at-will) &lt;img src="%STAR%" /&gt; &lt;b&gt;Weapon&lt;/b&gt;&lt;/p&gt; &lt;p class="flavorIndent"&gt;+11 vs AC; 1d6+6 damage.&lt;/p&gt; &lt;p class="flavor alt"&gt;&lt;img src="%RANGED%" /&gt; &lt;b&gt;Poison Dagger&lt;/b&gt; (standard, recharge &lt;img src="%FOURSPOT%" /&gt;,&lt;img src="%FIVESPOT%" /&gt;,&lt;img src="%SIXSPOT%" /&gt;) &lt;img src="%STAR%" /&gt; &lt;b&gt;Weapon, Poison&lt;/b&gt;&lt;/p&gt;&lt;p class="flavorIndent"&gt;Ranged 5/10; +11 vs AC; 1d4+4 damage, and secondary attack +9 vs Fort; 5 ongoing damage and target is slowed (save ends).&lt;/p&gt; &lt;p class="flavor alt"&gt;&lt;img src="%BURST%" /&gt; &lt;b&gt;Corrupt Suggestion&lt;/b&gt; (minor, recharge &lt;img src="%SIXSPOT%" /&gt;) &lt;img src="%STAR%" /&gt; Charm&lt;/p&gt; &lt;p class="flavorIndent"&gt;Close burst 2; +9 vs WILL; target is pushed 3 squares.&lt;/p&gt; &lt;p class="flavor alt"&gt;&lt;img src="%BURST%" /&gt; &lt;b&gt;Demonic Suggestion&lt;/b&gt; (standard, encounter) &lt;img src="%STAR%" /&gt; Charm, Illusion&lt;/p&gt; &lt;p class="flavorIndent"&gt;Area burst 3 at range 10; +7 vs WILL; 3d10+6 damage and target is stunned until the end of Larn's next turn.&lt;/p&gt; &lt;p class="flavor alt"&gt; &lt;b&gt;Elven Accuracy &lt;/b&gt; (free; encounter) &lt;/p&gt; &lt;p class="flavorIndent"&gt;Larn can reroll an attack roll. He must use the second roll, even if it's lower.&lt;/p&gt; &lt;p class="flavor alt"&gt; &lt;b&gt;Wild Step&lt;/b&gt;&lt;/p&gt; &lt;p class="flavorIndent"&gt;Larn ignores difficult terrain when he shifts.&lt;/p&gt; &lt;p class="flavor alt"&gt; &lt;b&gt;Consume Soul&lt;/b&gt;(immediate reaction; when an ally within 5 squares is reduced to 0 hit points)&lt;/p&gt; &lt;p class="flavorIndent"&gt;Larn regains 5 hit points.&lt;/p&gt; &lt;p class="flavor alt"&gt;&lt;b&gt;Alignment&lt;/b&gt; Evil&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt; Languages&lt;/b&gt; Common, Elven&lt;br/&gt;&lt;b&gt;Skills&lt;/b&gt; Bluff +12, Stealth +11&lt;br/&gt; &lt;b&gt;Str&lt;/b&gt; 14 (+5)  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;Dex&lt;/b&gt; 17 (+6)  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;Wis&lt;/b&gt; 12 (+4)&lt;br/&gt;&lt;b&gt;Con&lt;/b&gt; 17 (+6)  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;Int&lt;/b&gt; 13 (+4)  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;Cha&lt;/b&gt; 19 (+7)&lt;/p&gt; &lt;p class="flavor alt"&gt;&lt;b&gt;Equipment&lt;/b&gt;: short sword, 3 daggers, vial of poison, leather armor.&lt;/p&gt; &lt;/div&gt; 
+{{/html}}
+
+=== Tactics ===
+
+Larn will open with his Demonic Suggestion power, disabling as many of his foes as possible immediately. He will either use Corrupt Suggestion first to group his enemies for this attack or afterwards to push an additional enemy over a fall or into a bad position. He will then use his aura to bolster his allies while attacking with his poison daggers. If an enemy closes he will use his sword to slow them so he can move away. Once a fight appears lost he will use Corrupt Suggestion and/or his short sword to create an opening for his escape.</content></xwikidoc>

@@ -1,7 +1,6 @@
 /*
 * Some common words to use when generating elements of the homl 'compendium' database.
 */
-/NEWVOCABULARY /FEATS
 /NEWVOCABULARY /COMPENDIUM
 /VOCABULARY /COMPENDIUM /ACTIVE
 /VOCABULARY /COMPENDIUM /CURRENT
@@ -9,8 +8,11 @@
 /VARIABLE /FIRST
 /TRUE /FIRST /V!
 /: /GENERATEID " /UUID /. " :/
+/: /EMITON /INTERPRETING /DROP /' /. /MAKELITERAL /[COMPILE] /COMPILING /SETEMITTER :/ 
+/: /EMITOFF /INTERPRETING /DROP /' /DROP /MAKELITERAL /[COMPILE] /COMPILING /SETEMITTER :/
 /: /GETMATCHING /DOER /DROP /W /W2L /MAKELITERAL /HERE! :/
-/' /DROP /SETEMITTER /* get rid of all literal text so we can control what we output exactly */
+/EMITOFF
+/* /' /DROP /SETEMITTER /* get rid of all literal text so we can control what we output exactly */
 /: /.NOW // :/
 /: /.VERSION // :/
 /: "/ // :/

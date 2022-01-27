@@ -1,13 +1,14 @@
-/CALLING" Berserker"/
+/CALLING /ID" 975a8f08-794b-11ec-85b7-74d02b9c2012"/
+/CALLINGNAME Berserker CALLINGNAME/
 /TRAITS
-/ROLE" Striker"/
-/POWERSOURCE" Life"/
-/DAMAGEDIE" D8"/
-/WEAPONS" Any 3"/
-/IMPLEMENTS" None"/
-/KNACKS" Survival, Intimidation"/
-/HITPOINTS" 5"/
-/STARTHITPOINTS" 9"/
+/ROLE Striker ROLE/
+/POWERSOURCE Life POWERSOURCE/
+/DAMAGEDIE D8 DAMAGEDIE/
+/WEAPONS Any 3 WEAPONS/
+/IMPLEMENTS None IMPLEMENTS/
+/KNACKS Survival, Intimidation KNACKS/
+/HITPOINTS 5 HITPOINTS/
+/STARTHITPOINTS 9 STARTHITPOINTS/
 TRAITS/
 
 The berserker is a warrior who is able to enter into a special mental state in which he can fight with extraordinary ferocity. Usually hailing from less urbanized warrior cultures berserkers often charge recklessly into battle with little regard for their own safety. While they wield weapons in battle and consider themselves to be warriors, their power comes primarily from their relationship to the life force within themselves and others, as distinct from the martial traditions of discipline and practice common to knights and such. Thus they don't come across, generally, as disciplined or thoughtful fighters, instead relying on frontal attacks, shock tactics, and the sheer power of their aura and reputation for ferocity.
@@ -25,7 +26,7 @@ Through long practice you have learned how to enter a special mental state durin
 DESCRIPTION/
 /BENEFITS
 /BENEFIT
-/FEAT /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Battle Frenzy FEATNAME/ 
+/FEAT /ID" 90a96660-77a8-11ec-bbbc-74d02b9c2012"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Battle Frenzy FEATNAME/ 
 /ORIGIN Combat Trance ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Free ACTION/
 /TAGS enchantment, ritual TAGS/
 /CHECK Survival CHECK/
@@ -38,7 +39,7 @@ EFFECTS/
 /COMPONENTS Significant Life ritual components. COMPONENTS/
 /COSTS 1 power point required to automatically pass the check. COSTS/
 /SPECIAL If you are brought below 0 hit points, you lose a power point automatically. When the effect wears off you enter the dying condition as normal. SPECIAL/
-/FLAVOR You have entered into the mysterious battle frenzy of the berserker. Let all who oppose you cower in fear!
+/FLAVOR You have entered into the mysterious battle frenzy of the berserker. Let all who oppose you cower in fear! FLAVOR/
 FEAT/
 BENEFIT/
 BENEFITS/
@@ -73,7 +74,7 @@ DESCRIPTION/
 /BENEFITS
 /BENEFIT
 You gain access to the following power: /BR
-/FEAT /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Howl FEATNAME/ 
+/FEAT /ID" a2d52324-77a8-11ec-b205-74d02b9c2012"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Howl FEATNAME/ 
 /ORIGIN Order of the Wolf ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment TAGS/
 /TYPETARGET close blast 3, all opponents in range TYPETARGET/
@@ -101,7 +102,7 @@ DESCRIPTION/
 /BENEFITS
 /BENEFIT
 You gain access to the following power: /BR
-/FEAT /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Crush FEATNAME/ 
+/FEAT /ID" b4440710-77a8-11ec-a33c-74d02b9c2012"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Crush FEATNAME/ 
 /ORIGIN Order of the Bear ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Free ACTION/
 /TAGS enchantment TAGS/
 /TRIGGER You achieve an enhanced success with a close weapon attack TRIGGER/
@@ -126,7 +127,7 @@ You become proficient with the stealth knack.
 BENEFIT/
 /BENEFIT
 You gain access to the following power: /BR
-/FEAT /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Sudden Attack FEATNAME/ 
+/FEAT /ID" bd1b1f4a-77a8-11ec-b4fb-74d02b9c2012"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Sudden Attack FEATNAME/ 
 /ORIGIN Order of the Boar ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment TAGS/
 /REQUIREMENTS You must be hidden from your enemy when you use this feat. REQUIREMENTS/

@@ -15,7 +15,7 @@ SUBSECTION/
 SECTION/
 /SECTION" Reading a Feat"/
 /LEFT=" half"/
-/FEAT /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Fireball FEATNAME/
+/FEAT /ID" cf1adec4-77a8-11ec-8153-74d02b9c2012"/ /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Fireball FEATNAME/
 /ORIGIN Fire Adept ORIGIN/
 /LEVEL 4 LEVEL/
 /ACTION Major ACTION/

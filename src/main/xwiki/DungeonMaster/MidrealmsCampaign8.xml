@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>MidrealmsCampaign8</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>DungeonMaster.MidrealmsCampaign</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1352157920000</creationDate>
+<date>1352246788000</date>
+<contentUpdateDate>1352246788000</contentUpdateDate>
+<version>6.1</version>
+<title>MidrealmsCampaign8</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>= Other side of the gate =
+
+== Creatures ==
+
+* [[Young Blazeworm, level 4 Elite Brute&gt;&gt;url:http://www.wizards.com/dndinsider/compendium/monster.aspx?id=1442||rel="__blank"]]
+* [[Flamespiker, level 5 Soldier&gt;&gt;url:http://www.wizards.com/dndinsider/compendium/monster.aspx?id=2928||rel="__blank"]]
+* [[Elemental Evil Mudborn, level 6 Controller&gt;&gt;url:http://www.wizards.com/dndinsider/compendium/monster.aspx?id=6019||rel="__blank"]]
+* [[Young Blizzard Dragon, level 7 Elite Controller&gt;&gt;url:http://www.wizards.com/dndinsider/compendium/monster.aspx?id=4841||rel="__blank"]]
+* [[Xorn, level 9 Skirmisher&gt;&gt;url:http://www.wizards.com/dndinsider/compendium/monster.aspx?id=3116||rel="__blank"]]
+* [[Young Earthquake Dragon, level 9 Elite Soldier&gt;&gt;url:http://www.wizards.com/dndinsider/compendium/monster.aspx?id=4846||rel="__blank"]]
+* [[Silt Elemental, level 11 Skirmisher&gt;&gt;url:http://www.wizards.com/dndinsider/compendium/monster.aspx?id=5585||rel="__blank"]]
+
+== Terrain ==
+
+* [[Primordial Font&gt;&gt;url:http://www.wizards.com/dndinsider/compendium/terrain.aspx?id=50||rel="__blank"]]
+* [[Acidic Mire&gt;&gt;url:http://www.wizards.com/dndinsider/compendium/terrain.aspx?id=35||rel="__blank"]]
+* [[Bolt Stone&gt;&gt;url:http://www.wizards.com/dndinsider/compendium/terrain.aspx?id=5||rel="__blank"]]
+* [[Crawling Earth&gt;&gt;url:http://www.wizards.com/dndinsider/compendium/terrain.aspx?id=38||rel="__blank"]]
+* [[Earth Flow&gt;&gt;url:http://www.wizards.com/dndinsider/compendium/terrain.aspx?id=41||rel="__blank"]]
+* [[Lightning Mist&gt;&gt;url:http://www.wizards.com/dndinsider/compendium/terrain.aspx?id=47||rel="__blank"]]</content></xwikidoc>

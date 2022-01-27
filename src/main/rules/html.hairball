@@ -10,12 +10,13 @@ Hairball.
 
 // :/ /* Prevent spurious <p> tags. */
 
-#0 /CURRENTID /V! /* restore the id count, refs break it */
 /: /LINKREFERENCE <a href="# /DUP /FETCHREFERENCE /. "> /. </a> :/
-/: /ID /SPACE /ID+ id=" /ID@ /. " :/
+/: /IDREF /DUP /TRIM /FETCHREFERENCE /SPACE id=" /. " /SPACE :/
+/: /ID /SPACE id=" /UUID /. " :/
 /: /ID" /" id=" /. " :/
+/: /INCID // :/ /* just get rid of this stuff... */
 /: /GETMATCHING /DOER /DROP /W /W2L /MAKELITERAL /HERE! :/
-/: /REF /SPACE <span class="reference" /ID > /GETMATCHING REF/ /DELIMITED /LINKREFERENCE </span> /SPACE :/
+/: /REF /SPACE <span class="reference"> /GETMATCHING REF/ /DELIMITED /LINKREFERENCE </span> /SPACE :/
 /: REF/ /[" Mismatch, REF/ must follow /REF "]/ /ABORT :/
 /: /SCRIPT /SPACE <script> /GETMATCHING SCRIPT/ /DELIMITED /. </script> /SPACE :/
 /: SCRIPT/ /[" Mismatch, SCRIPT/ must follow /SCRIPT "]/ /ABORT :/
@@ -23,7 +24,7 @@ Hairball.
 /: P/ </p> :/
 /: /TITLE <div class="title"> :/
 /: TITLE/ </div> :/
-/: /TOC <nav /ID > /TITLE Table of Contents TITLE/ :/
+/: /TOC <nav> /TITLE Table of Contents TITLE/ :/
 /: TOC/ </nav><div><div> :/
 /: /TOCTABLE <table class="toctable" data-dstate="open"> :/
 /: /TOGGLEWIDGET <span class="collapsible glyphicon glyphicon-menu-down"></span> :/
@@ -64,20 +65,20 @@ for (i = 0; i < coll.length; i++) {
 /: /H4 <h4> :/
 /: H4/ </h4> :/
 /: /MASTERTITLE" <div class="mastertitle"><div class="topborder"></div> /TITLE /" /. TITLE/ <div class="bottomborder"></div></div> :/
-/: /BOOK" <div class="book" role="article" /ID > /TITLE /" /. TITLE/ :/
+/: /BOOK" <div class="book" role="article" /" /IDREF > /TITLE /. TITLE/ :/
 /: /BOOKFOOTER <div class="bookfooter"></div> :/
 /: BOOK/ /BOOKFOOTER </div> :/
 /: /INDEX" /H1 Index H1/ /SOURCE" :/
 /: /STYLES" <link rel="stylesheet" type="text/css" href=" /" /. " media="screen"/> :/
 /: /HEADER <header> :/
 /: HEADER/ </header> :/
-/: /CHAPTER <section class="chapter" /ID ><details open='true'> :/
+/* /: /CHAPTER <section class="chapter" /ID ><details open='true'> :/ */
 /: /SUMMARY <summary> :/
 /: SUMMARY/ </summary> :/
-/: /LICENSE <section class="chapter" /ID ><details open='true'> <summary role="heading" aria-level+"1"> /H1 License H1/ SUMMARY/ :/
-/: /INTRODUCTION <section class="introduction" /ID ><details open='true'> <summary role="heading" aria-level="1"> /H1 Introduction H1/ SUMMARY/ :/
+/: /LICENSE <section class="chapter" /[" License "]/ /IDREF ><details open='true'> <summary role="heading" aria-level+"1"> /H1 /. H1/ SUMMARY/ :/
+/: /INTRODUCTION <section class="introduction" /[" Introduction "]/ /IDREF ><details open='true'> <summary role="heading" aria-level="1"> /H1 /. H1/ SUMMARY/ :/
 /: /SUMMARY" /SUMMARY /" /. SUMMARY/ :/
-/: /CHAPTER" /CHAPTER <summary role="heading" aria-level="1"> /H1 /" /DUP /MAKEREFERENCE /. H1/ SUMMARY/ :/
+/: /CHAPTER" <section class="chapter" /" /IDREF ><details open='true'><summary role="heading" aria-level="1"> /H1 /. H1/ SUMMARY/ :/
 /: CHAPTER/ </details></section> :/
 /: LICENSE/ </details></section> :/
 /: INTRODUCTION/ </details></section> :/
@@ -88,9 +89,9 @@ for (i = 0; i < coll.length; i++) {
 /: /COPYRIGHT <copyright> :/
 /: COPYRIGHT/ </copyright> :/
 /: /COPY/ &copy; :/
-/: /SECTION <section class="section" /ID > :/
-/: /SECTION" /SECTION /H2 /" /. H2/ :/
-/: /INTROSECTION" /SECTION /H2 /" /. H2/ :/
+/: /SECTION <section class="section" /" /IDREF > :/
+/: /SECTION" /SECTION /H2 /. H2/ :/
+/: /INTROSECTION" /SECTION /H2 /. H2/ :/
 /: SECTION/ </section> :/
 /: /UL <ul> :/
 /: UL/ </ul> :/
@@ -101,11 +102,11 @@ for (i = 0; i < coll.length; i++) {
 /: LI/ </li> :/
 /: /EM /SPACE <em> :/
 /: EM/ </em> /SPACE :/
-/: /SUBSECTION <section class="subsection" /ID > :/
-/: /SUBSECTION" /SUBSECTION /H3 /" /. H3/ :/
+/: /SUBSECTION <section class="subsection" /" /IDREF > :/
+/: /SUBSECTION" /SUBSECTION /H3 /. H3/ :/
 /: SUBSECTION/ </section> :/
 /: /TOPIC <section class="topic" /ID > :/
-/: /TOPIC" /TOPIC /H4 /" /. H4/ :/
+/: /TOPIC" <section class="topic" /" /IDREF > /H4 /. H4/ :/
 /: TOPIC/ </section> :/
 /: /STRONG <strong> :/
 /: STRONG/ </strong> /SPACE :/
@@ -161,30 +162,63 @@ for (i = 0; i < coll.length; i++) {
 /: /BR <br/> :/
 
 /* Species related stuff */
-/: /SPECIES" <section class="species" /ID > /TITLE /" /. TITLE/ :/
+/: /SPECIES" <section class="species" /" /IDREF > /TITLE /. TITLE/ :/ /* deprecated */
+/: /SPECIES <section class="species" :/
+/: /SPECIESNAME > /TITLE :/
+/: SPECIESNAME/ TITLE/ :/
 /: SPECIES/ SECTION/ :/
 /: /TRAITS <div class="traits"> :/
 /: TRAITS/ </div> :/
 /: /TRAIT <div class="trait"><div class="name"> :/
 /: TRAIT/ </div><div class="value"> /" /. </div></div> :/
 /: /SIZE" /TRAIT Size: TRAIT/ :/
+/: /SIZE /TRAIT Size: DIV/ <div class="value"> :/
+/: SIZE/ DIV/ DIV/ :/
 /: /SPEED" /TRAIT Speed: TRAIT/ :/
+/: /SPEED /TRAIT Speed: DIV/ <div class="value"> :/
+/: SPEED/ DIV/ DIV/ :/
 /: /VISION" /TRAIT Vision: TRAIT/ :/
+/: /VISION /TRAIT Vision: DIV/ <div class="value"> :/
+/: VISION/ DIV/ DIV/ :/
 /: /HEIGHT" /TRAIT Avg Height: TRAIT/ :/
+/: /HEIGHT /TRAIT Avg Height: DIV/ <div class="value"> :/
+/: HEIGHT/ DIV/ DIV/ :/
 /: /WEIGHT" /TRAIT Avg Weight: TRAIT/ :/
+/: /WEIGHT /TRAIT Avg Weight: DIV/ <div class="value"> :/
+/: WEIGHT/ DIV/ DIV/ :/
+/: /SPECIESBOONS /TOPIC /H4 Boons H4/ :/
+/: SPECIESBOONS/ </section> :/
 
 /* Calling related stuff */
-/: /CALLING" <section class="calling" /ID > /TITLE /" /. TITLE/ :/
+/: /CALLING" <section class="calling" /" /IDREF > /TITLE /. TITLE/ :/ /* deprecated */
+/: /CALLING <section class="calling" :/
+/: /CALLINGNAME > /TITLE :/
+/: CALLINGNAME/ TITLE/ :/
 /: CALLING/ SECTION/ :/
 /: /ROLE" /TRAIT Role: TRAIT/ :/
+/: /ROLE /TRAIT Role: DIV/ <div class="value"> :/
+/: ROLE/ DIV/ DIV/ :/
 /: /POWERSOURCE" /TRAIT Power Source: TRAIT/ :/
+/: /POWERSOURCE /TRAIT Power Source: DIV/ <div class="value"> :/
+/: POWERSOURCE/ DIV/ DIV/ :/
 /: /DAMAGEDIE" /TRAIT Damage Die: TRAIT/ :/
-/: /DEFENSEMODIFIER" /TRAIT Defense Modifier: TRAIT/ :/ /* Obsolete */
+/: /DAMAGEDIE /TRAIT Damage Die: DIV/ <div class="value"> :/
+/: DAMAGEDIE/ DIV/ DIV/ :/
 /: /WEAPONS" /TRAIT Weapon Proficiences: TRAIT/ :/
+/: /WEAPONS /TRAIT Weapon Proficiencies: DIV/ <div class="value"> :/
+/: WEAPONS/ DIV/ DIV/ :/
 /: /IMPLEMENTS" /TRAIT Implement Proficiencies: TRAIT/ :/
+/: /IMPLEMENTS /TRAIT Implement Proficiencies: DIV/ <div class="value"> :/
+/: IMPLEMENTS/ DIV/ DIV/ :/
 /: /KNACKS" /TRAIT Knacks: TRAIT/ :/
+/: /KNACKS /TRAIT Knacks: DIV/ <div class="value"> :/
+/: KNACKS/ DIV/ DIV/ :/
 /: /HITPOINTS" /TRAIT Hit Points: TRAIT/ :/
+/: /HITPOINTS /TRAIT Hit Points: DIV/ <div class="value"> :/
+/: HITPOINTS/ DIV/ DIV/ :/
 /: /STARTHITPOINTS" /TRAIT Starting Hit Points: TRAIT/ :/
+/: /STARTHITPOINTS /TRAIT Starting Hit Points: DIV/ <div class="value"> :/
+/: STARTHITPOINTS/ DIV/ DIV/ :/
 /: /FEATURES /TOPIC /H4 Features H4/ :/
 /: FEATURES/ </section> :/
 /: /BOONS /TOPIC /H4 Boons H4/ :/
@@ -192,7 +226,7 @@ for (i = 0; i < coll.length; i++) {
 
 /* Boon related stuff */
 /: /BOON" <section class="boon" /ID > /TRAITS <div class="trait"><div> /" /. DIV/ :/ /* Deprecated */
-/: /BOON <section class="boon" /ID+ :/ 
+/: /BOON <section class="boon" :/ 
 /: /BOONNAME  > /TRAITS <div class="trait"><div> :/ /: BOONNAME/ DIV/ :/
 /: /BOONTYPE" <div> /" /. DIV/ DIV/ :/ /* Deprecated */
 /: /BOONTYPE <div> :/ /: BOONTYPE/ DIV/ DIV/ :/
@@ -214,8 +248,8 @@ for (i = 0; i < coll.length; i++) {
 
 /* Feat related stuff */
 /: /FEAT" <section class="feat /SPACE /W /W2L /. /W " /ID > /TRAITS <div class="trait /SPACE /W2L /. "><div> /" /. DIV/ :/ /* Deprecated */
-/: /FEAT <section class="feat /SPACE :/
-/: /SOURCE // :/ /: SOURCE/ " /ID >  :/ 
+/: /FEAT <section /SPACE :/
+/: /SOURCE /SPACE class="feat /SPACE :/ /: SOURCE/ " /ID+ >  :/ 
 /: /TIER /TRAITS <div class=" trait /SPACE :/ /: TIER/ "> :/
 /: /FEATNAME <div> :/ /: FEATNAME/ DIV/ :/
 /: /ORIGIN" <div> /" /. :/ /* Deprecated */

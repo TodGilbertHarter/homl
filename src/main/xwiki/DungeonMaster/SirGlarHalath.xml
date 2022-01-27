@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>SirGlarHalath</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>DungeonMaster.NPCs</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1337556717000</creationDate>
+<date>1337556821000</date>
+<contentUpdateDate>1337556821000</contentUpdateDate>
+<version>2.1</version>
+<title>SirGlarHalath</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>Sir Glar Halath is the Seneschal of the AirKnights of Pazuzu. (% style="color:#ff0000;" %)Note: Glar Halath was killed at SuriNatha by the adventuring party of Osrik, Alecsa, Gloriana, Cinoi, and Evie.</content></xwikidoc>

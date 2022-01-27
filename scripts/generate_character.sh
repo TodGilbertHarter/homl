@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Generate the HoML character sheet and embedded character sheet
 GEB_NAME="geb-$1"
 PUBDIR="geb/$GEB_NAME"
 mkdir -p ./build/$PUBDIR

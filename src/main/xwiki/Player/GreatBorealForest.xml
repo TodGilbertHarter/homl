@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>Player</web>
+<name>GreatBorealForest</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Player.Regions</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1336254240000</creationDate>
+<date>1336254262000</date>
+<contentUpdateDate>1336254262000</contentUpdateDate>
+<version>1.1</version>
+<title>GreatBorealForest</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>To the north of the civilized lands of Erithnoi lies a vast forest of pine trees. Even during the height of the Cardolan Empire this area was almost entirely unexplored. What little is known of it is gleaned from a few old reports made by explorers centuries ago, rumor, and speculation.
+
+What is known is that many of the humanoid invaders, goblinoids especially, which came down out of the north in the 6th and 7th centuries CY originated either in or beyond the forest. Presumably travel in this trackless and humanoid infested wilderness would be highly dangerous and difficult. The weather in this region is harsh, the summer short, and the winters long and cold. Given these difficulties few, if any, of the inhabitants of Erithnoi find any reason to brave its dangers.
+
+
+
+== {{id name="Further_North"/}}Further North ==
+
+The few fragments of accounts from centuries past when the Empire made a few attempts to explore the far north say that the forest extends north for several hundred miles and beyond that lies a largely barren land of permanently frozen ground. Beyond the tundra are said to be great ranges of ice choked mountains inhabited by giants and other monsters. No tales tell of any explorer who has ever penetrated to the north of this point and the most commonly held belief is that the land further north is covered in perpetual ice and snow until eventually the edge of the world is reached.</content></xwikidoc>

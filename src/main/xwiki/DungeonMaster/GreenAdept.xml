@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>GreenAdept</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>NPCs</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1336361905000</creationDate>
+<date>1336992564000</date>
+<contentUpdateDate>1336992564000</contentUpdateDate>
+<version>5.1</version>
+<title>The Green Adept</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>The Green Adept is a powerful evil mage who was responsible for a humanoid invasion of northern Kinergh in the year 1000. For several years his forces ravaged this area. They were finally defeated in battle in the fall of 1003 by the combined arms of the various lords of Kinergh with support from the dwarves of [[Dalcaroth&gt;&gt;doc:Dalcaroth]] and the elves of [[High Hold&gt;&gt;doc:Player.HighHold]]. After the Green Adept's army was defeated in battle he fled back to the [[Forest of Grin&gt;&gt;doc:ForestOfGrin]] where his main power base was located. A group of adventurers from the [[Silver Company&gt;&gt;doc:SilverCompany]] pursued him into the forest and ambushed and killed him at his army camp.
+
+The group then attacked [[Cliff Hold&gt;&gt;doc:CliffHold]] and killed many of its inhabitants. Unfortunately some of them escaped and using the power of the [[Great Fane&gt;&gt;doc:GreatFane]] they were able to give the Green Adept back a semblance of life using foul rituals and calling upon powerful evil beings. Unknown to the inhabitants of Kinergh the evil forces have regained some of their strength and now have some even more powerful magics and allies to assist them in their plans.
+
+The Green Adept himself has returned to life in the form of a Larva Mage, a foul undead being of considerable power. In addition he retains much of his original arcane might and has added some new powers. Even so his physical form is weaker than it was before death and his undead status means he is vulnerable to certain types of magic.
+
+Undeath has also given the Green Adept a somewhat different perspective. While he is no less determined to conquer Kinergh and rule over as much of Erithnoi as he can he is more inclined to act slowly and methodically by rebuilding his power and strengthening his control over his allies.
+
+{{html}}
+    &lt;div id="detail"&gt;
+  
+  &lt;h1 class="monster"&gt;Larva Mage&lt;br/&gt;&lt;span class="type"&gt;Medium  natural magical beast (undead)&lt;/span&gt;&lt;br/&gt;&lt;span class="level"&gt;Level 21 Elite Artillery&lt;span class="xp"&gt; XP 6400&lt;/span&gt;&lt;/span&gt; &lt;/h1&gt; &lt;p class="flavor"&gt;&lt;b&gt;Initiative&lt;/b&gt; +13 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;Senses&lt;/b&gt; Perception +12&lt;br/&gt;&lt;b&gt;HP&lt;/b&gt; 304; &lt;b&gt;Bloodied&lt;/b&gt; 152&lt;br/&gt;&lt;b&gt;AC&lt;/b&gt; 35; &lt;b&gt;Fortitude&lt;/b&gt; 30, &lt;b&gt;Reflex&lt;/b&gt; 33, &lt;b&gt;Will&lt;/b&gt; 27&lt;br/&gt;&lt;b&gt;Immune&lt;/b&gt; disease, poison; &lt;b&gt;Resist&lt;/b&gt; 10 necrotic; takes half damage from melee and ranged attacks;  &lt;b&gt;Vulnerable&lt;/b&gt; 10 radiant, 10 against close and area attacks&lt;br/&gt;&lt;b&gt;Saving Throws&lt;/b&gt; +2&lt;br/&gt;&lt;b&gt;Speed&lt;/b&gt; 6&lt;br/&gt;&lt;b&gt;Action Points&lt;/b&gt; 1&lt;/p&gt;&lt;p class="flavor alt"&gt;&lt;img src="http://www.wizards.com/dnd/images/symbol/S2.gif" /&gt; &lt;b&gt;Corrupting Touch&lt;/b&gt; (standard, at-will) &lt;img src="http://www.wizards.com/dnd/images/symbol/x.gif" /&gt; &lt;b&gt;Necrotic&lt;/b&gt;&lt;/p&gt;&lt;p class="flavorIndent"&gt;+24 vs Fortitude; 2d6+5 necrotic damage.&lt;/p&gt;&lt;p class="flavor alt"&gt;&lt;img src="http://www.wizards.com/dnd/images/symbol/Z3a.gif" /&gt; &lt;b&gt;Horrific Visage&lt;/b&gt; (minor, recharge &lt;img src = "http://www.wizards.com/dnd/images/symbol/5a.gif" /&gt;&lt;img src = "http://www.wizards.com/dnd/images/symbol/6a.gif" /&gt;) &lt;img src="http://www.wizards.com/dnd/images/symbol/x.gif" /&gt; &lt;b&gt;Fear&lt;/b&gt;&lt;/p&gt;&lt;p class="flavorIndent"&gt;Ranged 10; +24 vs Will;   the target cannot attack the larva mage until the end of its next turn and is immobilized (save ends).&lt;/p&gt;&lt;p class="flavor alt"&gt;&lt;img src="http://www.wizards.com/dnd/images/symbol/Z3a.gif" /&gt; &lt;b&gt;Ray of Cold Death&lt;/b&gt; (standard, at-will) &lt;img src="http://www.wizards.com/dnd/images/symbol/x.gif" /&gt; &lt;b&gt;Cold, Necrotic&lt;/b&gt;&lt;/p&gt;&lt;p class="flavorIndent"&gt;Ranged 20; +26 vs AC; 2d8+8 cold and necrotic damage, or 4d8 + 8 cold and necrotic damage if the target is bloodied.&lt;/p&gt;&lt;p class="flavor alt"&gt;&lt;img src="http://www.wizards.com/dnd/images/symbol/Z3a.gif" /&gt; &lt;b&gt;Worm’s Feast&lt;/b&gt; (standard, recharge &lt;img src = "http://www.wizards.com/dnd/images/symbol/6a.gif" /&gt;) &lt;img src="http://www.wizards.com/dnd/images/symbol/x.gif" /&gt; &lt;b&gt;Illusion&lt;/b&gt;&lt;/p&gt;&lt;p class="flavorIndent"&gt;Ranged 5; the target is tricked into believing that worms are devouring its flesh; +26 vs Will; 4d10+8 damage. If this damage doesn’t reduce the target to 0 hit points, the target takes no damage but is stunned until the end of its next turn.&lt;/p&gt;&lt;p class="flavor alt"&gt;&lt;img src="http://www.wizards.com/dnd/images/symbol/Z4a.gif" /&gt; &lt;b&gt;Withering Flame&lt;/b&gt; (standard, at-will) &lt;img src="http://www.wizards.com/dnd/images/symbol/x.gif" /&gt; &lt;b&gt;Fire, Necrotic&lt;/b&gt;&lt;/p&gt;&lt;p class="flavorIndent"&gt;Area burst 1 within 20; +24 vs Reflex; 2d6+8 fire and necrotic damage.&lt;/p&gt;&lt;p class="flavor alt"&gt; &lt;b&gt;Squeezing Swarm&lt;/b&gt;&lt;/p&gt;&lt;p class="flavorIndent"&gt;By altering its shape, a larva mage can squeeze through small openings as if it were a Tiny creature.&lt;/p&gt;&lt;p class="flavor alt"&gt;&lt;b&gt;Alignment&lt;/b&gt; Evil&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt; Languages&lt;/b&gt; Common&lt;br/&gt;&lt;b&gt;Skills&lt;/b&gt; Arcana +23, History +23, Religion +23&lt;br/&gt;&lt;b&gt;Str&lt;/b&gt; 14 (+12)  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;Dex&lt;/b&gt; 16 (+13)  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;Wis&lt;/b&gt; 14 (+12)&lt;br/&gt;&lt;b&gt;Con&lt;/b&gt; 20 (+15)  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;Int&lt;/b&gt; 26 (+18)  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;Cha&lt;/b&gt; 15 (+12)&lt;/p&gt;
+
+    &lt;/div&gt;
+{{/html}}</content></xwikidoc>

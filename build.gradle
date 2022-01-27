@@ -12,7 +12,6 @@ buildscript {
 		name: 'gradle-webpack-plugin',
 		version: '1.1.0'
 		classpath 'com.sun.net.httpserver:http:20070405'
-//		classpath "io.ratpack:ratpack-gradle:1.10.0-milestone-3"
 	}
 	
 }
@@ -22,11 +21,9 @@ plugins {
     id 'io.quarkus'
 	id "fr.brouillard.oss.gradle.jgitver" version "0.10.0-rc03"
 	id "com.github.node-gradle.node" version "3.1.1"
-	id 'com.github.eerohele.saxon-gradle' version '0.9.0-beta4'
 //	id "com.timgroup.webpack" version "1.1.0"
 }
 
-//apply plugin: "io.ratpack.ratpack-groovy"
 apply plugin: com.timgroup.gradle.webpack.WebpackPlugin
 
 configurations {
@@ -34,7 +31,6 @@ configurations {
 }
 
 group 'com.giantelectronicbrain'
-//version '0.0.1'
 
 repositories {
     mavenCentral()
@@ -54,6 +50,7 @@ task installFirebase(type: NpmTask) {
 task copySaxon(type: Copy) {
 	description 'get a copy of saxon binary into build dir'
 	from configurations.saxon
+	outputs.file("$buildDir/saxon")
 	into "$buildDir/saxon"
 }
 
@@ -89,6 +86,9 @@ task buildErithnoi {
 
 task generateErithnoi(type: Exec) {
 	description 'compile all the xwiki-derived hairball to HTML'
+	inputs.dir("src/main/erithnoi")
+	inputs.file('scripts/generateErithnoi.sh')
+	outputs.dir("$buildDir/erithnoipub")
 	commandLine 'scripts/generateErithnoi.sh', project.version
 }
 
@@ -107,16 +107,6 @@ dependencies {
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
 	saxon 'net.sf.saxon:Saxon-HE:10.6'
-}
-
-xslt {
-	stylesheet 'src/main/erithnoi/article_to_hairball.xslt'
-	input fileTree(dir: 'src/main/erithnoi/DungeonMaster', include: '*.xml')
-	output "${buildDir}/erithnoi"
-	parameters(
-		debug: true,
-		version: project.version
-		)
 }
 
 java {
@@ -147,17 +137,23 @@ task createGCPKey(type: Exec) {
 
 task deployFirebaseRules(type: Exec) {
 	description 'deploy security rules to firebase'
+	inputs.file('scripts/deployFirebaseRules.sh')
+	inputs.dir('src/main/firebase')
 	commandLine './scripts/deployFirebaseRules.sh'
 }
 
 task generateHoMLRules(type: Exec) {
 	description 'generate the HOML rules from hairball source'
+	inputs.dir('src/main/rules')
+	inputs.file('scripts/generateHoMLRules.sh')
+	outputs.dir("$buildDir/pub")
 	commandLine './scripts/generateHoMLRules.sh', project.version
 }
 
 task deployHoMLRules(type: Exec) {
 	description 'deploy generated HOML rules to cloud'
 	dependsOn 'generateHoMLRules'
+	inputs.dir("$buildDir/pub")
 	commandLine './scripts/deployHoMLRules.sh', project.version
 }
 
@@ -171,6 +167,8 @@ task copyGEBSite(type: Exec) {
 
 task generateEmptyCharacterSheet(type: Exec) {
 	description 'generate an empty character sheet from the source'
+	inputs.file('scripts/generate_character.sh')
+//	inputs.dir("$buildDir/site")
 	commandLine './scripts/generate_character.sh', project.version, 'empty'
 }
 
@@ -183,6 +181,16 @@ task generateGEBSite(type: Exec) {
 	dependsOn 'copyGEBSite'
 //	dependsOn 'closureCompile'
 	commandLine './scripts/generateGEBSite.sh', project.version
+}
+
+task generateLocalSite(type: Exec) {
+	description 'build a full local site with all features for testing'
+	dependsOn 'generateHoMLRules'
+	dependsOn 'generateErithnoi'
+	dependsOn 'generateGEBSite'
+	outputs.dir("$buildDir/local")
+	inputs.file('scripts/generateLocalSite.sh')
+	commandLine './scripts/generateLocalSite.sh', project.version
 }
 
 /**
@@ -236,7 +244,7 @@ class HttpPlugin implements Plugin<Project>, HttpHandler {
 				path = "/index.html";
 			println("path is now "+path);
 //			String filename = "/home/tharter/projects/homl/build/geb/geb-0.0.0-6-main"+path;
-			String filename = "/home/tharter/projects/homl/build/erithnoipub/erithnoi-0.0.0-6-main"+path;
+			String filename = "/home/tharter/projects/homl/build/local"+path;
 			println("filename is "+filename);
 			println("CWD is "+System.getProperty('user.dir'));
 			Path p = Path.of(filename);
@@ -266,7 +274,7 @@ class HttpPlugin implements Plugin<Project>, HttpHandler {
 	void apply(Project project) {
 		project.task('startWebServer') {
 			doLast {
-				HttpServer server = HttpServer.create(new InetSocketAddress(8081), 0);
+				HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
 				server.createContext("/", this);
 				server.setExecutor(null);
 				server.start();
@@ -277,10 +285,36 @@ class HttpPlugin implements Plugin<Project>, HttpHandler {
 
 apply plugin: HttpPlugin
 
-task uploadData(type: NodeTask) {
-	description 'upload data to firestore, this needs more work!'
-	script = file('./scripts/upload_data.js')
+task uploadBoons(type: NodeTask) {
+	description 'upload boon data to firestore.'
+	script = file('./scripts/upload_boons.js')
 	args = ['build/rules/compendium.json']
+}
+
+task uploadFeats(type: NodeTask) {
+	description 'upload feat data to firestore'
+	script = file('./scripts/upload_feats.js')
+	args = ['build/rules/compendium.json']
+}
+
+task uploadCallings(type: NodeTask) {
+	description 'upload calling data to firestore'
+	script = file('./scripts/upload_callings.js')
+	args = ['build/rules/compendium.json']
+}
+
+task uploadSpecies(type: NodeTask) {
+	description 'upload species data to firestore'
+	script = file('./scripts/upload_species.js')
+	args = ['build/rules/compendium.json']
+}
+
+task uploadData {
+	description 'upload compendium data to firestore'
+	dependsOn 'uploadBoons'
+	dependsOn 'uploadFeats'
+	dependsOn 'uploadCallings'
+	dependsOn 'uploadSpecies'
 }
 
 task closureCompile(type: NpxTask) {

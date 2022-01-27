@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>KinerghCampaign</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>DungeonMaster.WebHome</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1336992067000</creationDate>
+<date>1337580069000</date>
+<contentUpdateDate>1337580069000</contentUpdateDate>
+<version>9.1</version>
+<title>KinerghCampaign</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>== Kingdom of Kinergh ==
+
+The KingdomOfKinergh is an ancient and currently defunct state which once ruled [[Kinergh&gt;&gt;Player.Kinergh]]
+
+== Themes ==
+
+The overall theme of the campaign is the epic struggle of the people of Kinergh and the associated nearby lands of the Dwarves and Elves to defend their homes in a time of upheaval and rising evil. Bands of hardy adventurers seek out and battle fell monsters. Troops of knights sworn to the service of Atur defend the land from humanoid invasions. Clever wizards comb ancient crumbling records for the arch spells of old. Cunning investigators root out evil spies. Kinergh is the borderland at the edge of the wilderness. A place coming under siege.
+
+Kinergh has many ancient orders and hidden secrets. Chief amongst these enigmas are the druidic Priests of Yilliki and the strange places of power where they worship. Lines of power and hidden gateways into the Fey, and even stranger realms, are amongst the secrets they keep. Long ago the Kingdom of Civari learned the secrets of gate building magic and destroyed themselves. The walls between the worlds are still weak in some places and only the Priests of Yilliki still remember the ancient lore. Enigmatic Eldarin Fey Lords may or may not be their allies.
+
+=== Rising Evil ===
+
+The forces of evil are rising in the world, as they do every so often. Humanoids are multiplying and invading the land. The Kingdom of Gilduin is falling into civil war. The Green Adept is an immanent evil menace. Other evil forces grow and extend themselves throughout the world. The main known evil leaders and threats are currently:
+
+* [[The Green Adept&gt;&gt;GreenAdept]] - Defeated by the paladin Sir Dudley Whitehelm and his allies after a great battle in the summer of 1003 this evil mage has arisen again in the form of a Larva Mage.
+* [[Lamia&gt;&gt;BugLady]] - The Green Adept's daughter. She was destroyed by the Druidess [[Summer Twilight&gt;&gt;SummerTwilight]]. Originally born of the union of the Green Adept and a demonic mother she has returned in the form of the Lamia to help her father.
+* [[Berzerkond&gt;&gt;KondTheBerzerk]] - Originally a barbarian of the far north, the Count of Morkend may use his humanoid force to assist whomever can further his own interests. Currently he is playing nice in order to avoid being smashed by the dwarves of Yzimath.
+* [[Carnoth Tarchor&gt;&gt;CarnothTarchor]] - The brother of Lamia, and also half demonic. He assists his sister, but lusts for the fury of battle. Soon he will ride at the side of Akoth-Magog.
+* [[Akoth-Magog&gt;&gt;AkothMagog]] - Great leader of the hobgoblin tribes of the [[Hobgoblin Hills&gt;&gt;HobgoblinHills]]. His army will return to battle against the forces of the Duke of Tisloch soon.
+* [[Carholtha&gt;&gt;DragonCarholtha]] - The Great White Dragon lives in an ice cave high in the pass between Mt Harglang and Mt Duathe. It hungers for treasure and food. Charholtha will take advantage of anyone who can serve its needs. Currently the hobgoblins pay it tribute in order to use the pass to move back and forth into Kinergh from the [[Hobgoblin Hills&gt;&gt;HobgoblinHills]]. Her child, Gharalta, serves the hobgoblin Akoth-Magog.
+* [[Emoth Eguagnol&gt;&gt;EmothEguagnol]] - The ancient cursed vampiric lord of Castle Har who holds one of the three keys to the [[WellOfStars&gt;&gt;WellOfStars]]. He is over 1000 years old and has the patience of great age. He hungers for slaves and blood.
+* [[CultOfPazuzu]] - Demon Lord of Pestilence. The master of the Green Adept.
+* [[Evil Dragon Council&gt;&gt;DragonCouncil]] - Certain powerful evil draconic beings advance the cause of their kind (amd mostly themselves).
+
+=== Ancient Prophesies ===
+
+It was long ago fortold that Ugar would rise again and that Kinnis would return to defeat him. Ancient evil sleeps in the ruined halls of Alcon waiting to place a fell doom upon those who have dared to intrude upon its prison.
+
+=== Divine Strife ===
+
+As it is on Erth, so it is in the realms of the [[Star Sea&gt;&gt;StarSea]]. Evil gods, demons, and devils gird themselves for the coming wars. Will light or darkness master Erithnoi's fate for the next 1000 years?
+
+== Campaign Outline ==
+
+From time immemorial the evil forces have risen from time to time, usually coming down out of the great wilderness to the north in the form of humanoid armies. As the campaign evolves the scope of the stage on which the character's act expands and the humanoids and their evil bosses are revealed to be no more than the tentacles of greater evil. Now the characters will have to strike out into the far north and discover the nature of these forces, demonic beings left over from the time before the beginning of recorded history.
+
+=== Heroic ===
+
+* [[TravellingToVimStoryArc&gt;&gt;TravellingToVimStoryArc]] - Characters travel with Silthond, villagers, and Dannic to the village of Vim.
+* [[DefendingVimStoryArc&gt;&gt;DefendingVimStoryArc]] - Characters must thwart the menace of the Moonblade goblin tribe to Vim.
+* [[RouteToAlconStoryArc&gt;&gt;RouteToAlconStoryArc]] -The characters search for a route to Alcon and travel there, in the process meeting an invading goblin army.
+* [[ExploringAlcon&gt;&gt;ExploringAlcon]] - The party enters the ruins of the ancient dwarven city of Alcon and encounters Carnoth and Lamia's attempt to gain one of the keys to the [[WellOfStars&gt;&gt;WellOfStars]] and discovers a ward sealing the [[UnderDark&gt;&gt;UnderDark]].
+* [[JoiningTheSilverCompany&gt;&gt;JoiningTheSilverCompany]] - The party is offered membership in [[TheSilverCompany&gt;&gt;TheSilverCompany]].
+* [[SuriNathaStoryArc&gt;&gt;SuriNathaStoryArc]] - The party performs a service for [[DraelekTuroth&gt;&gt;DraelekTuroth]] and [[GalarNut&gt;&gt;GalarNut]].
+
+=== Paragon ===
+
+* [[KingMakers&gt;&gt;KingMakers]] - The party attempts to insure that Sharn Kellion II becomes King.
+* [[ThePrinceOfGilduin&gt;&gt;ThePrinceOfGilduin]] - The party travels to Torona and rescues the heir to the throne of Gilduin from the clutches of the Nomok-worshipping followers of [[BarandOfFortunato&gt;&gt;BarandOfFortunato]].
+* [[TheGreatFane&gt;&gt;TheGreatFane]] - The party travels to the Great Fane to rescue Emerik.
+* [[TheDukeOfHar&gt;&gt;TheDukeOfHar]] - The party travels to Har in order to recover another of the keys to the [[WellOfStars&gt;&gt;./WellOfStars.html]].
+* [[TheEldarPrinces&gt;&gt;TheEldarPrinces]] - The party travels to the Land of Fey in order to find the final key to the [[WellOfStars&gt;&gt;./WellOfStars.html]].
+
+=== Epic ===
+
+* [[TheWellOfStars&gt;&gt;TheWellOfStars]] - The party enters the Well of Stars.
+* [[IntoTheNorth&gt;&gt;IntoTheNorth]] - The party travels into the far north to find the roots of evil.
+
+== DM Notes ==
+
+=== Scenes ===
+
+* [[BaronCapitulates&gt;&gt;BaronCapitulates]]
+* [[DudleyFlips&gt;&gt;DudleyFlips]]
+
+Party starts out on Planting Day 1, year 1004, in the Golden Carp Inn in Tisloch. They are all intending to travel with a group of 10 wagons carrying villagers to Vim. The villagers are returning to their village after the defeat of the Green Adept's evil forces.
+
+=== Facts Established ===
+
+* Most of the inhabitants of Tisloch go to the Temple of Klay every day at around 4:30 PM to worship
+* People seem to be eating dinner in Tisloch around 3 PM, the PCs think this is unusually early
+* Silthond is a Ranger of Otillis and he is helping Sir Dannic reestablish the village of Vim.
+* Sir Dannic is reestablishing Vim, which is part of his family's land.
+* Silthond thinks Dannic is lazy
+* Some food items seem to be in short supply in Tisloch (vegetables, it is early spring).
+* Silthond will leave from the ferry gate in 2 days (3rd of Sitwall) with 10 wagons of villagers.
+* The barkeep at the Golden Carp is a Half Elf who maintains a very clean cut appearance.
+* There is a group of goblins operating in northern Kinergh who have at least 10 'worg' riders.
+* Someone was casting rituals in the caverns under the ruined manor near Roche.
+* Sir Garnhelm is the garrison commander at Lys, he has 10 troopers and 50-100 militiamen.
+* The families of Potras and Sotras are the most important in Lys, Elder Potras is the most important villager. Potras likes the party.
+* Lieutenant Sotras is an evil rogue whom the party helped to get driven from Lys. He is on the loose 'somewhere'.
+* Sir Galyhuld is the commander of Castle Halys. He is not above a little fraternization with attractive women.
+* Silthond's bow is a valuable family heirloom.
+* The Priest of Klay at Lys is Vicarus Sesba.
+* The Inn in Lys is the Piebald Mare, it is run by Relim Potras, the nephew of Elder Potras.
+* The goblins in The Forest of Grin are the Moonblades, they are the same goblins who had the wolf riders at the ruined manor near Roche.
+* The Moonblades are divided into two factions, one was led by Red Axe (now dead) and the other by Hexing Bones and Silent Hunter.
+* One can meet with the Moonblades (Silent Hunter's group) by building a fire on the barrow mound near Vim at or near dusk. A truce applies at this spot.
+* Red Axe's faction are using the old evil outpost near Vim as a base of operations. The party has attacked this post and killed Red Axe.
+* There is some connection between an old adventurer, Throf Equagnol, the Well of Stars, and a place called Alcon. The party does not yet know what all this means.
+* There is a Lodge of Otillis near Vim, the priest knows Dex.
+* Dex, the Reeve for Vim, is not around. He supposedly 'went to find Dudley Whitehelm' 2 weeks ago.</content></xwikidoc>

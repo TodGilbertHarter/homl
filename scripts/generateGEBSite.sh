@@ -1,4 +1,5 @@
 #!/bin/bash
+# generate the GEB site from the sources
 # Argument is the version number
 
 GEB_NAME="geb-$1"

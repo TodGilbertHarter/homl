@@ -1,13 +1,14 @@
-/CALLING" Priest"/
+/CALLING /ID" e28f72a4-794b-11ec-88ba-74d02b9c2012"/
+/CALLINGNAME Priest CALLINGNAME/
 /TRAITS
-/ROLE" Enabler"/
-/POWERSOURCE" Spirit"/
-/DAMAGEDIE" D6"/
-/WEAPONS" Any 1"/
-/IMPLEMENTS" Holy Symbol"/
-/KNACKS" Religion, Insight"/
-/HITPOINTS" 6"/
-/STARTHITPOINTS" 9"/
+/ROLE Enabler ROLE/
+/POWERSOURCE Spirit POWERSOURCE/
+/DAMAGEDIE D6 DAMAGEDIE/
+/WEAPONS Any 1 WEAPONS/
+/IMPLEMENTS Holy Symbol IMPLEMENTS/
+/KNACKS Religion, Insight KNACKS/
+/HITPOINTS 6 HITPOINTS/
+/STARTHITPOINTS 9 STARTHITPOINTS/
 TRAITS/
 Priests are the servants of the gods. They are granted divine power which they use to support and protect the god's followers, defeat the god's enemies, and further the philosophy and power of their gods. In combat Priests fill the enabler role, healing and empowering their allies while dis-empowering their enemies. 
 
@@ -37,7 +38,7 @@ You may channel the power of teh gods to bolster your allies.
 DESCRIPTION/
 /BENEFITS
 /BENEFIT
-/FEAT /SOURCE spirit SOURCE/ /TIER heroic TIER/ /FEATNAME Bless FEATNAME/ 
+/FEAT /ID" 9ca171f4-77aa-11ec-b803-74d02b9c2012"/ /SOURCE spirit SOURCE/ /TIER heroic TIER/ /FEATNAME Bless FEATNAME/ 
 /ORIGIN Healer ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Free ACTION/
 /TAGS enchantment TAGS/
 /REQUIREMENTS It must be your turn. REQUIREMENTS/
@@ -58,7 +59,7 @@ FLEXCELL/
 You have the power to heal your allies. DESCRIPTION/
 /BENEFITS
 /BENEFIT
-/FEAT /SOURCE spirit SOURCE/ /TIER heroic TIER/ /FEATNAME Healing Word FEATNAME/ 
+/FEAT /ID" ac391748-77aa-11ec-bbfe-74d02b9c2012"/ /SOURCE spirit SOURCE/ /TIER heroic TIER/ /FEATNAME Healing Word FEATNAME/ 
 /ORIGIN Healer ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Free ACTION/
 /TAGS healing TAGS/
 /REQUIREMENTS It must be your turn. REQUIREMENTS/

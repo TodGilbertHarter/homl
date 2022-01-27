@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>TownOfDinford</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>DungeonMaster.Kinergh</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1339291582000</creationDate>
+<date>1339303174000</date>
+<contentUpdateDate>1339303174000</contentUpdateDate>
+<version>2.1</version>
+<title>Town Of Dinford</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>The town of Dinford is located about 2 days journey west of Tisloch along the Old Cardolan Road. The main part of the town is a walled area about
+
+== {{id name="Laughing_Dog_Inn"/}}Laughing Dog Inn ==
+
+This is the main inn at Dinford. It can accommodate about 100 guests at full capacity. Prices are moderate to low and quality is indifferent and the help only adequate. The proprietors are the Tolir family. Old man Tolir and Grandma Tolir are in charge, but they are old and their oldest son Enom and his wife take care of day-to-day affairs. Meanwhile Grandma runs the kitchen and the old man takes care of the money. Enom's wife and their 7 children do much of the work and supervise the hired help.
+
+Prices are as follows. Common room 15 cp per night. Single room 5 sp per night. Best room 1 gp per night. Meals are 1 sp each for plain fare and 2 sp for a fancier meal. Ale is 3 cp, bear 1 cp, and wine 1 sp per pitcher.
+
+The common room is usually occupied by 2-20 persons in the evening. 1-10 locals and 1-10 travelers. Travelers include a few dwarven merchants and the balance human merchants and a few pilgrims and officials. A bard by the name of Talhaden frequently entertains in the evening.
+
+== {{id name="Regniron_s_Pit"/}}Regniron's Pit ==
+
+Regniron's Pit is an establishment located to the northwest of town
+
+=== Hulamic Academy of Magic ===
+
+The [[Hulamic Academy of Magic&gt;&gt;doc:HulamicAcademyOfMagic]] is located in Dinford.</content></xwikidoc>

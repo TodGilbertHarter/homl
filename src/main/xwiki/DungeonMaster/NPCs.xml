@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>NPCs</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>DungeonMaster.WebHome</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1336281373000</creationDate>
+<date>1337557433000</date>
+<contentUpdateDate>1337557433000</contentUpdateDate>
+<version>12.1</version>
+<title>NPCs</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>= Non Player Characters =
+
+* [[Prodigal Jack&gt;&gt;doc:ProdigalJack]] - The last inhabitant of [[Wild Wood Manor&gt;&gt;doc:WildWoodManor]].
+* [[Akoth-Magog&gt;&gt;AkothMagog]] - Leader of the hobgoblin tribes of the [[Hobgoblin Hills&gt;&gt;HobgoblinHills]].
+* [[Nomog-Gea&gt;&gt;NomogGea]] - Rival to Akoth-Magog.
+* [[Carholtha&gt;&gt;DragonCarholtha]] - A powerful adult white dragon living in the [[Alcon Pass&gt;&gt;AlconPass]].
+* [[Amaranth&gt;&gt;DragonAmaranth]] - The Great Silver Dragon of Dalcaroth.
+* [[Turatha&gt;&gt;DragonTuratha]] - The green dragon which lurks in the northen [[Forest of Grin&gt;&gt;ForestOfGrin]].
+* [[Summer Twilight&gt;&gt;SummerTwilight]] - A priest of Yilliki. Leader of the moderate faction in Kinergh.
+* [[Berzerkond&gt;&gt;KondTheBerzerk]] - The current ruler of the [[County of Morkend&gt;&gt;CountyOfMorkend]].
+* [[Emoth Eguagnol&gt;&gt;EmothEguagnol]] - The true ruler of the DuchyOfHar. An ancient vampire lord who rules his domain from the shadows.
+* [[Duke Sharn Kellion II&gt;&gt;SharnKellionII]] - The Duke of the [[Grand Duchy of Tisloch&gt;&gt;Player.GrandDuchyOfTisloch]].
+* [[Sir Halden Marsh&gt;&gt;HaldenMarsh]] - The Marshal of Tisloch. He is in charge of the army of the [[Grand Duchy of Tisloch&gt;&gt;Player.GrandDuchyOfTisloch]].
+* [[Barand Of Fortunato&gt;&gt;BarandOfFortunato]] - Pretender to the throne of [[The Kingdom of Gilduin&gt;&gt;Main.ErithnoiGilduin]].
+* [[Talia&gt;&gt;WizardessTalia]] - The daughter of a famous magician, [[Zorb of Orb&gt;&gt;ZorbOfOrb]]. Talia lives in a tower within Tisloch, which is now the secret headquarters of [[The Silver Company&gt;&gt;SilverCompany]]. She is also a member of the [[Order of Traveling Magi&gt;&gt;OrderOfTravelingMagi]].
+* [[Murthond&gt;&gt;RangerMurthond]] - A [[Ranger of Otillis&gt;&gt;RangerOfOtillis]] and also involved in the organization of The [[Silver Company&gt;&gt;SilverCompany]]. His brothers are Chilthond and Silthond, also rangers of Otillis.
+* [[The King of the Sewers&gt;&gt;KingOfTheSewers]] - The leader of the wererats living in the sewers under Tisloch
+** [[Shlek Gnarl&gt;&gt;ShlekGnarl]] - A wererat Priest of Jerok who serves The King of the Sewers
+* [[Baranax&gt;&gt;SteelDragonBaranax]] - A Steel Dragon who makes his lair secretly in Tisloch.
+* [[Raxitar&gt;&gt;BlackDragonRaxitar]] - A Black Dragon who lairs in the Relch Bog within the [[Forest of Grin&gt;&gt;ForestOfGrin]].
+* [[Silthond&gt;&gt;RangerSilthond]] - A Ranger of Otillis assigned to the lodge near Vim. Brother of Murthond and Chilthond.
+* [[The Green Adept&gt;&gt;GreenAdept]] - A powerful evil mage thought to have been recently destroyed.
+* [[Draelek Turoth&gt;&gt;DraelekTuroth]] - The Warden of [[Suri Natha&gt;&gt;SuriNatha]].
+* [[Galar Nut&gt;&gt;GalarNut]] - The Treelord of Grin.
+* [[Stable Master Meltheniar&gt;&gt;StableMasterMeltheniar]] - The Griffon Lady.
+* [[Larn Kell-Turion&gt;&gt;LarnKellTurion]] - A spy for the Green Adept and possible pretender to the throne of Kinergh
+* [[Lord Andoth&gt;&gt;LordAndoth]] - The [[Green Adept&gt;&gt;GreenAdept]]'s chief lieutenant. Mightiest of the [[Air Knights&gt;&gt;AirKnights]] of Pazuzu.
+* [[Sir Glar Halath&gt;&gt;SirGlarHalath]] - Seneschal of the Air Knights. A fell opponent.
+* [[Half-Orc Grog&gt;&gt;HalfOrcGrog]] - A Half-Orc barbarian of questionable heritage living in [[Tisloch&gt;&gt;TownOfTisloch]]
+* [[Hag Dugh&gt;&gt;HagDugh]] - A powerful hag and enemy of the Fomorians.
+* [[Dudley Whitehelm&gt;&gt;DudleyWhitehelm]] - A paladin dedicated to Atur, but has he become corrupted?
+* [[Dwarf Gilladian&gt;&gt;DwarfGilladian]] - An old campaigner, now mostly retired. Good for some tall tales
+* [[Copper Dragon Xartialimax&gt;&gt;CopperDragonXartialimax]] - A wiley beast, makes his lair near [[High Hold&gt;&gt;HighHold]] and spins many webs.
+* [[Guillame Johannson&gt;&gt;GuillameJohannson]] - High Priest of Nomok in Bend. A follower of [[Barand of Fortunato&gt;&gt;BarandOfFortunato]] and minion of The [[Head Of Oboth Nai&gt;&gt;HeadOfObothNai]].
+* [[Lars Johannson&gt;&gt;LarsJohannson]] - Baron of the Eastern March of Gilduin. Brother of Guillame Johannson and also associated with [[Barand of Fortunato&gt;&gt;BarandOfFortunato]] et al.
+* [[Elisha The Whip&gt;&gt;ElishaTheWhip]] - Elisha is the captain of the [[Hammer Maidens of Nomok&gt;&gt;HammerMaidenOfNomok]] in Bend and is another follower of [[BarandOfFortunato&gt;&gt;BarandOfFortunato]].
+* RogueGoro - Goro is a famous rogue halfling who was recently living in Bend, until some adventurers got him kicked out of the area.</content></xwikidoc>

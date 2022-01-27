@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>PigIdol</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>DungeonMaster.OrderOfTheGriffin</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1336818857000</creationDate>
+<date>1336893114000</date>
+<contentUpdateDate>1336893114000</contentUpdateDate>
+<version>4.3</version>
+<title>The Pig Idol</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment>Renamed links to Fallcrest following the rename of that page</comment>
+<minorEdit>true</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>This strange pink quartz carving stands about 18" high and depicts a tusked form in a crouching pose. It is in fact an idol created by a group of devil worshipers some 150 years ago. Research in a library such as that of the Septarch's tower in [[Fallcrest&gt;&gt;doc:Fallcrest]] will allow a Religion check to reveal some lore on the subject of this cult (see below).
+
+The idol itself is rather ugly and slightly disturbing, but also holds a strange fascination for anyone who spends a bit of time around it. In fact it has a corrupting influence because the spirit of a fairly minor devil named Maialadus is trapped within. The idol is capable of making telepathic suggestions to anyone within a 20 square radius of its location. It can also sense the basic thoughts and motivations of anyone within this area. It will use this power to attempt to influence people into performing evil acts. It has the additional power of being able to evoke various smells, which seem to emanate from the idol itself. It can use this power to both assist in its corruption of mortals and to inconvenience its enemies.
+
+In the case of NPCs the idol is generally able to influence persons of a weaker willpower, those with WILL defense of 15 or less. In the case of PCs it can make suggestions which are 'attacks' at +5 vs Will. A successful attack merely means that the suggestion made by the idol becomes fixed in the character's mind compulsively. Failed suggestions will still be felt but the character will not experience any compulsion. In either case the player can decide whether or not to act on the suggestion. In the case of NPCs they will generally act on suggestions if they are in accord with the character's goals and desires. Weak-willed characters may act out of character as well and will eventually become subject to the will of the idol if exposed for a period of time.
+
+== Lore ==
+
+* **DC19 Religion** - You recognize this idol as being one described in a report of a diabolic cult which operated in the town of Olethia around 850. At its peak the cult controlled the entire town, having corrupted the mayor and the local ruler, the Duke of Blar. The cultists were finally driven out when the Duke was defeated in battle against the King of Farlond and paladins of the [[Order of the Griffin&gt;&gt;doc:OrderofTheGriffin]] purged the town of evil. Supposedly the Order captured the idol.
+* **DC19 History** - The [[Order of the Griffin&gt;&gt;doc:OrderofTheGriffin]] was an order of paladins of the god Klay which was dedicated to resisting draconic influence in the Midrealms, based in the town of Ciuvaran. After the destruction of the dragons it was aligned with the King of Farlond Graff I. They were instrumental in Farlond's subjugation of Blar, which was under some form of evil influence in 850. The Order self-destructed in a fit of infighting soon after. Its remaining members relocated to a small keep somewhere in the south of Farlond.
+* **DC25 Religion** - The idol is a depiction of the minor devil Maialadus, which was worshiped by the cult in Olethia. It is said to exert a malign influence on those around it. This influence can be reduced by the use of the magic herb silver-green, which grows in the southeastern part of Erk.
+* **DC25 History** - The memoirs of Thalan Ironpalm, sub-prefect of the Order of the Griffin tell the tale of a strange pig-shaped idol which was captured from the cultists of Olethia. The Order determined that the idol could be destroyed by the earth-spirit which was originally used to shape it. This spirit is called "The Crystal Face".
+* **DC25 Nature** - The Crystal Face is located in south-eastern [[Erklond&gt;&gt;doc:Erklond]] . It is an ancient nature spirit associated with a unique type of pink quartz found at this location. The location itself is described as "East of the old town of Vargrav, in the district known as Twonce. An ancient stone circle is situated on a height above a quarry from which the crystal was once mined. The spirit may be invoked in this spot."
+
+== History ==
+
+As indicated in Lore, the idol was first encountered in Olethia in the 800's. In fact it is a good bit older. In the 400's the idol was first created when devil-worshipers tricked The Crystal Face into embuing a portion of the pink crystal with the diabolic essence of Maialadus. This cult was active in Kellhold, then a small Cardolan trading outpost, until the local priests dispersed it. Unfortunately they weren't able to capture and destroy the idol itself. The idol was held for a long time by a remote family of minor nobility for several centuries until the dragon Vertithrax added it to his treasure horde around 700.
+
+It remained hidden in his lair until his death, at which point looters carried it back to Olethia. There it inspired the creation of a cult which ran the whole town until they were crushed by the Order of the Griffin and the King of Farlond. The Order intended to destroy the idol but its influence persuaded one of their subalterns to hide it and bring it back to their headquarters. There is wreaked havoc on the unsuspecting paladins of the Order, subtly corrupting the various subalterns until open war broke out between them. At this point one of the Eldar lords intervened. The survivors of the fighting, still carrying the idol, retired to a small keep on the southern border of Farlond, [[(% class="twikiNewLink" %)Griffin Mist&gt;&gt;doc:GriffinMist]](%%) . Eventually the keep's inhabitants murdered each other until only an empty ruin was left.
+
+More recently the bullywugs of BullywugSwamp recovered the idol when a few of them investigated the ruin.Note that the dragon Om-Vertithrax lately occupied the remains of this keep. He found some evidence there indicating the nature of the idol and its dangers, plus he was aware of some such item having been in the horde of Vertithrax. While intrigued he is not particularly interested in having such an artifact around. Now that Akitaka has seen it in the hands of the bullywugs (and later some player characters) he's likely to research the subject some more. In that case he'll probably decide to help engineer the arrival of the idol in Gurig's Haven, where it could cause his rival some problems.
+
+== Destroying the Idol ==
+
+The idol may be destroyed by conducting a special ritual to summon The [[Crystal Face&gt;&gt;doc:CrystalFace]] at the stone ring of Uwd Tuara in southern [[(% class="twikiNewLink" %)Erklond&gt;&gt;doc:Erklond]](%%) . The face can, and for a price will, dispel the essence of the devil from the stone. The only way to learn the ritual is to contact the druid Dargoth Emmen, who lives in a village about 5 miles from the stone ring. Learning the ritual from Dargoth will probably not be easy since he considers it a secret he is pledged to maintain. However, he could be persuaded that the cause is just, as the unnatural force of the idol is repugnant to the priests of Yilliki, of which he is one.</content></xwikidoc>

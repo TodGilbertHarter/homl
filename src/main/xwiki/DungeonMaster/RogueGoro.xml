@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>DungeonMaster</web>
+<name>RogueGoro</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>DungeonMaster.NPCs</parent>
+<creator>XWiki.TodHarter</creator>
+<author>XWiki.TodHarter</author>
+<customClass></customClass>
+<contentAuthor>XWiki.TodHarter</contentAuthor>
+<creationDate>1336994867000</creationDate>
+<date>1337026176000</date>
+<contentUpdateDate>1337026176000</contentUpdateDate>
+<version>1.1</version>
+<title>Rogue Goro</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>Goro is a famous rogue halfling who was recently living in Bend. After assisting the adventurers of the SilverCompany to rescue the paladin Dudley Whitehelm he fled the town along with many of the halflings in his band.
+
+It is rumoured that Goro is responsible for stealing various magical and ancient goods. Apparently he works for the steel dragon Baranax.</content></xwikidoc>
