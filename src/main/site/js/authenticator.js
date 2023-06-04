@@ -15,6 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
+import { Timestamp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
 
 class Authenticator {
 	/** @private */ fb;
@@ -38,7 +39,7 @@ class Authenticator {
 	}
 	
 	signOut(onComplete) {
-		this.fb.auth().signOut().then(() => {
+		getAuth().signOut().then(() => {
 				this.authenticated = false;
 				this.user = null;
 				this.player = null;
@@ -51,13 +52,18 @@ class Authenticator {
 	}
 	
 	signInWithEmailAndPassword(email,password, onSuccess, onFailure) {
-//		this.fb.auth().signInWithEmailAndPassword(email, password)
 		signInWithEmailAndPassword(getAuth(), email, password)
 		  .then((userCredential) => {
 			this.authenticated = true;
 		    this.user = userCredential.user;
 			this.errorCode = 0;
-			this.getPlayerFromRepo(onSuccess,onFailure);
+			this.getPlayerFromRepo((user,player) => {
+				player.loggedIn = Timestamp.fromDate(new Date());
+				this.playerRepo.savePlayer(player);
+				onSuccess();
+				},
+			onFailure);
+			
 		  })
 		  .catch((error) => {
 		    this.errorCode = error.code;
@@ -69,19 +75,14 @@ class Authenticator {
 	}
 
 	createUserWithEmailAndPassword(email,password, onSuccess, onFailure) {
-//		this.fb.auth().createUserWithEmailAndPassword(email, password)
 		createUserWithEmailAndPassword(getAuth(), email, password)
 		  .then((userCredential) => {
 			this.authenticated = true;
 		    this.user = userCredential.user;
 			this.errorCode = 0;
-		    this.player = {
-		    	email: email,
-		    	loggedin: this.fb.firestore.Timestamp.fromDate(new Date())
-		    };
-		    var db = this.fb.firestore();
-			db.collection('players').add(email);
-			onSuccess(this.user,this.player);
+		    this.player = new Player(null,email,Timestamp.fromDate(new Date()),null);
+		    this.playerRepo.savePlayer(this.player);
+		    onSuccess(this.player);
 		  })
 		  .catch((error) => {
 		    var errorCode = error.code;

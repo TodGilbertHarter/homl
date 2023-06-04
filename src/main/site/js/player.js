@@ -17,12 +17,14 @@
 class Player {
 	id;
 	email;
+	loggedIn;
 	characters;
 	
-	constructor(id, email, characters) {
+	constructor(id, email, loggedIn, characters) {
 		this.id = id;
 		this.email = email;
-		this.characters = characters;
+		this.loggedIn = loggedIn;
+		this.characters = characters === undefined ? [] : characters;
 	}
 	
 	toString() {

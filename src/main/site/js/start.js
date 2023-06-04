@@ -8,7 +8,6 @@ import { CharacterRepository } from './characterrepository.js';
 import { CharacterController } from './charactersheet.js';
 import { CallingRepository } from './callingrepository.js';
 import { SpeciesRepository } from './speciesrepository.js';
-import { Rules, Calculation } from './rules.js';
 
 
 class Application {

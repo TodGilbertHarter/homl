@@ -41,12 +41,18 @@ This is the rules container. Every rule which can be applied to perform the calc
 sheet is embodied here.
 */
 class Rules {
-	callingRepo;
+	calling;
+	specie;
+//	callingRepo;
     rulesList;
     
-    constructor(callingRepo) {
-		this.callingRepo = callingRepo;
+    constructor(calling,specie) {
+		this.calling = calling;
+		this.specie = specie;
         this.rulesList = [];
+        
+        this.createSpeciesCalculators(this.specie);
+        this.createCallingCalculators(this.calling);
         
         const ltarget = 'levelbonus';
         const lsources = ['level'];
@@ -58,12 +64,10 @@ class Rules {
         const levelbonuscalculator = new Calculation(ltarget,lsources,lcalc);
         this.addRule(levelbonuscalculator);
 
-//		this.getCallings();
-        
         const calcProficiency = function(name,proficiencies,knacks,levelbonus,abilitybonus) {
             const knack = {};
             knacks[name] = knack;
-            knack.proficient = proficiencies[name];
+            knack.proficient = proficiencies[name] !== 'undefined' ? proficiencies[name] : false;
             knack.proficiencybonus = proficiencies[name] ? proficiencyBonus : 0;
             knack.levelbonus = levelbonus;
             knack.permanentbonus = 0; //others will no doubt figure this out
@@ -103,23 +107,36 @@ class Rules {
         };
         const knackCalculator = new Calculation(ktarget,ksources,kcalc);
         this.addRule(knackCalculator);
+        
+        const initiativeCalculator = new Calculation('initiative',['abilities','levelbonus'],(character) => {
+			character.derivedData.initiative = character.derivedData.levelbonus + character.dexterity;
+		});
+		this.addRule(initiativeCalculator);
+		
+		const healingValueCalculator = new Calculation('healingvalue',['maxhitpoints'],(character) => {
+			character.derivedData.healingValue = Math.floor(character.derivedData.maxHitPoints/4);
+		});
+		this.addRule(healingValueCalculator);
+		
+		const drCalculator = new Calculation('damagereduction',[],(character) => {
+			character.derivedData.damageReduction = 0; // just sets the default to 0, equipment etc. can add to this.
+		});
+		this.addRule(drCalculator);
+		
+		const powerCalculator = new Calculation('maxpower',['level'],(character) => {
+			var pps = 8;
+			pps += character.level > 6 ? 1 : 0;
+			pps += character.level > 15 ? 1 : 0;
+			character.derivedData.maxPower = pps;
+		});
+		this.addRule(powerCalculator);
+        
     }
     
-    /**
-     * Get callings from the database. This will just get ALL of the callings, no doubt we will
-     * likely use them all, and there shouldn't be too many anyway. calls createCallingCalculators
-     * when the data is available.
-     */
-    getCalling(character) {
-		this.callingRepo.getReferencedCalling(character.calling,(calling) => {
-			this.createCallingCalculators(calling);
-			this.calculate(character);
-		});
+    createSpeciesCalculators(specie) {
+		this.addRules(specie.calculators);
 	}
-	
-	/**
-	 * Callback which sets up the calling calculations once we get data back.
-	 */
+
     createCallingCalculators(calling) {
 		this.addRules(calling.calculators);
 	}
@@ -137,7 +154,16 @@ class Rules {
     }
     
     sortRules() {
-	//TODO: figure out how to sort the rules in dependency order...
+		const sorted = this.rulesList.sort((a,b) => {
+			const aupdates = a.target;
+			const bcats = b.sources;
+			if(bcats.includes(aupdates)) { return 1; }
+			const bupdates = b.target;
+			const acats = a.sources;
+			if(acats.includes(bupdates)) { return -1; }
+			return 0;
+		});
+		this.rulesList = sorted;
     }
     
     calculate(character) {

@@ -7,6 +7,19 @@ of HTML. Include this and a character data document, the result will be an HTML 
 
 // :/ /* Prevent spurious <p> tags. */
 
+/: /SHEETTITLE <div class="header">
+	<div class="panel"><button id='savebutton'>Save</button><button id='refreshbutton'>Refresh</button></div>
+    <div class='mastertitle'>
+        <div class='topborder'></div>
+        <div class='title'>Heroes of Myth &amp; Legend Character Sheet</div>
+        <div class='bottomborder'></div>
+    </div>
+</div>
+:/
+
+/: /NAME /GETMATCHING NAME/ /DELIMITED /DUP /. </title></head><body><div><div> /SHEETTITLE /SHEETROW /FIELD /FIELDNAME Name: FIELDNAME/ /FIELDWIDTH 20em FIELDWIDTH/ /FIELDID charactername FIELDID/ FIELD/ :/
+/: NAME/ /[" Mismatch, NAME/ must follow /NAME "]/ /ABORT :/
+
 /: /CHARACTER
 <template id='charactersheettemplate'>
 <style>

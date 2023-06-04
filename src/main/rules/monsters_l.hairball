@@ -1,0 +1,88 @@
+/* Monsters starting with 'L' */
+/SUBSECTION" L"/
+/TOPIC" Lycanthropes"/
+
+Lycanthropes are a class of monsters which exist due to an affliction, the curse of /REF Lycanthropy REF/ .
+All lycanthropes are shape changing monsters which have a human, or humanoid, natural form as well as a
+beastial form, into which they voluntarily or involuntarily transform as a result of the curse. Some of these
+creatures are willing shapeshifters who have been entirely consumed by the effects of the curse, or who have
+embraced it deliberately. Others are unwilling, or even unwitting, victims who only transform without
+conscious volition and seek to escape from the effects of the curse, should such an option exist.
+
+When in their beastial form most lycanthropes lack conscious volitional control of, or at least complete
+control and understanding of their actions. The beast form is wild and vicious, often possessing a predatory
+instinct. In many cases the beast will simply hunt and kill humans or animals without regard to any kind
+of considerations which the lycanthrope might be subject to in its human form. However, those who have
+embraced their fate may act in a more measured fashion. That is the beast form may focus its attacks on 
+their enemies, attempt to leave false trails implicating someone else, etc.
+
+One thing that is always true of these lycanthropes is that their powers are strongly influenced by moon(s).
+Transformations do not happen in daytime, under the Sun. They might happen at any time in some settings,
+such as deep underground, but are still more likely to occure when the moon is in the sky, and especially when
+it is full. Outdoors under bright moonlight most lycanthropes will take their beast form, though a few of the
+most powerful may be able to shift at will even under these conditions.
+
+Lycanthropes can generally shapechange in a period of about one minute. For this reason they don't normally perform
+a shapechange in the presence of immediate danger.
+/SUBTOPIC" Wereboar"/
+/LEFT=" half"/
+/MONSTER
+/MONSTERNAME Wereboar MONSTERNAME/ /MONSTERLEVEL 5 MONSTERLEVEL/ /MONSTERROLE Standard Skirmisher MONSTERROLE/
+/MONSTERSIZE standard MONSTERSIZE/ /MONSTERTAGS magical, beast, humanoid MONSTERTAGS/
+/MONSTERDEFENSES /MONSTERFORT 21 MONSTERFORT/ /MONSTERREF 23 MONSTERREF/ /MONSTERWILL 25 MONSTERWILL/ MONSTERDEFENSES/
+/MONSTERPOWER 0 MONSTERPOWER/
+/MONSTERHITPOINTS 39; 19 MONSTERHITPOINTS/ /MONSTERINITIATIVE +3 MONSTERINITIATIVE/
+/MONSTERIMMUNITY none MONSTERIMMUNITY/ /MONSTERPROTECTION none MONSTERPROTECTION/
+/MONSTERVULNERABILITY silver MONSTERVULNERABILITY/ /MONSTERDR 2 MONSTERDR/
+/MONSTERSECTION /MONSTERSECTIONNAME Traits MONSTERSECTIONNAME/
+/MONSTERTRAIT /MONSTERTRAITNAME Regeneration MONSTERTRAITNAME/
+/MONSTERTRAITEFFECT Wereboars have regeneration 3, which will not function 
+until after the end of their next turn 
+if they are damaged by silver weapons MONSTERTRAITEFFECT/ MONSTERTRAIT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Move MONSTERSECTIONNAME/
+/MONSTERSPEED 7 MONSTERSPEED/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Major MONSTERSECTIONNAME/
+/MONSTERFEAT /MONSTERFEATNAME Tusks MONSTERFEATNAME/ /MONSTERFEATTAGS basic MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE At-Will MONSTERFEATUSAGE/
+/MONSTERFEATATTACK close 1 DC 21; one opponent MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 2d6+5 damage and the target is engaged MONSTERFEATSUCCESS/
+MONSTERFEAT/
+/MONSTERFEAT /MONSTERFEATNAME Goring Charge MONSTERFEATNAME/ /MONSTERFEATTAGS fear MONSTERFEATTAGS/ 
+/MONSTERFEATUSAGE Recharge 4 MONSTERFEATUSAGE/
+/MONSTERFEATEFFECT The wereboar moves 3 squares and then makes the following attack MONSTERFEATEFFECT/
+/MONSTERFEATATTACK close 1 DC 22; one enemy MONSTERFEATATTACK/
+/MONSTERFEATSUCCESS 4d6+6 damage and the target is pushed 3 squares. The wereboar moves 3 squares, remaining
+adjacent to the target. MONSTERFEATSUCCESS/
+MONSTERFEAT/
+MONSTERSECTION/
+/MONSTERSECTION /MONSTERSECTIONNAME Stats MONSTERSECTIONNAME/
+/MONSTERSTR 21 MONSTERSTR/
+/MONSTERINT 19 MONSTERINT/
+/MONSTERCON 22 MONSTERCON/
+/MONSTERWIS 22 MONSTERWIS/
+/MONSTERDEX 22 MONSTERDEX/
+/MONSTERCHA 16 MONSTERCHA/
+/MONSTERKNACKS /MONSTERKNACK intimidate(22), stealth(24) MONSTERKNACK/ MONSTERKNACKS/
+/MONSTERLANG common (only in human form) MONSTERLANG/
+/MONSTEREQUIP none (see description) MONSTEREQUIP/
+MONSTERSECTION/
+MONSTER/
+LEFT/
+
+Wereboars are much like their animal namesakes in temperament, suspicious, cunning, and vicious when 
+cornered. They prefer to attack suddenly from ambush, using their speed and stealth to insure that they
+can defeat their opponent before being struck back against. They avoid being pinned down and heavily prefer
+to fight in areas with plenty of cover into which they can vanish after making an attack.
+
+Wereboars tend to avoid human society as much as possible, but they may band together in small groups at
+times. Unlike some other lycanthropes they are usually less outright malevolent in their attitude towards
+humanity.
+
+If encountered in a human form, they may fight with weapons, but will usually choose to retreat, preferring
+to engage when in boar form. If they do fight in this form they are likely to use weapons such as axes and
+spears.
+SUBTOPIC/
+TOPIC/
+SUBSECTION/

@@ -173,7 +173,7 @@ task generateEmptyCharacterSheet(type: Exec) {
 }
 
 task generateGEBSite(type: Exec) {
-	description 'build the GEB site from sources'
+	description 'build the GEB site, which is just the web application, from sources'
 //	dependsOn 'generateHoMLRules'
 	dependsOn 'generateEmptyCharacterSheet'
 	inputs.file('scripts/generateGEBSite.sh')
@@ -184,13 +184,20 @@ task generateGEBSite(type: Exec) {
 }
 
 task generateLocalSite(type: Exec) {
-	description 'build a full local site with all features for testing'
+	description 'build a full local site with all features for testing, this can also be deployed remotely in one step'
 	dependsOn 'generateHoMLRules'
 	dependsOn 'generateErithnoi'
 	dependsOn 'generateGEBSite'
 	outputs.dir("$buildDir/local")
 	inputs.file('scripts/generateLocalSite.sh')
 	commandLine './scripts/generateLocalSite.sh', project.version
+}
+
+task deployAll(type: Exec) {
+	description 'deploy the full site, including web application, rules, and erithnoi, to production'
+	dependsOn 'generateLocalSite'
+	inputs.dir("$buildDir/local");
+	commandLine './scripts/deployAll.sh', project.version
 }
 
 /**

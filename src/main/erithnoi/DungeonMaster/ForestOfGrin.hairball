@@ -60,11 +60,11 @@ Numerous hazards may be encountered in the forest and anyone wandering for long 
 
 /TABLE 
 /TR /TH Die Roll /TH/ Encounter TH/ TR/
-/TR  /TD 2 /TD/ /ARTICLEREF /REFNAME ./ShadowFall.html REFNAME/ /REFTEXT ShadowFall REFTEXT/ ARTICLEREF/ , /ARTICLEREF /REFNAME ./BlackDragonRaxitar.html REFNAME/ /REFTEXT BlackDragonRaxitar REFTEXT/ ARTICLEREF/  TD/ TR/
-/TR  /TD 3 /TD/ #AirKnight~]~], ~~[~~[#ShamblingMound,[[ /TD/  /TD/ anchor="ShamblingMound.html"]] TD/ TR/
-/TR  /TD 4 /TD/ #OgreBand~]~], ~~[~~[#EvilPatrol,[[ /TD/  /TD/ anchor="EvilPatrol.html"]] TD/ TR/
-/TR  /TD 5 /TD/ #EtterCaps~]~], ~~[~~[#GreenSlime,[[ /TD/  /TD/ anchor="GreenSlime.html"]] TD/ TR/
-/TR  /TD 6-8 /TD/ /ARTICLEREF /REFNAME ./ /TD/  /TD/ anchor="GoblinHunters.html" REFNAME/ /REFTEXT #GoblinHunters REFTEXT/ ARTICLEREF/  TD/ TR/
+/TR  /TD 2 /TD/ /ARTICLEREF /REFNAME ./ShadowFall.html REFNAME/ /REFTEXT Shadow Fall REFTEXT/ ARTICLEREF/ , /ARTICLEREF /REFNAME ./BlackDragonRaxitar.html REFNAME/ /REFTEXT Black Dragon Raxitar REFTEXT/ ARTICLEREF/  TD/ TR/
+/TR  /TD 3 /TD/ /A AirKnight /A/ Air Knight A/ , /A ShamblingMound /A/ Shambling Mound A/ TD/ TR/
+/TR  /TD 4 /TD/ /A OgreBand /A/ Ogre Band A/ , /A EvilPatrol /A/ Evil Patrol A/ TD/ TR/
+/TR  /TD 5 /TD/ /A EtterCaps /A/ Ettercaps A/ , ~~[~~[#GreenSlime,[[ /TD/  /TD/ anchor="GreenSlime.html"]] TD/ TR/
+/TR  /TD 6-8 /TD/ /A GoblinHunters REFTEXT/ ARTICLEREF/  TD/ TR/
 /TR  /TD 9 /TD/ #OwlBears~]~], ~~[~~[#SpectralPanther,[[ /TD/  /TD/ anchor="SpectralPanther.html"]] TD/ TR/
 /TR  /TD 10 /TD/ #TrollBand~]~], ~~[~~[#HillGiants,[[ /TD/  /TD/ anchor="HillGiants.html"]] TD/ TR/
 /TR  /TD 11 /TD/ #BeastOfGrin~]~], ~~[~~[#WildHunt,[[ /TD/  /TD/ anchor="WildHunt.html"]] TD/ TR/

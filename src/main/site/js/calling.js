@@ -36,8 +36,10 @@ class Calling {
 	startingHitPoints;
 	boons = [];
 	
-	constructor(id,name,features,hitPoints,damageDie,role,powerSource,weaponProfs
-			,implementProfs,proficiencies,startingHitPoints,boons) {
+	constructor(id,name,features,hitPoints,damageDie,role
+			,powerSource,weaponProfs
+			,implementProfs,proficiencies
+			,startingHitPoints,boons) {
 		this.id = id;
 		this.name = name;
 		if(features !== 'undefined') {
@@ -68,7 +70,7 @@ class Calling {
 	get calculators() {
 		const calculators = [];
 		calculators.push(new Calculation(
-			'hitpoints',
+			'maxhitpoints',
 			['calling','level','constitutionbonus'],
 			(character) => {
 				character.derivedData.maxHitPoints = character.level * this.hitPoints + this.startingHitPoints + character.constitution;

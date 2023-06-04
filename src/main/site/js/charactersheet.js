@@ -15,21 +15,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+import { html, LitElement } from 'https://unpkg.com/lit@2.0.2/index.js?module';
+import { Rules } from './rules.js';
+
 /** @private */ const CharacterSheettemplate = document.getElementById('charactersheettemplate');
 
 class CharacterSheet extends HTMLElement {
 	/** @private */static template = CharacterSheettemplate;
 	model;
 	rules;
-	speciesRepo;
-	callingsRepo;
+	species;
+	callings;
+	controller;
 	/** @type {string} @private */ characterId;
 	
 	constructor() {
 		super();
-		this.speciesRepo = window.gebApp.speciesRepo;
-		this.coallingsRepo = window.gebApp.callingsRepo;
-		
 		const content = CharacterSheet.template.content;
         const shadowRoot = this.attachShadow({mode: 'open'}).appendChild(content.cloneNode(true));
  	}
@@ -43,6 +44,42 @@ class CharacterSheet extends HTMLElement {
 		const rbh = this.refreshButtonHandler.bind(this);
 		refreshbutton.addEventListener('click',rbh);
 //		const characterview = this.shadowRoot.getElementById('characterview');
+	}
+	
+	setSelections(species, callings) {
+		this.species = species;
+		this.callings = callings;
+		const callingSelector = this.shadowRoot.getElementById('charactercalling');
+		callingSelector.setSelections(this.callings);
+		const speciesSelector = this.shadowRoot.getElementById('characterspecies');
+		speciesSelector.setSelections(this.species);
+		const fateSelector = this.shadowRoot.getElementById('characterfate');
+		fateSelector.setSelections([
+			{ id: 'positive', name: 'postive'},
+			{ id: 'neutral', name: 'neutral'}
+		]);
+		const wealthSelector = this.shadowRoot.getElementById('characterwealth');
+		wealthSelector.setSelections([
+			{ id: '-1', name: 'Destitute'},
+			{ id: '0', name: 'Poor'},
+			{ id: '1', name: 'Ordinary'},
+			{ id: '2', name: 'Adequate'},
+			{ id: '3', name: 'Well Off'},
+			{ id: '4', name: 'Rich'},
+			{ id: '5', name: 'Vast Wealth'},
+			{ id: '6', name: 'Infinite Wealth'}
+		]);
+		const personalityList = this.shadowRoot.getElementById('characterpersonality');
+		personalityList.newButtonHandler = (e) => {
+			const nitem = '<personality-field name="trait name" value="new description"></personality-field>';
+			personalityList.addItem(nitem);
+		};
+		
+		const backgroundList = this.shadowRoot.getElementById('characterbackground');
+		backgroundList.newButtonHandler = (e) => {
+			alert('not yet figured out');
+			const bitem = '<background-field name=""'
+		};
 	}
 	
 	disconnectedCallback() {
@@ -81,9 +118,126 @@ class CharacterSheet extends HTMLElement {
         this.shadowRoot.getElementById(elementId).value = value;
     }
     
+    setCharacterListItems(elementId,items) {
+		const listElement = this.shadowRoot.getElementById(elementId);
+		items.forEach((item) => {
+			listElement.addItem(item);
+		});
+	}
 }
 
 window.customElements.define('character-sheet',CharacterSheet);
+
+class BackgroundField extends LitElement {
+	static properties = {
+		type: {},
+		value: {}
+	};
+	backgroundValues = [];
+	
+	render() {
+		return html`<div class="attribute">
+			<label>${this.type}</label>
+			<select id='valueselect' value='${this.value}'></select>
+			<input id='input' value="">
+		</div>`;
+	}
+	
+	firstUpdated() {
+		const text = this.innerHTML;
+		const input = this.shadowRoot.getELementById('input');
+		input.value = text;
+	}
+	
+	static bgtypes = {
+		birth: ['Orphan', 'Adopted', 'Omen', 'Curse', 'Prophesy']
+	};
+	
+	set backgroundType(bgtype) {
+		
+	}
+	
+	set backgroundValues(values) {
+		this.backgroundValues = backgroundValues;
+		const selector = this.shadowRoot.getElementById('valueselect');
+		var valueText = '';
+		values.forEach((value) => {
+			valueText = valueText + `<option>${value}</option>`;
+		});
+		selector.innerHTML = valueText;
+	}
+}
+
+window.customElements.define('background-field',BackgroundField);
+
+class PersonalityField extends LitElement {
+	static properties = {
+		name: {},
+		value: {}
+	};
+	deleteButtonHandler = (e) => {
+		const pf = e.target.parentNode;
+		pf.parentNode.removeChild(pf);
+	};
+	
+	constructor() {
+		super();
+	}
+	
+	render() {
+		return html`<div class="attribute">
+			<input part="name" class="name" id="name" value="${this.name}">
+			<input part="value" class='value' value="${this.value}" id='value'>
+			<button part="delete" name="delete" id='delete' @click="${this.deleteButtonHandler}">x</button>
+		</div>`;
+	}
+
+}
+
+window.customElements.define('personality-field',PersonalityField);
+
+class ItemList extends LitElement {
+	static properties = {
+		label: {}	
+	};
+	newButtonHandler = () => alert('no handler installed');
+	items;
+	itemSlot;
+	
+	constructor() {
+		super();
+	}
+	
+	firstUpdated() {
+		const container = this.shadowRoot.getElementById('content');
+		const slot = container.firstChild;
+		slot.addEventListener('slotchange', (e) => {
+			this.itemSlot = e.target;
+			this.items = this.itemSlot.assignedElements();
+		});
+	}
+	
+	render() {
+		return html`<div>
+			<span class="boxlabel">${this.label}</span>
+			<div id='content'><slot></slot></div>
+			<div><button name='new' id='newbutton' @click="${this.newButtonHandler}">New</button></div>
+		</div>`;
+	}
+	
+	addItem(item,inserted) {
+		this.insertAdjacentHTML('beforeend',item);
+		if(inserted !== 'undefined') { inserted(this.lastChild); }
+	}
+}
+
+window.customElements.define('item-list',ItemList);
+
+/* class PersonalityList extends ItemList {
+	
+}
+
+window.customElements.define('personality-list',PersonalityList); */
 
 /*
 Sheetfield implements a web component which will bind to a field in a character object. This allows us to map a character
@@ -128,8 +282,40 @@ class AttributeField extends SheetField {
         const label = this.shadowRoot.getElementById('label');
         label.innerHTML = ltext;
     }
+}
+
+const template_SelectField = document.createElement('template');
+// template_SelectField.innerHTML = `<label id='label'></label><select id='input'></select>`;
+template_SelectField.innerHTML = `<label id='label'></label><select id='input'><slot name='option'>foo</slot></select>`;
+
+class SelectField extends SheetField {
+    constructor() {
+        super(template_SelectField);
+    }
     
+    connectedCallback() {
+        const value = this.getAttribute('value');
+        const n = this.getAttribute('name');
+        const style = this.getAttribute('style');
+        const id = this.getAttribute('id');
+        const input = this.shadowRoot.getElementById('input');
+        input.setAttribute('style',style);
+        input.setAttribute('value',value);
+        input.setAttribute('name',n);
+        const ltext = this.getAttribute('label');
+        const label = this.shadowRoot.getElementById('label');
+        label.innerHTML = ltext;
+    }
     
+    setSelections(options) {
+        const input = this.shadowRoot.getElementById('input');
+		options.forEach((option) => {
+			const optElement = document.createElement('option');
+			optElement.innerText = option.name;
+			optElement.value = option.id;
+			input.appendChild(optElement);
+		});
+	}
 }
 
 const template_CalculatedField = document.createElement('template');
@@ -153,6 +339,15 @@ class CalculatedField extends SheetField {
         const label = this.shadowRoot.getElementById('label');
         label.innerHTML = ltext;
     }
+
+    set value(value) {
+        const input = this.shadowRoot.getElementById('input').innerText = value;
+    }
+    
+    get value() {
+        return this.shadowRoot.getElementById('input').innerText;
+    }
+
 }
 
 
@@ -291,6 +486,7 @@ class KnackField extends SheetField {
 
 window.customElements.define('attribute-field',AttributeField);
 window.customElements.define('calculated-field',CalculatedField);
+window.customElements.define('select-field',SelectField);
 window.customElements.define('ability-field',AbilityField);
 window.customElements.define('knack-field',KnackField);
 
@@ -323,6 +519,29 @@ class CharacterController {
         element.levelbonus = data.levelbonus;
     }
     
+    getSpecies(sheet,speciesId) {
+		var result = null;
+		sheet.species.every((specie) => {
+			if(specie.id === speciesId) {
+				result = specie;
+				return false;
+			}
+			return true;
+		});
+		return result;
+	}
+	
+	getCalling(sheet,callingId) {
+		var result = null;
+		sheet.callings.every((calling) => {
+			if(calling.id === callingId) {
+				result = calling;
+				return false;
+			}
+			return true;
+		});
+		return result;
+	}
     /**
      * Display all the attributes of a character on a sheet.
      *
@@ -330,10 +549,12 @@ class CharacterController {
 	 * @param {Character} character the character to get the data from.
      */
     display(sheet,character) {
+		const calling = this.getCalling(sheet,character.calling.id);
+		const specie = this.getSpecies(sheet,character.species.id);
         sheet.setCharacterData('charactername',character.name);
         sheet.setCharacterData('characterlevel',character.level);
-        sheet.setCharacterData('charactercalling',character.calling.name); //TODO: create picklist fields
-        sheet.setCharacterData('characterspecies',character.species);
+        sheet.setCharacterData('charactercalling',calling.id);
+        sheet.setCharacterData('characterspecies',specie.id);
         sheet.setCharacterData('characterfate',character.fate);
         sheet.setCharacterData('characterdescription',character.description);
         sheet.setCharacterData('characterhitpoints',character.hitpoints);
@@ -366,8 +587,37 @@ class CharacterController {
         this.displayKnack('thievery','characterthievery',sheet,character);
         // other calculated values
         sheet.setCharacterData('charactermaxhitpoints',character.derivedData.maxHitPoints);
+        sheet.setCharacterData('charactervision',character.derivedData.vision);
+        sheet.setCharacterData('charactersize',character.derivedData.size);
+        sheet.setCharacterData('characterspeed',character.derivedData.speed);
+        sheet.setCharacterData('characterinitiative',character.derivedData.initiative);
+        sheet.setCharacterData('characterdr',character.derivedData.damageReduction);
+        sheet.setCharacterData('characterhealingvalue',character.derivedData.healingValue);
+        sheet.setCharacterData('charactermaxpower',character.derivedData.maxPower);
+        this.setPersonality(sheet,character.personality);
+        this.setBackground(sheet,character.background);
     }
 
+	setPersonality(sheet,personality) {
+		const items = [];
+		const keys = Object.keys(personality);
+		keys.forEach((key) => {
+			const value = personality[key];
+			items.push(`<personality-field name="${key}" value="${value}"></personality-field>`);
+		});
+		sheet.setCharacterListItems('characterpersonality',items);
+	}
+	
+	setBackground(sheet,background) {
+		const items = [];
+		const keys = Object.keys(background);
+		keys.forEach((key) => {
+			const value = background[key];
+			items.push(`background-field type="${key}" name="${value.name}">${value.value}</background-field>`);
+		});
+		sheet.setCharacterListItems('characterbackground',items);
+	}
+	
 	/**
 	 * Update a character with data entered on a sheet.
      *
@@ -377,8 +627,8 @@ class CharacterController {
     readForm(sheet,character) {
         character.name = sheet.getCharacterData('charactername');
         character.level = parseInt(sheet.getCharacterData('characterlevel'),10);
-//TODO: fix this        character.calling = sheet.getCharacterData('charactercalling');
-        character.species = sheet.getCharacterData('characterspecies');
+		character.calling = sheet.getCharacterData('charactercalling');
+		character.species = sheet.getCharacterData('characterspecies');
         character.fate = sheet.getCharacterData('characterfate');
         character.description = sheet.getCharacterData('characterdescription');
         character.hitpoints = parseInt(sheet.getCharacterData('characterhitpoints'),10);
@@ -448,5 +698,52 @@ class CharacterController {
 	}
 }
 
-export { CharacterController };
+var characterSheetFactory = function(element,characterId,speciesRepo,callingRepo,characterRepo,created) {
+	speciesRepo.getAllSpecies((speciesList) => {
+		callingRepo.getAllCallings((callingsList) => {
+			try {
+				element.innerHTML = `<character-sheet characterid='${characterId}' id='cv${characterId}'></character-sheet>`;
+				const charSheet = document.getElementById(`cv${characterId}`);
+				charSheet.setSelections(speciesList,callingsList);
+//				charSheet.species = speciesList;
+//				charSheet.callings = callingsList;
+				charSheet.controller = window.gebApp.characterController;
+				created(charSheet);
+				if(characterId !== null) {
+					characterRepo.getCharacterById(characterId, (character) => {
+//						charSheet.controller.display(charSheet,character);
+						setSpeciesFromList(character,speciesList);
+						setCallingFromList(character,callingsList);
+						const theRules =  new Rules(character.calling,character.species);
+						charSheet.rules = theRules;
+						character.rules = theRules;
+						charSheet.controller.render(charSheet,character);
+					});
+				}
+			} catch (e) {
+				console.log("cannot create character sheet "+e.message+" at "+e.lineNumber);
+			}
+		});
+	});	
+}
+
+function setSpeciesFromList(character,speciesList) {
+	const id = character.species.id;
+	for(var i = 0; i < speciesList.length; i++) {
+		if(id === speciesList[i].id) {
+			character.species = speciesList[i];
+		}
+	}
+}
+
+function setCallingFromList(character,callingsList)	{
+	const id = character.calling.id;
+	for(var i = 0; i < callingsList.length; i++) {
+		if(id === callingsList[i].id) {
+			character.calling = callingsList[i];
+		}
+	}
+}
+
+export { CharacterController, characterSheetFactory };
 

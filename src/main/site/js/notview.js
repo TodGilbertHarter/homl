@@ -14,6 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+import { characterSheetFactory } from './charactersheet.js';
 
 class NotView { /* Closure Compiler had fits about the class name 'View', hence the weird name... */
 	/**
@@ -39,14 +40,16 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 		this.theDocument.getElementById('leftslottabpanel').appendChild(tabContents);
 	}
 	
+	currentDialog;
+	
 	displaySignInUI() {
 		const dialogHTML = this.theDocument.getElementById('signin-dialog').innerHTML;
-		const dialog = this.theDocument.createElement('dialog-widget');
-		dialog.innerHTML = dialogHTML;
-		this.theDocument.getElementsByTagName('body')[0].appendChild(dialog);
+		this.currentDialog = this.theDocument.createElement('dialog-widget');
+		this.currentDialog.innerHTML = dialogHTML;
+		this.theDocument.getElementsByTagName('body')[0].appendChild(this.currentDialog);
 		this.theDocument.getElementById('logindialogcancel').addEventListener('click',(e) => { 
 			console.log('clicked cancel');
-			dialog.dismiss();
+			this.currentDialog.dismiss();
 			this.controller.goBack();
 		});
 		var myDoc = this.theDocument;
@@ -56,7 +59,7 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 			const password = this.theDocument.getElementById('logindialogpassword').value;
 			this.controller.doSignIn(email,password, 
 				(user,player) => { 
-					dialog.dismiss(); 
+					this.currentDialog.dismiss(); 
 					this.controller.authenticated(); },
 				(message) => { 
 					message = "<h1 class='dialogtitle'>Sign In Failure</h1><p>"+message+"</p>";
@@ -118,9 +121,16 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 		const email = this.theDocument.getElementById('logindialogemail').value;
 		const password = this.theDocument.getElementById('logindialogpassword').value;
 		this.controller.doSignUp(email,password,
-			() => { dialog.dismiss(); this.controller.signedUp(); }, 
-				(message) => {message = "<h1 class='dialogtitle'>Sign Up Failure</h1><p>"+message+"</p>";
-				this.displayErrorDialog(message);} 
+			() => { 
+				this.currentDialog.dismiss(); 
+				this.controller.signedUp(); 
+				}, 
+			(message) => {
+				console.trace(message);
+				message = `<h1 class='dialogtitle'>Sign Up Failure</h1><p>${message}</p>`;
+				this.displayErrorDialog(message);
+				this.currentDialog.dismiss();
+			} 
 		);
 	}
 	
@@ -139,9 +149,15 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 	
 	displayCharacterInfo(characterId) {
 		const displayarea = this.theDocument.getElementById('mainappview');
-		displayarea.innerHTML = `<character-sheet characterid='${characterId}' id='cv${characterId}'></character-sheet>`;
-		const characterview = this.theDocument.getElementById(`cv${characterId}`);
-		this.controller.doCharacterInfoDisplay(characterview);
+		characterSheetFactory(displayarea,characterId,this.gebApp.speciesRepo,
+		  this.gebApp.callingRepo,this.gebApp.characterRepo,(sheet) => {
+/*			const c = displayarea.childNodes[0];
+			if(c !== 'undefined') { 
+				displayarea.replaceChild(sheet,c);
+			} else { // this area could be empty
+				displayarea.appendChild(sheet);
+			} */
+		});
 	}
 	
 }

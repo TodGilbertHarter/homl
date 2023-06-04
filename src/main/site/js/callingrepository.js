@@ -28,7 +28,8 @@ const callingConverter = {
 		const data = snapshot.data(options);
 		return new Calling(id,data.name,
 			data.features,data.hitPoints,data.damageDie, data.role
-			, data.powerSource,data.implementProfs, data.proficiencies
+			, data.powerSource,data.weaponProfs,data.implementProfs 
+			, data.proficiencies
 			, data.startingHitPoints,data.boons);
 	}
 }
@@ -129,6 +130,7 @@ class CallingRepository {
 			});
 			onDataAvailable(docs);
 		}).catch(e => {
+			console.trace();
 			console.log("Failed to get all callings "+e.message);
 		});
 	}

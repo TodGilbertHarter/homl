@@ -585,7 +585,8 @@ The following conditions exist in HoML. Others might be added in additional mate
     /LI /LABEL Compelled LABEL/ The character is under the magical control of another. The character cannot take actions. He is dazed. On the compelling character's turn the compelled character will take one major action only, under the control of the compelling character. The compelled character cannot be commanded to expend a power point as part of this action. LI/
     /LI /LABEL Dying LABEL/ The character is dying. She has the incapacitated, and prone conditions. She must make death saves. LI/
     /LI /LABEL Grabbed LABEL/ The character is being held by someone or something. He cannot move. Attacks have advantage against him. LI/
-    /LI /LABEL Incapacitated LABEL/ The character is unable to act. She cannot take any actions. She has no line of sight to anything. Attacks against her gain advantage. She may be subject to a Coupe de Grace. She cannot flank. LI/
+    /LI /LABEL Incapacitated LABEL/ The character is unable to act. She cannot take any actions. She has no line of sight to anything. 
+    Attacks against her gain advantage. She may be subject to a Coupe de Gras. She cannot flank. LI/
     /LI /LABEL Engaged LABEL/ The character is under immediate threat of attack by another character. If he makes an attack which doesn’t include this character as a target, the attack is made with disadvantage. LI/
     /LI /LABEL Prone LABEL/ The character is knocked down. He suffers disadvantage on all close attacks. He can only move by crawling. He falls if he is climbing. Prone characters may gain added cover in some situations. Note that a character can end this condition by standing up as a move action during their turn. LI/
     /LI /LABEL Removed LABEL/ The character has left the battlefield. No line of sight or effect exists between her and the rest of the battlefield. LI/

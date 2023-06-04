@@ -304,7 +304,7 @@ SECTION/
 /SUBSECTION" D"/
 /TOPIC" Dvar"/
 
-Dvar or Dvarg are a race of humanoid creatures, about man-sized though tending to be a bit shorter and stouter than 
+Dvar or Dvarg are a species of humanoid creatures, about man-sized though tending to be a bit shorter and stouter than 
 humans generally. They generally live in organized communities with established laws, trade, industry, and other 
 features of civilization. The exact details of any given Dvargen community will depend on its specific culture and 
 other socioeconomic factors. In general they tend to be rather lawful creatures, valuing organization, hierarchy and 
@@ -660,6 +660,7 @@ Knights will generally fight to the last when their mission is important, but ma
 SUBTOPIC/
 TOPIC/
 SUBSECTION/
+/SOURCE" monsters_l.hairball"/
 /SUBSECTION" S"/
 /TOPIC" Scarecrow"/
 

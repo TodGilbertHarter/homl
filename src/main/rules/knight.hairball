@@ -10,11 +10,17 @@
 /HITPOINTS 6 HITPOINTS/
 /STARTHITPOINTS 12 STARTHITPOINTS/
 TRAITS/
-The knight is a classic warrior who specializes in close melee fighting. He may or may not be mounted, and in some cultures he might sport heavy armor, a bow, or other variations, but his primary focus is his ability to go toe-to-toe with his enemies and beat them. As a defender his main purpose is to keep the enemy occupied, damage them, and prevent them from moving past him or attacking his allies.
+The knight is a classic warrior who specializes in close melee fighting. He may or may not be mounted, and in some cultures he might sport heavy armor, a bow, or other 
+variations, but his primary focus is his ability to go toe-to-toe with his enemies and beat them. As a defender his main purpose is to keep the enemy occupied, damage them, 
+and prevent them from moving past him or attacking his allies.
 
-Knights never shrink from battle willingly, they have been well trained and consider it their highest calling to test their mettle against powerful foes. Their combat role is defender, they stand in the front line of the fight and shield their teammates from harm, while attacking the enemy. If an opponent ignores the knight, then he opens himself up for even worse punishment.
+Knights never shrink from battle willingly, they have been well trained and consider it their highest calling to test their mettle against powerful foes. Their combat role 
+is defender, they stand in the front line of the fight and shield their teammates from harm, while attacking the enemy. If an opponent ignores the knight, then he opens 
+himself up for even worse punishment.
 
-Outside of combat situations knights are respected and generally treated with deference. Other knights and respectable folk will give them assistance. Once a knight has been recognized officially as a bona fide knight, and earned his spurs, he will be given shelter and aid by all who support the cause of law and order. Knights who gain bad reputations, for being dishonorable or failing to uphold their social obligations on the other hand, might find themselves scorned or even attacked on sight.
+Outside of combat situations knights are respected and generally treated with deference. Other knights and respectable folk will give them assistance. Once a knight has 
+been recognized officially as a bona fide knight, and earned his spurs, he will be given shelter and aid by all who support the cause of law and order. Knights who gain 
+bad reputations, for being dishonorable or failing to uphold their social obligations on the other hand, might find themselves scorned or even attacked on sight.
 /FEATURES
 /FLEXROW
 /FLEXCELL
@@ -147,12 +153,13 @@ You gain access to the following feat: /BR
 /ORIGIN Shield Expert ORIGIN/
 /LEVEL 1 LEVEL/
 /ACTION Free ACTION/
+/TAGS Defense TAGS/
 /REQUIREMENTS You must have a shield equipped. REQUIREMENTS/
-/TRIGGER When an enemy hits you with an attack. TRIGGER/
-/EFFECTS You may reduce the damage from this attack by 5 points, or 10 points at Legendary, or 15 points at Mythic. EFFECTS/
-/SPECIAL Your shield is broken and must be repaired before it will contribute to your defense again.
-During a rest you may repair your shield temporarily by passing an INT check at a DV equal to the level of the opponent who's attack you used shield expert against. If the shield is magical then you pass this check automatically.
-SPECIAL/
+/DEFENSE shield vs weapon DEFENSE/
+/ENHANCED The attack misses and the attacking creature is engaged. You can slide the attacker one square. ENHANCED/
+/COMPLETESUCCESS The attack misses and the attacking creature is engaged COMPLETESUCCESS/
+/SUCCESS The attack misses SUCCESS/
+/FAILURE Your DR is increased by one for purposes of this attack FAILURE/
 /FLAVOR You manage to take most of the blow on your trusty shield. FLAVOR/
 FEAT/
 BENEFIT/
@@ -188,8 +195,9 @@ You gain access to the following feat: /BR
 /ATTACK Weapon vs REF ATTACK/
 /ENHANCED 2DD + Weapon damage. The target is pushed one square ENHANCED/
 /COMPLETESUCCESS DD + Weapon damage. COMPLETESUCCESS/
-/SUCCESS Weapon damage. SUCCESS/
-/SPECIAL Use this feat as your defense SPECIAL/
+/SUCCESS DD damage. SUCCESS/
+/FAILURE weapon damage. FAILURE/
+/SPECIAL Use this feat in place of making a defense, your opponent hits you automatically. SPECIAL/
 /FLAVOR You dazzle everyone with your brilliant swordplay. FLAVOR/
 FEAT/
 BENEFIT/
@@ -223,6 +231,39 @@ You gain access to the following feat: /BR
 /TRIGGER You achieve an enhanced success with a close weapon attack TRIGGER/
 /EFFECTS The target takes an additional 1DD + Weapon + CON damage. EFFECTS/
 /FLAVOR Your axe brutally damages anything you hit. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+/BOON /ID" 52afa5b6-ff67-11ed-a4ec-c87f5455cfcc"/ /BOONNAME Shield Master BOONNAME/
+/BOONTYPE Level: 4 Major BOONTYPE/
+/ASSOCIATION Knight ASSOCIATION/
+/PREREQUISITES Shield Expert PREREQUISITES/
+/DESCRIPTION
+You are a master of the art of using a shield effectively in combat. Few opponents will be able to get past your masterful shield work.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You gain proficiency with one type of shield.
+BENEFIT/
+/BENEFIT
+As long as you are able to take actions you can interpose your shield to block a weapon or ranged attack made against any ally adjacent to you. Add your shield's DR to the
+DR of the target you are shielding. This is considered a Free Action.
+BENEFIT/
+/BENEFIT
+You gain access to the following feat: /BR
+/FEAT /ID" 46d47bea-ff67-11ed-baee-c87f5455cfcc"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Shielded Defense FEATNAME/
+/ORIGIN Shield Master ORIGIN/
+/LEVEL 4 LEVEL/
+/ACTION Major ACTION/
+/TAGS shield TAGS/
+/REQUIREMENTS You must be wielding a shield. REQUIREMENTS/
+/TYPETARGET close burst 1, each enemy in burst TYPETARGET/
+/ATTACK shield vs REF ATTACK/
+/ENHANCED DD + STR damage, daze the target and knock it prone. ENHANCED/
+/COMPLETESUCCESS STR damage, knock the target prone COMPLETESUCCESS/
+/SUCCESS STR damage. SUCCESS/
+/FLAVOR Your skillful shield use holds back the enemy. FLAVOR/
 FEAT/
 BENEFIT/
 BENEFITS/

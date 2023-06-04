@@ -15,9 +15,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-/** @private */ const GameViewtemplate = document.createElement('template');
-GameViewtemplate.innerHTML = `
-		<style>
+import { html, LitElement } from 'https://unpkg.com/lit@2.0.2/index.js?module';
+
+class GameView extends LitElement {
+	static properties = {
+		gameId: {},
+		value: {}
+	};
+	/** @private */ model;
+	
+	constructor() {
+		super();
+	}
+	
+	render() {
+		return html`		<style>
 			div.list > div {
 				display: flex;
 			}
@@ -30,42 +42,21 @@ GameViewtemplate.innerHTML = `
 		</style>
 		<div class='gameview' part='gameview' id='gameview'>
 		</div>`;
-
-class GameView extends HTMLElement {
-	/** @private */static template = GameViewtemplate;
-	/** @private */ model;
-	/** @type {string} @private */ gameId;
+	}
 	
-	constructor() {
-		super();
-		const content = GameView.template.content;
-        const shadowRoot = this.attachShadow({mode: 'open'}).appendChild(content.cloneNode(true));
- 	}
-
-	connectedCallback() {
-		this.gameId = this.getAttribute('gameid');
+	firstUpdated() {
 		const gameview = this.shadowRoot.getElementById('gameview');
 		gameview.innerHTML = `<p>Getting data for game ${this.gameId}</p>`;
 	}
 	
-	render(game) {
+	showGame(game) {
+		this.model = game;
 		const gameview = this.shadowRoot.getElementById('gameview');
 		game.getCharacters((characters) => {
-			var listHTML = '<ul class="characterlist" id="characterlist">';
-			characters.forEach((character) => { 
-				listHTML = listHTML + `<li><span>${character.name}</span><button id='cvbtn${character.id}' data-id='${character.id}'>view</button></li>`; 
-				});
-			listHTML = listHTML + '</ul>';
 			gameview.innerHTML = `<div class='fieldlabel'>Game Name:</div><div class='fieldvalue'>${game.name}</div>
-			${listHTML}`;
+			<character-list class=characterlist id="characterlist"></character-list>`;
 			const clist = this.shadowRoot.getElementById('characterlist');
-			clist.childNodes.forEach((li) => {
-				li.childNodes[1].addEventListener('click',(e) => { 
-					const id = e.target.getAttribute('data-id');
-					console.log("clicked on a character "+id);
-					window.gebApp.controller.displayCharacterViewClicked(id);
-				});
-			});
+			clist.setModel(characters);
 		});
 
 	}

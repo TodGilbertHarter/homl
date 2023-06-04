@@ -95,7 +95,7 @@ TOPIC/
 SUBSECTION/
 /SUBSECTION" Tags"/
 
-Tags are a core concept in HoML. A tag may be attached to almost any element of the game, such as a feat, an attribute of a character, the entire character itself, a monster, etc. Tags indicate a category into which the thing bearing the tag falls. Thus a character who is of the eldar race will have the fey tag, because the eldar are fey creatures. An item might have an attribute something like:
+Tags are a core concept in HoML. A tag may be attached to almost any element of the game, such as a feat, an attribute of a character, the entire character itself, a monster, etc. Tags indicate a category into which the thing bearing the tag falls. Thus a character who is of the eldar species will have the fey tag, because the eldar are fey creatures. An item might have an attribute something like:
 
 /CODE Cold Iron Sword – bonus: +4 permanent modifier to all attacks on fey creatures when using this weapon. CODE/
 
@@ -330,5 +330,29 @@ Not all actions are specifically covered by feats, and thus there can be situati
 
 In general, if damage is being assessed, it should be relative to a /REF Basic Attack REF/; what would the given level of success in a basic attack do? Were their additional circumstances involved? Does the fiction warrant the addition of an effect or condition? Are there multiple targets affected? Is there some sort of ongoing effect? These kinds of questions are purely related to the situation, but the damage assessed should be reasonably in line with the level of the scene. Triggering of some sort of catastrophic effect, such as would wipe out an entire opposing force, would be a challenge in and of itself, not simply a single improvised action.
 
-If the action is of some other nature, the general rules for checks should suffice within the context of the scene to resolve things. Remember, an action is just a single part of a scene, so if a player concocts an elaborate plan to end a challenge or combat favorably, this is probably either part of the challenge -a way to win it- or a separate challenge that can be integrated into, or substitute for, the combat. SECTION/
+If the action is of some other nature, the general rules for checks should suffice within the context of the scene to resolve things. Remember, an action is just a single part of a scene, so if a player concocts an elaborate plan to end a challenge or combat favorably, this is probably either part of the challenge -a way to win it- or a separate challenge that can be integrated into, or substitute for, the combat. 
+SECTION/
+/SECTION" Using Fate"/
+
+Fate is a mechanism players can utilize in order to alter the fiction in a way which either helps the heroes achieve their 
+intent when making a check, or hinders it. At any given point each hero has either a positive or negative fate.
+
+Each hero has many traits. These are all the elements which go to make up the hero, background, personality traits, class, race, 
+and the various boons and possibly other things which a hero may accumulate. Players may leverage these traits by altering 
+his hero's fate to add or alter elements of the narrative which affect the hero. This gives players an incentive 
+and allowance to make  the story address their characters directly.
+/SUBSECTION" Gaining Fate"/
+
+A hero achieves positive fate in one of two ways. First of all every hero's fate becomes positive at the start of a given session
+of play, regardless of what it was before. Secondly, a player may alter the narrative in such a way as to disadvantage their hero,
+creating an additional obstacle by reducing the success count of the current challenge by one. This setback must be explained by 
+invoking one of the hero's traits. 
+SUBSECTION/
+/SUBSECTION" Spending Fate"/
+
+A hero achieves negative fate by spending her positive fate. In so doing the player invokes one of the hero's traits to explain
+how one of the hero's traits assists the character in avoiding or overcoming an obstacle. A success is tallied against the current
+challenge. Alternatively the character might acquire a minor boon which will assist them later.
+SUBSECTION/
+SECTION/
 CHAPTER/

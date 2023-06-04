@@ -7,8 +7,8 @@ ARTICLEREF/ PARENT/
 There are many organizations of all kinds in the lands of Erithnoi. Some are specific to certain locales and others are more widespread.
 /SUBSECTION Organizations Specific to Kinergh SUBSECTION/ 
 /UL 
-/LI  /ARTICLEREF /REFNAME ./HulamicAcademy.html REFNAME/  /REFTEXT Hulamic Academy REFTEXT/ ARTICLEREF/  - The academy of magic. LI/
-/LI  (% class="twikiNewLink" %)/ARTICLEREF /REFNAME ./RedOath.html REFNAME/  /REFTEXT Red Oath REFTEXT/ ARTICLEREF/ (%%) - The avengers of Gelin LI/
+/LI  /ARTICLEREF /REFNAME ./HulamicAcademyOfMagic.html REFNAME/  /REFTEXT Hulamic Academy REFTEXT/ ARTICLEREF/  - The academy of magic. LI/
+/LI  /ARTICLEREF /REFNAME ./RedOath.html REFNAME/  /REFTEXT Red Oath REFTEXT/ ARTICLEREF/ - The avengers of Gelin LI/
 /LI  /ARTICLEREF /REFNAME ./RangersOfOtillis.html REFNAME/  /REFTEXT Rangers Of Otillis REFTEXT/ ARTICLEREF/  - Warriors dedicated to Otillis LI/
 /LI  /ARTICLEREF /REFNAME ./OlonKoi.html REFNAME/  /REFTEXT Olon Koi REFTEXT/ ARTICLEREF/  - The all female warriors of Atur LI/
 /LI  /ARTICLEREF /REFNAME ./SilverCompany.html REFNAME/  /REFTEXT Silver Company REFTEXT/ ARTICLEREF/  - Guardians of the /ARTICLEREF /REFNAME ../Player/GrandDuchyOfTisloch.html REFNAME/  /REFTEXT Grand Duchy Of Tisloch REFTEXT/ ARTICLEREF/ , adventurers. LI/ UL/

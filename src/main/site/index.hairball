@@ -25,6 +25,7 @@
 /MODULE" js/rules.js"/
 /MODULE" js/character.js"/
 /MODULE" js/charactersheet.js"/
+/MODULE" js/characterlist.js"/
 /MODULE" js/game.js"/
 /MODULE" js/gamerepository.js"/
 /MODULE" js/gamelist.js"/

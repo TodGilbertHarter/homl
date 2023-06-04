@@ -57,6 +57,13 @@ class Species {
 				character.derivedData.size = this.size;
 			}
 		));
+		calculators.push(new Calculation('vision',['species'],
+			(character) => {
+				character.derivedData.vision = this.vision;
+		}));
+		calculators.push(new Calculation('speed',['species'],(character) => {
+			character.derivedData.speed = this.speed;	
+		}));
 		return calculators;
 	}
  }

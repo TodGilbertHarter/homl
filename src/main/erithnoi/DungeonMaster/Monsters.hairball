@@ -16,7 +16,7 @@ Many monsters make their homes in Erithnoi. Some of them are unique to this worl
 /LI  /ARTICLEREF /REFNAME ./GiantHound.html REFNAME/  /REFTEXT Giant Hound REFTEXT/ ARTICLEREF/ - A huge hunting dog used by hill giants. LI/
 /LI  /ARTICLEREF /REFNAME ./PazuzuWarlock.html REFNAME/  /REFTEXT Pazuzu Warlock REFTEXT/ ARTICLEREF/ - Foul spellcasters dedicated to the demon lord Pazuzu LI/
 /LI  /ARTICLEREF /REFNAME ./NomokWorshiper.html REFNAME/  /REFTEXT Hammer Maiden of Nomok REFTEXT/ ARTICLEREF/ - Warrior maidens dedicated to the Lord of Battle LI/
-/LI  /ARTICLEREF /REFNAME ../DungeonMaster/BattleArcherOfNomok.html /TD/  /TD/ class="twikiLink" REFNAME/ /REFTEXT BattleArcherOfNomok REFTEXT/ ARTICLEREF/  - Expert bowmen in the service of the Lord of Battle LI/
-/LI  /ARTICLEREF /REFNAME ./NomokTempleGuard.html /TD/  /TD/ class="twikiLink" REFNAME/ /REFTEXT NomokTempleGuard REFTEXT/ ARTICLEREF/  - Warriors trained to guard the temples of the Lord of Battle LI/ 
+/LI  /ARTICLEREF /REFNAME ../DungeonMaster/BattleArcherOfNomok.html REFNAME/ /REFTEXT BattleArcherOfNomok REFTEXT/ ARTICLEREF/  - Expert bowmen in the service of the Lord of Battle LI/
+/LI  /ARTICLEREF /REFNAME ./NomokTempleGuard.html REFNAME/ /REFTEXT NomokTempleGuard REFTEXT/ ARTICLEREF/  - Warriors trained to guard the temples of the Lord of Battle LI/ 
 UL/
 ARTICLE/

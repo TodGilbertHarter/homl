@@ -3,16 +3,6 @@
 Feats represent the special actions which characters can take by virtue of their great power. Any ordinary person can pick up a sword and take a swing with it. Only a mighty hero can chop through the necks of three opponents with one blow! Characters acquire access to feats when they gain boons. Many boons provide access to a feat as a benefit of possessing the boon. If a character has access to a feat, then the character can employ that feat as an action according to the rules found here.
 
 There are a few basic feats which any character can use. These are simply actions which are best described using the feat format, such as basic weapon use, but which any person would be able to accomplish. A number of these are listed in the section /REF Action Descriptions REF/ of the /REF Action Sequences REF/ chapter.
-/SECTION" Actions"/
-
-Everything which characters can do in HoML is described in terms of actions. During /REF Action Sequences REF/ characters' activities are regulated by the use of actions, turns, and rounds. If a player wants his or her character to move then the player declares that the character spends a move action. Every active check in the game (and some other types of checks) is made as part of the resolution of an action use. Since there are an infinite number of things characters can do in HoML most of them are not formally described by explicit feats. In most cases it isn't necessary to provide this much detail. The GM can simply declare that a character acts and what type of action it is. For example if a character decides to talk this is simply an ordinary action. The player simply describes what the character does and the effects are determined and resolved. In these cases the GM will decide what type of action is required, Major, Move, Free, or Opportunity. In some cases a feat may simply 'come into effect' or something may 'just happen', in which case there is no action at all, this is called 'No Action'.
-
-In /REF Challenges REF/ formal action types are less important, as time and what characters can do is regulated in a more narrative fashion. In this case characters generally just utilize various feats when needed, with the GM describing what happens next and players interjecting when they wish to effect the course of events. This is described in the basic how to play rules for checks.
-/SUBSECTION" Action Types "/
-
-Action types are discussed in greater detail under the action sequence rules. Every feat will have one of several action types which it requires. These are designated in the feat block. The action types are Major, Move, Free, and Opportunity. Sometimes a feat is designated as 'no action', meaning it is something which happens without anyone acting at all. The special designation 'Rider' may also appear, which indicates the feat is a rider. Riders don't use an action but piggyback on another action.
-SUBSECTION/
-SECTION/
 /SECTION" Reading a Feat"/
 /LEFT=" half"/
 /FEAT /ID" cf1adec4-77a8-11ec-8153-74d02b9c2012"/ /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Fireball FEATNAME/
@@ -50,13 +40,17 @@ The action type required by this feat. Note that this might also indicate the fe
 All the tags for this feat. Specifically if the feat does damage, the tag for the damage type is here, as well as any tag indicating the type of tool, weapon, or implement you can use with it.
 
 /LABEL Type/Target LABEL/
-Feats which can be targetted on someone will describe the type of area and whom within that area is targetted.
+Feats which can be targeted on someone will describe the type of area and whom within that area is targeted.
 
 /LABEL Attack LABEL/
 Describes attack attribute or tool, and which defense the feat will attack.
 
+/LABEL Defense LABEL/
+Describes which tool, weapon, knack, etc. the defense is based on, and which attack's tags it defends against.
+
 /LABEL Check LABEL/
-Describes a check which is made to achieve success with this feat. This is essentially the same as the attack element, but is present in those cases when a feat must be rolled for, but doesn't actually attack something.
+Describes a check which is made to achieve success with this feat. This is essentially the same as the attack element, but is present in those cases when a feat must be 
+rolled for, but doesn't actually attack something or act as a defense.
 
 /LABEL Enhanced Success LABEL/
 Describes the results of an enhanced level of success check result when using the feat.
@@ -88,6 +82,16 @@ Any other special rules associated with this feat.
 /LABEL Duration LABEL/
 The length of time which the effects of the feat last. This is covered in more detail below.
 SECTION/
+/SECTION" Action Types"/
+
+Action types are discussed in greater detail under the action sequence rules. Every feat will have one of several action types which it requires. These are designated in the 
+feat block. The action types are Major, Move, Free, and Opportunity. Sometimes a feat is designated as 'no action', meaning it is something which happens without anyone acting 
+at all. The special designation 'Rider' may also appear, which indicates the feat is a rider. Riders don't use an action but piggyback on another action.
+
+Actions are mostly important during /REF Action Sequences REF/ . During challenges actions don't generally matter, a feat can be utilized whenever a characters acts in these
+situations.
+SUBSECTION/
+SECTION/
 /SECTION" Durations"/
 
 Duration indicates how long the effects of a feat last; this is particularly significant during action sequences, but also in challenges to a lesser degree. There are a number of cases:
@@ -108,14 +112,27 @@ Riders are a specific type of feat which 'ride' on another action. Instead of sp
 
 Note that while riders normally ride on the use of other feats, mostly attacks, this is not a rule; it is possible for riders to exist which trigger on essentially any action whatsoever.
 SECTION/
+/SECTION" Attacks and Defenses"/
+
+Feats which generate attacks against other creatures have an attack tag which describes any tool, weapon, or implement which may be employed with them and an NPC defense
+which they target.
+
+Feats which are used as defenses include a defense tag which indicates which tool, weapon, implement, ability, or skill the feat employs. Additionally the defense
+will specify a set of keywords it is effective against, preceded by the term 'vs'. For example ' /BOLD Defense BOLD/ : Shield vs Weapon' would indicate that the defense relies
+on using a shield, and thus whatever proficiency bonus and ability bonus are linked to the character's equipped shield, and that the defense is effective against attacks with
+the weapon tag.
+SECTION/
 /SECTION" Practices"/
 
 Practices are a special category of feats which are not normally used directly by heroes as actions, but which instead require some time and possibly materials in order to carry out. In terms of reading a practice, they have the same components as other feats; however they will generally not specify an action type, and will have the practice tag, or the ritual tag. Rituals are simply a thematic subcategory of practices which rely on magic specifically, whereas other practices might be explained as non-magical activities in some cases.
 /SUBSECTION" Practices in Action "/
 
-Practices are not normally useful during action sequences, because they take significant time to employ; however they may be used quite effectively during challenges. The GM and players should take into consideration the situation and the time and other factors required to implement the practice; if it is narratively feasible, then it can be employed. In some situations the GM might impose disadvantage when conditions are unfavorable to perform a practice; if the conditions are reasonable, but the time or other factors involved would make the situation less favorable to the heroes, the GM might make the check difficult.
+Practices are not normally useful during action sequences, because they take significant time to employ; however they may be used quite effectively during challenges. The GM 
+and players should take into consideration the situation and the time and other factors required to implement the practice; if it is narratively feasible, then it can be 
+employed. In some situations the GM might impose disadvantage when conditions are unfavorable to perform a practice.
 
-Once the players have declared the intent to use a practice, and the GM has decided if it is feasible and any specifics, then the players must expend any required resources needed to carry it out. Whichever character(s) are using the practice may also pay the supplementary cost to produce an automatic success.
+Once the players have declared the intent to use a practice, and the GM has decided if it is feasible and any specifics, then the players must expend any required resources 
+needed to carry it out. Whichever character(s) are using the practice may also pay the supplementary cost to produce an automatic success, if one is specified.
 /TOPIC" Practices as Modifiers"/
 
 One of the major uses of practices is to alter the fictional situation, allowing a different approach to be taken, and thus altering the aspect of a check; this is discussed in the appropriate section /REF Checks and Actions REF/ . Thus when a practice is used in order to support a check, or as a move in a challenge, it can alter the aspect, or if it doesn't change the aspect it can grant advantage on the check; see the example /REF Putting it Together REF/ .
@@ -175,7 +192,10 @@ Using feats sometimes requires power. There are a couple of situations.
 
 /SUBSECTION" Enhancement"/
 
-One situation is enhancement. This is when a player decides his character wants to create an amplified effect. When the character uses the feat, before the player rolls a check, he expends a power point. The result of a successful check is moved up one grade, a failure remains a failure, a success because a complete success, and a complete success becomes an enhanced success. Some feats may not have enhanced success, in which case the result remains a complete success.
+One situation is enhancement. This is when a player decides his character wants to create an amplified effect. When the character uses the feat, before the player rolls a 
+check, he expends a power point. The result of the check is moved up one grade, a failure becomes a success, a success 
+because a complete success, and a complete success becomes an enhanced success. Some feats may not have enhanced success, in which case the result remains a complete success.
+Note that enhancement is not an option for practices.
 /TOPIC" Attunement"/
 
 As noted elsewhere, a character must be attuned to a power source in order to use enhancement with feats of that source. Every PC has an attunement to the source of their calling. Beyond this they might attain attunement to other sources as a major boon; these are described in the /REF Callings REF/ chapter.

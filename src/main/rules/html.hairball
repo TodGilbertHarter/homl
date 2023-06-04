@@ -264,6 +264,7 @@ for (i = 0; i < coll.length; i++) {
 /: /TYPETARGET <div class="widetrait"> /BOLD Type/Target: BOLD/ /SPACE :/ /: TYPETARGET/ DIV/ :/
 /: /ATTACK" <div class="widetrait"> /BOLD Attack BOLD/ /SPACE /" /. DIV/ :/ /* Deprecated */
 /: /ATTACK <div class="widetrait"> /BOLD Attack: BOLD/ /SPACE :/ /: ATTACK/ DIV/ :/
+/: /DEFENSE <div class="widetrait"> /BOLD Defense: BOLD/ /SPACE :/ /: DEFENSE/ DIV/ :/
 /: /CHECK <div class="widetrait"> /BOLD Check: BOLD/ /SPACE :/ /: CHECK/ DIV/ :/
 /: /ENHANCED <div class="widetrait"> /BOLD Enhanced Success: BOLD/ /SPACE :/ /: ENHANCED/ DIV/ :/
 /: /COMPLETESUCCESS" <div class="widetrait"> /BOLD Complete Success BOLD/ /SPACE /" /. DIV/ :/ /* Deprecated */
@@ -376,12 +377,25 @@ for (i = 0; i < coll.length; i++) {
 /: MONSTER/ SECTION/ :/
 
 /* Subtopic and label won't show in TOC */
-/: /LABEL /BOLD :/
-/: LABEL/ : BOLD/ /SPACE :/
+/: /LABEL <span class='label'> :/
+/: LABEL/ : </span> /SPACE :/
 /: /SUBTOPIC" <div class="subtopic"> /LABEL /" /. LABEL/ :/
 /: SUBTOPIC/ DIV/ :/
 /: /TODO: <span class="todo">TODO: :/
 /: TODO/ </span> :/
+
+/: /BACKGROUND /TOPIC :/
+/: /BACKGROUNDTYPE /GETMATCHING BACKGROUNDTYPE/ /DELIMITED /DROP :/
+/: BACKGROUNDTYPE/ // :/
+/: /BACKGROUNDNAME /H4 :/
+/: BACKGROUNDNAME/ H4/ :/
+/: /BACKGROUNDDESCRIPTION /P :/
+/: BACKGROUNDDESCRIPTION/ P/ :/
+/: /BACKGROUNDKNACKS <div class="subtopic"> /LABEL Knacks LABEL/ :/
+/: BACKGROUNDKNACKS/ DIV/ :/
+/: /BACKGROUNDBOONS <div class="subtopic"> /LABEL Boons &amp; Limitations LABEL/ :/
+/: BACKGROUNDBOONS/ DIV/ :/
+/: BACKGROUND/ TOPIC/ :/
 
 /: /FORMAT" <div class=" /" /. "> :/
 /: FORMAT/ DIV/ :/

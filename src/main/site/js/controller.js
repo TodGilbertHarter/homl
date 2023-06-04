@@ -52,10 +52,10 @@ class Controller {
 	 * which displays the logged in UI.
 	 */
 	authenticated() {
-		this.callingRepo.addListener(this.onCallingsChanged);
+/*		this.callingRepo.addListener(this.onCallingsChanged);
 		this.callingRepo.loadAllCallings();
 		this.speciesRepo.addListener(this.onSpeciesChanged);
-		this.speciesRepo.loadAllSpecies();
+		this.speciesRepo.loadAllSpecies(); */
 		window.location.hash = '/authenticated';
 	}
 	
@@ -203,19 +203,13 @@ class Controller {
 	}
 	
 	doGameInfoDisplay(gameview) {
-		this.gameRepo.getGameById(gameview.gameId,gameview.render.bind(gameview));
+		this.gameRepo.getGameById(gameview.gameId,gameview.showGame.bind(gameview));
 	}
 	
 	displayCharacterViewClicked(characterId) {
 		window.location.hash = `/showcharacter/${characterId}`;
 	}
 	
-	doCharacterInfoDisplay(characterview) {
-		this.characterRepo.getCharacterById(characterview.characterId,(character) => {
-			characterview.model = character;
-			this.characterController.render(characterview,character);
-		});
-	}
 }
 
 export { Controller };

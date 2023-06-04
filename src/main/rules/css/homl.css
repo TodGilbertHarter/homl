@@ -703,7 +703,7 @@ section.topic > h4 {
     padding-left: .125em;
 }
 
-div.subtopic > span {
+div.subtopic span.label {
     box-sizing: border-box;
     width: 100%;
     display: block;
@@ -892,6 +892,10 @@ div.benefit {
 
 .bold {
     font-weight: bold;
+}
+
+.label {
+	font-weight: bold;
 }
 
 .half {

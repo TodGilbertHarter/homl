@@ -101,8 +101,8 @@ class Character {
     
     set characterData(data) {
         this.chardata = data;
-		this.rules = new Rules(window.gebApp.callingRepo);
-		this.rules.getCalling(this);
+/*		this.rules = new Rules(window.gebApp.callingRepo);
+		this.rules.getCalling(this); */
     }
     
     get characterData() {
@@ -236,6 +236,14 @@ class Character {
     set vision(value) {
         this.derivedData.vision = value;
     }
+    
+    get personality() {
+		return this.characterData.personality;
+	}
+	
+	set personality(value) {
+		this.characterData.personality = value;
+	}
 }
 
 export { Character };

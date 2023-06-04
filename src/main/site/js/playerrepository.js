@@ -14,7 +14,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { collection, doc, setDoc, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
+import { collection, doc, setDoc, addDoc, query, where, getDocs, getDoc } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
+import { Player } from './player.js';
+
+const playerConverter = {
+	toFirestore(player) {
+		return {
+			email: player.email,
+			loggedin: player.loggedIn,
+			characters: player.characters
+		}
+	},
+	fromFirestore(snapshot,options) {
+		const id = snapshot.id;
+		const data = snapshot.data(options);
+		return new Player(id,data.email,data.loggedin,data.characters);
+	}
+};
 
 class PlayerRepository {
 	/*
@@ -28,35 +44,44 @@ class PlayerRepository {
         this.db = firestore;
     }
 
+	/**
+	 * Given a player reference, call the onSuccess callback when the corresponding player is available
+	 * If the playerRef is really a player, then simply call onSuccess immediately.
+	 */
+	getReferencedPlayer(playerRef,onSuccess) {
+		if(playerRef instanceof Player) {
+			onSuccess(playerRef); // Because it is actually a player, not a ref!
+		} else {
+			getDoc(playerRef).then((player) => onSuccess(player));
+		}
+	}
+	
     getPlayerByEmail(email,onDataAvailable, onFailure) {
 		console.log("GOT to getPLayerByEmail");
         const playersRef = collection(this.db,"players");
-        const q = query(playersRef,where("email", "==", email));
+        const q = query(playersRef,where("email", "==", email)).withConverter(playerConverter);
         getDocs(q).then((doc) => { 
             doc.forEach(r => { 
                 console.log("GOT "+r.id);
-                var data = r.data();
-                data.id = r.id;
-                console.log("Player data is:"+JSON.stringify(data));
-                onDataAvailable(data);
+                var player = r.data();
+                onDataAvailable(player);
             } ) }).catch((e) => {
-				console.log(e);
+				console.trace(e);
 				onFailure(e.message);
 			});
     }
     
     savePlayer(player) {
-        const data = player.playerData;
-        console.log("Saving data of "+JSON.stringify(data));
-        if(data.hasOwnProperty('id') && data.id !== undefined) {
-            console.log("UPDATING, ID IS:"+data.id);
-            var id = data.id;
-            delete data.id;
-            this.db.collection("players").doc(id).set(data);
-            data.id = id;
+        console.log("Saving data of "+JSON.stringify(player));
+        if(player.hasOwnProperty('id') && player.id !== undefined) {
+            console.log("UPDATING, ID IS:"+player.id);
+            var id = player.id;
+            delete player.id;
+            setDoc(doc(this.db,'players',id).withConverter(playerConverter),player);
+            player.id = id;
         } else {
-            console.log("CREATING, data is "+JSON.stringify(data));
-            this.db.collection("players").add(data);
+            console.log("CREATING, data is "+JSON.stringify(player));
+            addDoc(collection(this.db,'players').withConverter(playerConverter),player);
         }
     }
 

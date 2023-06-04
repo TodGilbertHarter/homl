@@ -30,11 +30,38 @@ TBODY/
 TABLE/
 DIV/
 
-The chapter /REF How to Play REF/ contains the /REF Checks and Actions REF/ rules, which explain that when a player announces an action for his character, the GM will determine, based on the action and intent, which aspect is governing that check, and thus which Knack is appropriate. If the character has proficiency with that Knack, then they will gain a proficiency modifier on the resulting check. The character will also benefit from their ability modifier for the relevant ability, etc. as explained under /REF Checks and Actions REF/ .
+The chapter /REF How to Play REF/ contains the /REF Checks and Actions REF/ rules, which explain that when a player announces 
+an action for his hero, the GM will determine, based on the action and intent, which aspect is governing that check, and 
+thus which Knack is appropriate. If the hero has proficiency with that Knack, then they will gain a proficiency modifier 
+on the resulting check. The hero will also benefit from their ability modifier for the relevant ability, etc. as explained under 
+/REF Checks and Actions REF/ .
 /SECTION" Aspect Descriptions "/
 
-Each Aspect describes an area of endeavor and style of action. The GM can use the following descriptions to determine which aspect is governing a specific action, and the players can use them to decide which knacks to give their characters proficiency in. As a result each character will generally favor certain approaches to problem solving and excel in different ways. 
+Each Aspect describes an area of endeavor and style of action. The GM can use the following descriptions to determine which 
+aspect is governing a specific action, and the players can use them to decide which knacks to give their hero's proficiency in. 
+As a result each hero will generally favor certain approaches to problem solving and excel in different ways. 
+/SUBSECTION" Defensive Use"/
 
+Knacks can act as defenses. When a hero is attacked or otherwise subject to harm, a defensive check is called for.
+A player may propose the use of a knack as a defense, such as Acrobatics in order to dodge. Note that in this case the possible
+outcomes are not generally as favorable as those which might result from the defensive use of a feat. The following feat block 
+describes defensive knack use in terms of the general results which can be achieved.
+/LEFT=" half"/
+/FEAT /ID" 2635ce7e-7b0b-11ed-8593-74d02b9c2012"/ /SOURCE N/A SOURCE/ /TIER heroic TIER/ /FEATNAME Use Knack FEATNAME/
+/ORIGIN N/A ORIGIN/
+/LEVEL 4 LEVEL/
+/ACTION Major ACTION/
+/TAGS Fire, Implement TAGS/
+/TYPETARGET ranged burst 3 within 10, all creatures TYPETARGET/
+/ATTACK Implement vs REF ATTACK/
+/COMPLETESUCCESS 3DD + INT + Implement damage and the target is pushed one square. COMPLETESUCCESS/
+/SUCCESS 3DD + INT + implement damage. SUCCESS/
+/FAILURE half damage. FAILURE/
+/FLAVOR You Conjure forth a blast of searing fire which burns anyone caught in the blast. FLAVOR/
+FEAT/
+LEFT/
+
+SUBSECTION/
 /SUBSECTION" Acrobatic "/
 /LABEL Knack LABEL/ Acrobatics, ability modifier DEX
 
@@ -144,7 +171,7 @@ SUBSECTION/
 SECTION/
 /SECTION" Proficiency"/
 
-Characters will have proficiency with certain knacks, based on their calling, possibly race, and granted by some boons. For example, a character might have stealth proficiency. In this case, they will get a proficiency modifier of +5 when they carry out an action governed by the stealthy aspect. As described in the rules for making checks, proficiency always grants a +5 bonus.
+Characters will have proficiency with certain knacks, based on their calling, possibly species, and granted by some boons. For example, a character might have stealth proficiency. In this case, they will get a proficiency modifier of +5 when they carry out an action governed by the stealthy aspect. As described in the rules for making checks, proficiency always grants a +5 bonus.
 /SUBSECTION" Boons"/
 
 The following boons exist which can give a character a proficiency bonus. There are also many other boons which can incidentally grant these things. These may be granted whenever a character spends time in a situation where they may learn something.
