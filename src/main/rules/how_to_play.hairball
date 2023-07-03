@@ -5,24 +5,42 @@ As noted in the introduction a game of HoML includes a Game Master and some numb
 HoML is designed for play as an ongoing campaign or adventure which will span multiple sessions of play. Player characters start off as heroes, figures who have a date with destiny. They will engage in many fantastical adventures, increasing in power and shaping their fates until they become legendary and even mythic figures. This process might take months or years of playing sessions. Players might also enjoy shorter games. There is no requirement that the characters must start as level 1 heroes. The GM and players might agree to simply play a one-shot game with pre-generated characters of a certain level, or start at higher than level 1, or end the game before reaching the ultimate ending, the mythic apotheosis. Characters which do reach apotheosis (at level 20) will retire from active play and may become part of the lore of the setting in which their adventures took place.
 
 Once the participants in a game have decided who the GM will be, they should gather for a 'Session 0'. This will be discussed more below, but this is a session in which the outline of the game, the nature of the PCs, and the themes to be explored during play are determined. The players will generate their characters, fill in their character sheets, and select boons appropriate to the character concepts and themes of the game. Players will also decide their character's specific individual goals, strengths, and weaknesses. Once these items have been addressed, then the GM will initiate active play.
+/SECTION" Quests"/
+
+As play starts, and whenever a player desires to do so during play, the players will initiate a quest. Each quest has a goal of some kind, something that must be accomplished
+in order to consider the quest complete. The GM will then set scenes which will be related to one or more of the currently active quests. Once a quest is complete, the reward
+will be gained, and play will proceed with the setting of a scene related to another quest. Now and then a scene might also exist in between quests, usually as an interlude of
+some sort. See the chapter on /REF Heroic Quests REF/ for more details about quests.
+SECTION/
 /SECTION" Scenes"/
 
-Play itself is relatively simple; the GM will inform the players of what the situation is, where they are, what is happening around them, etc. ; this is referred to as setting the scene. Setting the scene is one of the main functions of the GM. Players may effectively obligate the GM to establish a scene by simply stating what goals and objectives they are pursuing. If the players state that their characters are going down the street to find the River Rats and beat them up, then its pretty obvious what the next scene is...
+Play itself is relatively simple; the GM will inform the players of what the situation is, where they are, what is happening around them, etc. ; this is referred to as setting 
+the scene. Setting the scene is one of the main functions of the GM. Players may effectively obligate the GM to establish a scene by simply stating what goals and objectives 
+they are pursuing. If the players state that their characters are going down the street to find the River Rats and beat them up, then its pretty obvious what the next scene 
+is...
 
-Once the scene is established, the players will then decide what actions they wish to take, what they are attempting to accomplish, and how. The GM will then determine which rules apply, etc. The exact procedure will be determined by the relevant mode of play. These will be addressed in the next section.
+Once the scene is established, the players will then decide what actions they wish to take, what they are attempting to accomplish, and how. The GM will then determine which 
+rules apply, etc. The exact procedure will be determined by the relevant mode of play. These will be addressed in the next section.
 
-In some cases HoML states rules in terms of scenes, and the assumption is that a particular scene is a fairly short discrete interval of time during which specific activities take place, sort of like a scene in a movie or play. Sometimes an activity might be long and drawn out. These are usually not scenes in and of themselves. A 12 hour negotiating session with an ambassador might take place in one location and involve the same participants and basic activities (IE talking) but it will surely break down into a few key moments. Things like the effects of practices and other feats will generally only apply during one of these scenes, not usually throughout the entire activity, which is probably best represented by /REF Challenges REF/ .
+In some cases HoML states rules in terms of scenes, and the assumption is that a particular scene is a fairly short discrete interval of time during which specific activities 
+take place, sort of like a scene in a movie or play. Sometimes an activity might be long and drawn out. These are usually not scenes in and of themselves. A 12 hour 
+negotiating session with an ambassador might take place in one location and involve the same participants and basic activities (IE talking) but it will surely break down 
+into a few key moments. Things like the effects of practices and other feats will generally only apply during one of these scenes, not usually throughout the entire activity, 
+which is probably best represented by /REF Challenges REF/ .
 SECTION/
 /SECTION" Modes of Play "/
 
-HoML has three primary modes of play. Each of these involves a slightly different application of the rules and is appropriate to different points in the development of the PC's story. The three modes are:
+HoML has three primary modes of play. Each of these involves a slightly different application of the rules and is appropriate to different points in the development of the 
+PC's story. The three modes are:
 /UL
 /LI /EM Interlude EM/ /REF Interludes REF/ are periods of free role play. The characters are not engaged in a conflict. During this period no checks are required, players simply state the nature of their character's actions, possibly expend some resources, and resolve what happens next using their imaginations. LI/
 /LI /EM Challenge EM/ /REF Challenges REF/ are periods of conflict. During a challenge there are specific obstacles for the PCs to overcome, and a specific goal which they are attempting to achieve. The players will declare their PC's actions, intent, and resources being brought to bear against an obstacle, and the GM will determine a DV, which the player will then make a check against. When enough checks have succeeded or failed, the goal will be achieved, or success will become impossible. Either way the challenge will be resolved. LI/
 /LI /EM Action Sequence EM/ /REF Action sequences REF/ are detailed action scenes which involve things like combat or escaping from immediate danger. They involve checks and use of resources, but follow a somewhat more structured set of rules than challenges. LI/
 UL/
 
-Collectively challenges and action sequences are sometimes called 'encounters' and all three fall under the definition of scenes; some rules will apply to both of them, others only apply in one or the other.
+Collectively challenges and action sequences are sometimes called 'encounters' and all three fall under the definition of scenes; some rules will apply to both of them, 
+others only apply in one or the other. /EM Note EM/ that there is some ambiguity with challenges. A simple challenge might represent a scene all by itself, while more complex ones are
+likely to themselves be broken down into smaller scenes, and some simpler quests might even be a single complex challenge with several scenes.
 SECTION/
 /SECTION" Agenda "/
 

@@ -19,18 +19,21 @@ Object.keys(data["boons"]).forEach((boon) => {
 function handleBoon(boon) {
 	if(!boon.hasOwnProperty('benefits')) { boon.benefits = []; }
 	const pattern = /id=\[([a-e|0-9|\-])+\]/;
-	const benefits = boon.benefits.map((benefit) => {
-		const m = pattern.exec(benefit);
-		if(m !== null) {
-			const idSTR = m[0];
-			const id = idSTR.substr(4,36);
-console.log("GOT A FEAT ID OF:'"+id+"'");
-			const featRef = admin.firestore().doc(`feats/${id}`);
-			return featRef;
-		} else {
-			return benefit;
-		}
-	});
+	var benefits = [];
+	if(typeof boon.benefits !== 'undefined') {
+		benefits = boon.benefits.map((benefit) => {
+			const m = pattern.exec(benefit);
+			if(m !== null) {
+				const idSTR = m[0];
+				const id = idSTR.substr(4,36);
+	console.log("GOT A FEAT ID OF:'"+id+"'");
+				const featRef = admin.firestore().doc(`feats/${id}`);
+				return featRef;
+			} else {
+				return benefit;
+			}
+		});
+	}
 	boon.benefits = benefits;
 	upload(boon,['boons',boon.id]);
 }

@@ -9,9 +9,13 @@ Every character has a hit point total. This represents a general quantity of mis
 In HoML damage is measured in hit points. It is a result of characters being subjected to injury, such as being struck with a weapon, falling, or being set on fire. It could also represent the effects of fear, trauma, or other similar adverse circumstances. Every character has a hit point attribute which records the characters current hit points. This attribute also has a maximum value, which is the number of hit points the character will possess when they are at full health and fitness. 
 /TOPIC" Damage "/
 
-Various situations can result in damage to a character. The relevant sections of the rules detail how much damage various things cause and how to calculate it. Once an amount of damage is known, then it is subtracted from the characters current hit points. Should the characters hit points be reduced to half or less of their starting total, the character immediately acquires the bloodied condition. If the hit point total is reduced to zero or less, the character immediately acquires the dying condition.
+Various situations can result in damage to a character. The relevant sections of the rules detail how much damage various things cause and how to calculate it. Once an amount 
+of damage is known, then it is subtracted from the characters current hit points. Should the characters hit points be reduced to half or less of their starting total, the 
+character immediately acquires the bloodied condition. If the hit point total is reduced to zero or less, the character immediately acquires the dying condition.
 
-Note that the GM might sometimes impose, or feats might have rules specifying, that reduction to 0 or less hit points results in some other condition or effect. If the damage was non-lethal in nature, then the character acquires the incapacitated condition. If the damage was from a psychic effect or something similar, then the character might acquire the broken condition instead. In any case, reduction to 0 or less hit points represents the character becoming unable to act.
+Note that the GM might sometimes impose, or feats might have rules specifying, that reduction to 0 or less hit points results in some other condition or effect. If the 
+damage was non-lethal in nature, then the character acquires the incapacitated condition. If the damage was from a psychic effect or something similar, then the character 
+might acquire the broken condition instead. In any case, reduction to 0 or less hit points represents the character becoming unable to act.
 TOPIC/
 /TOPIC" Catastrophic Damage "/
 
@@ -49,38 +53,67 @@ SUBSECTION/
 SECTION/
 /SECTION" Afflictions "/
 
-Not all the consequences of damage are simply loss of hit points. There are also other dangers in the world which have more complicated effects than simply wearing a character down to death. Afflictions come in several categories. Specific rules for each one are provided below. HoML is a magical world and thus curses, diseases, and poisons in particular are all magical in nature to some degree, while wounds are a bit more mundane in nature.
+While hit points represent a character's general condition and stamina, there are dangers in the world which have more complicated effects than simply wearing a 
+character down to death. Afflictions come in several categories. Specific rules for each one are provided below. HoML is a magical world and thus curses, diseases, and 
+poisons in particular are all magical in nature to some degree, while wounds are a bit more mundane in nature.
 
-An affliction is a special case of a challenge. That is it works according to the challenge rules, requiring some number of progress points to cure, and becoming worse, and possibly fatal or at least reaching an end state, when the third failure is accrued. Many afflictions can only be treated using esoteric methods, such as intricate ritual magic, the brewing of potent medicines, or the extraction and refining of powerful anti-toxins. All of these processes are considered magical in nature. The GM will present the PCs with opportunities to attempt to progress towards a recovery, failures may represent delays, botched cures, or other circumstances. Sometimes these cures may take quite some time to affect.
+An affliction is a special case of a challenge. That is it works according to the challenge rules, requiring some number of progress points to cure, and becoming worse, 
+and possibly fatal or at least reaching an end state, when the third failure is accrued. Many afflictions can only be treated using esoteric methods, such as intricate ritual 
+magic, the brewing of potent medicines, or the extraction and refining of powerful anti-toxins. All of these processes are considered magical in nature. The GM will present 
+the PCs with opportunities to attempt to progress towards a recovery, failures may represent delays, botched cures, or other circumstances. Sometimes these cures may take 
+quite some time to affect.
 
-Once an affliction reaches stage 3, it cannot be cured anymore. Instead it becomes a permanent disability, at least until it can be removed or mitigated. Thus a character who's limb injury proceeds to 'the limb is lost' might recover by acquiring a magical replacement limb, or by application of some powerful regenerative magic. A wooden limb might also reduce the disability significantly. One might obtain a ward against a curse, putting its effects in abeyance, at least as long as the ward lasts!
+Once an affliction reaches stage 3, it cannot be cured anymore. Instead it becomes a permanent disability, at least until it can be removed or mitigated. Thus a character 
+who's limb injury proceeds to 'the limb is lost' might recover by acquiring a magical replacement limb, or by application of some powerful regenerative magic. A wooden limb 
+might also reduce the disability significantly. One might obtain a ward against a curse, putting its effects in abeyance, at least as long as the ward lasts!
 
-Since afflictions are challenges, it is naturally easy enough for the GM to simply deploy them in play without any formal process of damage. Most likely an NPC will be encountered who has an affliction which the PCs may wish to cure, for whatever reason. The GM might also, judiciously, impose one of these on a PC, although the player should probably be given a chance to make a choice which will avoid the affliction, but it might force them to suffer other fictional consequences instead!
+Since afflictions are challenges, it is naturally easy enough for the GM to simply deploy them in play without any formal process of damage. Most likely an NPC will be 
+encountered who has an affliction which the PCs may wish to cure, for whatever reason. The GM might also, judiciously, impose one of these on a PC, although the player should 
+probably be given a chance to make a choice which will avoid the affliction, but it might force them to suffer other fictional consequences instead!
 /SUBSECTION" Acquiring an Affliction "/
 
-Afflictions could be acquired in many ways, but one primary way is as a result of an effect. That is, a character may fail a defense check against an attack by an opponent in combat, or a check in a challenge. Thus a monster might hit a character with a poison sting, resulting in a poisoning affliction. Likewise with curses and diseases.
+Afflictions could be acquired in many ways, but one primary way is as a result of an effect. That is, a character may fail a defense check against an attack by an opponent 
+in combat, or a check in a challenge. Thus a monster might hit a character with a poison sting, resulting in a poisoning affliction. Likewise with curses and diseases.
 /TOPIC" Upping the Stakes "/
 
-Wounds are generally received when a character is subject to an especially traumatic situation. This is handled in a slightly different way than other afflictions. While the following rule specifically applies to wounds, it could sometimes be applied to other types of afflictions as well. For example the trauma of some psychic damage might be manifested instead as a type of disease, in this case a sort of mental illness or curse.
+Wounds are generally received when a character is subject to an especially traumatic situation. This is handled in a slightly different way than other afflictions. While 
+the following rule specifically applies to wounds, it could sometimes be applied to other types of afflictions as well. For example the trauma of some psychic damage might 
+be manifested instead as a type of disease, in this case a sort of mental illness or curse.
 
-When a player decides that their character is in an especially bad situation and the character is subjected to damage or an effect, then the player may volunteer to accept an affliction instead. There must be a narrative logic to this substitution, and it must be proportionate. While this rule is intended to allow players to recover from bad or impossible situations, it is mostly intended to allow for natural consequences that fit the story. For example Roger the Rogue has fallen into a terrible pit trap filled with spikes. He was already pretty beat up, and he has taken 20 points of damage, enough to reduce his hit points to a negative value equal to his bloodied value. Normally this would mean Roger dies instantly. However the player has other ideas. He proposes that Roger is impaled by a spike and suffers a serious debilitating wound (see the Wounds section). In recompense he only suffers 12 points of damage (he has a healing value of 8). Roger is now unconscious at the bottom of a pit, and even if he's pulled out he'll be suffering the ill effects of the wound for a considerable time, but he has a fighting chance.
+When a player decides that their character is in an especially bad situation and the character is subjected to damage or an effect, then the player may volunteer to accept 
+an affliction instead. There must be a narrative logic to this substitution, and it must be proportionate. While this rule is intended to allow players to recover from bad or 
+impossible situations, it is mostly intended to allow for natural consequences that fit the story. For example Roger the Rogue has fallen into a terrible pit trap filled with 
+spikes. He was already pretty beat up, and he has taken 20 points of damage, enough to reduce his hit points to a negative value equal to his bloodied value. Normally this 
+would mean Roger dies instantly. However the player has other ideas. He proposes that Roger is impaled by a spike and suffers a serious debilitating wound (see the Wounds 
+section). In recompense he only suffers 12 points of damage (he has a healing value of 8). Roger is now unconscious at the bottom of a pit, and even if he's pulled out he'll 
+be suffering the ill effects of the wound for a considerable time, but he has a fighting chance.
 
-As a rule of thumb, allow a character to accept a wound, or some similar affliction, in lieu of one healing value worth of hit points of damage. Allow a character to suffer an affliction in lieu of a similar effect, if they can explain narratively how they achieved this result. For example: a player might propose that his character grabs hold of the sting of the giant scorpion, which then crushes his leg with its pincer instead of injecting its lethal venom (toxic damage and stun effect). The damage is still taken, but the character now has a broken leg instead of being poisoned.
+As a rule of thumb, a player may accept a wound, or some similar affliction, in lieu of one healing value worth of hit points of damage. Allow a character to suffer 
+an affliction in lieu of a similar effect, if they can explain narratively how they achieved this result. For example: a player might propose that his character grabs hold 
+of the sting of the giant scorpion, which then crushes his leg with its pincer instead of injecting its lethal venom (toxic damage and stun effect). The damage is still 
+taken, but the character now has a broken leg instead of being poisoned.
 
-The GM is always within her rights to disallow any specific use of this rule. It should be used to produce interesting consequences that give the players a way to enhance their character's stories, not to simply avoid every unfortunate die roll and turn it to their advantage. Note that players also have the fate rule which they can use as well. Fate can get you something for no cost (except using  up fate, a temporary expenditure) whereas upping the stakes always drags the characters deeper into conflict in some way! 
+This rule should be used to produce interesting consequences that give the players a way to enhance 
+their character's stories, not to simply avoid every unfortunate die roll and turn it to their advantage. Note that players also have the fate rule which they can use as well. 
+Fate can get you something for no cost (except using  up fate, a temporary expenditure) whereas upping the stakes always means the hero is in a worse situation in some sense.
 
-Imaginative players and GMs may want to experiment with other possibilities as well. A character could trade loss of major or minor boons in return for a damage reduction or decrease in severity of a condition for example. This could be explained in any feasible way. A character could for instance give up all his supply of cash “As he’s about to hit me I toss my purse in his face and he grabs for the gold coins instead of taking the killing blow!” These sorts of tricks should be considered as something like Improvised Actions (see World and Play), requiring checks to succeed.
+Imaginative players and GMs may want to experiment with other possibilities as well. A character could trade loss of major or minor boons in return for a damage reduction 
+or decrease in severity of a condition for example. This could be explained in any feasible way. A character could for instance give up all his supply of cash “As he’s 
+about to hit me I toss my purse in his face and he grabs for the gold coins instead of taking the killing blow!” These sorts of tricks should be considered as something 
+like Improvised Actions (see World and Play), requiring checks to succeed.
 TOPIC/
 SUBSECTION/
 /SUBSECTION" Types of Affliction "/
 
-While, for story reasons, there are four types of afflictions, these types largely follow the same rules. They are broken down here by these types for easy reference. The lists given here are by no means exhaustive. In fact they barely scratch the surface of the possibile horrors which might afflict characters.
+While, for story reasons, there are four types of afflictions, these types largely follow the same rules. They are broken down here by these types for easy reference. The 
+lists given here are by no means exhaustive. In fact they barely scratch the surface of the possible horrors which might afflict characters.
 /TOPIC" Affliction Description "/
 /RIGHT=" half "/
-/AFFLICTION /AFFLICTIONTYPE disease AFFLICTIONTYPE/
+/AFFLICTION /ID" c459b620-0d72-11ee-835a-c87f5455cfcc"/ /AFFLICTIONTYPE disease AFFLICTIONTYPE/
 /AFFLICTIONNAME Sample Affliction AFFLICTIONNAME/
 /AFFLICTIONLEVEL 1 AFFLICTIONLEVEL/
 /TAGS Disease, Necrotic TAGS/
+/AFFLICTIONCOMPLEXITY simple AFFLICTIONCOMPLEXITY/
 /ONSET Stage 0 is manifested 2 days after infection. ONSET/
 /STAGES
     /STAGE /STAGENAME 0 STAGENAME/ The victim's maximum hit points are temporarily reduced by their healing value. STAGE/
@@ -101,55 +134,76 @@ This sample explains the attributes of afflictions:
     /LI /BOLD Name /SPACE BOLD/ - The name of the affliction, note that the background color of the header indicates the type of affliction. LI/
     /LI /BOLD Level /SPACE BOLD/ - The level of the affliction is indicated at the far right of the header. LI/
     /LI /BOLD Tags /SPACE BOLD/ - The tags applying to this affliction appear below the header. LI/
+    /LI /BOLD Complexity BOLD/ - The complexity of the challenge required to cure the affliction LI/
     /LI /BOLD Onset /SPACE BOLD/ - This indicates how and when the affliction begins. LI/
     /LI /BOLD Stages /SPACE BOLD/ - This lists the effects of the affliction at each stage, 0 meaning no failures, and Final meaning 3 failures. LI/
     /LI /BOLD Description /SPACE BOLD/ - This is the description of the affliction. It usually describes how the affliction is acquired and its appearance, general progress, etc. LI/
-    /LI /BOLD Cure /SPACE BOLD/ - This provides an explanation of how the affliction can be cured. This is useful in creating a challenge for this affliction. LI/
+    /LI /BOLD Cure /SPACE BOLD/ - This provides an explanation of how the affliction can be cured. This is useful in creating scenes related to this affliction. LI/
 UL/
 TOPIC/
 /TOPIC" Wounds "/
 
-These are the effects of physical trauma, and are thus fundamentally non-magical in nature. They include broken bones, severed limbs, and other similar injuries. Instead of attempting to produce a long list of medical horrors only a few generalized injuries should suffice, with the GM providing any needed additional details of the specific wound if need be. These are treated using the healing knack, survival might also be relevant.
+These are the effects of physical trauma, and are thus fundamentally non-magical in nature. They include broken bones, severed limbs, and other similar injuries. Instead 
+of attempting to produce a long list of medical horrors only a few generalized injuries should suffice, with the GM providing any needed additional details of the specific 
+wound if need be. These are treated using the healing knack, survival might also be relevant.
+
+Note that all wounds should be treated as being of the level of the creature or effect which created the wound, or the current level of the PC suffering the wound in cases
+where it is not clear what level to use.
 /FLEXROW
 /FLEXCELL
-/AFFLICTION /AFFLICTIONTYPE wound AFFLICTIONTYPE/
+/AFFLICTION /ID" dae39b4a-0d72-11ee-9f9a-c87f5455cfcc"/ /AFFLICTIONTYPE wound AFFLICTIONTYPE/
 /AFFLICTIONNAME Head Wound AFFLICTIONNAME/
-/AFFLICTIONLEVEL Challenge AFFLICTIONLEVEL/
+/AFFLICTIONLEVEL varies AFFLICTIONLEVEL/
 /TAGS Wound TAGS/
+/AFFLICTIONCOMPLEXITY simple AFFLICTIONCOMPLEXITY/
 /ONSET Stage 0 begins when the character receives a serious blow to the head. ONSET/
 /STAGES
     /STAGE /STAGENAME 0 STAGENAME/ The victim is dazed. STAGE/
     /STAGE /STAGENAME 1 STAGENAME/ The victim is stunned. STAGE/
     /STAGE /STAGENAME 2 STAGENAME/ The victim is helpless. STAGE/
-    /STAGE /STAGENAME Final STAGENAME/ The victim enters a helpless vegetative state from which only powerful healing magic can bring recovery. Even then the victim will almost surely suffer effects such as permanent memory loss. STAGE/
+    /STAGE /STAGENAME Final STAGENAME/ The victim enters a helpless vegetative state from which only powerful healing magic can bring recovery. Even then the victim will 
+    almost surely suffer effects such as permanent memory loss. STAGE/
 STAGES/
 /AFFLICTIONDESCRIPTION
-The victim has damage to the brain, usually caused by head trauma. Depending on the severity of the trauma the victim might actully begin at a later stage such as stage 1 or 2. Immediate medical care is urgent. If the victim continues to attempt to carry out activities they are extremely likely to aggravate the condition, thus failed checks when attempting other actions may count as failures here too. 
+The victim has damage to the brain, usually caused by head trauma. Depending on the severity of the trauma the victim might actully begin at a later stage such as stage 
+1 or 2. Immediate medical care is urgent. If the victim continues to attempt to carry out activities they are extremely likely to aggravate the condition, thus failed 
+checks when attempting other actions may count as failures here too. 
 
-Note that the affliction level should be set to reflect the level of the source of the wound, generally. Once the character is wounded they will need to make a Survival check every eight hours. This check will have disadvantage unless they are resting. Treatments, such as medical checks may also improve or worsen the patient's condition.
+Note that the affliction level should be set to reflect the level of the source of the wound, generally. Once the character is wounded they will need to make a Survival 
+check every eight hours. This check will have disadvantage unless they are resting. Treatments, such as medical checks may also improve or worsen the patient's condition.
 AFFLICTIONDESCRIPTION/
 /CURE
-Healing herbs and poultices can be used to improve the patient's condition. If the wound reaches stage 2 then it may be necessary to resort to trepanning or other extreme measures. Less severe cases which receive reasonable care under favorable conditions should be treated as low complexity, but most head injuries are medium complexity challenges, and they may be high complexity in cases of severe injury in a remote location under poor conditions.
+Healing herbs and poultices can be used to improve the patient's condition. If the wound reaches stage 2 then it may be necessary to resort to trepanning or other extreme 
+measures. Less severe cases which receive reasonable care under favorable conditions should be treated as simple complexity, but most head injuries are moderate complexity 
+challenges, and they may be high complexity in cases of severe injury in a remote location under poor conditions.
 CURE/
 AFFLICTION/
 FLEXCELL/
 /FLEXCELL
-/AFFLICTION /AFFLICTIONTYPE wound AFFLICTIONTYPE/
+/AFFLICTION /ID" f36c5814-0d72-11ee-8178-c87f5455cfcc"/ /AFFLICTIONTYPE wound AFFLICTIONTYPE/
 /AFFLICTIONNAME Leg Wound AFFLICTIONNAME/
-/AFFLICTIONLEVEL Challenge AFFLICTIONLEVEL/
+/AFFLICTIONLEVEL varies AFFLICTIONLEVEL/
 /TAGS Wound TAGS/
+/AFFLICTIONCOMPLEXITY simple AFFLICTIONCOMPLEXITY/
 /ONSET Stage 0 begins when the character is wounded. ONSET/
 /STAGES
     /STAGE /STAGENAME 0 STAGENAME/ The victim is slowed. STAGE/
-    /STAGE /STAGENAME 1 STAGENAME/ The victim is slowed to a speed of 2. STAGE/
+    /STAGE /STAGENAME 1 STAGENAME/ The victim is reduced to a speed of 2. STAGE/
     /STAGE /STAGENAME 2 STAGENAME/ The victim is prone. STAGE/
-    /STAGE /STAGENAME Final STAGENAME/ The victim permanently loses the use of one leg. With the aid of a prosthesis they may move at their original speed -2 squares. This only effects land movement. Only major regenerative healing can cure this. STAGE/
+    /STAGE /STAGENAME Final STAGENAME/ The victim permanently loses the use of one leg. With the aid of a prosthesis they may move at their original speed -2 squares. 
+    This only effects land movement. Only major regenerative healing can cure this. STAGE/
 STAGES/
 /AFFLICTIONDESCRIPTION
-The victim's leg is broken or otherwise seriously injured. At stage 0 the limb is still marginally useful, but serious versions of this wound may start at stage 1 or even 2, in which case the wound is probably something like a major/compound fracture, etc. Increases in severity represent the onset of infection, circulation failure, etc. The wound will naturally progress every 2 days, with a Survival check determining if it is better or worse. Stage 3 represents a point where the limb must be amputated or is otherwise permanently unusable.
+The victim's leg is broken or otherwise seriously injured. At stage 0 the limb is still marginally useful, but serious versions of this wound may start at stage 
+1 or even 2, in which case the wound is probably something like a major/compound fracture, etc. Increases in severity represent the onset of infection, circulation 
+failure, etc. The wound will naturally progress every 2 days, with a Survival check determining if it is better or worse. Stage 3 represents a point where the limb must 
+be amputated or is otherwise permanently unusable.
 AFFLICTIONDESCRIPTION/
 /CURE
-Healing herbs and poultices can be used to improve the patient's condition. Surgery, casts and splints, etc. are generally recommended for the more serious cases. Infections may need to be cauterized, etc. This can all be accomplished with healing checks, and/or checks to obtain the required medications and such. Complete rest and proper care usually result in recovery, but natural healing will require considerable time, up to a month or more per stage.
+Healing herbs and poultices can be used to improve the patient's condition. Surgery, casts and splints, etc. are generally recommended for the more serious cases. A splint
+will remove one failure if properly applied, as will a proper cast, in addition to adding a success. Infections 
+may need to be cauterized, etc. This can all be accomplished with healing checks, and/or checks to obtain the required medications and such. Complete rest and proper care 
+usually result in recovery, but natural healing will require considerable time, up to a month or more per stage.
 CURE/
 AFFLICTION/
 FLEXCELL/
@@ -161,11 +215,212 @@ While in the real world these are caused by either microorganisms or some malfun
 TOPIC/
 /TOPIC" Curses "/
 
-Curses are more varied and less related to physical bodily processes than diseases are; they include such things as therianthropy. Usually a curse will require some sort of specific requirements in order to effect a cure, or a specific magical ritual, etc. Treatment is generally accomplished via using arcana, or in some cases religion.
+Curses are more varied and less related to physical bodily processes than diseases are; they include such things as therianthropy. Usually a curse will require some sort of 
+specific requirements in order to effect a cure, or a specific magical ritual, etc. Treatment is generally accomplished via using arcana, or in some cases religion. In general
+curses are difficult to cure.
+/FLEXROW
+/FLEXCELL
+/AFFLICTION /ID" 0dc8c652-0d73-11ee-8350-c87f5455cfcc"/ /AFFLICTIONTYPE curse AFFLICTIONTYPE/
+/AFFLICTIONNAME Skin Lesions AFFLICTIONNAME/
+/AFFLICTIONLEVEL 1 AFFLICTIONLEVEL/
+/TAGS Curse, Arcane TAGS/
+/AFFLICTIONCOMPLEXITY simple AFFLICTIONCOMPLEXITY/
+/ONSET Stage 0 begins when the character is cursed. ONSET/
+/STAGES
+    /STAGE /STAGENAME 0 STAGENAME/ The victim's skin begins to itch and a mild rash develops. STAGE/
+    /STAGE /STAGENAME 1 STAGENAME/ The victim's skin becomes highly irritated, with swelling and pain. STAGE/
+    /STAGE /STAGENAME 2 STAGENAME/ The victim is covered in sores which disfigure the skin. Take disadvantage on any check involving a charisma related aspect. STAGE/
+    /STAGE /STAGENAME Final STAGENAME/ The victim permanently and badly disfigured. Most NPCs will avoid the character and all checks involving a charisma related attribute
+    have disadvantage. STAGE/
+STAGES/
+/AFFLICTIONDESCRIPTION
+This is a simple low-level curse which is typical of the sorts of minor physical disabilities which can be visited upon people via dark magic. Typically this type of curse
+would be inflicted via a shadow ritual, but some monsters are capable of inflicting this, or other similar curses by various means such as touch, on sight, etc.
+
+Normally progression will happen on a day-to-day basis. Passing a Survival check will result in improvement, failure in worsening. Heal and possibly Nature or Arcana checks
+can also be attempted.
+AFFLICTIONDESCRIPTION/
+/CURE
+Luckily this sort of curse is not too difficult to cure. Simply succeeding at the simple complexity level will cause it to be dispelled, thus many victims simply outlast the
+condition and recover in a few days time. A basic ritual exists which will bring a success and remove one failure. Many local NPCs know curatives of this sort, and finding one
+could be a simple quest.
+CURE/
+AFFLICTION/
+FLEXCELL/
+/FLEXCELL
+FLEXCELL/
+FLEXROW/
+/FLEXROW
+/FLEXCELL
+/AFFLICTION /ID" 5126ca20-0d73-11ee-8fb5-c87f5455cfcc"/ /AFFLICTIONTYPE curse AFFLICTIONTYPE/
+/AFFLICTIONNAME Therianthropy AFFLICTIONNAME/
+/AFFLICTIONLEVEL 9 AFFLICTIONLEVEL/
+/TAGS Curse, Therianthropy TAGS/
+/AFFLICTIONCOMPLEXITY complex AFFLICTIONCOMPLEXITY/
+/ONSET Stage 0 begins when the character is cursed. ONSET/
+/STAGES
+    /STAGE /STAGENAME 0 STAGENAME/ The victim transforms on the night of the full moon. STAGE/
+    /STAGE /STAGENAME 1 STAGENAME/ The victim transforms whenever they are in the presence of moonlight. STAGE/
+    /STAGE /STAGENAME 2 STAGENAME/ The victim transforms in the presence of moonlight, or when they become bloodied. STAGE/
+    /STAGE /STAGENAME Final STAGENAME/ The victim's soul and personality are lost and only the bestial nature remains. The beast can transform at will. STAGE/
+STAGES/
+/AFFLICTIONDESCRIPTION
+The victim of this curse will /REF Shape Change REF/ into the form of a predatory beast under certain conditions. The exact conditions will depend on the type of Therianthropy
+the victim is afflicted with, but the conditions listed above are appropriate for the most well-known version of the curse, lycanthropy, in which the victim transforms into
+a wolf. As a rule, transformation takes approximately 5 minutes, during which time the character has all the traits associated with the animal form.
+
+This terrible curse is said to have been originally inflicted by the Moon God Alegast on men of an ancient tribe of Erithnoi after the elves they were warring against prayed
+for divine intervention. Even Alegast did not anticipate that this curse would spread and persist down the ages, bringing suffering to many humans over the generations.
+Nor did he anticipate that it might spread to other races and take peculiar forms amongst them.
+
+Beyond the curse of Alegast legends also tell of various similar curses which have afflicted individuals or groups of people at different times. The truth of these various
+stories is difficult to determine at best. Each form of Therianthropy has its own slightly different attributes which may take the form of different specific curses. The
+general form described here can be used as a basis for others. Many forms may exist.
+
+Each stage of affliction progressively decreases the victim's control and human identity until in the final stage the victim becomes wholely a monstrous animalistic
+shape-changer. Whenever the conditions come about which require the victim to change, a wisdom ability check is required. Success indicates the victim resists the change and
+acquires one success, while failure indicates that the victim undergoes the change. If the victim then subsequently hunts and kills another human, their curse advances to the
+next stage, otherwise it remains at the current stage. Once the final stage is reached, the victim's soul and personality are lost. Only the mightiest of magics is then
+capable of curing the victim.
+AFFLICTIONDESCRIPTION/
+/CURE
+Each type of therianthrope is somewhat different. In general, resistance to the changes is the best hope, and being restrained from carrying out any kills will halt the
+progress of the curse in the meantime. As with other curses, rituals of purification and such, programs of fasting and prayer, etc. may also produce successes, leading to a
+lifting of the curse. 
+CURE/
+AFFLICTION/
+FLEXCELL/
+FLEXROW/
 TOPIC/
 /TOPIC" Poisons "/
 
-Poisons, which herein includes other sorts of toxins, lethal or non-lethal, are substances introduced into the body of the victim in some way, where they act as an affliction. They are very similar to diseases and can also be treated using the healing or sometimes arcana knacks. There may be magical means to achieve a cure, as with any affliction, but it is common for poisons to have a specific antidote.
+Poisons, which herein includes other sorts of toxins, lethal or non-lethal, are substances introduced into the body of the victim in some way, where they act as an 
+affliction. They are very similar to diseases and can also be treated using the healing or sometimes arcana knacks. There may be magical means to achieve a cure, as 
+with any affliction, but it is common for poisons to have a specific antidote. A wide variety of such poisons exist, and most antidotes are specific to one particular
+poison, though often they are formulated from similar or identical virtuous substances. As a rule, poisons are associated with the shadow power source, but there are
+some which are different. 
+
+Poisons are also one of the more common types of affliction. While it may require esoteric knowledge to place a curse on someone, brewing up a dose of poison doesn't 
+generally require a lot of special knowledge, and there are some fairly common plants and even animals which can be readily acquired for this purpose. Many animals are
+themselves poisonous, such as some snakes and such. While none of these are likely to be found lying around the average home knowledge of the more common, though less
+effective, types is fairly easy to come by.
+
+In fact, poisons might even be purchased or acquired from certain unsavory individuals, and can be deployed by anyone bold enough to dose a victim. Each type of poison has
+its own methods of delivery, which are explained in the description.
+/FLEXROW
+/FLEXCELL
+/AFFLICTION /ID" 0f61f410-0d7e-11ee-9aa4-c87f5455cfcc"/ /AFFLICTIONTYPE poison AFFLICTIONTYPE/
+/AFFLICTIONNAME Strychnos AFFLICTIONNAME/
+/AFFLICTIONLEVEL 1 AFFLICTIONLEVEL/
+/TAGS Poison, Natural TAGS/
+/AFFLICTIONCOMPLEXITY simple AFFLICTIONCOMPLEXITY/
+/ONSET Stage 0 begins within 30 minutes of being poisoned. ONSET/
+/STAGES
+    /STAGE /STAGENAME 0 STAGENAME/ The victim is dazed and loses 2 power points. STAGE/
+    /STAGE /STAGENAME 1 STAGENAME/ The victim is stunned and loses 2 power points. STAGE/
+    /STAGE /STAGENAME 2 STAGENAME/ The victim is unconscious and loses 2 power points. STAGE/
+    /STAGE /STAGENAME Final STAGENAME/ The victim dies. STAGE/
+STAGES/
+/AFFLICTIONDESCRIPTION
+This poison is found in the form of seeds, flowers, bark or other plant material, or rarely a white powder refined from certain plants. Often it is prepared in the form of a
+tea or infusion. While this is a fairly simple poison, and the plants it is prepared from are both reasonably common and well-known, it is rarely used due to having an extremely
+bitter taste which cannot be masked. A lethal dosage is also large enough that it isn't very easy to administer without the victim's knowledge. That being said, the poison is
+potent and usually lethal, and is relatively fast acting for a natural poison. As such it is fairly popular as an execution method, though death is said to be quite painful.
+
+The check interval is about 15 minutes and checks are made against Survival.
+AFFLICTIONDESCRIPTION/
+/CURE
+There are fairly well-known antidotes to this poison, though they are not as easily prepared, nor are the ingredients quite as available as those of the poison itself. The
+best course of action is essentially just to employ Healing checks of an expert healer to keep the victim alive until they remove the poison from their system. Once a character
+has succeeded in beating the affliction they will recover after a Recovery.
+CURE/
+AFFLICTION/
+/AFFLICTION /ID" eaecd480-0da3-11ee-93c4-c87f5455cfcc"/ /AFFLICTIONTYPE poison AFFLICTIONTYPE/
+/AFFLICTIONNAME Red Agony AFFLICTIONNAME/
+/AFFLICTIONLEVEL 5+ AFFLICTIONLEVEL/
+/TAGS Poison, Natural TAGS/
+/AFFLICTIONCOMPLEXITY simple AFFLICTIONCOMPLEXITY/
+/ONSET Stage 0 begins within 5 minutes of being poisoned. ONSET/
+/STAGES
+    /STAGE /STAGENAME 0 STAGENAME/ The victim is weakened and has disadvantage on all checks. STAGE/
+    /STAGE /STAGENAME 1 STAGENAME/ The victim is slowed and has disadvantage on all checks. STAGE/
+    /STAGE /STAGENAME 2 STAGENAME/ The victim is unconscious. STAGE/
+    /STAGE /STAGENAME Final STAGENAME/ The victim dies. STAGE/
+STAGES/
+/AFFLICTIONDESCRIPTION
+This poison is greatly feared due to the extreme pain it causes. It can be permanently incapacitating and its effects are difficult to get rid of. The only saving grace is that
+the antidote is more easily obtained than the substance itself, and thus if on can hang on long enough to find treatment the victim is likely to survive.
+
+Red Agony is a blood poison, and must be administered through a would of some sort. Ingesting it or simply coming into contact with it is not enough to cause an ill effect.
+It takes the form of a rust-colored liquid or paste. It is almost always applied to weapons such as darts or daggers, or in traps, where it is reputed to retain its potency
+for long periods of time.
+
+Red Agony is made via a mystical brewing process and requires several moderately rare and unusual components. It also requires the recitation of a magical ritual invoking 
+certain diabolical figures.
+
+The check period for Red Agony is 1 day, thus it may take quite a long time to kill, and the check is a Perception check.
+AFFLICTIONDESCRIPTION/
+/CURE
+While the effects of Red Agony are extremely painful, it is luckily one of the easier of the poisons to create an antidote for, requiring only materials which should be
+available in most towns and villages who have a person knowledgeable about healing. That being said, once the antidote is administered the victim will stop progressing to 
+higher stages of the affliction, but must still make daily checks until 4 successes have been achieved before the symptoms abate.
+CURE/
+AFFLICTION/
+FLEXCELL/
+/FLEXCELL
+/AFFLICTION /ID" 0fda397e-0da2-11ee-bfa4-c87f5455cfcc"/ /AFFLICTIONTYPE poison AFFLICTIONTYPE/
+/AFFLICTIONNAME Blue Death AFFLICTIONNAME/
+/AFFLICTIONLEVEL 9 AFFLICTIONLEVEL/
+/TAGS Poison, Arcane TAGS/
+/AFFLICTIONCOMPLEXITY simple AFFLICTIONCOMPLEXITY/
+/ONSET Stage 0 begins within 30 minutes of ingestion or one round if breathed. ONSET/
+/STAGES
+    /STAGE /STAGENAME 0 STAGENAME/ The victim is dazed. STAGE/
+    /STAGE /STAGENAME 1 STAGENAME/ The victim is stunned. STAGE/
+    /STAGE /STAGENAME 2 STAGENAME/ The victim is unconscious. STAGE/
+    /STAGE /STAGENAME Final STAGENAME/ The victim dies. STAGE/
+STAGES/
+/AFFLICTIONDESCRIPTION
+This is a fast-acting poison produced by alchemy. It consists of either a dark blue liquid or a white powder. In liquid form it can be slipped into food or drink.
+The powder can be dissolved in liquid or ground fine and made airborne. When breathed it has a particularly quick effect.
+
+Blue Death is well-known as one of the fastest-acting poisons known. If a victim gets a small dose they might survive for an hour. A larger dose, and especially if breathed in,
+will result in almost immediate incapacitation and death.
+AFFLICTIONDESCRIPTION/
+/CURE
+As a magically produced poison, natural antidotes are largely ineffective against this virulent poison. If it is not treated with some form of curative magic or similar
+then the victim is almost sure to die. In fact normal persons of most species have virtually no chance of survival without magic. Heroes of course may survive letting the
+poison run its course with a check frequency of either 30 minutes if ingested, or 1 round if inhaled.
+CURE/
+AFFLICTION/
+/AFFLICTION /ID" a6012b2a-0e1e-11ee-83fa-c87f5455cfcc"/ /AFFLICTIONTYPE poison AFFLICTIONTYPE/
+/AFFLICTIONNAME Green Madness AFFLICTIONNAME/
+/AFFLICTIONLEVEL 12 AFFLICTIONLEVEL/
+/TAGS Poison, Arcane TAGS/
+/AFFLICTIONCOMPLEXITY medium AFFLICTIONCOMPLEXITY/
+/ONSET Stage 0 begins on the character's turn, or within 1 minute outside of combat. ONSET/
+/STAGES
+    /STAGE /STAGENAME 0 STAGENAME/ The victim is dazed. STAGE/
+    /STAGE /STAGENAME 1 STAGENAME/ The victim is stunned. STAGE/
+    /STAGE /STAGENAME 2 STAGENAME/ The victim is confused. STAGE/
+    /STAGE /STAGENAME Final STAGENAME/ The victim becomes permanently incapacitated. STAGE/
+STAGES/
+/AFFLICTIONDESCRIPTION
+This foul brew drives its victims mad instead of killing them, which might be more merciful. Only the very stoutest of heroes can survive being subjected to Green Madness. 
+Luckily it is a very rare poison. Green Madness can be administered as a contact poison, or ingested. It is infamously dangerous to use, as there are several stories of would-be assassins falling victim to
+their own poison through carelessness or mischance. Even a tiny exposure runs the risk of terrible consequences.
+
+The first 3 stages of the affliction occur quickly, with checks being made every turn. Once Stage 2 is reached then the victim becomes mad and remains in this condition for a
+variable period of time depending on the dosage and the character's constitution. The final stage will not manifest for at least 3 days, but in some cases characters have
+remained in this stage for up to 2 weeks. Eventually the madness becomes complete and the victim permanently loses their mind.
+AFFLICTIONDESCRIPTION/
+/CURE
+Unfortunately the only known antidote must be prepared at the High Altar of Sawk, and is difficult to keep. Effectively one must bring a
+victim to the altar, or be able to travel quickly, in order to affect a cure. 
+CURE/
+AFFLICTION/
+FLEXCELL/
+FLEXROW/
 TOPIC/
 SUBSECTION/
 SECTION/

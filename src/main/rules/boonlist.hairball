@@ -96,12 +96,28 @@ Special: The GM might let you have several lower level animals in lieu of a sing
 RESTRICTIONS/
 BOON/
 FLEXCELL/
+/FLEXCELL
+FLEXCELL/
 FLEXROW/
 SECTION/
 /SECTION" P"/
 /FLEXROW
 /FLEXCELL
 /REF Phantasmist Initiate REF/
+/BOON /ID" a5e262ca-07da-11ee-880a-c87f5455cfcc"/ /BOONNAME Power Source Alignment BOONNAME/
+/BOONTYPE Level 1: Minor BOONTYPE/
+/ASSOCIATION None ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION You have achieved a connection with one of the power sources. DESCRIPTION/
+/BENEFITS 
+/BENEFIT
+You are aligned with a power source, which you must select when this boon is earned. Once per /REF Recovery REF/ you may spend a power point as if you were attuned to 
+the power source you selected.
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
 FLEXCELL/
 FLEXROW/
 SECTION/

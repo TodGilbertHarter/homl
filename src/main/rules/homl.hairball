@@ -16,12 +16,13 @@ Exactly what happens when that is done depends on what vocabularies are active a
 /SOURCE" species.hairball"/
 /SOURCE" boons.hairball"/
 /SOURCE" callings.hairball"/
-/SOURCE" backgrounds.hairball"/
+/SOURCE" heroic_origins.hairball"/
 /SOURCE" equipment.hairball"/
 BOOK/
 /BOOK" Living Legends"/
 /SUBTITLE <span id="livinglegends">Rules of Play</span> SUBTITLE/
 /SOURCE" how_to_play.hairball"/
+/SOURCE" quests.hairball"/
 /SOURCE" feats.hairball"/
 /SOURCE" interludes.hairball"/
 /SOURCE" challenges.hairball"/
@@ -36,6 +37,7 @@ BOOK/
 /SOURCE" powersources.hairball"/
 /SOURCE" gods.hairball"/
 BOOK/
+/SOURCE" glossary.hairball"/
 /SOURCE" boonlist.hairball"/
 /SOURCE" license.hairball"/
 BODY/

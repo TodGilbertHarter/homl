@@ -41,4 +41,57 @@ dvarg can be quite ideosyncratic and sometimes divergent communities arise. Thes
 greater isolation than their bretheren. Once off on their own they may become very different, devoting themselves to 
 various esoteric pursuits and espousing variant systems of belief. 
 SUBSECTION/
+/SUBSECTION" Benefits"/
+/FLEXROW
+/FLEXCELL
+/SPECIESFEATURES
+All dvarg gain the following species features.
+/BOON /ID" 1a800d18-0a6e-11ee-83c9-c87f5455cfcc"/ /BOONNAME Earth Born BOONNAME/
+/BOONTYPE Species Feature: Major BOONTYPE/
+/ASSOCIATION Dvarg ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You were brought up amongst the dvarg and have been taught their skills.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You gain the Engineering knack.
+BENEFIT/
+/BENEFIT You can speak the Dvargish language BENEFIT/
+/BENEFIT You gain proficiency with the warhammer and light crossbow BENEFIT/
+/BENEFIT You gain a +5 proficiency bonus to all knowledge and perception of things dealing with stone, earth, and the world below ground. BENEFIT/
+BENEFITS/
+BOON/
+SPECIESFEATURES/
+FLEXCELL/
+/FLEXCELL
+/SPECIESBOONS
+Dvarg heroes may select from the following boons.
+/BOON /ID" 6ed8818e-09aa-11ee-afbb-c87f5455cfcc"/ /BOONNAME Stone Prophet BOONNAME/
+/BOONTYPE Species: Major BOONTYPE/
+/ASSOCIATION Dvarg ASSOCIATION/
+/PREREQUISITES Dvarg PREREQUISITES/
+/DESCRIPTION
+You have been taught the innermost secrets of stone itself.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You gain access to the following feat: /BR
+/FEAT /ID" 29366f28-09ab-11ee-8342-c87f5455cfcc"/ /SOURCE Life SOURCE/ /TIER heroic TIER/ /FEATNAME Stone Tell FEATNAME/
+/ORIGIN Dvarg ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Major ACTION/
+/TAGS engineering, earth TAGS/
+/EFFECTS In an underground setting, or any setting which is predominantly constructed of stone, you may gather information about what has happened in the local area
+using an Engineering check. This would include things like who passed by recently, any unusual activity, facts about the creature or history of the location or structure,
+etc. EFFECTS/
+/FLAVOR The very stones speak to you. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+SPECIESBOONS/
+FLEXCELL/
+FLEXROW/
+SUBSECTION/
 SPECIES/

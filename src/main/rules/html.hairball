@@ -31,6 +31,7 @@ Hairball.
 /: /DOCUMENT" <!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title> /" /. </title> :/
 /: /BODY </head><body> :/
 /: BODY/ // :/
+/: /AMP &amp; :/
 /: DOCUMENT/ </div></div>
 <script>
 var coll = document.getElementsByClassName("collapsible");
@@ -188,6 +189,8 @@ for (i = 0; i < coll.length; i++) {
 /: WEIGHT/ DIV/ DIV/ :/
 /: /SPECIESBOONS /TOPIC /H4 Boons H4/ :/
 /: SPECIESBOONS/ </section> :/
+/: /SPECIESFEATURES /TOPIC /H4 Features H4/ :/
+/: SPECIESFEATURES/ </section> :/
 
 /* Calling related stuff */
 /: /CALLING" <section class="calling" /" /IDREF > /TITLE /. TITLE/ :/ /* deprecated */
@@ -224,6 +227,26 @@ for (i = 0; i < coll.length; i++) {
 /: /BOONS /TOPIC /H4 Boons H4/ :/
 /: BOONS/ </section> :/
 
+/* heroic origin related stuff */
+/: /HEROICORIGIN <section class="heroicorigin" :/
+/: /ORIGINNAME > /TITLE :/
+/: ORIGINNAME/ TITLE/ :/
+/: /HEROICORIGINBACKGROUNDS <div> :/
+/: HEROICORIGINBACKGROUNDS/ DIV/ :/
+/: /HEROICORIGINDESCRIPTION <div class="widetrait"> /BOLD Description: BOLD/ /SPACE :/
+/: HEROICORIGINDESCRIPTION/ DIV/ :/
+/: /HEROICORIGINWEAPONS /TRAIT Weapon Proficiencies: DIV/ <div class="value"> :/
+/: HEROICORIGINWEAPONS/ DIV/ DIV/ :/
+/: /HEROICORIGINIMPLEMENTS /TRAIT Implements: DIV/ <div class="value"> :/
+/: HEROICORIGINIMPLEMENTS/ DIV/ DIV/ :/
+/: /HEROICORIGINKNACKS /TRAIT Knacks: DIV/ <div class="value"> :/
+/: HEROICORIGINKNACKS/ DIV/ DIV/ :/
+/: /HEROICORIGINBOONS /TOPIC /H4 Boons H4/ :/
+/: HEROICORIGINBOONS/ </section> :/
+/: /HEROICORIGINFEATURES /TOPIC /H4 Features H4/ :/
+/: HEROICORIGINFEATURES/ </section> :/
+/: HEROICORIGIN/ SECTION/ :/
+ 
 /* Boon related stuff */
 /: /BOON" <section class="boon" /ID > /TRAITS <div class="trait"><div> /" /. DIV/ :/ /* Deprecated */
 /: /BOON <section class="boon" :/ 
@@ -291,13 +314,15 @@ for (i = 0; i < coll.length; i++) {
 /: COSTS/ DIV/ :/
 /: FEAT/ TRAITS/ </section> :/
 
-/* Afflication related stuff */
+/* Affliction related stuff */
 /: /AFFLICTION" <section class="affliction" /ID > /TRAITS <div class="trait /SPACE /W /W2L /. "><div class="name"> /" /. DIV/ :/ /* Deprecated */
-/: /AFFLICTION <section class="affliction" /ID > /TRAITS :/
-/: /AFFLICTIONTYPE <div class="trait /SPACE :/
+/: /AFFLICTION <section class="affliction" :/
+/: /AFFLICTIONTYPE > /TRAITS <div class="trait /SPACE :/
 /: AFFLICTIONTYPE/ "> :/
 /: /AFFLICTIONNAME <div class="name"> :/
 /: AFFLICTIONNAME/ DIV/ :/
+/: /AFFLICTIONCOMPLEXITY <div class="widetrait"> /BOLD Complexity: BOLD/ /SPACE :/
+/: AFFLICTIONCOMPLEXITY/ DIV/ :/
 /: /ALEVEL" <div class="value"> /" /. DIV/ DIV/ :/ /* Deprecated */
 /: /AFFLICTIONLEVEL <div class="value"> :/
 /: AFFLICTIONLEVEL/ DIV/ DIV/ :/
@@ -383,6 +408,15 @@ for (i = 0; i < coll.length; i++) {
 /: SUBTOPIC/ DIV/ :/
 /: /TODO: <span class="todo">TODO: :/
 /: TODO/ </span> :/
+/: /KNACK" <span class="knack" /" /IDREF > /LABEL Knack LABEL/ /. :/
+/: KNACK/ </span> :/
+
+/: /GLOSSARYENTRY /TOPIC :/
+/: GLOSSARYENTRY/ TOPIC/ :/
+/: /GLOSSARYTERM /LABEL :/ 
+/: GLOSSARYTERM/ LABEL/ :/
+/: /GLOSSARYDEF // :/
+/: GLOSSARYDEF/ // :/
 
 /: /BACKGROUND /TOPIC :/
 /: /BACKGROUNDTYPE /GETMATCHING BACKGROUNDTYPE/ /DELIMITED /DROP :/

@@ -1,25 +1,174 @@
-/CHAPTER" Heroic Origins"/
+/CHAPTER" Heroic Origins "/
 
 Every hero has a heroic origin, a starting point which differentiates them from other mortals. The details of this story are entirely up to the character's player, but this
-chapter provides a group of templates and elements which can be used to build these origin stories. Additionally it defines the sorts of boons, feats, knacks, and possibly other
-character traits which follow from this choice.
+chapter provides a group of templates and elements which can be used to build these origin stories. Additionally it defines the sorts of /REF Boons REF/ , 
+feats, knacks, and possibly other character traits which follow from this choice.
 
-Characters may have associated background elements. Various heroic origins will note certain specific appropriate options. Most heroes will thus have at least a couple of these
+Heroic origins have associated background elements. Various heroic origins will note certain specific appropriate options. Most heroes will thus have at least a couple of these
 defined. Players are free to use the other background elements as they see fit, but since they are not part of the character's core selections they won't normally provide any
-substantial benefits, such as access to knacks, etc. but some exceptions may be noted which should be considered as being part of the heroe's origin.
+substantial benefits, such as access to knacks, etc. Some exceptions may be noted which should be considered as being part of the hero's origin.
 
-Every origin provides at least one knack as a feature. Some may also provide access to major boons or a special origin-specific feature. 
+Every origin provides at least one knack as a feature. Some may also provide access to major boons or a special origin-specific feature. They might also include things like
+equipment, wealth, or other such minor boons. If an origin does not specify a minor boon, then take one which is noted as associated with one of the hero's background
+elements.
 
-For many background elements a minor boon is noted. Each character can select one minor boon from those noted for all of their backgrounds (you get one, not one from each 
-background element). These are usually languages, skills, some special area of knowledge, a proficiency, or possibly some minor item or treasure.
+/LABEL Backgrounds as Boons LABEL/ Sometimes a character may spend a lot of time in an area, work in a new profession, etc. When this happens the GM could grant a 
+relevant background element as a minor boon. 
 
-Additionally one or more knacks will be listed which are associated with the background element. These are added to any listed for the hero's class, species, etc. as being available for the player to choose from, see /REF Character Generation REF/ .
+/LABEL Knowledge LABEL/ Characters are assumed to have learned something from their origin. Thus when they confront a situation where a check is required and it is 
+related specifically to one of their background elements, they are assumed to have a +5 proficiency bonus, just as if they were proficient. Thus a character who was a farmer 
+might get a +5 bonus to a check to figure out what is wrong with a cow, for example.
+/SECTION" Origins"/
+/HEROICORIGIN /ID" 214a2be4-03f0-11ee-a8c3-c87f5455cfcc"/
+/ORIGINNAME God Spawned ORIGINNAME/
+/TRAITS
+/HEROICORIGINDESCRIPTION You are the child of a god HEROICORIGINDESCRIPTION/
+/HEROICORIGINWEAPONS pick one HEROICORIGINWEAPONS/
+/HEROICORIGINIMPLEMENTS pick one HEROICORIGINIMPLEMENTS/
+/HEROICORIGINKNACKS pick one HEROICORIGINKNACKS/
+/HEROICORIGINBACKGROUNDS orphan,adopted HEROICORIGINBACKGROUNDS/
+TRAITS/
 
-/LABEL Backgrounds as Boons LABEL/ Sometimes a character may spend a lot of time in an area, work in a new profession, etc. When this happens the GM could grant a relevant background element as a minor boon. 
+God Spawned are literally children of the gods, the product of the physical union of a deity and a mortal of some kind, usually a human. As such the God Spawned has a strong
+and direct connection with fate and usually a heroic destiny of some kind. God Spawned can be of any calling, but often take after their divine parent to some degree, both in
+terms of calling and general personality. The gods rarely recognize their children by mortals, at least not until the child has proven herself to possess the qualities of
+greatness. As such all God Spawned have a birth background trait of Orphan or Adopted. 
 
-/LABEL Knowledge LABEL/ Characters are assumed to have learned something from their background. Thus when they confront a situation where a check is required and it is related specifically to one of their background elements, they are assumed to have a +5 proficiency bonus, just as if they were proficient. Thus a character who was a farmer might get a +5 bonus to a check to figure out what is wrong with a cow, for example.
+Those who are orphans may have been abandoned by their mortal parent, or perhaps the mortal parent died, or was unaware of the existence of the child. Those who are adopted
+may have one of their parents, the mortal one, and another mortal step-parent who is likely unaware of the God Spawned's nature. 
 
-/STRONG Note: STRONG/ The background elements are listed in tabular form with associated numbers. These could be used for random generation purposes. This isn't intended to provide a character background generation subsystem. It is just provided so that a player can make a random selection if they so choose. This is often a helpful way to kick-start the process of character backstory creation. Players are not obligated to roll on these tables, nor are they bound by any rolls they do make.
+Does the hero know of his parentage? Is he in danger, and if so from whom? Can she prove herself to her divine parent? Does she want to?
+
+The player should determine who the hero's divine parent is and base their determination as to a knack, weapon, and implement proficiency based on that choice, as well as 
+any other interesting background traits.
+/HEROICORIGINFEATURES
+/LABEL Choose one of the following LABEL/
+/FLEXROW
+/FLEXCELL
+/BOON /ID" c31a3e20-07d6-11ee-ab9d-c87f5455cfcc"/ /BOONNAME God Blooded BOONNAME/
+/BOONTYPE God Spawned Origin Feature BOONTYPE/
+/ASSOCIATION God Spawned Origin ASSOCIATION/
+/PREREQUISITES God Spawned PREREQUISITES/
+/DESCRIPTION
+You have the blood of a god flowing through your veins. This powerful legacy gives you access to some of the traits of your divine parent. While you are not an immortal divine
+being yourself, at times you may be able to tap into this blood, creating a special effect.
+
+You must select a divine parent. This parent has an associated domain or domains, which should be noted.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT 
+You acquire the /REF Power Source Alignment REF/ minor boon. Your alignment is to the divine power source, unless you are already attuned or aligned to the divine source
+in which case you may pick another appropriate power source.
+BENEFIT/
+/BENEFIT
+/FEAT /ID" 11dc30c0-07fc-11ee-a916-c87f5455cfcc"/ /SOURCE divine SOURCE/ /TIER heroic TIER/ /FEATNAME Divine Enhancement FEATNAME/
+/ORIGIN Mighty Defender ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Free ACTION/
+/TAGS Evocation TAGS/
+/TRIGGER You utilize another feat TRIGGER/
+/EFFECTS The feat which triggered this one is enhanced by one level of success. EFFECTS/
+/FLAVOR You call upon the power of your parent, and the god answers. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+FLEXCELL/
+FLEXROW/
+HEROICORIGINFEATURES/
+/HEROICORIGINBOONS
+HEROICORIGINBOONS/
+HEROICORIGIN/
+/HEROICORIGIN /ID" 214a2be4-03f0-11ee-a8c3-c87f5455cfcc"/
+/ORIGINNAME Half Dragon ORIGINNAME/
+/TRAITS
+/HEROICORIGINDESCRIPTION You are a descendant of the dragons HEROICORIGINDESCRIPTION/
+/HEROICORIGINWEAPONS pick one HEROICORIGINWEAPONS/
+/HEROICORIGINIMPLEMENTS pick one HEROICORIGINIMPLEMENTS/
+/HEROICORIGINKNACKS pick one HEROICORIGINKNACKS/
+/HEROICORIGINBACKGROUNDS orphan,adopted HEROICORIGINBACKGROUNDS/
+TRAITS/
+
+A Half Dragon is a humanoid mortal with a significant draconic heritage. In some cases they are the product of a direct union between a mortal and a dragon, but it is also
+possible that the hero is more distantly related to dragons. The Half Dragon may even be a throwback to a time when her line had considerably more draconic blood than is now
+the case.
+
+What sort of dragon are you descended from? How did this union take place? When? 
+/HEROICORIGINFEATURES
+/LABEL Choose one of the following LABEL/
+/FLEXROW
+/FLEXCELL
+/BOON /ID" 7d3642e0-07ff-11ee-9d89-c87f5455cfcc"/ /BOONNAME Fire Dragon Blooded BOONNAME/
+/BOONTYPE Half Dragon Origin Feature BOONTYPE/
+/ASSOCIATION Half Dragon Origin ASSOCIATION/
+/PREREQUISITES Half Dragon Origin PREREQUISITES/
+/DESCRIPTION
+You have the blood of the ancient fire dragons flowing in your veins.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT 
+You gain the /REF Power Source Alignment REF/ minor boon with the alignment 
+being to the /REF Elemental Source REF/ . If you are already attuned to the elemental source, then increase your maximum power points by one.
+BENEFIT/
+/BENEFIT
+/FEAT /ID" a8e2f176-0800-11ee-be92-c87f5455cfcc"/ /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Fire Flesh FEATNAME/
+/ORIGIN Fire Dragon Blooded ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Free ACTION/
+/TAGS Defense, enchantment TAGS/
+/DEFENSE survival vs any attack with the fire keyword DEFENSE/
+/ENHANCED The attack misses and any creature which ends its turn within 1 square of you takes 5 fire damage. ENHANCED/
+/COMPLETESUCCESS The attack misses and the attacking creature takes 5 fire damage COMPLETESUCCESS/
+/SUCCESS The attack misses SUCCESS/
+/FAILURE Your DR is increased by one for purposes of this attack FAILURE/
+/FLAVOR Your flesh seems to be wreathed in flame and fire doesn't effect you. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /ID" b5ca510e-0823-11ee-992d-c87f5455cfcc"/ /BOONNAME Venom Dragon Blooded BOONNAME/
+/BOONTYPE Half Dragon Origin Feature BOONTYPE/
+/ASSOCIATION Half Dragon Origin ASSOCIATION/
+/PREREQUISITES Half Dragon Origin PREREQUISITES/
+/DESCRIPTION
+You have the blood of the ancient venom dragons flowing in your veins.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT 
+You gain the /REF Power Source Alignment REF/ minor boon with the alignment 
+being to the /REF Shadow Source REF/ . If you are already attuned to the shadow source, then increase your maximum power points by one.
+BENEFIT/
+/BENEFIT
+/FEAT /ID" ea143f74-0823-11ee-9cf3-c87f5455cfcc"/ /SOURCE shadow SOURCE/ /TIER heroic TIER/ /FEATNAME Shadow Breath FEATNAME/
+/ORIGIN Venom Dragon Blooded ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Standard ACTION/
+/TAGS poison, necrotic TAGS/
+/TYPETARGET close burst 3 all enemies in range TYPETARGET/
+/ATTACK Deception vs WILL ATTACK/
+/ENHANCED 3DD poison damage and the target is dazed ENHANCED/
+/COMPLETESUCCESS 2DD poison damage COMPLETESUCCESS/
+/SUCCESS 1DD poison damage SUCCESS/
+/EFFECTS You become invisible to any target which was hit by the attack. EFFECTS/
+/FLAVOR Even your breath is toxic enough to poison your enemies and cloud their minds. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+FLEXROW/
+HEROICORIGINFEATURES/
+/HEROICORIGINBOONS
+HEROICORIGINBOONS/
+HEROICORIGIN/
+SECTION/
+/STRONG Note: STRONG/ The background elements are listed in tabular form with associated numbers. These could be used for random generation purposes. This isn't intended to 
+provide a character background generation subsystem. It is just provided so that a player can make a random selection if they so choose. This is often a helpful way to 
+kick-start the process of character backstory creation. Players are not obligated to roll on these tables, nor are they bound by any rolls they do make.
 /SECTION" Birth"/
 /LEFT
 /TABLE=" bodytable"/

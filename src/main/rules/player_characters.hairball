@@ -1,14 +1,16 @@
-/CHAPTER" Player Characters "/
+/CHAPTER" Heroes "/
 
-Player characters, PCs, or heroes, are the alter-egos of the players in HoML. Each player normally plays the role of a single hero 
-which they utilize in a HoML session; although they might switch characters or play different characters at different times. 
+Heroes AKA player characters, or PCs, are the alter-egos of the players in HoML. Each player normally plays the role of a single hero 
+which they utilize in a HoML session; although they might switch characters or play different heroes at different times. 
 The rules in this chapter explain how to construct a hero and then discusses what happens when a hero advances in level.
 /SECTION" Characteristics of heroes "/
 
-This section lists all the major attributes commonly possessed by PCs. Rules for determining their values are given under the /REF  Character Generation REF/ and /REF Character Advancement REF/ sections.
+This section lists all the major attributes commonly possessed by PCs. Rules for determining their values are given under the /REF  Character Generation REF/ and 
+/REF Character Advancement REF/ sections.
 /SUBSECTION" Ability Scores "/
 
-These are the most basic attributes of all characters. They help to define the basic capabilities of the character. Each of the six abilities listed below has a value from the following table. The value for each attribute determines its associated ability modifier.
+These are the most basic attributes of all characters. They help to define the basic capabilities of the character. Each of the six abilities listed below has a value from 
+the following table. The value for each attribute determines its associated ability modifier.
 
 /TABLE=" bodytable "/
 /THEAD
@@ -77,14 +79,14 @@ TOPIC/
 
 Ability modifiers are generally noted by a 3 letter abbreviation, STR for Strength, CON for Constitution, DEX for Dexterity, 
 INT for Intelligence, WIS for Wisdom, and CHA for Charisma. For instance an attack might have a damage expression of 1d8+STR, 
-meaning that the character's strength ability modifier is added to the results of a roll of 1d8.
+meaning that the hero's strength ability modifier is added to the results of a roll of 1d8.
 TOPIC/
 SUBSECTION/
 /SUBSECTION" Fate "/
 
-Fate is an attribute which can be used by players to shift the fiction in their favor. Every character starts with positive 
+Fate is an attribute which can be used by players to shift the fiction in their favor. Every hero starts with positive 
 fate, and that can change to neutral fate and back. This attribute will be used to allow the player to make changes in the 
-fiction based on one of the character's attributes. This is discussed in detail under /REF Using Fate REF/ .
+fiction based on one of the hero's attributes. This is discussed in detail under /REF Using Fate REF/ .
 SUBSECTION/
 /SUBSECTION" Hit Points "/
 
@@ -117,9 +119,9 @@ two cancel out.
 SUBSECTION/
 /SUBSECTION" Calling "/
 
-Every hero has a calling, which is a general indication of the character's role in the world; a knight is a member of a hereditary 
+Every hero has a calling, which is a general indication of the hero's role in the world; a knight is a member of a hereditary 
 caste of specialists in fighting with weapons; a wizard is a practitioner and student of magic, etc. Most callings will define a 
-power source for the character; this is the characters primary source of power. They might also call on other sources at times, 
+power source for the hero; this is their primary source of power. They might also call on other sources at times, 
 but the source associated with their calling is the basis of their power as a hero.
 
 Calling defines the hero's core combat role; each calling is associated with a particular role, and a character will 
@@ -137,7 +139,7 @@ SUBSECTION/
 /SUBSECTION" Power Source "/
 /TOPIC" Power "/
 
-Each character has a power attribute. This has a numeric value which represents the number of power points the character can 
+Each hero has a power attribute. This has a numeric value which represents the number of power points the character can 
 expend. Power points may be used for a wide variety of things. They can be used to power an extra action, as a reserve of 
 durability which a hero can dig into in order to restore his or her hit points, or a resource which can be used to power magic 
 items, feats, or for other extraordinary purposes. Generally speaking only heroes have non-zero power. Most NPCs lack the 
@@ -168,7 +170,7 @@ attunements in the form of boons. This is generally difficult, but many heroes a
 There may also be magical objects, places, or effects which can grant access to additional sources of power. These are quite 
 difficult to find.
 
-When a player desires to expend her character's power points, she can do so in any situation where this is allowed. The hero's 
+When a player desires to expend her hero's power points, she can do so in any situation where this is allowed. The hero's 
 power point total is simply reduced by the requisite amount. It can be restored to its original value by rest and recovery, as 
 detailed under /REF Rest and Recovery REF/ .
 TOPIC/
@@ -180,6 +182,10 @@ various possible choices of species available to heroes is presented in a later 
 will make certain boons available, and apply some adjustments to the character. For example dwarg move more slowly than other 
 characters, but are also extremely resistant to certain kinds of effects. Humans are the most common type of character; other 
 species might be allowable depending on the desires of the participants in the game.
+SUBSECTION/
+/SUBSECTION" Heroic Origin"/
+
+Each hero has a heroic origin which describes how or why the character became a hero. Heroic Origin generally implies at least some elements of background.
 SUBSECTION/
 /SUBSECTION" Background "/
 
@@ -285,7 +291,10 @@ Traits are also used to govern the use of Fate.
 SUBSECTION/
 /SUBSECTION" Other Attributes"/
 
-Characters also have other less important attributes which are generally just descriptive. These include name, gender, orientation, height, weight, age, ethnicity, social class, and appearance. There are no specific rules for generating these attributes, nor do they have any mechanical effect in the game (although size is obviously related to height and weight it is up to the players to decide the details as they see fit). The GM may decide to factor these attributes into certain situation as she wishes. They might form the basis for boons, limitations, or simple story elements. GMs are of course free to attach novel mechanics to any attribute. 
+Characters also have other less important attributes which are generally just descriptive. These include name, gender, orientation, height, weight, age, ethnicity, 
+social class, and appearance. There are no specific rules for generating these attributes, nor do they have any mechanical effect in the game (although size is obviously 
+related to height and weight it is up to the players to decide the details as they see fit). The GM may decide to factor these attributes into certain situation as she 
+wishes. They might form the basis for boons, limitations, or simple story elements. GMs are of course free to attach novel mechanics to any attribute. 
 
 In general if a player wants to specify something, they can. They could use it as a narrative explanation for what happens 
 in the story, etc. My position, as the author of this work, is that these are all simply personal choices which allow players 
@@ -299,35 +308,48 @@ SECTION/
 The previous section detailed most of the things which appear on character sheets. This section details how to build a character from scratch.
 /SUBSECTION" Level"/
 
-Normally characters start at level 1. Sometimes you may generate a character which is higher level. This will require allocating a boon for each level beyond first. Note that in this case the character will have a non-zero level modifier, remember to incorporate this.
+Normally characters start at level 1. Sometimes you may generate a character which is higher level. This will require allocating a major boon for each level beyond first. 
+Note that in this case the character will have a non-zero level modifier, remember to incorporate this.
 SUBSECTION/
 /SUBSECTION" Species"/
 
-The first thing a player will want to determine is the species of his character. Is it a human, an eldar, or maybe a wose? This choice might be dictated by setting convention or other choices of specific genre which the participants have already made. Otherwise it will be up to the player. The chosen species is noted, it will be significant later.
+The first thing a player will want to determine is the species of his hero. Is it a human, an eldar, or maybe a wose? This choice might be dictated by setting 
+convention or other choices of specific genre which the participants have already made. Otherwise it will be up to the player. The chosen species is noted, it will 
+be significant later.
 SUBSECTION/
 /SUBSECTION" Calling"/
 
-Second the player will pick a calling for their character. Is it a knight, a wizard, a priest perhaps? As with species this choice might be dictated by circumstances. Players will probably want to discuss with each other who wishes to play what. Pay attention to the combat role of the calling, it is a good idea for the players to make sure they cover all the bases. A party will work fine without characters of every role, but a player might want to keep in mind which ones are and are not represented in the party when picking starting boons.
+Second the player will pick a calling for their hero. Is it a knight, a wizard, a priest perhaps? As with species this choice might be dictated by circumstances. 
+Players will probably want to discuss with each other who wishes to play what. Pay attention to the combat role of the calling, it is a good idea for the players to make 
+sure they cover all the bases. A party will work fine without heroes of every role, but a player might want to keep in mind which ones are and are not represented 
+in the party when picking starting boons.
+SUBSECTION/
+/SUBSECTION" Heroic Origin"/
+
+An origin is selected for the hero. You can pick any of the origins provided. This origin will probably include some background elements. Additional background elements
+may be chosen as desired, up to five background elements, one each of the types discussed above in the character attributes section. Not all five must be chosen, 
+the character may not be distinctive in all of these ways, although every character certainly has a place of birth a family of some sort, and a social station in life.
 SUBSECTION/
 /SUBSECTION" Abilities"/
 
-Once you know what species and calling the character will have, it is time to determine their abilities. 
+Once you know what species and calling the hero will have, it is time to determine their abilities. 
 
-/STRONG Standard Array: STRONG/ The simplest way to do this is to take the standard sequence of modifiers, +3, +2, +1, +1, +1, +1 and apply them in any order to your characters abilities. Another option is to use the point system outlined below
+/STRONG Standard Array: STRONG/ The simplest way to do this is to take the standard sequence of modifiers, +3, +2, +1, +1, +1, +1 and apply them in any order to your hero's 
+abilities. Another option is to use the point system outlined below.
 
-/STRONG Point Value: STRONG/ Start with 9 points. Each point of ability modifier costs one point. A character could be Strong in 3 areas and poor in the other 3, or any other combination adding up to 9 points of modifiers.
+/STRONG Point Value: STRONG/ Start with 9 points. Each point of ability modifier costs one point. A hero could be Strong in 3 areas and poor in the other 3, or any other 
+combination adding up to 9 points of modifiers.
 
-Using this system you can produce a character with potentially up to a +5 starting modifier in a given ability, although this will probably limit the character significantly in other areas. Consider applying a 'well rounded character' rule when using point buy. This limits all starting ability modifiers to at most +4. Doing so makes +5 an aspirational goal instead of an optimum starting bonus.
+Using this system you can produce a hero with potentially up to a +5 starting modifier in a given ability, although this will probably limit the character significantly 
+in other areas. Consider applying a 'well rounded character' rule when using point buy. This limits all starting ability modifiers to at most +4. Doing so makes +5 an 
+aspirational goal instead of an optimum starting bonus.
 
 Record the value for each ability and its modifier.
 SUBSECTION/
-/SUBSECTION" Background"/
-
-Characters may have up to five background elements, one each of the types discussed above in the character attributes section. Not all five must be chosen, the character may not be distinctive in all of these ways, although every character certainly has a place of birth a family of some sort, and a social station in life.
-SUBSECTION/
 /SUBSECTION" Hit points and healing value"/
 
-Characters starting hit points are calculated as CON + calling starting hit point value. Divide this number by 4, rounding down; this is your healing Value. The character's bloodied value can also be noted as 1/2 their maximum hit points, rounded down.
+Heroes starting hit points are calculated as CON + calling starting hit point value. Divide this number by 4, rounding down; this is the hero's healing Value. 
+The hero's bloodied value can also be noted as 1/2 their maximum hit points, rounded down.
 SUBSECTION/
 /SUBSECTION" Power"/
 
@@ -335,16 +357,16 @@ Your hero starts with 8 power, plus anything provided by any starting boons whic
 SUBSECTION/
 /SUBSECTION" Boons"/
 
-Each hero starts with the boons described under their calling's features. In some cases a given calling requires you to choose
-one from several available features. You may select another major boon chosen 
-from the calling's level 1 boons, or any major boon listed as available to your species or background. The hero also 
+Each hero starts with the boons described under their calling's features, their species' features, and their heroic origin's features. In some cases a given calling, 
+species, or origin requires you to choose one from several available features. In that case one of the options is chosen. One major boon is then chosen from the level 1
+major boons available amongst the hero's calling, species, and origin. The hero also 
 receives one minor boon listed from among their background elements, and any minor boons listed as being provided by their 
-species. Additionally the GM may allow you to pick one or more of these from any other boons that are available to level 
+species and origin. Additionally you might pick one or more of these from any other boons that are available to level 
 1 heroes. 
 SUBSECTION/
 /SUBSECTION" Record Proficiencies"/
 
-The hero's calling, species, and background, as well as their boons, may designate certain proficiencies which the hero 
+The hero's calling, species, origin, and background, as well as their boons, may designate certain proficiencies which the hero 
 will have. In some cases this may be a choice amongst multiple alternatives. Make any indicated choices and note them all. Every
 hero should have four knacks they are proficient with. If it happens that a character's other choices don't provide for four 
 knacks, then the player should simply select additional ones until they reach four; likewise heroes which have more than 
@@ -361,7 +383,8 @@ Wealth is essentially a sort of background detail of heroes. Most heroes are goi
 off as a wealth attribute (+1 to +3 ability modifier). A few might be poor, or even destitute, and there could be some rare 
 rich or even vast wealth heroes. A hero’s wealth attribute should be selected with the hero's entire background and concept in 
 mind. The details of the story genre being played may also be a factor. You may want to consult with the GM about what makes the 
-most sense, but players should generally be allowed to decide this detail for themselves.
+most sense, but players should generally be allowed to decide this detail for themselves. In some cases background and/or origin
+may describe a starting wealth.
 SUBSECTION/
 /SUBSECTION" Feats"/
 
@@ -370,9 +393,9 @@ granted by their boons.
 SUBSECTION/
 /SUBSECTION" Equipment"/
 
-Select equipment which is appropriate to your character and backstory. If a player wishes his character to begin with something 
-of higher than trivial value, then a wealth check should be made to determine whether or not the character was able to afford 
-the item. Some characters may have certain items as a result of boons or backgrounds. The participants in the game might decide 
+Select equipment which is appropriate to your hero and backstory. If a player wishes his character to begin with something 
+of higher than trivial value, then a wealth check should be made to determine whether or not the hero was able to afford 
+the item. Some heroes may have certain items as a result of boons, origin, or backgrounds. The participants in the game might decide 
 to limit or add to the standard equipment lists based on the needs of their game as well. Record what your character is carrying 
 and note its load.
 SUBSECTION/
@@ -383,63 +406,63 @@ STR, and tiny creatures at 10 + 10 * STR.
 SUBSECTION/
 /SUBSECTION" Load"/
 
-Add up all the loads of each piece of equipment being carried by the character and note the total.
+Add up all the loads of each piece of equipment being carried by the hero and note the total.
 SUBSECTION/
 /SUBSECTION" Encumbrance"/
 
-Note if the character is unencumbered, encumbered, or overloaded.
+Note if the hero is unencumbered, encumbered, or overloaded.
 SUBSECTION/
 /SUBSECTION" Movement"/
 
-Note the movement rate(s) and mode(s) of the character; base rates come from the character's species. If not otherwise specified 
-characters have a walking mode speed of 6; other modes will always be noted specifically.
+Note the movement rate(s) and mode(s) of the hero; base rates come from the hero's species. If not otherwise specified 
+heroes have a walking mode speed of 6; other modes will always be noted specifically.
 SUBSECTION/
 /SUBSECTION" Attacks"/
 
-All characters will have some form of attack. If nothing else every character can use the feat /REF Basic Attack REF/ . Attack 
+All heroes will have some form of attack. If nothing else every character can use the feat /REF Basic Attack REF/ . Attack 
 modifiers and damage expressions can be calculated as given in the section on feats.
 SUBSECTION/
 /SUBSECTION" Defenses"/
 
-All characters will have various options available to them in terms of defenses as well. They can simply employ their knacks 
+All heroes will have various options available to them in terms of defenses as well. They can simply employ their knacks 
 as defenses, or they can utilize the defense element of some feats. These can be noted on the character sheet.
 SUBSECTION/
 
 /SUBSECTION" Knack Modifiers "/
 
-Each character will have a specific modifier when employing a given knack to make a check. These modifiers will generally only 
-change if the character levels up. They should be recorded on the character sheet for easy reference. Each knack's modifier 
-is equal to the character's level modifier (0 for most starting heroes) plus the character's proficiency modifier with 
-that knack plus the character's ability modifier for the ability associated with that knack plus any permanent modifier they 
+Each hero will have a specific modifier when employing a given knack to make a check. These modifiers will generally only 
+change if the hero levels up. They should be recorded on the character sheet for easy reference. Each knack's modifier 
+is equal to the hero's level modifier (0 for most starting heroes) plus the hero's proficiency modifier with 
+that knack plus their ability modifier for the ability associated with that knack plus any permanent modifier they 
 might get from other sources.
 SUBSECTION/
 SECTION/
 /SECTION" Character Advancement"/
 
-As explained above, each character has a level, which determines the sorts of challenges the hero should be capable of 
+As explained above, each hero has a level, which determines the sorts of challenges they should be capable of 
 facing. As heroes have adventures, they will inevitably increase in level. The following rules govern this process.
 
-Whenever a hero receives a major boon she also advances to the next character level. At the participant's option a character 
+Whenever a hero receives a major boon she also advances to the next level. At the player's option a hero 
 might also lose a level under some circumstances, such as losing a particularly significant signature item or ability 
-permanently. Perhaps a hero has retired and put aside his heroic attributes. Such a character might be reduced to a more 
-appropriate level if he returns to the action at a later time. Mere separation of a character from objects or other temporary 
-losses of access to boons don't normally involve reducing the character's level. Level is more a measure of what a character 
+permanently. Perhaps a hero has retired and put aside his heroic attributes; such a character might be reduced to a more 
+appropriate level if he returns to the action at a later time. Mere separation of a hero from objects or other temporary 
+losses of access to boons don't normally involve reducing their level. Level is more a measure of what a character 
 has accomplished in a heroic sense, and his standing and connections to fate than what is currently in their possession or 
 their current circumstances.
 /SUBSECTION" Advancement Process"/
 
 When a hero has achieved a new major boon he will be eligible to advance to the next level. It is up to the GM to decide 
 exactly how and when this will happen. Normally, for convenience and to better fit the narrative of the game, the player and 
-GM will advance the character after the end of the current session of play, and/or whatever action the hero is currently engaged 
+GM will advance the hero after the end of the current session of play, and/or whatever action the hero is currently engaged 
 in. However it is perfectly legitimate to raise a hero's level in the middle of the action, this might represent some sudden and 
-profound change in the character, access to a whole new feat, etc. 
+profound change in the hero, access to a whole new feat, etc. 
 SUBSECTION/
 /SUBSECTION" Effects of Gaining a Level"/
 
-When a character acquires a new level the character immediately gains additional hit points equal to the  amount specified for 
-his calling. The character's bloodied and healing values will need to be recalculated. If the character's level modifier has 
+When a hero acquires a new level he immediately gains additional hit points equal to the  amount specified for 
+his calling. The hero's bloodied and healing values will need to be recalculated. If their level modifier has 
 changed, it will require recalculation of most of the other values on the character sheet, including defense modifiers, attack 
-modifiers, etc. A character's damage dice may also increase.
+modifiers, etc. A hero's damage dice may also increase.
 
 These increases are summarized on the table below:
 /DIVW=" 90%; margin-left: .5em"/
@@ -480,6 +503,6 @@ indicates the character's level modifier at this level.
 
 If an ability modifier increase is noted, then the player should pick one of the character's six abilities and increase it by 
 one rank, giving the character one better ability modifier with that ability and all associated knacks, attack bonuses, damage, 
-defenses, etc. 
+defenses, etc. Note that heroes abilities never advance past mighty to godlike.
 SECTION/
 CHAPTER/

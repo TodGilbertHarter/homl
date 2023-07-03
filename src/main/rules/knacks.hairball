@@ -47,95 +47,95 @@ A player may propose the use of a knack as a defense, such as Acrobatics in orde
 outcomes are not generally as favorable as those which might result from the defensive use of a feat. The following feat block 
 describes defensive knack use in terms of the general results which can be achieved.
 /LEFT=" half"/
-/FEAT /ID" 2635ce7e-7b0b-11ed-8593-74d02b9c2012"/ /SOURCE N/A SOURCE/ /TIER heroic TIER/ /FEATNAME Use Knack FEATNAME/
+/FEAT /ID" 2635ce7e-7b0b-11ed-8593-74d02b9c2012"/ /SOURCE none SOURCE/ /TIER heroic TIER/ /FEATNAME Use Knack FEATNAME/
 /ORIGIN N/A ORIGIN/
-/LEVEL 4 LEVEL/
-/ACTION Major ACTION/
-/TAGS Fire, Implement TAGS/
-/TYPETARGET ranged burst 3 within 10, all creatures TYPETARGET/
-/ATTACK Implement vs REF ATTACK/
-/COMPLETESUCCESS 3DD + INT + Implement damage and the target is pushed one square. COMPLETESUCCESS/
-/SUCCESS 3DD + INT + implement damage. SUCCESS/
-/FAILURE half damage. FAILURE/
-/FLAVOR You Conjure forth a blast of searing fire which burns anyone caught in the blast. FLAVOR/
+/LEVEL 1 LEVEL/
+/ACTION Free ACTION/
+/TAGS Defense TAGS/
+/DEFENSE knack vs * DEFENSE/
+/ENHANCED The attack misses and the attacker has disadvantage on their next attack against you ENHANCED/
+/COMPLETESUCCESS The attack misses and the attacker can be slid one square COMPLETESUCCESS/
+/SUCCESS The attack misses SUCCESS/
+/SPECIAL Any knack can be used as a defense against an appropriate attack. The GM determines what the the governing aspect is, if this is not already known SPECIAL/
+/FLAVOR Your innate skills allow you to avoid danger. FLAVOR/
 FEAT/
 LEFT/
 
 SUBSECTION/
 /SUBSECTION" Acrobatic "/
-/LABEL Knack LABEL/ Acrobatics, ability modifier DEX
+/KNACK" Acrobatics "/ KNACK/ , ability modifier DEX
 
 This aspect governs all sorts of situations in which a character might need to act in a highly coordinated and controlled manner, exercise good balance, precision, and similar kinds of actions. Tumbling, falling, narrow crossings, handling slippery or treacherous conditions, these are all the kinds of situations which would be governed by the acrobatic aspect. This aspect might also govern actions in combat such as dodging attacks or avoiding attempts to grab or restrain the character.
 SUBSECTION/
 
 /SUBSECTION" Arcane "/
-/LABEL Knack LABEL/ Arcana, ability modifier INT
+/KNACK" Arcana "/ KNACK/ , ability modifier INT
 
 This aspect governs all sorts of situations in which a character needs esoteric or specialized knowledge of magical or otherworldly things. Reading magical writing, detecting magic, analyzing magic, or otherworldly forces. Performing research on magical topics and procedures, properly performing rituals, these are all topics related to arcana. 
 SUBSECTION/
 /SUBSECTION" Athletic "/
-/LABEL Knack LABEL/ Athletics, ability modifier STR
+/KNACK" Athletics "/ KNACK/ , ability modifier STR
 
 This aspect deals with anything requiring strength, power, and overall athletic ability, such as running, jumping, climbing, swimming, etc. Anything that mostly requires a strong body and benefits from athletic practice is governed by the athletic aspect. This is particularly appropriate for actions which are mostly or completely strength related.
 SUBSECTION/
 /SUBSECTION" Bluffing "/
-/LABEL Knack LABEL/ Bluff, ability modifier CHA
+/KNACK" Bluff "/ KNACK/ , ability modifier CHA
 
 This aspect governs anything where deception is being employed. Anytime a character attempts to mislead, misdirect, fool, or simply outright lie to an NPC they will employ the Bluff knack. This included things like trying to pass off fake papers or other sorts of cons and scams as well. 
 SUBSECTION/
 /SUBSECTION" Diplomatic "/
-/LABEL Knack LABEL/ Diplomacy, ability modifier CHA
+/KNACK" Diplomacy "/ KNACK/ , ability modifier CHA
 
 The diplomatic aspect governs all situations involving befriending, negotiating with, or otherwise interacting with other people in which the character is relatively honest and not using threats or lies. Most business deals, alliances, and similar situations will be governed by this aspect. Diplomatic characters are able to make friends and allies, and get deals done.
 
 SUBSECTION/
 /SUBSECTION" Engineered "/
-/LABEL Knack LABEL/ Engineering, ability modifier INT
+/KNACK" Engineering "/ KNACK/ , ability modifier INT
 
 The engineered aspect governs all situations involving a knowledge and practice of mechanics, construction, and similar. When a character builds something, assesses the function of a thing, repairs it, tries to understand it, etc. then the action is controlled by this aspect.
 SUBSECTION/
 /SUBSECTION" Health "/
-/LABEL Knack LABEL/ Healing, ability modifier WIS
+/KNACK" Healing "/ KNACK/ , ability modifier WIS
 
 The health aspect governs all situations where a character is healing another, providing health advice, understanding a disease, curing a wound, treating poison, etc. 
 SUBSECTION/
 /SUBSECTION" Historical "/
-/LABEL Knack LABEL/ History, ability modifier INT
+/KNACK" History "/ KNACK/ , ability modifier INT
 
 The historical aspect governs all actions which relate to knowing, understanding, researching, or explaining anything historical, or an action where historical knowledge or understanding could be highly useful. Characters with a history knack tend to have an understanding of history and the nature of historical processes, and to use this to draw conclusions, reason about the current situation, etc. 
 SUBSECTION/
 /SUBSECTION" Insightful "/
-/LABEL Knack LABEL/ Insight, ability modifier WIS
+/KNACK" Insight "/ KNACK/ , ability modifier WIS
 
 The insightful aspect deals with situations in which a character takes an action which relies on understanding another person, their motivations, personality, and likely behavior. It also deals with being able to spot information about people based on this understanding. Generally it can come into play when determining the truthfulness of a statement, reliability of an NPC, etc.
 SUBSECTION/
 /SUBSECTION" Intimidating "/
-/LABEL Knack LABEL/ Intimidation, ability modifier CHA
+/KNACK" Intimidation "/ KNACK/ , ability modifier CHA
 
 The intimidating aspect deals with actions related to frightening, cowing, or threatening others. Any time a character attempts to get what he wants by threat, then the intimidation knack could be used.
 SUBSECTION/
 /SUBSECTION" Leading "/
-/LABEL Knack LABEL/ Leadership, ability modifier CHA
+/KNACK" Leadership "/ KNACK/ , ability modifier CHA
 
 The leading aspect comes into play whenever a character attempts to command others, or when attempting to understand a command situation, such as knowing what commands an NPC might follow or not follow, or who is in command in a given situation.
 SUBSECTION/
 /SUBSECTION" Natural "/
-/LABEL Knack LABEL/ Nature, ability modifier WIS
+/KNACK" Nature "/ KNACK/ , ability modifier WIS
 
 The natural aspect governs when an action is taken which relies on understanding or utilizing the natural aspect of a thing. This could be taming an animal, finding food in the wilderness, orienteering, or coming up with information on things in nature.
 SUBSECTION/
 /SUBSECTION" Perceptive "/
-/LABEL Knack LABEL/ Perception, ability modifier WIS
+/KNACK" Perception "/ KNACK/ , ability modifier WIS
 
 The perceptive aspect governs whenever a character is looking for something, watching something, or attempting to notice some clue or attribute of a place or situation. It could be used if a character searched an area, or attempted to track an enemy, etc.
 SUBSECTION/
 /SUBSECTION" Religious "/
-/LABEL Knack LABEL/ Religion, ability modifier INT
+/KNACK" Religion "/ KNACK/ , ability modifier INT
 
 The religious aspect governs any situation where a character is exercising spiritual or religious understanding or knowledge. This would be the case when needing to know facts about a religion or religious or spiritual practice or ritual.
 SUBSECTION/
 /SUBSECTION" Stealthy "/
-/LABEL Knack LABEL/ Stealth, ability modifier DEX
+/KNACK" Stealth "/ KNACK/ , ability modifier DEX
 
 The stealthy aspect governs all attempts to hide, sneak, conceal, or ambush. 
 /TOPIC" Hiding"/
@@ -154,17 +154,17 @@ Stealth could be used to hide things besides a character. It could be used to co
 TOPIC/
 SUBSECTION/
 /SUBSECTION" Streetwise "/
-/LABEL Knack LABEL/ Streetwise, ability modifier CHA
+/KNACK" Streetwise "/ KNACK/ , ability modifier CHA
 
 This aspect governs all situations where an action is taken which relies on understanding or utilizing the social and political organization of some sort of inhabited location. It might come into play when determining who has influence, where things are located, how the power structure and politics of an urban area work, etc. 
 SUBSECTION/
 /SUBSECTION" Surviving "/
-/LABEL Knack LABEL/ Survival, ability modifier CON
+/KNACK" Survival "/ KNACK/ , ability modifier CON
 
 This aspect governs situations where a character is enduring, resisting, or fortifying himself against an environmental condition, resisting an affliction, or attempting accomlish some action despite adverse conditions.
 SUBSECTION/
 /SUBSECTION" Thieving "/
-/LABEL Knack LABEL/ Thievery, ability modifier DEX
+/KNACK" Thievery "/ KNACK/ , ability modifier DEX
 
 This aspect governs attempts to steal, legerdemain, slight of hand, and dealing with the common situations encountered by those who appropriate the goods of others by nefarious means. 
 SUBSECTION/

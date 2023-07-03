@@ -18,20 +18,23 @@ Object.keys(data["callings"]).forEach((calling) => {
 
 function handleCalling(calling) {
 	if(!calling.hasOwnProperty('features')) { calling.features = []; }
-	calling.features = calling.features.map((feature) => {
-		return admin.firestore().doc(`boons/${feature}`);
-	});
+	if(typeof calling.features !== 'undefined') {
+		calling.features = calling.features.map((feature) => {
+			return admin.firestore().doc(`boons/${feature}`);
+		});
+	}
 	
 	if(!calling.hasOwnProperty('boons')) { calling.boons = []; }
-	calling.boons = calling.boons.map((boon) => {
-		return admin.firestore().doc(`boons/${boon}`);
-	});
-// console.log("WTF IS WRONG HERE "+JSON.stringify(calling));
+	if(typeof calling.boons !== 'undefined') {
+		calling.boons = calling.boons.map((boon) => {
+			return admin.firestore().doc(`boons/${boon}`);
+		});
+	}
 	upload(calling,['callings',calling.id]);
 }
 
 async function upload(data, path) {
-  return await admin.firestore()
+  var result = await admin.firestore()
     .doc(path.join('/'))
     .set(data)
     .then(() => console.log(`Document ${path.join('/')} uploaded.`))

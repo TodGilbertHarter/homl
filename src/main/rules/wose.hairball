@@ -1,0 +1,114 @@
+/SPECIES /ID" ce795782-7a57-11ec-8957-74d02b9c2012"/
+/SPECIESNAME Wose SPECIESNAME/
+/TRAITS
+/SIZE Medium SIZE/
+/SPEED 6 SPEED/
+/HEIGHT 152cm - 230cm HEIGHT/
+/WEIGHT 50kg - 150kg WEIGHT/ 
+TRAITS/
+The wose are a species of beings unlike the more fleshly bodies of men, eldar, and dwarves. Their bodies are more vegetable in nature than those of the other species, and they look quite plantlike, with skin which resembles, bark, moss, or sometimes stone. 
+
+Wose are originally creatures of the deep forest, and they are most at home in wooded glens, thick forests, and even dense jungles and wooded swamps. From time to time they are seen in other territories, however, and they are perfectly capable of surviving in a variety of habitats if they must.
+
+The origins and history of the wose is obscure. While they are accomplished lore-masters in their own way they rarely produce written works and usually have limited contact with humanoid species such as humans. While their are reports of these creatures going back many centuries it is only recently that they have appeared in considerable numbers and come to the attention of men in general.
+
+The truth is that the wose pecies has existed in small numbers, mostly in the realm of Fairy for many ages, but in recent times they have entered the natural world in force, heeding the call of the nature spirits they call their creators to come and protect the world from those who would ravage the forests and the land.
+/SUBSECTION" Culture"/
+
+Wose culture is rather different from that of creatures like humans. Although they do produce things, and have communities, individual wose are able to fairly easily exist simply by standing in a favorable location and soaking up the sunlight. They are not, therefor, compelled to order themselves into complex productive communities with elaborate economies. Instead the wose seem more driven by their essential nature. They travel the wild forested lands of the world(s) acting as wardens, tending to the woods wherever they go.
+
+This doesn't mean that the wose have no community, but it is more likely to be organized around and driven by concerns related to this natural drive. Thus there are orders and schools of wose who pursue various strategies and hone a variety of different traditional skills which they use in their mission. These various groups don't always see eye-to-eye either. There can be rather significant differences of opinion over questions of approach and strategy, or acceptable practices.
+
+Another factor is that wose don't have a particularly strong emphasis on families and biological relations. A new wose is planted by its seed mother, and then left to emerge as a sapling and find its own way in the world. The upshot being that orders, schools, circles, and looser associations based on individual loyalty, reputation, convergence of interests and beliefs, etc. play the dominant role in their society.
+
+Thus a wose may be known for having specific skills, but they don't really fall into well-defined socio-economic groupings. There are elders who have superior skills and knowledge, but they are not, per se, vested with political power and there are no such things as titles analogous to those amongst humans. Instead wose have stories, which are vast long utterances that detail their various experiences, alliances, affiliations, accomplishments, and stories. Since individual wose may live for an indefinite time period these stories can become quite long and complex. It is said that the eldest of the wose would require days to recount their names!
+/TOPIC" Backgrounds"/
+
+Wose would most likely have backgrounds related to hunting, tracking, or various sorts of crafting. They do have forms of entertainment, mostly relating to retelling of old histories and lore in oral form.
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Varieties"/
+
+There are 3 separate types of wose, the ancients who are the oldest ancestral form of wose, and two newer forms, the hunters and the guardians. All wose have a basically humanoid appearance. They walk upright on two leg-like limbs and possess arms roughly similar to those of humanoids. Their hands and feet are irregular and varying in shape, but all have a number of root-like fingers and toes. Their heads are often somewhat oddly shaped, square, lopsided, or craggy and stone-like. Their eyes are deep-set and have the appearance of polished stone or deep pools of water with no white showing.
+
+/TOPIC" Ancients"/
+Appear greenish or gray and their skin appears to be covered in moss, while on their heads a tangle of vine-like material, usually tangled with a few leaves, has the appearance of hair. Their eyes look like gazing into a deep pool, ranging from a medium blue color to pitch black. Ancients tend to have a medium build.
+TOPIC/
+/TOPIC" Hunters"/
+Appear woody and their skin is bark-like in appearance. Their heads are covered in a twiggy mass which has the appearance of a tangle of small shrubby branches. A hunter's eyes have catlike pupils and an iris varying from grayish green to dark green or dark amber. Hunters are generally the tallest and thinnest of the wose.
+TOPIC/
+/TOPIC" Guardians"/
+Appear stony and there skin has the consistency of rock, usually looking a bit like lichen-stained granite or sometimes limestone. The eyes of guardians have a dry stony look to them as well, though they do appear slightly polished. The iris is usually grayish red to dark red in color. Guardians are usually the shortest of the wose, and are very heavily built, being almost dwarf-like in their proportions. Their fingers and toes are short, stubby, and stone-like, with a powerful grip.
+TOPIC/
+SUBSECTION/
+/SUBSECTION" Benefits"/
+/SPECIESFEATURES
+The following boons are associated with the wose species:
+/FLEXROW
+/FLEXCELL
+/BOON /ID" f36e9f00-0d65-11ee-8000-c87f5455cfcc"/ /BOONNAME Light Drinker BOONNAME/
+/BOONTYPE Species: Minor BOONTYPE/
+/ASSOCIATION Wose ASSOCIATION/
+/PREREQUISITES Wose PREREQUISITES/
+/DESCRIPTION
+You are able to survive on sunlight alone.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT Standing in the sunlight for 6 hours is equivalent to eating a meal. If you were suffering from /REF Starvation REF/ you recover by one level. BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+FLEXCELL/
+FLEXROW/
+SPECIESFEATURES/
+/SPECIESBOONS
+
+Wose characters may choose one of the following major boons at first level
+/FLEXROW
+/FLEXCELL
+/BOON /ID" 97e76066-69f3-11ec-af3f-74d02b9c2012"/ /BOONNAME Child of the Wood BOONNAME/
+/BOONTYPE Species: Major BOONTYPE/
+/ASSOCIATION Wose ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You were brought up amongst the wose and know their ways.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT You have proficiency in the Nature knack. BENEFIT/
+/BENEFIT You can speak Wose. BENEFIT/
+/BENEFIT You are proficient with the spear and dagger. BENEFIT/
+/BENEFIT Your knowledge of plantlife is extensive, gain a proficiency bonus to any check relating to plants or knowledge about plants. BENEFIT/
+/BENEFIT You gain access to the following feats:
+
+/FEAT /ID" 1dc7c454-77ab-11ec-b82b-74d02b9c2012"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Silence of the Ancients FEATNAME/
+/ORIGIN Child of the Wood ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Major ACTION/
+/TAGS stealth TAGS/
+/TYPETARGET self TYPETARGET/
+/EFFECTS You have advantage on any check to avoid being tracked in a natural setting. EFFECTS/
+/FLAVOR You pass through the undergrowth without leaving the slightest trace. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /ID" a43dcd46-69f3-11ec-bdb5-74d02b9c2012"/ /BOONNAME Web of Nature BOONNAME/
+/BOONTYPE Species: Major BOONTYPE/
+/ASSOCIATION Wose ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You have an unusually close connection with the life power source.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT You can consider up to 2 of your power points per recovery to be attuned to the life power source, even if you do not have such an attunement. BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+FLEXROW/
+All wose characters receive the following minor boons.
+SPECIESBOONS/
+SUBSECTION/
+SPECIES/

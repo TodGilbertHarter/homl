@@ -1,0 +1,82 @@
+/SPECIES /ID" b740aeda-7a57-11ec-aad9-74d02b9c2012"/
+/SPECIESNAME Human SPECIESNAME/
+/TRAITS
+/SIZE Medium SIZE/
+/SPEED 6 SPEED/
+/HEIGHT 152cm - 185cm HEIGHT/
+/WEIGHT 45kg - 100kg WEIGHT/ 
+TRAITS/
+Humans are typical inhabitants of the world. They are ordinary people. In many settings humans are the most common or even the only species which exists. Humans are the assumed baseline for player characters. Where other species differ from humans they are provided with racial attributes and limitations which illustrate those differences. Human heroes are likely to have any calling.
+/SUBSECTION" Culture "/
+
+Human cultures are highly varied and humans are quick to adapt, adopting practices and ideas from other humans, or even other species, relatively quickly and easily. Many human cultures have included non-humans and here too humans tend to be relatively flexible; at the same time humans can be quite militant and stubborn about their values and practices. They are often quite willing to go to war over a cultural dispute, yet a couple of decades later they may change their attitudes entirely, making one wonder what the fuss was about.
+
+In religious practices humans are likewise both flexible and opinionated. While a human culture may quickly accept a new religious idea, or a new god, on the one hand, an individual human may prove to be quite ready to die rather than change her beliefs one iota. Humans tend to make a big show of their religious activities, building large temples and holding elaborate rituals; priesthoods are often highly organized and influential in human societies.
+
+Humans adopt a wide variety of different social organization types. Some live in small family groups with little other organization. Other humans live in large societies with a high degree of organization and social structure where each person belongs to a distinct social group. Likewise humans employ a wide variety of political systems; one region may be a despotism, completely with slavery; another region may be organized as a feudal monarchy; and a third might be a republic.
+
+In game terms backgrounds of any social class, occupation, etc. are potentially open to all humans.
+SUBSECTION/
+/SUBSECTION" Benefits"/
+/FLEXROW
+/FLEXCELL
+/SPECIESFEATURES
+All humans have the following species features.
+/BOON /ID" 888b294a-69f3-11ec-9e79-74d02b9c2012"/ /BOONNAME Resourceful BOONNAME/
+/BOONTYPE Species: Major BOONTYPE/
+/ASSOCIATION Human ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+Humans are known for their resourceful and adaptable nature.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You gain an added knack proficiency. Pick any knack, you are proficient in it.
+BENEFIT/
+/BENEFIT
+You gain access to the following feat: /BR
+/FEAT /ID" 1062e3ca-77ab-11ec-ab00-74d02b9c2012"/ /SOURCE none SOURCE/ /TIER heroic TIER/ /FEATNAME Adapt to Circumstances FEATNAME/
+/ORIGIN Human ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION No Action ACTION/
+/EFFECTS Gain a +3 Proficiency Bonus on a check. EFFECTS/
+/SPECIAL You cannot use this feat again until you take a long rest. SPECIAL/
+/FLAVOR You figure it out. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+SPECIESFEATURES/
+FLEXCELL/
+/FLEXCELL
+/SPECIESBOONS
+Human characters may select from the following boons.
+/BOON /ID" 3f9627ca-0d5e-11ee-8002-c87f5455cfcc"/ /BOONNAME Resourceful BOONNAME/
+/BOONTYPE Species: Major BOONTYPE/
+/ASSOCIATION Human ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+Humans are known for their resourceful and adaptable nature.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You gain an added knack proficiency. Pick any knack, you are proficient in it.
+BENEFIT/
+/BENEFIT
+You gain access to the following feat: /BR
+/FEAT /ID" 1062e3ca-77ab-11ec-ab00-74d02b9c2012"/ /SOURCE none SOURCE/ /TIER heroic TIER/ /FEATNAME Adapt to Circumstances FEATNAME/
+/ORIGIN Human ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION No Action ACTION/
+/EFFECTS Gain a +3 Proficiency Bonus on a check. EFFECTS/
+/SPECIAL You cannot use this feat again until you take a long rest. SPECIAL/
+/FLAVOR You figure it out. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+SPECIESBOONS/
+FLEXCELL/
+FLEXROW/
+SUBSECTION/
+SPECIES/

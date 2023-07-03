@@ -63,7 +63,8 @@ SUBSECTION/
 /DESCRIPTION Through discipline and force of will you have tapped into the internal power of your being. DESCRIPTION/
 /BENEFITS 
 /BENEFIT
-You are attuned to the Martial power source. Your power points may be used with feats and effects having the martial source tag. You are considered a practitioner of martial power.
+You are attuned to the Martial power source. Your power points may be used with feats and effects having the martial source tag. You are considered a practitioner of 
+martial power.
 BENEFIT/
 BENEFITS/
 BOON/
@@ -134,7 +135,7 @@ All characters with a life calling gain the Life Attunement boon:
 
 The following callings draw their power from the life power source.
 /SOURCE" berserker.hairball"/
-/SOURCE" beastmaster.hairball"/
+/* /SOURCE" beastmaster.hairball"/ */
 SUBSECTION/
 /SUBSECTION" Spirit Callings"/
 /RIGHT=" half"/
