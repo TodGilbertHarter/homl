@@ -121,7 +121,7 @@ class CharacterSheet extends HTMLElement {
     setCharacterListItems(elementId,items) {
 		const listElement = this.shadowRoot.getElementById(elementId);
 		items.forEach((item) => {
-			listElement.addItem(item);
+			listElement.addItem(item, () => {});
 		});
 	}
 }
@@ -131,21 +131,26 @@ window.customElements.define('character-sheet',CharacterSheet);
 class BackgroundField extends LitElement {
 	static properties = {
 		type: {},
-		value: {}
+		value: {},
+		text: {}
 	};
-	backgroundValues = [];
+	
+	constructor() {
+		super();
+		this.bgValues = [];
+	}
 	
 	render() {
 		return html`<div class="attribute">
 			<label>${this.type}</label>
-			<select id='valueselect' value='${this.value}'></select>
-			<input id='input' value="">
+			<select id='valueselect' .value='${this.value}'></select>
+			<input id='input' .value="${this.value}">
 		</div>`;
 	}
 	
 	firstUpdated() {
 		const text = this.innerHTML;
-		const input = this.shadowRoot.getELementById('input');
+		const input = this.shadowRoot.getElementById('input');
 		input.value = text;
 	}
 	
@@ -154,17 +159,25 @@ class BackgroundField extends LitElement {
 	};
 	
 	set backgroundType(bgtype) {
-		
+		this.type = bgtype;
 	}
 	
 	set backgroundValues(values) {
-		this.backgroundValues = backgroundValues;
+		this.bgValues = values;
 		const selector = this.shadowRoot.getElementById('valueselect');
 		var valueText = '';
 		values.forEach((value) => {
 			valueText = valueText + `<option>${value}</option>`;
 		});
 		selector.innerHTML = valueText;
+	}
+	
+	get backgroundValues() {
+		return this.bgValues;
+	}
+	
+	get backgroundType() {
+		return this.type;
 	}
 }
 

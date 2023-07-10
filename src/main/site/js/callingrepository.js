@@ -47,9 +47,8 @@ class CallingRepository {
     }
 
 	/**
-	 * Convert a collection of character document references into Character objects by looking them
-	 * up in firestore. This is intended to handle converting lists of characters from a game or a
-	 * player into Character objects.
+	 * Convert a collection of calling document references into Calling objects by looking them
+	 * up in firestore. This is intended to handle converting lists of callings into Calling objects.
 	 *
 	 * @param {[docs]} characters an array of character docrefs.
 	 * @param {function([Character])} onDataAvailable callback to handle the results.
@@ -80,7 +79,7 @@ class CallingRepository {
                 console.log("GOT "+r.id);
                 var data = r.data();
                 data.id = r.id;
-                console.log("Character data is:"+JSON.stringify(data));
+                console.log("Calling data is:"+JSON.stringify(data));
                 onDataAvailable(data);
             } ) });
     }

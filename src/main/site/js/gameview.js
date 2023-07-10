@@ -22,22 +22,23 @@ class GameView extends LitElement {
 		gameId: {},
 		value: {}
 	};
-	/** @private */ model;
 	
 	constructor() {
 		super();
 	}
 	
 	render() {
-		return html`		<style>
-			div.list > div {
+		return html` <style>
+			div.gamedescription {
 				display: flex;
+				flex-wrap: wrap;
 			}
-			div.list > div > div {
-				flex: 1;
+			div.gamedescription > div.fieldlabel {
+				font-weight: bold;
+				flex:25%;
 			}
-			.clickable {
-				cursor: pointer;
+			div.gamedescription > div.fieldvalue {
+				flex: 75%;
 			}
 		</style>
 		<div class='gameview' part='gameview' id='gameview'>
@@ -49,16 +50,27 @@ class GameView extends LitElement {
 		gameview.innerHTML = `<p>Getting data for game ${this.gameId}</p>`;
 	}
 	
-	showGame(game) {
-		this.model = game;
+	updated(changed) {
+		super.updated(changed);
+		this.displayGame();
+	}
+	
+	displayGame() {
 		const gameview = this.shadowRoot.getElementById('gameview');
-		game.getCharacters((characters) => {
-			gameview.innerHTML = `<div class='fieldlabel'>Game Name:</div><div class='fieldvalue'>${game.name}</div>
-			<character-list class=characterlist id="characterlist"></character-list>`;
-			const clist = this.shadowRoot.getElementById('characterlist');
-			clist.setModel(characters);
-		});
-
+		const model = this.value;
+		if(typeof model !== 'undefined') {
+			model.getCharacters((characters) => {
+				gameview.innerHTML = `<div class="gamedescription"><div class='fieldlabel'>Game Name:</div><div class='fieldvalue'>${model.name}</div></div>
+				<div class='textdescription'>${model.description}</div>
+				<character-list class=characterlist id="characterlist"></character-list>`;
+				const clist = this.shadowRoot.getElementById('characterlist');
+				clist.setModel(characters);
+			});
+		}
+	}
+	
+	showGame(game) {
+		this.value = game;
 	}
 		
 }

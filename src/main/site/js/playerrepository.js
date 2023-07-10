@@ -52,7 +52,10 @@ class PlayerRepository {
 		if(playerRef instanceof Player) {
 			onSuccess(playerRef); // Because it is actually a player, not a ref!
 		} else {
-			getDoc(playerRef).then((player) => onSuccess(player));
+			playerRef.withConverter(playerConverter);
+			getDoc(playerRef).then((player) => { 
+				onSuccess(player);
+			});
 		}
 	}
 	

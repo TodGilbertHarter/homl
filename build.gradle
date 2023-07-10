@@ -316,12 +316,26 @@ task uploadSpecies(type: NodeTask) {
 	args = ['build/rules/compendium.json']
 }
 
+task uploadOrigins(type: NodeTask) {
+	description 'upload heroic origin data to firestore'
+	script = file('./scripts/upload_origins.js')
+	args = ['build/rules/compendium.json']
+}
+
+task uploadBackgrounds(type: NodeTask) {
+	description 'upload background data to firestore'
+	script = file('./scripts/upload_backgrounds.js')
+	args = ['build/rules/compendium.json']
+}
+
 task uploadData {
 	description 'upload compendium data to firestore'
 	dependsOn 'uploadBoons'
 	dependsOn 'uploadFeats'
 	dependsOn 'uploadCallings'
 	dependsOn 'uploadSpecies'
+	dependsOn 'uploadOrigins'
+	dependsOn 'uploadBackgrounds'
 }
 
 task closureCompile(type: NpxTask) {

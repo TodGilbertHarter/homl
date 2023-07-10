@@ -17,11 +17,13 @@
 import { html, LitElement } from 'https://unpkg.com/lit@2.0.2/index.js?module';
 
 class CharacterList extends LitElement {
-	/** @private */ model;
-	/** @private */ playerRepo;
+	static properties = {
+		model: {}
+	}
 	
 	constructor() {
 		super();
+		this.playerRepo = window.gebApp.playerRepo;
 	}
 	
 	render() {
@@ -43,13 +45,13 @@ class CharacterList extends LitElement {
 		</div>`;
 	}
 
-	firstUpdated() {
-		this.playerRepo = window.gebApp.playerRepo;
-	}	
+	updated(changed) {
+		super.updated(changed);
+		this.displayList();
+	}
 	
 	setModel(model) {
 		this.model = model;
-		this.displayList();
 	}
 	
 	getRenderFn() {
@@ -63,8 +65,9 @@ class CharacterList extends LitElement {
 			list.innerHTML = '';
 			model.forEach((character) => {
 				this.playerRepo.getReferencedPlayer(character.owner, (owner) => {
+				const email = typeof owner === "undefined" ? "unknown" : owner.email;
 				const gRow = window.gebApp.theDocument.createElement('div');
-				gRow.innerHTML = `<div class='clickable'>${character.name}</div><div>${owner.email}</div>`;
+				gRow.innerHTML = `<div class='clickable'>${character.name}</div><div>${email}</div>`;
 				list.appendChild(gRow);
 				gRow.firstChild.addEventListener('click',(e) => { 
 					console.log(`clicked on character named ${character.name}`);

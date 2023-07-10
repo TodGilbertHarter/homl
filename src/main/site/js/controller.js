@@ -146,6 +146,9 @@ class Controller {
 		window.location.hash = '/creategame';
 	}
 
+	handleSaveGame(game) {
+		console.log("GOT TO SAVE GAME");
+	}
 	/**
 	 * Handle the actual signup process via the authenticator.
 	 */

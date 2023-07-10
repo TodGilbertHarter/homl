@@ -81,7 +81,7 @@ HEROICORIGINFEATURES/
 /HEROICORIGINBOONS
 HEROICORIGINBOONS/
 HEROICORIGIN/
-/HEROICORIGIN /ID" 214a2be4-03f0-11ee-a8c3-c87f5455cfcc"/
+/HEROICORIGIN /ID" 1ef844d0-1943-11ee-a97c-c87f5455cfcc"/
 /ORIGINNAME Half Dragon ORIGINNAME/
 /TRAITS
 /HEROICORIGINDESCRIPTION You are a descendant of the dragons HEROICORIGINDESCRIPTION/
@@ -183,18 +183,18 @@ TABLE/
 LEFT/
 
 Where and how were you born? Were their unusual circumstances involved in your birth? The following elements are possible interesting birth related elements. You will have to fill in the specific details.
-/BACKGROUND
-/BACKGROUNDTYPE birth BACKGROUNDTYPE/
+/BACKGROUND /ID" febb0a66-1e8a-11ee-a1fe-c87f5455cfcc"/
 /BACKGROUNDNAME Orphan BACKGROUNDNAME/
+/BACKGROUNDTYPE birth BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You have no family that you know of. Instead you grew up on the streets or in a place provided by a local temple or ruler for orphaned children. You learned early on that you have to stick up for yourself because you have nobody else to depend on. Perhaps you are withdrawn and distrustful, or perhaps you are very outgoing and seek out friends to replace your missing family.
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS Add /REF Streetwise REF/ or /REF Survival REF/ to your list of available knacks. BACKGROUNDKNACKS/
 /BACKGROUNDBOONS You gain the /REF Urban Knowledge REF/ boon. BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE birth BACKGROUNDTYPE/
+/BACKGROUND /ID" 993a61c6-1e96-11ee-aee1-c87f5455cfcc"/
 /BACKGROUNDNAME Adopted BACKGROUNDNAME/
+/BACKGROUNDTYPE birth BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You grew up in a family other than your natural birth family. Are you grateful to them for 
 taking you in? Did they treat you well? Do you know who your natural parents are? Did 
@@ -203,49 +203,53 @@ BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS Add /REF Diplomacy REF/ or /REF Insight REF/ to your list of available knacks. BACKGROUNDKNACKS/
 /BACKGROUNDBOONS TBD BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE birth BACKGROUNDTYPE/
+/BACKGROUND /ID" aec97374-1e96-11ee-8232-c87f5455cfcc"/
 /BACKGROUNDNAME Omen BACKGROUNDNAME/
+/BACKGROUNDTYPE birth BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 An omen occurred at the time of your birth, foretelling some great event or catastrophe. 
 What was this omen? What does it foretell? How did your family react? Are you the only 
 one affected by this omen?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
-Add /REF History REF/ or /REF Religion REF/ to your list of available knacks.BACKGROUNDKNACKS/
+Add /REF History REF/ or /REF Religion REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS You may select the minor boon /REF Spooky Demeanor REF/ . BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE birth BACKGROUNDTYPE/
+/BACKGROUND /ID" cbccf6c6-1e96-11ee-9a15-c87f5455cfcc"/
 /BACKGROUNDNAME Curse BACKGROUNDNAME/
+/BACKGROUNDTYPE birth BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You were cursed at birth. Who cursed you? What are the details of the curse? Is it a real 
 curse? How did other people react to this curse?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Arcana REF/ or /REF Religion REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS You may select the minor boon /REF Hexed REF/ . BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE birth BACKGROUNDTYPE/
+/BACKGROUND /ID" ea1c98a2-1e96-11ee-be15-c87f5455cfcc"/
 /BACKGROUNDNAME Prophesy BACKGROUNDNAME/
+/BACKGROUNDTYPE birth BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 A prophesy was foretold about your birth. What does the prophesy entail? Is it good or 
 bad? Do you believe in it?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Religion REF/ or /REF Nature REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS You may select the minor boon /REF Appointed REF/ . BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE birth BACKGROUNDTYPE/
+/BACKGROUND /ID" 02068432-1e97-11ee-951a-c87f5455cfcc"/
 /BACKGROUNDNAME Legacy BACKGROUNDNAME/
+/BACKGROUNDTYPE birth BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 Your family has bequeathed you with some sort of legacy. Is this an item or piece of 
 property? Is it a duty or an obligation? Is it a reputation?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Leadership REF/ or /REF Diplomacy REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You have an item worth a major expense, or a small income.
 BACKGROUNDBOONS/
@@ -267,105 +271,113 @@ TABLE/
 LEFT/
 
 What did the character do before becoming an adventurer? Perhaps this is still the character's job.
-/BACKGROUND
-/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
+/BACKGROUND /ID" 1e63ab6e-1e97-11ee-ab11-c87f5455cfcc"/
 /BACKGROUNDNAME Farmer BACKGROUNDNAME/
+/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You farmed the land. What did you grow? What happened to your farm?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Nature REF/ or /REF Perception REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may own an animal of some sort, it could be a riding horse, a dog, etc.
 You have specific knowledge of agriculture.
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
+/BACKGROUND /ID" 3413d11e-1e97-11ee-b440-c87f5455cfcc"/
 /BACKGROUNDNAME Artisan BACKGROUNDNAME/
+/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You were a craftsman of some sort. What kind of things did you craft? Did you have your own business? Does it still exist?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Engineering REF/ or /REF Arcana REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may select /REF Professional Contacts REF/ as your minor background boon.
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
+/BACKGROUND /ID" 50ba9cbc-1e97-11ee-8624-c87f5455cfcc"/
 /BACKGROUNDNAME Entertainer BACKGROUNDNAME/
+/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You were an entertainer. What kind of entertainment do you practice? Are you well known? Where did you ply your trade?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Acrobatics REF/ or /REF Bluff REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You can select /REF Acrobat REF/ as your starting major boon. You can select /REF Professional Contacts REF/ as your minor background boon.
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
+/BACKGROUND /ID" 6b73beee-1e97-11ee-85c2-c87f5455cfcc"/
 /BACKGROUNDNAME Criminal BACKGROUNDNAME/
+/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You were on the wrong side of the law. Were you a career criminal? Why were you a criminal? Are you still a criminal? Do you have 
 criminal associates?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Thievery REF/ or /REF Streetwise REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You can select the /REF Thief REF/ , /REF Pirate REF/ , or /REF Trickster REF/ boon as your starting major boon. 
 You can select the /REF Criminal Contacts REF/ boon as your minor background boon.
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
+/BACKGROUND /ID" 8784100c-1e97-11ee-8367-c87f5455cfcc"/
 /BACKGROUNDNAME Merchant BACKGROUNDNAME/
+/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You were a buyer and seller of goods. What was your business? Did you travel or did you have a shop? Was it a family business? 
 Did you own it?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Bluff REF/ or /REF Insight REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You can select /REF Professional Contacts REF/ and take 75sp as your minor background boon.
 You have proficiency with business matters.
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
+/BACKGROUND /ID" 9f29ea7e-1e97-11ee-8dd5-c87f5455cfcc"/
 /BACKGROUNDNAME Soldier BACKGROUNDNAME/
+/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You were part of a military organization. Were you a rank-and-file soldier or a leader? Were you honorably discharged? 
 Do you have friends who are soldiers? Where did you serve? Did you see action?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Survival REF/ or /REF Leadership REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You can take /REF Professional Contacts REF/ and a suit of mail as your minor background boon.
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
+/BACKGROUND /ID" b5cab646-1e97-11ee-8db3-c87f5455cfcc"/
 /BACKGROUNDNAME Scholar BACKGROUNDNAME/
+/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You were involved in teaching, research, or some other area of knowledge. What was your job? What area of knowledge was your 
 specialty? Were you well-respected? Controversial? Is your career over?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Arcana REF/ or /REF History REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may select one practice as a minor boon.
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
+/BACKGROUND /ID" d2462d8c-1e97-11ee-9887-c87f5455cfcc"/
 /BACKGROUNDNAME Mendicant BACKGROUNDNAME/
+/BACKGROUNDTYPE occupation BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You formerly lived by accepting alms and/or begging. Was this a religious or spiritual calling, or were you simply a beggar?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Streetwise REF/ or /REF Religion REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may take /REF Temple Initiate REF/ , or /REF Urban Knowledge REF/ as a minor boon.
 BACKGROUNDBOONS/
@@ -385,79 +397,85 @@ TABLE/
 LEFT/
 What is the character's place in society? Is he an outcast? Does he have some sort of title or position? 
 
-/BACKGROUND
-/BACKGROUNDTYPE society BACKGROUNDTYPE/
+/BACKGROUND /ID" e95c238c-1e97-11ee-a0b3-c87f5455cfcc"/
 /BACKGROUNDNAME Poor BACKGROUNDNAME/
+/BACKGROUNDTYPE society BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You had little or no source of income. How did you survive? Where did you acquire your starting funds? Were your family poor 
 peasants, laborers, refugees? Did you beg for a living?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Streetwise REF/ or /REF Survival REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may select the minor boon /REF Beggar REF/ .
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE society BACKGROUNDTYPE/
+/BACKGROUND /ID" fc9d9714-1e97-11ee-ac6a-c87f5455cfcc"/
 /BACKGROUNDNAME Middle Class BACKGROUNDNAME/
+/BACKGROUNDTYPE society BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You were neither wealthy nor poor. Were you a well-off farmer? A townsperson? Does your family own any property? Where do they live?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Nature REF/ or /REF Insight REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may select the minor boon /REF Rider REF/ .
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE society BACKGROUNDTYPE/
+/BACKGROUND /ID" 127dae70-1e98-11ee-beea-c87f5455cfcc"/
 /BACKGROUNDNAME Wealthy BACKGROUNDNAME/
+/BACKGROUNDTYPE society BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You had considerable amounts of wealth. How wealthy were you, fantastically or just modestly wealthy? Do you still 
 have this wealth? How was your wealth acquired? Is it family wealth or personal wealth? 
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Diplomacy REF/ or /REF Intimidate REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may take the minor boon /REF Political Connections REF/ .
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
+/BACKGROUND /ID" 2b6b7750-1e98-11ee-8497-c87f5455cfcc"/
+/BACKGROUNDNAME Nobility BACKGROUNDNAME/
 /BACKGROUNDTYPE society BACKGROUNDTYPE/
-/BACKGROUNDNAME Wealthy BACKGROUNDNAME/
 /BACKGROUNDDESCRIPTION 
 You were a member of the ruling caste of your homeland. Do you have a title? What sort of position does your family have? 
 Why are you part of the party? 
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF History REF/ , /REF Diplomacy REF/ or /REF Leadership REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may take the minor boon /REF Body Servant REF/ .
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE society BACKGROUNDTYPE/
+/BACKGROUND /ID" 45a7b4d0-1e98-11ee-8ac8-c87f5455cfcc"/
 /BACKGROUNDNAME Outcast BACKGROUNDNAME/
+/BACKGROUNDTYPE society BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You have been cast out of the normal order of society. How did you become an outcast? Is your family also outcast? Do you wish to attain 
 some place in society? Are you jealous of those who have a more secure place in the world?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Athletics REF/ or /REF Intimidate REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may take the minor boon /REF Secret Knowledge REF/ .
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE society BACKGROUNDTYPE/
+/BACKGROUND /ID" 5a633eb2-1e98-11ee-8c46-c87f5455cfcc"/
 /BACKGROUNDNAME Outsider BACKGROUNDNAME/
+/BACKGROUNDTYPE society BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You are from some other society. Do you plan to return where you came from? What was your position in your own society? 
 Why are you here now? Is your family here too? 
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Perception REF/ or /REF Religion REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may take the minor boon /REF Foreigner REF/ .
 BACKGROUNDBOONS/
@@ -477,79 +495,85 @@ TABLE/
 LEFT/
 Where did the character live? What country does he come from? Where is his home town?
 
-/BACKGROUND
-/BACKGROUNDTYPE geography BACKGROUNDTYPE/
+/BACKGROUND /ID" 72fffda2-1e98-11ee-b0db-c87f5455cfcc"/
 /BACKGROUNDNAME Village BACKGROUNDNAME/
+/BACKGROUNDTYPE geography BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You lived in a small community. What was your home like? Why don't you live there anymore? Do you want to go back? 
 Is your family still there?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Nature REF/ or /REF Athletics REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may take the minor boon /REF Hinterland Wanderer REF/ .
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE geography BACKGROUNDTYPE/
+/BACKGROUND /ID" 85f302d8-1e98-11ee-9fd9-c87f5455cfcc"/
 /BACKGROUNDNAME City BACKGROUNDNAME/
+/BACKGROUNDTYPE geography BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You lived in a large community. What sort of place was it? Is your family still there? How well do you know the various 
 parts of your city? Do you still have associates there? 
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Streetwise REF/ or /REF Diplomacy REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may take the minor boon /REF Urban Knowledge REF/ .
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE geography BACKGROUNDTYPE/
+/BACKGROUND /ID" 9864a48a-1e98-11ee-a5a7-c87f5455cfcc"/
 /BACKGROUNDNAME Forest BACKGROUNDNAME/
+/BACKGROUNDTYPE geography BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You grew up in a heavily forested region. What sort of forest was it, tropical, temperate, or sub-arctic? Did you make your 
 living in the forest? What is your relationship with your home like? 
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Nature REF/ or /REF Stealth REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may take the minor boon /REF Hunter REF/ .
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE geography BACKGROUNDTYPE/
+/BACKGROUND /ID" ac864766-1e98-11ee-ac32-c87f5455cfcc"/
 /BACKGROUNDNAME Mountain BACKGROUNDNAME/
+/BACKGROUNDTYPE geography BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You grew up in a mountainous region. Did you venture into the high mountains? What sort of mountains are they? Do you love 
 your mountain home? 
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Athletics REF/ or /REF Survival REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may take the minor boon /REF Mountaineer REF/ .
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE geography BACKGROUNDTYPE/
+/BACKGROUND /ID" bf949cc2-1e98-11ee-8f64-c87f5455cfcc"/
 /BACKGROUNDNAME Desert BACKGROUNDNAME/
+/BACKGROUNDTYPE geography BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You grew up in a harsh dry land. How did you survive? Do you wish to return to that land? What is your homeland like?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Survival REF/ or /REF Nature REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may take the minor boon /REF Desert Survival REF/ .
 BACKGROUNDBOONS/
 BACKGROUND/
-/BACKGROUND
-/BACKGROUNDTYPE geography BACKGROUNDTYPE/
+/BACKGROUND /ID" d22f9d1e-1e98-11ee-8de7-c87f5455cfcc"/
 /BACKGROUNDNAME Coast BACKGROUNDNAME/
+/BACKGROUNDTYPE geography BACKGROUNDTYPE/
 /BACKGROUNDDESCRIPTION 
 You grew up on the edge of a large body of water, such as a lake or the ocean. Did you spend more time on land or on water? 
 Is your homeland low-lying wetlands, high bluffs, or inviting beaches? What did you do there?
 BACKGROUNDDESCRIPTION/
 /BACKGROUNDKNACKS 
 Add /REF Athletics REF/ or /REF Nature REF/ to your list of available knacks.
+BACKGROUNDKNACKS/
 /BACKGROUNDBOONS 
 You may take the minor boon /REF Sailor REF/ .
 BACKGROUNDBOONS/

@@ -27,7 +27,7 @@ const gameConverter = {
 		const id = snapshot.id;
 		const data = snapshot.data(options);
 //		const owner = data.owner.get().data();
-		return new Game(id,data.name,data.owner,data.characters,data.players);
+		return new Game(id,data.name,data.owner,data.characters,data.players,data.description);
 	}
 }
 

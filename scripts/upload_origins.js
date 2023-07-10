@@ -1,5 +1,5 @@
 /*
- * Upload callings from a compendium.json into Firestore.
+ * Upload heroic origins from a compendium.json into Firestore.
  */
 const admin = require('firebase-admin');
 const serviceAccount = require("../keys/homl_firebase_credentials2.json");
@@ -12,25 +12,25 @@ admin.initializeApp({
 const arg1 = process.argv[2]
 const data = require("../"+arg1);
 
-Object.keys(data["callings"]).forEach((calling) => {
-	handleCalling(data['callings'][calling]);
+Object.keys(data["origins"]).forEach((origin) => {
+	handleOrigin(data['origins'][origin]);
 });
 
-function handleCalling(calling) {
-	if(!calling.hasOwnProperty('features')) { calling.features = []; }
-	if(typeof calling.features !== 'undefined') {
-		calling.features = calling.features.map((feature) => {
-			return admin.firestore().doc(`callings/${feature}`);
+function handleOrigin(origin) {
+	if(!origin.hasOwnProperty('features')) { origin.features = []; }
+	if(typeof origin.features !== 'undefined') {
+		origin.features = origin.features.map((feature) => {
+			return admin.firestore().doc(`features/${feature}`);
 		});
 	}
 	
-	if(!calling.hasOwnProperty('boons')) { calling.boons = []; }
-	if(typeof calling.boons !== 'undefined') {
-		calling.boons = calling.boons.map((boon) => {
+	if(!origin.hasOwnProperty('boons')) { origin.boons = []; }
+	if(typeof origin.boons !== 'undefined') {
+		origin.boons = origin.boons.map((boon) => {
 			return admin.firestore().doc(`boons/${boon}`);
 		});
 	}
-	upload(calling,['callings',calling.id]);
+	upload(origin,['origins',origin.id]);
 }
 
 async function upload(data, path) {

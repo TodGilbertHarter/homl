@@ -24,24 +24,32 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 	/** @private */ theDocument;
 	/** @private */ gebApp;
 	controller;
+	currentDialog;
 	
 	constructor(gebApp,adocument) {
 		this.gebApp = gebApp;
 		this.theDocument = adocument;
 	}
 
+	/**
+	 * Render the Create a game UI.
+	 */
 	displayCreateGameUI() {
 		const displayarea = this.theDocument.getElementById('mainappview');
 		displayarea.innerHTML = `<game-create id='gamecreate'></game-create>`;
 	}
 	
+	/**
+	 * Add a new tab to the left tab panel.
+	 */
 	addTabToLeftPanel(tab,tabContents) {
 		this.theDocument.getElementById('leftslottabbar').appendChild(tab);
 		this.theDocument.getElementById('leftslottabpanel').appendChild(tabContents);
 	}
-	
-	currentDialog;
-	
+
+	/**
+	 * Display the user sign in UI.
+	 */		
 	displaySignInUI() {
 		const dialogHTML = this.theDocument.getElementById('signin-dialog').innerHTML;
 		this.currentDialog = this.theDocument.createElement('dialog-widget');
@@ -68,6 +76,9 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 		});
 	}
 	
+	/**
+	 * Add a game lister component to the given tab bar.
+	 */
 	displayGameLister(tbar,tabs) {
 		const li = this.theDocument.createElement('li');
 		li.innerText = 'Games';
@@ -78,12 +89,18 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 		tabs.appendChild(content);
 	}
 	
+	/**
+	 * Display the default tab arrangement.
+	 */
 	displayTabs() {
 		const tbar = this.theDocument.getElementById('leftslottabbar');
 		const tabs = this.theDocument.getElementById('leftslottabpanel');
 		this.displayGameLister(tbar,tabs);
 	}
 	
+	/**
+	 * Remove all elements from the tab bar.
+	 */
 	clearTabs() {
 		const tbar = this.theDocument.getElementById('leftslottabbar');
 		tbar.innerHTML = '';

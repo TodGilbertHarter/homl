@@ -20,13 +20,15 @@ class Game {
 	owner;
 	characters;
 	players;
+	description;
 	
-	constructor(id, name, owner, characters, players) {
+	constructor(id, name, owner, characters, players, description) {
 		this.id = id;
 		this.name = name;
 		this.owner = owner;
 		this.characters = characters;
 		this.players = players;
+		this.description = description;
 	}
 	
 	toString() {

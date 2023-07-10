@@ -67,6 +67,21 @@ class Character {
         this.rules.calculate(this);
     }
     
+   get background() {
+	return this.characterData.background;
+   }
+   
+   set background(value) {
+	this.characterData.background = value;
+}
+   get owner() {
+	return this.characterData.owner;
+   }
+   
+   set owner(value) {
+	this.characterData.owner = value;
+	}
+	
    get proficiencies() {
         return this.characterData.proficiencies;
     }

@@ -12,17 +12,17 @@ admin.initializeApp({
 const arg1 = process.argv[2]
 const data = require("../"+arg1);
 
-Object.keys(data["species"]).forEach((species) => {
-	handleSpecies(data['species'][species]);
+Object.keys(data["backgrounds"]).forEach((background) => {
+	handleBackground(data['backgrounds'][background]);
 });
 
-function handleSpecies(species) {
-	if(!species.hasOwnProperty('boons')) { species.boons = []; }
-	species.boons = species.boons.map((boon) => {
+function handleBackground(background) {
+	if(!background.hasOwnProperty('boons')) { background.boons = []; }
+	background.boons = background.boons.map((boon) => {
 		return admin.firestore().doc(`boons/${boon}`);
 	});
 // console.log("WTF IS WRONG HERE "+JSON.stringify(calling));
-	upload(species,['species',species.id]);
+	upload(background,['backgrounds',background.id]);
 }
 
 async function upload(data, path) {
