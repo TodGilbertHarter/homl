@@ -131,9 +131,11 @@ window.customElements.define('character-sheet',CharacterSheet);
 class BackgroundField extends LitElement {
 	static properties = {
 		type: {},
-		value: {},
+		name: {},
 		text: {}
 	};
+
+	/** @private */ bgValues;
 	
 	constructor() {
 		super();
@@ -143,20 +145,16 @@ class BackgroundField extends LitElement {
 	render() {
 		return html`<div class="attribute">
 			<label>${this.type}</label>
-			<select id='valueselect' .value='${this.value}'></select>
-			<input id='input' .value="${this.value}">
+			<select id='valueselect' .value='${this.name}'></select>
+			<input id='input' .value="${this.text}">
 		</div>`;
 	}
 	
 	firstUpdated() {
 		const text = this.innerHTML;
 		const input = this.shadowRoot.getElementById('input');
-		input.value = text;
+		input.text = text;
 	}
-	
-	static bgtypes = {
-		birth: ['Orphan', 'Adopted', 'Omen', 'Curse', 'Prophesy']
-	};
 	
 	set backgroundType(bgtype) {
 		this.type = bgtype;
