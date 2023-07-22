@@ -167,7 +167,7 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 	displayCharacterInfo(characterId) {
 		const displayarea = this.theDocument.getElementById('mainappview');
 		characterSheetFactory(displayarea,characterId,this.gebApp.speciesRepo,
-		  this.gebApp.callingRepo,this.gebApp.characterRepo,(sheet) => {
+		  this.gebApp.callingRepo,this.gebApp.characterRepo,this.gebApp.backgroundRepo,this.gebApp.originRepo,(sheet) => {
 /*			const c = displayarea.childNodes[0];
 			if(c !== 'undefined') { 
 				displayarea.replaceChild(sheet,c);

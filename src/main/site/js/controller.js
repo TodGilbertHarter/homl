@@ -25,7 +25,8 @@ class Controller {
 	/** @private */ characterController;
 	/** @private */ callingRepo;
 		
-	constructor(gebApp,view,authenticator,router,gameRepo,characterRepo,characterController,callingRepo,speciesRepo) {
+	constructor(gebApp,view,authenticator,router,gameRepo,characterRepo,characterController,callingRepo,speciesRepo,
+		backgroundRepo,originRepo) {
 		this.gebApp = gebApp;
 		this.view = view;
 		view.controller = this;
@@ -36,6 +37,8 @@ class Controller {
 		this.characterController = characterController;
 		this.callingRepo = callingRepo;
 		this.speciesRepo = speciesRepo;
+		this.backgroundRepo = backgroundRepo;
+		this.originRepo = originRepo;
 		this.router.add(/signup/,() => { this.view.displaySignUpUI(); });
 		this.router.add(/signin/,() => { this.view.displaySignInUI(); });
 		this.router.add(/signout/,() => { this.view.displaySignOutUI(); });

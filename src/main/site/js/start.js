@@ -8,6 +8,8 @@ import { CharacterRepository } from './characterrepository.js';
 import { CharacterController } from './charactersheet.js';
 import { CallingRepository } from './callingrepository.js';
 import { SpeciesRepository } from './speciesrepository.js';
+import { OriginRepository } from './originrepository.js';
+import { BackgroundRepository } from './backgroundrepository.js';
 
 
 class Application {
@@ -16,6 +18,8 @@ class Application {
 	characterRepo;
 	callingRepo;
 	speciesRepo;
+	backgroundRepo;
+	originRepo;
 	authenticator;
 	router;
 	view;
@@ -27,6 +31,8 @@ class Application {
 		this.theDocument = aDocument;
 		this.callingRepo = new CallingRepository(this,firestore);
 		this.speciesRepo = new SpeciesRepository(this,firestore);
+		this.backgroundRepo = new BackgroundRepository(this,firestore);
+		this.originRepo = new OriginRepository(this,firestore);
 		this.characterController = new CharacterController();
 		this.playerRepo = new PlayerRepository(this,firestore);
 		this.gameRepo = new GameRepository(this,firestore);
@@ -36,7 +42,7 @@ class Application {
 		this.view = new NotView(this,this.theDocument);
 		this.controller = new Controller(this,this.view,this.authenticator,
 			this.router,this.gameRepo,this.characterRepo,this.characterController,
-			this.callingRepo,this.speciesRepo);
+			this.callingRepo,this.speciesRepo,this.backgroundRepo,this.originRepo);
 	}
 }
 

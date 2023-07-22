@@ -2,7 +2,7 @@
 /STYLE" css/geb.css"/
 /STYLE" css/glyphicons.css"/
 <script type="module">
-	import { html } from 'https://unpkg.com/lit@2.0.2/index.js?module';
+	import { html } from 'https://unpkg.com/lit@2/index.js?module';
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
     import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';

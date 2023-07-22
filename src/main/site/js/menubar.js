@@ -1,4 +1,4 @@
-import { html, LitElement } from 'https://unpkg.com/lit@2.0.2/index.js?module';
+import { html, LitElement } from 'https://unpkg.com/lit@2/index.js?module';
 
 class MenuBar extends LitElement {
 	clicked = false;

@@ -155,6 +155,14 @@ class Character {
     set species(value) {
         this.characterData.species = value;
     }
+    
+    get origin() {
+		return this.characterData.origin;
+	}
+	
+	set origin(value) {
+		this.characterData.origin = value;
+	}
 
     get fate() {
         return this.characterData.fate;

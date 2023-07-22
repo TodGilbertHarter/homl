@@ -16,32 +16,38 @@
 */
 
 /**
-  * Model for a background.
+  * Model for a heroic origin.
   */
-class Background {
+class Origin {
 	id;
-	type;
+	backgrounds;
 	name;
-	text;
+	description;
 	boons;
+	features;
+	implements;
 	knacks;
+	weapons;
 		
-	constructor(id,type,name,text,boons,knacks) {
+	constructor(id,backgrounds,name,description,boons,features,implementProfs,knacks,weaponProfs) {
 		this.id = id;
-		this.type = type;
+		this.backgrounds = backgrounds;
 		this.name = name;
-		this.text = text;
+		this.description = description;
 		this.boons = boons;
+		this.features = features;
+		this.implementProfs = implementProfs;
 		this.knacks = knacks;
+		this.weaponProfs = weaponProfs;
 	}
 	
 	/**
-	 * Construct and return all the background-associated calculators related to this background.
+	 * Construct and return all the origin-associated calculators related to this origin.
 	 */
 	get calculators() {
 		const calculators = [];
-		//TODO: make some calculators for background
+		//TODO: make some calculators for origin
 		return calculators;
 	}
 }
-export { Background };
+export { Origin };

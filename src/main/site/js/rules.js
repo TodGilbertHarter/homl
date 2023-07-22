@@ -43,16 +43,21 @@ sheet is embodied here.
 class Rules {
 	calling;
 	specie;
+	backgrounds;
+	origin;
 //	callingRepo;
     rulesList;
     
-    constructor(calling,specie) {
+    constructor(calling,specie,backgrounds,origin) {
 		this.calling = calling;
 		this.specie = specie;
+		this.backgrounds = backgrounds;
+		this.origin = origin;
         this.rulesList = [];
         
         this.createSpeciesCalculators(this.specie);
         this.createCallingCalculators(this.calling);
+        this.createOriginCalculators(this.origin);
         
         const ltarget = 'levelbonus';
         const lsources = ['level'];
@@ -139,6 +144,10 @@ class Rules {
 
     createCallingCalculators(calling) {
 		this.addRules(calling.calculators);
+	}
+	
+	createOriginCalculators(origin) {
+		this.addRules(origin.calculators);
 	}
 	
 	addRules(calculations) {

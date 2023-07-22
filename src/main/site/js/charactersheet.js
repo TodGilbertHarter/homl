@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { html, LitElement } from 'https://unpkg.com/lit@2.0.2/index.js?module';
+import { html, LitElement, render } from 'https://unpkg.com/lit@2/index.js?module';
 import { Rules } from './rules.js';
 
 /** @private */ const CharacterSheettemplate = document.getElementById('charactersheettemplate');
@@ -26,6 +26,8 @@ class CharacterSheet extends HTMLElement {
 	rules;
 	species;
 	callings;
+	origins;
+	backgrounds;
 	controller;
 	/** @type {string} @private */ characterId;
 	
@@ -46,13 +48,17 @@ class CharacterSheet extends HTMLElement {
 //		const characterview = this.shadowRoot.getElementById('characterview');
 	}
 	
-	setSelections(species, callings) {
+	setSelections(species, callings,backgrounds,origins) {
 		this.species = species;
 		this.callings = callings;
+		this.backgrounds = backgrounds;
+		this.origins = origins;
 		const callingSelector = this.shadowRoot.getElementById('charactercalling');
 		callingSelector.setSelections(this.callings);
 		const speciesSelector = this.shadowRoot.getElementById('characterspecies');
 		speciesSelector.setSelections(this.species);
+		const originSelector = this.shadowRoot.getElementById('characterorigin');
+		originSelector.setSelections(this.origins);
 		const fateSelector = this.shadowRoot.getElementById('characterfate');
 		fateSelector.setSelections([
 			{ id: 'positive', name: 'postive'},
@@ -77,8 +83,48 @@ class CharacterSheet extends HTMLElement {
 		
 		const backgroundList = this.shadowRoot.getElementById('characterbackground');
 		backgroundList.newButtonHandler = (e) => {
-			alert('not yet figured out');
-			const bitem = '<background-field name=""'
+			const currentDialog = e.target.ownerDocument.createElement('dialog-widget');
+			const cancelHandler = (e) => { 
+				console.log('clicked cancel');
+				e.cancelBubble = true;
+				currentDialog.dismiss();
+			};
+			const addHandler = (e) => {
+				console.log('clicked add');
+				e.cancelBubble = true;
+				const type = currentDialog.querySelector('#backgrounddialogtype').value;
+				const name = currentDialog.querySelector('#backgrounddialogname').value;
+				const text = currentDialog.querySelector('#backgrounddialogtext').value;
+				const bgTemplate = html`<background-field type='${type}' name='${name}'>${text}</background-field>`;
+				render(bgTemplate,backgroundList);
+				currentDialog.dismiss();
+			};
+			const types = Object.keys(this.backgrounds);
+			const names = ['fooberry'];
+			const onTypeChange = (e) => {
+				alert("type changed to ${e.target.value}");
+			}
+			const template = html`<div slot='contents' style='width: 350px;'>
+				<h1 class='dialogtitle'>Add New Background</h1>
+      			<div style='clear: both;'>
+	      			<label>type</label><select default='${types[0]}' id='backgrounddialogtype' @change=${onTypeChange}>
+	      				${types.map((type) => html`<option>${type}</option>`)}
+	      			</select>
+	      			<input type='text' id='backgrounddialogtypetext' value='foo'/><br>
+	      			<label>name</label>
+	      			<select default=${names[0]} id='backgrounddialogname'>
+	      				${names.map((name) => html`<option>${name}</option>`)}
+	      			</select>
+	      			<input type='text' id='backgrounddialogname' value='bar'/><br>
+	      			<label>text</label><input type='text' id='backgrounddialogtext' value='background text'/>
+      			</div>
+			</div>
+			<div slot='buttonbar'>
+				<button type='button' class='dialogbutton' id='add' @click=${addHandler}>Add</button>
+				<button type='button' class='dialogbutton' id='cancel' @click=${cancelHandler}>cancel</button>
+			</div>`;
+			render(template,currentDialog);
+			document.getElementsByTagName('body')[0].appendChild(currentDialog);
 		};
 	}
 	
@@ -136,6 +182,10 @@ class BackgroundField extends LitElement {
 	};
 
 	/** @private */ bgValues;
+	deleteButtonHandler = (e) => {
+		const pf = e.target.parentNode.parentNode;
+		pf.parentNode.removeChild(pf);
+	};
 	
 	constructor() {
 		super();
@@ -143,17 +193,24 @@ class BackgroundField extends LitElement {
 	}
 	
 	render() {
-		return html`<div class="attribute">
-			<label>${this.type}</label>
-			<select id='valueselect' .value='${this.name}'></select>
-			<input id='input' .value="${this.text}">
+		return html`
+		<style>
+			.attribute { display: flex; flex-wrap: wrap; }
+			.attribute > div { flex: auto; }
+		</style>
+		<div class="attribute">
+			<div>${this.type}</div>
+			<div>${this.name}</div>
+			<div id="textplace">${this.text}</div>
+			<div><button type="button">Edit</button></div>
+			<div><button part="delete" name="delete" id='delete' @click="${this.deleteButtonHandler}">x</button></div>
 		</div>`;
 	}
 	
 	firstUpdated() {
 		const text = this.innerHTML;
-		const input = this.shadowRoot.getElementById('input');
-		input.text = text;
+		const textplace = this.shadowRoot.getElementById('textplace');
+		textplace.innerHTML = text;
 	}
 	
 	set backgroundType(bgtype) {
@@ -553,6 +610,19 @@ class CharacterController {
 		});
 		return result;
 	}
+	
+	getOrigin(sheet,originId) {
+		var result = null;
+		sheet.origins.every((origin) => {
+			if(origin.id === originId) {
+				result = origin;
+				return false;
+			}
+			return true;
+		});
+		return result;
+	}
+	
     /**
      * Display all the attributes of a character on a sheet.
      *
@@ -562,10 +632,12 @@ class CharacterController {
     display(sheet,character) {
 		const calling = this.getCalling(sheet,character.calling.id);
 		const specie = this.getSpecies(sheet,character.species.id);
+		const origin = this.getOrigin(sheet,character.origin.id);
         sheet.setCharacterData('charactername',character.name);
         sheet.setCharacterData('characterlevel',character.level);
         sheet.setCharacterData('charactercalling',calling.id);
         sheet.setCharacterData('characterspecies',specie.id);
+        sheet.setCharacterData('characterorigin',origin.id);
         sheet.setCharacterData('characterfate',character.fate);
         sheet.setCharacterData('characterdescription',character.description);
         sheet.setCharacterData('characterhitpoints',character.hitpoints);
@@ -621,10 +693,10 @@ class CharacterController {
 	
 	setBackground(sheet,background) {
 		const items = [];
-		const keys = Object.keys(background);
-		keys.forEach((key) => {
-			const value = background[key];
-			items.push(`background-field type="${key}" name="${value.name}">${value.value}</background-field>`);
+		const typeKeys = Object.keys(background);
+		typeKeys.forEach((typeKey) => {
+			const value = background[typeKey];
+			items.push(`<background-field type="${typeKey}" name="${value.name}">${value.description}</background-field>`);
 		});
 		sheet.setCharacterListItems('characterbackground',items);
 	}
@@ -709,35 +781,41 @@ class CharacterController {
 	}
 }
 
-var characterSheetFactory = function(element,characterId,speciesRepo,callingRepo,characterRepo,created) {
+var characterSheetFactory = function(element,characterId,speciesRepo,callingRepo,characterRepo,backgroundRepo,originRepo,created) {
 	speciesRepo.getAllSpecies((speciesList) => {
 		callingRepo.getAllCallings((callingsList) => {
-			try {
-				element.innerHTML = `<character-sheet characterid='${characterId}' id='cv${characterId}'></character-sheet>`;
-				const charSheet = document.getElementById(`cv${characterId}`);
-				charSheet.setSelections(speciesList,callingsList);
-//				charSheet.species = speciesList;
-//				charSheet.callings = callingsList;
-				charSheet.controller = window.gebApp.characterController;
-				created(charSheet);
-				if(characterId !== null) {
-					characterRepo.getCharacterById(characterId, (character) => {
-//						charSheet.controller.display(charSheet,character);
-						setSpeciesFromList(character,speciesList);
-						setCallingFromList(character,callingsList);
-						const theRules =  new Rules(character.calling,character.species);
-						charSheet.rules = theRules;
-						character.rules = theRules;
-						charSheet.controller.render(charSheet,character);
-					});
-				}
-			} catch (e) {
-				console.log("cannot create character sheet "+e.message+" at "+e.lineNumber);
-			}
+			backgroundRepo.getCategorizedBackgrounds((backgroundsMap) => {
+				originRepo.getAllOrigins((originsList) => {
+					try {
+						element.innerHTML = `<character-sheet characterid='${characterId}' id='cv${characterId}'></character-sheet>`;
+						const charSheet = document.getElementById(`cv${characterId}`);
+						charSheet.setSelections(speciesList,callingsList,backgroundsMap,originsList);
+						charSheet.controller = window.gebApp.characterController;
+						created(charSheet);
+						if(characterId !== null) {
+							characterRepo.getCharacterById(characterId, (character) => {
+								setSpeciesFromList(character,speciesList);
+								setCallingFromList(character,callingsList);
+								setOriginFromList(character,originsList);
+								setBackgroundsFromList(character,backgroundsMap);
+								const theRules =  new Rules(character.calling,character.species,character.backgrounds,character.origin);
+								charSheet.rules = theRules;
+								character.rules = theRules;
+								charSheet.controller.render(charSheet,character);
+							});
+						}
+					} catch (e) {
+						console.log("cannot create character sheet "+e.message+" at "+e.lineNumber);
+					}
+				});
+			});
 		});
 	});	
 }
 
+/**
+ * Replace reference to character species in character object with the corresponding entity.
+ */
 function setSpeciesFromList(character,speciesList) {
 	const id = character.species.id;
 	for(var i = 0; i < speciesList.length; i++) {
@@ -747,6 +825,9 @@ function setSpeciesFromList(character,speciesList) {
 	}
 }
 
+/**
+ * Replace reference to character calling in character object with the corresponding entity.
+ */
 function setCallingFromList(character,callingsList)	{
 	const id = character.calling.id;
 	for(var i = 0; i < callingsList.length; i++) {
@@ -754,6 +835,33 @@ function setCallingFromList(character,callingsList)	{
 			character.calling = callingsList[i];
 		}
 	}
+}
+
+/**
+ * Replace reference to character origin in character object with the corresponding entity.
+ */
+function setOriginFromList(character,originsList) {
+	const id = character.origin.id;
+	for(var i = 0; i < originsList.length; i++) {
+		if(id === originsList[i].id) {
+			character.origin = originsList[i];
+		}
+	}
+}
+
+/**
+ * Replace references to backgrounds in the character object with the corresponding entities.
+ */
+function setBackgroundsFromList(character,backgrounds) {
+	Object.keys(character.background).forEach((cbKey) => {
+		var bgref = character.background[cbKey].bgref;
+		Object.keys(backgrounds[cbKey]).forEach((bgKey) => {
+			var bg = backgrounds[cbKey][bgKey];
+			if(bg.id === bgref.id) {
+				character.background[cbKey].bgref = bg;
+			}
+		});
+	});
 }
 
 export { CharacterController, characterSheetFactory };

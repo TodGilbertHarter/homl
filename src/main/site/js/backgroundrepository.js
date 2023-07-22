@@ -27,7 +27,7 @@ const backgroundConverter = {
 		const id = snapshot.id;
 		const data = snapshot.data(options);
 		return new Background(id,data.type,
-			data.name,data.text);
+			data.name,data.description,data.boons,data.knacks);
 	}
 }
 
@@ -136,10 +136,10 @@ class BackgroundRepository {
 	 * keyed on the name of each background.
 	 */
 	getCategorizedBackgrounds(onDataAvailable) {
-		getAllBackgrounds((backgrounds) => {
+		this.getAllBackgrounds((backgrounds) => {
 			var result = {};
 			backgrounds.forEach((background) => {
-				if(result[background.type] === 'undefined') {
+				if(typeof result[background.type] === 'undefined') {
 					result[background.type] = {};
 				}
 				result[background.type][background.name] = background;
