@@ -10,7 +10,7 @@ of HTML. Include this and a character data document, the result will be an HTML 
 // :/ /* Prevent spurious <p> tags. */
 /: /GETMATCHING /DOER /DROP /W /W2L /MAKELITERAL /HERE! :/
 /: /VERSION <!-- character version :/
-/: VERSION/ --!><title> :/
+/: VERSION/ --!> :/
 
 /: /FIELD <attribute-field value=" /. " :/
 /: /FIELDNAME /SPACE label=" :/
@@ -35,13 +35,14 @@ of HTML. Include this and a character data document, the result will be an HTML 
 /: FIELDID/ "> :/ */
 /: CALCULATEDFIELD/ </calculated-field> :/
 
-/: /SHEETTITLE <header>
+/: /SHEETTITLE <div class="header">
     <div class='mastertitle'>
         <div class='topborder'></div>
-        <div class='title'>Heroes of Myth &amp; Legend Character Sheet</div>
+        <div class='title'><button id='savebutton'>Save</button><button id='refreshbutton'>Refresh</button>Heroes of Myth &amp; Legend Character Sheet</div>
         <div class='bottomborder'></div>
     </div>
-</header> :/
+</div>
+:/
 /: /SHEETROW <div class="sheetrow"> :/
 /: SHEETROW/ </div> :/
 /: /FLEXROW <div class="flexrow"> :/
@@ -53,26 +54,19 @@ of HTML. Include this and a character data document, the result will be an HTML 
 /: FLEXROW/ </div> :/
 /: FLEXCELL/ </div> :/
 
-/: /CHARACTER <!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="css/charactersheet.css" media="screen"/>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script> :/
-/* Yes, I know there are mysteriously, multiple FLEXROW/ here, whatever frigging works */
-/: CHARACTER/ FLEXCELL/ FLEXROW/ FLEXROW/ <div class="panel"><button onclick="saveCharacter()">Save</button><button onclick="refreshCharacter()">Refresh</button></div></div>
-<script src="js/charactersheet.js"></script>
-<script>
-const controller = new CharacterController(firebase);
-function saveCharacter() {
-    controller.saveCharacter();
-}
-function refreshCharacter() {
-    controller.refreshCharacter();
-}
-</script>
-</body></html> :/
+/: /CHARACTER
+<template id='charactersheettemplate'>
+<style>
+@import "css/embedded_charactersheet.css";
+</style>
+<div class='container' id='characterview'>
+:/
 
-/: /NAME /GETMATCHING NAME/ /DELIMITED /DUP /. </title></head><body><div><div> /SHEETTITLE /SHEETROW /FIELD /FIELDNAME Name: FIELDNAME/ /FIELDWIDTH 30em FIELDWIDTH/ /FIELDID charactername FIELDID/ FIELD/ :/
+/: CHARACTER/ FLEXCELL/ FLEXROW/ FLEXROW/ <div class="panel"><button id='savebutton'>Save</button><button id='refreshbutton'>Refresh</button></div></div>
+</div> 
+</template> :/
+
+/: /NAME /GETMATCHING NAME/ /DELIMITED /DUP /. <div><div> /SHEETTITLE /SHEETROW /FIELD /FIELDNAME Name: FIELDNAME/ /FIELDWIDTH 20em FIELDWIDTH/ /FIELDID charactername FIELDID/ FIELD/ :/
 /: NAME/ /[" Mismatch, NAME/ must follow /NAME "]/ /ABORT :/
 
 /: /LEVEL /GETMATCHING LEVEL/ /DELIMITED /FIELD /FIELDNAME Level: FIELDNAME/ /FIELDWIDTH 2em FIELDWIDTH/ /FIELDID characterlevel FIELDID/ FIELD/ :/

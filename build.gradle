@@ -167,6 +167,7 @@ task copyGEBSite(type: Exec) {
 
 task generateEmptyCharacterSheet(type: Exec) {
 	description 'generate an empty character sheet from the source'
+	dependsOn 'copyGEBSite'
 	inputs.file('scripts/generate_character.sh')
 //	inputs.dir("$buildDir/site")
 	commandLine './scripts/generate_character.sh', project.version, 'empty'

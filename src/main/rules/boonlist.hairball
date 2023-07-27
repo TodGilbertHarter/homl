@@ -202,6 +202,18 @@ SECTION/
 /REF Source Attunement REF/
 /REF Spiritual Attunement REF/
 /REF Spirit Channeler REF/
+/BOON /ID" 7019ce8a-2cba-11ee-a0a5-c87f5455cfcc"/ /BOONNAME Spooky Demeanor BOONNAME/
+/BOONTYPE Level 1: Minor BOONTYPE/
+/ASSOCIATION None ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION Your appearance and mannerisms seem strange and unnerving to others. DESCRIPTION/
+/BENEFITS 
+/BENEFIT
+Choose an aspect, Diplomatic, Bluffing, or Intimidating and an ability. Use the bonus for this ability instead of CHA
+when making checks controlled by this aspect.
+BENEFIT/
+BENEFITS/
+BOON/
 /REF Staff Fighter REF/
 /REF Staff Expert REF/
 /REF Stone Profit REF/

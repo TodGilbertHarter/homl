@@ -263,11 +263,11 @@ encumbered. This assumes the weight is reasonably distributed and easy to carry.
 If a character carries more than her maximum load then she is encumbered. When encumbered her speed is reduced by one and she has 
 disadvantage on all checks based on Dexterity governed aspects.
 SUBSECTION/
-/SUBSECTION" Equipment"/
+/SUBSECTION" Character Equipment"/
 
 Characters have equipment. These are the possessions which they carry around with them. This may include things like tools, weapons, armor, adventuring gear, etc. A later chapter goes into more detail on equipment. Note that changes to equipment also changes encumbrance.
 SUBSECTION/
-/SUBSECTION" Wealth"/
+/SUBSECTION" Character Wealth"/
 
 Every character has a wealth. This attribute is a basic description of how much purchasing power the character has. Wealth can vary from none to practically unlimited. When a character needs to buy something, or when money is important to the story, the player will generally make a wealth check to determine the outcome. The wealth check modifier is applied to this check, and the character’s wealth helps to determine the types of outcomes which are feasible (IE a penniless character cannot pay a large bribe, but even a moderately well-off one won’t always succeed).
 SUBSECTION/
@@ -303,28 +303,28 @@ some choices are 'optimum'.
 Be what you want to be! Have fun! If some rule gets in the way of that, fun trumps rules too.
 SUBSECTION/
 SECTION/
-/SECTION" Character Generation"/
+/SECTION" Hero Generation"/
 
-The previous section detailed most of the things which appear on character sheets. This section details how to build a character from scratch.
-/SUBSECTION" Level"/
+The previous section detailed most of the things which appear on character sheets. This section details how to build a hero from scratch.
+/SUBSECTION" Starting Level"/
 
 Normally characters start at level 1. Sometimes you may generate a character which is higher level. This will require allocating a major boon for each level beyond first. 
-Note that in this case the character will have a non-zero level modifier, remember to incorporate this.
+Note that in this case the character will have a non-zero level modifier, remember to incorporate this. Note the hero's level and level modifier on their sheet.
 SUBSECTION/
-/SUBSECTION" Species"/
+/SUBSECTION" Hero Species"/
 
 The first thing a player will want to determine is the species of his hero. Is it a human, an eldar, or maybe a wose? This choice might be dictated by setting 
 convention or other choices of specific genre which the participants have already made. Otherwise it will be up to the player. The chosen species is noted, it will 
 be significant later.
 SUBSECTION/
-/SUBSECTION" Calling"/
+/SUBSECTION" Hero Calling"/
 
 Second the player will pick a calling for their hero. Is it a knight, a wizard, a priest perhaps? As with species this choice might be dictated by circumstances. 
 Players will probably want to discuss with each other who wishes to play what. Pay attention to the combat role of the calling, it is a good idea for the players to make 
 sure they cover all the bases. A party will work fine without heroes of every role, but a player might want to keep in mind which ones are and are not represented 
 in the party when picking starting boons.
 SUBSECTION/
-/SUBSECTION" Heroic Origin"/
+/SUBSECTION" Hero's Origin"/
 
 An origin is selected for the hero. You can pick any of the origins provided. This origin will probably include some background elements. Additional background elements
 may be chosen as desired, up to five background elements, one each of the types discussed above in the character attributes section. Not all five must be chosen, 
@@ -346,16 +346,16 @@ aspirational goal instead of an optimum starting bonus.
 
 Record the value for each ability and its modifier.
 SUBSECTION/
-/SUBSECTION" Hit points and healing value"/
+/SUBSECTION" Starting Hit points and healing value"/
 
 Heroes starting hit points are calculated as CON + calling starting hit point value. Divide this number by 4, rounding down; this is the hero's healing Value. 
 The hero's bloodied value can also be noted as 1/2 their maximum hit points, rounded down.
 SUBSECTION/
-/SUBSECTION" Power"/
+/SUBSECTION" Initial Power"/
 
 Your hero starts with 8 power, plus anything provided by any starting boons which might alter that.
 SUBSECTION/
-/SUBSECTION" Boons"/
+/SUBSECTION" Starting Boons"/
 
 Each hero starts with the boons described under their calling's features, their species' features, and their heroic origin's features. In some cases a given calling, 
 species, or origin requires you to choose one from several available features. In that case one of the options is chosen. One major boon is then chosen from the level 1
@@ -375,9 +375,10 @@ then this 4 knack limit does not apply.
 SUBSECTION/
 /SUBSECTION" Character traits"/
 
-Note at least three character traits, each should have a one or two word name, and a short value giving a bit more depth.
+Note up to three character traits, each should have a one or two word name, and a short value giving a bit more depth. Typical
+traits could be things like Goal, Strength, Weakness, Belief, etc.
 SUBSECTION/
-/SUBSECTION" Wealth"/
+/SUBSECTION" Initial Wealth"/
 
 Wealth is essentially a sort of background detail of heroes. Most heroes are going to have ordinary, adequate, or possible well 
 off as a wealth attribute (+1 to +3 ability modifier). A few might be poor, or even destitute, and there could be some rare 
@@ -386,12 +387,12 @@ mind. The details of the story genre being played may also be a factor. You may 
 most sense, but players should generally be allowed to decide this detail for themselves. In some cases background and/or origin
 may describe a starting wealth.
 SUBSECTION/
-/SUBSECTION" Feats"/
+/SUBSECTION" Starting Feats"/
 
 Various boons will give the character access to feats. These should be noted, as the hero is able to perform any and all feats
 granted by their boons.
 SUBSECTION/
-/SUBSECTION" Equipment"/
+/SUBSECTION" Initial Equipment"/
 
 Select equipment which is appropriate to your hero and backstory. If a player wishes his character to begin with something 
 of higher than trivial value, then a wealth check should be made to determine whether or not the hero was able to afford 
@@ -399,20 +400,20 @@ the item. Some heroes may have certain items as a result of boons, origin, or ba
 to limit or add to the standard equipment lists based on the needs of their game as well. Record what your character is carrying 
 and note its load.
 SUBSECTION/
-/SUBSECTION" Maximum load"/
+/SUBSECTION" Calculate Maximum load"/
 
 This is normally 40 + 20 * STR for medium sized creatures. Large creatures should start at 60 + 20 * STR, small at 30 + 20 * 
 STR, and tiny creatures at 10 + 10 * STR. 
 SUBSECTION/
-/SUBSECTION" Load"/
+/SUBSECTION" Determine Load"/
 
 Add up all the loads of each piece of equipment being carried by the hero and note the total.
 SUBSECTION/
-/SUBSECTION" Encumbrance"/
+/SUBSECTION" Determine Encumbrance"/
 
 Note if the hero is unencumbered, encumbered, or overloaded.
 SUBSECTION/
-/SUBSECTION" Movement"/
+/SUBSECTION" Movement Rate and Modes"/
 
 Note the movement rate(s) and mode(s) of the hero; base rates come from the hero's species. If not otherwise specified 
 heroes have a walking mode speed of 6; other modes will always be noted specifically.
