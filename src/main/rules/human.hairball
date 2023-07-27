@@ -51,27 +51,24 @@ FLEXCELL/
 /FLEXCELL
 /SPECIESBOONS
 Human characters may select from the following boons.
-/BOON /ID" 3f9627ca-0d5e-11ee-8002-c87f5455cfcc"/ /BOONNAME Resourceful BOONNAME/
+/BOON /ID" 3f9627ca-0d5e-11ee-8002-c87f5455cfcc"/ /BOONNAME Well Traveled BOONNAME/
 /BOONTYPE Species: Major BOONTYPE/
 /ASSOCIATION Human ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
 /DESCRIPTION
-Humans are known for their resourceful and adaptable nature.
+Humans have a tendency to be far wanderers. While most other species have adapted to specific environments, many humans have journeyed to far places and 
+it is common for them to live in a wide variety of environments. You are such a human, having both ventured into unfamiliar regions and heard many tales of
+far places.
 DESCRIPTION/
 /BENEFITS
 /BENEFIT
-You gain an added knack proficiency. Pick any knack, you are proficient in it.
+You have a knowledge of geography, you may answer questions about this subject with proficiency.
 BENEFIT/
 /BENEFIT
-You gain access to the following feat: /BR
-/FEAT /ID" 1062e3ca-77ab-11ec-ab00-74d02b9c2012"/ /SOURCE none SOURCE/ /TIER heroic TIER/ /FEATNAME Adapt to Circumstances FEATNAME/
-/ORIGIN Human ORIGIN/
-/LEVEL 1 LEVEL/
-/ACTION No Action ACTION/
-/EFFECTS Gain a +3 Proficiency Bonus on a check. EFFECTS/
-/SPECIAL You cannot use this feat again until you take a long rest. SPECIAL/
-/FLAVOR You figure it out. FLAVOR/
-FEAT/
+You gain proficiency in Survival.
+BENEFIT/
+/BENEFIT
+You gain proficiency in speaking another language, choose one.
 BENEFIT/
 BENEFITS/
 BOON/

@@ -17,6 +17,7 @@
 
 import { html, LitElement, render } from 'https://unpkg.com/lit@2/index.js?module';
 import { Rules } from './rules.js';
+import { Background } from './background.js';
 
 /** @private */ const CharacterSheettemplate = document.getElementById('charactersheettemplate');
 
@@ -100,30 +101,49 @@ class CharacterSheet extends HTMLElement {
 				currentDialog.dismiss();
 			};
 			const types = Object.keys(this.backgrounds);
-			const names = ['fooberry'];
+			var names = Object.keys(this.backgrounds[types[0]]);
+			const bg = new Background(null,types[0],names[0],'fix me',null,null);
 			const onTypeChange = (e) => {
-				alert("type changed to ${e.target.value}");
+				var v = e.target.value;
+				bg.type = v;
+				names = Object.keys(this.backgrounds[v]);
+				bg.name = names[0];
+				render(template(bg),currentDialog);
+				// workaround for bug
+				var p = e.target.parentElement;
+				var q = p.querySelector('#backgrounddialogname');
+				q.value = bg.name;
 			}
-			const template = html`<div slot='contents' style='width: 350px;'>
+			const onNameChange = (e) => {
+				var v = e.target.value;
+				bg.name = v;
+				render(template(bg),currentDialog);
+			}
+			const onTextChange = (e) => {
+				var v = e.target.value;
+				bg.text = v;
+//				render(template(bg),currentDialog);
+			}
+			const template = (myBg) => html`<div slot='contents' style='width: 350px;'>
 				<h1 class='dialogtitle'>Add New Background</h1>
       			<div style='clear: both;'>
-	      			<label>type</label><select default='${types[0]}' id='backgrounddialogtype' @change=${onTypeChange}>
-	      				${types.map((type) => html`<option>${type}</option>`)}
+	      			<label>type</label><select id='backgrounddialogtype' @change=${onTypeChange}>
+	      				${types.map((type) => html`<option ?selected=${bg.type === type}>${type}</option>`)}
 	      			</select>
-	      			<input type='text' id='backgrounddialogtypetext' value='foo'/><br>
+	      			<input type='text' id='backgrounddialogtypetext' value=${myBg.type}/><br>
 	      			<label>name</label>
-	      			<select default=${names[0]} id='backgrounddialogname'>
-	      				${names.map((name) => html`<option>${name}</option>`)}
+	      			<select id='backgrounddialogname' @change=${onNameChange}>
+	      				${names.map((name) => html`<option ?selected=${bg.name === name}>${name}</option>`)}
 	      			</select>
-	      			<input type='text' id='backgrounddialogname' value='bar'/><br>
-	      			<label>text</label><input type='text' id='backgrounddialogtext' value='background text'/>
+	      			<input type='text' id='backgrounddialogname' value=${myBg.name}/><br>
+	      			<label>text</label><input type='text' id='backgrounddialogtext' value=${myBg.text} @change=${onTextChange}/>
       			</div>
 			</div>
 			<div slot='buttonbar'>
 				<button type='button' class='dialogbutton' id='add' @click=${addHandler}>Add</button>
 				<button type='button' class='dialogbutton' id='cancel' @click=${cancelHandler}>cancel</button>
 			</div>`;
-			render(template,currentDialog);
+			render(template(bg),currentDialog);
 			document.getElementsByTagName('body')[0].appendChild(currentDialog);
 		};
 	}
@@ -195,15 +215,14 @@ class BackgroundField extends LitElement {
 	render() {
 		return html`
 		<style>
-			.attribute { display: flex; flex-wrap: wrap; }
-			.attribute > div { flex: auto; }
+			.attribute { display: flex; flex-wrap: wrap; flex-direction: row; }
 		</style>
 		<div class="attribute">
-			<div>${this.type}</div>
-			<div>${this.name}</div>
-			<div id="textplace">${this.text}</div>
-			<div><button type="button">Edit</button></div>
-			<div><button part="delete" name="delete" id='delete' @click="${this.deleteButtonHandler}">x</button></div>
+			<div style='flex-grow: 0'><span style='padding-left: 4px; padding-right: 4px'>${this.type}</span></div>
+			<div style='flex-grow: 0'><span style='padding-left: 4px; padding-right: 4px'>${this.name}</span></div>
+			<div style='flex-grow: 10' id="textplace"><span style='padding-left: 4px'>${this.text}</span></div>
+			<div style='flex-grow: 0'><button type="button">Edit</button></div>
+			<div style='flex-grow: 0'><button part="delete" name="delete" id='delete' @click="${this.deleteButtonHandler}">x</button></div>
 		</div>`;
 	}
 	

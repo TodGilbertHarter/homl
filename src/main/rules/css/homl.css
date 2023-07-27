@@ -73,6 +73,8 @@
     --wound-fg: white;
     --curse-bg: black;
     --curse-fg: LightYellow;
+    --poison-bg: LightGreen;
+    --poison-fg: black;
 }
 
 .w3-theme-l5 {color:#000 !important; background-color:#fdfdfc !important}
@@ -867,6 +869,11 @@ p {
     border-right: 1px solid black;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+}
+
+.poison {
+	background-color: var(--poison-bg);
+	color: var(--poison-fg);
 }
 
 .disease {

@@ -5,6 +5,8 @@ calling, species, etc. many are also less specific and might be appropriate to a
 /SECTION" A"/
 /FLEXROW
 /FLEXCELL
+/REF Alertness REF/
+/REF Arcane Duelist REF/
 /REF Axe Fighter REF/
 FLEXCELL/
 FLEXROW/
@@ -13,6 +15,8 @@ SECTION/
 /FLEXROW
 /FLEXCELL
 /REF Balzak's Axe REF/
+/REF Body of Iron REF/
+/REF Brutal Blade REF/
 FLEXCELL/
 FLEXROW/
 SECTION/
@@ -20,6 +24,8 @@ SECTION/
 /FLEXROW
 /FLEXCELL
 /REF Child of the Wood REF/
+/REF Combat Focus REF/
+/REF Combat Trance REF/
 FLEXCELL/
 FLEXROW/
 SECTION/
@@ -28,6 +34,7 @@ SECTION/
 /FLEXCELL
 /REF Dirty Fighter REF/
 /REF Double Blade Fighter REF/
+/REF Draconic Bloodline REF/
 /REF Dragon Technique REF/
 /REF Dubbed REF/
 /REF Duelist REF/
@@ -37,7 +44,37 @@ SECTION/
 /SECTION" E"/
 /FLEXROW
 /FLEXCELL
+/REF Earth Born REF/
+/REF Elemental Contamination REF/
+/REF Elemental Defender REF/
 /REF Elemental Fusion REF/
+/REF Elemental Infusion REF/
+/REF Expert Rider REF/
+FLEXCELL/
+FLEXROW/
+SECTION/
+/SECTION" F"/
+/FLEXROW
+/FLEXCELL
+/REF Fists of Stone REF/
+/REF Fire Dragon Blooded REF/
+/REF Footwork Expert REF/
+/REF Forceful Defender REF/
+FLEXCELL/
+FLEXROW/
+SECTION/
+/SECTION" G"/
+/FLEXROW
+/FLEXCELL
+/REF God Blooded REF/
+FLEXCELL/
+FLEXROW/
+SECTION/
+/SECTION" H"/
+/FLEXROW
+/FLEXCELL
+/REF Healer REF/
+/REF Healing Hands REF/
 FLEXCELL/
 FLEXROW/
 SECTION/
@@ -62,7 +99,10 @@ SECTION/
 /REF Legendary Duelist REF/
 /REF Legendary Swordsman REF/
 /REF Life Attunement REF/
+/REF Light Drinker REF/
+/REF Light Weapon Expert REF/
 /REF Line of Defense REF/
+/REF Living Defense REF/
 FLEXCELL/
 FLEXROW/
 SECTION/
@@ -71,6 +111,10 @@ SECTION/
 /FLEXCELL
 /REF Martial Attunement REF/
 /REF Master Duelist REF/
+/REF Mental Confusion REF/
+/REF Mighty Defender REF/
+/REF Mobile Defender REF/
+/REF Mounted Combat Expert REF/
 FLEXCELL/
 FLEXROW/
 SECTION/
@@ -95,8 +139,18 @@ If your companion ever dies you may either give up this boon, or the GM may allo
 Special: The GM might let you have several lower level animals in lieu of a single companion of your own level.
 RESTRICTIONS/
 BOON/
+/REF Natural Warrior REF/
 FLEXCELL/
 /FLEXCELL
+FLEXCELL/
+FLEXROW/
+SECTION/
+/SECTION" O"/
+/FLEXROW
+/FLEXCELL
+/REF Order of the Bear REF/
+/REF Order of the Boar REF/
+/REF Order of the Wolf REF/
 FLEXCELL/
 FLEXROW/
 SECTION/
@@ -116,6 +170,8 @@ the power source you selected.
 BENEFIT/
 BENEFITS/
 BOON/
+/REF Proficiency REF/
+/REF Protective Elixir REF/
 FLEXCELL/
 /FLEXCELL
 FLEXCELL/
@@ -142,9 +198,13 @@ SECTION/
 /REF Shadow Attunement REF/
 /REF Shield Expert REF/
 /REF Shield Master REF/
+/REF Sneak Attack REF/
+/REF Source Attunement REF/
 /REF Spiritual Attunement REF/
+/REF Spirit Channeler REF/
 /REF Staff Fighter REF/
 /REF Staff Expert REF/
+/REF Stone Profit REF/
 /REF Student of the Sword REF/
 /REF Sword Master REF/
 FLEXCELL/
@@ -157,10 +217,19 @@ SECTION/
 FLEXCELL/
 FLEXROW/
 SECTION/
+/SECTION" V"/
+/FLEXROW
+/FLEXCELL
+/REF Venom Dragon Blooded REF/
+FLEXCELL/
+FLEXROW/
+SECTION/
 /SECTION" W"/
 /FLEXROW
 /FLEXCELL
+/REF Weapon Bond REF/
 /REF Web of Nature REF/
+/REF Well Traveled REF/
 FLEXCELL/
 FLEXROW/
 SECTION/
