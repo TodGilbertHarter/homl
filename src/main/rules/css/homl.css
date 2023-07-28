@@ -75,6 +75,10 @@
     --curse-fg: LightYellow;
     --poison-bg: LightGreen;
     --poison-fg: black;
+    --time-bg: Ivory;
+    --time-fg: black;
+    --fate-bg: DarkGrey;
+    --fate-fg: LightYellow;
 }
 
 .w3-theme-l5 {color:#000 !important; background-color:#fdfdfc !important}
@@ -923,6 +927,16 @@ p {
 .spirit {
     background-color: var(--spirit-bg);
     color: var(--spirit-fg);
+}
+
+.time {
+	background-color: var(--time-bg);
+	color: var(--time-fg);
+}
+
+.fate {
+	background-color: var(--fate-bg);
+	color: var(--fate-fg);
 }
 
 .none {

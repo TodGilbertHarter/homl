@@ -90,24 +90,94 @@ Drinking a potion is a major action. When a potion's duration is not specified, 
 /DIVW=" 100%; padding-left: .5em; padding-right: .5em"/
 /TABLE=" bodytable fixedtable"/
 /THEAD
-/* /TR /THS=" 2"/ Potions TH/ TR/ */
+/TR /THS=" 2"/ Potions TH/ TR/
 /TR /THW=" 20%"/ Level /THW/=" 80%"/ Item TH/ TR/
 THEAD/
 /TBODY
-/TR /TD=" center"/ 9 /TD/=" center"/ Accuracy TD/ TR/
-/TR /TD=" center"/ 1 /TD/=" center"/ Animal Control TD/ TR/
-/TR /TD=" center"/ 1 /TD/=" center"/ Aptitude TD/ TR/
-/TR /TD=" center"/ 5 /TD/=" center"/ Chameleon TD/ TR/
-/TR /TD=" center"/ 1 /TD/=" center"/ Climbing TD/ TR/
-/TR /TD=" center"/ 4 /TD/=" center"/ Clairaudience TD/ TR/
-/TR /TD=" center"/ 7 /TD/=" center"/ Clairvoyance TD/ TR/
-/TR /TD=" center"/ 9 /TD/=" center"/ Clarity TD/ TR/
-/TR /TD=" center"/ 4 /TD/=" center"/ Defense TD/ TR/
-/TR /TD=" center"/ 4 /TD/=" center"/ Dimunition TD/ TR/
-/TR /TD=" center"/ 3 /TD/=" center"/ Dragon Breath TD/ TR/
-/TR /TD=" center"/ 13 /TD/=" center"/ Dragon Control TD/ TR/
+/TR /TD=" center"/ 9 /TD/=" center"/ /REF Accuracy REF/ TD/ TR/
+/TR /TD=" center"/ 1 /TD/=" center"/ /REF Animal Control REF/ TD/ TR/
+/TR /TD=" center"/ 1 /TD/=" center"/ /REF Aptitude REF/ TD/ TR/
+/TR /TD=" center"/ 5 /TD/=" center"/ /REF Chameleon REF/ TD/ TR/
+/TR /TD=" center"/ 1 /TD/=" center"/ /REF Climbing REF/ TD/ TR/
+/TR /TD=" center"/ 4 /TD/=" center"/ /REF Clairaudience REF/ TD/ TR/
+/TR /TD=" center"/ 7 /TD/=" center"/ /REF Clairvoyance REF/ TD/ TR/
+/TR /TD=" center"/ 9 /TD/=" center"/ /REF Clarity REF/ TD/ TR/
+/TR /TD=" center"/ 4 /TD/=" center"/ /REF Defense REF/ TD/ TR/
+/TR /TD=" center"/ 4 /TD/=" center"/ /REF Dimunition REF/ TD/ TR/
+/TR /TD=" center"/ 3 /TD/=" center"/ /REF Dragon Breath REF/ TD/ TR/
+/TR /TD=" center"/ 13 /TD/=" center"/ /REF Dragon Control REF/ TD/ TR/
+/TR /TD=" center"/ 6 /TD/=" center"/ /REF ESP REF/ TD/ TR/
+/TR /TD=" center"/ 6 /TD/=" center"/ /REF Flying REF/ TD/ TR/
+/TR /TD=" center"/ 6 /TD/=" center"/ /REF Gaseous Form REF/ TD/ TR/
+/TR /TD=" center"/ 12 /TD/=" center"/ /REF Giant Control REF/ TD/ TR/
+/TR /TD=" center"/ 9 /TD/=" center"/ /REF Giant Strength REF/ TD/ TR/
+/TR /TD=" center"/ 1 /TD/=" center"/ /REF Growth REF/ TD/ TR/
+/TR /TD=" center"/ 4 /TD/=" center"/ /REF Haste REF/ TD/ TR/
+/TR /TD=" center"/ 1 /TD/=" center"/ /REF Healing REF/ TD/ TR/
+/TR /TD=" center"/ 1 /TD/=" center"/ /REF Heroism REF/ TD/ TR/
+/TR /TD=" center"/ 9 /TD/=" center"/ /REF Human Control REF/ TD/ TR/
+/TR /TD=" center"/ 7 /TD/=" center"/ /REF Invisibility REF/ TD/ TR/
+/TR /TD=" center"/ 16 /TD/=" center"/ /REF Invulnerability REF/ TD/ TR/
+/TR /TD=" center"/ 13 /TD/=" center"/ /REF Levitation REF/ TD/ TR/
 TBODY/
 TABLE/
+
+/FEAT /ID" ba79f666-77a9-11ec-99d6-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Aptitude FEATNAME/ 
+/ORIGIN Potion ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Major ACTION/
+/TAGS enchantment TAGS/
+/EFFECTS 
+Pick a knack, weapon, implement, or tool. The character gains proficiency with this until the next rest or recovery.
+EFFECTS/
+/COMPONENTS Major martial components COMPONENTS/
+/COSTS One power point of any source COSTS/
+FEAT/
+/FEAT /ID" f774ced0-2cd7-11ee-91f8-c87f5455cfcc"/ /SOURCE elemental SOURCE/ /TIER legendary TIER/ /FEATNAME Dragon Control FEATNAME/ 
+/ORIGIN Potion ORIGIN/ /LEVEL 9 LEVEL/ /ACTION Major ACTION/
+/TAGS enchantment, fire*, cold*, acid*, poison*, lightning* TAGS/
+/SPECIAL Pick one of fire, cold, acid, lightning, or poison when the potion is made. SPECIAL/
+/EFFECTS
+The character can Dominate a dragon of the same element as the potion until the end of the action sequence, or until a rest or recovery.
+EFFECTS/
+/COMPONENTS Significant elemental components COMPONENTS/
+/COSTS One power point of the elemental source COSTS/
+FEAT/
+/FEAT /ID" 1395359e-2ce9-11ee-9698-c87f5455cfcc"/ /SOURCE shadow SOURCE/ /TIER heroic TIER/ /FEATNAME ESP FEATNAME/ 
+/ORIGIN Potion ORIGIN/ /LEVEL 6 LEVEL/ /ACTION Major ACTION/
+/TAGS enchantment, psychic TAGS/
+/EFFECTS
+The user is able to read the most obvious thoughts of a target within 3 squares until the next rest or recovery. This grants advantage on any check involving 
+negotiation, or other similar checks which would be assisted by knowing what the target is thinking.
+EFFECTS/
+/COMPONENTS Significant shadow components COMPONENTS/
+/COSTS One power point of the shadow source COSTS/
+FEAT/
+/FEAT /ID" d812a064-2ce9-11ee-ad26-c87f5455cfcc"/ /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Flying FEATNAME/ 
+/ORIGIN Potion ORIGIN/ /LEVEL 6 LEVEL/ /ACTION Major ACTION/
+/TAGS enchantment, elemental TAGS/
+/EFFECTS
+The user gains a movement mode of fly 3 until the next rest or recovery.
+EFFECTS/
+/COMPONENTS Significant elemental components COMPONENTS/
+/COSTS One power point of the elemental source COSTS/
+FEAT/
+/FEAT /ID" 3a98bcc8-2cea-11ee-8702-c87f5455cfcc"/ /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Gaseous Form FEATNAME/ 
+/ORIGIN Potion ORIGIN/ /LEVEL 6 LEVEL/ /ACTION Major ACTION/
+/TAGS enchantment, elemental TAGS/
+/EFFECTS
+The user gains a movement mode of fly 3 until the next rest or recovery.
+EFFECTS/
+/COMPONENTS Significant elemental components COMPONENTS/
+/COSTS One power point of the elemental source COSTS/
+FEAT/
+/FEAT /ID" 9a5cf194-2d01-11ee-bc1d-c87f5455cfcc"/ /SOURCE shadow SOURCE/ /TIER legendary TIER/ /FEATNAME Giant Control FEATNAME/ 
+/ORIGIN Potion ORIGIN/ /LEVEL 12 LEVEL/ /ACTION Major ACTION/
+/TAGS enchantment, shadow TAGS/
+/EFFECTS
+The character can Dominate a giant until the end of the action sequence, or until a rest or recovery.
+EFFECTS/
+/COMPONENTS Significant shadow components COMPONENTS/
+/COSTS Two power points of the shadow source COSTS/
+FEAT/
 DIV/
 FLEXCELL/
 /FLEXCELL
@@ -119,15 +189,6 @@ FLEXCELL/
 /COMPONENTS Major spiritual components COMPONENTS/
 /COSTS One power point of any source COSTS/
 FEAT/
-/FEAT /ID" ba79f666-77a9-11ec-99d6-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Aptitude FEATNAME/ 
-/ORIGIN Potion ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Major ACTION/
-/TAGS enchantment TAGS/
-/EFFECTS 
-Pick a knack, weapon, implement, or tool. The character gains proficiency with this until the next rest or recovery.
-EFFECTS/
-/COMPONENTS Major martial components COMPONENTS/
-/COSTS One power point of any source COSTS/
-FEAT/
 /FEAT /ID" cdf5df16-77a9-11ec-b98f-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Chameleon FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 5 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment TAGS/
@@ -137,7 +198,6 @@ EFFECTS/
 /COMPONENTS Significant martial components COMPONENTS/
 /COSTS One power point of any source COSTS/
 FEAT/
-
 /FEAT /ID" dc71e076-77a9-11ec-8d5d-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Clairaudience FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 4 LEVEL/ /ACTION Major ACTION/
 /TAGS conjuration, enchantment TAGS/
@@ -147,17 +207,15 @@ EFFECTS/
 /COMPONENTS Major shadow components COMPONENTS/
 /COSTS One power point of any source COSTS/
 FEAT/
-
 /FEAT /ID" ea66fbc6-77a9-11ec-9127-74d02b9c2012"/ /SOURCE spirit SOURCE/ /TIER legendary TIER/ /FEATNAME Clarity FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 9 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment TAGS/
 /EFFECTS 
 The character is granted advantage on up to 3 wisdom or wisdom-based skill checks made before the next rest or recovery. Alternatively the character may elect to treat any one die roll made on a wisdom or wisdom-based skill check as a 20. This expends the potion's power immediately.
 EFFECTS/
-/COMPONENTS Major shadow components COMPONENTS/
-/COSTS One power point of any source COSTS/
+/COMPONENTS Major spirit components COMPONENTS/
+/COSTS One power point of the spirit source COSTS/
 FEAT/
-
 /FEAT /ID" f9484082-77a9-11ec-bd6e-74d02b9c2012"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Dimunition FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 4 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment TAGS/
@@ -167,8 +225,36 @@ EFFECTS/
 /COMPONENTS Major life components COMPONENTS/
 /COSTS One power point of any source COSTS/
 FEAT/
-
-
+/FEAT /ID" f6630d10-2d02-11ee-a3a6-c87f5455cfcc"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Growth FEATNAME/ 
+/ORIGIN Potion ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Major ACTION/
+/TAGS enchantment, life TAGS/
+/EFFECTS
+The character grows. A level 1 version of this potion creates growth of one size category until the next rest or recovery. Level 9 legendary growth potions increase the
+character's size by 2 categories, and mythic level 17 potions by 3 categories. The character's equipment will also increase in size, and weapons will gain an extra point of damage
+per size category increase. While the character's strength rating will not increase, their max load will increase by 2x the number of size categories the character grows by.
+EFFECTS/
+/COMPONENTS Significant life components COMPONENTS/
+/COSTS One power point of any source COSTS/
+FEAT/
+/FEAT /ID" 13db10f8-2d04-11ee-b30f-c87f5455cfcc"/ /SOURCE martial SOURCE/ /TIER legendary TIER/ /FEATNAME Giant Strength FEATNAME/ 
+/ORIGIN Potion ORIGIN/ /LEVEL 9 LEVEL/ /ACTION Major ACTION/
+/TAGS enchantment, martial TAGS/
+/EFFECTS
+The character's strength increases to mighty (+5) until the next rest or recovery.
+EFFECTS/
+/COMPONENTS Significant martial components COMPONENTS/
+/COSTS One power point of the martial source COSTS/
+FEAT/
+/FEAT /ID" e83663d4-2d04-11ee-9083-c87f5455cfcc"/ /SOURCE time SOURCE/ /TIER heroic TIER/ /FEATNAME Haste FEATNAME/ 
+/ORIGIN Potion ORIGIN/ /LEVEL 5 LEVEL/ /ACTION Major ACTION/
+/TAGS enchantment, time TAGS/
+/EFFECTS
+The character's movement rate is increased by 4 until the next rest or recovery. Once during this duration the character may take an extra major action. Level 9 potions allow this
+to done twice, and level 17 allow it 3 times.
+EFFECTS/
+/COMPONENTS Significant time components COMPONENTS/
+/COSTS One power point of any source COSTS/
+FEAT/
 DIV/
 FLEXCELL/
 /FLEXCELL
@@ -182,7 +268,6 @@ EFFECTS/
 /COMPONENTS Major life components COMPONENTS/
 /COSTS One power point of any source COSTS/
 FEAT/
-
 /FEAT /ID" 18802b0e-77aa-11ec-a67a-74d02b9c2012"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Climbing FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment TAGS/
@@ -192,7 +277,6 @@ EFFECTS/
 /COMPONENTS Significant martial components COMPONENTS/
 /COSTS One power point of any source COSTS/
 FEAT/
-
 /FEAT /ID" 28acc1ae-77aa-11ec-976c-74d02b9c2012"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Clairvoyance FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 7 LEVEL/ /ACTION Major ACTION/
 /TAGS conjuration, enchantment TAGS/
@@ -202,7 +286,6 @@ EFFECTS/
 /COMPONENTS Significant shadow components COMPONENTS/
 /COSTS One power point of any source COSTS/
 FEAT/
-
 /FEAT /ID" 38334e18-77aa-11ec-94bf-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Defense FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 4 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment TAGS/
@@ -212,8 +295,6 @@ EFFECTS/
 /COMPONENTS Significant martial components COMPONENTS/
 /COSTS One power point of any source COSTS/
 FEAT/
-
-
 /FEAT /ID" 474c66d2-77aa-11ec-951b-74d02b9c2012"/ /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Dragon Breath FEATNAME/ 
 /ORIGIN Potion ORIGIN/ /LEVEL 3 LEVEL/ /ACTION Major ACTION/
 /TAGS enchantment, fire*, cold*, acid*, poison*, lightning* TAGS/
@@ -230,9 +311,78 @@ EFFECTS/
 /COMPONENTS Significant elemental components COMPONENTS/
 /COSTS One power point of any source COSTS/
 FEAT/
-
-
+/FEAT /ID" fc492604-2d5e-11ee-accc-c87f5455cfcc"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Healing FEATNAME/ 
+/ORIGIN Potion ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Major ACTION/
+/TAGS enchantment, life, healing TAGS/
+/EFFECTS
+The character can regain her healing value worth of hit points immediately. The character may also make a CON check at the level of the potion to improve
+one affliction by one level vs the DV of the level of the affliction the character has.
+EFFECTS/
+/COMPONENTS Significant life components COMPONENTS/
+/COSTS One power point of any source COSTS/
+FEAT/
+/FEAT /ID" 06caf110-2d60-11ee-85ff-c87f5455cfcc"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Heroism FEATNAME/ 
+/ORIGIN Potion ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Major ACTION/
+/TAGS enchantment, martial TAGS/
+/EFFECTS
+The character gains three points of DR until the next rest or recovery, and can gain advantage on an attack check, defense check, or Athletic, Acrobatic, or Survival check
+during this time. 9th level potions grant 5 DR, and 17th level potions grant 7 DR.
+EFFECTS/
+/COMPONENTS Significant martial components COMPONENTS/
+/COSTS One power point of any source COSTS/
+FEAT/
 DIV/
+FLEXCELL/
+FLEXROW/
+SECTION/
+/SECTION" Weapons"/
+
+In general magic weapons can be of any type, though swords, axes, bows, spears, and maces (clubs) are the most commonly encountered. Some are simply enchanted for extra effectiveness,
+while others may possess additional special powers. It may also be possible to temporarily enchant weapons in this way as well. This would generally be a ritual of an appropriate power
+source, with an appropriate cost, usually one PP.
+/FLEXROW
+/FLEXCELL
+/BOON /ID" f316736e-2cc5-11ee-9ae2-c87f5455cfcc"/ /BOONNAME Heroic Weapon 1 BOONNAME/
+/BOONTYPE Permanent Magic Weapon BOONTYPE/
+/ASSOCIATION None ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+This extraordinary weapon has been enchanted to provide enhanced effectiveness in battle. Weapons of all types may be so enchanted.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT 
+This weapon provides a +1 Permanent Bonus to all attacks when it is being wielded, and has a 1 greater damage rating than non-magical weapons of the same type.
+BENEFIT/
+BENEFITS/
+BOON/
+/BOON /ID" 374e292e-2cd9-11ee-acc1-c87f5455cfcc"/ /BOONNAME Mythic Weapon 17 BOONNAME/
+/BOONTYPE Permanent Magic Weapon BOONTYPE/
+/ASSOCIATION None ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+This extraordinary weapon has been enchanted to provide enhanced effectiveness in battle. Weapons of all types may be so enchanted.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT 
+This weapon provides a +3 Permanent Bonus to all attacks when it is being wielded, and has a 6 greater damage rating than non-magical weapons of the same type.
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /ID" 3c5c1c84-2cd2-11ee-b5a1-c87f5455cfcc"/ /BOONNAME Legendary Weapon 9 BOONNAME/
+/BOONTYPE Permanent Magic Weapon BOONTYPE/
+/ASSOCIATION None ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+This extraordinary weapon has been enchanted to provide enhanced effectiveness in battle. Weapons of all types may be so enchanted.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT 
+This weapon provides a +2 Permanent Bonus to all attacks when it is being wielded, and has a 3 greater damage rating than non-magical weapons of the same type.
+BENEFIT/
+BENEFITS/
+BOON/
 FLEXCELL/
 FLEXROW/
 SECTION/
