@@ -135,7 +135,6 @@ class Rules {
 			character.derivedData.maxPower = pps;
 		});
 		this.addRule(powerCalculator);
-        
     }
     
     createSpeciesCalculators(specie) {

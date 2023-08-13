@@ -136,11 +136,8 @@ of HTML. Include this and a character data document, the result will be an HTML 
 
 /: /DAMAGEREDUCTION /GETMATCHING DAMAGEREDUCTION/ /SHEETROW /DELIMITED /CALCULATEDFIELD /FIELDNAME DR: FIELDNAME/ /FIELDWIDTH 3em FIELDWIDTH/ /FIELDID characterdr FIELDID/ CALCULATEDFIELD/  :/
 /: DAMAGEREDUTION/ /[" Mismatch, DAMAGEREDUCTION/ must follow /DAMAGEREDUCTION "]/ /ABORT :/
-/: /WEALTH /GETMATCHING WEALTH/ /DELIMITED /SELECTFIELD /FIELDNAME Wealth: FIELDNAME/ /FIELDWIDTH 7em FIELDWIDTH/ /FIELDID characterwealth FIELDID/ SELECTFIELD/ :/
-/: WEALTH/ /[" Mismatch, WEALTH/ must follow /WEALTH "]/ /ABORT :/
-/: /WEALTHBONUS /GETMATCHING WEALTHBONUS/ /DELIMITED /CALCULATEDFIELD /FIELDNAME / FIELDNAME/ /FIELDWIDTH 3em FIELDWIDTH/ /FIELDID characterwealthbonus FIELDID/ CALCULATEDFIELD/ :/
-/: WEALTHBONUS/ /[" Mismatch, WEALTHBONUS/ must follow /WEALTHBONUS "]/ /ABORT :/
-
+/: /WEALTH /ATTRIBUTE label='Wealth:' name="characterwealth" id="characterwealth" modifier='' value=" :/
+/: WEALTH/ "/> ATTRIBUTE/ :/
 /: /KNACKS /SHEETROW <div class='knacktable'> /FLEXROW  
 <div style="flex: 2.3">Name</div> 
 <div style="flex: 1.1">Ability</div> 

@@ -373,7 +373,7 @@ class AttributeField extends SheetField {
 
 const template_SelectField = document.createElement('template');
 // template_SelectField.innerHTML = `<label id='label'></label><select id='input'></select>`;
-template_SelectField.innerHTML = `<label id='label'></label><select id='input'><slot name='option'>foo</slot></select>`;
+template_SelectField.innerHTML = `<label id='label'></label><select id='input'><slot name='option'>foo</slot></select></span>`;
 
 class SelectField extends SheetField {
     constructor() {
@@ -495,6 +495,17 @@ class AbilityField extends SheetField {
     onChange() {
         this._setModifier(this.shadowRoot.getElementById('input').value);
     }
+
+    setSelections(options) { /* currently just used by wealth */
+        const input = this.shadowRoot.getElementById('input');
+        input.innerHTML = '';
+		options.forEach((option) => {
+			const optElement = document.createElement('option');
+			optElement.innerText = option.name;
+			optElement.value = option.id;
+			input.appendChild(optElement);
+		});
+	}
 
 }
 
