@@ -32,6 +32,11 @@ const playerConverter = {
 	}
 };
 
+const GetPlayerReference = (id) => {
+	const db = window.gebApp.firestore;
+	return doc(db,"players",id);
+};
+
 class PlayerRepository {
 	/*
 	Game repo, this fetches players for us from Firebase.
@@ -90,5 +95,5 @@ class PlayerRepository {
 
 }
 
-export { PlayerRepository };
+export { PlayerRepository, GetPlayerReference };
 

@@ -26,17 +26,19 @@ class Application {
 	controller;
 	theDocument;
 	characterController;
+	firestore;
 	
 	constructor(firestore,fbProject,aDocument) {
+		this.firestore = firestore;
 		this.theDocument = aDocument;
 		this.callingRepo = new CallingRepository(this,firestore);
 		this.speciesRepo = new SpeciesRepository(this,firestore);
 		this.backgroundRepo = new BackgroundRepository(this,firestore);
 		this.originRepo = new OriginRepository(this,firestore);
-		this.characterController = new CharacterController();
 		this.playerRepo = new PlayerRepository(this,firestore);
 		this.gameRepo = new GameRepository(this,firestore);
 		this.characterRepo = new CharacterRepository(this,firestore);
+		this.characterController = new CharacterController(this.speciesRepo,this.callingRepo,this.backgroundRepo,this.originRepo,this.characterRepo);
 		this.authenticator = new Authenticator(this,fbProject,this.playerRepo);
 		this.router = new Router({ mode: 'hash', root: '/'});
 		this.view = new NotView(this,this.theDocument);

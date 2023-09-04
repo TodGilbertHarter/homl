@@ -40,14 +40,6 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 	}
 	
 	/**
-	 * Add a new tab to the left tab panel.
-	 */
-	addTabToLeftPanel(tab,tabContents) {
-		this.theDocument.getElementById('leftslottabbar').appendChild(tab);
-		this.theDocument.getElementById('leftslottabpanel').appendChild(tabContents);
-	}
-
-	/**
 	 * Display the user sign in UI.
 	 */		
 	displaySignInUI() {
@@ -77,25 +69,38 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 	}
 	
 	/**
+	 * Add a new tab to the left tab panel.
+	 */
+	addTabToLeftPanel(tab,tabContents,isactive) {
+		const tp = this.theDocument.getElementById('leftslottabpanel');
+		tp.addTab(tab,tabContents,isactive);
+	}
+
+	/**
 	 * Add a game lister component to the given tab bar.
 	 */
-	displayGameLister(tbar,tabs) {
-		const li = this.theDocument.createElement('li');
-		li.innerText = 'Games';
-		li.classList.add('active');
-		tbar.appendChild(li);
-		const content = this.theDocument.getElementById('gamesearchtemplate').content.cloneNode(true);
-		content.firstChild.classList.add('active');
-		tabs.appendChild(content);
+	displayGameLister(isactive) {
+		const ti = this.theDocument.createElement('tab-item');
+		ti.innerHTML = 'Games';
+		const content = this.theDocument.createElement('tab-body');
+		content.innerHTML = '<game-search></game-search><game-list></game-list>';
+		this.addTabToLeftPanel(ti,content,isactive)
+	}
+	
+	displayCharacterLister(isactive) {
+		const ti = this.theDocument.createElement('tab-item');
+		ti.innerHTML = 'Characters';
+		const content = this.theDocument.createElement('<tab-body>');
+		content.innerHTML = '<character-search></character-search><character-list></character-list>';
+		this.addTabToLeftPanel(ti,content,isactive)
 	}
 	
 	/**
 	 * Display the default tab arrangement.
 	 */
 	displayTabs() {
-		const tbar = this.theDocument.getElementById('leftslottabbar');
-		const tabs = this.theDocument.getElementById('leftslottabpanel');
-		this.displayGameLister(tbar,tabs);
+		this.displayGameLister(true);
+//		this.displayCharacterLister(false);
 	}
 	
 	/**
@@ -166,8 +171,7 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 	
 	displayCharacterInfo(characterId) {
 		const displayarea = this.theDocument.getElementById('mainappview');
-		characterSheetFactory(displayarea,characterId,this.gebApp.speciesRepo,
-		  this.gebApp.callingRepo,this.gebApp.characterRepo,this.gebApp.backgroundRepo,this.gebApp.originRepo,(sheet) => {
+		characterSheetFactory(displayarea,characterId,this.gebApp.characterRepo,(sheet) => {
 /*			const c = displayarea.childNodes[0];
 			if(c !== 'undefined') { 
 				displayarea.replaceChild(sheet,c);

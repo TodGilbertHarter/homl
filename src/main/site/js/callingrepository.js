@@ -106,6 +106,11 @@ class CallingRepository {
 		this.notifyListeners(this.allCallings);
 	}
 	
+	reloadAllCallings() {
+		this.allCallings = undefined;
+		loadAllCallings();
+	}
+	
 	listeners = [];
 	notifyListeners() {
 		this.listeners.forEach((listener) => listener(this.allCallings));
@@ -119,6 +124,9 @@ class CallingRepository {
      * Gets all available callings as a list and invokes the given callback when the data is available.
      */
     getAllCallings(onDataAvailable) {
+		if(this.allCallings !== undefined) {
+			onDataAvailable(this.allCallings);
+		}
 		var callingsRef = collection(this.db,'callings');
 		callingsRef = callingsRef.withConverter(callingConverter);
 		getDocs(callingsRef).then((doc) => {

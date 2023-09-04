@@ -19,7 +19,50 @@ import { Character } from './character.js';
 
 const characterConverter = {
 	toFirestore(character) {
-		
+		const c = {};
+		c.id = character.id;
+		for(const [key, value] of Object.entries(character.characterData)) {
+			if(key === "background") {
+				for(const [bgkey, bg] of Object.entries(character.characterData[key])) {
+					const db = window.gebApp.firestore;
+					const docRef = doc(db,"backgrounds",bg.background.id);
+					const nb = {
+						bgref: docRef,
+						description: bg.description,
+						name: bg.name
+					};
+					if(c[key] === undefined) { c[key] = {};}
+					c[key][bgkey] = nb;
+				};
+			} else if(key === "species") {
+				if(character.characterData.species.constructor.name === "Species") {
+					const db = window.gebApp.firestore;
+					const docRef = doc(db,"species",character.characterData.species.id);
+					c[key] = docRef;
+				} else {
+					throw new Error("bad species when trying to save character");
+				}
+			} else if(key === "origin") {
+				if(character.characterData.origin.constructor.name === "Origin") {
+					const db = window.gebApp.firestore;
+					const docRef = doc(db,"origin",character.characterData.origin.id);
+					c[key] = docRef;
+				} else {
+					throw new Error("bad origin when trying to save character");
+				}
+			} else if(key === "calling") {
+				if(character.characterData.calling.constructor.name === "Calling") {
+					const db = window.gebApp.firestore;
+					const docRef = doc(db,"calling",character.characterData.calling.id);
+					c[key] = docRef;
+				} else {
+					throw new Error("bad calling when trying to save character");
+				}
+			} else {
+				c[key] = value;
+			}
+		}
+		return c;
 	},
 	
 	fromFirestore(snapshot, options) {
@@ -95,18 +138,17 @@ class CharacterRepository {
 		});
 	}
 	
-    saveCharacter(character) {
-        const data = character.characterData;
-        console.log("Saving data of "+JSON.stringify(data));
-        if(data.hasOwnProperty('id') && data.id !== undefined) {
-            console.log("UPDATING, ID IS:"+data.id);
-            var id = data.id;
-            delete data.id;
-            this.db.collection("characters").doc(id).set(data);
-            data.id = id;
+    async saveCharacter(character) {
+        console.log("Saving data of "+JSON.stringify(character));
+        if(character.hasOwnProperty('id') && character.id !== undefined && character.id !== null) {
+            console.log("UPDATING, ID IS:"+character.id);
+            const id = character.id;
+            const ref = doc(this.db,"characters",id).withConverter(characterConverter);
+            await setDoc(ref,character);
         } else {
-            console.log("CREATING, data is "+JSON.stringify(data));
-            this.db.collection("characters").add(data);
+            console.log("CREATING, data is "+JSON.stringify(character));
+            const ref = doc(collection(this.db,"characters")).withConverter(characterConverter);
+            await setDoc(ref,character);
         }
     }
 }

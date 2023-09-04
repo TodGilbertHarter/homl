@@ -18,6 +18,8 @@
 import { html, LitElement, render } from 'https://unpkg.com/lit@2/index.js?module';
 import { Rules } from './rules.js';
 import { Background } from './background.js';
+import { Character } from './character.js';
+import { GetPlayerReference } from './playerrepository.js'
 
 /** @private */ const CharacterSheettemplate = document.getElementById('charactersheettemplate');
 
@@ -36,16 +38,20 @@ class CharacterSheet extends HTMLElement {
 		super();
 		const content = CharacterSheet.template.content;
         const shadowRoot = this.attachShadow({mode: 'open'}).appendChild(content.cloneNode(true));
+        this.controller = window.gebApp.characterController;
  	}
 
 	connectedCallback() {
 		this.characterId = this.getAttribute('characterid');
 		const savebutton = this.shadowRoot.getElementById('savebutton');
 		const refreshbutton = this.shadowRoot.getElementById('refreshbutton');
+		const newbutton = this.shadowRoot.getElementById('newbutton');
 		const sbh = this.saveButtonHandler.bind(this);
 		savebutton.addEventListener('click',sbh);
 		const rbh = this.refreshButtonHandler.bind(this);
 		refreshbutton.addEventListener('click',rbh);
+		const nbh = this.newButtonHandler.bind(this);
+		newbutton.addEventListener('click',nbh);
 //		const characterview = this.shadowRoot.getElementById('characterview');
 	}
 	
@@ -77,12 +83,14 @@ class CharacterSheet extends HTMLElement {
 			{ id: '6', name: 'Infinite Wealth'}
 		]);
 		const personalityList = this.shadowRoot.getElementById('characterpersonality');
+		personalityList.innerHTML = '';
 		personalityList.newButtonHandler = (e) => {
 			const nitem = '<personality-field name="trait name" value="new description"></personality-field>';
 			personalityList.addItem(nitem);
 		};
 		
 		const backgroundList = this.shadowRoot.getElementById('characterbackground');
+		backgroundList.innerHTML = '';
 		backgroundList.newButtonHandler = (e) => {
 			const currentDialog = e.target.ownerDocument.createElement('dialog-widget');
 			const cancelHandler = (e) => { 
@@ -96,8 +104,13 @@ class CharacterSheet extends HTMLElement {
 				const type = currentDialog.querySelector('#backgrounddialogtype').value;
 				const name = currentDialog.querySelector('#backgrounddialogname').value;
 				const text = currentDialog.querySelector('#backgrounddialogtext').value;
-				const bgTemplate = html`<background-field type='${type}' name='${name}'>${text}</background-field>`;
-				render(bgTemplate,backgroundList);
+//				const bgTemplate = html`<background-field type='${type}' name='${name}'>${text}</background-field>`;
+//				render(bgTemplate,backgroundList);
+				const bgItem = new BackgroundField();
+				backgroundList.addItem(bgItem);
+				bgItem.type = type;
+				bgItem.name = name;
+				bgItem.innerHTML = text;
 				currentDialog.dismiss();
 			};
 			const types = Object.keys(this.backgrounds);
@@ -148,16 +161,46 @@ class CharacterSheet extends HTMLElement {
 		};
 	}
 	
+	/* get the values for personality */
+	getPersonalityList() {
+		const id = 'characterpersonality';
+		const elem = this.getElement(id);
+		const list = [];
+		for(const item of elem.children) {
+			list.push({ name: item.name, value: item.value });
+		}
+		return list;
+	}
+	
+	getBackgroundList() {
+		const id = 'characterbackground';
+		const elem = this.getElement(id);
+		const list = [];
+		for(const item of elem.children) {
+			console.log("FUCKING JAVASCRIPT: "+item.name+", "+item.attributes[0]+', '+item.innerHTML);
+			list.push({
+				name: item.name,
+				type: item.attributes[0].value,
+				description: item.innerHTML
+			});
+		}
+		return list;
+	}
+	
 	disconnectedCallback() {
 		
 	}
 	
 	saveButtonHandler(e) {
-		window.gebApp.characterController.save(this.model);
+		this.controller.saveCharacter(this,this.model);
 	}
 	
 	refreshButtonHandler(e) {
-		window.gebApp.characterController.refreshCharacter(this,this.model);
+		this.controller.refreshCharacter(this,this.model);
+	}
+	
+	newButtonHandler(e) {
+		this.controller.createCharacter(this);
 	}
 	
 	getElement(id) {
@@ -186,6 +229,7 @@ class CharacterSheet extends HTMLElement {
     
     setCharacterListItems(elementId,items) {
 		const listElement = this.shadowRoot.getElementById(elementId);
+		listElement.innerHTML = '';
 		items.forEach((item) => {
 			listElement.addItem(item, () => {});
 		});
@@ -196,16 +240,13 @@ window.customElements.define('character-sheet',CharacterSheet);
 
 class BackgroundField extends LitElement {
 	static properties = {
-		type: {},
-		name: {},
-		text: {}
+		type: {reflect: true},
+		name: {reflect: true},
+		text: {reflect: true}
 	};
 
 	/** @private */ bgValues;
-	deleteButtonHandler = (e) => {
-		const pf = e.target.parentNode.parentNode;
-		pf.parentNode.removeChild(pf);
-	};
+	deleteButtonHandler;
 	
 	constructor() {
 		super();
@@ -262,10 +303,8 @@ class PersonalityField extends LitElement {
 		name: {},
 		value: {}
 	};
-	deleteButtonHandler = (e) => {
-		const pf = e.target.parentNode;
-		pf.parentNode.removeChild(pf);
-	};
+	
+	deleteButtonHandler;
 	
 	constructor() {
 		super();
@@ -285,9 +324,10 @@ window.customElements.define('personality-field',PersonalityField);
 
 class ItemList extends LitElement {
 	static properties = {
-		label: {}	
+		label: {},
+		newButtonHandler: {}
 	};
-	newButtonHandler = () => alert('no handler installed');
+//	newButtonHandler = () => alert('no handler installed');
 	items;
 	itemSlot;
 	
@@ -313,18 +353,31 @@ class ItemList extends LitElement {
 	}
 	
 	addItem(item,inserted) {
-		this.insertAdjacentHTML('beforeend',item);
-		if(inserted !== 'undefined') { inserted(this.lastChild); }
+		var realItem;
+		if(typeof item === 'string' || item instanceof String) {
+			this.insertAdjacentHTML('beforeend',item);
+			realItem = this.lastElementChild;
+		} else {
+			this.insertAdjacentElement('beforeend',item);
+			realItem = item;
+		}
+		realItem.deleteButtonHandler = (e) => {
+			this.removeItem(realItem);
+		};
+		if(this.items !== undefined) {
+			this.items.push(realItem);
+		}
+		if(inserted !== undefined) { inserted(this.lastChild); }
+	}
+	
+	removeItem(item,removed) {
+		this.removeChild(item);
+		this.items = this.itemSlot.assignedElements();
+		if(removed !== undefined) { removed(item); }
 	}
 }
 
 window.customElements.define('item-list',ItemList);
-
-/* class PersonalityList extends ItemList {
-	
-}
-
-window.customElements.define('personality-list',PersonalityList); */
 
 /*
 Sheetfield implements a web component which will bind to a field in a character object. This allows us to map a character
@@ -348,7 +401,7 @@ class SheetField extends HTMLElement {
 }
 
 const template_AttributeField = document.createElement('template');
-template_AttributeField.innerHTML = `<label id='label'></label><input id='input' type='text'>`;
+template_AttributeField.innerHTML = `<label id='label' part='label'></label><input id='input' type='text'>`;
 
 class AttributeField extends SheetField {
     constructor() {
@@ -373,7 +426,7 @@ class AttributeField extends SheetField {
 
 const template_SelectField = document.createElement('template');
 // template_SelectField.innerHTML = `<label id='label'></label><select id='input'></select>`;
-template_SelectField.innerHTML = `<label id='label'></label><select id='input'><slot name='option'>foo</slot></select></span>`;
+template_SelectField.innerHTML = `<label id='label' part='label'></label><select id='input'><slot name='option'>foo</slot></select></span>`;
 
 class SelectField extends SheetField {
     constructor() {
@@ -396,6 +449,7 @@ class SelectField extends SheetField {
     
     setSelections(options) {
         const input = this.shadowRoot.getElementById('input');
+        input.innerHTML = '';
 		options.forEach((option) => {
 			const optElement = document.createElement('option');
 			optElement.innerText = option.name;
@@ -406,7 +460,7 @@ class SelectField extends SheetField {
 }
 
 const template_CalculatedField = document.createElement('template');
-template_CalculatedField.innerHTML = `<label id='label'></label><span part='text' id='input' type='text'>`;
+template_CalculatedField.innerHTML = `<label id='label' part='label'></label><span part='text' id='input' type='text'>`;
 
 class CalculatedField extends SheetField {
     constructor() {
@@ -419,7 +473,6 @@ class CalculatedField extends SheetField {
         const style = this.getAttribute('style');
         const id = this.getAttribute('id');
         const input = this.shadowRoot.getElementById('input');
-//        input.setAttribute('data-bind','value: '+id);
         input.setAttribute('style',style);
         input.innerHTML = value;
         const ltext = this.getAttribute('label');
@@ -592,10 +645,30 @@ window.customElements.define('knack-field',KnackField);
 CharacterController is the controller, responsible for carrying out all the character sheet logical operations.
 */      
 class CharacterController {
-    
-    constructor() {
+   	speciesRepo;
+	callingRepo;
+	backgroundRepo;
+	originRepo;
+	characterRepo;
+
+    constructor(speciesRepo,callingRepo,backgroundRepo,originRepo,characterRepo) {
+		this.speciesRepo = speciesRepo;
+		this.callingRepo = callingRepo;
+		this.backgroundRepo = backgroundRepo;
+		this.originRepo = originRepo;
+		this.characterRepo = characterRepo;
     }
 
+	/**
+	 * Create a brand new empty character which can be displayed on a character sheet.
+	 * It will be owned by the current player.
+	 */
+	createCharacter(sheet) {
+		const char = new Character(null,null);
+		char.owner = GetPlayerReference(window.gebApp.controller.getCurrentPlayer().id);
+		this.populateCharacter(sheet,char,() => {});
+	}
+	
 	/**
 	 * Update the display of the given knack of the provided character on the
 	 * given sheet.
@@ -660,14 +733,14 @@ class CharacterController {
 	 * @param {Character} character the character to get the data from.
      */
     display(sheet,character) {
-		const calling = this.getCalling(sheet,character.calling.id);
-		const specie = this.getSpecies(sheet,character.species.id);
-		const origin = this.getOrigin(sheet,character.origin.id);
+		const calling = this.getCalling(sheet,character.calling?.id);
+		const specie = this.getSpecies(sheet,character.species?.id);
+		const origin = this.getOrigin(sheet,character.origin?.id);
         sheet.setCharacterData('charactername',character.name);
         sheet.setCharacterData('characterlevel',character.level);
-        sheet.setCharacterData('charactercalling',calling.id);
-        sheet.setCharacterData('characterspecies',specie.id);
-        sheet.setCharacterData('characterorigin',origin.id);
+        sheet.setCharacterData('charactercalling',calling?.id);
+        sheet.setCharacterData('characterspecies',specie?.id);
+        sheet.setCharacterData('characterorigin',origin?.id);
         sheet.setCharacterData('characterfate',character.fate);
         sheet.setCharacterData('characterdescription',character.description);
         sheet.setCharacterData('characterhitpoints',character.hitpoints);
@@ -742,6 +815,7 @@ class CharacterController {
         character.level = parseInt(sheet.getCharacterData('characterlevel'),10);
 		character.calling = sheet.getCharacterData('charactercalling');
 		character.species = sheet.getCharacterData('characterspecies');
+		character.origin = sheet.getCharacterData('characterorigin');
         character.fate = sheet.getCharacterData('characterfate');
         character.description = sheet.getCharacterData('characterdescription');
         character.hitpoints = parseInt(sheet.getCharacterData('characterhitpoints'),10);
@@ -773,6 +847,27 @@ class CharacterController {
         knacks.streetwise = sheet.getCharacterData('characterstreetwise');
         knacks.survival = sheet.getCharacterData('charactersurvival');
         knacks.thievery = sheet.getCharacterData('characterthievery');
+        character.personality = {};
+        const plist = sheet.getPersonalityList();
+        plist.forEach((item) => character.personality[item.name] = item.value);
+//        character.background = {};
+        const blist = sheet.getBackgroundList();
+        console.log("fork munch "+blist);
+        const cbg = {};
+        const bglist = sheet.backgrounds;
+        blist.forEach((item) => {
+			const bgitem = bglist[item.type][item.name];
+			const bg = {
+				background: bgitem,
+				bgref: item.bgref,
+				description: item.description,
+				name: item.name,
+				type: item.type
+			};
+			cbg[item.type] = bg;
+		});
+		character.background = cbg;
+//        blist.forEach((item) => character.background[item.name])
     }
     
     calculate(character) {
@@ -780,25 +875,30 @@ class CharacterController {
     }
     
     save(character) {
-        this.repo.saveCharacter(character);
+        this.characterRepo.saveCharacter(character);
     }
     
     // the rest of these functions are meant to be called from action functions at the UI layer.
     
-    refresh(sheet,character) {
+    refresh(sheet,character,action) {
 		console.log("refresh called");
     	this.readForm(sheet,character);
-    	this.calculate(character);
+    	this.populateCharacter(sheet,character, (charSheet) => { 
+				this.calculate(character);
+				action(charSheet,character);
+			});
     }
     
     saveCharacter(sheet,character) {
-        this.refresh(sheet,character);
-        this.save(character);
+        this.refresh(sheet,character, (sheet,character) => {
+	        this.save(character);
+		});
     }
     
     refreshCharacter(sheet,character) {
-        this.refresh(sheet,character);
-        this.display(sheet,character);
+        this.refresh(sheet,character, (sheet,character) => {
+	        this.display(sheet,character);
+		});
     }
 
     recalculateCharacter(character) {
@@ -806,93 +906,98 @@ class CharacterController {
     }
     
     render(sheet,character) {
+		sheet.model = character;
 		this.calculate(character);
 		this.display(sheet,character);
 	}
-}
-
-var characterSheetFactory = function(element,characterId,speciesRepo,callingRepo,characterRepo,backgroundRepo,originRepo,created) {
-	speciesRepo.getAllSpecies((speciesList) => {
-		callingRepo.getAllCallings((callingsList) => {
-			backgroundRepo.getCategorizedBackgrounds((backgroundsMap) => {
-				originRepo.getAllOrigins((originsList) => {
-					try {
-						element.innerHTML = `<character-sheet characterid='${characterId}' id='cv${characterId}'></character-sheet>`;
-						const charSheet = document.getElementById(`cv${characterId}`);
-						charSheet.setSelections(speciesList,callingsList,backgroundsMap,originsList);
-						charSheet.controller = window.gebApp.characterController;
-						created(charSheet);
-						if(characterId !== null) {
-							characterRepo.getCharacterById(characterId, (character) => {
-								setSpeciesFromList(character,speciesList);
-								setCallingFromList(character,callingsList);
-								setOriginFromList(character,originsList);
-								setBackgroundsFromList(character,backgroundsMap);
-								const theRules =  new Rules(character.calling,character.species,character.backgrounds,character.origin);
-								charSheet.rules = theRules;
-								character.rules = theRules;
-								charSheet.controller.render(charSheet,character);
-							});
-						}
-					} catch (e) {
-						console.log("cannot create character sheet "+e.message+" at "+e.lineNumber);
-					}
-				});
+	
+	setSpeciesFromList(character,speciesList) {
+		if(character.species === undefined || character.species === null) { return false; }
+		const id = (typeof character.species === 'string' || character.species instanceof String) ? character.species : character.species.id;
+		for(var i = 0; i < speciesList.length; i++) {
+			if(id === speciesList[i].id) {
+				character.species = speciesList[i];
+				return true;
+			}
+		}
+	}
+	
+	setCallingFromList(character,callingsList)	{
+		if(character.calling === undefined || character.calling === null) { return false; }
+		const id = (typeof character.calling === 'string' || character.calling instanceof String) ? character.calling : character.calling.id;
+		for(var i = 0; i < callingsList.length; i++) {
+			if(id === callingsList[i].id) {
+				character.calling = callingsList[i];
+				return true;
+			}
+		}
+	}
+	
+	setOriginFromList(character,originsList) {
+		if(character.origin === undefined || character.origin === null) { return false; }
+		const id = (typeof character.origin === 'string' || character.origin instanceof String) ? character.origin : character.origin.id;
+		for(var i = 0; i < originsList.length; i++) {
+			if(id === originsList[i].id) {
+				character.origin = originsList[i];
+				return true;
+			}
+		}
+	}
+	
+	/**
+	 * Replace references to backgrounds in the character object with the corresponding entities.
+	 */
+	setBackgroundsFromList(character,backgrounds) {
+		Object.keys(character.background).forEach((cbKey) => {
+			var bgref = character.background[cbKey].bgref;
+			if(bgref === undefined) { bgref = character.background[cbKey].background; }
+			Object.keys(backgrounds[cbKey]).forEach((bgKey) => {
+				var bg = backgrounds[cbKey][bgKey];
+				if(bg.id === bgref.id) {
+					character.background[cbKey].background = bg;
+				}
 			});
 		});
-	});	
-}
-
-/**
- * Replace reference to character species in character object with the corresponding entity.
- */
-function setSpeciesFromList(character,speciesList) {
-	const id = character.species.id;
-	for(var i = 0; i < speciesList.length; i++) {
-		if(id === speciesList[i].id) {
-			character.species = speciesList[i];
-		}
+	}
+	
+	populateCharacter(sheet,character,created) {
+		this.speciesRepo.getAllSpecies((speciesList) => {
+			this.callingRepo.getAllCallings((callingsList) => {
+				this.backgroundRepo.getCategorizedBackgrounds((backgroundsMap) => {
+					this.originRepo.getAllOrigins((originsList) => {
+						try {
+//							const charSheet = document.getElementById(`cv${character.id}`);
+							sheet.setSelections(speciesList,callingsList,backgroundsMap,originsList);
+							sheet.controller = window.gebApp.characterController;
+							this.setSpeciesFromList(character,speciesList);
+							this.setCallingFromList(character,callingsList);
+							this.setOriginFromList(character,originsList);
+							this.setBackgroundsFromList(character,backgroundsMap);
+							const theRules =  new Rules(character.calling,character.species,character.backgrounds,character.origin);
+							sheet.rules = theRules;
+							character.rules = theRules;
+							created(sheet);
+							sheet.controller.render(sheet,character);
+						} catch (e) {
+							console.log(e.stack);
+							console.log("cannot create character sheet "+e.message+" at "+e.lineNumber);
+						}
+					});
+				});
+			});
+		});	
 	}
 }
 
-/**
- * Replace reference to character calling in character object with the corresponding entity.
- */
-function setCallingFromList(character,callingsList)	{
-	const id = character.calling.id;
-	for(var i = 0; i < callingsList.length; i++) {
-		if(id === callingsList[i].id) {
-			character.calling = callingsList[i];
-		}
-	}
-}
-
-/**
- * Replace reference to character origin in character object with the corresponding entity.
- */
-function setOriginFromList(character,originsList) {
-	const id = character.origin.id;
-	for(var i = 0; i < originsList.length; i++) {
-		if(id === originsList[i].id) {
-			character.origin = originsList[i];
-		}
-	}
-}
-
-/**
- * Replace references to backgrounds in the character object with the corresponding entities.
- */
-function setBackgroundsFromList(character,backgrounds) {
-	Object.keys(character.background).forEach((cbKey) => {
-		var bgref = character.background[cbKey].bgref;
-		Object.keys(backgrounds[cbKey]).forEach((bgKey) => {
-			var bg = backgrounds[cbKey][bgKey];
-			if(bg.id === bgref.id) {
-				character.background[cbKey].bgref = bg;
-			}
-		});
+var characterSheetFactory = function(element,characterId,characterRepo,created) {
+	element.innerHTML = `<character-sheet characterid='${characterId}' id='cv${characterId}'></character-sheet>`;
+	const charSheet = document.getElementById(`cv${characterId}`);
+	const sctrlr = window.gebApp.characterController;
+	characterRepo.getCharacterById(characterId,(character) => {
+		sctrlr.populateCharacter(charSheet,character,created);
 	});
 }
+
 
 export { CharacterController, characterSheetFactory };
 

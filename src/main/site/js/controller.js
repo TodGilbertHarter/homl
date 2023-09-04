@@ -62,6 +62,14 @@ class Controller {
 		window.location.hash = '/authenticated';
 	}
 	
+	getAuthenticatedUser() {
+		return this.authenticator.user;
+	}
+	
+	getCurrentPlayer() {
+		return this.authenticator.player;
+	}
+	
 	onCallingsChanged(callings) {
 		this.characterController.onCallingsChanged(callings);
 	}

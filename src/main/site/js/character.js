@@ -24,6 +24,27 @@ class Character {
 		
 	constructor(id,data) {
 		this.id = id;
+		if(data === null || data === undefined) { 
+			data = {
+				level: 1,
+				background: {},
+				personality: {},
+				strength: 0,
+				constitution: 0,
+				dexterity: 0,
+				intelligence: 0,
+				wisdom: 0,
+				charisma: 0,
+				fate: 'positive',
+				hitpoints: 0,
+				power: 0,
+				proficiencies: {
+					knacks: {},
+					tools: {},
+					other: {}
+				}
+			}
+		}
 		this.characterData = data;
 		if(typeof this.proficiencies === 'undefined') {
 			this.proficiencies = { knacks: {}, tools: [], other: []};
@@ -35,6 +56,15 @@ class Character {
 			this.equipment = {};
 		}
 
+		this.clearDerivedData();
+	}
+	
+	/**
+	 * Reset all the derived values for this character to an initial empty state.
+	 * Once this is called then the calculate() method must be used to rebuild 
+	 * the entire derived state from the rules.
+	 */
+	clearDerivedData() {
         this.dData = {
             levelbonus: 0,
             proficiencies: {
@@ -60,7 +90,6 @@ class Character {
                 }
             }
         };
-
 	}
 	
     calculate() {

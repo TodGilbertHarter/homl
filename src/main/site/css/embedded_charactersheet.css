@@ -37,12 +37,9 @@ body > div > div {
 div.header {
 	display: block;
 	width: 100%;
-	height: 95px;
-}
-
-div.header div.mastertitle {
-	float: right;
-	width: 70%;
+	height: 130px;
+	clear: left;
+	background-color: black;
 }
 
 div.header div.title {
@@ -50,7 +47,7 @@ div.header div.title {
     font-weight: bold;
     font-size: 1.5em;
     font-style: italic;
-    text-align: Right;
+    text-align: left;
     width: 98%;
     padding-top: .1em;
     padding-bottom: .1em;
@@ -59,13 +56,13 @@ div.header div.title {
     color: var(--document-fg);
 }
 
-div.header > div.mastertitle > div.topborder {
+div.header > div.topborder {
     width: 100%;
     background-image: url('../images/border1.png');
     height: 25px;
 }
 
-div.header > div.mastertitle > div.bottomborder {
+div.header > div.bottomborder {
     width: 100%;
     background-image: url('../images/border1btm.png');
     height: 25px;
@@ -109,10 +106,35 @@ h1 {
 
 personality-field::part(name) {
 	width: 8em;
+	font-weight: bold;
 }
 
 personality-field::part(value) {
 	width: 70%;
+}
+
+calculated-field {
+	padding-left: 2px;
+}
+
+calculated-field::part(label) {
+	padding-right: 2px;
+}
+
+attribute-field {
+	padding-left: 2px;
+}
+
+attribute-field::part(label) {
+	padding-right: 2px;
+}
+
+select-field {
+	padding-left: 2px;
+}
+
+select-field::part(label) {
+	padding-right: 2px;
 }
 
 calculated-field::part(text) {
@@ -132,6 +154,21 @@ ability-field::part(label) {
     font-weight: bold;
     font-size: 1.5em;
     text-align: right;
+}
+
+ability-field#characterwealth {
+	display: inline;
+}
+
+ability-field#characterwealth::part(label) {
+    width: fit-content;
+    font-weight: normal;
+    font-size: 1em;
+    text-align: right;
+}
+
+ability-field#characterwealth::part(wrapper) {
+	display: inline;
 }
 
 .knacktable {

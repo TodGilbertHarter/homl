@@ -27,6 +27,7 @@ class Authenticator {
 	player;
 	
 	constructor(gebApp,firebase,playerRepo) {
+		this.gebApp - gebApp;
 		this.fb = firebase;
 		this.playerRepo = playerRepo;
 	}

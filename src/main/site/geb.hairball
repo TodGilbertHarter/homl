@@ -9,6 +9,8 @@ Hairball.
 /:
 
 // :/ /* Prevent spurious <p> tags. */
+/: /GETMATCHING /DOER /DROP /W /W2L /MAKELITERAL /HERE! :/
+
 /: /SITE" <!DOCTYPE html><html><head>
 <base target="_top">
 <meta charset="UTF-8">
@@ -33,12 +35,6 @@ Hairball.
 /: SIGNINDIALOG/ </template> :/
 /: /TEMPLATE" <template id=" /" /. "> :/
 /: TEMPLATE/ </template> :/
-/: /TABCONTENTS <div class='tabcontents'> :/
-/: TABCONTENTS/ </div> :/
-/: /GAMESEARCH <game-search class='search' id='lefttabgamesearch' displayid='leftgametablist'> :/
-/: GAMESEARCH/ </game-search> :/
-/: /GAMELIST <game-list id='leftgametablist'> :/
-/: GAMELIST/ </game-list> :/
 /: /SCRIPT" <script src=' /" /. '></script> :/
 /: /MODULE" <script type='module' src=' /" /. '></script> :/
 /: /STYLE" <link rel="stylesheet" type="text/css" href=" /" /. " media="screen"/> :/
@@ -49,7 +45,7 @@ Hairball.
 /: /MAINMENU <menu-bar id='mainmenu' class='mainmenu'> :/
 /: MAINMENU/ </menu-bar> :/
 /: /APPLICATION <horizontal-sash id='applicationarea'> :/
-/: /LEFTSLOT <tab-panel slot='sashleft' id='leftslottabpanel'><ul class='tabbar' slot='tabs' id='leftslottabbar'></ul> :/
+/: /LEFTSLOT <tab-panel slot='sashleft' id='leftslottabpanel'> :/
 /: LEFTSLOT/ </tab-panel> :/
 /: /RIGHTSLOT <div slot='sashright' id='mainappview'> :/
 /: RIGHTSLOT/ </div> :/

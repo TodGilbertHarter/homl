@@ -45,7 +45,6 @@ class Rules {
 	specie;
 	backgrounds;
 	origin;
-//	callingRepo;
     rulesList;
     
     constructor(calling,specie,backgrounds,origin) {
@@ -55,10 +54,16 @@ class Rules {
 		this.origin = origin;
         this.rulesList = [];
         
-        this.createSpeciesCalculators(this.specie);
-        this.createCallingCalculators(this.calling);
-        this.createOriginCalculators(this.origin);
-        
+        if(specie !== undefined && specie !== null) {
+	        this.createSpeciesCalculators(this.specie);
+		}
+		if(calling !== undefined && calling !== null) {
+	        this.createCallingCalculators(this.calling);
+		}
+		if(origin !== undefined && origin !== null) {
+	        this.createOriginCalculators(this.origin);
+    	}
+    	    
         const ltarget = 'levelbonus';
         const lsources = ['level'];
         const lcalc = function(character) {
@@ -175,31 +180,7 @@ class Rules {
     }
     
     calculate(character) {
-        character.derivedData = {
-                proficiencies: {
-                    knacks: {
-                        acrobatics: { },
-                        arcana: { },
-                        athletics: {},
-                        bluff: {},
-                        diplomacy: {},
-                        engineering: {},
-                        healing: {},
-                        history: {},
-                        insight: {},
-                        intimidation: {},
-                        leadership: {},
-                        nature: {},
-                        perception: {},
-                        religion: {},
-                        stealth: {},
-                        streetwise: {},
-                        survival: {},
-                        thievery: {}
-                    }
-                }
-        };
-
+		character.clearDerivedData();
         this.rulesList.forEach((calculation) => {
             calculation.calculate(character);
         });

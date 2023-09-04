@@ -35,22 +35,22 @@ of HTML. Include this and a character data document, the result will be an HTML 
 /: FIELDID/ "> :/ */
 /: CALCULATEDFIELD/ </calculated-field> :/
 
-/: /SHEETTITLE <div class="header">
-    <div class='mastertitle'>
-        <div class='topborder'></div>
-        <div class='title'><button id='savebutton'>Save</button><button id='refreshbutton'>Refresh</button>Heroes of Myth &amp; Legend Character Sheet</div>
-        <div class='bottomborder'></div>
-    </div>
-</div>
+/: /SHEETTITLE 
+<div class="header">
+	<div class='topborder'></div>
+	<div class='title'><span><button id='savebutton'>Save</button><button id='refreshbutton'>Refresh</button><button id='newbutton'>New</button></span><span>Heroes of Myth &amp; Legend Character Sheet</span></div>
+    <div class='bottomborder'></div>
+</div> 
 :/
+
 /: /SHEETROW <div class="sheetrow"> :/
 /: SHEETROW/ </div> :/
 /: /FLEXROW <div class="flexrow"> :/
-/: /FLEXCELL <div class="flexcell" style="flex: 1"> :/
-/: /FLEXCELL.8 <div class="flexcell" style="flex: .8"> :/
-/: /FLEXCELL2.5 <div class="flexcell" style="flex: 2.5"> :/
-/: /FLEXCELL1 <div class="flexcell" style="flex: .4"> :/
-/: /FLEXCELL2 <div class="flexcell" style="flex: .6"> :/
+/: /FLEXCELL <div class="flexcell" style="flex: 1;"> :/
+/: /FLEXCELL.8 <div class="flexcell" style="flex: .8;"> :/
+/: /FLEXCELL2.5 <div class="flexcell" style="flex: 2.5;"> :/
+/: /FLEXCELL1 <div class="flexcell" style="flex: 1 0;"> :/
+/: /FLEXCELL2 <div class="flexcell" style="flex: 3;"> :/
 /: FLEXROW/ </div> :/
 /: FLEXCELL/ </div> :/
 
@@ -78,7 +78,7 @@ of HTML. Include this and a character data document, the result will be an HTML 
 /: /SPECIES /GETMATCHING SPECIES/ /DELIMITED /SELECTFIELD /FIELDNAME Species: FIELDNAME/ /FIELDWIDTH 6em FIELDWIDTH/ /FIELDID characterspecies FIELDID/ /SELECTIONS characterspecies SELECTIONS/ SELECTFIELD/ :/
 /: SPECIES/ /[" Mismatch, SPECIES/ must follow /SPECIES "]/ /ABORT :/
 
-/: /ORIGIN /GETMATCHING ORIGIN/ /DELIMITED /SELECTFIELD /FIELDNAME Origin: FIELDNAME/ /FIELDWIDTH 6em FIELDWIDTH/ /FIELDID characterorigin FIELDID/ /SELECTIONS characterorigin SELECTIONS/ SELECTFIELD/ :/
+/: /ORIGIN /GETMATCHING ORIGIN/ /DELIMITED /SELECTFIELD /FIELDNAME Origin: FIELDNAME/ /FIELDWIDTH 10em FIELDWIDTH/ /FIELDID characterorigin FIELDID/ /SELECTIONS characterorigin SELECTIONS/ SELECTFIELD/ :/
 /: ORIGIN/ /[" Mismatch, ORIGIN/ must follow /ORIGIN "]/ /ABORT :/
 
 /: /VISION /GETMATCHING VISION/ /DELIMITED /CALCULATEDFIELD /FIELDNAME Vision: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID charactervision FIELDID/ CALCULATEDFIELD/ :/
@@ -139,12 +139,12 @@ of HTML. Include this and a character data document, the result will be an HTML 
 /: /WEALTH /ATTRIBUTE label='Wealth:' name="characterwealth" id="characterwealth" modifier='' value=" :/
 /: WEALTH/ "/> ATTRIBUTE/ :/
 /: /KNACKS /SHEETROW <div class='knacktable'> /FLEXROW  
-<div style="flex: 2.3">Name</div> 
-<div style="flex: 1.1">Ability</div> 
-<div style="flex: .8">Prof</div> 
-<div style="flex: 1">Level</div> 
-<div style="flex: 1">Perm</div> 
-<div style="flex: 1">Total</div> 
+<div style="text-align: right; flex: 2.3">Name</div> 
+<div style="text-align: center; flex: 1.1">Ability</div> 
+<div style="text-align: center; flex: .8">Prof</div> 
+<div style="text-align: center; flex: 1">Level</div> 
+<div style="text-align: center; flex: 1">Perm</div> 
+<div style="text-align: center; flex: 1">Total</div> 
 FLEXROW/ :/
 /: KNACKS/ </div> SHEETROW/ FLEXCELL/ :/
 /: /ACROBATICS <knack-field label='Acrobatics (DEX)' ability='' level='' permanent='' total='' value=' :/

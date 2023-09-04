@@ -30,17 +30,12 @@
 /MODULE" js/gamerepository.js"/
 /MODULE" js/gamelist.js"/
 /MODULE" js/gamesearch.js"/
+/MODULE" js/characterlist.js"/
+/MODULE" js/charactersearch.js"/
 /MODULE" js/gameview.js"/
 /MODULE" js/gamecreate.js"/
 /MODULE" js/menubar.js"/
 /SIGNINDIALOG SIGNINDIALOG/
-/TEMPLATE" gamesearchtemplate"/
-/TABCONTENTS
-/GAMESEARCH GAMESEARCH/
-/GAMELIST
-GAMELIST/
-TABCONTENTS/
-TEMPLATE/
 /SOURCE" embedded_charactersheet.html"/
 /BODY
 /TOPBAR
