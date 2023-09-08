@@ -19,7 +19,17 @@ import { Game } from './game.js';
 
 const gameConverter = {
 	toFirestore(game) {
-		
+		const g = {};
+		for(const [key,value] of Object.entries(game)) {
+			if(key === 'owner') {
+					const db = window.gebApp.firestore;
+				const playerDocRef = doc(db,'players',value.id);
+				g[key] = playerDocRef;
+			} else {
+				g[key] = value;
+			}
+		}
+		return g;
 	},
 	
 	fromFirestore(snapshot, options) {
@@ -30,6 +40,11 @@ const gameConverter = {
 		return new Game(id,data.name,data.owner,data.characters,data.players,data.description);
 	}
 }
+
+const GetGameReference = (id) => {
+	const db = window.gebApp.firestore;
+	return doc(db,"games",id);
+};
 
 class GameRepository {
 	/*
@@ -72,18 +87,17 @@ class GameRepository {
 			});
 	}
     
-    saveGame(game) {
-        const data = game.gameData;
-        console.log("Saving data of "+JSON.stringify(data));
-        if(data.hasOwnProperty('id') && data.id !== undefined) {
-            console.log("UPDATING, ID IS:"+data.id);
-            var id = data.id;
-            delete data.id;
-            this.db.collection("games").doc(id).set(data);
-            data.id = id;
+    async saveGame(game) {
+        console.log("Saving data of "+JSON.stringify(game));
+        if(game.hasOwnProperty('id') && game.id !== undefined && game.id !== null) {
+            console.log("UPDATING, ID IS:"+game.id);
+            var id = game.id;
+            const ref = doc(this.db,"games",id).withConverter(gameConverter);
+            await setDoc(ref.game);
         } else {
-            console.log("CREATING, data is "+JSON.stringify(data));
-            this.db.collection("games").add(data);
+            console.log("CREATING, data is "+JSON.stringify(game));
+            const ref = doc(collection(this.db,'games')).withConverter(gameConverter);
+            await setDoc(ref,game);
         }
     }
 
@@ -120,5 +134,5 @@ class GameRepository {
 	}
 }
 
-export { GameRepository };
+export { GameRepository, GetGameReference };
 

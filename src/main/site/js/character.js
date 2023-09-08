@@ -42,7 +42,10 @@ class Character {
 					knacks: {},
 					tools: {},
 					other: {}
-				}
+				},
+				species: {},
+				origin: {},
+				calling: {}
 			}
 		}
 		this.characterData = data;
@@ -54,6 +57,9 @@ class Character {
 		}
 		if(typeof this.equipment === 'undefined') {
 			this.equipment = {};
+		}
+		if(typeof this.background === 'undefined') {
+			this.background = {};
 		}
 
 		this.clearDerivedData();

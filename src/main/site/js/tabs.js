@@ -17,17 +17,19 @@
 import { html, LitElement } from 'https://unpkg.com/lit@2/index.js?module';
 
 class TabPanel extends LitElement {
+	/** @private */ tch;
 	/** @private */ tabList = [];
 	/** @private */ tabContents = [];
 
 	constructor() {
 		super();
+		this.tch = this.tabClickHandler.bind(this);
 	}
 
 	render() {
 		return html`<div class='tabpanel' part='container'>
-				<div part='tabs' id='tabs' @click=${this.tabClickHandler}>
-					<ul>
+				<div part='tabs' id='tabs'>
+					<ul class='tabbar' part='tabbar'>
 					${this.tabList}
 					</ul>
 				</div>
@@ -40,11 +42,20 @@ class TabPanel extends LitElement {
 	/**
 	 * Add a tab and associated contents, and make it active if isactive is true.
 	 */
-	addTab(tab,contents,isactive) {
-		this.tabList.push(tab);
+	addTab(tabtext,contents,isactive) {
+		const id = "tabid" + Math.random().toString(16).slice(2)
+		const ti = document.createElement('li');
+//		ti.onmouseenter = this.tch;
+		ti.id = "i" + id;
+		ti.innerText = tabtext;
+		ti.part = 'tabitem';
+		this.tabList.push(ti);
+		contents.id = "c" + id;
+		contents.part = 'tabbody';
 		this.tabContents.push(contents);
-		if(isactive) { this.activateTab(tab,contents); }
+		if(isactive) { this.activateTab(ti,contents); }
 		this.requestUpdate();
+		ti.onclick = this.tch;
 	}
 	
 	/**
@@ -81,21 +92,23 @@ class TabPanel extends LitElement {
 	_makeActive(tab,contents) {
 		tab.classList.remove('inactive');
 		tab.classList.add('active');
+		tab.part="tabitem tiactive";
 		contents.classList.remove('inactive');
 		contents.classList.add('active');
+		contents.part="tabbody tbactive"
 	}
 	
 	_makeInactive(tab,contents) {
 		tab.classList.remove('active');
 		tab.classList.add('inactive');
+		tab.part="tabitem";
 		contents.classList.remove('active');
 		contents.classList.add('inactive');
+		contents.part="tabbody";
 	}
 
 	tabClickHandler(e) {
-		console.log("clicked on "+e.target.innerHTML);
 		const tab = e.target;
-		e.target.classList.add('active');
 		this.activateTabById(tab.id);
 	}	
 }
@@ -104,13 +117,13 @@ window.customElements.define('tab-panel',TabPanel);
 class TabItem extends LitElement {
 	
 	render() {
-		return html`<li>${this.innerHTML}</li>`;
+		return html`${this.innerHTML}`;
 	}
 }
-window.customElements.define('tab-item',TabItem);
+// window.customElements.define('tab-item',TabItem);
 
 class TabBody extends LitElement {
 	
 }
 
-window.customElements.define('tab-body',TabBody);
+// window.customElements.define('tab-body',TabBody);

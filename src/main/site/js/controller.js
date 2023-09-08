@@ -20,7 +20,8 @@ class Controller {
 	/** @private */ authenticator;
 	/** @private */ router;
 	/** @private */ gameRepo;
-	/** @private */ gamesListener;
+	/** @private */ gamesListeners;
+	/** @private */ characterListeners;
 	/** @private */ characterRepo;
 	/** @private */ characterController;
 	/** @private */ callingRepo;
@@ -158,7 +159,7 @@ class Controller {
 	}
 
 	handleSaveGame(game) {
-		console.log("GOT TO SAVE GAME");
+		this.gameRepo.saveGame(game);
 	}
 	/**
 	 * Handle the actual signup process via the authenticator.
@@ -200,6 +201,18 @@ class Controller {
 	 */
 	registerGamesListener(handler) {
 		this.gamesListener = handler;
+	}
+	
+	registerCharactersListener(handler) {
+		this.characterListener = handler;
+	}
+	
+	doCharacterSearch(name) {
+		this.characterRepo.getCharactersByName(name,this.onCharactersChanged.bind(this));
+	}
+	
+	onCharactersChanged(characters) {
+		this.characterListener(characters);
 	}
 	
 	/**

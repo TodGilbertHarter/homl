@@ -16,6 +16,7 @@
 */
 import { collection, doc, setDoc, query, where, getDocs, getDoc } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
 import { Character } from './character.js';
+import { schema, getReference, getDb } from './schema.js';
 
 const characterConverter = {
 	toFirestore(character) {
@@ -24,8 +25,7 @@ const characterConverter = {
 		for(const [key, value] of Object.entries(character.characterData)) {
 			if(key === "background") {
 				for(const [bgkey, bg] of Object.entries(character.characterData[key])) {
-					const db = window.gebApp.firestore;
-					const docRef = doc(db,"backgrounds",bg.background.id);
+					const docRef = getReference(schema.backgrounds,bg.background.id);
 					const nb = {
 						bgref: docRef,
 						description: bg.description,
@@ -35,26 +35,26 @@ const characterConverter = {
 					c[key][bgkey] = nb;
 				};
 			} else if(key === "species") {
-				if(character.characterData.species.constructor.name === "Species") {
+				if(character.characterData.species.species !== undefined && character.characterData.species.species !== null) {
 					const db = window.gebApp.firestore;
-					const docRef = doc(db,"species",character.characterData.species.id);
-					c[key] = docRef;
+					const docRef = doc(db,"species",character.characterData.species.species.id);
+					c[key] = { name: character.characterData.species.species.name, speciesref: docRef};
 				} else {
 					throw new Error("bad species when trying to save character");
 				}
 			} else if(key === "origin") {
-				if(character.characterData.origin.constructor.name === "Origin") {
+				if(character.characterData.origin.origin !== undefined && character.characterData.origin.origin !== null) {
 					const db = window.gebApp.firestore;
-					const docRef = doc(db,"origin",character.characterData.origin.id);
-					c[key] = docRef;
+					const docRef = doc(db,"origin",character.characterData.origin.origin.id);
+					c[key] = { name: character.characterData.origin.origin.name, originref: docRef};
 				} else {
 					throw new Error("bad origin when trying to save character");
 				}
 			} else if(key === "calling") {
-				if(character.characterData.calling.constructor.name === "Calling") {
+				if(character.characterData.calling.calling !== undefined && character.characterData.calling.calling !== null) {
 					const db = window.gebApp.firestore;
-					const docRef = doc(db,"calling",character.characterData.calling.id);
-					c[key] = docRef;
+					const docRef = doc(db,"calling",character.characterData.calling.calling.id);
+					c[key] = { name: character.characterData.calling.calling.name, callingref: docRef};
 				} else {
 					throw new Error("bad calling when trying to save character");
 				}
@@ -120,6 +120,20 @@ class CharacterRepository {
             } ) });
     }
     
+    getCharactersByName(name,onDataAvailable) {
+		const cRef = collection(this.db,"characters");
+		var q = query(cRef,where("name", "==", name));
+		q = q.withConverter(characterConverter);
+		getDocs(q).then((doc) => { 
+				console.log("GOT SOME DATA "+doc);
+				const results = [];
+				doc.forEach((gdata) => {
+					results.push(gdata.data());
+				});
+				onDataAvailable(results); 
+			});
+	}
+
     /**
      * Get a character given its id.
      *

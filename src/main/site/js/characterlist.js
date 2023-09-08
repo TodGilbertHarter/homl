@@ -61,13 +61,13 @@ class CharacterList extends LitElement {
 	displayList() {
 		const list = this.shadowRoot.getElementById('list');
 		const model = this.model;
-		if(model != 'undefined') {
+		if(model !== undefined && model !== null) {
 			list.innerHTML = '';
 			model.forEach((character) => {
 				this.playerRepo.getReferencedPlayer(character.owner, (owner) => {
 				const email = typeof owner === "undefined" ? "unknown" : owner.email;
 				const gRow = window.gebApp.theDocument.createElement('div');
-				gRow.innerHTML = `<div class='clickable'>${character.name}</div><div>${email}</div>`;
+				gRow.innerHTML = `<div class='clickable'>${character.name}</div><div>${character.calling.name}</div>`;
 				list.appendChild(gRow);
 				gRow.firstChild.addEventListener('click',(e) => { 
 					console.log(`clicked on character named ${character.name}`);

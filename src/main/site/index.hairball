@@ -3,6 +3,7 @@
 /STYLE" css/glyphicons.css"/
 <script type="module">
 	import { html } from 'https://unpkg.com/lit@2/index.js?module';
+ 	import {ref} from 'https://unpkg.com/lit@2/directives/ref.js?module';
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
     import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
@@ -35,6 +36,7 @@
 /MODULE" js/gameview.js"/
 /MODULE" js/gamecreate.js"/
 /MODULE" js/menubar.js"/
+/MODULE" js/schema.js"/
 /SIGNINDIALOG SIGNINDIALOG/
 /SOURCE" embedded_charactersheet.html"/
 /BODY

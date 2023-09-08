@@ -16,9 +16,12 @@
 */
 import { html, LitElement } from 'https://unpkg.com/lit@2/index.js?module';
 import { Game } from './game.js';
+import {ref, createRef } from 'https://unpkg.com/lit@2/directives/ref.js?module';
 
 class GameCreate extends LitElement {
 	/** @private */ model;
+	/** @private */ name = createRef();
+	/** @private */ description = createRef();
 	
 	constructor() {
 		super();
@@ -37,17 +40,21 @@ class GameCreate extends LitElement {
 			}
 		</style>
 		<div class='gamecreate' part='gamecreate' id='gamecreate'>
-			<label for='name'>Name:</label><input type='text' id='name'/>
+			<label for='name'>Name:</label><input type='text' id='name' ${ref(this.name)}/>
+			<label for='description'>Description:</label><input type='text' id='description' ${ref(this.description)}/>
 			<button id='save' @click="${this.handleSaveButton}">Save</button>
 		</div>`;
 	}
 	
 	firstUpdated() {
-		this.model = new Game(null, 'new game', window.gebApp.authenticator.player, null, null );
+		const nref = this.name.value;
+		nref?.focus();
+		this.model = new Game(null, 'new game', window.gebApp.authenticator.player, null, null, 'a new game' );
 	}
 	
 	handleSaveButton() {
-		this.model.name = this.shadowRoot.getElementById('name').value;
+		this.model.name = this.name.value.value;
+		this.model.description = this.description.value.value;
 		window.gebApp.controller.handleSaveGame(this.model);
 	}
 }

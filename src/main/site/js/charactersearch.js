@@ -18,7 +18,7 @@ import { html, LitElement } from 'https://unpkg.com/lit@2/index.js?module';
 
 class CharacterSearch extends LitElement {
 	static properties = {
-		name: {}
+		displayId: {}
 	}
 	
 	characterRepo;
@@ -27,8 +27,7 @@ class CharacterSearch extends LitElement {
 	}
 	
 	onNameChange(e) {
-		const displayId = this.getAttribute('displayid');
-		const viewer = window.gebApp.view.getElement(displayId);
+		const viewer = this.parentElement.querySelector('#'+this.displayId);
 		window.gebApp.controller.registerCharactersListener(viewer.getRenderFn());
 		window.gebApp.controller.doCharacterSearch(e.target.value);
 	}
@@ -36,7 +35,7 @@ class CharacterSearch extends LitElement {
 	render() {
 		return html`<div class='charactersearch' part='container'>
 				<label for='name'>Name</label>
-				<input type='text' id='name'/>
+				<input type='text' id='name' @change=${this.onNameChange}/>
 			</div>`
 	}
 }

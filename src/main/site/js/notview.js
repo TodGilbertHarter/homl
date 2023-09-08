@@ -80,27 +80,23 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 	 * Add a game lister component to the given tab bar.
 	 */
 	displayGameLister(isactive) {
-		const ti = this.theDocument.createElement('tab-item');
-		ti.innerHTML = 'Games';
 		const content = this.theDocument.createElement('tab-body');
-		content.innerHTML = '<game-search></game-search><game-list></game-list>';
-		this.addTabToLeftPanel(ti,content,isactive)
+		content.innerHTML = "<game-search class='search' id='lefttabgamesearch' displayid='leftgametablist'></game-search><game-list id='leftgametablist'></game-list>";
+		this.addTabToLeftPanel('Games',content,isactive)
 	}
 	
 	displayCharacterLister(isactive) {
-		const ti = this.theDocument.createElement('tab-item');
-		ti.innerHTML = 'Characters';
-		const content = this.theDocument.createElement('<tab-body>');
-		content.innerHTML = '<character-search></character-search><character-list></character-list>';
-		this.addTabToLeftPanel(ti,content,isactive)
+		const content = this.theDocument.createElement('tab-body');
+		content.innerHTML = "<character-search class='search' id='lefttabgamesearch' displayid='leftcharactertablist'></character-search><character-list id='leftcharactertablist'></character-list>";
+		this.addTabToLeftPanel('Characters',content,isactive)
 	}
 	
 	/**
 	 * Display the default tab arrangement.
 	 */
 	displayTabs() {
-		this.displayGameLister(true);
-//		this.displayCharacterLister(false);
+		this.displayGameLister(false);
+		this.displayCharacterLister(true);
 	}
 	
 	/**

@@ -258,7 +258,9 @@ tab-panel::part(tabcontents) {
 	background-color: white;
 }
 
-.tabbar {
+/* div.tabpanel div#tabs ul tab-item.active */
+
+tab-panel::part(tabbar) {
 	list-style-type: none;
 	display: block;
 	width:100%;
@@ -267,7 +269,8 @@ tab-panel::part(tabcontents) {
 	overflow: hidden;
 }
 
-.tabbar > li {
+tab-panel::part(tabitem) {
+	display:list-item;
 	float: left;
 	padding: 10px;
 	background-color: lightgrey;
@@ -281,8 +284,9 @@ tab-panel::part(tabcontents) {
 	z-index: -1;
 }
 
-.tabbar > li:hover {
+tab-panel::part(tabitem):hover {
 	background-color: white;
+	cursor:grab;
 }
 
 /* .tabbar > li.active:before {
@@ -297,17 +301,17 @@ tab-panel::part(tabcontents) {
 	z-index:10
 } */
 
-.tabbar > li.active {
+tab-panel::part(tiactive) {
 	background-color: white;
 	border-bottom: 0px;
 }
 
-.tabcontents {
+tab-panel::part(tabbody) {
 	border-width: 0px;
 	display: none;
 }
 
-.tabcontents.active {
+tab-panel::part(tbactive) {
 	display: block;
 }
 

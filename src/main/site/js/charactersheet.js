@@ -733,9 +733,9 @@ class CharacterController {
 	 * @param {Character} character the character to get the data from.
      */
     display(sheet,character) {
-		const calling = this.getCalling(sheet,character.calling?.id);
-		const specie = this.getSpecies(sheet,character.species?.id);
-		const origin = this.getOrigin(sheet,character.origin?.id);
+		const calling = this.getCalling(sheet,character.calling?.calling?.id);
+		const specie = this.getSpecies(sheet,character.species?.species?.id);
+		const origin = this.getOrigin(sheet,character.origin?.origin?.id);
         sheet.setCharacterData('charactername',character.name);
         sheet.setCharacterData('characterlevel',character.level);
         sheet.setCharacterData('charactercalling',calling?.id);
@@ -813,14 +813,17 @@ class CharacterController {
     readForm(sheet,character) {
         character.name = sheet.getCharacterData('charactername');
         character.level = parseInt(sheet.getCharacterData('characterlevel'),10);
-		character.calling = sheet.getCharacterData('charactercalling');
-		character.species = sheet.getCharacterData('characterspecies');
-		character.origin = sheet.getCharacterData('characterorigin');
+		character.calling.calling = this.getCalling(sheet,sheet.getCharacterData('charactercalling'));
+		character.calling.name = character.calling.calling.name;
+		character.species.species = this.getSpecies(sheet,sheet.getCharacterData('characterspecies'));
+		character.species.name = character.species.species.name;
+		character.origin.origin = this.getOrigin(sheet,sheet.getCharacterData('characterorigin'));
+		character.origin.name = character.origin.origin.name;
         character.fate = sheet.getCharacterData('characterfate');
         character.description = sheet.getCharacterData('characterdescription');
         character.hitpoints = parseInt(sheet.getCharacterData('characterhitpoints'),10);
-        character.power = sheet.getCharacterData('characterpower');
-        character.wealth = sheet.getCharacterData('characterwealth');
+        character.power = parseInt(sheet.getCharacterData('characterpower'),10);
+        character.wealth = parseInt(sheet.getCharacterData('characterwealth'),10);
         character.strength = parseInt(sheet.getCharacterData('characterstrength'),10);
         character.constitution = parseInt(sheet.getCharacterData('characterconstitution'),10);
         character.dexterity = parseInt(sheet.getCharacterData('characterdexterity'),10);
@@ -912,33 +915,36 @@ class CharacterController {
 	}
 	
 	setSpeciesFromList(character,speciesList) {
-		if(character.species === undefined || character.species === null) { return false; }
-		const id = (typeof character.species === 'string' || character.species instanceof String) ? character.species : character.species.id;
+		if(character.species.name === undefined || character.species.name === null) { return false; }
+		const id = character.species.speciesref?.id;
 		for(var i = 0; i < speciesList.length; i++) {
 			if(id === speciesList[i].id) {
-				character.species = speciesList[i];
+				character.species.name = speciesList[i].name;
+				character.species.species = speciesList[i];
 				return true;
 			}
 		}
 	}
 	
 	setCallingFromList(character,callingsList)	{
-		if(character.calling === undefined || character.calling === null) { return false; }
-		const id = (typeof character.calling === 'string' || character.calling instanceof String) ? character.calling : character.calling.id;
+		if(character.calling.name === undefined || character.calling.name === null) { return false; }
+		const id = character.calling.callingref?.id;
 		for(var i = 0; i < callingsList.length; i++) {
 			if(id === callingsList[i].id) {
-				character.calling = callingsList[i];
+				character.calling.name = callingsList[i].name;
+				character.calling.calling = callingsList[i];
 				return true;
 			}
 		}
 	}
 	
 	setOriginFromList(character,originsList) {
-		if(character.origin === undefined || character.origin === null) { return false; }
-		const id = (typeof character.origin === 'string' || character.origin instanceof String) ? character.origin : character.origin.id;
+		if(character.origin.name === undefined || character.origin.name === null) { return false; }
+		const id = character.origin.originref?.id;
 		for(var i = 0; i < originsList.length; i++) {
 			if(id === originsList[i].id) {
-				character.origin = originsList[i];
+				character.origin.name = originsList[i].name;
+				character.origin.origin = originsList[i];
 				return true;
 			}
 		}
@@ -973,7 +979,7 @@ class CharacterController {
 							this.setCallingFromList(character,callingsList);
 							this.setOriginFromList(character,originsList);
 							this.setBackgroundsFromList(character,backgroundsMap);
-							const theRules =  new Rules(character.calling,character.species,character.backgrounds,character.origin);
+							const theRules =  new Rules(character.calling.calling,character.species.species,character.backgrounds,character.origin.origin);
 							sheet.rules = theRules;
 							character.rules = theRules;
 							created(sheet);

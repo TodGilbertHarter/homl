@@ -29,6 +29,8 @@ class Game {
 		this.characters = characters;
 		this.players = players;
 		this.description = description;
+		if(this.characters === undefined || this.characters === null) { this.characters = []; }
+		if(this.players === undefined || this.players === null) { this.players = []; }
 	}
 	
 	toString() {
