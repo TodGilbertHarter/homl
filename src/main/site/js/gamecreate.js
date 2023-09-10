@@ -38,10 +38,16 @@ class GameCreate extends LitElement {
 			.clickable {
 				cursor: pointer;
 			}
+			.gamecreate {
+				width: fit-content;
+			}
+			input {
+				width: 97%;
+			}
 		</style>
 		<div class='gamecreate' part='gamecreate' id='gamecreate'>
 			<label for='name'>Name:</label><input type='text' id='name' ${ref(this.name)}/>
-			<label for='description'>Description:</label><input type='text' id='description' ${ref(this.description)}/>
+			<label for='description'>Description:</label><big-input rows='5' cols='100' max='500' ${ref(this.description)} id='description'></big-input>
 			<button id='save' @click="${this.handleSaveButton}">Save</button>
 		</div>`;
 	}

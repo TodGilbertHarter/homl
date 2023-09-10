@@ -20,7 +20,7 @@ plugins {
     id 'java'
     id 'io.quarkus'
 	id "fr.brouillard.oss.gradle.jgitver" version "0.10.0-rc03"
-	id "com.github.node-gradle.node" version "3.1.1"
+	id "com.github.node-gradle.node" version "7.0.0"
 //	id "com.timgroup.webpack" version "1.1.0"
 }
 
@@ -37,16 +37,12 @@ repositories {
     mavenLocal()
 }
 
-task installClosureCompiler(type: NpmTask) {
-	description 'npm install the google-closure-compiler module'
-	args = ['install', 'google-closure-compiler']
-}
-	
-task installFirebase(type: NpmTask) {
-	description 'npm install the firebase and firebase-admin npm modules'
-	args = ['install', 'firebase', 'firebase-admin', 'fakedb']
-}
-
+/** 
+ * Note: this group of tasks were intended to allow importing of data from XWiki and as such are 
+ * not really relevant anymore. They are retained here mostly for historical purposes and can
+ * be ignored or deleted as needed.
+ */
+ 
 task copySaxon(type: Copy) {
 	description 'get a copy of saxon binary into build dir'
 	from configurations.saxon
@@ -82,6 +78,40 @@ task buildErithnoi {
 	description 'build the content directory of all xwiki-derived hairball'
 	dependsOn 'buildErithnoiPlayer'
 	dependsOn 'buildErithnoiDM'	
+}
+
+/**
+ * Clear the local build directory, but don't execute any other cleanups, note that
+ * the standard 'clean' task will nuke node_modules, requiring a bunch of extra steps
+ * in order to perform a build, so use this version instead if possible.
+ */
+task cleanLocal(type: Delete) {
+	description 'clear out just the local build dir, saves time'
+	delete buildDir
+}
+
+/**
+ * NPM module install tasks. These need to be rerun after a 'clean'.
+ */
+ 
+task installClosureCompiler(type: NpmTask) {
+	description 'npm install the google-closure-compiler module'
+	args = ['install', 'google-closure-compiler']
+}
+	
+task installFirebase(type: NpmTask) {
+	description 'npm install the firebase and firebase-admin npm modules'
+	args = ['install', 'firebase', 'firebase-admin', 'fakedb']
+}
+
+task installTestRunner(type: NpmTask) {
+	description 'npm install the Playwright stuff so we can run in-browser tests'
+	args = ['install', '--save-dev', '@web/test-runner', '@esm-bundle/chai']
+//	args = ['install', '--save-dev', '@web/test-runner', '@web/test-runner-playwright', '@esm-bundle/chai']
+}
+
+task runAllJSTests(type: NpmTask) {
+	args = ['run', 'test']
 }
 
 task generateErithnoi(type: Exec) {
@@ -251,7 +281,6 @@ class HttpPlugin implements Plugin<Project>, HttpHandler {
 			if("/".equals(path))
 				path = "/index.html";
 			println("path is now "+path);
-//			String filename = "/home/tharter/projects/homl/build/geb/geb-0.0.0-6-main"+path;
 			String filename = "/home/tharter/projects/homl/build/local"+path;
 			println("filename is "+filename);
 			println("CWD is "+System.getProperty('user.dir'));

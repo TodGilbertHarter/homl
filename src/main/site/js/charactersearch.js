@@ -21,12 +21,11 @@ class CharacterSearch extends LitElement {
 		displayId: {}
 	}
 	
-	characterRepo;
 	constructor() {
 		super();
 	}
 	
-	onNameChange(e) {
+	onChange(e) {
 		const viewer = this.parentElement.querySelector('#'+this.displayId);
 		window.gebApp.controller.registerCharactersListener(viewer.getRenderFn());
 		window.gebApp.controller.doCharacterSearch(e.target.value);
@@ -35,7 +34,13 @@ class CharacterSearch extends LitElement {
 	render() {
 		return html`<div class='charactersearch' part='container'>
 				<label for='name'>Name</label>
-				<input type='text' id='name' @change=${this.onNameChange}/>
+				<input type='text' id='name' @change=${this.onChange}/>
+				<label for='calling'>Calling</label>
+				<select id='calling' @change=${this.onChange}><option>any</option></select>
+				<label for='species'>Species</label>
+				<select id='species' @change=${this.onChange}><option>any</option></select>
+				<label for='origin'>Origin</label>
+				<select id='origin' @change=${this.onChange}><option>any</option></select>
 			</div>`
 	}
 }
