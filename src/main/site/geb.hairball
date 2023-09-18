@@ -21,18 +21,28 @@ Hairball.
 /: SITE/ </body></html> :/
 /: /SIGNINDIALOG
 	<template id='signin-dialog'>
-	<div slot='contents' style='width: 350px;'>
+	<div slot='content' id='contents' style='width: 350px;'>
 		<h1 class='dialogtitle'>Sign In to Giant Electronic Brain</h1>
 		<div class='loginfield'><label for='logindialogemail'>Email:</label><input type='text' id='logindialogemail'></div>
       	<div class='loginfield'><label for='logindialogpassword'>Password:</label><input type='password' id='logindialogpassword'></div>
       	<div style='clear: both;'><p>To create a new account, fill in your email and password, then <a href="#signup">click here</a> to sign up.</p></div>
 	</div>
-	<div slot='buttonbar'>
-		<button class='dialogbutton' id='logindialogsignin'>Sign In</button>
-		<button class='dialogbutton' id='logindialogcancel'>cancel</button>
-	</div>
+	<button class='dialogbutton' id='logindialogsignin' slot='buttonbar'>Sign In</button>
+	<button class='dialogbutton' id='logindialogcancel' slot='buttonbar'>cancel</button>
 :/
 /: SIGNINDIALOG/ </template> :/
+/: /SIGNUPDIALOG
+	<template id='signup-dialog'>
+	<div slot='content' id='contents' style='width: 350px;'>
+		<h1 class='dialogtitle'>Sign Up to Giant Electronic Brain</h1>
+		<div class='loginfield'><label for='logindialogemail'>Email:</label><input type='text' id='logindialogemail'></div>
+      	<div class='loginfield'><label for='logindialogpassword'>Password:</label><input type='password' id='logindialogpassword'></div>
+      	<div style='clear: both;'><p>To create a new account, fill in your email and password, then click sign up.</p></div>
+	</div>
+	<button class='dialogbutton' id='logindialogsignin' slot='buttonbar'>Sign Up</button>
+	<button class='dialogbutton' id='logindialogcancel' slot='buttonbar'>cancel</button>
+:/
+/: SIGNUPDIALOG/ </template> :/
 /: /TEMPLATE" <template id=" /" /. "> :/
 /: TEMPLATE/ </template> :/
 /: /SCRIPT" <script src=' /" /. '></script> :/
@@ -42,8 +52,8 @@ Hairball.
 /: TOPBAR/ </div> :/
 /: /LOGO <a href='./index.html'><img class='logo' src="images/logo.png"/></a> :/
 /: LOGO/ // :/
-/: /MAINMENU <menu-bar id='mainmenu' class='mainmenu'> :/
-/: MAINMENU/ </menu-bar> :/
+/: /MAINMENU <div id='mainmenu' class='mainmenu'> :/
+/: MAINMENU/ </div> :/
 /: /APPLICATION <horizontal-sash id='applicationarea'> :/
 /: /LEFTSLOT <tab-panel slot='sashleft' id='leftslottabpanel'> :/
 /: LEFTSLOT/ </tab-panel> :/

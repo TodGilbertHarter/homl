@@ -59,13 +59,17 @@ class Router {
     return this.clearSlashes(fragment);
   }
 
-  navigate(path = '') {
-    if (this.mode === 'history') {
-//      window.history.pushState(null, null, this.root + this.clearSlashes(path));
-      window.history.pushState(null, '', this.root + this.clearSlashes(path));
-    } else {
-      window.location.href = `${window.location.href.replace(/#(.*)$/, '')}#${path}`;
-    }
+navigate(path = '', state = null) {
+	if (this.mode === 'history') {
+		window.history.pushState(state, '', this.root + this.clearSlashes(path));
+	} else {
+		var href = `${window.location.href.replace(/#(.*)$/, '')}#${path}`;
+		if(state !== null) {
+			var encstate = encodeURIComponent(state);
+			href = href + `|${encstate}`;
+		}
+		window.location.href = href;
+	}
     return this;
   }
 

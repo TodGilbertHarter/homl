@@ -106,12 +106,19 @@ task installFirebase(type: NpmTask) {
 
 task installTestRunner(type: NpmTask) {
 	description 'npm install the Playwright stuff so we can run in-browser tests'
-	args = ['install', '--save-dev', '@web/test-runner', '@esm-bundle/chai']
-//	args = ['install', '--save-dev', '@web/test-runner', '@web/test-runner-playwright', '@esm-bundle/chai']
+	args = ['install', '-D', '@playwright/test']
 }
 
-task runAllJSTests(type: NpmTask) {
-	args = ['run', 'test']
+task installPWBrowsers(type: NpxTask) {
+	command = 'playwright'
+	args = ['install']
+	dependsOn installTestRunner
+}
+
+task runAllJSTests(type: NpxTask) {
+	command = 'playwright'
+	args = ['test']
+	dependsOn installPWBrowsers
 }
 
 task generateErithnoi(type: Exec) {

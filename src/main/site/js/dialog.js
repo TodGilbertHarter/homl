@@ -14,9 +14,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+import { html, LitElement } from 'https://unpkg.com/lit@2/index.js?module';
+import {ref, createRef } from 'https://unpkg.com/lit@2/directives/ref.js?module';
 
-/** @private */ const DialogWidgettemplate = document.createElement('template');
-DialogWidgettemplate.innerHTML = `<style>
+class DialogWidget extends LitElement {
+
+	constructor() {
+		super();
+		this.fu = false;
+	}
+
+	render() {
+		return html`<style>
 			div.dialog {
 				position: fixed;
 				left: 500px; /* make this 50% at some point */
@@ -46,39 +55,53 @@ DialogWidgettemplate.innerHTML = `<style>
 			}
 		</style>
 		<div class='dialog' part='container' id='container'>
-			<div class='contents'>
-				<slot name='contents'>put stuff here</slot>
+			<div class='contents' ${ref(this.contentRef)}>
+				<slot name='content'>Empty Dialog</slot>
 			</div>
-			<div class='buttonbar' part='buttonbar' id='buttonbar'>
-				<slot name='buttonbar'><button id='dismiss' style='float: right;'>dismiss</button></slot>
+			<div class='buttonbar' part='buttonbar' id='buttonbar' ${ref(this.buttonRef)}>
+				<slot name='buttonbar'><button id='dismiss' style='float: right;' @click=${this.dismissClickHandler}>dismiss</button></slot>
 			</div>
 		</div>`;
-
-class DialogWidget extends HTMLElement {
-	/** @private */ static template = DialogWidgettemplate;
-	/** @private */ dch;
-
-	constructor() {
-		super();
-		const content = DialogWidget.template.content;
-        const shadowRoot = this.attachShadow({mode: 'open'}).appendChild(content.cloneNode(true));
-		this.dch = this.dismissClickHandler.bind(this);
 	}
 	
-	connectedCallback() {
-		const dismiss = this.shadowRoot.getElementById('dismiss');
-		if(dismiss != null) {
-			dismiss.addEventListener('click',this.dch);
+	contentElement(selector) {
+		const slot = this.shadowRoot.querySelector('slot[name=content]');
+		return slot.assignedElements().filter((node) => node.matches(selector));
+	}
+	
+	get buttons() {
+		const slot = this.shadowRoot.querySelector('slot[name=buttonbar]');
+		return slot.assignedElements().filter((node) => node.matches('button'));
+	}
+	
+	populate(handlers) {
+		this.handlers = handlers;
+		if(this.fu) {
+			this._populate();
+		}
+	}
+	
+	_populate() {
+		const bb = this.buttons;
+		for(var i = 0;i < bb.length; i++) {
+			bb[i].onclick = this.handlers[i];
+		}
+	}
+	
+	firstUpdated() {
+		this.fu = true;
+		if(this.handlers !== undefined) {
+			this._populate();
 		}
 	}
 	
 	dismiss() {
 		this.parentElement.removeChild(this);
 	}
-	
-	dismissClickHandler(e) {
+
+	dismissClickHandler = (e) => {
 		this.dismiss();
-	}
+	};
 }
 
 window.customElements.define('dialog-widget',DialogWidget);

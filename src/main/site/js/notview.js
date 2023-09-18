@@ -43,29 +43,30 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 	 * Display the user sign in UI.
 	 */		
 	displaySignInUI() {
-		const dialogHTML = this.theDocument.getElementById('signin-dialog').innerHTML;
-		this.currentDialog = this.theDocument.createElement('dialog-widget');
-		this.currentDialog.innerHTML = dialogHTML;
-		this.theDocument.getElementsByTagName('body')[0].appendChild(this.currentDialog);
-		this.theDocument.getElementById('logindialogcancel').addEventListener('click',(e) => { 
-			console.log('clicked cancel');
-			this.currentDialog.dismiss();
-			this.controller.goBack();
-		});
-		var myDoc = this.theDocument;
-		this.theDocument.getElementById('logindialogsignin').addEventListener('click',(e) => { 
-			console.log('clicked sign in');
-			const email = this.theDocument.getElementById('logindialogemail').value;
-			const password = this.theDocument.getElementById('logindialogpassword').value;
-			this.controller.doSignIn(email,password, 
-				(user,player) => { 
-					this.currentDialog.dismiss(); 
-					this.controller.authenticated(); },
-				(message) => { 
-					message = "<h1 class='dialogtitle'>Sign In Failure</h1><p>"+message+"</p>";
-					this.displayErrorDialog(message); } 
-				);
-		});
+		const dialog = this.theDocument.createElement('dialog-widget');
+		dialog.innerHTML = this.theDocument.getElementById('signin-dialog').innerHTML;
+		this.theDocument.getElementsByTagName('body')[0].appendChild(dialog);
+
+		dialog.populate([
+			(e) => { 
+				console.log('clicked sign in');
+				const email = dialog.querySelector('#logindialogemail').value;
+				const password = dialog.querySelector('#logindialogpassword').value;
+				this.controller.doSignIn(email,password, 
+					(user,player) => { 
+						dialog.dismiss(); 
+						this.controller.authenticated(); },
+					(message) => { 
+						message = "<h1 class='dialogtitle'>Sign In Failure</h1><p>"+message+"</p>";
+						this.displayErrorDialog(message); } 
+					);
+			},
+			(e) => { 
+				console.log('clicked cancel');
+				dialog.dismiss();
+				this.controller.goBack();
+			}
+		]);
 	}
 	
 	/**
@@ -135,26 +136,38 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 	}
 	
 	displaySignUpUI() {
-		const dialog = this.theDocument.getElementById('signin-dialog');
-		const email = this.theDocument.getElementById('logindialogemail').value;
-		const password = this.theDocument.getElementById('logindialogpassword').value;
-		this.controller.doSignUp(email,password,
-			() => { 
-				this.currentDialog.dismiss(); 
-				this.controller.signedUp(); 
-				}, 
-			(message) => {
-				console.trace(message);
-				message = `<h1 class='dialogtitle'>Sign Up Failure</h1><p>${message}</p>`;
-				this.displayErrorDialog(message);
-				this.currentDialog.dismiss();
-			} 
-		);
+		const dialog = this.theDocument.createElement('dialog-widget');
+		dialog.innerHTML = this.theDocument.getElementById('signup-dialog').innerHTML;
+		this.theDocument.getElementsByTagName('body')[0].appendChild(dialog);
+		dialog.populate([
+			(e) => { 
+				console.log('clicked sign up');
+				const email = dialog.querySelector('#logindialogemail').value;
+				const password = dialog.querySelector('#logindialogpassword').value;
+				this.controller.doSignUp(email,password,
+					() => { 
+						dialog.dismiss(); 
+						this.controller.signedUp(); 
+						}, 
+					(message) => {
+						console.trace(message);
+						message = `<h1 class='dialogtitle'>Sign Up Failure</h1><p>${message}</p>`;
+						this.displayErrorDialog(message);
+						dialog.dismiss();
+					} 
+				);
+			},
+			(e) => { 
+				console.log('clicked cancel');
+				dialog.dismiss();
+				this.controller.goBack();
+			}
+		]);
 	}
 	
 	displayErrorDialog(message) {
 		const dialog = this.theDocument.createElement('dialog-widget');
-		dialog.innerHTML = `<div slot='contents' class='errordialogmessage'>${message}</div>`;
+		dialog.innerHTML = `<div slot='content' class='errordialogmessage'>${message}</div>`;
 		this.theDocument.getElementsByTagName('body')[0].appendChild(dialog);
 	}
 	

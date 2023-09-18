@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS Menu with Router</title>
+		<script type="module" src='js/router.js'></script>
+		<script type='module' src='js/menubar.js'></script>
+	</head>
+	<style>
+			.mbar {
+				width: 100%;
+				margin: 0px;
+				padding: 0px;
+				background-color: cyan;
+			}
+			
+			my-menu {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				background-color: inherit;
+			}
+			
+			my-menu.horizontal > my-menu-item {
+				display: inline-block;
+			}
+			
+			my-menu-item a {
+				display: inline-block;
+				color: inherit;
+				text-decoration: inherit;
+			}
+			
+			my-menu.vertical > my-menu-item > a {
+				display: block;
+			}
+			
+			.dropdown {
+			  position: relative;
+			  display: inline-block;
+			}
+
+			.dropdown-content {
+			  display: none;
+			  position: absolute;
+			  background-color: #f9f9f9;
+			  min-width: 160px;
+			  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			  padding: 12px 16px;
+			  left: 0;
+			  top: 100%;
+			  z-index: 1;
+			}
+
+			.dropdown-menu {
+			  background-color: cyan;
+			  position: absolute;
+			  top: 100%;
+			  left: 0;
+			  display: none;
+			  z-index: 1;
+			}
+			
+/*			.dropdown-menu:target {
+			  display: block;
+			} */
+			
+			.visiblemenu {
+				display: block;
+			}
+				
+			my-menu-item {
+				margin: 0px;
+				min-width: 60px;
+				cursor: pointer;
+			}
+			
+			.horizontal my-menu-item {
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+
+			.vertical my-menu-item {
+				margin-left: 0px;
+				margin-right: 0px;
+			}
+
+			my-menu-item:hover {
+				background-color: green;
+			}
+			
+			.dropdown-content:target {
+			  display: block;
+			}
+	</style>
+	<body>
+		<div class='mbar'>
+			<my-menu class='horizontal'>
+				<my-menu-item class='dropdown' label='Sub-menu'>
+					<my-menu class='vertical dropdown-menu' id="popup-menu1">
+						<my-menu-item label='fee' target='javascript:void(0)'></my-menu-item>
+						<my-menu-item label='fie' target='#fie'></my-menu-item>
+						<my-menu-item label='foe' target='#foe'></my-menu-item>
+						<my-menu-item label='fum' target='#fum'></my-menu-item>
+					</my-menu>
+				</my-menu-item>
+				<my-menu-item class='dropdown' label='Sub-menu2'>
+					<my-menu class='vertical dropdown-menu' id="popup-menu2">
+						<my-menu-item style='background-color: red' label='ein' decoration='&gt;' target='#ein'></my-menu-item>
+						<my-menu-item label='zwei' target='#zwei'></my-menu-item>
+						<my-menu-item label='drei' target='#drei'></my-menu-item>
+						<my-menu-item label='fear' target='#fear'></my-menu-item>
+					</my-menu>
+				</my-menu-item>
+				<my-menu-item class='dropdown' onmouseleave="window.location.hash=''">
+				  <span><a href="#popup1">Click me</a></span>
+				  <div class="dropdown-content" id="popup1">
+					<p>Hello World!</p>
+				  </div>
+				</my-menu-item>
+				<my-menu-item label='Link' target='https://google.com'></my-menu-item>
+			</my-menu>
+		</div>
+		<script  type="module">
+//			import { Router } from "js/router.js";
+			var router = new Router({ mode: 'hash'});
+			router.add(/link\/(.*)/,(p) => { console.log(`Did link ${p}`); });
+			router.add(/fee/,() => { console.log("Did fee"); });
+			router.add(/fie/,() => { console.log("Did fie"); });
+			router.add(/foe/,() => { console.log("Did foe"); });
+			router.add(/fum/,() => { console.log("Did fum"); });
+			router.add(/popup1/,() => { console.log("Did popup1"); });
+			router.add(/popup-menu1/,() => { console.log("activated popup-menu1"); });
+		</script>
+	</body>
+</html>

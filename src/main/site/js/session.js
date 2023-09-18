@@ -16,7 +16,7 @@
 */
 
 /** @private */ const SessionWidgettemplate = document.createElement('template');
-SessionWidgettemplate.innerHTML = `<div class='sessionwidget' part='button' id='button'><slot name='text'><button>Sign In</button></slot></div>`;
+SessionWidgettemplate.innerHTML = `<div class='sessionwidget' part='button' id='button'><slot name='text'><button id='signinbutton'>Sign In</button></slot></div>`;
 
 class SessionWidget extends HTMLElement {
 	/**

@@ -1,85 +1,138 @@
+/**
+ * This software is Copyright (C) 2021 Tod G. Harter. All rights reserved.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 import { html, LitElement } from 'https://unpkg.com/lit@2/index.js?module';
 
-class MenuBar extends LitElement {
-	clicked = false;
-	menus = null;
-	activeMenu = null;
-	mish = null;
-	menuHandler = null;
-	moh = null;
-	
+/**
+ * List-based menuing system which uses templates and slots coupled with
+ * CSS and lit-based event handlers to implement a pretty good immitation of
+ * standard application menus.
+ */
+class MyMenuItem extends LitElement {
+	static properties = {
+		label: {},
+		target: {},
+		decoration: {}
+	}
+
 	constructor() {
 		super();
-		this.mish = this.menuItemSelectedHandler.bind(this);
-		this.moh = this.mouseOutHandler.bind(this);
 	}
 	
-	render() {
-		return html`<div id=container><slot>loading main menu</slot></div>`;
+	onClick(e) {
+		const smens = this.querySelector('my-menu');
+		if(smens !== null) {
+			smens.makevisible();
+		}
+		if(this.parentElement.classList.contains('dropdown-menu')) {
+			this.parentElement.makeinvisible();
+		}
+	}
+	
+	onSubMouseOut(e) {
+		const smens = this.querySelector('my-menu');
+		if(smens !== null && e.currentTarget !== e.relatedTarget.parentElement && this !== e.relatedTarget) {
+			smens.makeinvisible();
+		}
+		e.cancelBubble = true;
+	}
+	
+	onMouseOut(e) {
+		const smens = this.querySelector('my-menu');
+		if(e.relatedTarget.parentElement !== smens) {
+			smens.makeinvisible();
+		}
 	}
 	
 	firstUpdated() {
-		const container = this.shadowRoot.getElementById('container');
-		const slot = container.firstChild;
-		slot.addEventListener('slotchange', (e) => { 
-			console.log("Slot changed "+e.innerHTML);
-			const s = e.target;
-			s.addEventListener('click', (e) => {
-				console.log("clicked on the menu");
-				if(this.clicked === false) {
-					this.clicked = true;
-					this.activeMenu = e.target.parentElement;
-					this.menus = s.assignedElements();
-					this.activateMenu();
-					s.addEventListener('mouseout',this.moh);
-				} else {
-					this.clicked = false;
-					this.activeMenu = null;
-					this.activateMenu();
-					s.removeEventListener('mouseout',this.moh);
+		const smens = this.querySelector('my-menu');
+		if(smens !== null) {
+			smens.addEventListener('mouseout',this.onSubMouseOut.bind(this));
+			this.addEventListener('mouseout',this.onMouseOut.bind(this));
+		}
+	}
+	
+	render() {
+		let aStyle = this.parentElement.classList.contains('vertical') ? 'block' : 'inline-block';
+		let aDecoration = this.decoration === undefined ? '' : html`<span class='decoration'>${this.decoration}</span>`
+		let aLink = this.target === undefined ? html`<div @click=${this.onClick}  @mouseOut=${this.OnMouseOut} >${this.label}${aDecoration}</div>` 
+			: html`<a @click=${this.onClick} @mouseOut=${this.OnMouseOut} href='${this.target}'><div>${this.label}${aDecoration}</div></a>`;
+		return html`
+			<style>
+				:host {
+					display: list-item;
 				}
-			});
-		});
-	}
-	
-	mouseOutHandler(e) {
-		console.log("target was an "+e.target.nodeName);
-		if(e.target.nodeName === 'DIV') {
-			this.activeMenu = e.target;
-			this.activateMenu();
-		}
-	}
-	
-	activateMenu() {
-		this.menus.forEach((mitem) => {
-			if(mitem === this.activeMenu) {
-				mitem.classList.add('active');
-				mitem.childNodes[1].classList.add('active');
-				mitem.childNodes[1].addEventListener('click', this.mish);
-//				mitem.childNodes[1].addEventListener('mouseover',this.mimih);
-//				mitem.childNodes[1].addEventListener('mouseout',this.mimoh);
-			} else {
-				mitem.classList.remove('active');
-				mitem.childNodes[1].classList.remove('active');
-				mitem.childNodes[1].removeEventListener('click',this.mish);
-//				mitem.childNodes[1].removeEventListener('mouseover',this.mimih);
-//				mitem.childNodes[1].removeEventListener('mouseout',this.mimoh);
-			}
-		});
-	}
-	
-	menuItemSelectedHandler(e) {
-		console.log("item selected "+e.target.innerText);
-		this.clicked = false;
-		this.activeMenu = null;
-		this.activateMenu();
-		if(this.menuHandler !== null) {
-			this.menuHandler(e.target.id);
-		}
-		//NOTE: event handler custom event dispatch is a fantasy, this does not work, AT ALL.
-//		const event = new CustomEvent('menuitem-selected', {bubbles: true, composed: true, detail: e.target.innerHTML});
-//		this.dispatchEvent(event);
+				
+				a {
+					display: ${aStyle};
+					color: inherit;
+					text-decoration: inherit;
+				}
+				
+				a span.decoration {
+					text-align: right;
+					float: right;
+				}
+				
+				a div {
+					width: 100%;
+				}
+				
+			</style>
+			${aLink}<slot></slot>
+		`;
 	}
 }
 
-window.customElements.define('menu-bar', MenuBar);
+class MyMenu extends LitElement {
+
+	constructor() {
+		super();
+		this.visible = this.classList.contains('visiblemenu');
+	}
+
+	makevisible() {
+		this.classList.add('visiblemenu'); 
+		this.visible = true;
+	}
+	
+	makeinvisible() {
+		this.classList.remove('visiblemenu');
+		this.visible = false;
+	}
+	
+	render() {
+		return html`
+			<style>
+			
+			:host(.horizontal) {
+				padding: 0px;
+				clear: left;
+				width: 100%;
+				background-color: inherit;
+				white-space: nowrap;
+				display: inline-block;
+			}
+			
+			</style>
+			<slot></slot>
+		`;
+	}
+}
+
+window.customElements.define('my-menu-item',MyMenuItem);
+window.customElements.define('my-menu',MyMenu);

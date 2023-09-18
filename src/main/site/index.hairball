@@ -39,16 +39,41 @@
 /MODULE" js/menubar.js"/
 /MODULE" js/schema.js"/
 /SIGNINDIALOG SIGNINDIALOG/
+/SIGNUPDIALOG SIGNUPDIALOG/
 /SOURCE" embedded_charactersheet.html"/
 /BODY
 /TOPBAR
 /LOGO LOGO/ 
 /MAINMENU 
-<div id='gamemenu' class='barmenu leftmenu'><span>game</span><ul><li id='new game'>New</li><li id='find game'>Find</li><li id='recent games'>Recent</li></ul></div> 
-<div id='charactermenu' class='barmenu middlemenu'><span>Character</span><ul><li id='new character'>New</li><li id='save character'>Save</li><li id='close character'>Close</li></ul></div>
-<div id='placesmenu' class='barmenu middlemenu'><span>Places</span><ul><li id='erithnoi'>Erithnoi</li><li id='homl'>HoML Rules</li></ul></div>
-<div id='prefsmenu' class='barmenu rightmenu'><span>settings</span><ul><li id='player settings'>Player</li></ul></div> 
-MAINMENU/ 
+	<my-menu class='horizontal'>
+		<my-menu-item class='dropdown' label='Game'>
+			<my-menu class='vertical dropdown-menu' id="submenu1">
+				<my-menu-item label='New' onclick='window.gebApp.controller.handleNewGame();'></my-menu-item>
+				<my-menu-item label='Find'></my-menu-item>
+				<my-menu-item label='Recent'></my-menu-item>
+			</my-menu>
+		</my-menu-item>
+		<my-menu-item class="dropdown" label='Character'>
+			<my-menu class='vertical dropdown-menu' id="submenu2">
+				<my-menu-item label='New'></my-menu-item>
+				<my-menu-item label='Find'></my-menu-item>
+				<my-menu-item label='Save'></my-menu-item>
+				<my-menu-item label='Recent'></my-menu-item>
+			</my-menu>
+		</my-menu-item>
+		<my-menu-item class="dropdown" label='Places'>
+			<my-menu class='vertical dropdown-menu' id="submenu3">
+				<my-menu-item label='Erithnoi'></my-menu-item>
+				<my-menu-item label='Rules'></my-menu-item>
+			</my-menu>
+		</my-menu-item>
+		<my-menu-item class="dropdown" label='Settings'>
+			<my-menu class='vertical dropdown-menu' id="submenu4">
+				<my-menu-item label='Player'></my-menu-item>
+			</my-menu>
+		</my-menu-item>
+	</my-menu>
+MAINMENU/
 /WIDGETPANEL /SESSION/ WIDGETPANEL/
 TOPBAR/
 /APPLICATION
