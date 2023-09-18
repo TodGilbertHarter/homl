@@ -4,6 +4,7 @@
 		<title>CSS Menu with Router</title>
 		<script type="module" src='js/router.js'></script>
 		<script type='module' src='js/menubar.js'></script>
+		<script type="module" src="js/tabs.js"></script>
 	</head>
 	<style>
 			.mbar {
@@ -120,8 +121,9 @@
 				<my-menu-item label='Link' target='https://google.com'></my-menu-item>
 			</my-menu>
 		</div>
+		<tab-panel id="tp"></tab-panel>
 		<script  type="module">
-//			import { Router } from "js/router.js";
+			import { Router } from "./js/router.js";
 			var router = new Router({ mode: 'hash'});
 			router.add(/link\/(.*)/,(p) => { console.log(`Did link ${p}`); });
 			router.add(/fee/,() => { console.log("Did fee"); });
@@ -130,6 +132,29 @@
 			router.add(/fum/,() => { console.log("Did fum"); });
 			router.add(/popup1/,() => { console.log("Did popup1"); });
 			router.add(/popup-menu1/,() => { console.log("activated popup-menu1"); });
+			
+			/**
+			 * Add a new tab to the left tab panel.
+			 */
+			function addTabToLeftPanel(tab,tabContents,isactive) {
+				const tp = document.getElementById('tp');
+				tp.addTab(tab,tabContents,isactive);
+			}
+		
+			function displaySampleTab1(isactive) {
+				const content = document.createElement('tab-body');
+				content.innerHTML = "<div class='search' id='lefttabgamesearch' displayid='sample1'>Sample 1</div>";
+				addTabToLeftPanel('Sample 1',content,isactive)
+			}
+			
+			function displaySampleTab2(isactive) {
+				const content = document.createElement('tab-body');
+				content.innerHTML = "<div class='search' id='lefttabgamesearch' displayid='sample2'>Sample 2</div>";
+				addTabToLeftPanel('Sample 2',content,isactive)
+			}
+
+			displaySampleTab1(true);
+			displaySampleTab2(false);
 		</script>
 	</body>
 </html>

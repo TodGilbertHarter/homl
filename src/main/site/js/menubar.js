@@ -56,23 +56,24 @@ class MyMenuItem extends LitElement {
 		if(e.relatedTarget.parentElement !== smens) {
 			smens.makeinvisible();
 		}
+		e.cancelBubble = true;
 	}
 	
-	firstUpdated() {
+	connectedCallback() {
+		super.connectedCallback();
 		const smens = this.querySelector('my-menu');
 		if(smens !== null) {
 			smens.addEventListener('mouseout',this.onSubMouseOut.bind(this));
-			this.addEventListener('mouseout',this.onMouseOut.bind(this));
+			this.addEventListener('mouseleave',this.onMouseOut.bind(this));
 		}
 	}
 	
 	render() {
 		let aStyle = this.parentElement.classList.contains('vertical') ? 'block' : 'inline-block';
 		let aDecoration = this.decoration === undefined ? '' : html`<span class='decoration'>${this.decoration}</span>`
-		let aLink = this.target === undefined ? html`<div @click=${this.onClick}  @mouseOut=${this.OnMouseOut} >${this.label}${aDecoration}</div>` 
-			: html`<a @click=${this.onClick} @mouseOut=${this.OnMouseOut} href='${this.target}'><div>${this.label}${aDecoration}</div></a>`;
-		return html`
-			<style>
+		let aLink = this.target === undefined ? html`<div @click=${this.onClick} >${this.label}${aDecoration}</div>` 
+			: html`<a @click=${this.onClick} href='${this.target}'><div>${this.label}${aDecoration}</div></a>`;
+		return html`<style>
 				:host {
 					display: list-item;
 				}
@@ -91,10 +92,8 @@ class MyMenuItem extends LitElement {
 				a div {
 					width: 100%;
 				}
-				
 			</style>
-			${aLink}<slot></slot>
-		`;
+			${aLink}<slot></slot>`;
 	}
 }
 
@@ -116,8 +115,7 @@ class MyMenu extends LitElement {
 	}
 	
 	render() {
-		return html`
-			<style>
+		return html`<style>
 			
 			:host(.horizontal) {
 				padding: 0px;
@@ -127,10 +125,8 @@ class MyMenu extends LitElement {
 				white-space: nowrap;
 				display: inline-block;
 			}
-			
 			</style>
-			<slot></slot>
-		`;
+			<slot></slot>`;
 	}
 }
 

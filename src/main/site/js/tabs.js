@@ -46,6 +46,7 @@ class TabPanel extends LitElement {
 		const id = "tabid" + Math.random().toString(16).slice(2)
 		const ti = document.createElement('li');
 //		ti.onmouseenter = this.tch;
+		ti.onclick = this.tch;
 		ti.id = "i" + id;
 		ti.innerText = tabtext;
 		ti.part = 'tabitem';
@@ -55,7 +56,6 @@ class TabPanel extends LitElement {
 		this.tabContents.push(contents);
 		if(isactive) { this.activateTab(ti,contents); }
 		this.requestUpdate();
-		ti.onclick = this.tch;
 	}
 	
 	/**

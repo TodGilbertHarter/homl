@@ -46,7 +46,7 @@
     --theme-bg: #e4e5d0;
     --theme-bg-dark: #8a8d4e;
     --theme-fg: black;
-    --theme-border: black;
+    --theme-border: #b4b77c;
     --chapter-bg: #8a8d4e;
     --chapter-fg: white;
     --book-bg: #fdfdfc;
@@ -125,6 +125,7 @@ body {
 .mainmenu my-menu {
 	list-style-type: none;
 	margin: 0;
+	margin-left: 2px;
 	padding: 0;
 	background-color: inherit;
 }
@@ -166,18 +167,34 @@ my-menu-item {
 }
 
 .horizontal my-menu-item {
-	margin-left: 5px;
+/*	margin-left: 5px;
 	margin-right: 5px;
 	border-right: 2px solid var(--theme-border);
-	padding-right: 2px;
+	border-left: 2px solid var(--theme-border); */
+	padding-right: 5px;
+	padding-left: 5px;
+	text-align: center;
+	border: 1px solid var(--theme-border);
+	border-collapse: collapse;
+}
+
+.horizontal my-menu-item.left {
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+.horizontal my-menu-item.right {
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
 }
 
 .vertical my-menu-item {
 	margin-left: 0px;
 	margin-right: 0px;
-	color: var(theme-fg);
+	color: var(--theme-fg);
 	background-color: var(--theme-bg);
 	border: 0px;
+	text-align: left;
 }
 
 my-menu-item:hover {
