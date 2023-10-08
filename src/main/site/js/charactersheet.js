@@ -20,6 +20,7 @@ import { Rules } from './rules.js';
 import { Background } from './background.js';
 import { Character } from './character.js';
 import { GetPlayerReference } from './playerrepository.js'
+import {ref, createRef} from 'https://unpkg.com/lit@2/directives/ref.js?module';
 
 /** @private */ const CharacterSheettemplate = document.getElementById('charactersheettemplate');
 
@@ -45,14 +46,13 @@ class CharacterSheet extends HTMLElement {
 		this.characterId = this.getAttribute('characterid');
 		const savebutton = this.shadowRoot.getElementById('savebutton');
 		const refreshbutton = this.shadowRoot.getElementById('refreshbutton');
-		const newbutton = this.shadowRoot.getElementById('newbutton');
+		const copybutton = this.shadowRoot.getElementById('copybutton');
 		const sbh = this.saveButtonHandler.bind(this);
 		savebutton.addEventListener('click',sbh);
 		const rbh = this.refreshButtonHandler.bind(this);
 		refreshbutton.addEventListener('click',rbh);
-		const nbh = this.newButtonHandler.bind(this);
-		newbutton.addEventListener('click',nbh);
-//		const characterview = this.shadowRoot.getElementById('characterview');
+		const cbh = this.copyButtonHandler.bind(this);
+		copybutton.addEventListener('click',cbh);
 	}
 	
 	setSelections(species, callings,backgrounds,origins) {
@@ -82,13 +82,42 @@ class CharacterSheet extends HTMLElement {
 			{ id: '5', name: 'Vast Wealth'},
 			{ id: '6', name: 'Infinite Wealth'}
 		]);
+		this.setPersonalityList();
+		this.setBackgroundList();
+		this.setProficiencyList();
+	}
+	
+	/**
+	 * This sets up the characterproficiencies list component of the sheet with the correct
+	 * handlers to allow management of proficiency elements.
+	 */
+	setProficiencyList() {
+		const proficiencyList = this.shadowRoot.getElementById('characterproficiencies');
+		proficiencyList.innerHTML = '';
+		proficiencyList.newButtonHandler = (e) => {
+			const nitem = '<proficiency-field></proficiency-field>';
+			proficiencyList.addItem(nitem);
+		};
+	}
+	
+	/**
+	 * This sets up the characterpersonality list component of the sheet with the correct
+	 * handlers to allow management of personality elements.
+	 */
+	setPersonalityList() {
 		const personalityList = this.shadowRoot.getElementById('characterpersonality');
 		personalityList.innerHTML = '';
 		personalityList.newButtonHandler = (e) => {
 			const nitem = '<personality-field name="trait name" value="new description"></personality-field>';
 			personalityList.addItem(nitem);
 		};
-		
+	}
+
+	/**
+	 * This sets up the characterbackground list component of the sheet with the correct
+	 * handlers to allow management of backgrounds.
+	 */
+	setBackgroundList() {
 		const backgroundList = this.shadowRoot.getElementById('characterbackground');
 		backgroundList.innerHTML = '';
 		backgroundList.newButtonHandler = (e) => {
@@ -137,7 +166,7 @@ class CharacterSheet extends HTMLElement {
 				bg.text = v;
 //				render(template(bg),currentDialog);
 			}
-			const template = (myBg) => html`<div slot='contents' style='width: 350px;'>
+			const template = (myBg) => html`<div slot='content' style='width: 350px;'>
 				<h1 class='dialogtitle'>Add New Background</h1>
       			<div style='clear: both;'>
 	      			<label>type</label><select id='backgrounddialogtype' @change=${onTypeChange}>
@@ -172,12 +201,12 @@ class CharacterSheet extends HTMLElement {
 		return list;
 	}
 	
+	/* get the values for background */
 	getBackgroundList() {
 		const id = 'characterbackground';
 		const elem = this.getElement(id);
 		const list = [];
 		for(const item of elem.children) {
-			console.log("FUCKING JAVASCRIPT: "+item.name+", "+item.attributes[0]+', '+item.innerHTML);
 			list.push({
 				name: item.name,
 				type: item.attributes[0].value,
@@ -199,8 +228,8 @@ class CharacterSheet extends HTMLElement {
 		this.controller.refreshCharacter(this,this.model);
 	}
 	
-	newButtonHandler(e) {
-		this.controller.createCharacter(this);
+	copyButtonHandler(e) {
+		this.controller.copyCharacter(this);
 	}
 	
 	getElement(id) {
@@ -300,20 +329,27 @@ window.customElements.define('background-field',BackgroundField);
 
 class PersonalityField extends LitElement {
 	static properties = {
-		name: {},
-		value: {}
+		name: { reflect: true},
+		value: { reflect: true}
 	};
 	
 	deleteButtonHandler;
 	
 	constructor() {
 		super();
+		this.nameis = createRef();
+		this.valueis = createRef();
+	}
+	
+	onChange(e) {
+		this.name = this.nameis.value.value;
+		this.value = this.valueis.value.value;
 	}
 	
 	render() {
 		return html`<div class="attribute">
-			<input part="name" class="name" id="name" value="${this.name}">
-			<input part="value" class='value' value="${this.value}" id='value'>
+			<input part="name" class="name" id="name" value="${this.name}" ${ref(this.nameis)} @change=${this.onChange}>
+			<input part="value" class='value' value="${this.value}" id='value' ${ref(this.valueis)} @change=${this.onChange}>
 			<button part="delete" name="delete" id='delete' @click="${this.deleteButtonHandler}">x</button>
 		</div>`;
 	}
@@ -321,6 +357,60 @@ class PersonalityField extends LitElement {
 }
 
 window.customElements.define('personality-field',PersonalityField);
+
+class ProficiencyField extends LitElement {
+	static properties = {
+		type: { reflect: true},
+		name: { reflect: true},
+	};
+	
+	deleteButtonHandler;
+	
+	constructor() {
+		super();
+		this.nameRef = createRef();
+		this.typeRef = createRef();
+	}
+	
+	onChange() {
+		this.type = this.typeRef.value.value;
+		this.name = this.nameRef.value.value;
+	}
+	
+	setNamesByType(t) {
+		window.gebApp.controller.getProficienciesByType(t, (profs) => { this.nameRef.value.setSelections(profs)});
+	}
+	
+	onTypeChange() {
+		onChange();
+		setNamesByType(this.type);
+	}
+	
+	onNameChange() {
+		onChange();
+	}
+	
+	firstUpdated() {
+		var types = [
+			{id: 'other', name: 'other'},
+			{id: 'tool', name: 'tool'},
+			{id: 'weapon', name: 'weapon'},
+			{id: 'implement', name: 'implement'}
+		];
+		this.typeRef.value.setSelections(types);
+	}
+	
+	render() {
+		return html`<div class='attribute'>
+		<select-field label='type' name='type' @change=${this.onTypeChange} ${ref(this.typeRef)}>
+		</select-field>
+		<select-field label='name' name='name' @change=${this.onNameChange} ${ref(this.nameRef)}>
+		</select-field>
+		</div>`;
+	}
+}
+
+window.customElements.define('proficiency-field',ProficiencyField);
 
 class ItemList extends LitElement {
 	static properties = {

@@ -25,9 +25,10 @@ class Controller {
 	/** @private */ characterRepo;
 	/** @private */ characterController;
 	/** @private */ callingRepo;
+	/** @private */ equipmentRepo;
 		
 	constructor(gebApp,view,authenticator,router,gameRepo,characterRepo,characterController,callingRepo,speciesRepo,
-		backgroundRepo,originRepo) {
+		backgroundRepo,originRepo,equipmentRepo) {
 		this.gebApp = gebApp;
 		this.view = view;
 		view.controller = this;
@@ -40,6 +41,7 @@ class Controller {
 		this.speciesRepo = speciesRepo;
 		this.backgroundRepo = backgroundRepo;
 		this.originRepo = originRepo;
+		this.equipmentRepo = equipmentRepo;
 		this.router.add(/signup/,() => { this.view.displaySignUpUI(); });
 		this.router.add(/signin/,() => { this.view.displaySignInUI(); });
 		this.router.add(/signout/,() => { this.view.displaySignOutUI(); });
@@ -47,8 +49,13 @@ class Controller {
 		this.router.add(/showgame\/(.*)/,(gameid) => { this.view.displayGameInfo(gameid); });
 		this.router.add(/showcharacter\/(.*)/,(characterid) => { this.view.displayCharacterInfo(characterid); });
 		this.router.add(/creategame/,() => { this.view.displayCreateGameUI(); });
+		this.router.add(/equipment/,() => {this.view.displayEquipmentList(); });
 		const mm = this.view.getElement('mainmenu');
 		mm.menuHandler = (e) => { this.menuItemSelectionHandler(e) };
+	}
+	
+	displayEquipmentView() {
+		window.location.hash = '/equipment';
 	}
 	
 	/**

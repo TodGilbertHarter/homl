@@ -4,6 +4,7 @@
 <script type="module">
 	import { html } from 'https://unpkg.com/lit@2/index.js?module';
  	import {ref} from 'https://unpkg.com/lit@2/directives/ref.js?module';
+ 	import {repeat} from 'https://unpkg.com/lit@2/directives/repeat.js?module';
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
     import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
@@ -38,6 +39,9 @@
 /MODULE" js/gamecreate.js"/
 /MODULE" js/menubar.js"/
 /MODULE" js/schema.js"/
+/MODULE" js/equipment.js"/
+/MODULE" js/equipmentrepository.js"/
+/MODULE" js/equipmentview.js"/
 /SIGNINDIALOG SIGNINDIALOG/
 /SIGNUPDIALOG SIGNUPDIALOG/
 /SOURCE" embedded_charactersheet.html"/
@@ -63,6 +67,10 @@
 			<my-menu class='vertical dropdown-menu' id="submenu3">
 				<my-menu-item label='Erithnoi' onclick='window.gebApp.controller.openErithnoi();'></my-menu-item>
 				<my-menu-item label='Rules' onclick='window.gebApp.controller.openHoML();'></my-menu-item>
+			</my-menu>
+		</my-menu-item><my-menu-item class='dropdown' label='HoML'>
+			<my-menu class='vertical dropdown-menu' id='submenu5'>
+				<my-menu-item label='Equipment' onclick='window.gebApp.controller.displayEquipmentView();'></my-menu-item>
 			</my-menu>
 		</my-menu-item><my-menu-item class="dropdown right" label='Settings'>
 			<my-menu class='vertical dropdown-menu' id="submenu4">

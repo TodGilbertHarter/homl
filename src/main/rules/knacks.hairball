@@ -63,79 +63,79 @@ LEFT/
 
 SUBSECTION/
 /SUBSECTION" Acrobatic "/
-/KNACK" Acrobatics "/ KNACK/ , ability modifier DEX
+/KNACK /ID" 92339e76-63cc-11ee-b2de-c87f5455cfcc"/ /KNACKNAME Acrobatics KNACKNAME/ /KNACKABILITYMOD DEX KNACKABILITYMOD/ KNACK/
 
 This aspect governs all sorts of situations in which a character might need to act in a highly coordinated and controlled manner, exercise good balance, precision, and similar kinds of actions. Tumbling, falling, narrow crossings, handling slippery or treacherous conditions, these are all the kinds of situations which would be governed by the acrobatic aspect. This aspect might also govern actions in combat such as dodging attacks or avoiding attempts to grab or restrain the character.
 SUBSECTION/
 
 /SUBSECTION" Arcane "/
-/KNACK" Arcana "/ KNACK/ , ability modifier INT
+/KNACK /ID" f49cd33e-63cc-11ee-877f-c87f5455cfcc"/ /KNACKNAME Arcana KNACKNAME/ /KNACKABILITYMOD INT KNACKABILITYMOD/ KNACK/
 
 This aspect governs all sorts of situations in which a character needs esoteric or specialized knowledge of magical or otherworldly things. Reading magical writing, detecting magic, analyzing magic, or otherworldly forces. Performing research on magical topics and procedures, properly performing rituals, these are all topics related to arcana. 
 SUBSECTION/
 /SUBSECTION" Athletic "/
-/KNACK" Athletics "/ KNACK/ , ability modifier STR
+/KNACK /ID" 0ea34f92-63cd-11ee-ba6e-c87f5455cfcc"/ /KNACKNAME Athletic KNACKNAME/ /KNACKABILITYMOD STR KNACKABILITYMOD/ KNACK/
 
 This aspect deals with anything requiring strength, power, and overall athletic ability, such as running, jumping, climbing, swimming, etc. Anything that mostly requires a strong body and benefits from athletic practice is governed by the athletic aspect. This is particularly appropriate for actions which are mostly or completely strength related.
 SUBSECTION/
 /SUBSECTION" Bluffing "/
-/KNACK" Bluff "/ KNACK/ , ability modifier CHA
+/KNACK /ID" 334124a0-63cd-11ee-8977-c87f5455cfcc"/ /KNACKNAME Bluff KNACKNAME/ /KNACKABILITYMOD CHA KNACKABILITYMOD/ KNACK/
 
 This aspect governs anything where deception is being employed. Anytime a character attempts to mislead, misdirect, fool, or simply outright lie to an NPC they will employ the Bluff knack. This included things like trying to pass off fake papers or other sorts of cons and scams as well. 
 SUBSECTION/
 /SUBSECTION" Diplomatic "/
-/KNACK" Diplomacy "/ KNACK/ , ability modifier CHA
+/KNACK /ID" 55314f5e-63cd-11ee-972b-c87f5455cfcc"/ /KNACKNAME Diplomacy KNACKNAME/ /KNACKABILITYMOD CHA KNACKABILITYMOD/ KNACK/
 
 The diplomatic aspect governs all situations involving befriending, negotiating with, or otherwise interacting with other people in which the character is relatively honest and not using threats or lies. Most business deals, alliances, and similar situations will be governed by this aspect. Diplomatic characters are able to make friends and allies, and get deals done.
 
 SUBSECTION/
 /SUBSECTION" Engineered "/
-/KNACK" Engineering "/ KNACK/ , ability modifier INT
+/KNACK /ID" 83f7dfba-63cd-11ee-a8d3-c87f5455cfcc"/ /KNACKNAME Engineering KNACKNAME/ /KNACKABILITYMOD INT KNACKABILITYMOD/ KNACK/
 
 The engineered aspect governs all situations involving a knowledge and practice of mechanics, construction, and similar. When a character builds something, assesses the function of a thing, repairs it, tries to understand it, etc. then the action is controlled by this aspect.
 SUBSECTION/
 /SUBSECTION" Health "/
-/KNACK" Healing "/ KNACK/ , ability modifier WIS
+/KNACK /ID" ac3eb890-63cd-11ee-bbae-c87f5455cfcc"/ /KNACKNAME Healing KNACKNAME/ /KNACKABILITYMOD WIS KNACKABILITYMOD/ KNACK/
 
 The health aspect governs all situations where a character is healing another, providing health advice, understanding a disease, curing a wound, treating poison, etc. 
 SUBSECTION/
 /SUBSECTION" Historical "/
-/KNACK" History "/ KNACK/ , ability modifier INT
+/KNACK /ID" d06fd30c-63cd-11ee-9104-c87f5455cfcc"/ /KNACKNAME History KNACKNAME/ /KNACKABILITYMOD INT KNACKABILITYMOD/ KNACK/
 
 The historical aspect governs all actions which relate to knowing, understanding, researching, or explaining anything historical, or an action where historical knowledge or understanding could be highly useful. Characters with a history knack tend to have an understanding of history and the nature of historical processes, and to use this to draw conclusions, reason about the current situation, etc. 
 SUBSECTION/
 /SUBSECTION" Insightful "/
-/KNACK" Insight "/ KNACK/ , ability modifier WIS
+/KNACK /ID" f0fe9e96-63cd-11ee-8d7a-c87f5455cfcc"/ /KNACKNAME Insight KNACKNAME/ /KNACKABILITYMOD WIS KNACKABILITYMOD/ KNACK/
 
 The insightful aspect deals with situations in which a character takes an action which relies on understanding another person, their motivations, personality, and likely behavior. It also deals with being able to spot information about people based on this understanding. Generally it can come into play when determining the truthfulness of a statement, reliability of an NPC, etc.
 SUBSECTION/
 /SUBSECTION" Intimidating "/
-/KNACK" Intimidation "/ KNACK/ , ability modifier CHA
+/KNACK /ID" 10fed12a-63ce-11ee-bf05-c87f5455cfcc"/ /KNACKNAME Intimidation KNACKNAME/ /KNACKABILITYMOD CHA KNACKABILITYMOD/ KNACK/
 
 The intimidating aspect deals with actions related to frightening, cowing, or threatening others. Any time a character attempts to get what he wants by threat, then the intimidation knack could be used.
 SUBSECTION/
 /SUBSECTION" Leading "/
-/KNACK" Leadership "/ KNACK/ , ability modifier CHA
+/KNACK /ID" 34ae7c92-63ce-11ee-a85d-c87f5455cfcc"/ /KNACKNAME Leadership KNACKNAME/ /KNACKABILITYMOD CHA KNACKABILITYMOD/ KNACK/
 
 The leading aspect comes into play whenever a character attempts to command others, or when attempting to understand a command situation, such as knowing what commands an NPC might follow or not follow, or who is in command in a given situation.
 SUBSECTION/
 /SUBSECTION" Natural "/
-/KNACK" Nature "/ KNACK/ , ability modifier WIS
+/KNACK /ID" 54b76954-63ce-11ee-8318-c87f5455cfcc"/ /KNACKNAME Nature KNACKNAME/ /KNACKABILITYMOD WIS KNACKABILITYMOD/ KNACK/
 
 The natural aspect governs when an action is taken which relies on understanding or utilizing the natural aspect of a thing. This could be taming an animal, finding food in the wilderness, orienteering, or coming up with information on things in nature.
 SUBSECTION/
 /SUBSECTION" Perceptive "/
-/KNACK" Perception "/ KNACK/ , ability modifier WIS
+/KNACK /ID" 73421e8c-63ce-11ee-8f60-c87f5455cfcc"/ /KNACKNAME Perception KNACKNAME/ /KNACKABILITYMOD WIS KNACKABILITYMOD/ KNACK/
 
 The perceptive aspect governs whenever a character is looking for something, watching something, or attempting to notice some clue or attribute of a place or situation. It could be used if a character searched an area, or attempted to track an enemy, etc.
 SUBSECTION/
 /SUBSECTION" Religious "/
-/KNACK" Religion "/ KNACK/ , ability modifier INT
+/KNACK /ID" 97bed71e-63ce-11ee-b9b4-c87f5455cfcc"/ /KNACKNAME Religion KNACKNAME/ /KNACKABILITYMOD INT KNACKABILITYMOD/ KNACK/
 
 The religious aspect governs any situation where a character is exercising spiritual or religious understanding or knowledge. This would be the case when needing to know facts about a religion or religious or spiritual practice or ritual.
 SUBSECTION/
 /SUBSECTION" Stealthy "/
-/KNACK" Stealth "/ KNACK/ , ability modifier DEX
+/KNACK /ID" bd191df8-63ce-11ee-a1f1-c87f5455cfcc"/ /KNACKNAME Stealth KNACKNAME/ /KNACKABILITYMOD DEX KNACKABILITYMOD/ KNACK/
 
 The stealthy aspect governs all attempts to hide, sneak, conceal, or ambush. 
 /TOPIC" Hiding"/
@@ -144,7 +144,7 @@ A character can become hidden by making a Stealth check. This check will produce
 
 In order for a character to become hidden she must have cover or concealment, be out of the line of sight of the character she is attempting to hide from; or be unseen due to invisibility, darkness or some other circumstance. If one of these conditions is not met, then hiding is impossible; but note that the conditions may be met with respect to some characters and not others. A character may become hidden only from some of its opponents.
 
-If a character makes an attack or uses a power on a target which has an effect on that target then he becomes visible to the target at the end of that action. If a hidden character moves into the line of sight of another character and lacks cover or concealment and is not unseen, then he becomes visible immediately and loses the benefits of being hidden at the end of his current action (IE for the duration of the action any attacks against him still suffer disadvantage and the character may claim to be hidden for other rules purposes). If a character makes a significant noise (talking, shouting, etc, but not whispering) then she is no longer hidden. If a character has a light source in a dark area then she cannot hide and is no longer hidden as soon as the light is manifested.
+If a character makes an attack or uses a feat on a target which has an effect on that target then he becomes visible to the target at the end of that action. If a hidden character moves into the line of sight of another character and lacks cover or concealment and is not unseen, then he becomes visible immediately and loses the benefits of being hidden at the end of his current action (IE for the duration of the action any attacks against him still suffer disadvantage and the character may claim to be hidden for other rules purposes). If a character makes a significant noise (talking, shouting, etc, but not whispering) then she is no longer hidden. If a character has a light source in a dark area then she cannot hide and is no longer hidden as soon as the light is manifested.
 
 If a hidden character moves, then it may be detected. Movement of less than 3 squares in a turn will not reveal the character, but any movement of three or more squares requires making a new stealth check, with disadvantage.
 
@@ -154,17 +154,17 @@ Stealth could be used to hide things besides a character. It could be used to co
 TOPIC/
 SUBSECTION/
 /SUBSECTION" Streetwise "/
-/KNACK" Streetwise "/ KNACK/ , ability modifier CHA
+/KNACK /ID" f4b87222-63ce-11ee-9005-c87f5455cfcc"/ /KNACKNAME Streetwise KNACKNAME/ /KNACKABILITYMOD CHA KNACKABILITYMOD/ KNACK/
 
 This aspect governs all situations where an action is taken which relies on understanding or utilizing the social and political organization of some sort of inhabited location. It might come into play when determining who has influence, where things are located, how the power structure and politics of an urban area work, etc. 
 SUBSECTION/
 /SUBSECTION" Surviving "/
-/KNACK" Survival "/ KNACK/ , ability modifier CON
+/KNACK /ID" 1aa3b8e8-63cf-11ee-9777-c87f5455cfcc"/ /KNACKNAME Survival KNACKNAME/ /KNACKABILITYMOD CON KNACKABILITYMOD/ KNACK/
 
 This aspect governs situations where a character is enduring, resisting, or fortifying himself against an environmental condition, resisting an affliction, or attempting accomlish some action despite adverse conditions.
 SUBSECTION/
 /SUBSECTION" Thieving "/
-/KNACK" Thievery "/ KNACK/ , ability modifier DEX
+/KNACK /ID" 3c5cb7e6-63cf-11ee-98da-c87f5455cfcc"/ /KNACKNAME Thievery KNACKNAME/ /KNACKABILITYMOD DEX KNACKABILITYMOD/ KNACK/
 
 This aspect governs attempts to steal, legerdemain, slight of hand, and dealing with the common situations encountered by those who appropriate the goods of others by nefarious means. 
 SUBSECTION/

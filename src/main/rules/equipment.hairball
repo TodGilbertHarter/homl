@@ -195,6 +195,120 @@ Implements are tools, similar to weapons, which can be used in combat. Feats wit
     /LI /LABEL Ability LABEL/ The ability score associated with the implement. LI/
 UL/
 TOPIC/
+/CLEAR CLEAR/
+/TOPIC" Implement Descriptions"/
+/FLEXROW
+/FLEXCELL
+/IMPLEMENT /ID" a64bad34-6568-11ee-ab97-c87f5455cfcc"/ /IMPLEMENTNAME Rod IMPLEMENTNAME/
+/IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 3 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY CHA IMPLEMENTABILITY/
+/IMPLEMENTDESCRIPTION
+The rod is an ancient symbol of power and is used when a caster wishes to project their power in order to awe and overwhelm the target. Most rods are not designed to be 
+useful as weapons, and are often delicate, but some are quite solid and could be used as a club in an emergency. While a rod could be made from a single piece of straight
+wood, most are composed of a shaft and some sort of head, usually constructed of some finer material.
+IMPLEMENTDESCRIPTION/
+IMPLEMENT/
+FLEXCELL/
+/FLEXCELL
+/IMPLEMENT /ID" 9605cfa6-656b-11ee-a812-c87f5455cfcc"/ /IMPLEMENTNAME Staff IMPLEMENTNAME/
+/IMPLEMENTHANDS 2 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 4 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY WIS IMPLEMENTABILITY/
+/IMPLEMENTDESCRIPTION
+Since ancient times wise men have wielded staves of enormous magical potency. Even an ordinary staff makes a powerful implement which can produce mighty magical effects.
+Staves can generally be used as a club in a pinch, although a true fighting staff will be a heavier and more effective weapon. Staves are generally crafted from fine wood
+and are often inlaid with minerals or gems, shod with metal, etc. However even a good solid wooden stick of the proper size will do in a pinch.
+IMPLEMENTDESCRIPTION/
+IMPLEMENT/
+FLEXCELL/
+FLEXROW/
+/FLEXROW
+/FLEXCELL
+/IMPLEMENT /ID" acc0fae0-656b-11ee-bc74-c87f5455cfcc"/ /IMPLEMENTNAME Instrument IMPLEMENTNAME/
+/IMPLEMENTHANDS 2 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 1 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY CHA IMPLEMENTABILITY/
+/IMPLEMENTDESCRIPTION
+This is a musical instrument of some sort. Instruments of all kinds can potentially be useful in the manipulation of power to create magical effects. Optionally some types of
+instrument might have different attributes, being smaller, doing more or less damage, and relying on different abilities. The attributes provided here reflect something like
+a generic hand-held string instrument typically used for entertainment purposes. To be useful as an implement an instrument should be of greater than average quality and
+further endowed with some enhanced attributes such as special strings. However even basic instruments might suffice in a pinch.
+IMPLEMENTDESCRIPTION/
+IMPLEMENT/
+FLEXCELL/
+/FLEXCELL
+/IMPLEMENT /ID" c1abe0b4-656b-11ee-aa62-c87f5455cfcc"/ /IMPLEMENTNAME Wand IMPLEMENTNAME/
+/IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 1 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY INT IMPLEMENTABILITY/
+/IMPLEMENTDESCRIPTION
+The wand is the most classical symbol of magical power amongst all implements. It is a fine tool for the execution of exacting magics. Simple wands are easy enough to craft
+and most users can make a passable one with simple tools. The more potent types are finely crafted or made from highly unusual materials using arcane processes.
+IMPLEMENTDESCRIPTION/
+IMPLEMENT/
+FLEXCELL/
+FLEXROW/
+/FLEXROW
+/FLEXCELL
+/IMPLEMENT /ID" d3abd08a-656b-11ee-aa4c-c87f5455cfcc"/ /IMPLEMENTNAME Tome IMPLEMENTNAME/
+/IMPLEMENTHANDS 2 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 1 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY INT IMPLEMENTABILITY/
+/IMPLEMENTDESCRIPTION
+Many practitioners of the magical arts rely on magical books to guide their casting. These are especially useful in the execution of intricate ritual magics and similar
+endeavors. Magical tomes often have specific feats and rituals enscribed within them, empowering their owners to new heights of power. A practitioner may scribe a tome. This
+requires at least a couple of days of time and requisite materials. Otherwise they might be purchased in certain places.
+IMPLEMENTDESCRIPTION/
+IMPLEMENT/
+FLEXCELL/
+/FLEXCELL
+/IMPLEMENT /ID" ee431246-656b-11ee-ac81-c87f5455cfcc"/ /IMPLEMENTNAME Orb IMPLEMENTNAME/
+/IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 1 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY CHA IMPLEMENTABILITY/
+/IMPLEMENTDESCRIPTION
+Orbs, AKA Crystal balls, are known to be powerful focuses for scrying and divinatory powers, and often act as a means of communication with far places and perhaps even
+other worlds. Even an ordinary crystal ball is a useful focus and many of these items are known to possess powerful enchantments. Such implements are not the most easy to
+come by, but they can be found in civilized places, etc.
+IMPLEMENTDESCRIPTION/
+IMPLEMENT/
+FLEXCELL/
+FLEXROW/
+/FLEXROW
+/FLEXCELL
+/IMPLEMENT /ID" ffb7164e-656b-11ee-b520-c87f5455cfcc"/ /IMPLEMENTNAME Holy Symbol IMPLEMENTNAME/
+/IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 0 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY WIS IMPLEMENTABILITY/
+/IMPLEMENTDESCRIPTION
+Spiritual powers often have symbols associated with them, especially those revered as gods by mortals. Such symbols have a potency which belies their often ordinary nature
+and believers often use them to focus the power of the spirits they revere to perform mighty magics. Holy symbols must normally be specially blessed and sanctified in order
+to be useful.
+IMPLEMENTDESCRIPTION/
+IMPLEMENT/
+FLEXCELL/
+/FLEXCELL
+/IMPLEMENT /ID" 0f4594fa-656c-11ee-b255-c87f5455cfcc"/ /IMPLEMENTNAME Totem IMPLEMENTNAME/
+/IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 2 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY WIS IMPLEMENTABILITY/
+/IMPLEMENTDESCRIPTION
+Totems are a bit like holy symbols, but they allow the possessor to tune into the natural life force which is present everywhere. Most totems consist of biological material
+of some sort, animal or human bones, teeth, claws, hide, or minerals, seeds, etc. Often this material will be contained within a bag or other container, but some totems are
+pieces of wood or even just a rock. In order to be potent they must be attuned to nature and the user.
+IMPLEMENTDESCRIPTION/
+IMPLEMENT/
+FLEXCELL/
+FLEXROW/
+/FLEXROW
+/FLEXCELL
+/IMPLEMENT /ID" 1b982aec-656c-11ee-a517-c87f5455cfcc"/ /IMPLEMENTNAME Knife IMPLEMENTNAME/
+/IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 3 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY CHA IMPLEMENTABILITY/
+/IMPLEMENTDESCRIPTION
+Knives are common weapons, but they are also often used in the performance of magic. As such most knife implements possess more ornate decorative aspects, or are made of
+specific and unusual materials. While such a knife implement may be used in place of a tool or weapon they are generally less robust, being intended more for a symbolic or
+ritual purpose. However, in a pinch a finely crafted knife can be used as an implement, and an implement employed as a tool/weapon.
+IMPLEMENTDESCRIPTION/
+IMPLEMENT/
+FLEXCELL/
+/FLEXCELL
+/IMPLEMENT /ID" 2c9cd202-656c-11ee-8688-c87f5455cfcc"/ /IMPLEMENTNAME Rune Weapon IMPLEMENTNAME/
+/IMPLEMENTHANDS * IMPLEMENTHANDS/ /IMPLEMENTDAMAGE * IMPLEMENTDAMAGE/ /IMPLEMENTABILITY * IMPLEMENTABILITY/
+/IMPLEMENTDESCRIPTION
+Rune Weapons are fully functional weapons designed to be both a weapon and an implement in one. As such they have the attributes of the weapon type they are based on. Thus
+a Rune Axe might be a 2-handed, 4 damage, CON ability score implement. Such items are necessarily specially prepared and an ordinary weapon will not suffice in the place of
+a rune weapon as an implement. At the very least the creation of such an implement will require investing the weapon with some special character and attuning it by ritual
+practice for its intended purpose. For this reason rune weapons are sought after but are an uncommon type of implement.
+IMPLEMENTDESCRIPTION/
+IMPLEMENT/
+FLEXCELL/
+FLEXROW/
+TOPIC/
 SUBSECTION/
 SECTION/
 /SECTION" Wealth"/

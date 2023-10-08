@@ -30,6 +30,8 @@ echo "," >>./compendium.json
 hairball refs.hairball gencompendium.hairball genorigins.hairball homl.hairball | tail -n +2 >>./compendium.json
 echo "," >>./compendium.json
 hairball refs.hairball gencompendium.hairball genbackgrounds.hairball homl.hairball | tail -n +2 >>./compendium.json
+echo "," >>./compendium.json
+hairball refs.hairball gencompendium.hairball genequipment.hairball homl.hairball | tail -n +2 >>./compendium.json
 echo '}' >>./compendium.json
 #hairball gencontents.hairball homl.hairball | tail -n +2 >./toc.hairball
 hairball refs.hairball gencontents.hairball homl.hairball | tail -n +2 >./toc.hairball

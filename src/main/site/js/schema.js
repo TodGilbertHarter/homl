@@ -29,11 +29,12 @@ const schema = {
 	games: 'games',
 	origins: 'origins',
 	players: 'players',
-	species: 'species'
+	species: 'species',
+	equipment: 'equipment'
 };
 
 const getReference = (schema,id) => {
-	return doc(getDb,schema,id);
+	return doc(getDb(),schema,id);
 }
 
 const getDb = () => { return window.gebApp.firestore }

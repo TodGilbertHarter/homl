@@ -1,0 +1,23 @@
+/*
+* Generate equipment entries for compendium
+*/
+/NEWVOCABULARY /EQUIPMENT
+/VOCABULARY /EQUIPMENT /CURRENT
+/: /ID" /" " /DUP /. ": { "version": "1.0", "id": " /. " :/
+/: /TAGS , "tags": " :/ 
+/: TAGS/ " :/
+/VOCABULARY /COMPENDIUM /CURRENT
+
+/: /DOCUMENT" /" /DROP /NEWLINE "equipment": { :/ 
+/: DOCUMENT/ /NEWLINE } :/
+
+/VARIABLE /FIRSTEQUIPMENT
+/TRUE /FIRSTEQUIPMENT /V!
+/: /IMPLEMENT /FIRSTEQUIPMENT /V@ /NOT /IF , /THEN /FALSE /FIRSTEQUIPMENT /V! /[" /EQUIPMENT "]/ /VOCAB@ /ACTIVE /EMITON :/
+/: /IMPLEMENTNAME , "type": "implement", "name": " :/ /: IMPLEMENTNAME/ " :/
+/: /IMPLEMENTHANDS , "hands": " :/ /: IMPLEMENTHANDS/ " :/
+/: /IMPLEMENTDAMAGE , "damage": " :/ /: IMPLEMENTDAMAGE/ " :/
+/: /IMPLEMENTABILITY , "ability": " :/ /: IMPLEMENTABILITY/ " :/
+/: /IMPLEMENTDESCRIPTION , "description": " :/ /: IMPLEMENTDESCRIPTION/ " :/
+/: IMPLEMENT/ } /[" /EQUIPMENT "]/ /VOCAB@ /INACTIVE /NEWLINE /EMITOFF :/
+/: "/ // :/

@@ -31,6 +31,10 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 		this.theDocument = adocument;
 	}
 
+	displayEquipmentList() {
+		const displayarea = this.theDocument.getElementById('mainappview');
+		displayarea.innerHTML = `<equipment-view id='equipmentview'></equipment-view>`;
+	}
 	/**
 	 * Render the Create a game UI.
 	 */

@@ -227,6 +227,20 @@ for (i = 0; i < coll.length; i++) {
 /: /BOONS /TOPIC /H4 Boons H4/ :/
 /: BOONS/ </section> :/
 
+/* implements */
+/: /IMPLEMENT <div class="implement" :/
+/: /IMPLEMENTNAME > /TRAITS /TRAIT Name: DIV/ <div class="value"> :/
+/: IMPLEMENTNAME/ DIV/ DIV/ :/
+/: /IMPLEMENTHANDS /TRAIT Hands: DIV/ <div class="value"> :/
+/: IMPLEMENTHANDS/ DIV/ DIV/ :/
+/: /IMPLEMENTDAMAGE /TRAIT Damage: DIV/ <div class="value"> :/
+/: IMPLEMENTDAMAGE/ DIV/ DIV/ :/
+/: /IMPLEMENTABILITY /TRAIT Ability: DIV/ <div class="value"> :/
+/: IMPLEMENTABILITY/ DIV/ DIV/ :/
+/: /IMPLEMENTDESCRIPTION <div class='widetrait'> /BOLD Description: &nbsp; BOLD/ <span style="text-indent: 1em;"> :/
+/: IMPLEMENTDESCRIPTION/ </span> DIV/ TRAITS/ :/
+/: IMPLEMENT/ DIV/ :/
+
 /* heroic origin related stuff */
 /: /HEROICORIGIN <section class="heroicorigin" :/
 /: /ORIGINNAME > /TITLE :/
@@ -410,6 +424,11 @@ for (i = 0; i < coll.length; i++) {
 /: TODO/ </span> :/
 /: /KNACK" <span class="knack" /" /IDREF > /LABEL Knack LABEL/ /. :/
 /: KNACK/ </span> :/
+/: /KNACK <span class="knack" :/
+/: /KNACKNAME > /LABEL Knack LABEL/ <span class="knackname"> :/
+/: KNACKNAME/ </span> :/
+/: /KNACKABILITYMOD <span class="knackmod">, ability modifier /SPACE :/
+/: KNACKABILITYMOD/ </span> :/
 
 /: /GLOSSARYENTRY /TOPIC :/
 /: GLOSSARYENTRY/ TOPIC/ :/

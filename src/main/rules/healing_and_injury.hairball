@@ -105,7 +105,7 @@ TOPIC/
 SUBSECTION/
 /SUBSECTION" Types of Affliction "/
 
-While, for story reasons, there are four types of afflictions, these types largely follow the same rules. They are broken down here by these types for easy reference. The 
+While, for story reasons, there are five types of afflictions, these types largely follow the same rules. They are broken down here by these types for easy reference. The 
 lists given here are by no means exhaustive. In fact they barely scratch the surface of the possible horrors which might afflict characters.
 /TOPIC" Affliction Description "/
 /RIGHT=" half "/
@@ -140,6 +140,66 @@ This sample explains the attributes of afflictions:
     /LI /BOLD Description /SPACE BOLD/ - This is the description of the affliction. It usually describes how the affliction is acquired and its appearance, general progress, etc. LI/
     /LI /BOLD Cure /SPACE BOLD/ - This provides an explanation of how the affliction can be cured. This is useful in creating scenes related to this affliction. LI/
 UL/
+TOPIC/
+/TOPIC" General"/
+
+There are a couple of conditions or circumstances which are implemented in the form of afflictions. These are Hunger, Thirst, Asphyxiation, and Exhaustion. These
+afflictions generally are imposed by circumstance, but are fundamentally similar to the others found later. In a challenge related to survival a player could accept one
+of these afflictions in lieu of a failure, much in the way accepting wounds is described above in /REF Upping the Stakes REF/ . This will of course simply leave the heroes
+in a bit worse shape, but may allow them another chance to succeed in the overall challenge.
+/FLEXROW
+/FLEXCELL
+/AFFLICTION /ID" bd8caacc-64bc-11ee-9283-c87f5455cfcc"/ /AFFLICTIONTYPE general AFFLICTIONTYPE/
+/AFFLICTIONNAME Hunger AFFLICTIONNAME/
+/AFFLICTIONLEVEL varies AFFLICTIONLEVEL/
+/TAGS Survival TAGS/
+/AFFLICTIONCOMPLEXITY simple AFFLICTIONCOMPLEXITY/
+/ONSET Stage 0 begins when the character has not eaten for at least one recovery. ONSET/
+/STAGES
+    /STAGE /STAGENAME 0 STAGENAME/ The victim loses hit points equal to one healing value and cannot regain power points until cured. STAGE/
+    /STAGE /STAGENAME 1 STAGENAME/ The victim loses another healing surge worth of hit points and is slowed. STAGE/
+    /STAGE /STAGENAME 2 STAGENAME/ The victim loses another healing surge worth of hit points and is dazed. STAGE/
+    /STAGE /STAGENAME Final STAGENAME/ The victim becomes stunned and continues to make checks, losing their healing value worth of hit points each time they fail. STAGE/
+STAGES/
+/AFFLICTIONDESCRIPTION
+This affliction is brought on by the lack of food. Normally a healthy character, depending on activity level, could go at least one or two days before real hunger starts to
+set in. Heroes may certainly make a Survival check to avoid both onset and to avoid progression. The rate of progression will vary depending on conditions. Under harsh
+conditions where physical activity is required checks may be daily. Under more lenient conditions where characters can rest and have shelter checks might be only every other
+day.
+AFFLICTIONDESCRIPTION/
+/CURE
+Food! There may also be magical hunger curatives, and healing magic will certainly restore the character's hit points, though not power points nor change the stage of the
+condition, though employment of healing rituals might count as a success here. Each administration of a full meal and recovery period will allow a check. Typically this checks
+will be Nature (to provide nourishing food), Healing (to provide excellent care), or Survival (to simply recover by dint of toughness).
+CURE/
+AFFLICTION/
+FLEXCELL/
+/FLEXCELL
+/AFFLICTION /ID" 093a670e-64d4-11ee-9024-c87f5455cfcc"/ /AFFLICTIONTYPE general AFFLICTIONTYPE/
+/AFFLICTIONNAME Thirst AFFLICTIONNAME/
+/AFFLICTIONLEVEL varies AFFLICTIONLEVEL/
+/TAGS Survival TAGS/
+/AFFLICTIONCOMPLEXITY simple AFFLICTIONCOMPLEXITY/
+/ONSET Stage 0 begins when the character has become dehydrated. ONSET/
+/STAGES
+    /STAGE /STAGENAME 0 STAGENAME/ The victim loses hit points equal to one healing value and cannot regain power points until cured. STAGE/
+    /STAGE /STAGENAME 1 STAGENAME/ The victim loses another healing surge worth of hit points and is slowed. STAGE/
+    /STAGE /STAGENAME 2 STAGENAME/ The victim loses another healing surge worth of hit points and is dazed. STAGE/
+    /STAGE /STAGENAME Final STAGENAME/ The victim becomes stunned and continues to make checks, losing their healing value worth of hit points each time they fail. STAGE/
+STAGES/
+/AFFLICTIONDESCRIPTION
+This affliction is brought on by the lack of water. Depending on the conditions a character might begin to suffer from thirst after several hours, or might not be affected
+for up to a day or two. As a general rule consider the lack of water during a recovery to be problematic. Characters will then become thirsty and enter stage 0. Survival
+checks should be made, and characters can also make Nature, or other appropriate checks to acquire enough liquid to avoid greater thirst.
+AFFLICTIONDESCRIPTION/
+/CURE
+Water! There may also be magical thirst curatives, and healing magic will certainly restore the character's hit points, though not power points nor change the stage of the
+condition, though employment of healing rituals might count as a success here. Each administration of a full meal and recovery period will allow a check. Typically these checks
+will be Nature (to provide water), Healing (to provide excellent care), or Survival (to simply recover by dint of toughness).
+CURE/
+AFFLICTION/
+FLEXCELL/
+FLEXROW/
 TOPIC/
 /TOPIC" Wounds "/
 

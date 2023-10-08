@@ -48,7 +48,7 @@ The following boons are associated with the wose species:
 /FLEXROW
 /FLEXCELL
 /BOON /ID" f36e9f00-0d65-11ee-8000-c87f5455cfcc"/ /BOONNAME Light Drinker BOONNAME/
-/BOONTYPE Species: Minor BOONTYPE/
+/BOONTYPE Species Feature: Minor BOONTYPE/
 /ASSOCIATION Wose ASSOCIATION/
 /PREREQUISITES Wose PREREQUISITES/
 /DESCRIPTION

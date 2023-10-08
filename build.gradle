@@ -115,10 +115,17 @@ task installPWBrowsers(type: NpxTask) {
 	dependsOn installTestRunner
 }
 
+task installTests(type: Copy) {
+	from 'src/test/site'
+	include "**/*.*"
+	into "${project.buildDir}/local/tests"
+}
+
 task runAllJSTests(type: NpxTask) {
 	command = 'playwright'
 	args = ['test']
 	dependsOn installPWBrowsers
+	dependsOn installTests
 }
 
 task generateErithnoi(type: Exec) {
@@ -365,6 +372,12 @@ task uploadBackgrounds(type: NodeTask) {
 	args = ['build/rules/compendium.json']
 }
 
+task uploadEquipment(type: NodeTask) {
+	description 'upload equipment data to firestore'
+	script = file('./scripts/upload_equipment.js')
+	args = ['build/rules/compendium.json']
+}
+
 task uploadData {
 	description 'upload compendium data to firestore'
 	dependsOn 'uploadBoons'
@@ -373,6 +386,7 @@ task uploadData {
 	dependsOn 'uploadSpecies'
 	dependsOn 'uploadOrigins'
 	dependsOn 'uploadBackgrounds'
+	dependsOn 'uploadEquipment'
 }
 
 task closureCompile(type: NpxTask) {
