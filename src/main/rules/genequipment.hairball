@@ -20,4 +20,19 @@
 /: /IMPLEMENTABILITY , "ability": " :/ /: IMPLEMENTABILITY/ " :/
 /: /IMPLEMENTDESCRIPTION , "description": " :/ /: IMPLEMENTDESCRIPTION/ " :/
 /: IMPLEMENT/ } /[" /EQUIPMENT "]/ /VOCAB@ /INACTIVE /NEWLINE /EMITOFF :/
+
+/: /WEAPON /FIRSTEQUIPMENT /V@ /NOT /IF , /THEN /FALSE /FIRSTEQUIPMENT /V! /[" /EQUIPMENT "]/ /VOCAB@ /ACTIVE /EMITON :/
+/: WEAPON/ } /[" /EQUIPMENT "]/ /VOCAB@ /INACTIVE /NEWLINE /EMITOFF :/
+/: /WEAPONNAME , "type": "weapon", "name": " :/ /: WEAPONNAME/ " :/
+/: /WEAPONDESCRIPTION , "description": " :/ /: WEAPONDESCRIPTION/ " :/
+/: /WEAPONCATEGORY , "category": " :/ /: WEAPONCATEGORY/ " :/
+/: /WEAPONLOAD , "load": " :/ /: WEAPONLOAD/ " :/
+/: /WEAPONCOST , "cost": " :/ /: WEAPONCOST/ " :/
+/: /WEAPONTYPE , "weapontype": " :/ /: WEAPONTYPE/ " :/
+/: /WEAPONABILITY , "ability": " :/ /: WEAPONABILITY/ " :/
+/: /WEAPONTAGS , "tags": " :/ /: WEAPONTAGS/ " :/
+/: /WEAPONRANGE , "range": " :/ /: WEAPONRANGE/ " :/
+/: /WEAPONHANDS , "hands": " :/ /: WEAPONHANDS/ " :/
+/: /WEAPONDAMAGE , "damage": " :/ /: WEAPONDAMAGE/ " :/
+
 /: "/ // :/

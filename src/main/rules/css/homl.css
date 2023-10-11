@@ -300,50 +300,6 @@ section.section > h2 {
     padding-left: .125em;
 }
 
-div.implement {
-    display: block;
-    float: left;
-    border: 1px solid var(--theme-fg);
-    background-color: var(--equipment-bg);
-    color: var(--equipment-fg);
-    margin: .5em;
-    padding: .2em;
-}
-
-div.implement > .traits > :not(:last-child) {
-    display: flex;
-    width: 100%;
-    padding-top: .1em;
-    padding-bottom: .1em;
-    border-bottom: 1px solid grey;
-}
-
-div.implement > .traits > :last-child {
-    display: flex;
-    width: 100%;
-    padding-top: .1em;
-    padding-bottom: .1em;
-}
-
-div.implement > .traits > .trait > .name {
-    width: 50%;
-    text-align: right;
-    padding-right: .2em;
-    border-right: 1px solid grey;
-}
-
-div.implement > .traits > .trait > .value {
-    width: 50%;
-    text-align: left;
-    padding-left: .2em;
-}
-
-
-
-
-
-
-
 section.species > div.title {
     display: block;
     font-weight: bold;

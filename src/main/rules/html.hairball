@@ -1,7 +1,7 @@
 /*
-Hairball HTML definitions. These definitions define common markup syntax in the context
-of HTML. It can be included as the first input file when generating HTML output in
-Hairball.
+This is the standard HTML document definition set for the HoML rules markup
+vocabulary. It translates the rules document into HTML including some 
+special provisions for IDs and similar features.
 */
 /NEWVOCABULARY /HTML
 /VOCABULARY /HTML /ACTIVE
@@ -227,20 +227,6 @@ for (i = 0; i < coll.length; i++) {
 /: /BOONS /TOPIC /H4 Boons H4/ :/
 /: BOONS/ </section> :/
 
-/* implements */
-/: /IMPLEMENT <div class="implement" :/
-/: /IMPLEMENTNAME > /TRAITS /TRAIT Name: DIV/ <div class="value"> :/
-/: IMPLEMENTNAME/ DIV/ DIV/ :/
-/: /IMPLEMENTHANDS /TRAIT Hands: DIV/ <div class="value"> :/
-/: IMPLEMENTHANDS/ DIV/ DIV/ :/
-/: /IMPLEMENTDAMAGE /TRAIT Damage: DIV/ <div class="value"> :/
-/: IMPLEMENTDAMAGE/ DIV/ DIV/ :/
-/: /IMPLEMENTABILITY /TRAIT Ability: DIV/ <div class="value"> :/
-/: IMPLEMENTABILITY/ DIV/ DIV/ :/
-/: /IMPLEMENTDESCRIPTION <div class='widetrait'> /BOLD Description: &nbsp; BOLD/ <span style="text-indent: 1em;"> :/
-/: IMPLEMENTDESCRIPTION/ </span> DIV/ TRAITS/ :/
-/: IMPLEMENT/ DIV/ :/
-
 /* heroic origin related stuff */
 /: /HEROICORIGIN <section class="heroicorigin" :/
 /: /ORIGINNAME > /TITLE :/
@@ -429,6 +415,37 @@ for (i = 0; i < coll.length; i++) {
 /: KNACKNAME/ </span> :/
 /: /KNACKABILITYMOD <span class="knackmod">, ability modifier /SPACE :/
 /: KNACKABILITYMOD/ </span> :/
+
+/* implements */
+/: /IMPLEMENT /LI <span class="implement" :/
+/: /IMPLEMENTNAME > /LABEL :/
+/: IMPLEMENTNAME/ LABEL/ :/
+/: /IMPLEMENTHANDS  /GETMATCHING IMPLEMENTHANDS/ /DELIMITED /DROP :/
+/: IMPLEMENTHANDS/ [" Mismatch, IMPLEMENTHANDS/ must follow /IMPLEMENTHANDS "]/ /ABORT :/
+/: /IMPLEMENTDAMAGE /GETMATCHING IMPLEMENTDAMAGE/ /DELIMITED /DROP :/
+/: IMPLEMENTDAMAGE/ [" Mismatch, IMPLEMENTDAMAGE/ must follow /IMPLEMENTDAMAGE "]/ /ABORT :/
+/: /IMPLEMENTABILITY /GETMATCHING IMPLEMENTABILITY/ /DELIMITED /DROP :/
+/: IMPLEMENTABILITY/ [" Mismatch, IMPLEMENTABILITY/ must follow /IMPLEMENTABILITY "]/ /ABORT :/
+/: /IMPLEMENTDESCRIPTION <span class='implementdescription'> :/
+/: IMPLEMENTDESCRIPTION/ </span> :/
+/: IMPLEMENT/ </span> LI/ :/
+
+/* weapons */
+/: /WEAPON /LI <span class='weapon' :/
+/: WEAPON/ </span> LI/ :/
+/: /WEAPONNAME > /LABEL :/
+/: WEAPONNAME/ LABEL/ :/
+/: /WEAPONDESCRIPTION <span class="weapondescription"> :/
+/: WEAPONDESCRIPTION/ </span> :/
+/: /WEAPONCATEGORY /GETMATCHING WEAPONCATEGORY/ /DELIMITED /DROP :/ /: WEAPONCATEGORY/ /[" Mismatch, WEAPONCATEGORY/ must follow /WEAPONCATEGORY "]/ /ABORT :/
+/: /WEAPONLOAD /GETMATCHING WEAPONLOAD/ /DELIMITED /DROP :/ /: WEAPONLOAD/ /[" Mismatch, WEAPONLOAD/ must follow /WEAPONLOAD "]/ /ABORT :/
+/: /WEAPONCOST /GETMATCHING WEAPONCOST/ /DELIMITED /DROP :/ /: WEAPONCOST/ /[" Mismatch, WEAPONCOST/ must follow /WEAPONCOST "]/ /ABORT :/
+/: /WEAPONTYPE /GETMATCHING WEAPONTYPE/ /DELIMITED /DROP :/ /: WEAPONTYPE/ /[" Mismatch, WEAPONTYPE/ must follow /WEAPONTYPE "]/ /ABORT :/
+/: /WEAPONABILITY /GETMATCHING WEAPONABILITY/ /DELIMITED /DROP :/ /: WEAPONABILITY/ /[" Mismatch, WEAPONABILITY/ must follow /WEAPONABILITY "]/ /ABORT :/
+/: /WEAPONTAGS /GETMATCHING WEAPONTAGS/ /DELIMITED /DROP :/ /: WEAPONTAGS/ /[" Mismatch, WEAPONTAGS/ must follow /WEAPONTAGS "]/ /ABORT :/
+/: /WEAPONRANGE /GETMATCHING WEAPONRANGE/ /DELIMITED /DROP :/ /: WEAPONRANGE/ /[" Mismatch, WEAPONRANGE/ must follow /WEAPONRANGE "]/ /ABORT :/
+/: /WEAPONHANDS /GETMATCHING WEAPONHANDS/ /DELIMITED /DROP :/ /: WEAPONHANDS/ /[" Mismatch, WEAPONHANDS/ must follow /WEAPONHANDS "]/ /ABORT :/
+/: /WEAPONDAMAGE /GETMATCHING WEAPONDAMAGE/ /DELIMITED /DROP :/ /: WEAPONDAMAGE/ /[" Mismatch, WEAPONDAMAGE/ must follow /WEAPONDAMAGE "]/ /ABORT :/
 
 /: /GLOSSARYENTRY /TOPIC :/
 /: GLOSSARYENTRY/ TOPIC/ :/

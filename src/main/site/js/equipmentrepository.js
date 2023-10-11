@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { collection, doc, setDoc, query, where, getDocs, getDoc } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
-import { Implement } from './equipment.js';
+import { Implement, Weapon } from './equipment.js';
 import { schema } from './schema.js';
 
 const EquipmentConverter = {
@@ -31,6 +31,10 @@ const EquipmentConverter = {
 			return new Implement(id,data.name,
 				data.cost,data.load, data.hands
 				, data.damage,data.ability,data.description);
+		} else if(data.type === 'weapon') {
+			return new Weapon(id,data.name,data.cost,data.load,data.description,
+				data.hands,data.damage,data.ability,data.range,data.category,
+				data.weapontype,data.tags);
 		} else {
 			throw new Error("cannot instantiate equipment of type "+data.type);
 		}

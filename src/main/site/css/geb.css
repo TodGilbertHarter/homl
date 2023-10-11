@@ -244,6 +244,18 @@ my-menu-item:hover {
     display: flex;
 }
 
+equipment-view::part(sectiontitle) {
+    display: block;
+    font-weight: bold;
+    font-size: 2em;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 2%;
+    background-color: black;
+    color: var(--document-fg);
+}
+
 horizontal-sash {
 	display: block;
 	overflow: auto;

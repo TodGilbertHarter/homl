@@ -85,14 +85,14 @@ THEAD/
 /TR /TD War Hammer /TD/ hammer /TD/ 2 /TD/ 2sp /TD/ melee /TD/ CON /TD/ /TD/ 1 /TD/ 2 /TD/ 3 TD/ TR/
 /TR /TD Lance /TD/ spear /TD/ 3 /TD/ 2sp /TD/ melee /TD/ STR /TD/ mounted /TD/ 1 /TD/ 1 /TD/ 3 TD/ TR/
 /TR /TD Staff /TD/ staff /TD/ 2 /TD/ 2cp /TD/ melee /TD/ DEX /TD/ /TD/ 1 /TD/ 2 /TD/ 2 TD/ TR/
-/TR /TD Unarmed /TD/ unarmed /TD/ 0 /TD/ 0 /TD/ melee /TD/ pick /TD/ close, light /TD/ 1 /TD/ 1 /TD/ 0 TD/ TR/
 /TR /TD Light Bow /TD/ bow /TD/ 2 /TD/ 10sp /TD/ ranged /TD/ DEX /TD/ /TD/ 15/30 /TD/ 2 /TD/ 1 TD/ TR/
 /TR /TD Heavy Bow /TD/ bow /TD/ 3 /TD/ 20sp /TD/ ranged /TD/ DEX /TD/ /TD/ 15/40 /TD/ 2 /TD/ 2 TD/ TR/
 /TR /TD Hand Crossbow /TD/ crossbow /TD/ 1 /TD/ 4gp /TD/ ranged /TD/ DEX /TD/ light /TD/ 5/10 /TD/ 1.5 /TD/ 2 TD/ TR/
 /TR /TD Light Crossbow /TD/ crossbow /TD/ 4 /TD/ 2gp /TD/ ranged /TD/ DEX /TD/ /TD/ 15/30 /TD/ 2 /TD/ 3 TD/ TR/
 /TR /TD Heavy Crossbow /TD/ crossbow /TD/ 10 /TD/ 15gp /TD/ ranged /TD/ DEX /TD/ /TD/ 20/50 /TD/ 2 /TD/ 4 TD/ TR/
 /TR /TD Sling /TD/ sling /TD/ 1 /TD/ 5cp /TD/ ranged /TD/ DEX /TD/ /TD/ 10/20 /TD/ 2 /TD/ 1 TD/ TR/
-/TR /TD Dart /TD/ dart /TD/ 2 /TD/ 1cp /TD/ ranged /TD/ DEX /TD/ light /TD/ 3/6 /TD/ 1 /TD/ 1 TD/ TR/
+/TR /TD Dart /TD/ dart /TD/ 1 /TD/ 1cp /TD/ ranged /TD/ DEX /TD/ light /TD/ 3/6 /TD/ 1 /TD/ 1 TD/ TR/
+/TR /TD Unarmed /TD/ unarmed /TD/ 0 /TD/ 0 /TD/ melee /TD/ pick /TD/ close, light /TD/ 1 /TD/ 1 /TD/ 0 TD/ TR/
 TBODY/
 TABLE/
 
@@ -110,34 +110,462 @@ UL/
 TOPIC/
 /TOPIC" Weapon Descriptions"/
 /UL
-    /LI /LABEL Club LABEL/ This is the simplest of weapons, a heavy, blunt object which is balanced so that it can be swung with great force. Clubs come in many styles and are known by many names in different lands. They may be made of wood, stone, bone, or similar materials or combinations of material. They may even be simply a well-chosen chunk of wood. LI/
-    /LI /LABEL Mace LABEL/ A mace is simply a fancier and more robust club. Mace includes such weapons as morning stars. Anything which generally incorporates a metal head, spikes, etc. and is crafted as a weapon can qualify as a mace. LI/
-    /LI /LABEL Great Club LABEL/ A larger two-handed version of the club. These are often adorned with spikes and equipped with forged metal heads, metal bands, etc. As with its smaller cousin the great club is known by many names, but they are all essentially the same weapon. This includes large two-handed 'maces'. LI/
-    /LI /LABEL Spear LABEL/ Only slightly less basic than the club is the spear. This is a stick with one end sharpened. It has a length up to about 6' and can be handled with one hand. Spears are often thrown and can have considerable range. The smallest spears are often called javelins and may be optimized for throwing, but they are all basically the same weapon. LI/
-    /LI /LABEL Dart LABEL/ This covers anything which is small and intended only for throwing. This would include lighter and smaller spear-like items as well as some exotic variations like throwing stars. Their main advantage is they are cheap, small, and light, so many can be carried and they are easy to conceal. LI/
-    /LI /LABEL Dagger LABEL/ This covers all of the smaller knife-like weapons. Some daggers have two edges, others only one, or none at all. Daggers are particularly useful in close quarters fighting where they may be used even when normal weapons are impossible to employ. They may also be thrown with considerable effect. LI/
-    /LI /LABEL Flail LABEL/ This weapon is usually similar to a club, but instead of a heavy blunt head it has one or more heavy weights attached to the handle with chain or rope. Other similar weapons may have two weighted handles connected by a chain so that the weapon can be gripped by either or both handles. In any case they all function similarly. Flails reward speed and coordination where clubs rely on brute strength. LI/
-    /LI /LABEL Rapier LABEL/ This covers all types of light swords used only for stabbing and largely lacking any edge. Most such weapons also have elaborated hilts including a basket guard etc. These are largely self-defense weapons which are not used much in battle and have limited use against armored opponents. However, in skilled hands they can be quite deadly. LI/
-    /LI /LABEL Arming Sword LABEL/ This covers all of the smaller swords which are used one handed and range up to about 1 meter in length. They are light weapons which can be wielded without a lot of extra space and are easily carried. Swords of this general type have gone by a vast number of different names throughout history. The Roman hispanica or gladius, the later spatha and viking swords, the arming sword of the medieval knight, and other later types of 'dress' swords and similar weapons. Anything bigger than a dagger and intended purely for use one-handed falls into this category. LI/
-    /LI /LABEL Bastard Sword LABEL/ This covers all types of swords which are large and heavy enough to be gripped with 2 hands, but smaller than the massive great swords. They require the user to have one completely free hand and the second hand to be occupied only with a buckler or light weapon. These weapons are quite popular with warriors who fight outside of large battles where they have plenty of room to swing the weapon. Because these weapons are somewhat heavy and inconvenient to carry or use in close quarters they are generally considered to be a war weapon, not a self-defense weapon. LI/
-    /LI /LABEL Great Sword LABEL/  This is the largest of swords, a fully two-handed weapon. It is heavy enough to damage an opponent by sheer force, but also sharp and quick like any other sword. These weapons are bulky and quite inconvenient to carry around and are normally relegated to situations where a character expects heavy fighting. LI/
-    /LI /LABEL Long Spear LABEL/ This covers all sorts of pike-type weapons, which are all very long spears, sometimes up to 4 meters in length. Such weapons are difficult to employ and even more difficult to carry around, but they do allow for melee attacks at greater than one square range. These long spears however cannot be thrown, and in the open where an opponent can move past the point of the weapon are of limited use. One great advantage of these weapons is that they can be set against a charge, and a group of warriors equipped with set spears can be a great deterrent to mounted opponents. LI/
-    /LI /LABEL Halberd LABEL/ The halberd is an axe on a very long handle, usually about 2 meters long. Generally the axe head is backed by a piercing point or sometimes a blunt hammer. Most halberds are topped with a spear-like point. This weapon performs as an axe, but requires two hands to use. It also allows the character to attack at a range of 2 squares due to its length. LI/
-    /LI /LABEL Glaive LABEL/ This is a long pole with a heavy chopping and cutting type blade affixed. It generally has a point and some form of hook or fork used to fend off or dismount riders. It has a reach of 2 and requires two hands. LI/
-    /LI /LABEL Throwing Axe LABEL/ This covers all sorts of lighter weight throwable combat axes like the tomahawk, seaxe, etc. This type of weapon is very common and comes in a variety of shapes and sizes, but they all have some things in common, a handle and a weighted head with a sharp edge. This kind of weapon is particularly favored by woodsmen and less affluent warriors as it is cheap, fairly easy to make, and effective. LI/
-    /LI /LABEL Battle Axe LABEL/ The battle axe covers heavier one-handed combat axes of all types which are not thrown. Many of these are double-bitted and there are many minor variations, but they all function in the same way, as a heavy cutting/slashing weapon. LI/
-    /LI /LABEL War Axe LABEL/ This is the largest of axes, requiring two-hands to wield. They do both cutting and bludgeoning damage and are quite useful for hacking through the toughest armor. LI/
-    /LI /LABEL Light Bow LABEL/ The light bow includes most common everyday bows used for hunting and as auxiliary weapons. They are easy to draw, aren't overly bulky, much cheaper, and require less training than the heavier bows. LI/
-    /LI /LABEL Heavy Bow LABEL/ This is a highly specialized combat weapon with a very high pull and superior range. They are very expensive, require considerable training to master, and are quite deadly in skilled hands. This covers all the larger types of bow weapons such as the long bow, and various bows built of composite materials designed for use from horseback. LI/
-    /LI /LABEL Hand Crossbow LABEL/ This is a small steel bow with a single-handed grip. It is quite powerful but requires some time to reload. It is often used by warriors as an opening shot and is especially popular with heavily armed mounted warriors who quickly discharge the weapon and then charge into melee. They are also popular assassination weapons and shipboard auxiliary arms. It requires 2 hands to reload this weapon. LI/
-    /LI /LABEL Light Crossbow LABEL/ These are relatively lightweight crossbows used for hunting or war which can be carried and fired. Reloading this weapon is not too time-consuming but very difficult in a close fight, generally requiring a belt hook, placing a foot in a stirrup, or operating a lever. LI/
-    /LI /LABEL Heavy Crossbow LABEL/ These are very heavy and ungainly weapons. They can be carried around and fired, but are almost always equipped with a stand of some sort to support the weapon while being aimed. It is almost impossible to reload this kind of weapon in a close fight, but they put out considerable damage and have a very long range. For these reasons this sort of weapon is favored in situations where the user has protection such as atop a fortification. LI/
-    /LI /LABEL Sling LABEL/ This is a leather or cloth pouch attached to lengths of string of some sort and used to throw rocks or sometimes even lead bullets. Quite effective but requires a lot of training. These are simple to make and often used by poor folk. LI/
-    /LI /LABEL Lance LABEL/ The lance is a mounted warrior's spear. It is specialized for use from horseback, being somewhat longer and heavier than the average spear, but weighted and balanced for one-handed use from a mount. If used while dismounted the lance requires both hands to wield. LI/ 
-    /LI /LABEL Throwing Hammer LABEL/ This is a fairly lightweight hammer weapon which is balanced for throwing. It can be used as a thrown weapon or melee weapon. Some tomahawks are fairly good examples of throwing hammers. LI/
-    /LI /LABEL War Hammer LABEL/ While very similar in function to a mace/club the war hammer has a heavier head derived from mining tools. It is the favorite weapon of dwarves, who long ago adapted it from their stone masonry tools into a deadly weapon. LI/
-    /LI /LABEL Unarmed LABEL/ This is presented in order to provide the statistics for an unarmed attack, it isn’t an actual type of weapon characters can buy. Unarmed attacks represent kicks, punches, etc. A character who becomes proficient with this type of attack must choose from STR, CON, or DEX and becomes proficient with attacks using that ability score. A character could always choose to use a type of unarmed attack they are not proficient with. LI/
-UL/
+/WEAPON /ID" 5d83ac96-6707-11ee-a2ca-c87f5455cfcc"/
+/WEAPONNAME club WEAPONNAME/
+/WEAPONCATEGORY club WEAPONCATEGORY/
+/WEAPONLOAD 2 WEAPONLOAD/
+/WEAPONCOST 1cp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY CON WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 1 WEAPONRANGE/
+/WEAPONHANDS 1 WEAPONHANDS/
+/WEAPONDAMAGE 1 WEAPONDAMAGE/
+/WEAPONDESCRIPTION This is the simplest of weapons, a heavy, blunt object which is balanced so that it can be swung with great force. Clubs come in many styles and are 
+known by many names in different lands. They may be made of wood, stone, bone, or similar materials or combinations of material. They may even be simply a well-chosen 
+chunk of wood. WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" f3526f3a-670e-11ee-8b53-c87f5455cfcc"/
+/WEAPONNAME Mace WEAPONNAME/
+/WEAPONCATEGORY club WEAPONCATEGORY/
+/WEAPONLOAD 2 WEAPONLOAD/
+/WEAPONCOST 1sp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY CON WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 1 WEAPONRANGE/
+/WEAPONHANDS 1 WEAPONHANDS/
+/WEAPONDAMAGE 2 WEAPONDAMAGE/
+/WEAPONDESCRIPTION A mace is simply a fancier and more robust club. Mace includes such weapons as morning stars. Anything which generally incorporates a metal head, spikes, 
+etc. and is crafted as a weapon can qualify as a mace. WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 6233da24-670f-11ee-acbe-c87f5455cfcc"/
+/WEAPONNAME Great Club WEAPONNAME/
+/WEAPONCATEGORY club WEAPONCATEGORY/
+/WEAPONLOAD 3 WEAPONLOAD/
+/WEAPONCOST 5cp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY CON WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 1 WEAPONRANGE/
+/WEAPONHANDS 2 WEAPONHANDS/
+/WEAPONDAMAGE 4 WEAPONDAMAGE/
+/WEAPONDESCRIPTION A larger two-handed version of the club. These are often adorned with spikes and equipped with forged metal heads, metal bands, etc. As with its 
+smaller cousin the great club is known by many names, but they are all essentially the same weapon. This includes large two-handed 'maces'.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" b7423f7e-670f-11ee-af2e-c87f5455cfcc"/
+/WEAPONNAME Spear WEAPONNAME/
+/WEAPONCATEGORY spear WEAPONCATEGORY/
+/WEAPONLOAD 2 WEAPONLOAD/
+/WEAPONCOST 1sp WEAPONCOST/
+/WEAPONTYPE melee, ranged WEAPONTYPE/
+/WEAPONABILITY DEX WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 1, 5/20 WEAPONRANGE/
+/WEAPONHANDS 1 WEAPONHANDS/
+/WEAPONDAMAGE 2 WEAPONDAMAGE/
+/WEAPONDESCRIPTION Only slightly less basic than the club is the spear. This is a stick with one end sharpened. It has a length up to about 6' and can be handled with 
+one hand. Spears are often thrown and can have considerable range. The smallest spears are often called javelins and may be optimized for throwing, but they are all 
+basically the same weapon.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" b7423f7e-670f-11ee-af2e-c87f5455cfcc"/
+/WEAPONNAME Long Spear WEAPONNAME/
+/WEAPONCATEGORY spear, polearm WEAPONCATEGORY/
+/WEAPONLOAD 3 WEAPONLOAD/
+/WEAPONCOST 2sp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY CON WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 2 WEAPONRANGE/
+/WEAPONHANDS 2 WEAPONHANDS/
+/WEAPONDAMAGE 2 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This covers all sorts of pike-type weapons, which are all very long spears, sometimes up to 4 meters in length. Such weapons are difficult to employ and even more 
+difficult to carry around, but they do allow for melee attacks at greater than one square range. These long spears however cannot be thrown, and in the open where 
+an opponent can move past the point of the weapon are of limited use. One great advantage of these weapons is that they can be set against a charge, and a group of 
+warriors equipped with set spears can be a great deterrent to mounted opponents.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" e3b00f72-6710-11ee-9f78-c87f5455cfcc"/
+/WEAPONNAME Dagger WEAPONNAME/
+/WEAPONCATEGORY dagger WEAPONCATEGORY/
+/WEAPONLOAD 1 WEAPONLOAD/
+/WEAPONCOST 4sp WEAPONCOST/
+/WEAPONTYPE melee, ranged WEAPONTYPE/
+/WEAPONABILITY DEX WEAPONABILITY/
+/WEAPONTAGS light, close WEAPONTAGS/
+/WEAPONRANGE 1, 2/5 WEAPONRANGE/
+/WEAPONHANDS 1 WEAPONHANDS/
+/WEAPONDAMAGE 1 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This covers all of the smaller knife-like weapons. Some daggers have two edges, others only one, or none at all. Daggers are particularly useful in close quarters 
+fighting where they may be used even when normal weapons are impossible to employ. They may also be thrown with considerable effect.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 5b7f3988-6711-11ee-af63-c87f5455cfcc"/
+/WEAPONNAME Rapier WEAPONNAME/
+/WEAPONCATEGORY sword WEAPONCATEGORY/
+/WEAPONLOAD 2 WEAPONLOAD/
+/WEAPONCOST 1sp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY DEX WEAPONABILITY/
+/WEAPONTAGS light WEAPONTAGS/
+/WEAPONRANGE 1 WEAPONRANGE/
+/WEAPONHANDS 1 WEAPONHANDS/
+/WEAPONDAMAGE 2 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This covers all types of light swords used only for stabbing and largely lacking any edge. Most such weapons also have elaborated hilts including a basket guard etc. 
+These are largely self-defense weapons which are not used much in battle and have limited use against armored opponents. However, in skilled hands they can be quite 
+deadly.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" c3f6b748-6711-11ee-b515-c87f5455cfcc"/
+/WEAPONNAME Arming Sword WEAPONNAME/
+/WEAPONCATEGORY sword WEAPONCATEGORY/
+/WEAPONLOAD 2 WEAPONLOAD/
+/WEAPONCOST 3sp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY STR WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 1 WEAPONRANGE/
+/WEAPONHANDS 1 WEAPONHANDS/
+/WEAPONDAMAGE 2 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This covers all of the smaller swords which are used one handed and range up to about 1 meter in length. They are light weapons which can be wielded without a lot of 
+extra space and are easily carried. Swords of this general type have gone by a vast number of different names throughout history. The Roman hispanica or gladius, the 
+later spatha and viking swords, the arming sword of the medieval knight, and other later types of 'dress' swords and similar weapons. Anything bigger than a dagger and 
+intended purely for use one-handed falls into this category.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 15d8fcf6-6712-11ee-8e13-c87f5455cfcc"/
+/WEAPONNAME Bastard Sword WEAPONNAME/
+/WEAPONCATEGORY sword WEAPONCATEGORY/
+/WEAPONLOAD 2 WEAPONLOAD/
+/WEAPONCOST 10sp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY STR WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 1 WEAPONRANGE/
+/WEAPONHANDS 1.5 WEAPONHANDS/
+/WEAPONDAMAGE 3 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This covers all types of swords which are large and heavy enough to be gripped with 2 hands, but smaller than the massive great swords. They require the user to have one 
+completely free hand and the second hand to be occupied only with a buckler or light weapon. These weapons are quite popular with warriors who fight outside of large battles 
+where they have plenty of room to swing the weapon. Because these weapons are somewhat heavy and inconvenient to carry or use in close quarters they are generally 
+considered to be a war weapon, not a self-defense weapon.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 73e0524a-6712-11ee-a605-c87f5455cfcc"/
+/WEAPONNAME Great Sword WEAPONNAME/
+/WEAPONCATEGORY sword WEAPONCATEGORY/
+/WEAPONLOAD 3 WEAPONLOAD/
+/WEAPONCOST 20sp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY STR WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 1 WEAPONRANGE/
+/WEAPONHANDS 2 WEAPONHANDS/
+/WEAPONDAMAGE 4 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This is the largest of swords, a fully two-handed weapon. It is heavy enough to damage an opponent by sheer force, but also sharp and quick like any other sword. 
+These weapons are bulky and quite inconvenient to carry around and are normally relegated to situations where a character expects heavy fighting.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" b4815920-6712-11ee-98db-c87f5455cfcc"/
+/WEAPONNAME Halberd WEAPONNAME/
+/WEAPONCATEGORY axe, polearm WEAPONCATEGORY/
+/WEAPONLOAD 3 WEAPONLOAD/
+/WEAPONCOST 5sp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY STR WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 2 WEAPONRANGE/
+/WEAPONHANDS 2 WEAPONHANDS/
+/WEAPONDAMAGE 3 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+The halberd is an axe on a very long handle, usually about 2 meters long. Generally the axe head is backed by a piercing point or sometimes a blunt hammer. 
+Most halberds are topped with a spear-like point. This weapon performs as an axe, but requires two hands to use. It also allows the character to attack at a range of 2 
+squares due to its length.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 0d5ed66c-6713-11ee-80b7-c87f5455cfcc"/
+/WEAPONNAME Glaive WEAPONNAME/
+/WEAPONCATEGORY polearm WEAPONCATEGORY/
+/WEAPONLOAD 3 WEAPONLOAD/
+/WEAPONCOST 3sp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY STR WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 2 WEAPONRANGE/
+/WEAPONHANDS 2 WEAPONHANDS/
+/WEAPONDAMAGE 3 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This is a long pole with a heavy chopping and cutting type blade affixed. It generally has a point and some form of hook or fork used to fend off or dismount riders. 
+It has a reach of 2 and requires two hands.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 793fe206-6720-11ee-968b-c87f5455cfcc"/
+/WEAPONNAME Flail WEAPONNAME/
+/WEAPONCATEGORY flexible WEAPONCATEGORY/
+/WEAPONLOAD 3 WEAPONLOAD/
+/WEAPONCOST 1sp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY DEX WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 1 WEAPONRANGE/
+/WEAPONHANDS 1 WEAPONHANDS/
+/WEAPONDAMAGE 2 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This weapon is usually similar to a club, but instead of a heavy blunt head it has one or more heavy weights attached to the handle with chain or rope. Other similar 
+weapons may have two weighted handles connected by a chain so that the weapon can be gripped by either or both handles. In any case they all function similarly. Flails 
+reward speed and coordination where clubs rely on brute strength.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" e56be86c-6720-11ee-abaf-c87f5455cfcc"/
+/WEAPONNAME Throwing Axe WEAPONNAME/
+/WEAPONCATEGORY axe WEAPONCATEGORY/
+/WEAPONLOAD 1 WEAPONLOAD/
+/WEAPONCOST 1sp WEAPONCOST/
+/WEAPONTYPE melee, ranged WEAPONTYPE/
+/WEAPONABILITY STR WEAPONABILITY/
+/WEAPONTAGS light WEAPONTAGS/
+/WEAPONRANGE 1, 2/5 WEAPONRANGE/
+/WEAPONHANDS 1 WEAPONHANDS/
+/WEAPONDAMAGE 2 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This covers all sorts of lighter weight throwable combat axes like the tomahawk, seaxe, etc. This type of weapon is very common and comes in a variety of shapes and 
+sizes, but they all have some things in common, a handle and a weighted head with a sharp edge. This kind of weapon is particularly favored by woodsmen and less affluent 
+warriors as it is cheap, fairly easy to make, and effective.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 6d444cf2-6721-11ee-abf8-c87f5455cfcc"/
+/WEAPONNAME Battle Axe WEAPONNAME/
+/WEAPONCATEGORY axe WEAPONCATEGORY/
+/WEAPONLOAD 2 WEAPONLOAD/
+/WEAPONCOST 3sp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY STR WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 1 WEAPONRANGE/
+/WEAPONHANDS 1 WEAPONHANDS/
+/WEAPONDAMAGE 3 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+The battle axe covers heavier one-handed combat axes of all types which are not thrown. Many of these are double-bitted and there are many minor variations, but they 
+all function in the same way, as a heavy cutting/slashing weapon.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" be777fae-6721-11ee-912a-c87f5455cfcc"/
+/WEAPONNAME War Axe WEAPONNAME/
+/WEAPONCATEGORY axe WEAPONCATEGORY/
+/WEAPONLOAD 3 WEAPONLOAD/
+/WEAPONCOST 6sp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY CON WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 1 WEAPONRANGE/
+/WEAPONHANDS 2 WEAPONHANDS/
+/WEAPONDAMAGE 4 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This is the largest of axes, requiring two-hands to wield. They do both cutting and bludgeoning damage and are quite useful for hacking through the toughest armor.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 06309be6-6722-11ee-b20c-c87f5455cfcc"/
+/WEAPONNAME Throwing Hammer WEAPONNAME/
+/WEAPONCATEGORY hammer WEAPONCATEGORY/
+/WEAPONLOAD 1 WEAPONLOAD/
+/WEAPONCOST 1sp WEAPONCOST/
+/WEAPONTYPE melee, ranged WEAPONTYPE/
+/WEAPONABILITY STR WEAPONABILITY/
+/WEAPONTAGS light WEAPONTAGS/
+/WEAPONRANGE 1, 2/5 WEAPONRANGE/
+/WEAPONHANDS 1 WEAPONHANDS/
+/WEAPONDAMAGE 2 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This is a fairly lightweight hammer weapon which is balanced for throwing. It can be used as a thrown weapon or melee weapon. Some tomahawks are fairly good examples of 
+throwing hammers. Many weapons of this type are simply a weight with a handle on it to allow the thrower better leverage.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 89a87c64-6722-11ee-88e7-c87f5455cfcc"/
+/WEAPONNAME War Hammer WEAPONNAME/
+/WEAPONCATEGORY hammer WEAPONCATEGORY/
+/WEAPONLOAD 2 WEAPONLOAD/
+/WEAPONCOST 2sp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY CON WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 1 WEAPONRANGE/
+/WEAPONHANDS 2 WEAPONHANDS/
+/WEAPONDAMAGE 3 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+While very similar in function to a mace/club the war hammer has a heavier head derived from mining tools. It is the favorite weapon of the dvarg, who long ago adapted it 
+from their stone masonry tools into a deadly weapon.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" d5c60e40-6722-11ee-85ed-c87f5455cfcc"/
+/WEAPONNAME Lance WEAPONNAME/
+/WEAPONCATEGORY spear WEAPONCATEGORY/
+/WEAPONLOAD 3 WEAPONLOAD/
+/WEAPONCOST 2sp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY STR WEAPONABILITY/
+/WEAPONTAGS mounted WEAPONTAGS/
+/WEAPONRANGE 1 WEAPONRANGE/
+/WEAPONHANDS 1 WEAPONHANDS/
+/WEAPONDAMAGE 3 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+The lance is a mounted warrior's spear. It is specialized for use from horseback, being somewhat longer and heavier than the average spear, but weighted and balanced for 
+one-handed use from a mount. If used while dismounted the lance requires both hands to wield.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 3794dc78-6723-11ee-bc13-c87f5455cfcc"/
+/WEAPONNAME Staff WEAPONNAME/
+/WEAPONCATEGORY staff WEAPONCATEGORY/
+/WEAPONLOAD 2 WEAPONLOAD/
+/WEAPONCOST 2cp WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY DEX WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 1 WEAPONRANGE/
+/WEAPONHANDS 2 WEAPONHANDS/
+/WEAPONDAMAGE 2 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This is the large, heavy fighting staff. it is generally at least as long as a spear and is constructed of a good thickness of strong wood. Such weapons may be carried without
+great suspicion, are extremely cheap, and in the hands of a skilled user are easily a match for more warlike weapons.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" d123d6dc-6723-11ee-818a-c87f5455cfcc"/
+/WEAPONNAME Light Bow WEAPONNAME/
+/WEAPONCATEGORY bow WEAPONCATEGORY/
+/WEAPONLOAD 2 WEAPONLOAD/
+/WEAPONCOST 10sp WEAPONCOST/
+/WEAPONTYPE ranged WEAPONTYPE/
+/WEAPONABILITY DEX WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 15/30 WEAPONRANGE/
+/WEAPONHANDS 2 WEAPONHANDS/
+/WEAPONDAMAGE 1 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+The light bow includes most common everyday bows used for hunting and as auxiliary weapons. They are easy to draw, aren't overly bulky, much cheaper, and require 
+less training than the heavier bows.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 2133f850-6724-11ee-8916-c87f5455cfcc"/
+/WEAPONNAME Heavy Bow WEAPONNAME/
+/WEAPONCATEGORY bow WEAPONCATEGORY/
+/WEAPONLOAD 3 WEAPONLOAD/
+/WEAPONCOST 20sp WEAPONCOST/
+/WEAPONTYPE ranged WEAPONTYPE/
+/WEAPONABILITY DEX WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 15/40 WEAPONRANGE/
+/WEAPONHANDS 2 WEAPONHANDS/
+/WEAPONDAMAGE 2 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This is a highly specialized combat weapon with a very high pull and superior range. They are very expensive, require considerable training to master, and are quite 
+deadly in skilled hands. This covers all the larger types of bow weapons such as the long bow, and various bows built of composite materials designed for use from horseback.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 6b09d1fc-6724-11ee-9dfe-c87f5455cfcc"/
+/WEAPONNAME Hand Crossbow WEAPONNAME/
+/WEAPONCATEGORY crossbow WEAPONCATEGORY/
+/WEAPONLOAD 1 WEAPONLOAD/
+/WEAPONCOST 4gp WEAPONCOST/
+/WEAPONTYPE ranged WEAPONTYPE/
+/WEAPONABILITY DEX WEAPONABILITY/
+/WEAPONTAGS light WEAPONTAGS/
+/WEAPONRANGE 5/10 WEAPONRANGE/
+/WEAPONHANDS 1.5 WEAPONHANDS/
+/WEAPONDAMAGE 2 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This is a small steel bow with a single-handed grip. It is quite powerful but requires some time to reload. It is often used by warriors as an opening shot and is 
+especially popular with heavily armed mounted warriors who quickly discharge the weapon and then charge into melee. They are also popular assassination weapons and 
+shipboard auxiliary arms. It requires 2 hands to reload this weapon.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" c31fac86-6724-11ee-a8dc-c87f5455cfcc"/
+/WEAPONNAME Light Crossbow WEAPONNAME/
+/WEAPONCATEGORY crossbow WEAPONCATEGORY/
+/WEAPONLOAD 4 WEAPONLOAD/
+/WEAPONCOST 2gp WEAPONCOST/
+/WEAPONTYPE ranged WEAPONTYPE/
+/WEAPONABILITY DEX WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 15/30 WEAPONRANGE/
+/WEAPONHANDS 2 WEAPONHANDS/
+/WEAPONDAMAGE 3 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+These are relatively lightweight crossbows used for hunting or war which can be carried and fired. Reloading this weapon is not too time-consuming but very difficult in 
+a close fight, generally requiring a belt hook, placing a foot in a stirrup, or operating a lever.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 076f166a-6725-11ee-9c5d-c87f5455cfcc"/
+/WEAPONNAME Heavy Crossbow WEAPONNAME/
+/WEAPONCATEGORY crossbow WEAPONCATEGORY/
+/WEAPONLOAD 10 WEAPONLOAD/
+/WEAPONCOST 15gp WEAPONCOST/
+/WEAPONTYPE ranged WEAPONTYPE/
+/WEAPONABILITY DEX WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 20/50 WEAPONRANGE/
+/WEAPONHANDS 2 WEAPONHANDS/
+/WEAPONDAMAGE 4 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+These are very heavy and ungainly weapons. They can be carried around and fired, but are almost always equipped with a stand of some sort to support the weapon while 
+being aimed. It is almost impossible to reload this kind of weapon in a close fight, but they put out considerable damage and have a very long range. For these reasons 
+this sort of weapon is favored in situations where the user has protection such as atop a fortification.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 4f85d11e-6725-11ee-9569-c87f5455cfcc"/
+/WEAPONNAME Sling WEAPONNAME/
+/WEAPONCATEGORY sling WEAPONCATEGORY/
+/WEAPONLOAD 1 WEAPONLOAD/
+/WEAPONCOST 5cp WEAPONCOST/
+/WEAPONTYPE ranged WEAPONTYPE/
+/WEAPONABILITY DEX WEAPONABILITY/
+/WEAPONTAGS WEAPONTAGS/
+/WEAPONRANGE 10/20 WEAPONRANGE/
+/WEAPONHANDS 2 WEAPONHANDS/
+/WEAPONDAMAGE 1 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This is a leather or cloth pouch attached to lengths of string of some sort and used to throw rocks or sometimes even lead bullets. Quite effective but requires a lot 
+of training. These are simple to make and often used by poor folk.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 934ce14e-6725-11ee-8413-c87f5455cfcc"/
+/WEAPONNAME Dart WEAPONNAME/
+/WEAPONCATEGORY dart WEAPONCATEGORY/
+/WEAPONLOAD 1 WEAPONLOAD/
+/WEAPONCOST 1cp WEAPONCOST/
+/WEAPONTYPE ranged WEAPONTYPE/
+/WEAPONABILITY DEX WEAPONABILITY/
+/WEAPONTAGS light WEAPONTAGS/
+/WEAPONRANGE 3/6 WEAPONRANGE/
+/WEAPONHANDS 1 WEAPONHANDS/
+/WEAPONDAMAGE 1 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This covers anything which is small and intended only for throwing. This would include lighter and smaller spear-like items as well as some exotic variations like throwing 
+stars. Their main advantage is they are cheap, small, and light, so many can be carried and they are easy to conceal.
+WEAPONDESCRIPTION/
+WEAPON/
+/WEAPON /ID" 0932266c-6726-11ee-8109-c87f5455cfcc"/
+/WEAPONNAME Unarmed WEAPONNAME/
+/WEAPONCATEGORY unarmed WEAPONCATEGORY/
+/WEAPONLOAD 0 WEAPONLOAD/
+/WEAPONCOST 0 WEAPONCOST/
+/WEAPONTYPE melee WEAPONTYPE/
+/WEAPONABILITY PICK WEAPONABILITY/
+/WEAPONTAGS close, light WEAPONTAGS/
+/WEAPONRANGE 1 WEAPONRANGE/
+/WEAPONHANDS 1 WEAPONHANDS/
+/WEAPONDAMAGE 0 WEAPONDAMAGE/
+/WEAPONDESCRIPTION
+This is presented in order to provide the statistics for an unarmed attack, it isn’t an actual type of weapon characters can buy. Unarmed attacks represent kicks, punches, 
+etc. A character who becomes proficient with this type of attack must choose from STR, CON, or DEX and becomes proficient with attacks using that ability score. A 
+character could always choose to use a type of unarmed attack they are not proficient with.
+WEAPONDESCRIPTION/
+WEAPON/
 TOPIC/
 /TOPIC" Ammunition"/
 /DIV=" floatleft half"/
@@ -197,8 +625,7 @@ UL/
 TOPIC/
 /CLEAR CLEAR/
 /TOPIC" Implement Descriptions"/
-/FLEXROW
-/FLEXCELL
+/UL
 /IMPLEMENT /ID" a64bad34-6568-11ee-ab97-c87f5455cfcc"/ /IMPLEMENTNAME Rod IMPLEMENTNAME/
 /IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 3 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY CHA IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
@@ -207,8 +634,6 @@ useful as weapons, and are often delicate, but some are quite solid and could be
 wood, most are composed of a shaft and some sort of head, usually constructed of some finer material.
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
-FLEXCELL/
-/FLEXCELL
 /IMPLEMENT /ID" 9605cfa6-656b-11ee-a812-c87f5455cfcc"/ /IMPLEMENTNAME Staff IMPLEMENTNAME/
 /IMPLEMENTHANDS 2 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 4 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY WIS IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
@@ -217,10 +642,6 @@ Staves can generally be used as a club in a pinch, although a true fighting staf
 and are often inlaid with minerals or gems, shod with metal, etc. However even a good solid wooden stick of the proper size will do in a pinch.
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
-FLEXCELL/
-FLEXROW/
-/FLEXROW
-/FLEXCELL
 /IMPLEMENT /ID" acc0fae0-656b-11ee-bc74-c87f5455cfcc"/ /IMPLEMENTNAME Instrument IMPLEMENTNAME/
 /IMPLEMENTHANDS 2 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 1 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY CHA IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
@@ -230,8 +651,6 @@ a generic hand-held string instrument typically used for entertainment purposes.
 further endowed with some enhanced attributes such as special strings. However even basic instruments might suffice in a pinch.
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
-FLEXCELL/
-/FLEXCELL
 /IMPLEMENT /ID" c1abe0b4-656b-11ee-aa62-c87f5455cfcc"/ /IMPLEMENTNAME Wand IMPLEMENTNAME/
 /IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 1 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY INT IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
@@ -239,10 +658,6 @@ The wand is the most classical symbol of magical power amongst all implements. I
 and most users can make a passable one with simple tools. The more potent types are finely crafted or made from highly unusual materials using arcane processes.
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
-FLEXCELL/
-FLEXROW/
-/FLEXROW
-/FLEXCELL
 /IMPLEMENT /ID" d3abd08a-656b-11ee-aa4c-c87f5455cfcc"/ /IMPLEMENTNAME Tome IMPLEMENTNAME/
 /IMPLEMENTHANDS 2 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 1 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY INT IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
@@ -251,8 +666,6 @@ endeavors. Magical tomes often have specific feats and rituals enscribed within 
 requires at least a couple of days of time and requisite materials. Otherwise they might be purchased in certain places.
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
-FLEXCELL/
-/FLEXCELL
 /IMPLEMENT /ID" ee431246-656b-11ee-ac81-c87f5455cfcc"/ /IMPLEMENTNAME Orb IMPLEMENTNAME/
 /IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 1 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY CHA IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
@@ -261,10 +674,6 @@ other worlds. Even an ordinary crystal ball is a useful focus and many of these 
 come by, but they can be found in civilized places, etc.
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
-FLEXCELL/
-FLEXROW/
-/FLEXROW
-/FLEXCELL
 /IMPLEMENT /ID" ffb7164e-656b-11ee-b520-c87f5455cfcc"/ /IMPLEMENTNAME Holy Symbol IMPLEMENTNAME/
 /IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 0 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY WIS IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
@@ -273,8 +682,6 @@ and believers often use them to focus the power of the spirits they revere to pe
 to be useful.
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
-FLEXCELL/
-/FLEXCELL
 /IMPLEMENT /ID" 0f4594fa-656c-11ee-b255-c87f5455cfcc"/ /IMPLEMENTNAME Totem IMPLEMENTNAME/
 /IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 2 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY WIS IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
@@ -283,10 +690,6 @@ of some sort, animal or human bones, teeth, claws, hide, or minerals, seeds, etc
 pieces of wood or even just a rock. In order to be potent they must be attuned to nature and the user.
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
-FLEXCELL/
-FLEXROW/
-/FLEXROW
-/FLEXCELL
 /IMPLEMENT /ID" 1b982aec-656c-11ee-a517-c87f5455cfcc"/ /IMPLEMENTNAME Knife IMPLEMENTNAME/
 /IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 3 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY CHA IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
@@ -295,8 +698,6 @@ specific and unusual materials. While such a knife implement may be used in plac
 ritual purpose. However, in a pinch a finely crafted knife can be used as an implement, and an implement employed as a tool/weapon.
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
-FLEXCELL/
-/FLEXCELL
 /IMPLEMENT /ID" 2c9cd202-656c-11ee-8688-c87f5455cfcc"/ /IMPLEMENTNAME Rune Weapon IMPLEMENTNAME/
 /IMPLEMENTHANDS * IMPLEMENTHANDS/ /IMPLEMENTDAMAGE * IMPLEMENTDAMAGE/ /IMPLEMENTABILITY * IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
@@ -306,8 +707,7 @@ a rune weapon as an implement. At the very least the creation of such an impleme
 practice for its intended purpose. For this reason rune weapons are sought after but are an uncommon type of implement.
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
-FLEXCELL/
-FLEXROW/
+UL/
 TOPIC/
 SUBSECTION/
 SECTION/

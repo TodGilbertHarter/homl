@@ -47,4 +47,26 @@ class Implement extends Equipment {
 	}
 }
 
-export { Implement };
+class Weapon extends Equipment {
+	hands;
+	damage;
+	ability;
+	range;
+	category;
+	weapontype;
+	tags;
+	
+	constructor(id,name,cost,load,description,hands,damage,ability,range
+		,category,weapontype,tags) {
+		super(id,name,'weapon',cost,load,description);
+		this.hands = hands;
+		this.damage = damage;
+		this.ability = ability;
+		this.range = range;
+		this.category = category;
+		this.weapontype = weapontype;
+		this.tags = tags;
+	}
+}
+
+export { Implement, Weapon };
