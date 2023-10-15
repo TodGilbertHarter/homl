@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { collection, doc, setDoc, query, where, getDocs, getDoc } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
-import { Implement, Weapon } from './equipment.js';
+import { Implement, Weapon, Armor, Equipment, Tool } from './equipment.js';
 import { schema } from './schema.js';
 
 const EquipmentConverter = {
@@ -35,6 +35,14 @@ const EquipmentConverter = {
 			return new Weapon(id,data.name,data.cost,data.load,data.description,
 				data.hands,data.damage,data.ability,data.range,data.category,
 				data.weapontype,data.tags);
+		} else if(data.type === 'armor') {
+			return new Armor(id,data.name,data.cost,data.load,data.description,
+				data.dr,data.DEX,data.CON);
+		} else if(data.type === 'gear' ) {
+			return new Equipment(id,data.name,data.type,data.cost,data.load
+				,data.description);
+		} else if(data.type === 'tool') {
+			return new Tool(id,data.name,data.ability,data.cost,data.load,data.description);
 		} else {
 			throw new Error("cannot instantiate equipment of type "+data.type);
 		}
@@ -152,6 +160,42 @@ class EquipmentRepository {
 			console.log("Failed to get all equipment "+e.message);
 		});
 	}
+	
+	filterByType(type,data) {
+		return data.filter((item) => item.type === type).sort(
+			(a, b) => {
+				const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+				const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+				if (nameA < nameB) {
+					return -1;
+				}
+				if (nameA > nameB) {
+					return 1;
+				}
+				return 0;
+			});
+	}
+	
+    getEquipmentByType(type, onDataAvailable) {
+		if(this.allEquipment !== undefined) {
+			onDataAvailable(this.filterByType(type,this.allEquipment));
+		}
+		var equipmentRef = collection(this.db,schema.equipment);
+		equipmentRef = equipmentRef.withConverter(EquipmentConverter);
+		const q = query(equipmentRef, where("type", "==", type))
+		getDocs(q).then((doc) => {
+			const docs = [];
+			doc.forEach(r => {
+				var data = r.data();
+				docs.push(data);
+			});
+			onDataAvailable(docs);
+		}).catch(e => {
+			console.trace();
+			console.log("Failed to get all equipment "+e.message);
+		});
+	}
+	
 	
     /**
      * Get equipment given its id.

@@ -3,53 +3,155 @@
 
 What hero would be complete without his trusty sword, staff, or shield? There are limitless varieties of possible equipment which characters may use and possess at different times. Four major categories are discussed below, armor, weapons, implements, and general equipment.
 
-/EM Note on prices: EM/ The prices given are representative and useful for providing color and determining what things are insignificant, significant, or major expenses for a given character. The exact price a character pays for something on a given day in a specific place will vary somewhat, perhaps even significantly. The numbers provided make a useful starting point when an exact price becomes significant enough to determine.
+/EM Note on prices: EM/ The prices given are representative and useful for providing color and determining what things are insignificant, significant, or major expenses 
+for a given character. The exact price a character pays for something on a given day in a specific place will vary somewhat, perhaps even significantly. The numbers 
+provided make a useful starting point when an exact price becomes significant enough to determine.
+/SUBSECTION" Gear & Goods"/
 
+There is a wide variety of equipment and goods which heroes may run into or need in their quests. Gear generally refers to items of personal equipment which are useful in
+situations of exploration, war, etc. These fall into a couple of categories which are all described in the following table.
+
+/TABLE=" bodytable"/
+/THEAD
+/TR /TH Item /TH/ Load /TH/ Cost /TH/ Description TH/ TR/
+THEAD/
+/TBODY
+/TR /THS=" 4"/ Clothing TH/ TR/
+/GEAR /ID" 7b68acd6-68a4-11ee-b457-c87f5455cfcc"/ /GEARNAME Boots GEARNAME/ /GEARTYPE clothing GEARTYPE/ /GEARLOAD .5 GEARLOAD/ /GEARCOST 6cp GEARCOST/ 
+/GEARDESCRIPTION Normal boots suitable for riding, marching, etc. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" e4ebf98c-68a5-11ee-8a07-c87f5455cfcc"/ /GEARNAME Shoes GEARNAME/ /GEARTYPE clothing GEARTYPE/ /GEARLOAD .5 GEARLOAD/ /GEARCOST 4cp GEARCOST/ 
+/GEARDESCRIPTION Ordinary shoes suitable for daily wear in town, etc. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 17c1696e-68a6-11ee-8f67-c87f5455cfcc"/ /GEARNAME Woolen Garment GEARNAME/ /GEARTYPE clothing GEARTYPE/ /GEARLOAD .5 GEARLOAD/ /GEARCOST 3sp GEARCOST/ 
+/GEARDESCRIPTION Suitable for cold weather, covers the upper body or lower body, but not both. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 4a208b42-68a6-11ee-95dc-c87f5455cfcc"/ /GEARNAME Fancy Outfit GEARNAME/ /GEARTYPE clothing GEARTYPE/ /GEARLOAD .5 GEARLOAD/ /GEARCOST 1gp GEARCOST/ 
+/GEARDESCRIPTION This garment will give the wearer a rich appearance. Increasing amounts of money spent will produce even fancier results. The finest of outfits could
+cost 100s of gp. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" c11a7820-68a6-11ee-abf0-c87f5455cfcc"/ /GEARNAME Tunic GEARNAME/ /GEARTYPE clothing GEARTYPE/ /GEARLOAD .5 GEARLOAD/ /GEARCOST 2sp GEARCOST/ 
+/GEARDESCRIPTION Normal everyday clothing. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 0bb722a2-68a7-11ee-b7ee-c87f5455cfcc"/ /GEARNAME Cloak GEARNAME/ /GEARTYPE clothing GEARTYPE/ /GEARLOAD .5 GEARLOAD/ /GEARCOST 6sp GEARCOST/ 
+/GEARDESCRIPTION Well-made outerwear for use in bad weather. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 73579842-68a7-11ee-ad54-c87f5455cfcc"/ /GEARNAME Purse GEARNAME/ /GEARTYPE clothing GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 2cp GEARCOST/ 
+/GEARDESCRIPTION A small pouch with a string, suitable for containing some coins or similar. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" a825f6b8-68a7-11ee-a0b9-c87f5455cfcc"/ /GEARNAME Hat GEARNAME/ /GEARTYPE clothing GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 1sp GEARCOST/ 
+/GEARDESCRIPTION A fairly ordinary but good looking hat. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" d347bc46-68a7-11ee-bca7-c87f5455cfcc"/ /GEARNAME Cap GEARNAME/ /GEARTYPE clothing GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 1cp GEARCOST/ 
+/GEARDESCRIPTION A simple cap. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 01401a94-68a8-11ee-95b6-c87f5455cfcc"/ /GEARNAME Belt GEARNAME/ /GEARTYPE clothing GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 5cp GEARCOST/ 
+/GEARDESCRIPTION A basic leather belt. GEARDESCRIPTION/ GEAR/
+/TR /THS=" 4"/ Mounts &amp; Animals TH/ TR/
+/GEAR /ID" 4be5152a-68be-11ee-8dc3-c87f5455cfcc"/ /GEARNAME Draft horse GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 2gp GEARCOST/ 
+/GEARDESCRIPTION Basic draft horse for pulling heavy wagons, etc. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 358b9394-6909-11ee-99e3-c87f5455cfcc"/ /GEARNAME Riding horse GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 10gp GEARCOST/ 
+/GEARDESCRIPTION Good quality riding horse, suitable for extended travel. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 5d2b2e36-6964-11ee-929a-c87f5455cfcc"/ /GEARNAME Light warhorse GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 80gp GEARCOST/ 
+/GEARDESCRIPTION A standard horse trained for combat. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 9a493a92-6964-11ee-be61-c87f5455cfcc"/ /GEARNAME Heavy warhorse GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 400gp GEARCOST/ 
+/GEARDESCRIPTION A warhorse capable of carrying a fully-armored warrior into battle. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" d463cd28-6964-11ee-9874-c87f5455cfcc"/ /GEARNAME Saddle GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 5gp GEARCOST/ 
+/GEARDESCRIPTION Required to ride most horses. A specific saddle will be suitable only for one type of horse and type of riding. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 640f655e-6965-11ee-acb2-c87f5455cfcc"/ /GEARNAME Bridle GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 5sp GEARCOST/ 
+/GEARDESCRIPTION Required for all horses. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 74192e30-6965-11ee-9512-c87f5455cfcc"/ /GEARNAME Large panniers GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 5sp GEARCOST/ 
+/GEARDESCRIPTION Pair of large panniers suitable for packing goods on a pack animal. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" a91b115c-6965-11ee-a441-c87f5455cfcc"/ /GEARNAME Saddle bag GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 1sp GEARCOST/ 
+/GEARDESCRIPTION Bag for carrying equipment on a horse which is being ridden. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" e720f6a6-6965-11ee-bb60-c87f5455cfcc"/ /GEARNAME Donkey GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 8sp GEARCOST/ 
+/GEARDESCRIPTION A good pack animal. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 1b99b74c-6966-11ee-9050-c87f5455cfcc"/ /GEARNAME Mule GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 15sp GEARCOST/ 
+/GEARDESCRIPTION Carry heavier loads than a donkey. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 6ceab646-6966-11ee-9710-c87f5455cfcc"/ /GEARNAME Cow GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 6sp GEARCOST/ 
+/GEARDESCRIPTION An ordinary cow. May give milk if cared for correctly. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 787d47bc-6966-11ee-9163-c87f5455cfcc"/ /GEARNAME Sheep GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 15cp GEARCOST/ 
+/GEARDESCRIPTION A simple domestic animal. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 9cd6e3de-6966-11ee-8c83-c87f5455cfcc"/ /GEARNAME Ox GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 1gp GEARCOST/ 
+/GEARDESCRIPTION Slow, but can pull heavy loads. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" c5f06f9c-6966-11ee-941e-c87f5455cfcc"/ /GEARNAME Pig GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 2sp GEARCOST/ 
+/GEARDESCRIPTION Quite edible. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" f2aca172-6966-11ee-b966-c87f5455cfcc"/ /GEARNAME Chicken GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 1cp GEARCOST/ 
+/GEARDESCRIPTION Edible, might produce eggs. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 1db7b2a8-6967-11ee-9c32-c87f5455cfcc"/ /GEARNAME Pony GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 5gp GEARCOST/ 
+/GEARDESCRIPTION A small, angry horse. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 5274210c-6967-11ee-8ed5-c87f5455cfcc"/ /GEARNAME Hunting dog GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 1gp GEARCOST/ 
+/GEARDESCRIPTION Ordinary quality hound. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" 7f089ba8-6967-11ee-bcb9-c87f5455cfcc"/ /GEARNAME Guard dog GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 5sp GEARCOST/ 
+/GEARDESCRIPTION Basic mastiff or similar dog with simple training. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" ad4e91c0-6967-11ee-9ae4-c87f5455cfcc"/ /GEARNAME War dog GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 15gp GEARCOST/ 
+/GEARDESCRIPTION A dog trained and equipped for serious battle. GEARDESCRIPTION/ GEAR/
+/GEAR /ID" d6fdb2bc-6967-11ee-a8d7-c87f5455cfcc"/ /GEARNAME Pigeon GEARNAME/ /GEARTYPE animal GEARTYPE/ /GEARLOAD 0 GEARLOAD/ /GEARCOST 2cp GEARCOST/ 
+/GEARDESCRIPTION A carrier pigeon, it will return home if released. GEARDESCRIPTION/ GEAR/
+TBODY/
+TABLE/
+SUBSECTION/
 /SUBSECTION" Armor"/
 
 /DIV=" floatleft"/
 /TABLE=" bodytable"/
 /THEAD
-/TR /TH Type /TH/ DR /TH/ Load /TH/ Cost /TH/ DEX /TH/ CON TH/ TR/
+/TR /TH Type /TH/ DR /TH/ Load /TH/ Cost /TH/ DEX /TH/ CON /TH/ Description TH/ TR/
 THEAD/
 /TBODY
-/TR /TD Cloth /TD/ 0 /TD/ 0 /TD/ 0 /TD/ N /TD/ N TD/ TR/
-/TR /TD Leather /TD/ 1 /TD/ 20 /TD/ 10sp /TD/ N /TD/ N TD/ TR/
-/TR /TD Reinforced Leather /TD/ 2 /TD/ 25 /TD/ 40sp /TD/ N /TD/ N TD/ TR/
-/TR /TD Mail /TD/ 3 /TD/ 30 /TD/ 100sp /TD/ Y /TD/ N TD/ TR/
-/TR /TD Piece Metal /TD/ 4 /TD/ 35 /TD/ 300sp /TD/ Y /TD/ Y TD/ TR/
-/TR /TD Plate /TD/ 5 /TD/ 40 /TD/ 800sp /TD/ Y /TD/ Y TD/ TR/
-/TR /TD Shield /TD/ +1* /TD/ 5 /TD/ 5sp /TD/ Y /TD/ N TD/ TR/
-/TR /TD Buckler /TD/ +1* /TD/ 2 /TD/ 2sp /TD/ N /TD/ N TD/ TR/ 
+/ARMOR /ID" bac69b54-68a9-11ee-9bae-c87f5455cfcc"/ /ARMORTYPE Cloth ARMORTYPE/ /ARMORDR 0 ARMORDR/ /ARMORLOAD 0 ARMORLOAD/ /ARMORCOST 0 ARMORCOST/ /ARMORDEX N ARMORDEX/
+/ARMORCON N ARMORCON/ /ARMORDESCRIPTION This is simply ordinary clothing of all types. It simply indicates that these materials provide no protection by default. Magical 
+clothes however may act as armor and in that case they follow all the normal armor rules. ARMORDESCRIPTION/ ARMOR/
+/ARMOR /ID" 87ce7a0e-68aa-11ee-bb41-c87f5455cfcc"/ /ARMORTYPE Leather ARMORTYPE/ /ARMORDR 1 ARMORDR/ /ARMORLOAD 20 ARMORLOAD/ /ARMORCOST 10sp ARMORCOST/ /ARMORDEX N ARMORDEX/
+/ARMORCON N ARMORCON/ /ARMORDESCRIPTION
+This covers all sorts of basic armors made from hides, heavy furs, as well as lightweight padding such as a gambeson or other similar items that provide limited protection.
+ARMORDESCRIPTION/ ARMOR/
+/ARMOR /ID" d96570d4-68aa-11ee-8818-c87f5455cfcc"/ /ARMORTYPE Reinforced Leather ARMORTYPE/ /ARMORDR 2 ARMORDR/ /ARMORLOAD 25 ARMORLOAD/ /ARMORCOST 40sp ARMORCOST/ /ARMORDEX N ARMORDEX/
+/ARMORCON N ARMORCON/ /ARMORDESCRIPTION
+This covers improved versions of armors made from natural materials, including multiple layers, additional padding, and simple metal (or other material) reinforcements 
+which only cover a few critical areas.
+ARMORDESCRIPTION/ ARMOR/
+/ARMOR /ID" 1bd72674-68ab-11ee-a937-c87f5455cfcc"/ /ARMORTYPE Mail ARMORTYPE/ /ARMORDR 3 ARMORDR/ /ARMORLOAD 30 ARMORLOAD/ /ARMORCOST 100sp ARMORCOST/ /ARMORDEX N ARMORDEX/
+/ARMORCON Y ARMORCON/ /ARMORDESCRIPTION
+Woven metal fabric shaped into a suite of armor which covers most of the body. This is the basic form of metal armor, heavier grades of armor usually involve 
+additions to a coat of mail.
+ARMORDESCRIPTION/ ARMOR/
+/ARMOR /ID" 6f34c538-68ab-11ee-bf9c-c87f5455cfcc"/ /ARMORTYPE Piece Metal ARMORTYPE/ /ARMORDR 4 ARMORDR/ /ARMORLOAD 35 ARMORLOAD/ /ARMORCOST 300sp ARMORCOST/ /ARMORDEX Y ARMORDEX/
+/ARMORCON Y ARMORCON/ /ARMORDESCRIPTION
+Brigandines, scale armors, and lamellar armors made by fastening together pieces of metal or affixing them to some sort of backing. Often includes some elements of mail. 
+May also include earlier forms of 'plate' armor which involve affixing metal plates to critical areas of mail armor.
+ARMORDESCRIPTION/ ARMOR/
+/ARMOR /ID" c287b95c-68ab-11ee-a409-c87f5455cfcc"/ /ARMORTYPE Plate ARMORTYPE/ /ARMORDR 5 ARMORDR/ /ARMORLOAD 40 ARMORLOAD/ /ARMORCOST 800sp ARMORCOST/ /ARMORDEX Y ARMORDEX/
+/ARMORCON Y ARMORCON/ /ARMORDESCRIPTION
+Solid metal plates carefully joined and covering extensive parts of the body. This was the ultimate form of pre-technological armor, being quite difficult for most 
+weapons to penetrate. Note that shields do not add DR with plate armor!
+ARMORDESCRIPTION/ ARMOR/
+/ARMOR /ID" 12a818fa-68ac-11ee-83f1-c87f5455cfcc"/ /ARMORTYPE Shield ARMORTYPE/ /ARMORDR +1* ARMORDR/ /ARMORLOAD 5 ARMORLOAD/ /ARMORCOST 5sp ARMORCOST/ /ARMORDEX Y ARMORDEX/
+/ARMORCON N ARMORCON/ /ARMORDESCRIPTION
+This is a basic type of shield. It occupies one arm and hand completely, but isn't huge and bulky. It adds one point of DR to any type of armor except plate with which it 
+is combined. Note that larger shields were sometimes employed by infantry formations and such, but they don't perform any better than this one as personal protection.
+ARMORDESCRIPTION/ ARMOR/
+/ARMOR /ID" 5e5d795c-68ac-11ee-80bb-c87f5455cfcc"/ /ARMORTYPE Buckler ARMORTYPE/ /ARMORDR +1* ARMORDR/ /ARMORLOAD 2 ARMORLOAD/ /ARMORCOST 2sp ARMORCOST/ /ARMORDEX N ARMORDEX/
+/ARMORCON N ARMORCON/ /ARMORDESCRIPTION
+This is a very small shield which is held in the off hand. It provides good defense in a compact form and can be used with 1.5-handed weapons. It adds one point of DR 
+to anyone wearing cloth, leather, or reinforced leather armor.
+ARMORDESCRIPTION/ ARMOR/
 TBODY/
 TABLE/
 DIV/
 
-Many characters wear armor of various sorts. All armor reduces the number of points of damage which attacks inflict on the wearer. Armor does nothing to mitigate the non-damage effects of attacks. Armor also has a weight, which will count towards encumbrance.
+Many characters wear armor of various sorts. All armor reduces the number of points of damage which attacks inflict on the wearer. Armor does nothing to mitigate the 
+non-damage effects of attacks. Armor also has a load, which will count towards encumbrance.
 
-The armor table shows the attributes for several types of armor. Note that historically there have been many styles of armor manufactured, but all of them can be generalized to one of the types shown here. For instance “cloth” armors made of many layers of stiffened cloth are roughly equivalent to leather armor.
+The armor table shows the attributes for several types of armor. Note that historically there have been many styles of armor manufactured, but all of them can be 
+generalized to one of the types shown here. For instance “cloth” armors made of many layers of stiffened cloth are roughly equivalent to leather armor.
 
 /LABEL Type LABEL/
-The general name for this kind of armor. As noted above, this is just a general or typical descriptive name, many other styles of armor have existed, but they all have roughly the same attributes as one of the listed types.
-/UL
-    /LI /LABEL Cloth LABEL/ This is simply ordinary clothing of all types. It simply indicates that these materials provide no protection by default. Magical clothes however may act as armor and in that case they follow all the normal armor rules. LI/
-    /LI /LABEL Leather LABEL/ This covers all sorts of basic armors made from hides, heavy furs, as well as lightweight padding such as a gambeson or other similar items that provide limited protection. LI/
-    /LI /LABEL Reinforced Leather LABEL/ This covers improved versions of armors made from natural materials, including multiple layers, additional padding, and simple metal (or other material) reinforcements which only cover a few critical areas. LI/
-    /LI /LABEL Mail LABEL/ Woven metal fabric shaped into a suite of armor which covers most of the body. This is the basic form of metal armor, heavier grades of armor usually involve additions to a coat of mail. LI/
-    /LI /LABEL Piece Metal LABEL/ Brigandines, scale armors, and lamellar armors made by fastening together pieces of metal or affixing them to some sort of backing. Often includes some elements of mail. May also include earlier forms of 'plate' armor which involve affixing metal plates to critical areas of mail armor. LI/
-    /LI /LABEL Plate LABEL/ Solid metal plates carefully joined and covering extensive parts of the body. This was the ultimate form of pre-technological armor, being quite difficult for most weapons to penetrate. Note that shields do not add DR with plate armor! LI/
-    /LI /LABEL Shield LABEL/ This is a basic type of shield. It occupies one arm and hand completely, but isn't huge and bulky. It adds one point of DR to any type of armor except plate with which it is combined. Note that larger shields were sometimes employed by infantry formations and such, but they don't perform any better than this one as personal protection. LI/
-    /LI /LABEL Buckler LABEL/ This is a very small shield which is held in the off hand. It provides good defense in a compact form and can be used with 1.5-handed weapons. It adds one point of DR to anyone wearing cloth, leather, or reinforced leather armor. LI/
-UL/
+The general name for this kind of armor. As noted above, this is just a general or typical descriptive name, many other styles of armor have existed, but they all have 
+roughly the same attributes as one of the listed types.
 
 /LABEL Damage Reduction LABEL/
-Abbreviated as DR, damage reduction is the number of points of damage reduction the armor grants the wearer. This is a 'base' DR in the case of armor, and a DR bonus in the case of shields.
+Abbreviated as DR, damage reduction is the number of points of damage reduction the armor grants the wearer. This is a 'base' DR in the case of armor, and a DR bonus 
+in the case of shields.
 
-/EM * EM/ Note that shields and bucklers won't stack with Plate armor. They will stack with other forms of DR however and in that case their bonus is considered a proficiency bonus.
+/EM * EM/ Note that shields and bucklers won't stack with Plate armor. They will stack with other forms of DR however and in that case their bonus is considered a 
+proficiency bonus.
 
 /LABEL Load LABEL/ The load of the armor in units. 
 
-/LABEL Cost LABEL/ How many silver pieces a basic suit of armor of this type might typically cost. Note that armor is often heavily decorated and stylized. Such suits may be vastly more expensive than indicated.
+/LABEL Cost LABEL/ How many silver pieces a basic suit of armor of this type might typically cost. Note that armor is often heavily decorated and stylized. Such suits 
+may be vastly more expensive than indicated.
 
 /LABEL DEX LABEL/ Y in this column indicates that the armor forces the wearer to roll with disadvantage when making checks involving dexterity.
 
@@ -710,6 +812,21 @@ IMPLEMENT/
 UL/
 TOPIC/
 SUBSECTION/
+/SUBSECTION" Tools"/
+
+Tools are general types of equipment which are used for specific purposes. Thus a character might use climbing tools in order to do technical climbing, or carpenter's tools to build things
+out of wood. See /REF Proficiencies REF/ for a discussion of being proficient with specific tools. While possession of a specific set of tools may not be required to perform tasks associated
+with them, a character who lacks tools entirely may be unable to accomplish anything (IE you can't do woodworking with just your hands) though a limited or improper tool set may still allow
+things to be accomplished, possibly with disadvantage.
+
+This is not an exhaustive list of all possible tool sets. Rather what is presented here is a minimum basic toolkit for some common tasks characters are likely to run into. Many others may
+exist, and these given may not be sufficient for large or complex tasks.
+/TABLE=" bodytable"/
+/TR /TH Toolkit /TH/ Ability /TH/ Cost /TH/ Load /TH/ Description TH/ TR/
+/TOOL /ID" 8c740b74-6aca-11ee-9f74-c87f5455cfcc"/ /TOOLNAME Carpenter's Tools TOOLNAME/ /TOOLABILITY WIS TOOLABILITY/ /TOOLCOST 20sp TOOLCOST/ /TOOLLOAD 10 TOOLLOAD/ 
+/TOOLDESCRIPTION A simple set of carpenter's tools in a small box. TOOLDESCRIPTION/ TOOL/
+TABLE/
+SUBSECTION/
 SECTION/
 /SECTION" Wealth"/
 
@@ -742,10 +859,14 @@ Proficiency - wealth is simply another area of knowledge and expertise. It can b
 
 /DIV=" floatright half"/
 /TABLE=" bodytable"/
+/THEAD
 /TR /TH Tier /TH/ Insignificant /TH/ Significant /TH/ Major TH/ TR/
+THEAD/
+/TBODY
 /TR /TD Heroic /TD/ 10cp /TD/ 50sp /TD/ 20gp TD/ TR/
 /TR /TD Legendary /TD/ 10sp /TD/ 50gp /TD/ 200gp TD/ TR/
 /TR /TD Mythic /TD/ 100gp /TD/ 500gp /TD/ 5000gp TD/ TR/
+TBODY/
 TABLE/
 DIV/
 

@@ -70,6 +70,10 @@ class Controller {
 		window.location.hash = '/authenticated';
 	}
 	
+	getProficienciesByType(type,onAvailable) {
+		this.equipmentRepo.getEquipmentByType(type,onAvailable);
+	}
+	
 	getAuthenticatedUser() {
 		return this.authenticator.user;
 	}

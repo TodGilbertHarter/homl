@@ -21,6 +21,7 @@ import { Background } from './background.js';
 import { Character } from './character.js';
 import { GetPlayerReference } from './playerrepository.js'
 import {ref, createRef} from 'https://unpkg.com/lit@2/directives/ref.js?module';
+import {repeat} from 'https://unpkg.com/lit@2/directives/repeat.js?module';
 
 /** @private */ const CharacterSheettemplate = document.getElementById('charactersheettemplate');
 
@@ -216,6 +217,20 @@ class CharacterSheet extends HTMLElement {
 		return list;
 	}
 	
+	/* get the values for proficiencies */
+	getProficiencyList() {
+		const id = 'characterproficiencies';
+		const elem = this.getElement(id);
+		const list = [];
+		for(const item of elem.children) {
+			list.push({
+				type: item.type,
+				name: item.equipmentId
+			});
+		}
+		return list;
+	}
+	
 	disconnectedCallback() {
 		
 	}
@@ -361,33 +376,33 @@ window.customElements.define('personality-field',PersonalityField);
 class ProficiencyField extends LitElement {
 	static properties = {
 		type: { reflect: true},
-		name: { reflect: true},
+		equipmentId: {reflect: true}
 	};
 	
 	deleteButtonHandler;
 	
 	constructor() {
 		super();
-		this.nameRef = createRef();
 		this.typeRef = createRef();
+		this.eqidRef = createRef();
 	}
 	
 	onChange() {
 		this.type = this.typeRef.value.value;
-		this.name = this.nameRef.value.value;
+		this.equipmentId = this.eqidRef.value.value;
 	}
 	
 	setNamesByType(t) {
-		window.gebApp.controller.getProficienciesByType(t, (profs) => { this.nameRef.value.setSelections(profs)});
+		window.gebApp.controller.getProficienciesByType(t, (profs) => { this.eqidRef.value.setSelections(profs)});
 	}
 	
 	onTypeChange() {
-		onChange();
-		setNamesByType(this.type);
+		this.onChange();
+		this.setNamesByType(this.type);
 	}
 	
 	onNameChange() {
-		onChange();
+		this.onChange();
 	}
 	
 	firstUpdated() {
@@ -402,10 +417,11 @@ class ProficiencyField extends LitElement {
 	
 	render() {
 		return html`<div class='attribute'>
-		<select-field label='type' name='type' @change=${this.onTypeChange} ${ref(this.typeRef)}>
+		<select-field label='type' name='type' @change=${this.onTypeChange} ${ref(this.typeRef)} value=${this.type}>
 		</select-field>
-		<select-field label='name' name='name' @change=${this.onNameChange} ${ref(this.nameRef)}>
+		<select-field label='name' name='name' @change=${this.onNameChange} ${ref(this.eqidRef)} value=${this.equipmentId}>
 		</select-field>
+		<button @click=${this.deleteButtonHandler}>X</button>
 		</div>`;
 	}
 }
@@ -482,7 +498,7 @@ class SheetField extends HTMLElement {
     }
     
     set value(value) {
-        const input = this.shadowRoot.getElementById('input').value = value;
+        this.shadowRoot.getElementById('input').value = value;
     }
     
     get value() {
@@ -514,38 +530,36 @@ class AttributeField extends SheetField {
     }
 }
 
-const template_SelectField = document.createElement('template');
-// template_SelectField.innerHTML = `<label id='label'></label><select id='input'></select>`;
-template_SelectField.innerHTML = `<label id='label' part='label'></label><select id='input'><slot name='option'>foo</slot></select></span>`;
-
-class SelectField extends SheetField {
+class SelectField extends LitElement {
+	static properties = {
+		label: {},
+		value: {reflect: true}
+	};
+	
+	onChange() {
+		this.value = this.selectRef.value.value;
+		this.dispatchEvent(new Event('change'));
+	}
+	
     constructor() {
-        super(template_SelectField);
+        super();
+        this.selectRef = createRef();
+        this._selections = [{id: 'None', name: 'None'}];
     }
     
-    connectedCallback() {
-        const value = this.getAttribute('value');
-        const n = this.getAttribute('name');
-        const style = this.getAttribute('style');
-        const id = this.getAttribute('id');
-        const input = this.shadowRoot.getElementById('input');
-        input.setAttribute('style',style);
-        input.setAttribute('value',value);
-        input.setAttribute('name',n);
-        const ltext = this.getAttribute('label');
-        const label = this.shadowRoot.getElementById('label');
-        label.innerHTML = ltext;
-    }
+    render() {
+		return html`<label id='label' part='label'>${this.label}</label><select id='input' value=${this.value} ${ref(this.selectRef)} @change=${this.onChange}>
+			${repeat(this._selections,(item,index) => html`<option value=${item.id}>${item.name}</option>`)}
+		</select></span>`;
+	}
+    
+    updated() {
+		this.selectRef.value.value = this.value;
+	}
     
     setSelections(options) {
-        const input = this.shadowRoot.getElementById('input');
-        input.innerHTML = '';
-		options.forEach((option) => {
-			const optElement = document.createElement('option');
-			optElement.innerText = option.name;
-			optElement.value = option.id;
-			input.appendChild(optElement);
-		});
+		this._selections = options;
+		this.requestUpdate();
 	}
 }
 
@@ -905,10 +919,13 @@ class CharacterController {
         character.level = parseInt(sheet.getCharacterData('characterlevel'),10);
 		character.calling.calling = this.getCalling(sheet,sheet.getCharacterData('charactercalling'));
 		character.calling.name = character.calling.calling.name;
+		character.calling.callingref = null;
 		character.species.species = this.getSpecies(sheet,sheet.getCharacterData('characterspecies'));
 		character.species.name = character.species.species.name;
+		character.species.speciesref = null;
 		character.origin.origin = this.getOrigin(sheet,sheet.getCharacterData('characterorigin'));
 		character.origin.name = character.origin.origin.name;
+		character.origin.originref = null;
         character.fate = sheet.getCharacterData('characterfate');
         character.description = sheet.getCharacterData('characterdescription');
         character.hitpoints = parseInt(sheet.getCharacterData('characterhitpoints'),10);
@@ -960,7 +977,12 @@ class CharacterController {
 			cbg[item.type] = bg;
 		});
 		character.background = cbg;
-//        blist.forEach((item) => character.background[item.name])
+		const cprofs = { 'tool': [], 'weapon': [], 'implement': [], 'other': []};
+		const cplist = sheet.getProficiencyList();
+		for(var i = 0; i > cplist.length; i++) {
+			cprofs[cplist[i].type].push(cplist[i].id);
+		};
+		
     }
     
     calculate(character) {

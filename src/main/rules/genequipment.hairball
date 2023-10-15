@@ -35,4 +35,30 @@
 /: /WEAPONHANDS , "hands": " :/ /: WEAPONHANDS/ " :/
 /: /WEAPONDAMAGE , "damage": " :/ /: WEAPONDAMAGE/ " :/
 
+/: /ARMOR /FIRSTEQUIPMENT /V@ /NOT /IF , /THEN /FALSE /FIRSTEQUIPMENT /V! /[" /EQUIPMENT "]/ /VOCAB@ /ACTIVE /EMITON :/
+/: /ARMORTYPE , "type": "armor", "name": " :/ /: ARMORTYPE/ " :/
+/: /ARMORDR , "dr": " :/ /: ARMORDR/ " :/
+/: /ARMORLOAD , "load": " :/  /: ARMORLOAD/ " :/
+/: /ARMORCOST , "cost": " :/ /: ARMORCOST/ " :/
+/: /ARMORDEX , "DEX": " :/ /: ARMORDEX/ " :/
+/: /ARMORCON , "CON": " :/ /: ARMORCON/ " :/
+/: /ARMORDESCRIPTION , "description": " :/ /: ARMORDESCRIPTION/ " :/
+/: ARMOR/ } /[" /EQUIPMENT "]/ /VOCAB@ /INACTIVE /NEWLINE /EMITOFF :/
+
+/: /GEAR /FIRSTEQUIPMENT /V@ /NOT /IF , /THEN /FALSE /FIRSTEQUIPMENT /V! /[" /EQUIPMENT "]/ /VOCAB@ /ACTIVE /EMITON :/
+/: /GEARNAME , "type": "gear", "name": " :/ /: GEARNAME/ " :/
+/: /GEARTYPE , "geartype": " :/ /: GEARTYPE/ " :/
+/: /GEARLOAD , "load": " :/ /: GEARLOAD/ " :/
+/: /GEARCOST , "cost": " :/ /: GEARCOST/ " :/
+/: /GEARDESCRIPTION , "description": " :/ /: GEARDESCRIPTION/ " :/
+/: GEAR/ } /[" /EQUIPMENT "]/ /VOCAB@ /INACTIVE /NEWLINE /EMITOFF :/
+
+/: /TOOL /FIRSTEQUIPMENT /V@ /NOT /IF , /THEN /FALSE /FIRSTEQUIPMENT /V! /[" /EQUIPMENT "]/ /VOCAB@ /ACTIVE /EMITON :/
+/: /TOOLNAME , "type": "tool", "name": " :/ /: TOOLNAME/ " :/
+/: /TOOLABILITY , "ability": " :/ /: TOOLABILITY/ " :/
+/: /TOOLLOAD , "load": " :/ /: TOOLLOAD/ " :/
+/: /TOOLCOST , "cost": " :/ /: TOOLCOST/ " :/
+/: /TOOLDESCRIPTION , "description": " :/ /: TOOLDESCRIPTION/ " :/
+/: TOOL/ } /[" /EQUIPMENT "]/ /VOCAB@ /INACTIVE /NEWLINE /EMITOFF :/
+
 /: "/ // :/

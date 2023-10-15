@@ -34,6 +34,28 @@ class Equipment {
 	}
 }
 
+class Tool extends Equipment {
+	ability;
+	
+	constructor(id,name,ability,cost,load,description) {
+		super(id,name,"tool",cost,load,description);
+		this.ability = ability;
+	}
+}
+
+class Armor extends Equipment {
+	dr;
+	DEX;
+	CON;
+	
+	constructor(id,name,cost,load,description,dr,dex,con) {
+		super(id,name,"armor",cost,load,description);
+		this.dr = dr;
+		this.DEX = dex;
+		this.CON = con;
+	}
+}
+
 class Implement extends Equipment {
 	hands;
 	damage;
@@ -69,4 +91,4 @@ class Weapon extends Equipment {
 	}
 }
 
-export { Implement, Weapon };
+export { Implement, Weapon, Armor, Equipment, Tool };

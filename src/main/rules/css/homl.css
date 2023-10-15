@@ -3,7 +3,7 @@
 :root {
     --bodytable-header-bg: DarkBlue;
     --bodytable-header-fg: white;
-    --bodytable-subheader-bg: blue;
+    --bodytable-subheader-bg: turquoise;
     --bodytable-subheader-fg: black;
     --bodytable-bg: lightblue;
     --bodytable-fg: black;
@@ -842,7 +842,7 @@ p {
 }
 
 .bodytable {
-    background-color: lightblue;
+    background-color: var(--bodytable-bg);
     border-collapse: collapse;
     border-left: 1px solid black;
     border-right: 1px solid black;
@@ -861,8 +861,18 @@ p {
 }
 
 .bodytable th {
-    color: white;
-    background-color: DarkBlue;
+    color: var(--bodytable-header-fg);
+    background-color: var(--bodytable-header-bg);
+    font-weight: bold;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.bodytable tbody th {
+    color: var(--bodytable-subheader-fg);
+    background-color: var(--bodytable-subheader-bg);
     font-weight: bold;
     border-left: 1px solid black;
     border-right: 1px solid black;
@@ -871,6 +881,7 @@ p {
 }
 
 .bodytable td {
+	color: var(--bodytable-fg);
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-top: 1px solid black;

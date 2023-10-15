@@ -30,6 +30,8 @@ class EquipmentView extends LitElement {
 		this.equipment = [];
 		this.implementRef = createRef();
 		this.weaponRef = createRef();
+		this.gearRef = createRef();
+		this.armorRef = createRef();
 	}
 	
 	connectedCallback() {
@@ -47,6 +49,8 @@ class EquipmentView extends LitElement {
 		this.equipment = equipment;
 		this.implementRef.value.setEquipmentList(this.filterEquipment('implement'));
 		this.weaponRef.value.setEquipmentList(this.filterEquipment('weapon'));
+		this.gearRef.value.setEquipmentList(this.filterEquipment('gear'));
+		this.armorRef.value.setEquipmentList(this.filterEquipment('armor'));
 		this.requestUpdate();
 	}
 	
@@ -71,6 +75,8 @@ class EquipmentView extends LitElement {
 			<h1 part='sectiontitle'>HoML Equipment</h1>
 			<implement-list id='implements' ${ref(this.implementRef)}></implement-list>
 			<weapon-list id='weapons' ${ref(this.weaponRef)}></weapon-list>
+			<armor-list id='armor' ${ref(this.armorRef)}></armor-list>
+			<gear-list id='gear' ${ref(this.gearRef)}></gear-list>
 		</div>`
 	}
 }
@@ -178,13 +184,108 @@ class WeaponList extends EquipmentList {
 			<div class='tr'><span>Name</span><span>Ability</span><span>Damage</span><span>Hands</span>
 			<span>Range</span><span>Category</span><span>Type</span><span>Tags</span><span>Description</span></div>
 			${repeat(this.equipment,(item,index) => html`<weapon-view name=${item.name} weaponId=${item.weaponId} ability=${item.ability} damage=${item.damage}
-			description=${item.description} hands=${item.hands} range=${item.range} category=${item.category} type=${item.type} tags=${item.tags}></implement-view>`)}
+			description=${item.description} hands=${item.hands} range=${item.range} category=${item.category} type=${item.type} tags=${item.tags}></weapon-view>`)}
 			</div>`;
+	}
+}
+
+class ArmorList extends EquipmentList {
+	
+	constructor() {
+		super();
+	}
+	
+	render() {
+		return html`<style>
+			div.table { 
+				display: table; 
+				background-color: var(--topic-bg);
+				border: 2px solid var(--theme-border);
+				margin-top: 1em;
+				}
+			div.table span {
+				display: table-caption;
+				font-weight: bold;
+				font-size: 1.5em;
+			}
+			div.tr { 
+				display: table-row;
+				background-color: var(--theme-fg);
+				color: var(--theme-bg);
+				}
+			div.tr > span { 
+				display: table-cell; 
+				font-weight: bold;
+				padding-left: .5em;
+				padding-right: .5em;
+			}
+			armor-view {
+				display: table-row;
+			}
+			armor-view:nth-child(odd) {
+				background-color: var(--theme-bg-dark);
+			}
+		</style>
+		<div class='table'>
+			<span>Armor</span>
+			<div class='tr'><span>Type</span><span>DR</span><span>Load</span><span>Cost</span>
+			<span>DEX</span><span>CON</span><span>Description</span></div>
+			${repeat(this.equipment,(item,index) => html`<armor-view name=${item.name} armorId=${item.id} dr=${item.dr} dex=${item.DEX} con=${item.CON} 
+			cost=${item.cost} load=${item.load} description=${item.description}></armor-view>`)}
+		</div>`;
+	}
+}
+
+class GearList extends EquipmentList {
+	
+	constructor() {
+		super();
+	}
+	
+	render() {
+		return html`<style>
+			div.table { 
+				display: table; 
+				background-color: var(--topic-bg);
+				border: 2px solid var(--theme-border);
+				margin-top: 1em;
+				}
+			div.table span {
+				display: table-caption;
+				font-weight: bold;
+				font-size: 1.5em;
+			}
+			div.tr { 
+				display: table-row;
+				background-color: var(--theme-fg);
+				color: var(--theme-bg);
+				}
+			div.tr > span { 
+				display: table-cell; 
+				font-weight: bold;
+				padding-left: .5em;
+				padding-right: .5em;
+			}
+			gear-view {
+				display: table-row;
+			}
+			gear-view:nth-child(odd) {
+				background-color: var(--theme-bg-dark);
+			}
+		</style>
+		<div class='table'>
+			<span>Gear &amp; Goods</span>
+			<div class='tr'><span>Name</span><span>Load</span><span>Cost</span><span>Description</span></div>
+			${repeat(this.equipment,(item,index) => html`<gear-view name=${item.name} gearId=${item.id} cost=${item.cost} load=${item.load}
+			description=${item.description}></gear-view>`)}
+		</div>`;
 	}
 }
 
 window.customElements.define('implement-list',ImplementList);
 window.customElements.define('weapon-list',WeaponList);
+window.customElements.define('armor-list',ArmorList);
+window.customElements.define('gear-list',GearList);
 
 class ImplementView extends LitElement {
 	static properties = {
@@ -207,8 +308,11 @@ class ImplementView extends LitElement {
 				padding-left: .5em;
 				padding-right: .5em;
 				}
+			.centered {
+				text-align: center;
+			}
 		</style>
-		<span>${this.name}</span><span>${this.ability}</span><span>${this.damage}</span><span>${this.hands}</span><span>${this.description}</span>`;
+		<span>${this.name}</span><span class='centered'>${this.ability}</span><span class='centered'>${this.damage}</span><span class='centered'>${this.hands}</span><span>${this.description}</span>`;
 	}
 }
 
@@ -239,10 +343,77 @@ class WeaponView extends LitElement {
 				padding-left: .5em;
 				padding-right: .5em;
 				}
+			.centered {
+				text-align: center;
+			}
 		</style>
-		<span>${this.name}</span><span>${this.ability}</span><span>${this.damage}</span><span>${this.hands}</span>
-		<span>${this.range}</span><span>${this.category}</span><span>${this.type}</span><span>${this.tags}</span><span>${this.description}</span>`;
+		<span>${this.name}</span><span class='centered'>${this.ability}</span><span class='centered'>${this.damage}</span><span class='centered'>${this.hands}</span>
+		<span class='centered'>${this.range}</span><span class='centered'>${this.category}</span><span class='centered'>${this.type}</span><span class='centered'>${this.tags}</span><span>${this.description}</span>`;
 	}
 }
 
 window.customElements.define('weapon-view',WeaponView);
+
+class ArmorView extends LitElement {
+	static properties = {
+		armorId: {},
+		name: {},
+		dr: {},
+		load: {},
+		cost: {},
+		dex: {},
+		con: {},
+		description: {},
+	};
+	
+	constructor() {
+		super();
+	}
+	
+	render() {
+		return html`<style>
+			span { 
+				display: table-cell;
+				padding-left: .5em;
+				padding-right: .5em;
+				}
+			.centered {
+				text-align: center;
+			}
+		</style>
+		<span>${this.name}</span><span class='centered'>${this.dr}</span><span class='centered'>${this.load}</span><span class='centered'>${this.cost}</span>
+		<span class='centered'>${this.dex}</span><span class='centered'>${this.con}</span><span>${this.description}</span>`;
+	}
+}
+
+window.customElements.define('armor-view',ArmorView);
+
+class GearView extends LitElement {
+	static properties = {
+		gearId: {},
+		description: {},
+		name: {},
+		cost: {},
+		load: {}
+	};
+	
+	constructor() {
+		super();
+	}
+	
+	render() {
+		return html`<style>
+			span { 
+				display: table-cell;
+				padding-left: .5em;
+				padding-right: .5em;
+				}
+			.centered {
+				text-align: center;
+			}
+		</style>
+		<span>${this.name}</span><span class='centered'>${this.load}</span><span class='centered'>${this.cost}</span><span>${this.description}</span>`;
+	}
+}
+
+window.customElements.define('gear-view',GearView);

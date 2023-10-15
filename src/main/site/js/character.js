@@ -40,8 +40,9 @@ class Character {
 				power: 0,
 				proficiencies: {
 					knacks: {},
-					tools: {},
-					other: {}
+					tools: [],
+					weapons: [],
+					implements: []
 				},
 				species: {},
 				origin: {},
@@ -50,7 +51,7 @@ class Character {
 		}
 		this.characterData = data;
 		if(typeof this.proficiencies === 'undefined') {
-			this.proficiencies = { knacks: {}, tools: [], other: []};
+			this.proficiencies = { knacks: {}, tools: [], weapons: [], implements: []};
 		}
 		if(typeof this.boons === 'undefined') {
 			this.boons = {};

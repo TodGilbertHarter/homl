@@ -447,6 +447,40 @@ for (i = 0; i < coll.length; i++) {
 /: /WEAPONHANDS /GETMATCHING WEAPONHANDS/ /DELIMITED /DROP :/ /: WEAPONHANDS/ /[" Mismatch, WEAPONHANDS/ must follow /WEAPONHANDS "]/ /ABORT :/
 /: /WEAPONDAMAGE /GETMATCHING WEAPONDAMAGE/ /DELIMITED /DROP :/ /: WEAPONDAMAGE/ /[" Mismatch, WEAPONDAMAGE/ must follow /WEAPONDAMAGE "]/ /ABORT :/
 
+/* gear, as table rows */
+/: /GEAR <tr /SPACE :/
+/: /GEARNAME > /TD :/ /: GEARNAME/ TD/ :/
+/: /GEARTYPE /GETMATCHING GEARTYPE/ /DELIMITED /DROP :/ /: GEARTYPE/ /[" Mismatch, GEARTYPE/ must follow /GEARTYPE "]/ /ABORT :/
+/: /GEARLOAD /TD :/ /: GEARLOAD/ TD/ :/
+/: /GEARCOST /TD :/ /: GEARCOST/ TD/ :/
+/: /GEARDESCRIPTION /TD :/ /: GEARDESCRIPTION/ TD/ :/
+/: GEAR/ TR/ :/
+
+/* Tools, as table rows */
+/: /TOOL <tr /SPACE :/
+/: TOOL/ TR/ :/
+/: /TOOLNAME > /TD :/
+/: TOOLNAME/ TD/ :/
+/: /TOOLABILITY /TD :/
+/: TOOLABILITY/ TD/ :/
+/: /TOOLCOST /TD :/
+/: TOOLCOST/ TD/ :/
+/: /TOOLLOAD /TD :/
+/: TOOLLOAD/ TD/ :/
+/: /TOOLDESCRIPTION /TD :/
+/: TOOLDESCRIPTION/ TD/ :/
+
+/* Armor, as table rows */
+/: /ARMOR <tr /SPACE :/
+/: /ARMORTYPE > /TD :/ /: ARMORTYPE/ TD/ :/
+/: /ARMORDR /TD :/ /: ARMORDR/ TD/ :/
+/: /ARMORLOAD /TD :/  /: ARMORLOAD/ TD/ :/
+/: /ARMORCOST /TD :/ /: ARMORCOST/ TD/ :/
+/: /ARMORDEX /TD :/ /: ARMORDEX/ TD/ :/
+/: /ARMORCON /TD :/ /: ARMORCON/ TD/ :/
+/: /ARMORDESCRIPTION /TD :/ /: ARMORDESCRIPTION/ TD/ :/
+/: ARMOR/ TR/ :/
+
 /: /GLOSSARYENTRY /TOPIC :/
 /: GLOSSARYENTRY/ TOPIC/ :/
 /: /GLOSSARYTERM /LABEL :/ 
