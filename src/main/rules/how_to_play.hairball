@@ -173,7 +173,7 @@ where 'permanent modifier' indicates which type of modifier the +1 is, and 'to a
 
 indicating that the character gets 3 regeneration from the blessing of darkness boon and that this is necromantic magic. Certain other game effects might interact with necromantic magic, perhaps increasing or negating the character's blessing of darkness boon in specific circumstances (see tags above). Note that the presence of a tag on an attribute doesn't mean the entire thing the attribute is part of has that tag, it simply indicates that the attribute and whatever characteristic of its parent it represents is of that type. A character with 'blessing of darkness' is not necessarily necromantic, only their use of that boon carries the tag.
 SUBSECTION/
-/SECTION" Checks and Actions "/
+/SECTION" Checks and Actions"/
 
 One of the core mechanical processes of HoML are actions. When a player wants his character to do something, this is an action. During the action sequence mode of play each action will be assigned an action type, however this aspect will be explained in the more detail later. What is important now is the process.
 
@@ -293,16 +293,23 @@ TBODY/
 TABLE/
 DIV/
 
-When dice have been rolled and all modifiers applied, then the result is compared to the DV, and the degree by which the value exceeds the DV, or if it falls short of the DV noted. The result can then be compared to the check results table. The final result will be one of three outcomes, complete success, success, or failure. If the player expended a power point to enhance the level of success, then success is improved to complete success, and complete success becomes enhanced success.
+When dice have been rolled and all modifiers applied, then the result is compared to the DV, and the degree by which the value exceeds the DV, or if it falls short of the DV noted. The result 
+can then be compared to the check results table. The final result will be one of three outcomes, complete success, success, or failure. If the player expended a power point to enhance the level 
+of success, then the result is improved by one rank; failure is improved to success, success is improved to complete success, and complete success becomes enhanced success.
 
-Specific rules for each mode of play determine what the mechanical outcome of each type of result is. Fictionally however failure means that the PC's intent is not realized. Either they failed to carry out the action, it went wrong in some way which made it futile, or other circumstances prevented the goal from being achieved. Either way the situation changes. Perhaps the character can attempt something similar at another time, but the story has moved on at this point.
+Specific rules for each mode of play determine what the mechanical outcome of each type of result is. Fictionally however failure means that the PC's intent is not realized. Either they failed 
+to carry out the action, it went wrong in some way which made it futile, or other circumstances prevented the goal from being achieved. Either way the situation changes. Perhaps the character 
+can attempt something similar at another time, but the story has moved on at this point.
 
-Success menas that the character has achieved their basic intent. The action was effective and they can proceed on, having overcome whatever obstacle they faced. Complete success is basically the same as success, but the effectiveness of the results was greater. This might manifest as increased damage of an attack, or extra successes being tallied in a challenge. 
+Success means that the character has achieved their basic intent. The action was effective and they can proceed on, having overcome whatever obstacle they faced. Complete success is basically 
+the same as success, but the effectiveness of the results was greater. This might manifest as increased damage of an attack, or extra successes being tallied in a challenge. 
 
 Enhanced success means the character expended additional power of one of their attuned power sources, creating an even greater effect, and possibly allowing riders to apply.
 /TOPIC" Riders"/
 
-A rider is a feat which 'rides' on another feat. Any time an enhanced success has been achieved, a player might be able to trigger one of the character's riders. These riders are indicated by the value 'Rider' in the action attribute of the feat instead of one of the usual action types. Only one rider may be triggered per enhanced success. Riders will normally specify a trigger condition which indicates how and when they are valid. Characters can only trigger riders whose power source is identical to that of the power point spent for enhancement; though it does not need to be the same source as the feat triggering the rider.
+A rider is a feat which 'rides' on another feat. Any time an enhanced success has been achieved, a player might be able to trigger one of the character's riders. These riders are indicated 
+by the value 'Rider' in the action attribute of the feat instead of one of the usual action types. Only one rider may be triggered per enhanced success. Riders will normally specify a trigger 
+condition which indicates how and when they are valid. Characters can only trigger riders whose power source is identical to that of the power point spent for enhancement.
 TOPIC/
 SUBSECTION/
 /SUBSECTION" Putting it Together "/

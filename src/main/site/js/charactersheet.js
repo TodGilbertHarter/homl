@@ -225,7 +225,8 @@ class CharacterSheet extends HTMLElement {
 		for(const item of elem.children) {
 			list.push({
 				type: item.type,
-				name: item.equipmentId
+				equipmentId: item.eid,
+				name: item.name
 			});
 		}
 		return list;
@@ -376,7 +377,9 @@ window.customElements.define('personality-field',PersonalityField);
 class ProficiencyField extends LitElement {
 	static properties = {
 		type: { reflect: true},
-		equipmentId: {reflect: true}
+		equipmentId: {reflect: true},
+		name: {reflect: true},
+		eid: { reflect: true}
 	};
 	
 	deleteButtonHandler;
@@ -389,11 +392,25 @@ class ProficiencyField extends LitElement {
 	
 	onChange() {
 		this.type = this.typeRef.value.value;
-		this.equipmentId = this.eqidRef.value.value;
+		const v = this.eqidRef.value.value;
+		const x = v.split(':');
+//		this.equipmentId = x[1];
+		this.name = x[0];
+		this.eid = x[1];
 	}
 	
 	setNamesByType(t) {
-		window.gebApp.controller.getProficienciesByType(t, (profs) => { this.eqidRef.value.setSelections(profs)});
+		window.gebApp.controller.getProficienciesByType(t, (profs) => { 
+			const nprofs = [];
+			for(var i = 0; i < profs.length; i++) {
+				const p = {
+					id: profs[i].name + ':' + profs[i].id,
+					name: profs[i].name
+				};
+				nprofs.push(p);
+			}
+			this.eqidRef.value.setSelections(nprofs)
+		});
 	}
 	
 	onTypeChange() {
@@ -407,12 +424,16 @@ class ProficiencyField extends LitElement {
 	
 	firstUpdated() {
 		var types = [
-			{id: 'other', name: 'other'},
 			{id: 'tool', name: 'tool'},
 			{id: 'weapon', name: 'weapon'},
 			{id: 'implement', name: 'implement'}
 		];
 		this.typeRef.value.setSelections(types);
+		if(this.type !== undefined) {
+			this.setNamesByType(this.type);
+			this.eqidRef.value.value = this.name + ":" + this.equipmentId;
+			this.eid = this.equipmentId;
+		}
 	}
 	
 	render() {
@@ -886,8 +907,41 @@ class CharacterController {
         sheet.setCharacterData('charactermaxpower',character.derivedData.maxPower);
         this.setPersonality(sheet,character.personality);
         this.setBackground(sheet,character.background);
+        this.setProficiencies(sheet,character.characterData.proficiencies);
     }
 
+	setProficiencies(sheet,proficiencies) {
+		const toolProfs = proficiencies['tools'];
+		const weaponProfs = proficiencies['weapons'];
+		const implementProfs = proficiencies['implements'];
+		const pis = [];
+		toolProfs.forEach((toolProf) => { 
+					const newItem = document.createElement('proficiency-field');
+					newItem.setAttribute('type','tool');
+					newItem.setAttribute('equipmentId',typeof toolProf.id === 'string' ? toolProf.id : toolProf.id.id);
+					newItem.setAttribute('name',toolProf.name);
+					pis.push(newItem);
+				} 
+			);
+		weaponProfs.forEach((weaponProf) => { 
+					const newItem = document.createElement('proficiency-field');
+					newItem.setAttribute('type','weapon');
+					newItem.setAttribute('equipmentId',typeof weaponProf.id === 'string' ? weaponProf.id : weaponProf.id.id);
+					newItem.setAttribute('name',weaponProf.name);
+					pis.push(newItem);
+				} 
+			);
+		implementProfs.forEach((implementProf) => { 
+					const newItem = document.createElement('proficiency-field');
+					newItem.setAttribute('type','implement');
+					newItem.setAttribute('equipmentId',typeof implementProf.id === 'string' ? implementProf.id : implementProf.id.id);
+					newItem.setAttribute('name',implementProf.name);
+					pis.push(newItem);
+				} 
+			);
+		sheet.setCharacterListItems('characterproficiencies',pis);
+	}
+	
 	setPersonality(sheet,personality) {
 		const items = [];
 		const keys = Object.keys(personality);
@@ -977,12 +1031,13 @@ class CharacterController {
 			cbg[item.type] = bg;
 		});
 		character.background = cbg;
-		const cprofs = { 'tool': [], 'weapon': [], 'implement': [], 'other': []};
+		const cprofs = character.characterData.proficiencies;
+		cprofs.tools = []; cprofs.weapons = []; cprofs.implements = [];
 		const cplist = sheet.getProficiencyList();
-		for(var i = 0; i > cplist.length; i++) {
-			cprofs[cplist[i].type].push(cplist[i].id);
+		for(var i = 0; i < cplist.length; i++) {
+			const p = {id: cplist[i].equipmentId, name: cplist[i].name};
+			cprofs[cplist[i].type+'s'].push(p);
 		};
-		
     }
     
     calculate(character) {

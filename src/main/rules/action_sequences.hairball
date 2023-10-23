@@ -1,26 +1,40 @@
 /CHAPTER" Action Sequences "/
 
-Action sequence is a mode of play in which the characters engage in some highly risky kind of physical action. The characters will be attempting to negotiate various dangers and carry out tasks, usually as quickly as they are capable of. Most action sequences are combat, and many of the rules found here will deal with combat specifically, but the same general framework can be used even when no actual fighting is taking place, or when the action is a mixture of fighting and other elements.
+Action sequence is a mode of play in which the characters engage in some highly risky kind of physical action. The characters will be attempting to negotiate various dangers and carry out 
+tasks, usually as quickly as they are capable of. Most action sequences are combat, and many of the rules found here will deal with combat specifically, but the same general framework can 
+be used even when no actual fighting is taking place, or when the action is a mixture of fighting and other elements.
 
-Characters will encounter and battle strange monsters and evil villains, probably on a regular basis. These rules are designed to allow for both quick resolution of combat challenges and fun tactical game play while remaining as simple and providing as many role-playing opportunities as possible. They are not designed to be particularly faithful to real life, but instead should evoke the battles of myth and legend.
+Heroes will encounter and battle strange monsters and evil villains, probably on a regular basis. These rules are designed to allow for both quick resolution of combat challenges and fun 
+tactical game play while remaining as simple and providing as many role-playing opportunities as possible. They are not designed to be particularly faithful to real life, but instead should 
+evoke the battles of myth and legend.
 /SECTION" Turns and Rounds"/
 
-Action sequences progress using turns. In each turn a given character will take most of his actions. Once the character's turn is over the next character (see initiative) will take her turn. A 'round' is said to have gone by when a given character's turn comes up again (IE play has come round to the first player again). There is no specific start or end of a round, it is just a measure of time which lasts from the start of a character's turn to the start of that character's next turn. Any time a character can take an action or gain some benefit “once per round” said resource can be used once and not again until after the start of the character's next turn. 
+Action sequences progress using turns. In each turn a given character will take most of his actions. Once the character's turn is over the next character (see initiative) will take her turn. 
+A 'round' is said to have gone by when a given character's turn comes up again (IE play has come round to the first player again). There is no specific start or end of a round, it is just a 
+measure of time which lasts from the start of a character's turn to the start of that character's next turn. Any time a character can take an action or gain some benefit “once per round” said 
+resource can be used once and not again until after the start of the character's next turn. 
 SECTION/
 /SECTION" Grids"/
 
-HoML places the action on a grid, which is a map of the location where the action is taking place, which is divided into 2 meter squares by a regular grid. Just as time is divided into turns and rounds, the grid divides up the space where the action is happening into squares and each thing within the location occupies some space within this grid.
+HoML places the action on a grid, which is a map of the location where the action is taking place, which is divided into 2 meter squares by a regular grid. Just as time is divided into turns 
+and rounds, the grid divides up the space where the action is happening into squares and each thing within the location occupies some space within this grid.
 
-At higher tiers grids can be scaled, breaking the action out into a larger and more epic scale. Optionally the participants in an action sequence at legendary tier may scale the grid up to 10 meter squares. Since many interior features will occupy a fraction of a square this large the GM should typically just assign each room or corridor to a single square, unless it is a very large area. Outdoor areas will be more amenable to the heroic tier procedure, noting that, at this scale, quite a few terrain features will either become trivial or simply occupy the borders between squares. Mythic level action can be set on an even larger scale, 30 meters per square. 
+At higher tiers grids can be scaled, breaking the action out into a larger and more epic scale. Optionally the participants in an action sequence at legendary tier may scale the grid up to 
+10 meter squares. Since many interior features will occupy a fraction of a square this large the GM should typically just assign each room or corridor to a single square, unless it is a very 
+large area. Outdoor areas will be more amenable to the grid scaling procedure, noting that, at higher tier scales, quite a few terrain features will either become trivial or simply occupy 
+the borders between squares. Mythic level action can be set on an even larger scale, 30 meters per square. 
 
-The effects of scaling are described in the detailed rules on space and grids in a later section. The key question at the start of an action sequence is simply which scale is being used, and then during setup the map can be laid out, and creatures, objects, and terrain placed on it appropriately.
+The effects of scaling are described in the detailed rules on space and grids in a later section. The key question at the start of an action sequence is simply which scale is being used, 
+and then during setup the map can be laid out, and creatures, objects, and terrain placed on it appropriately.
 SECTION/
 /SECTION" Procedure"/
 
 When the GM determines that an action sequence has arisen he or she will carry out the following procedure:
 /OL
-    /LI /LABEL Surprise Determination LABEL/ The GM will determine if any of the participating creatures are surprised (see the next section). This will effect the course of the battle in various ways. LI/
-    /LI /LABEL Setup LABEL/ The characters locations and initial status are determined and any playing aids which are being used are set up. LI/
+    /LI /LABEL Surprise Determination LABEL/ The GM will determine if any of the participating creatures are surprised (see the next section). This will effect the course of the battle in 
+    various ways. LI/
+    /LI /LABEL Setup LABEL/ The characters locations and initial status are determined and any playing aids which are being used are set up. The scale of the grid is determined and the 
+    locations of objects on the grid is established. LI/
     /LI /LABEL Initiative LABEL/ The players will make an initiative roll for each creature in the combat. The GM may choose to group some NPCs and monsters together for this purpose instead of rolling for each one separately in order to speed up combat. See the Initiative section below for details about initiative checks. LI/
     /LI /LABEL Turns LABEL/ Each player describes and resolves the actions for his or her characters in order of initiative as described below. Any effects are resolved as they occur. During each turn a character will go through the Start of Turn phase, the Action Phase, and the End of Turn Phase. LI/
     /LI Turns are repeated until the GM determines that the combat has ended, either because one side has been defeated, one or both sides have disengaged, or both sides agree to stop fighting. Action sequences might also end for other reasons, at the GM’s discretion. LI/
@@ -60,7 +74,7 @@ Note that action sequences are /EM action; EM/ long drawn out activities are gen
 /TR /TH Name /TH/ Action Type /TH/ Description TH/ TR/
 /TR /TD Talk /TD/ Free /TD/ The character may say something, shout a warning, etc. The speech should be no more than a few seconds in duration. TD/ TR/
 /TR /TD Drop /TD/ Free /TD/ The character may drop an item which is in his or her hand(s). The item will normally remain where dropped until retrieved. TD/ TR/
-/TR /TD Pick Up /TD/ Free /TD/ The character picks something up. If the object is bulky, heavy, or difficult to handle, then this should be assessed as a full move action instead. TD/ TR/
+/TR /TD Pick Up /TD/ Free /TD/ The character picks something up. If the object is bulky, heavy, or difficult to handle, then this should be assessed as a move action instead. TD/ TR/
 /TR /TD Open /TD/ Move /TD/ The character opens a door or other similar item which is closed, but not locked. TD/ TR/
 /TR /TD Use /TD/ Major /TD/ The character uses some item. This would include using a key to unlock and open a door, drinking a potion, using an item, etc. Some items may use other action types to trigger feats. TD/ TR/
 /TR /TD Remove /TD/ Major /TD/ The character can shed some piece of equipment which is attached to him such as a shield, backpack, helm, gloves, boots, etc. This is something beyond simply dropping an item. TD/ TR/
@@ -430,19 +444,37 @@ In some cases the area of effect, or other attributes of the attack, may be modi
 TOPIC/
 /TOPIC" Damage"/
 
-When an attack hits, the target will usually suffer damage. This damage is subtracted from the target's hit points. If their hit points are brought below half, they will immediately acquire the bloodied condition. If their hit points are brought below 1 then they will acquire the dying condition. There may be a few exceptions for monsters which have unusual abilities.
+When an attack hits, the target will usually suffer damage. This damage is subtracted from the target's hit points. If their hit points are brought below half, they will immediately acquire 
+the bloodied condition. If their hit points are brought below 1 then they will acquire the dying condition. There may be a few exceptions for monsters which have unusual abilities.
 
-Some characters have either vulnerability or resistance. This will always indicate some damage types which it is effective for. If a target takes damage from a feat with this tag, then this attribute will modify the damage. If a character is damaged by a source with a tag to which it is vulnerable, the damage is doubled. If the character has resistance, the damage is halved, rounded down, but never less than one point.
+The amount of damage a hero's attacks do is determined as follows: Each hero has a number of damage dice. The type of die depends on the hero's calling. At level 1 a hero will have one of these
+dice, and at higher levels they will gain additional damage dice (DD). When an attack is successful it will usually do some damage to the target(s). The amount of damage will usually depend on
+the degree of success, and is specified in the feat description for the attack. This will be expressed as a damage expression of the form <N>DD +M +ABILITYBONUS where M and N are numeric values.
+<N> is an additional number of damage dice, thus if a hero has a damage die of d6 and is 7th level, thus having 2 damage dice, then a 2DD result would mean roll your 2d6 for your calling/level
+and an additional 2d6, 4d6 total. A static number, +3 for instance, means add 3 more points of damage, a +ABILITYBONUS literally means add the bonus for the ability which the weapon or implement
+uses. Some attacks might also specify a specific ability bonus to use, such as +STR. If the expression includes +implement or +weapon then also add the damage value of the weapon or implement
+itself. So, for a level 1 knight (DD=6) with a +2 STR and wielding a 2 damage arming sword, 2DD+3+STR+weapon means 3d6+3+2+2 damage. Note that if an attack is an area attack of any kind then 
+roll the damage once for the first target hit and simply apply the same result to any other targets which are hit.
 
-Some characters have Damage Reduction, DR. This is usually a consequence of being armored. When a character has DR each instance of damage it takes from a different source will be reduced by the amount of the DR. Thus DR 4 would cut 8 damage to 4 damage. 
+Some characters have either vulnerability or resistance. This will always indicate some damage types which it is effective for. If a target takes damage from a feat with this tag, then this 
+attribute will modify the damage. If a character is damaged by a source with a tag to which it is vulnerable, the damage is doubled. If the character has resistance, the damage is halved, 
+rounded down, but never less than one point.
+
+Some characters have Damage Reduction, DR. This is usually a consequence of being armored. When a character has DR each instance of damage it takes from a different source will be reduced 
+by the amount of the DR. Thus DR 4 would cut 8 damage to 4 damage. 
 TOPIC/
 /TOPIC" Non-lethal Damage"/
 
-Some damage may be determined to be non-lethal. This covers cases where an attacker takes an action which isn't physically injurious to the target, but which reduces their morale and ability to fight. It might be a psychic attack, or even a well-aimed comment or observation aimed at breaking the enemy's will to fight. It could be a subdual hold, or a blow with a fist or weapon calculated more to mildly incapacitate than to kill.
+Some damage may be determined to be non-lethal. This covers cases where an attacker takes an action which isn't physically injurious to the target, but which reduces their morale and ability 
+to fight. It might be a psychic attack, or even a well-aimed comment or observation aimed at breaking the enemy's will to fight. It could be a subdual hold, or a blow with a fist or weapon 
+calculated more to mildly incapacitate than to kill.
 
-In game terms, when a player wishes, they can declare an attack to be non-lethal. If it is something inherently damaging, like fire, then the attack is assumed to be aimed just over the heads of the targets, or demonstrates the attacker's great skill by some feat of marksmanship, etc. Whenever a character reaches zero hit points due to non-lethal damage, the character acquires the /EM broken EM/ condition instead of the dying condition.
+In game terms, when a player wishes, they can declare an attack to be non-lethal. If it is something inherently damaging, like fire, then the attack is assumed to be aimed just over the 
+heads of the targets, or demonstrates the attacker's great skill by some feat of marksmanship, etc. Whenever a character reaches zero hit points due to non-lethal damage, the character 
+acquires the /EM broken EM/ condition instead of the dying condition.
 
-Mechanically the character is still defeated, but they remain conscious and responsive, or at the GM's option unconscious but not dying. Note that any effects which take place when a character reaches the dying state don't take place, but any which are triggered by reaching zero hit points will.
+Mechanically the character is still defeated, but they remain conscious and responsive, or at the GM's option unconscious but not dying. Note that any effects which take place when a 
+character reaches the dying state don't take place, but any which are triggered by reaching zero hit points will.
 TOPIC/
 /TOPIC" Effects"/
 

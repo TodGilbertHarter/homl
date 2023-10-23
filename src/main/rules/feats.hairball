@@ -1,8 +1,15 @@
 /CHAPTER" Feats"/
 
-Feats represent the special actions which characters can take by virtue of their great power. Any ordinary person can pick up a sword and take a swing with it. Only a mighty hero can chop through the necks of three opponents with one blow! Characters acquire access to feats when they gain boons. Many boons provide access to a feat as a benefit of possessing the boon. If a character has access to a feat, then the character can employ that feat as an action according to the rules found here.
+Feats represent the special actions which characters can take by virtue of their great power. Any ordinary person can pick up a sword and take a swing with it. Only a mighty hero can chop 
+through the necks of three opponents with one blow! Characters acquire access to feats when they gain boons. Many boons provide access to a feat as a benefit of possessing the boon. If a 
+character has access to a feat, then the character can employ that feat as an action according to the rules found here.
 
-There are a few basic feats which any character can use. These are simply actions which are best described using the feat format, such as basic weapon use, but which any person would be able to accomplish. A number of these are listed in the section /REF Action Descriptions REF/ of the /REF Action Sequences REF/ chapter.
+One of the basic use conditions related to feats is level. A hero must be at least equal in level to the level of the feat in order to employ it. A level 1 hero cannot employ a level 4 feat. 
+This doesn't necessarily prevent a hero from acquiring such a feat, but they simply are not yet capable of using it. The GM might allow this rule to be broken, for example by requiring the
+player to expend the hero's fate in a particularly dramatic situation in order to invoke power greater than they would normally possess. 
+
+There are a few basic feats which any character can use. These are simply actions which are best described using the feat format, such as basic weapon use, but which any person would be able 
+to accomplish. A number of these are listed in the section /REF Action Descriptions REF/ of the /REF Action Sequences REF/ chapter.
 /SECTION" Reading a Feat"/
 /LEFT=" half"/
 /FEAT /ID" cf1adec4-77a8-11ec-8153-74d02b9c2012"/ /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Fireball FEATNAME/
@@ -88,7 +95,7 @@ Action types are discussed in greater detail under the action sequence rules. Ev
 feat block. The action types are Major, Move, Free, and Opportunity. Sometimes a feat is designated as 'no action', meaning it is something which happens without anyone acting 
 at all. The special designation 'Rider' may also appear, which indicates the feat is a rider. Riders don't use an action but piggyback on another action.
 
-Actions are mostly important during /REF Action Sequences REF/ . During challenges actions don't generally matter, a feat can be utilized whenever a characters acts in these
+Actions are mostly important during /REF Action Sequences REF/ . During challenges actions don't generally matter, a feat can be utilized whenever a hero acts in these
 situations.
 SUBSECTION/
 SECTION/
@@ -124,7 +131,9 @@ the weapon tag.
 SECTION/
 /SECTION" Practices"/
 
-Practices are a special category of feats which are not normally used directly by heroes as actions, but which instead require some time and possibly materials in order to carry out. In terms of reading a practice, they have the same components as other feats; however they will generally not specify an action type, and will have the practice tag, or the ritual tag. Rituals are simply a thematic subcategory of practices which rely on magic specifically, whereas other practices might be explained as non-magical activities in some cases.
+Practices are a special category of feats which are not normally used directly by heroes as actions, but which instead require some time and possibly materials in order to carry out. In terms 
+of reading a practice, they have the same components as other feats; however they will generally not specify an action type, and will have the practice tag, or the ritual tag. Rituals are 
+simply a thematic subcategory of practices which rely on magic specifically, whereas other practices might be explained as non-magical activities in some cases.
 /SUBSECTION" Practices in Action "/
 
 Practices are not normally useful during action sequences, because they take significant time to employ; however they may be used quite effectively during challenges. The GM 
@@ -135,20 +144,32 @@ Once the players have declared the intent to use a practice, and the GM has deci
 needed to carry it out. Whichever character(s) are using the practice may also pay the supplementary cost to produce an automatic success, if one is specified.
 /TOPIC" Practices as Modifiers"/
 
-One of the major uses of practices is to alter the fictional situation, allowing a different approach to be taken, and thus altering the aspect of a check; this is discussed in the appropriate section /REF Checks and Actions REF/ . Thus when a practice is used in order to support a check, or as a move in a challenge, it can alter the aspect, or if it doesn't change the aspect it can grant advantage on the check; see the example /REF Putting it Together REF/ .
+One of the major uses of practices is to alter the fictional situation, allowing a different approach to be taken, and thus altering the aspect of a check; this is discussed in the appropriate 
+section /REF Checks and Actions REF/ . Thus when a practice is used in order to support a check, or as a move in a challenge, it can alter the aspect, or if it doesn't change the aspect it 
+can grant advantage on the check; see the example /REF Putting it Together REF/ .
 TOPIC/
 SUBSECTION/
 /SUBSECTION" Rituals "/
 
-Rituals are a type of practice which involves the invocation of powerful magical forces. Carrying out a ritual requires the expenditure of ritual components (see below). In game terms there is no real difference between a ritual and any other practice, ritual is effectively just another tag; the difference is purely thematic in nature; it indicates that instead of some more natural process like writing a document or donning camouflage, that the ritual caster is engaging in mystic rites of some sort, invoking higher powers, or something similar.
+Rituals are a type of practice which involves the invocation of powerful magical forces. Carrying out a ritual requires the expenditure of ritual components (see below). In game terms there 
+is no real difference between a ritual and any other practice, ritual is effectively just another tag; the difference is purely thematic in nature; it indicates that instead of some more 
+natural process like writing a document or donning camouflage, that the ritual caster is engaging in mystic rites of some sort, invoking higher powers, or something similar.
 /TOPIC" Consumables "/
 
-Rituals may be imbued into consumables. This is a process in which the ritual is carried out, and any costs paid, at an earlier time. The ritual's energy is then focused in a consumable form and contained, so that it can be freed almost instantly later on. Many rituals will specify a consumable form in which they can be imbued. When a ritual specifies a power point cost, the power points spent may not be recovered until the consumable is utilized. This means that consumables are likely to be fairly rare, though a ritual with no power point cost may be used to create consumables rather more often. If paying a supplementary cost is desired, this must be dealt with by the user of the consumable, not the creator.
+Rituals may be imbued into consumables. This is a process in which the ritual is carried out, and any costs paid, at an earlier time. The ritual's energy is then focused in a consumable 
+form and contained, so that it can be freed almost instantly later on. Many rituals will specify a consumable form in which they can be imbued. When a ritual specifies a power point cost, 
+the power points spent may not be recovered until the consumable is utilized. This means that consumables are likely to be fairly rare, though a ritual with no power point cost may be used 
+to create consumables rather more often. If paying a supplementary cost is desired, this must be dealt with by the user of the consumable, not the creator.
+
+It may also be possible to imbue non-ritual feats into consumables as well. This will require the addition of some amount of components, as well as the material to be imbued (IE some sort of
+liquid, etc.). The process should be identical to above, but the creator is obliged to spend a power point to enhance the effect, and that point will only be regained when the consumable is
+used up.
 TOPIC/
 SUBSECTION/
 /SUBSECTION" Reading a Practice "/
 
-In general practices read like other feats. However, they often have elements which are not present in other feats. Practices will list the action type 'Practice' instead of a normal action type. otherwise the following elements may be present:
+In general practices read like other feats. However, they often have elements which are not present in other feats. Practices will list the action type 'Practice' instead of a normal action 
+type. otherwise the following elements may be present:
 /TOPIC" Requirements "/
 This section may be more extensive than in the case of other feats. It will list any conditions which are required in order to perform the practice.
 TOPIC/
@@ -158,17 +179,25 @@ major expense worth of elemental components to complete. These must be available
 of the practice.
 TOPIC/
 /TOPIC" Costs "/
-This lists the supplementary costs, if any, which guarantee success with the practice. Not all practices have this option, but many do. Often these are power point costs, but they could be anything. When this cost is paid the practice succeeds without a check, representing a highly skilled practitioner expending extra care and resources to insure success. A highly skilled forger can surely forge a passable gate pass every time, but it might not be one which can withstand magical scrutiny, which requires a higher level of success.
+This lists the supplementary costs, if any, which guarantee success with the practice. Not all practices have this option, but many do. Often these are power point costs, but they could be 
+anything. When this cost is paid the practice succeeds without a check, representing a highly skilled practitioner expending extra care and resources to insure success. A highly skilled 
+forger can surely forge a passable gate pass every time, but it might not be one which can withstand magical scrutiny, which requires a higher level of success.
 TOPIC/
 /TOPIC" Time"/
-Practices often require a good bit of time. This will be indicated under requirements. If nothing is mentioned then it can be assumed that the practice requires roughly the time needed for a rest, and can be performed during such, or as a short scene or element of a scene. Practices which take longer may happen during an interlude or a challenge as appropriate, and will be noted as such. In a few cases a practice might take many days, weeks, or months, to complete; in that case it is simply a matter of appropriate fiction as to whether or not the heroes can complete it within their desired time frame.
+Practices often require a good bit of time. This will be indicated under requirements. If nothing is mentioned then it can be assumed that the practice requires roughly the time needed for 
+a rest, and can be performed during such, or as a short scene or element of a scene. Practices which take longer may happen during an interlude or a challenge as appropriate, and will be noted 
+as such. In a few cases a practice might take many days, weeks, or months, to complete; in that case it is simply a matter of appropriate fiction as to whether or not the heroes can complete 
+it within their desired time frame.
 TOPIC/
 SUBSECTION/
 /SUBSECTION" Components"/
 
-Almost every ritual, and many other practices, have components. Components can be complex, but they fall generally into two categories. One group are ingredients used in the accomplishing of the practice. Such things as paper and ink used to forge a document, or a mirror used for scrying. These things may or may not be used up, the practice description will state whether or not they are. 
+Almost every ritual, and many other practices, have components. Components can be complex, but they fall generally into two categories. One group are ingredients used in the accomplishing 
+of the practice. Such things as paper and ink used to forge a document, or a mirror used for scrying. These things may or may not be used up, the practice description will state whether or 
+not they are. 
 
-Another group are ritual components. These are magical ingredients required for the functioning of rituals. For convenience these are divided into types based on the power source of the ritual:
+Another group are ritual components. These are magical ingredients required for the functioning of rituals. For convenience these are divided into types based on the power source of the 
+ritual:
 
 /LEFT=" half"/
 /TABLE=" bodytable"/
@@ -181,9 +210,13 @@ Another group are ritual components. These are magical ingredients required for 
 TABLE/
 LEFT/
 
-The ritual will specify the level of expenditure in components, insignificant, significant, or major. The player can make a wealth check to determine if the character's supply is exhausted after the ritual is cast, and if so they will not have sufficient resources for more rituals of that type and expenditure level. Components can be gathered or purchased in many places. If purchased the player should check her character's wealth! Gathering could be a fairly trivial task, or an entire quest, depending on expenditure level.
+The ritual will specify the level of expenditure in components, insignificant, significant, or major. The player can make a wealth check to determine if the character's supply is exhausted 
+after the ritual is cast, and if so they will not have sufficient resources for more rituals of that type and expenditure level. Components can be gathered or purchased in many places. If 
+purchased the player should check her character's wealth! Gathering could be a fairly trivial task, or an entire quest, depending on expenditure level.
 
-When higher level PCs cast lower level rituals, they can pay lower level component costs for lower level results. That may be sufficient for their needs at the moment, but if they need to get results commensurate with their level, they will pay the full cost. Thus a mythic character might cast a simple ritual with the effectiveness achievable at heroic tier. The cost will then be insignificant, even if it was a major expense for heroic PCs; in that case the effectiveness would be equivalent to being cast by a heroic caster as well, which is sufficient in many cases.
+When higher level PCs cast lower level rituals, they can pay lower level component costs for lower level results. That may be sufficient for their needs at the moment, but if they need to get 
+results commensurate with their level, they will pay the full cost. Thus a mythic character might cast a simple ritual with the effectiveness achievable at heroic tier. The cost will then be 
+insignificant, even if it was a major expense for heroic PCs; in that case the effectiveness would be equivalent to being cast by a heroic caster as well, which is sufficient in many cases.
 SUBSECTION/
 SECTION/
 /SECTION" Power "/
@@ -193,20 +226,24 @@ Using feats sometimes requires power. There are a couple of situations.
 /SUBSECTION" Enhancement"/
 
 One situation is enhancement. This is when a player decides his character wants to create an amplified effect. When the character uses the feat, before the player rolls a 
-check, he expends a power point. The result of the check is moved up one grade, a failure becomes a success, a success 
-because a complete success, and a complete success becomes an enhanced success. Some feats may not have enhanced success, in which case the result remains a complete success.
+check, he expends a power point of the feat's power source. The result of the check is moved up one grade, a failure becomes a success, a success 
+becomes a complete success, and a complete success becomes an enhanced success. Some feats may not have enhanced success, in which case the result remains a complete success.
 Note that enhancement is not an option for practices.
 /TOPIC" Attunement"/
 
-As noted elsewhere, a character must be attuned to a power source in order to use enhancement with feats of that source. Every PC has an attunement to the source of their calling. Beyond this they might attain attunement to other sources as a major boon; these are described in the /REF Callings REF/ chapter.
+As noted elsewhere, a character must be attuned to a power source in order to use enhancement with feats of that source. Every PC has an attunement to the source of their calling. Beyond 
+this they might attain attunement to other sources as a major boon; these are described in the /REF Callings REF/ chapter. Some items or other circumstances might also grant a hero access to
+power of a given source. Every point of power may be said to have a source, one of the five known sources, or possibly some other more esoteric source, see /REF Power Sources REF/ for additional
+information on the possibilities.
 TOPIC/
 SUBSECTION/
 /SUBSECTION" Supplementary Cost"/
 
-The other situation is when the feat is a practice and it has a supplementary cost which includes one or more power points. In this case the check is simply assumed to be a success, not a failure, nor a complete or enhanced success, but simply a success. This represents the expertise of the character with this practice, that they are strong enough to always succeed if they dig into their reserves, etc.
+The other situation is when the feat is a practice and it has a supplementary cost which includes one or more power points. In this case the check is simply assumed to be a success, not a 
+failure, nor a complete or enhanced success, but simply a success. This represents the expertise of the character with this practice, that they are strong enough to always succeed if they 
+dig into their reserves, etc.
 /TOPIC" Attunement"/
 
-A character can only pay a supplementary cost which includes power points if the character is attuned to the source of the practice in question.
 TOPIC/
 SUBSECTION/
 SECTION/

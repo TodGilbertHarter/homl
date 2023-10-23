@@ -31,6 +31,7 @@ class DialogWidget extends LitElement {
 				left: 500px; /* make this 50% at some point */
 				top: 200px; /* make this 50% at some point */
 				min-width: 200px;
+				max-width: 800px;
 				min-height: 200px;
 				border: 1px solid black;
 				border-radius: 5px;
@@ -50,15 +51,15 @@ class DialogWidget extends LitElement {
 				padding-top: 5px;
 			}
 			div.contents {
-				height: 170px;
+				min-height: 170px;
 				padding: 5px;
 			}
 		</style>
 		<div class='dialog' part='container' id='container'>
-			<div class='contents' ${ref(this.contentRef)}>
+			<div class='contents'>
 				<slot name='content'>Empty Dialog</slot>
 			</div>
-			<div class='buttonbar' part='buttonbar' id='buttonbar' ${ref(this.buttonRef)}>
+			<div class='buttonbar' part='buttonbar' id='buttonbar'>
 				<slot name='buttonbar'><button id='dismiss' style='float: right;' @click=${this.dismissClickHandler}>dismiss</button></slot>
 			</div>
 		</div>`;
@@ -81,6 +82,13 @@ class DialogWidget extends LitElement {
 		}
 	}
 	
+	_depopulate() {
+		const bb = this.buttons;
+		for(var i = 0;i < bb.length; i++) {
+			bb[i].onclick = null;
+		}
+	}
+	
 	_populate() {
 		const bb = this.buttons;
 		for(var i = 0;i < bb.length; i++) {
@@ -96,6 +104,7 @@ class DialogWidget extends LitElement {
 	}
 	
 	dismiss() {
+		this._depopulate();
 		this.parentElement.removeChild(this);
 	}
 

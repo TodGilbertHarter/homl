@@ -21,6 +21,7 @@ import { schema, getReference, getDb } from './schema.js';
 const characterConverter = {
 	toFirestore(character) {
 		const c = {};
+		const cd = character.characterData;
 		c.id = character.id;
 		for(const [key, value] of Object.entries(character.characterData)) {
 			if(key === "background") {
@@ -36,28 +37,45 @@ const characterConverter = {
 				};
 			} else if(key === "species") {
 				if(character.characterData.species.species !== undefined && character.characterData.species.species !== null) {
-					const db = window.gebApp.firestore;
-					const docRef = doc(db,"species",character.characterData.species.species.id);
+					const docRef = getReference(schema.species,character.characterData.species.species.id);
 					c[key] = { name: character.characterData.species.species.name, speciesref: docRef};
 				} else {
 					throw new Error("bad species when trying to save character");
 				}
 			} else if(key === "origin") {
 				if(character.characterData.origin.origin !== undefined && character.characterData.origin.origin !== null) {
-					const db = window.gebApp.firestore;
-					const docRef = doc(db,"origin",character.characterData.origin.origin.id);
+					const docRef = getReference(schema.origins,character.characterData.origin.origin.id);
 					c[key] = { name: character.characterData.origin.origin.name, originref: docRef};
 				} else {
 					throw new Error("bad origin when trying to save character");
 				}
 			} else if(key === "calling") {
 				if(character.characterData.calling.calling !== undefined && character.characterData.calling.calling !== null) {
-					const db = window.gebApp.firestore;
-					const docRef = doc(db,"calling",character.characterData.calling.calling.id);
+					const docRef = getReference(schema.callings,character.characterData.calling.calling.id);
 					c[key] = { name: character.characterData.calling.calling.name, callingref: docRef};
 				} else {
 					throw new Error("bad calling when trying to save character");
 				}
+			} else if(key === "proficiencies") {
+				c[key] = {tools: [], implements: [], weapons: []};
+				const profs = cd[key];
+				c[key]['knacks'] = profs['knacks'];
+				const fixProfLink = (id) => { return getReference(schema.equipment,id); };
+				for(var i = 0; i < profs['weapons'].length; i++) {
+					const p = profs['weapons'][i];
+					const link = fixProfLink(p.id);
+					c[key]['weapons'][i] = { id: link, name: p.name};
+				}
+				for(var i = 0; i < profs['tools'].length; i++) {
+					const p = profs['tools'][i];
+					const link = fixProfLink(p.id);
+					c[key]['tools'][i] = { id: link, name: p.name};
+				}
+				for(var i = 0; i < profs['implements'].length; i++) {
+					const p = profs['implements'][i];
+					const link = fixProfLink(p.id);
+					c[key]['implements'][i] = { id: link, name: p.name};
+				}				
 			} else {
 				c[key] = value;
 			}

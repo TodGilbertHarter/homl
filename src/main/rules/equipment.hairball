@@ -825,6 +825,14 @@ exist, and these given may not be sufficient for large or complex tasks.
 /TR /TH Toolkit /TH/ Ability /TH/ Cost /TH/ Load /TH/ Description TH/ TR/
 /TOOL /ID" 8c740b74-6aca-11ee-9f74-c87f5455cfcc"/ /TOOLNAME Carpenter's Tools TOOLNAME/ /TOOLABILITY WIS TOOLABILITY/ /TOOLCOST 20sp TOOLCOST/ /TOOLLOAD 10 TOOLLOAD/ 
 /TOOLDESCRIPTION A simple set of carpenter's tools in a small box. TOOLDESCRIPTION/ TOOL/
+/TOOL /ID" 903d8264-6c9e-11ee-b728-c87f5455cfcc"/ /TOOLNAME Alchemist's Tools TOOLNAME/ /TOOLABILITY INT TOOLABILITY/ /TOOLCOST 50gp TOOLCOST/ /TOOLLOAD 30 TOOLLOAD/ 
+/TOOLDESCRIPTION A mobile alchemical lab. This provides the minimum necessary equipment needed to make alchemical items. TOOLDESCRIPTION/ TOOL/
+/TOOL /ID" a3e5c86a-6f57-11ee-aae5-c87f5455cfcc"/ /TOOLNAME Climbing Tools TOOLNAME/ /TOOLABILITY DEX TOOLABILITY/ /TOOLCOST 1gp TOOLCOST/ /TOOLLOAD 10 TOOLLOAD/ 
+/TOOLDESCRIPTION Technical climbing gear including anchors, rope, cleats, etc. TOOLDESCRIPTION/ TOOL/
+/TOOL /ID" 02e31646-703a-11ee-903f-c87f5455cfcc"/ /TOOLNAME Surveying Tools TOOLNAME/ /TOOLABILITY INT TOOLABILITY/ /TOOLCOST 10gp TOOLCOST/ /TOOLLOAD 10 TOOLLOAD/ 
+/TOOLDESCRIPTION A set of surveying tools including a measuring chain, groma, stakes, etc. This should be sufficient to lay out the boundaries of property or measure the shape and extent
+/TOOL /ID" 5ca1f19e-7052-11ee-9144-c87f5455cfcc"/ /TOOLNAME Scribe's Tools TOOLNAME/ /TOOLABILITY DEX TOOLABILITY/ /TOOLCOST 1gp TOOLCOST/ /TOOLLOAD 2 TOOLLOAD/ 
+/TOOLDESCRIPTION Brushes, pens, inks, paper, etc. TOOLDESCRIPTION/ TOOL/
 TABLE/
 SUBSECTION/
 SECTION/

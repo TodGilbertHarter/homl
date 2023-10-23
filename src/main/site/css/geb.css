@@ -256,6 +256,37 @@ equipment-view::part(sectiontitle) {
     color: var(--document-fg);
 }
 
+.equipmentdetailrow {
+	width: 100%;
+	background-color: var(--theme-fg);
+	color: var(--theme-bg);
+}
+
+.equipmentdetailrow:nth-child(odd) {
+	background-color: var(--theme-bg-dark);
+}
+
+.equipmentdetaillabel {
+	width: 15%;
+	text-align: right;
+	display: inline-block;
+	padding-left: .25em;
+	padding-right: .25em;
+	font-style: italic;
+}
+
+.equipmentdetailvalue {
+	width: 75%;
+	padding-left: .25em;
+	padding-right: .25em;
+}
+
+.equipmentdetailtitle {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0px;
+}
+
 horizontal-sash {
 	display: block;
 	overflow: auto;

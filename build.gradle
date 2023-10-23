@@ -394,7 +394,7 @@ task closureCompile(type: NpxTask) {
 	dependsOn 'npm_install'
 	dependsOn 'copyGEBSite'
 	command = 'google-closure-compiler'
-	args = ['--language_in', 'ES_NEXT', 
+	args = ['--module_resolution=NODE','--process_common_js_modules', '--language_in', 'ES_NEXT', 
 		'--js_module_root', 'node_modules',
 		'-O', 'SIMPLE', 
 		'--js', 'build/site/js/*.js', 
