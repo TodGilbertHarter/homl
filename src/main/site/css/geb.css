@@ -244,6 +244,18 @@ my-menu-item:hover {
     display: flex;
 }
 
+feat-viewer::part(sectiontitle) {
+    display: block;
+    font-weight: bold;
+    font-size: 2em;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 2%;
+    background-color: black;
+    color: var(--document-fg);
+}
+
 equipment-view::part(sectiontitle) {
     display: block;
     font-weight: bold;
@@ -286,6 +298,128 @@ equipment-view::part(sectiontitle) {
 	margin-bottom: 0;
 	padding: 0px;
 }
+
+.bold {
+    font-weight: bold;
+}
+
+.martial {
+    background-color: var(--martial-bg);
+    color: var(--martial-fg);
+}
+
+.elemental {
+    background-color: var(--elemental-bg);
+    color: var(--elemental-fg);
+}
+
+.life {
+    background-color: var(--life-bg);
+    color: var(--life-fg);
+}
+
+.shadow {
+    background-color: var(--shadow-bg);
+    color: var(--shadow-fg);
+}
+
+.spirit {
+    background-color: var(--spirit-bg);
+    color: var(--spirit-fg);
+}
+
+.time {
+	background-color: var(--time-bg);
+	color: var(--time-fg);
+}
+
+.fate {
+	background-color: var(--fate-bg);
+	color: var(--fate-fg);
+}
+
+.none {
+    background-color: lightgrey;
+    color: black;
+}
+
+.heroic {
+    color: var(--heroic-fg);
+    background-color: var(--heroic-bg);
+}
+
+.legendary {
+    color: var(--legendary-fg);
+    background-color: var(--legendary-bg);
+}
+
+.mythic {
+    color: var(--mythic-fg);
+    background-color: var(--mythic-bg);
+}
+
+.flavortext {
+    display: block !important;
+    width: 100%;
+    font-style: italic;
+    text-align: center;
+}
+
+section.feat {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: .5em;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+section.feat > .traits > :first-child {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    padding: .125em;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+section.feat > .traits > :not(:first-child) {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    background-color: inherit;
+    color: inherit;
+    padding: .125em;
+}
+
+section.feat > .traits > .widetrait {
+    width: 100%;
+    display: block;
+    background-color: inherit;
+    color: inherit;
+}
+
+section.feat > .traits > .widetrait > p {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+section.feat > .traits > .widetrait > span {
+	padding-right: .2em;
+}
+
+section.feat > .traits > .trait > div {
+    width: 50%;
+}
+
+section.feat > .traits > .trait > :not(:first-child) {
+    width: 50%;
+    text-align: right;
+}
+
 
 horizontal-sash {
 	display: block;

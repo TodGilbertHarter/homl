@@ -11,8 +11,12 @@ import { SpeciesRepository } from './speciesrepository.js';
 import { OriginRepository } from './originrepository.js';
 import { BackgroundRepository } from './backgroundrepository.js';
 import { EquipmentRepository } from './equipmentrepository.js';
+import { BoonRepository } from './boonrepository.js';
+import { FeatRepository } from './featrepository.js';
 
 class Application {
+	featRepo;
+	boonRepo;
 	equipmentRepo;
 	playerRepo;
 	gameRepo;
@@ -32,6 +36,8 @@ class Application {
 	constructor(firestore,fbProject,aDocument) {
 		this.firestore = firestore;
 		this.theDocument = aDocument;
+		this.featRepo = new FeatRepository(this,firestore);
+		this.boonRepo = new BoonRepository(this,firestore);
 		this.equipmentRepo = new EquipmentRepository(this,firestore);
 		this.callingRepo = new CallingRepository(this,firestore);
 		this.speciesRepo = new SpeciesRepository(this,firestore);
@@ -46,7 +52,7 @@ class Application {
 		this.view = new NotView(this,this.theDocument);
 		this.controller = new Controller(this,this.view,this.authenticator,
 			this.router,this.gameRepo,this.characterRepo,this.characterController,
-			this.callingRepo,this.speciesRepo,this.backgroundRepo,this.originRepo,this.equipmentRepo);
+			this.callingRepo,this.speciesRepo,this.backgroundRepo,this.originRepo,this.equipmentRepo,this.boonRepo,this.featRepo);
 	}
 }
 

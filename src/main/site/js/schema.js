@@ -24,8 +24,10 @@ import { doc } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore
 
 const schema = {
 	backgrounds: 'backgrounds',
+	boons: 'boons',
 	callings: 'callings',
 	characters: 'characters',
+	feats: 'feats',
 	games: 'games',
 	origins: 'origins',
 	players: 'players',

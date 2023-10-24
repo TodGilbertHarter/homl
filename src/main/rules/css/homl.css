@@ -583,27 +583,6 @@ ul.compact {
     margin-bottom: 0;
 }
 
-section.feat {
-    border: 1px solid black;
-    border-radius: 10px;
-    margin-bottom: .5em;
-    margin-left: .5em;
-    margin-right: .5em;
-}
-
-section.feat > .traits > :first-child {
-    box-sizing: border-box;
-    width: 100%;
-    display: flex;
-    padding: .125em;
-    border-bottom: 1px solid grey;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
 nav div.flexcell {
     border: 1px solid grey;
 }
@@ -644,6 +623,27 @@ table tr.topic > td {
     width: 100%;
     font-style: italic;
     text-align: center;
+}
+
+section.feat {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: .5em;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+section.feat > .traits > :first-child {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    padding: .125em;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 section.feat > .traits > :not(:first-child) {

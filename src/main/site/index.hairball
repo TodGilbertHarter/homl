@@ -42,6 +42,11 @@
 /MODULE" js/equipment.js"/
 /MODULE" js/equipmentrepository.js"/
 /MODULE" js/equipmentview.js"/
+/MODULE" js/feat.js"/
+/MODULE" js/boon.js"/
+/MODULE" js/featrepository.js"/
+/MODULE" js/boonrepository.js"/
+/MODULE" js/featview.js"/
 /SIGNINDIALOG SIGNINDIALOG/
 /SIGNUPDIALOG SIGNUPDIALOG/
 /SOURCE" embedded_charactersheet.html"/
@@ -71,6 +76,7 @@
 		</my-menu-item><my-menu-item class='dropdown' label='HoML'>
 			<my-menu class='vertical dropdown-menu' id='submenu5'>
 				<my-menu-item label='Equipment' onclick='window.gebApp.controller.displayEquipmentView();'></my-menu-item>
+				<my-menu-item label='Feats' onclick='window.gebApp.controller.displayFeatView();'></my-menu-item>
 			</my-menu>
 		</my-menu-item><my-menu-item class="dropdown right" label='Settings'>
 			<my-menu class='vertical dropdown-menu' id="submenu4">
