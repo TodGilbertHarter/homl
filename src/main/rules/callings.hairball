@@ -57,7 +57,7 @@ SUBSECTION/
 
 /RIGHT=" half"/
 /BOON /ID" 18ab0436-69f0-11ec-9330-74d02b9c2012"/ /BOONNAME Martial Attunement BOONNAME/
-/BOONTYPE Level 1: Major BOONTYPE/
+/BOONSOURCE Level BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
 /ASSOCIATION Martial ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
 /DESCRIPTION Through discipline and force of will you have tapped into the internal power of your being. DESCRIPTION/
@@ -85,7 +85,7 @@ SUBSECTION/
 
 /RIGHT=" half"/
 /BOON /ID" 2b49a084-69f0-11ec-ba61-74d02b9c2012"/ /BOONNAME Elemental Fusion BOONNAME/
-/BOONTYPE Level 1: Major BOONTYPE/
+/BOONSOURCE Level BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
 /ASSOCIATION Elemental ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
 /DESCRIPTION Your being has become fused with the raw power of creation, elemental power. Your body can now channel its power. DESCRIPTION/
@@ -113,7 +113,7 @@ SUBSECTION/
 /SUBSECTION" Life Callings"/
 /RIGHT=" half"/
 /BOON /ID" 427fa2ee-69f0-11ec-8aa3-74d02b9c2012"/ /BOONNAME Life Attunement BOONNAME/
-/BOONTYPE Level 1: Major BOONTYPE/
+/BOONSOURCE Level BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
 /ASSOCIATION Life ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
 /DESCRIPTION 
@@ -140,7 +140,7 @@ SUBSECTION/
 /SUBSECTION" Spirit Callings"/
 /RIGHT=" half"/
 /BOON /ID" 56a18c10-69f0-11ec-a6ae-74d02b9c2012"/ /BOONNAME Spiritual Attunement BOONNAME/
-/BOONTYPE Level 1: Major BOONTYPE/
+/BOONSOURCE Level BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
 /ASSOCIATION Spirit ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
 /DESCRIPTION You have become connected to the spirit world and its denizens. DESCRIPTION/
@@ -175,7 +175,7 @@ And finally, mastering shadow power is difficult. The paths which one must follo
 
 All characters with a shadow calling gain the following boon:
 /BOON /ID" 69f6b5ec-69f0-11ec-ae88-74d02b9c2012"/ /BOONNAME Shadow Attunement BOONNAME/
-/BOONTYPE Level 1: Major BOONTYPE/
+/BOONSOURCE Level BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
 /ASSOCIATION Shadow ASSOCIATION/
 /PREREQUISITES None PREREQUISITES/
 /DESCRIPTION You have walked the path of shadow, paid the price, and become attuned to shadow. DESCRIPTION/

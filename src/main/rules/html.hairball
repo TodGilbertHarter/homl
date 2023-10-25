@@ -247,6 +247,21 @@ for (i = 0; i < coll.length; i++) {
 /: HEROICORIGINFEATURES/ </section> :/
 /: HEROICORIGIN/ SECTION/ :/
  
+/* Subtopic and label won't show in TOC */
+/: /LABEL <span class='label'> :/
+/: LABEL/ : </span> /SPACE :/
+/: /SUBTOPIC" <div class="subtopic"> /LABEL /" /. LABEL/ :/
+/: SUBTOPIC/ DIV/ :/
+/: /TODO: <span class="todo">TODO: :/
+/: TODO/ </span> :/
+/: /KNACK" <span class="knack" /" /IDREF > /LABEL Knack LABEL/ /. :/
+/: KNACK/ </span> :/
+/: /KNACK <span class="knack" :/
+/: /KNACKNAME > /LABEL Knack LABEL/ <span class="knackname"> :/
+/: KNACKNAME/ </span> :/
+/: /KNACKABILITYMOD <span class="knackmod">, ability modifier /SPACE :/
+/: KNACKABILITYMOD/ </span> :/
+ 
 /* Boon related stuff */
 /: /BOON <section class="boon" :/ 
 /: /BOONNAME  > /TRAITS <div class="trait"><div> :/ /: BOONNAME/ DIV/ :/
@@ -398,21 +413,6 @@ for (i = 0; i < coll.length; i++) {
 /: /MONSTEREQUIP <div class="value"> /BOLD Equipment BOLD/ /SPACE :/
 /: MONSTEREQUIP/ DIV/ DIV/ :/
 /: MONSTER/ SECTION/ :/
-
-/* Subtopic and label won't show in TOC */
-/: /LABEL <span class='label'> :/
-/: LABEL/ : </span> /SPACE :/
-/: /SUBTOPIC" <div class="subtopic"> /LABEL /" /. LABEL/ :/
-/: SUBTOPIC/ DIV/ :/
-/: /TODO: <span class="todo">TODO: :/
-/: TODO/ </span> :/
-/: /KNACK" <span class="knack" /" /IDREF > /LABEL Knack LABEL/ /. :/
-/: KNACK/ </span> :/
-/: /KNACK <span class="knack" :/
-/: /KNACKNAME > /LABEL Knack LABEL/ <span class="knackname"> :/
-/: KNACKNAME/ </span> :/
-/: /KNACKABILITYMOD <span class="knackmod">, ability modifier /SPACE :/
-/: KNACKABILITYMOD/ </span> :/
 
 /* implements */
 /: /IMPLEMENT /LI <span class="implement" :/

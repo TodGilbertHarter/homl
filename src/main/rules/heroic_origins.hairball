@@ -46,7 +46,7 @@ any other interesting background traits.
 /FLEXROW
 /FLEXCELL
 /BOON /ID" c31a3e20-07d6-11ee-ab9d-c87f5455cfcc"/ /BOONNAME God Blooded BOONNAME/
-/BOONTYPE God Spawned Origin Feature BOONTYPE/
+/BOONSOURCE God Spawned Origin Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
 /ASSOCIATION God Spawned Origin ASSOCIATION/
 /PREREQUISITES God Spawned PREREQUISITES/
 /DESCRIPTION
@@ -101,7 +101,7 @@ What sort of dragon are you descended from? How did this union take place? When?
 /FLEXROW
 /FLEXCELL
 /BOON /ID" 7d3642e0-07ff-11ee-9d89-c87f5455cfcc"/ /BOONNAME Fire Dragon Blooded BOONNAME/
-/BOONTYPE Half Dragon Origin Feature BOONTYPE/
+/BOONSOURCE Half Dragon Origin Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
 /ASSOCIATION Half Dragon Origin ASSOCIATION/
 /PREREQUISITES Half Dragon Origin PREREQUISITES/
 /DESCRIPTION
@@ -131,7 +131,7 @@ BOON/
 FLEXCELL/
 /FLEXCELL
 /BOON /ID" b5ca510e-0823-11ee-992d-c87f5455cfcc"/ /BOONNAME Venom Dragon Blooded BOONNAME/
-/BOONTYPE Half Dragon Origin Feature BOONTYPE/
+/BOONSOURCE Half Dragon Origin Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
 /ASSOCIATION Half Dragon Origin ASSOCIATION/
 /PREREQUISITES Half Dragon Origin PREREQUISITES/
 /DESCRIPTION

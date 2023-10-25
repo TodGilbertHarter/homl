@@ -17,7 +17,7 @@ Sorcerers have taken attunement to the elemental forces to an extreme; they are 
 /FLEXROW
 /FLEXCELL
 /BOON /ID" 7207fd06-69f3-11ec-a94a-74d02b9c2012"/ /BOONNAME Draconic Bloodline BOONNAME/
-/BOONTYPE Sorcerer Calling Feature BOONTYPE/
+/BOONSOURCE Sorcerer Calling Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
 /ASSOCIATION Sorcerer Calling ASSOCIATION/
 /PREREQUISITES Sorcerer Calling PREREQUISITES/
 /DESCRIPTION

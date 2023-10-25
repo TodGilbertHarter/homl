@@ -18,7 +18,7 @@ The path of true wizardry is long and hard. Many wizards eventually become tired
 /FLEXROW
 /FLEXCELL
 /BOON /ID" ef2442c2-69f3-11ec-a720-74d02b9c2012"/ /BOONNAME Source Attunement BOONNAME/
-/BOONTYPE Wizard Calling Feature BOONTYPE/
+/BOONSOURCE Wizard Calling Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
 /ASSOCIATION Wizard ASSOCIATION/
 /PREREQUISITES Wizard PREREQUISITES/
 /DESCRIPTION
