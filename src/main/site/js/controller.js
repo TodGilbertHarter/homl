@@ -55,6 +55,7 @@ class Controller {
 		this.router.add(/creategame/,() => { this.view.displayCreateGameUI(); });
 		this.router.add(/equipment/,() => {this.view.displayEquipmentList(); });
 		this.router.add(/feats/,() => {this.view.displayFeatList(); });
+		this.router.add(/boons/,() => {this.view.displayBoonList(); });
 		const mm = this.view.getElement('mainmenu');
 		mm.menuHandler = (e) => { this.menuItemSelectionHandler(e) };
 	}
@@ -65,6 +66,10 @@ class Controller {
 	
 	displayFeatView() {
 		window.location.hash = '/feats';
+	}
+	
+	displayBoonView() {
+		window.location.hash = '/boons';
 	}
 	
 	/**

@@ -47,6 +47,7 @@
 /MODULE" js/featrepository.js"/
 /MODULE" js/boonrepository.js"/
 /MODULE" js/featview.js"/
+/MODULE" js/boonview.js"/
 /SIGNINDIALOG SIGNINDIALOG/
 /SIGNUPDIALOG SIGNUPDIALOG/
 /SOURCE" embedded_charactersheet.html"/
@@ -77,6 +78,7 @@
 			<my-menu class='vertical dropdown-menu' id='submenu5'>
 				<my-menu-item label='Equipment' onclick='window.gebApp.controller.displayEquipmentView();'></my-menu-item>
 				<my-menu-item label='Feats' onclick='window.gebApp.controller.displayFeatView();'></my-menu-item>
+				<my-menu-item label='Boons' onclick='window.gebApp.controller.displayBoonView();'></my-menu-item>
 			</my-menu>
 		</my-menu-item><my-menu-item class="dropdown right" label='Settings'>
 			<my-menu class='vertical dropdown-menu' id="submenu4">

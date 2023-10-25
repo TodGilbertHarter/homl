@@ -16,6 +16,7 @@
 */
 import { collection, doc, setDoc, query, where, getDocs, getDoc } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
 import { Boon } from './boon.js';
+import { schema } from './schema.js';
 
 const boonConverter = {
 	toFirestore(boon) {
@@ -109,7 +110,7 @@ class BoonRepository {
 	}
 	
 	addListener(listener) {
-		listeners.push(listener);
+		this.listeners.push(listener);
 	}
 
     /**

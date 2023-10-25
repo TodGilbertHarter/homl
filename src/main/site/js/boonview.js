@@ -177,9 +177,10 @@ class BoonList extends LitElement {
 		</style>
 		<div class='table'>
 			<span>Boons</span>
-			<div class='tr'><span>Name</span><span>Action</span><span>Level</span><span>Origin</span><span>Source</span><span>Flavor Text</span></div>
-			${repeat(this.boons,(item,index) => html`<boon-view  @click=${this.onClick} name=${item.name} id=${item.id} action=${item.action}
-				level=${item.level} origin=${item.origin} source=${item.source} flavortext=${item.flavortext}></boon-view>`)}
+			<div class='tr'><span>Name</span><span>Source</span><span>Level</span><span>Type</span><span>Association</span><span>Description</span></div>
+			${repeat(this.boons,(item,index) => html`<boon-view  @click=${this.onClick} name=${item.name} id=${item.id} level=${item.level}
+				type=${item.type} association=${item.association} description=${item.description} benefits=${item.benefits} disadvantages=${item.disadvantages}
+				restrictions=${item.restrictions} manifestation=${item.manifestation}></boon-view>`)}
 		</div>`;
 	}
 }
@@ -189,12 +190,16 @@ window.customElements.define('boon-list',BoonList);
 class BoonView extends LitElement {
 	static properties = {
 		id: {},
-		action: {},
-		level: {},
-		origin: {},
+		name: {},
 		source: {},
-		flavortext: {},
-		name: {}
+		level: {},
+		type: {},
+		association: {},
+		description: {},
+		benefits: {},
+		disadvantages: {},
+		restrictions: {},
+		manifestation: {}
 	};
 	
 	constructor() {
@@ -212,8 +217,8 @@ class BoonView extends LitElement {
 				text-align: center;
 			}
 		</style>
-		<span>${this.name}</span><span class='centered'>${this.action}</span><span class='centered'>${this.level}</span>
-		<span>${this.origin}</span><span>${this.source}</span><span>${this.flavortext}</span>`;
+		<span>${this.name}</span><span class='centered'>${this.source}</span><span class='centered'>${this.level}</span>
+		<span>${this.type}</span><span>${this.association}</span><span>${this.description}</span>`;
 	}
 }
 

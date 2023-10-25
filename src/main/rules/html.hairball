@@ -248,14 +248,12 @@ for (i = 0; i < coll.length; i++) {
 /: HEROICORIGIN/ SECTION/ :/
  
 /* Boon related stuff */
-/: /BOON" <section class="boon" /ID > /TRAITS <div class="trait"><div> /" /. DIV/ :/ /* Deprecated */
 /: /BOON <section class="boon" :/ 
 /: /BOONNAME  > /TRAITS <div class="trait"><div> :/ /: BOONNAME/ DIV/ :/
-/: /BOONTYPE" <div> /" /. DIV/ DIV/ :/ /* Deprecated */
-/: /BOONTYPE <div> :/ /: BOONTYPE/ DIV/ DIV/ :/
-/: /ASSOCIATION" <div class="trait"> <div> /BOLD Association: BOLD/ /SPACE /" /. DIV/ :/ /* Deprecated */
+/: /BOONSOURCE <div><span> :/ /: BOONSOURCE/ // :/
+/: /BOONLEVEL // :/ /: BOONLEVEL/ // :/
+/: /BOONTYPE // :/ /: BOONTYPE/ </span> DIV/ DIV/ :/
 /: /ASSOCIATION <div class="trait"> <div> /BOLD Association: BOLD/ /SPACE :/ /: ASSOCIATION/ DIV/ :/
-/: /PREREQUISITES" <div> /BOLD Prerequisites: BOLD/ /SPACE /" /. DIV/ DIV/ :/ /* Deprecated */
 /: /PREREQUISITES <div> /BOLD Prerequisites: BOLD/ /SPACE :/ /: PREREQUISITES/ DIV/ DIV/ :/
 /: /DESCRIPTION <div class="widetrait"> /BOLD Description: BOLD/ /SPACE :/
 /: DESCRIPTION/ DIV/ :/
