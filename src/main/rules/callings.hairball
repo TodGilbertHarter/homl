@@ -135,7 +135,7 @@ All characters with a life calling gain the Life Attunement boon:
 
 The following callings draw their power from the life power source.
 /SOURCE" berserker.hairball"/
-/* /SOURCE" beastmaster.hairball"/ */
+/SOURCE" beastmaster.hairball"/
 SUBSECTION/
 /SUBSECTION" Spirit Callings"/
 /RIGHT=" half"/

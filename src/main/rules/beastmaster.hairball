@@ -17,7 +17,7 @@ The beastmaster is at home with all types of animals. She has a deep connection 
 /FLEXROW
 /FLEXCELL
 /BOON /ID" 277dbbd2-7046-11ec-8eae-74d02b9c2012"/ /BOONNAME Animal Companion BOONNAME/
-/BOONTYPE Beastmaster Calling Feature BOONTYPE/
+/BOONSOURCE Beastmaster Calling Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
 /ASSOCIATION Beastmaster ASSOCIATION/
 /PREREQUISITES Beastmaster PREREQUISITES/
 /DESCRIPTION

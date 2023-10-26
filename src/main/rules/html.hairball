@@ -265,8 +265,8 @@ for (i = 0; i < coll.length; i++) {
 /* Boon related stuff */
 /: /BOON <section class="boon" :/ 
 /: /BOONNAME  > /TRAITS <div class="trait"><div> :/ /: BOONNAME/ DIV/ :/
-/: /BOONSOURCE <div><span> :/ /: BOONSOURCE/ // :/
-/: /BOONLEVEL // :/ /: BOONLEVEL/ // :/
+/: /BOONSOURCE <div><span> :/ /: BOONSOURCE/ : /SPACE :/
+/: /BOONLEVEL // :/ /: BOONLEVEL/ /SPACE - /SPACE :/
 /: /BOONTYPE // :/ /: BOONTYPE/ </span> DIV/ DIV/ :/
 /: /ASSOCIATION <div class="trait"> <div> /BOLD Association: BOLD/ /SPACE :/ /: ASSOCIATION/ DIV/ :/
 /: /PREREQUISITES <div> /BOLD Prerequisites: BOLD/ /SPACE :/ /: PREREQUISITES/ DIV/ DIV/ :/

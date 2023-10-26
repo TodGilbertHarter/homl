@@ -22,7 +22,10 @@ The rogue is a character who survives by his quick wits, cunning, and a good eye
 Your attacks are particularly deadly. You have learned to capitalize on any advantage to strike hard and decisively.
 DESCRIPTION/
 /BENEFITS
-Once per turn, when you hit with an attack using a light weapon and have advantage on your attack you may roll additional damage dice. At heroic tier you roll an extra 1DD, at legendary tier 3DD, and at mythic tier 5DD.
+/BENEFIT
+Once per turn, when you hit with an attack using a light weapon and have advantage on your attack you may roll additional damage dice. At heroic tier you roll an extra 
+1DD, at legendary tier 3DD, and at mythic tier 5DD.
+BENEFIT/
 BENEFITS/
 /RESTRICTIONS
 You may not be wearing armor heavier than reinforced leather and may not be using a shield.
@@ -38,7 +41,9 @@ FLEXCELL/
 You are especially deadly with light weapons.
 DESCRIPTION/
 /BENEFITS
+/BENEFIT
 You get a +1 permanent bonus to all attack and defense checks when you are wielding a light weapon.
+BENEFIT/
 BENEFITS/
 /RESTRICTIONS
 You may not be wearing armor heavier than reinforced leather and may not be using a shield.

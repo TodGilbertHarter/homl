@@ -244,6 +244,18 @@ my-menu-item:hover {
     display: flex;
 }
 
+boon-viewer::part(sectiontitle) {
+    display: block;
+    font-weight: bold;
+    font-size: 2em;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 2%;
+    background-color: black;
+    color: var(--document-fg);
+}
+
 feat-viewer::part(sectiontitle) {
     display: block;
     font-weight: bold;
@@ -363,6 +375,53 @@ equipment-view::part(sectiontitle) {
     width: 100%;
     font-style: italic;
     text-align: center;
+}
+
+section.boon {
+    border: 1px solid black;
+    margin-bottom: .5em;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+section.boon > .traits > :first-child {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    background-color: var(--boon-title-bg);
+    color: var(--boon-title-fg);
+    padding: .125em;
+    border-bottom: 1px solid grey;
+}
+
+section.boon > .traits > :not(:first-child) {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    background-color: var(--boon-bg);
+    color: var(--boon-fg);
+    padding: .125em;
+}
+
+section.boon > .traits > .widetrait {
+    width: 100%;
+    display: block;
+    background-color: var(--boon-bg);
+    color: var(--boon-fg);
+}
+
+section.boon > .traits > .widetrait > p {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+section.boon > .traits > .trait > div {
+    width: 50%;
+}
+
+section.boon > .traits > .trait > :not(:first-child) {
+    width: 50%;
+    text-align: right;
 }
 
 section.feat {

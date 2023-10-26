@@ -78,39 +78,53 @@ class BoonDetailRenderer {
 		this.boon = boon;
 	}
 	
-	conditionalRender(value,label) {
+	conditionalRender(value,label,wide) {
 		if(value) {
-			return html`<div class='widetrait'><span class='bold'>${label}:</span>${value}</div>`;
+			return html`<div class='${wide}trait'><span class='bold'>${label}:</span>${value}</div>`;
 		}
 		return '';
 	}
+
+	renderFeat(feat) {
+		console.log("rendering a feat "+feat.name);
+		return "Feat: "+feat.name;
+	}
 	
+	renderFeatRef(featRef) {
+		console.log("rendering a feat ref");
+	}
+	
+	renderBenefit(benefit) {
+		if(typeof benefit === 'string') {
+			return benefit;
+		} else if(typeof benefit === 'Feat') {
+			this.renderFeat(benefit);
+		} else {
+			this.renderFeatRef(benefit);
+		}
+	}
 
 	render() {
-		return html`<section slot='content' id=${this.feat.id} class='feat ${this.feat.source}'>
+		return html`<section slot='content' id=${this.boon.id} class='boon'>
 			<div class='traits'>
-				<div class='trait heroic'>
-					<div><a href="/homl.html#${this.feat.id}" target="_blank">${this.feat.name}</a></div>
-					<div>${this.feat.origin} ${this.feat.level} - ${this.feat.action}</div>
+				<div class='trait'>
+					<div><a href="/homl.html#${this.boon.id}" target="_blank">${this.boon.name}</a></div>
+					<div>${this.boon.source}: ${this.boon.level} - ${this.boon.type}</div>
 				</div>
-				<div class='widetrait'><span class='bold'>${this.feat.tags}</span></div>
-				${this.renderRequirements()}
-				${this.renderComponents()}
-				${this.renderCosts()}
-				${this.renderTrigger()}
-				${this.renderTypeTarget()}
-				${this.renderCheck()}
-				${this.renderAttack()}
-				${this.renderDefense()}
-				${this.renderEnhancedSuccess()}
-				${this.renderCompleteSuccess()}
-				${this.renderSuccess()}
-				${this.renderFailure()}
-				${this.renderEffects()}
-				${this.renderDuration()}
-				${this.renderSpecial()}
-				${this.renderFlavor()}
-			</section>`;
+				<div class='trait'>
+					<div><span class='bold'>Association:</span>${this.boon.association}</div>
+					<div><span class='bold'>Prerequisites:</span>${this.boon.prerequisites}</div>
+				</div>
+				${this.conditionalRender(this.boon.description,'Description','wide')}
+				<div class='widetrait'>
+					<span class='bold'>Benefits:</span>
+					${repeat(this.boon.benefits,(item,index) => this.renderBenefit(item))}
+				</div>
+				${this.conditionalRender(this.boon.disadvantages,'Disadvantages','wide')}
+				${this.conditionalRender(this.boon.restrictions,'Restrictions','wide')}
+				${this.conditionalRender(this.boon.manifestation,'Manifestation','wide')}
+			</div>				
+		</section>`;
 	}
 }
 
@@ -180,7 +194,7 @@ class BoonList extends LitElement {
 			<div class='tr'><span>Name</span><span>Source</span><span>Level</span><span>Type</span><span>Association</span><span>Description</span></div>
 			${repeat(this.boons,(item,index) => html`<boon-view  @click=${this.onClick} name=${item.name} id=${item.id} level=${item.level}
 				type=${item.type} association=${item.association} description=${item.description} benefits=${item.benefits} disadvantages=${item.disadvantages}
-				restrictions=${item.restrictions} manifestation=${item.manifestation}></boon-view>`)}
+				restrictions=${item.restrictions} manifestation=${item.manifestation} source=${item.source}></boon-view>`)}
 		</div>`;
 	}
 }

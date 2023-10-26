@@ -830,7 +830,8 @@ exist, and these given may not be sufficient for large or complex tasks.
 /TOOL /ID" a3e5c86a-6f57-11ee-aae5-c87f5455cfcc"/ /TOOLNAME Climbing Tools TOOLNAME/ /TOOLABILITY DEX TOOLABILITY/ /TOOLCOST 1gp TOOLCOST/ /TOOLLOAD 10 TOOLLOAD/ 
 /TOOLDESCRIPTION Technical climbing gear including anchors, rope, cleats, etc. TOOLDESCRIPTION/ TOOL/
 /TOOL /ID" 02e31646-703a-11ee-903f-c87f5455cfcc"/ /TOOLNAME Surveying Tools TOOLNAME/ /TOOLABILITY INT TOOLABILITY/ /TOOLCOST 10gp TOOLCOST/ /TOOLLOAD 10 TOOLLOAD/ 
-/TOOLDESCRIPTION A set of surveying tools including a measuring chain, groma, stakes, etc. This should be sufficient to lay out the boundaries of property or measure the shape and extent
+/TOOLDESCRIPTION A set of surveying tools including a measuring chain, groma, stakes, etc. This should be sufficient to lay out the boundaries of property or measure 
+the shape and extent of a structure, etc. TOOLDESCRIPTION/ TOOL/
 /TOOL /ID" 5ca1f19e-7052-11ee-9144-c87f5455cfcc"/ /TOOLNAME Scribe's Tools TOOLNAME/ /TOOLABILITY DEX TOOLABILITY/ /TOOLCOST 1gp TOOLCOST/ /TOOLLOAD 2 TOOLLOAD/ 
 /TOOLDESCRIPTION Brushes, pens, inks, paper, etc. TOOLDESCRIPTION/ TOOL/
 TABLE/
