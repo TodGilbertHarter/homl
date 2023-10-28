@@ -94,6 +94,11 @@ class FeatRepository {
 		}).catch(e => console.log("Failed to get feat data "+e.message));
 	}
 	
+    async getReferencedFeatAsync(featRef) {
+		const dr = featRef.withConverter(featConverter);
+		return await getDoc(dr).then(cp => cp.data());
+	}
+	
 	/**
 	 * Preload a copy of all the feats. This can be called long before they are required, thus
 	 * various other methods can directly return results, and we can then set up listeners to allow

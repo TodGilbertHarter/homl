@@ -112,6 +112,13 @@ class BoonRepository {
 	addListener(listener) {
 		this.listeners.push(listener);
 	}
+	
+	removeListener(listener) {
+		const lidx = this.listeners.indexOf(listener);
+		if(lidx > -1) {
+			this.listeners.splice(lidx,1);
+		}
+	}
 
     /**
      * Gets all available backgrounds as a list and invokes the given callback when the data is available.

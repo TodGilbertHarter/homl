@@ -284,3 +284,5 @@ class FeatView extends LitElement {
 }
 
 window.customElements.define('feat-view',FeatView);
+
+export { FeatDetailRenderer };

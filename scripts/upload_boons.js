@@ -18,7 +18,8 @@ Object.keys(data["boons"]).forEach((boon) => {
 
 function handleBoon(boon) {
 	if(!boon.hasOwnProperty('benefits')) { boon.benefits = []; }
-	const pattern = /id=\[([a-e|0-9|\-])+\]/;
+//	const pattern = /id=\[([a-e|0-9|\-])+\]/;
+	const pattern = /id=\[([0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12})\]/;
 	var benefits = [];
 	if(typeof boon.benefits !== 'undefined') {
 		benefits = boon.benefits.map((benefit) => {
@@ -30,6 +31,7 @@ function handleBoon(boon) {
 				const featRef = admin.firestore().doc(`feats/${id}`);
 				return featRef;
 			} else {
+//	console.log("GOT A NON-FEAT BENEFIT OF:'"+benefit+"'");
 				return benefit;
 			}
 		});

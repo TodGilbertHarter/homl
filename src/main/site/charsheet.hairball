@@ -211,8 +211,8 @@ FLEXROW/ :/
 /: PROFICIENCIES/ </item-list> BOX/ :/
 /: /PROFICIENCY /SPACE <span class="value"> :/
 /: PROFICIENCY/ ,</span> :/
-/: /BOONS /BOX <span class="boxlabel">Boons:</span> :/
-/: BOONS/ BOX/ :/
+/: /BOONS /BOX <boon-selector id='boonselector' label='Boons:'> :/
+/: BOONS/ </boon-selector> BOX/ :/
 /: /BOON /SPACE <span class="value"> :/
 /: BOON/ </span> :/
 /: /EQUIPMENT /BOX <span class="boxlabel">Equipment:</span> :/

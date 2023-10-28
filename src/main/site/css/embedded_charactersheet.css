@@ -79,6 +79,18 @@ button {
     color: var(--document-fg);
 }
 
+button:disabled {
+	opacity: 0.5;
+    margin: .25em;
+    background-color: green;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: var(--document-fg);
+}
+
 span.sheetfield > input {
     border-top: 0px;
     border-left: 0px;
@@ -220,6 +232,11 @@ knack-field::part(totalbonus) {
     font-size: .75em;
 }
 
+boon-selector::part(label) {
+    font-weight: bold;
+    font-size: .75em;
+}
+
 .attributetable {
     border: 1px solid grey;
 }
@@ -258,3 +275,9 @@ span.name {
     margin: .25em;
     border: 1px solid grey;
 }
+
+dialog-widget.boonselecter::part(contents) {
+	max-height: 800px;
+	overflow-y: scroll;
+}
+

@@ -34,6 +34,8 @@ class CharacterSheet extends HTMLElement {
 	origins;
 	backgrounds;
 	controller;
+	_dirty;
+	_refreshed;
 	/** @type {string} @private */ characterId;
 	
 	constructor() {
@@ -41,6 +43,8 @@ class CharacterSheet extends HTMLElement {
 		const content = CharacterSheet.template.content;
         const shadowRoot = this.attachShadow({mode: 'open'}).appendChild(content.cloneNode(true));
         this.controller = window.gebApp.characterController;
+        this._dirty = false;
+        this._refreshed = true;
  	}
 
 	connectedCallback() {
@@ -54,6 +58,32 @@ class CharacterSheet extends HTMLElement {
 		refreshbutton.addEventListener('click',rbh);
 		const cbh = this.copyButtonHandler.bind(this);
 		copybutton.addEventListener('click',cbh);
+		this.shadowRoot.getElementById('characterview').addEventListener('change',this.onChange.bind(this));
+		this.dirty = false;
+		this.refreshed = true;
+	}
+
+	get dirty() {
+		return this._dirty;
+	}
+	
+	get refreshed() {
+		return this._refreshed;
+	}
+	
+	set dirty(dirty) {
+		this.shadowRoot.getElementById('savebutton').disabled = !dirty;
+		this._dirty = dirty;
+	}
+	
+	set refreshed(refreshed) {
+		this.shadowRoot.getElementById('refreshbutton').disabled = refreshed;
+		this._refreshed = refreshed;
+	}
+	
+	onChange() {
+		this.dirty = true;
+		this.refreshed = false;
 	}
 	
 	setSelections(species, callings,backgrounds,origins) {
@@ -283,6 +313,37 @@ class CharacterSheet extends HTMLElement {
 
 window.customElements.define('character-sheet',CharacterSheet);
 
+class BoonSelector extends LitElement {
+	static properties = {
+		label: {}
+	}
+
+	constructor() {
+		super();
+	}
+	
+	render() {
+		return html`<span class='boxlabel' part='label'>${this.label}</span><button @click=${this.addClicked}>Add</button>`;
+	}
+	
+	changed() {
+		this.dispatchEvent(new Event('changed',{bubbles: true}));
+	}
+	
+	addClicked() {
+		const dialog = document.createElement('dialog-widget');
+		dialog.setAttribute('closewidget',true);
+		dialog.setAttribute('class','boonselector');
+		dialog.setAttribute('maxheight','600px');
+		dialog.setAttribute('maxwidth','1000px');
+		const template = html`<div slot='content'><boon-viewer></boon-viewer></div></dialog-widget>`;
+		render(template,dialog);
+		document.getElementsByTagName('body')[0].appendChild(dialog);
+	}
+}
+
+window.customElements.define('boon-selector',BoonSelector);
+
 class BackgroundField extends LitElement {
 	static properties = {
 		type: {reflect: true},
@@ -360,6 +421,7 @@ class PersonalityField extends LitElement {
 	onChange(e) {
 		this.name = this.nameis.value.value;
 		this.value = this.valueis.value.value;
+		this.dispatchEvent(new Event('change',{bubbles: true}));
 	}
 	
 	render() {
@@ -397,6 +459,7 @@ class ProficiencyField extends LitElement {
 //		this.equipmentId = x[1];
 		this.name = x[0];
 		this.eid = x[1];
+		this.dispatchEvent(new Event('change',{bubbles: true}));
 	}
 	
 	setNamesByType(t) {
@@ -462,6 +525,10 @@ class ItemList extends LitElement {
 		super();
 	}
 	
+	onChange() {
+		this.dispatchEvent('change',{bubbles: true});
+	}
+	
 	firstUpdated() {
 		const container = this.shadowRoot.getElementById('content');
 		const slot = container.firstChild;
@@ -490,6 +557,7 @@ class ItemList extends LitElement {
 		}
 		realItem.deleteButtonHandler = (e) => {
 			this.removeItem(realItem);
+			this.dispatchEvent(new Event('change',{bubbles: true}));
 		};
 		if(this.items !== undefined) {
 			this.items.push(realItem);
@@ -539,16 +607,24 @@ class AttributeField extends SheetField {
         const value = this.getAttribute('value');
         const n = this.getAttribute('name');
         const style = this.getAttribute('style');
-        const id = this.getAttribute('id');
         const input = this.shadowRoot.getElementById('input');
-//        input.setAttribute('data-bind','value: '+id);
         input.setAttribute('style',style);
         input.setAttribute('value',value);
         input.setAttribute('name',n);
+        input.addEventListener('change',this.onChange.bind(this));
         const ltext = this.getAttribute('label');
         const label = this.shadowRoot.getElementById('label');
         label.innerHTML = ltext;
+        this.parentNode.addEventListener('change',() => { console.log("got event at parent of attribute field.")});
+        this.parentNode.parentNode.addEventListener('change',() => { console.log("got event at grandparent")});
+        this.parentNode.parentNode.parentNode.addEventListener('change',() => { console.log("got event at great grandparent")});
+        this.parentNode.parentNode.parentNode.parentNode.addEventListener('change',() => { console.log("got event at great great grandparent")});
     }
+    
+    onChange(e) {
+		const event = new Event('change',{ value: e.target.value, bubbles: true});
+		this.dispatchEvent(event);
+	}
 }
 
 class SelectField extends LitElement {
@@ -559,7 +635,7 @@ class SelectField extends LitElement {
 	
 	onChange() {
 		this.value = this.selectRef.value.value;
-		this.dispatchEvent(new Event('change'));
+		this.dispatchEvent(new Event('change', { value: this.value, bubbles: true}));
 	}
 	
     constructor() {
@@ -672,6 +748,7 @@ class AbilityField extends SheetField {
     
     onChange() {
         this._setModifier(this.shadowRoot.getElementById('input').value);
+        this.dispatchEvent(new Event('change', {value: this.value, bubbles: true}));
     }
 
     setSelections(options) { /* currently just used by wealth */
@@ -717,8 +794,14 @@ class KnackField extends SheetField {
         this.permanentbonus = perm;
         this.totalbonus = total;
         this.levelbonus = level;
+        const check = this.shadowRoot.getElementById('check');
+        check.addEventListener('click',this.onChange.bind(this));
     }
     
+    onChange() {
+		this.dispatchEvent(new Event('change',{value: this.value, bubbles: true}));
+	}
+	
     set value(value) {
         this.shadowRoot.getElementById('check').checked = value;
     }
@@ -1062,12 +1145,14 @@ class CharacterController {
     saveCharacter(sheet,character) {
         this.refresh(sheet,character, (sheet,character) => {
 	        this.save(character);
+	        sheet.dirty = false;
 		});
     }
     
     refreshCharacter(sheet,character) {
         this.refresh(sheet,character, (sheet,character) => {
 	        this.display(sheet,character);
+	        sheet.refreshed = true;
 		});
     }
 

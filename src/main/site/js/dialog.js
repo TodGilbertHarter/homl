@@ -15,23 +15,59 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { html, LitElement } from 'https://unpkg.com/lit@2/index.js?module';
-import {ref, createRef } from 'https://unpkg.com/lit@2/directives/ref.js?module';
 
 class DialogWidget extends LitElement {
+	static properties = {
+		buttonbarbisabled: {},
+		closewidget: {},
+		left: {},
+		top: {},
+		maxheight: {},
+		maxwidth: {}
+	}
 
 	constructor() {
 		super();
 		this.fu = false;
+		this.buttonbardisabled = false;
+		this.closewidget = false;
+		this.left = '500px';
+		this.top = '200px';
+		this.maxwidth = '800px';
+	}
+	
+	drawCloseWidget() {
+		if(this.closewidget) {
+			return html`<button class='closewidget' @click=${this.dismissClickHandler}>X</button>`;
+		}
+		return null;
 	}
 
+	drawButtonBar() {
+		if(!this.buttonbardisabled) {
+			return html`<div class='buttonbar' part='buttonbar' id='buttonbar'>
+				<slot name='buttonbar'><button id='dismiss' style='float: right;' @click=${this.dismissClickHandler}>dismiss</button></slot>
+			</div>`;
+		}
+		return null;
+	}
+	
 	render() {
+		const maxheight = this.maxheight ? html`max-height: ${this.maxheight};` : '';
+
 		return html`<style>
+			button.closewidget {
+				position: absolute;
+				right: 10px;
+				top: 10px;
+			}
+			
 			div.dialog {
 				position: fixed;
-				left: 500px; /* make this 50% at some point */
-				top: 200px; /* make this 50% at some point */
+				left: ${this.left}; /* make this 50% at some point */
+				top: ${this.top}; /* make this 50% at some point */
 				min-width: 200px;
-				max-width: 800px;
+				max-width: ${this.maxwidth};
 				min-height: 200px;
 				border: 1px solid black;
 				border-radius: 5px;
@@ -40,6 +76,7 @@ class DialogWidget extends LitElement {
 				margin: 0px;
 				padding: 0px;
 			}
+			
 			div.buttonbar {
 				height: 30px;
 				border-top: 1px solid black;
@@ -53,15 +90,15 @@ class DialogWidget extends LitElement {
 			div.contents {
 				min-height: 170px;
 				padding: 5px;
+				${maxheight}
+				overflow-y: scroll;
 			}
 		</style>
-		<div class='dialog' part='container' id='container'>
-			<div class='contents'>
+		<div class='dialog' part='container' id='container'>${this.drawCloseWidget()}
+			<div class='contents' part='contents'>
 				<slot name='content'>Empty Dialog</slot>
 			</div>
-			<div class='buttonbar' part='buttonbar' id='buttonbar'>
-				<slot name='buttonbar'><button id='dismiss' style='float: right;' @click=${this.dismissClickHandler}>dismiss</button></slot>
-			</div>
+			${this.drawButtonBar()}
 		</div>`;
 	}
 	

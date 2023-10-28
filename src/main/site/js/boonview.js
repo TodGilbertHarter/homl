@@ -18,28 +18,43 @@
 import { html, LitElement, render } from 'https://unpkg.com/lit@2/index.js?module';
 import {repeat} from 'https://unpkg.com/lit@2/directives/repeat.js?module';
 import {ref, createRef} from 'https://unpkg.com/lit@2/directives/ref.js?module';
+import {until} from 'https://unpkg.com/lit@2/directives/until.js?module';
+import { FeatDetailRenderer } from './featview.js';
 
 /**
  * Class to view all the feats in the game.
  */
 class BoonViewer extends LitElement {
+	static properties = {
+		dialogselector: {},
+		selectable: {}
+	}
+
+	handleBoonSelected(e) {
+		this.selectAction(e);
+	}
 	
 	constructor() {
 		super();
 		this.boonRepo = window.gebApp.boonRepo;
 		this.boons = [];
 		this.boonsRef = createRef();
+		this.dialogselector = 'body';
+		this.selectable = false;
+		this.selectAction = () => { alert("boon viewer says hi") }
 	}
 	
 	connectedCallback() {
 		super.connectedCallback();
 		this.boonRepo.addListener(this.boonsUpdated);
 		this.boonRepo.getAllBoons((boons) => { this.boonsUpdated(boons);  });
+		this.addEventListener('boonselected',this.handleBoonSelected.bind(this))
 	}
 	
 	disconnectedCallback() {
 		super.disconnectedCallback();
 		this.boonRepo.removeListener(this.boonsUpdated);
+		this.removeEventListener('boonselected');
 	}
 	
 	boonsUpdated(boons) {
@@ -63,7 +78,7 @@ class BoonViewer extends LitElement {
 		return html`
 		<div>
 			<h1 part='sectiontitle'>HoML Boons</h1>
-			<boon-list id='boons' ${ref(this.boonsRef)}></boon-list>
+			<boon-list id='boons' ${ref(this.boonsRef)} dialogselector=${this.dialogselector} selectable=${this.selectable}></boon-list>
 		</div>`;
 	}
 
@@ -73,9 +88,16 @@ window.customElements.define('boon-viewer',BoonViewer);
 
 class BoonDetailRenderer {
 	boon;
+	selectable;
+	dismissClickHandler;
+	selectClickHandler;
 	
-	constructor(boon) {
+	constructor(boon,dismissClickHandler,selectClickHandler) {
+		this.featRepo = window.gebApp.featRepo;
 		this.boon = boon;
+		this.selectable = false;
+		this.dismissClickHandler = dismissClickHandler;
+		this.selectClickHandler = selectClickHandler;
 	}
 	
 	conditionalRender(value,label,wide) {
@@ -87,23 +109,36 @@ class BoonDetailRenderer {
 
 	renderFeat(feat) {
 		console.log("rendering a feat "+feat.name);
-		return "Feat: "+feat.name;
+		return html`Feat: ${feat.name}<br>`;
+	}
+	
+	resolveFeat(featRef) {
+		return this.featRepo.getReferencedFeatAsync(featRef).then(r => new FeatDetailRenderer(r).render());
 	}
 	
 	renderFeatRef(featRef) {
 		console.log("rendering a feat ref");
+		return html`${until(this.resolveFeat(featRef),html`<span>Loading Feat</span>`)}`;
 	}
 	
 	renderBenefit(benefit) {
 		if(typeof benefit === 'string') {
-			return benefit;
+			return html`${benefit}<br>`;
 		} else if(typeof benefit === 'Feat') {
-			this.renderFeat(benefit);
+			return this.renderFeat(benefit);
 		} else {
-			this.renderFeatRef(benefit);
+			return this.renderFeatRef(benefit);
 		}
 	}
 
+	renderButtons() {
+		if(this.selectable) {
+			return html`<button class='dialogbutton' slot='buttonbar' id='boonselect' @click=${this.selectClickHandler}>select</button>
+			<button class='dialogbutton' slot='buttonbar' id='dismiss' @click=${this.dismissClickHandler}>dismiss</button>`;
+		}
+		return '';
+	}
+	
 	render() {
 		return html`<section slot='content' id=${this.boon.id} class='boon'>
 			<div class='traits'>
@@ -124,24 +159,50 @@ class BoonDetailRenderer {
 				${this.conditionalRender(this.boon.restrictions,'Restrictions','wide')}
 				${this.conditionalRender(this.boon.manifestation,'Manifestation','wide')}
 			</div>				
-		</section>`;
+		</section>${this.renderButtons()}`;
 	}
 }
 
 class BoonList extends LitElement {
+	static properties = {
+		dialogselector: {},
+		selectable: {}
+	}
+
+	dismissClickHandler() {
+		const tag = document.querySelector(this.dialogselector);
+		tag.removeChild(this.dialog);
+		this.dialog = null;
+	}
+	
+	selectClickHandler() {
+		this.dispatchEvent(new Event('boonselected',{bubbles: true, boon: this.item}));
+		tag.removeChild(this.dialog);
+		this.dialog = null;
+	}
+	
 	constructor() {
 		super();
 		this.boons = [];
 		this.item = null;
-		this.detailRenderer = new BoonDetailRenderer(this.item);
+		this.detailRenderer = new BoonDetailRenderer(this.item,this.dismissClickHandler.bind(this),this.selectClickHandler.bind(this));
+		this.dialogselector = 'body';
+		this.selectable = false;
+		this.dialog = null;
 		
 		this.onClick = (e) => {
-			const id = e.target.id;
-			const dialog = document.createElement('dialog-widget');
-			this.item = this.lookupItem(id);
-			this.detailRenderer.boon = this.item;
-			render(this.detailRenderer.render(),dialog);
-			document.getElementsByTagName('body')[0].appendChild(dialog);
+			if(!this.dialog) {
+				const id = e.target.id;
+				this.dialog = document.createElement('dialog-widget');
+				this.dialog.setAttribute('left','550px');
+				this.dialog.setAttribute('top','220px');
+				this.item = this.lookupItem(id);
+				this.detailRenderer.boon = this.item;
+				this.detailRenderer.selectable = this.selectable;
+				render(this.detailRenderer.render(),this.dialog);
+				const tag = document.querySelector(this.dialogselector);
+				tag.appendChild(this.dialog);
+			}
 		}
 	}
 
@@ -190,7 +251,6 @@ class BoonList extends LitElement {
 			}
 		</style>
 		<div class='table'>
-			<span>Boons</span>
 			<div class='tr'><span>Name</span><span>Source</span><span>Level</span><span>Type</span><span>Association</span><span>Description</span></div>
 			${repeat(this.boons,(item,index) => html`<boon-view  @click=${this.onClick} name=${item.name} id=${item.id} level=${item.level}
 				type=${item.type} association=${item.association} description=${item.description} benefits=${item.benefits} disadvantages=${item.disadvantages}
