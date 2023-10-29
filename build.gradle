@@ -80,6 +80,24 @@ task buildErithnoi {
 	dependsOn 'buildErithnoiDM'	
 }
 
+task buildDocumentation(type: Exec) {
+	description 'rebuild the HoML README.md file'
+	commandLine 'scripts/buildreadme.sh'
+}
+
+task updateDocumentation(type: Copy) {
+	description 'copy the rebuilt documentation to its correct project location'
+	from './build/documentation/README.md'
+	outputs.file("./README.md")
+	into "."
+}
+
+task deployDocumentation {
+	description 'rebuild and update the HoML README.md file'
+	dependsOn 'buildDocumentation'
+	dependsOn 'updateDocumentation'
+}
+
 /**
  * Clear the local build directory, but don't execute any other cleanups, note that
  * the standard 'clean' task will nuke node_modules, requiring a bunch of extra steps

@@ -1,0 +1,81 @@
+/*
+* Hairball vocabulary to build Markdown files. This might seem a bit silly, but
+* OTOH it allows us to generate a number of formats from the same source.
+*/
+/SOURCE" html.hairball "/
+/NEWVOCABULARY /MD
+/VOCABULARY /HTML /ACTIVE
+/VOCABULARY /MD /ACTIVE
+/VOCABULARY /MD /CURRENT
+/:
+
+// :/ /* Prevent spurious <p> tags. */
+
+/: /P /NEWLINE /NEWLINE :/
+/: P/ // :/
+/: /HEADER <header> :/
+/: HEADER/ </header> :/
+/: /DOCUMENT" /HEADER /" /. HEADER/ :/ /* Sadly Markdown doesn't understand title */
+/: /BODY // :/
+/: BODY/ // :/
+/: DOCUMENT/ // :/
+/: /H1 # /SPACE :/
+/: H1/ // :/
+/: /H2 ## /SPACE :/
+/: H2/ /NEWLINE :/
+/: /H3 ### /SPACE :/
+/: H3/ /NEWLINE :/
+/: /BR <br/> :/
+
+/: /INDEX" // :/
+/: /STYLES" /" /DROP " :/
+/: /CHAPTER // :/
+/: /SUMMARY # /SPACE :/
+/: SUMMARY/ /NEWLINE :/
+/: /SUMMARY" /SUMMARY /" /. SUMMARY/ :/
+/: /CHAPTER" /CHAPTER /SUMMARY" :/
+/: CHAPTER/ // :/
+/: /TITLE /H1 :/
+/: TITLE/ H1/ :/
+/: /SUBTITLE /H2 :/
+/: SUBTITLE/ H2/ :/
+/: /AUTHOR <author> :/
+/: AUTHOR/ </author> :/
+/: /COPYRIGHT <copyright> :/
+/: COPYRIGHT/ </copyright> :/
+/: /SECTION /H2 :/
+/: SECTION/ H2/ :/
+/: /SECTION" // /SECTION /" /. SECTION/ :/
+/: /BLOCK /NEWLINE > /SPACE :/
+/: /I * :/
+/: I/ * :/
+/: /EM ** :/
+/: EM/ ** :/
+/: /SUBSECTION /H3 :/
+/: SUBSECTION/ </section> :/
+/: /SUBSECTION" /SUBSECTION /" /. SUBSECTION/ :/
+/: /TOPIC /H3 :/
+/: TOPIC/ H3/ :/
+/: /TOPIC" /TOPIC /" /. :/
+/: /STRONG /SPACE <strong> :/
+/: STRONG/ </strong> /SPACE :/
+
+/: /CODE ` :/
+/: CODE/ ` :/
+/: /CBLOCK /NEWLINE ``` /NEWLINE :/
+/: /CBLOCK" /NEWLINE ``` /" /. /NEWLINE :/ 
+/: CBLOCK/ /NEWLINE ``` /NEWLINE :/
+
+/: /HR --- :/
+
+/: /A < :/
+/: A/ > :/
+/: /A" [ /GETMATCHING /HREF /DELIMITED /. ]( /GETMATCHING A/ /DELIMITED /. ) :/ 
+
+/: /GETMATCHING /DOER /DROP /W /W2L /MAKELITERAL /HERE! :/
+/: /EXAMPLE /CODE /GETMATCHING EXAMPLE/ /DELIMITED /. CODE/ :/
+/: EXAMPLE/ /[" Mismatch, EXAMPLE/ must follow /EXAMPLE "]/ /ABORT :/
+/* Enables double newline equivalency to a paragraph (implicit paragraphs). */
+/:
+
+ /P :/

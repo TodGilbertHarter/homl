@@ -1,0 +1,115 @@
+/*
+* Vocabulary to translate hairball documentation into HTML
+*/
+/*
+Hairball HTML definitions. These definitions define common markup syntax in the context
+of HTML. It can be included as the first input file when generating HTML output in
+Hairball.
+*/
+/NEWVOCABULARY /HTML
+/VOCABULARY /HTML /ACTIVE
+/VOCABULARY /HTML /CURRENT
+/:
+
+// :/ /* Prevent spurious <p> tags. */
+
+/VARIABLE /CURRENTID 
+#0 /CURRENTID /V!
+/: /ID /SPACE /CURRENTID /V@ /1+ /CURRENTID /V! id=" /CURRENTID /V@ /. " :/
+
+/: /P <p> :/
+/: P/ </p> :/
+/: /DOCUMENT" <html><head><title> /" /. </title> :/
+/: /BODY </head><body> :/
+/: DOCUMENT/ </body></html> :/
+/: /H1 <h1> :/
+/: H1/ </h1> :/
+/: /BR <br/> :/
+
+/: /INDEX" /H1 Index H1/ /SOURCE" :/
+/: /STYLES" <link rel="stylesheet" type="text/css" href=" /" /. " media="screen"/> :/
+/: /HEADER <header> :/
+/: HEADER/ </header> :/
+/: /CHAPTER <section class="chapter" /ID ><details open="true"> :/
+/: /SUMMARY <summary> :/
+/: SUMMARY/ </summary> :/
+/: /SUMMARY" /SUMMARY /" /. SUMMARY/ :/
+/: /CHAPTER" /CHAPTER /SUMMARY" :/
+/: CHAPTER/ </details></section> :/
+/: /TITLE <title> :/
+/: TITLE/ </title> :/
+/: /SUBTITLE <subtitle> :/
+/: SUBTITLE/ </subtitle> :/
+/: /AUTHOR <author> :/
+/: AUTHOR/ </author> :/
+/: /COPYRIGHT <copyright> :/
+/: COPYRIGHT/ </copyright> :/
+/: /SECTION <section class="section" /ID > :/
+/: /SECTION" /SECTION /TITLE /" /. TITLE/ :/
+/: SECTION/ </section> :/
+/: /UL <ul> :/
+/: UL/ </ul> :/
+/: /OL <ol> :/
+/: OL/ </ol> :/
+/: /LI <li> :/
+/: LI/ </li> :/
+/: /EM /SPACE <em> :/
+/: EM/ </em> /SPACE :/
+/: /SUBSECTION <section class="subsection" /ID > :/
+/: /SUBSECTION" /SUBSECTION /TITLE /" /. TITLE/ :/
+/: SUBSECTION/ </section> :/
+/: /TOPIC <section class="topic" /ID > :/
+/: /TOPIC" /TOPIC /TITLE /" /. TITLE/ :/
+/: TOPIC/ </section> :/
+/: /STRONG /SPACE <strong> :/
+/: STRONG/ </strong> /SPACE :/
+
+/* Table support */
+/: /TABLE <table> :/
+/: /TABLE=" <table class=" /" /. "> :/ 
+/: TABLE/ </table> :/
+/: /TR <tr> :/
+/: /TR=" <tr class=" /" /. "> :/ 
+/: TR/ </tr> :/
+/: /TH <th> :/
+/: TH/ </th> :/
+/: /TD <td> :/
+/: /TD=" <td class=" /" /. "> :/
+/: TD/ </td> :/
+/: /TH/ </th><th> :/
+/: /TD/ </td><td> :/
+/: /TD/=" </td><td class=" /" /. "> :/
+/: /THEAD <thead> :/
+/: THEAD/ </thead> :/
+/: /TBODY <tbody> :/
+/: TBODY/ </tbody> :/
+/: /TFOOT <tfoot> :/
+/: TFOOT/ </tfoot> :/
+/: /CAPTION <caption> :/
+/: CAPTION/ </caption> :/
+
+/: /P=" <p class=" /" /. "> :/
+/: /DIV=" <div class=" /" /. "> :/
+/: DIV/ </div> :/
+/: /CODE /SPACE <pre> :/
+/: CODE/ </pre> /SPACE :/
+
+/: /TOC <toc> /TITLE Table of Contents TITLE/ :/
+/: TOC/ </toc> :/
+/: /EXAMPLE" /CODE /" /. CODE/ :/
+/: /LITERAL /SPACE /TOKEN /. /SPACE :/
+/: /GETMATCHING /DOER /DROP /W /W2L /MAKELITERAL /HERE! :/
+/: /EXAMPLE /CODE /GETMATCHING EXAMPLE/ /DELIMITED /. CODE/ :/
+/: EXAMPLE/ /[" Mismatch, EXAMPLE/ must follow /EXAMPLE "]/ /ABORT :/
+/: /COMMENT <!-- :/
+/: COMMENT/ --> :/
+/: /.VERSION /VERSION /. :/
+/: /FLEXROW <div class="flexrow"> :/
+/: /FLEXCELL <div class="flexcell"> :/
+
+/* set a bit more sane format for /.NOW to use */
+/" YYYY-MM-dd "/ /MAKEFORMATTER /'DATEFORMAT /V!
+/* Enables double newline equivalency to a paragraph (implicit paragraphs). */
+/:
+
+ /P :/
