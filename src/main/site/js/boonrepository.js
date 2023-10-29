@@ -121,7 +121,7 @@ class BoonRepository {
 	}
 
     /**
-     * Gets all available backgrounds as a list and invokes the given callback when the data is available.
+     * Gets all available boons as a list and invokes the given callback when the data is available.
      */
     getAllBoons(onDataAvailable) {
 		var boonsRef = collection(this.db,schema.boons);
@@ -140,7 +140,7 @@ class BoonRepository {
 	}
 
     /**
-     * Get a background given its id.
+     * Get a boon given its id.
      *
      * @param {string} id Document id of the background to get.
      * @Param {function([Background])} onDataAvailable data available callback.

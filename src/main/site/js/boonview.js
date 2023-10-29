@@ -41,20 +41,23 @@ class BoonViewer extends LitElement {
 		this.boonsRef = createRef();
 		this.dialogselector = 'body';
 		this.selectable = false;
-		this.selectAction = () => { alert("boon viewer says hi") }
+		this.selectAction = (e) => { 
+			console.log("Boon viewer selected boon id "+e.detail.boon.id);
+		};
+		this.hbs = this.handleBoonSelected.bind(this);
 	}
 	
 	connectedCallback() {
 		super.connectedCallback();
 		this.boonRepo.addListener(this.boonsUpdated);
 		this.boonRepo.getAllBoons((boons) => { this.boonsUpdated(boons);  });
-		this.addEventListener('boonselected',this.handleBoonSelected.bind(this))
+		this.addEventListener('boonselected',this.hbs);
 	}
 	
 	disconnectedCallback() {
 		super.disconnectedCallback();
 		this.boonRepo.removeListener(this.boonsUpdated);
-		this.removeEventListener('boonselected');
+		this.removeEventListener('boonselected',this.hbs);
 	}
 	
 	boonsUpdated(boons) {
@@ -170,13 +173,16 @@ class BoonList extends LitElement {
 	}
 
 	dismissClickHandler() {
-		const tag = document.querySelector(this.dialogselector);
-		tag.removeChild(this.dialog);
-		this.dialog = null;
+		this.dismiss();
 	}
 	
 	selectClickHandler() {
-		this.dispatchEvent(new Event('boonselected',{bubbles: true, boon: this.item}));
+		this.dispatchEvent(new CustomEvent('boonselected',{bubbles: true, composed: true, detail: {boon: this.item}}));
+		this.dismiss();
+	}
+
+	dismiss() {
+		const tag = document.querySelector(this.dialogselector);
 		tag.removeChild(this.dialog);
 		this.dialog = null;
 	}
@@ -297,3 +303,4 @@ class BoonView extends LitElement {
 }
 
 window.customElements.define('boon-view',BoonView);
+export { BoonDetailRenderer };

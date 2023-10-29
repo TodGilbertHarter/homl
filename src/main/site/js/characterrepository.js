@@ -23,9 +23,9 @@ const characterConverter = {
 		const c = {};
 		const cd = character.characterData;
 		c.id = character.id;
-		for(const [key, value] of Object.entries(character.characterData)) {
+		for(const [key, value] of Object.entries(cd)) {
 			if(key === "background") {
-				for(const [bgkey, bg] of Object.entries(character.characterData[key])) {
+				for(const [bgkey, bg] of Object.entries(value)) {
 					const docRef = getReference(schema.backgrounds,bg.background.id);
 					const nb = {
 						bgref: docRef,
@@ -35,30 +35,49 @@ const characterConverter = {
 					if(c[key] === undefined) { c[key] = {};}
 					c[key][bgkey] = nb;
 				};
+			} else if(key === "boons") {
+				c[key] = {};
+				Object.keys(value).forEach((bkey) =>{
+					const blist = value[bkey];
+					for(var i = 0; i < blist.length; i++) {
+						const boonRecord = value[bkey][i];
+						if(boonRecord.boon) {
+							const docRef = getReference(schema.boons,boonRecord.boon.id);
+							const nbr = {
+								bref: docRef,
+								name: boonRecord.boon.name,
+							}
+							if(!c[key][bkey]) {
+								c[key][bkey] = [];
+							}
+							c[key][bkey].push(nbr);
+						}
+					}
+				});
 			} else if(key === "species") {
-				if(character.characterData.species.species !== undefined && character.characterData.species.species !== null) {
-					const docRef = getReference(schema.species,character.characterData.species.species.id);
-					c[key] = { name: character.characterData.species.species.name, speciesref: docRef};
+				if(value.species !== undefined && value.species !== null) {
+					const docRef = getReference(schema.species,value.species.id);
+					c[key] = { name: value.species.name, speciesref: docRef};
 				} else {
 					throw new Error("bad species when trying to save character");
 				}
 			} else if(key === "origin") {
-				if(character.characterData.origin.origin !== undefined && character.characterData.origin.origin !== null) {
-					const docRef = getReference(schema.origins,character.characterData.origin.origin.id);
-					c[key] = { name: character.characterData.origin.origin.name, originref: docRef};
+				if(value.origin !== undefined && value.origin !== null) {
+					const docRef = getReference(schema.origins,value.origin.id);
+					c[key] = { name: value.origin.name, originref: docRef};
 				} else {
 					throw new Error("bad origin when trying to save character");
 				}
 			} else if(key === "calling") {
-				if(character.characterData.calling.calling !== undefined && character.characterData.calling.calling !== null) {
-					const docRef = getReference(schema.callings,character.characterData.calling.calling.id);
-					c[key] = { name: character.characterData.calling.calling.name, callingref: docRef};
+				if(value.calling !== undefined && value.calling !== null) {
+					const docRef = getReference(schema.callings,value.calling.id);
+					c[key] = { name: value.calling.name, callingref: docRef};
 				} else {
 					throw new Error("bad calling when trying to save character");
 				}
 			} else if(key === "proficiencies") {
 				c[key] = {tools: [], implements: [], weapons: []};
-				const profs = cd[key];
+				const profs = value;
 				c[key]['knacks'] = profs['knacks'];
 				const fixProfLink = (id) => { return getReference(schema.equipment,id); };
 				for(var i = 0; i < profs['weapons'].length; i++) {

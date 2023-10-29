@@ -22,6 +22,9 @@ import { Character } from './character.js';
 import { GetPlayerReference } from './playerrepository.js'
 import {ref, createRef} from 'https://unpkg.com/lit@2/directives/ref.js?module';
 import {repeat} from 'https://unpkg.com/lit@2/directives/repeat.js?module';
+import {BoonDetailRenderer} from './boonview.js';
+import { BoonRepository } from './boonrepository.js';
+import { Boon } from './boon.js';
 
 /** @private */ const CharacterSheettemplate = document.getElementById('charactersheettemplate');
 
@@ -58,7 +61,9 @@ class CharacterSheet extends HTMLElement {
 		refreshbutton.addEventListener('click',rbh);
 		const cbh = this.copyButtonHandler.bind(this);
 		copybutton.addEventListener('click',cbh);
-		this.shadowRoot.getElementById('characterview').addEventListener('change',this.onChange.bind(this));
+		const cview = this.shadowRoot.getElementById('characterview');
+		cview.addEventListener('change',this.onChange.bind(this));
+		cview.addEventListener('boonselected',this.onChange.bind(this));
 		this.dirty = false;
 		this.refreshed = true;
 	}
@@ -261,6 +266,12 @@ class CharacterSheet extends HTMLElement {
 		}
 		return list;
 	}
+
+	getBoonList() {
+		const id = 'boonselector';
+		const elem = this.getElement(id);
+		return elem.boons;
+	}
 	
 	disconnectedCallback() {
 		
@@ -309,25 +320,215 @@ class CharacterSheet extends HTMLElement {
 			listElement.addItem(item, () => {});
 		});
 	}
+	
+	setCharacterBoons(boons) {
+		const boonselector = this.shadowRoot.getElementById('boonselector');
+		boonselector.boons = boons;
+	}
 }
 
 window.customElements.define('character-sheet',CharacterSheet);
 
 class BoonSelector extends LitElement {
 	static properties = {
-		label: {}
+		label: {},
+		boons: {attribute: false, state: true}
 	}
 
 	constructor() {
 		super();
+		this.boons = [];
+	}
+	
+	renderBoon(boon) {
+		const bdr = new BoonDetailRenderer(boon);
+		return bdr.render();
 	}
 	
 	render() {
-		return html`<span class='boxlabel' part='label'>${this.label}</span><button @click=${this.addClicked}>Add</button>`;
+		return html`<style>
+
+		.bold {
+		    font-weight: bold;
+		}
+		
+		.martial {
+		    background-color: var(--martial-bg);
+		    color: var(--martial-fg);
+		}
+		
+		.elemental {
+		    background-color: var(--elemental-bg);
+		    color: var(--elemental-fg);
+		}
+		
+		.life {
+		    background-color: var(--life-bg);
+		    color: var(--life-fg);
+		}
+		
+		.shadow {
+		    background-color: var(--shadow-bg);
+		    color: var(--shadow-fg);
+		}
+		
+		.spirit {
+		    background-color: var(--spirit-bg);
+		    color: var(--spirit-fg);
+		}
+		
+		.time {
+			background-color: var(--time-bg);
+			color: var(--time-fg);
+		}
+		
+		.fate {
+			background-color: var(--fate-bg);
+			color: var(--fate-fg);
+		}
+		
+		.none {
+		    background-color: lightgrey;
+		    color: black;
+		}
+		
+		.heroic {
+		    color: var(--heroic-fg);
+		    background-color: var(--heroic-bg);
+		}
+		
+		.legendary {
+		    color: var(--legendary-fg);
+		    background-color: var(--legendary-bg);
+		}
+		
+		.mythic {
+		    color: var(--mythic-fg);
+		    background-color: var(--mythic-bg);
+		}
+		
+		.flavortext {
+		    display: block !important;
+		    width: 100%;
+		    font-style: italic;
+		    text-align: center;
+		}
+
+		section.boon {
+		    border: 0px;
+		    margin: .5em;
+		    flex: 1;
+		    max-width: 600px;
+		}
+		
+		section.boon > .traits > :first-child {
+		    box-sizing: border-box;
+		    width: 100%;
+		    display: flex;
+		    background-color: var(--boon-title-bg);
+		    color: var(--boon-title-fg);
+		    padding: .125em;
+		    border-bottom: 1px solid grey;
+		}
+		
+		section.boon > .traits > :not(:first-child) {
+		    box-sizing: border-box;
+		    width: 100%;
+		    display: flex;
+		    background-color: var(--boon-bg);
+		    color: var(--boon-fg);
+		    padding: .125em;
+		}
+		
+		section.boon > .traits > .widetrait {
+		    width: 100%;
+		    display: block;
+		    background-color: var(--boon-bg);
+		    color: var(--boon-fg);
+		}
+		
+		section.boon > .traits > .widetrait > p {
+		    padding-left: 0;
+		    margin-left: 0;
+		}
+		
+		section.boon > .traits > .trait > div {
+		    width: 50%;
+		}
+		
+		section.boon > .traits > .trait > :not(:first-child) {
+		    width: 50%;
+		    text-align: right;
+		}
+		
+		section.feat {
+		    border: 1px solid black;
+		    border-radius: 10px;
+		    margin-bottom: .5em;
+		    margin-left: .5em;
+		    margin-right: .5em;
+		}
+		
+		section.feat > .traits > :first-child {
+		    box-sizing: border-box;
+		    width: 100%;
+		    display: flex;
+		    padding: .125em;
+		    border-bottom: 1px solid grey;
+		    border-top: 1px solid black;
+		    border-left: 1px solid black;
+		    border-right: 1px solid black;
+		    border-top-left-radius: 10px;
+		    border-top-right-radius: 10px;
+		}
+		
+		section.feat > .traits > :not(:first-child) {
+		    box-sizing: border-box;
+		    width: 100%;
+		    display: flex;
+		    background-color: inherit;
+		    color: inherit;
+		    padding: .125em;
+		}
+		
+		section.feat > .traits > .widetrait {
+		    width: 100%;
+		    display: block;
+		    background-color: inherit;
+		    color: inherit;
+		}
+		
+		section.feat > .traits > .widetrait > p {
+		    padding-left: 0;
+		    margin-left: 0;
+		}
+		
+		section.feat > .traits > .widetrait > span {
+			padding-right: .2em;
+		}
+		
+		section.feat > .traits > .trait > div {
+		    width: 50%;
+		}
+		
+		section.feat > .traits > .trait > :not(:first-child) {
+		    width: 50%;
+		    text-align: right;
+		}
+
+		div.booncontainer {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		</style>
+		<span class='boxlabel' part='label'>${this.label}</span><button @click=${this.addClicked}>Add</button>
+		<div class='booncontainer'>
+			${repeat(this.boons,(item,index) => html`<section id=${item.id} class='boon'>${this.renderBoon(item)}</section>`)}
+		</div>`;
 	}
 	
 	changed() {
-		this.dispatchEvent(new Event('changed',{bubbles: true}));
+		this.dispatchEvent(new Event('change',{bubbles: true, composed: true}));
 	}
 	
 	addClicked() {
@@ -336,9 +537,14 @@ class BoonSelector extends LitElement {
 		dialog.setAttribute('class','boonselector');
 		dialog.setAttribute('maxheight','600px');
 		dialog.setAttribute('maxwidth','1000px');
-		const template = html`<div slot='content'><boon-viewer></boon-viewer></div></dialog-widget>`;
+		const template = html`<div slot='content'><boon-viewer></boon-viewer></div>`;
 		render(template,dialog);
 		document.getElementsByTagName('body')[0].appendChild(dialog);
+		dialog.addEventListener('boonselected',(e) => { 
+			document.getElementsByTagName('body')[0].removeChild(dialog);
+			this.boons = [...this.boons,e.detail.boon];
+			this.changed();
+		});
 	}
 }
 
@@ -858,13 +1064,15 @@ class CharacterController {
 	backgroundRepo;
 	originRepo;
 	characterRepo;
+	boonRepo;
 
-    constructor(speciesRepo,callingRepo,backgroundRepo,originRepo,characterRepo) {
+    constructor(speciesRepo,callingRepo,backgroundRepo,originRepo,characterRepo,boonRepo) {
 		this.speciesRepo = speciesRepo;
 		this.callingRepo = callingRepo;
 		this.backgroundRepo = backgroundRepo;
 		this.originRepo = originRepo;
 		this.characterRepo = characterRepo;
+		this.boonRepo = boonRepo;
     }
 
 	/**
@@ -991,7 +1199,31 @@ class CharacterController {
         this.setPersonality(sheet,character.personality);
         this.setBackground(sheet,character.background);
         this.setProficiencies(sheet,character.characterData.proficiencies);
+        this.setBoons(sheet,character.characterData.boons);
     }
+
+	getAllBoons(blist,action) {
+		const ulist = blist.filter((item) => !(item instanceof Boon));
+		const rlist = blist.filter((item) => item instanceof Boon);
+		const resolvedList = this.boonRepo.getReferencedBoons(ulist,(rboons) => { action([...rboons,...rlist])});
+		return resolvedList;
+	}
+	 
+    setBoons(sheet,boons) {
+		const blist = [];
+		for(const [association,abs] of Object.entries(boons)) {
+			for(var i = 0; i < abs.length; i++) {
+				if(abs[i].bref) {
+					blist.push(abs[i].bref);
+				} else {
+					blist.push(abs[i].boon);
+				}
+			}
+		}
+		this.getAllBoons(blist,(boons) => {
+			sheet.setCharacterBoons(boons);
+		});
+	}
 
 	setProficiencies(sheet,proficiencies) {
 		const toolProfs = proficiencies['tools'];
@@ -1121,6 +1353,14 @@ class CharacterController {
 			const p = {id: cplist[i].equipmentId, name: cplist[i].name};
 			cprofs[cplist[i].type+'s'].push(p);
 		};
+		const cboons = sheet.getBoonList();
+		const boons = {};
+		for(var i = 0; i < cboons.length; i++) {
+			const b = {name: cboons[i].name, boon: cboons[i]};
+			if(!boons[cboons[i].association]) { boons[cboons[i].association] = []; }
+			boons[cboons[i].association].push(b);
+		}
+		character.characterData.boons = boons;
     }
     
     calculate(character) {
