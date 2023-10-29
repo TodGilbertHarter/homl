@@ -520,11 +520,34 @@ class BoonSelector extends LitElement {
 			display: flex;
 			flex-wrap: wrap;
 		}
+		
+		div.boondeletebtn {
+			float: right;
+		}
 		</style>
 		<span class='boxlabel' part='label'>${this.label}</span><button @click=${this.addClicked}>Add</button>
 		<div class='booncontainer'>
-			${repeat(this.boons,(item,index) => html`<section id=${item.id} class='boon'>${this.renderBoon(item)}</section>`)}
+			${repeat(this.boons,(item,index) => html`<section id=${item.id} class='boon'>${this.renderBoon(item)}<div class='boondeletebtn'><button data-id='${item.id}' @click=${this.boonDeleteClicked}>delete</button></div></section>`)}
 		</div>`;
+	}
+	
+	boonDeleteClicked(e) {
+		this.removeItemById(e.target.dataset.id);
+	}
+	
+	removeItemById(id) {
+		var boonIndex = -1;
+		for(var i = 0; i < this.boons.length; i++) {
+			if(this.boons[i].id === id) {
+				boonIndex = i;
+				break;
+			}
+		}
+//		this.boons = [...this.boons.splice(i,1)];
+		if(boonIndex === -1) { throw new Error("tried to delete non-existent boon "+id) }
+		this.boons.splice(boonIndex,1);
+		this.changed();
+		this.requestUpdate();
 	}
 	
 	changed() {
