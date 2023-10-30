@@ -540,7 +540,7 @@ tab-panel::part(tabitem) {
 	border-bottom-width: 0px;
 	overflow: visible;
 	cursor: pointer;
-	z-index: -1;
+/*	z-index: -1; */
 }
 
 tab-panel::part(tabitem):hover {
