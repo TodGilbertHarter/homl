@@ -237,6 +237,11 @@ boon-selector::part(label) {
     font-size: .75em;
 }
 
+equipment-selector::part(label) {
+    font-weight: bold;
+    font-size: .75em;
+}
+
 .attributetable {
     border: 1px solid grey;
 }

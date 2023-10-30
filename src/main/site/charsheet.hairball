@@ -93,8 +93,10 @@ of HTML. Include this and a character data document, the result will be an HTML 
 /: /SIZE /GETMATCHING SIZE/ /DELIMITED /CALCULATEDFIELD /FIELDNAME Size: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID charactersize FIELDID/ CALCULATEDFIELD/ SHEETROW/ :/
 /: SIZE/ /[" Mismatch, SIZE/ must follow /SIZE "]/ /ABORT :/
 
+/: /PORTRAITFIELD /FLEXROW /FLEXCELL1 <portrait-field> :/
+/: PORTRAITFIELD/ </portrait-field> :/
 
-/: /ATTRIBUTES /FLEXROW /FLEXCELL1 <div class="attributetable"> :/
+/: /ATTRIBUTES <div class="attributetable"> :/
 /: /ATTRIBUTE <ability-field style="width: 10em;" /SPACE :/ /: ATTRIBUTE/ </ability-field> :/
 /: /STRENGTH /ATTRIBUTE label='Strength:' name="characterstrength" id="characterstrength" modifier='' value=" :/
 /: STRENGTH/ "/> ATTRIBUTE/ :/
@@ -215,7 +217,7 @@ FLEXROW/ :/
 /: BOONS/ </boon-selector> BOX/ :/
 /: /BOON /SPACE <span class="value"> :/
 /: BOON/ </span> :/
-/: /EQUIPMENT /BOX <span class="boxlabel">Equipment:</span> :/
-/: EQUIPMENT/ BOX/ :/
+/: /EQUIPMENT /BOX <equipment-selector id="equipmentselector" label="Equipment:"> :/
+/: EQUIPMENT/ </equipment-selctor> BOX/ :/
 /: /ITEM /SPACE <span class="value"> :/
 /: ITEM/ ,</span> :/

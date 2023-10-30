@@ -25,6 +25,7 @@ import {repeat} from 'https://unpkg.com/lit@2/directives/repeat.js?module';
 import {BoonDetailRenderer} from './boonview.js';
 import { BoonRepository } from './boonrepository.js';
 import { Boon } from './boon.js';
+import {Equipment} from './equipment.js';
 
 /** @private */ const CharacterSheettemplate = document.getElementById('charactersheettemplate');
 
@@ -63,7 +64,6 @@ class CharacterSheet extends HTMLElement {
 		copybutton.addEventListener('click',cbh);
 		const cview = this.shadowRoot.getElementById('characterview');
 		cview.addEventListener('change',this.onChange.bind(this));
-		cview.addEventListener('boonselected',this.onChange.bind(this));
 		this.dirty = false;
 		this.refreshed = true;
 	}
@@ -328,6 +328,87 @@ class CharacterSheet extends HTMLElement {
 }
 
 window.customElements.define('character-sheet',CharacterSheet);
+
+class EquipmentSelector extends LitElement {
+	static properties = {
+		label: {},
+		equipment: {attribute: false, state: true}
+	}
+	
+	constructor() {
+		super();
+		this.equipment = {};
+		this.label = "Equipment:";
+		this.refs = {};
+		this.refs['implement'] = createRef();
+		this.refs['weapon'] = createRef();
+	}
+	
+	addClicked() {
+		const dialog = document.createElement('dialog-widget');
+		dialog.setAttribute('closewidget',true);
+		dialog.setAttribute('class','equipmentselector');
+		dialog.setAttribute('maxheight','600px');
+		dialog.setAttribute('maxwidth','1000px');
+		const template = html`<div slot='content'><equipment-view selectable='true'></equipment-view></div>`;
+		render(template,dialog);
+		document.getElementsByTagName('body')[0].appendChild(dialog);
+		dialog.addEventListener('equipmentselected',(e) => { 
+			document.getElementsByTagName('body')[0].removeChild(dialog);
+			const nequipment = e.detail.equipment;
+			const equiptype = nequipment.type;
+			if(!this.equipment[equiptype]) { this.equipment[equiptype] = []}
+			this.equipment[equiptype].push(nequipment);
+			this.changed();
+			this.refs[equiptype].value.setEquipmentList(this.equipment[equiptype]);
+		});
+	}
+	
+	equipmentDeleteClicked(e) {
+		this.removeItemById(e.target.dataset.id);
+	}
+	
+	removeItemById(id) {
+		var equipIndex = -1;
+		for(var i = 0; i < this.equipment.length; i++) {
+			if(this.equipment[i].id === id) {
+				equipIndex = i;
+				break;
+			}
+		}
+		if(equipIndex === -1) { throw new Error("tried to delete non-existent equipment "+id) }
+		this.equipment.splice(equipIndex,1);
+		this.changed();
+		this.requestUpdate();
+	}
+	
+	changed() {
+		this.dispatchEvent(new Event('change',{bubbles: true, composed: true}));
+	}
+	
+	renderImplements() {
+		return html`<implement-list descriptiondisabled='true' ${ref(this.refs['implement'])}></implement-list>`;
+	}
+	
+	renderWeapons() {
+		return html`<weapon-list descriptiondisabled='true' ${ref(this.refs['weapon'])}></weapon-list>`;
+	}
+	
+	render() {
+		return html`<style>
+			.equipmentcontainer {
+				width:50%;
+			}
+		</style>
+		<span class='boxlabel' part='label'>${this.label}</span><button @click=${this.addClicked}>Add</button>
+		<div class='equipmentcontainer'>
+			${this.renderImplements()}
+			${this.renderWeapons()}
+		</div>`;
+	}
+}
+
+window.customElements.define('equipment-selector',EquipmentSelector);
 
 class BoonSelector extends LitElement {
 	static properties = {
@@ -844,10 +925,6 @@ class AttributeField extends SheetField {
         const ltext = this.getAttribute('label');
         const label = this.shadowRoot.getElementById('label');
         label.innerHTML = ltext;
-        this.parentNode.addEventListener('change',() => { console.log("got event at parent of attribute field.")});
-        this.parentNode.parentNode.addEventListener('change',() => { console.log("got event at grandparent")});
-        this.parentNode.parentNode.parentNode.addEventListener('change',() => { console.log("got event at great grandparent")});
-        this.parentNode.parentNode.parentNode.parentNode.addEventListener('change',() => { console.log("got event at great great grandparent")});
     }
     
     onChange(e) {
@@ -1072,6 +1149,29 @@ class KnackField extends SheetField {
     }    
 }
 
+class PortraitField extends LitElement {
+	static properties = { source: {}};
+	
+	constructor() {
+		super();
+		this.source = "/images/silhouette.png";
+	}
+	
+	render() {
+		return html`<style>
+			img {
+				padding: 5px;
+				max-width: 400px;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+		<img src=${this.source}></img>`;
+	}
+}
+
+window.customElements.define('portrait-field',PortraitField);
 window.customElements.define('attribute-field',AttributeField);
 window.customElements.define('calculated-field',CalculatedField);
 window.customElements.define('select-field',SelectField);
