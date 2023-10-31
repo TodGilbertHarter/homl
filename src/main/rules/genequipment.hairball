@@ -17,6 +17,8 @@
 /: /IMPLEMENTNAME , "type": "implement", "name": " :/ /: IMPLEMENTNAME/ " :/
 /: /IMPLEMENTHANDS , "hands": " :/ /: IMPLEMENTHANDS/ " :/
 /: /IMPLEMENTDAMAGE , "damage": " :/ /: IMPLEMENTDAMAGE/ " :/
+/: /IMPLEMENTCOST , "cost": " :/ /: IMPLEMENTCOST/ " :/
+/: /IMPLEMENTLOAD , "load": " :/ /: IMPLEMENTLOAD/ " :/
 /: /IMPLEMENTABILITY , "ability": " :/ /: IMPLEMENTABILITY/ " :/
 /: /IMPLEMENTDESCRIPTION , "description": " :/ /: IMPLEMENTDESCRIPTION/ " :/
 /: IMPLEMENT/ } /[" /EQUIPMENT "]/ /VOCAB@ /INACTIVE /NEWLINE /EMITOFF :/

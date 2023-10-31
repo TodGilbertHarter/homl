@@ -19,8 +19,8 @@ import { Implement, Weapon, Armor, Equipment, Tool } from './equipment.js';
 import { schema } from './schema.js';
 
 const EquipmentConverter = {
-	toFirestore(calling) {
-		
+	toFirestore(equipment) {
+		throw Error("Uploading equipment is not supported")
 	},
 	
 	fromFirestore(snapshot, options) {
@@ -68,10 +68,10 @@ class EquipmentRepository {
 	 * @param {[docs]} characters an array of character docrefs.
 	 * @param {function([Character])} onDataAvailable callback to handle the results.
 	 */
-/* 	getReferencedCharacters(characters,onDataAvailable) {
+ 	getReferenced(equips,onDataAvailable) {
 		const results = [];
-		characters.forEach((docRef) => {
-			const dr = docRef.withConverter(characterConverter);
+		equips.forEach((docRef) => {
+			const dr = docRef.withConverter(EquipmentConverter);
 			const cp = getDoc(dr);
 			results.push(cp);
 		});
@@ -82,7 +82,7 @@ class EquipmentRepository {
 			});
 			onDataAvailable(res); 
 		});
-	} */
+	}
 
 	/**
 	 * Get equipment by name. Technically multiple equipment with the same name could exist, 

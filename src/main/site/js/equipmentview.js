@@ -31,7 +31,7 @@ class EquipmentView extends LitElement {
 		super();
 		this.equipmentRepo = window.gebApp.equipmentRepo;
 		this.equipment = [];
-		this.selectable = false;
+		this.selectable = 'false';
 		this.implementRef = createRef();
 		this.weaponRef = createRef();
 		this.gearRef = createRef();
@@ -78,12 +78,21 @@ class EquipmentView extends LitElement {
 	render() {
 		return html`
 		<div>
+			<style>
+				implement-list::part(tableheader), weapon-list::part(tableheader), armor-list::part(tableheader), gear-list::part(tableheader), tool-list::part(tableheader) {
+					font-size: 1.5em;
+				}
+
+				implement-list::part(equipmenttitle), weapon-list::part(equipmenttitle), armor-list::part(equipmenttitle), gear-list::part(equipmenttitle), tool-list::part(equipmenttitle) {
+					font-size: 1.5em;
+				}
+			</style>
 			<h1 part='sectiontitle'>HoML Equipment</h1>
-			<implement-list selectable='${this.selectable} id='implements' ${ref(this.implementRef)}></implement-list>
-			<weapon-list selectable='${this.selectable} id='weapons' ${ref(this.weaponRef)}></weapon-list>
-			<armor-list selectable='${this.selectable} id='armor' ${ref(this.armorRef)}></armor-list>
-			<gear-list selectable='${this.selectable} id='gear' ${ref(this.gearRef)}></gear-list>
-			<tool-list selectable='${this.selectable} id='tools' ${ref(this.toolRef)}></tool-list>
+			<implement-list selectable='${this.selectable}' id='implements' ${ref(this.implementRef)}></implement-list>
+			<weapon-list selectable='${this.selectable}' id='weapons' ${ref(this.weaponRef)}></weapon-list>
+			<armor-list selectable='${this.selectable}' id='armor' ${ref(this.armorRef)}></armor-list>
+			<gear-list selectable='${this.selectable}' id='gear' ${ref(this.gearRef)}></gear-list>
+			<tool-list selectable='${this.selectable}' id='tools' ${ref(this.toolRef)}></tool-list>
 		</div>`
 	}
 }
@@ -94,7 +103,8 @@ class EquipmentList extends LitElement {
 	static properties = {
 		selectable: {},
 		dialogselector: {},
-		descriptiondisabled: {}
+		descriptiondisabled: {},
+		calculateload: {}
 	}
 	
 	constructor() {
@@ -102,9 +112,12 @@ class EquipmentList extends LitElement {
 		this.equipment = [];
 		this.item = null;
 		this.dialogselector = 'body';
-		this.selectable = false;
+		this.selectable = 'false';
 		this.descriptiondisabled = 'false';
+		this.calculateload = 'false';
 		this.dialog = null;
+		this.load = 'N/A';
+		this.cost = 'N/A';
 		this.detailTemplate = (item) => html`<div slot='content'>Details: ${item.name}</div>${this.renderButtons()}`;
 		this.onClick = (e) => {
 			const id = e.target.id;
@@ -115,6 +128,20 @@ class EquipmentList extends LitElement {
 		}
 	}
 
+	willUpdate() {
+		if(this.calculateload === 'true') {
+			let totalload = 0;
+			for(var i = 0; i < this.equipment.length; i++) {
+				let l = parseInt(this.equipment[i].load);
+				if(l === NaN) { l = 0}
+				if(this.equipment[i].load > 0) {
+					totalload += l;
+				}
+			}
+			if(totalload > 0) {this.load = totalload}
+		}
+	}
+	
 	dismissClickHandler(e) {
 		this.dismiss();
 	}
@@ -138,7 +165,7 @@ class EquipmentList extends LitElement {
 	}
 	
 	renderButtons() {
-		if(this.selectable) {
+		if(this.selectable === 'true') {
 			return html`<button class='dialogbutton' slot='buttonbar' id='equipmentselect' @click=${this.selectClickHandler.bind(this)}>select</button>
 			<button class='dialogbutton' slot='buttonbar' id='dismiss' @click=${this.dismissClickHandler.bind(this)}>dismiss</button>`;
 		}
@@ -170,12 +197,23 @@ class ImplementList extends EquipmentList {
 		 	<div class='equipmentdetailrow'><span class='equipmentdetaillabel'>Ability:</span><span class='equipmentdetailvalue'>${item.ability}</span></div>
 		 	<div class='equipmentdetailrow'><span class='equipmentdetaillabel'>Damage:</span><span class='equipmentdetailvalue'>${item.damage}</span></div>
 		 	<div class='equipmentdetailrow'><span class='equipmentdetaillabel'>Hands:</span><span class='equipmentdetailvalue'>${item.hands}</span></div>
+		 	<div class='equipmentdetailrow'><span class='equipmentdetaillabel'>Load:</span><span class='equipmentdetailvalue'>${item.load}</span></div>
 		 	<div class='equipmentdetailrow'><span class='equipmentdetailvalue'>${item.description}</span></div>
 		 </div>${this.renderButtons()}`;
 	}
-	
+
+	renderLoad() {
+		if(this.calculateload === 'true') {
+			return html`<div class='tr footer'><span></span><span></span><span></span><span></span><span>Total:</span><span class='right'>${this.load}</span></div>`;
+		}
+		return null;
+	}
+
 	render() {
 		return html`<style>
+			.right {
+				text-align: right;
+			}
 			div.table { 
 				display: table; 
 				background-color: var(--topic-bg);
@@ -185,12 +223,16 @@ class ImplementList extends EquipmentList {
 			div.table span {
 				display: table-caption;
 				font-weight: bold;
-				font-size: 1.5em;
 			}
 			div.tr { 
 				display: table-row;
 				background-color: var(--theme-fg);
 				color: var(--theme-bg);
+				}
+			div.footer { 
+				border-top: 1px double black;
+				background-color: var(--theme-bg);
+				color: var(--theme-fg);
 				}
 			div.tr > span { 
 				display: table-cell; 
@@ -206,11 +248,13 @@ class ImplementList extends EquipmentList {
 			}
 		</style>
 		<div class='table'>
-			<span>Implements</span>
-			<div class='tr'><span>Name</span><span>Ability</span><span>Damage</span><span>Hands</span>
+			<span part='equipmenttitle'>Implements</span>
+			<div part='tableheader' class='tr'><span>Name</span><span>Ability</span><span>Damage</span><span>Hands</span><span>Cost</span><span>Load</span>
 			${this.renderDescription()}</div>
-			${repeat(this.equipment,(item,index) => html`<implement-view descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} id=${item.id} ability=${item.ability} damage=${item.damage}
-			description=${item.description} hands=${item.hands}></implement-view>`)}
+			${repeat(this.equipment,(item,index) => html`<implement-view descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} 
+			id=${item.id} ability=${item.ability} damage=${item.damage} cost=${item.cost}
+			description=${item.description} hands=${item.hands} load=${item.load}></implement-view>`)}
+			${this.renderLoad()}
 		</div>`;
 	}
 }
@@ -235,8 +279,18 @@ class WeaponList extends EquipmentList {
 		 </div>${this.renderButtons()}`;
 	}
 	
+	renderLoad() {
+		if(this.calculateload === 'true') {
+			return html`<div class='tr footer'><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span>Total:</span><span class='right'>${this.load}</span></div>`;
+		}
+		return null;
+	}
+	
 	render() {
 		return html`<style>
+			.right {
+				text-align: right;
+			}
 			div.table { 
 				display: table; 
 				background-color: var(--topic-bg);
@@ -246,12 +300,16 @@ class WeaponList extends EquipmentList {
 			div.table span {
 				display: table-caption;
 				font-weight: bold;
-				font-size: 1.5em;
 			}
 			div.tr { 
 				display: table-row;
 				background-color: var(--theme-fg);
 				color: var(--theme-bg);
+				}
+			div.footer { 
+				border-top: 1px double black;
+				background-color: var(--theme-bg);
+				color: var(--theme-fg);
 				}
 			div.tr > span { 
 				display: table-cell; 
@@ -267,11 +325,13 @@ class WeaponList extends EquipmentList {
 			}
 		</style>
 		<div class='table'>
-			<span>Weapons</span>
-			<div class='tr'><span>Name</span><span>Ability</span><span>Damage</span><span>Hands</span>
-			<span>Range</span><span>Category</span><span>Type</span><span>Tags</span>${this.renderDescription()}</div>
-			${repeat(this.equipment,(item,index) => html`<weapon-view descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} id=${item.id} ability=${item.ability} damage=${item.damage}
+			<span part='equipmenttitle'>Weapons</span>
+			<div part='tableheader' class='tr'><span>Name</span><span>Ability</span><span>Damage</span><span>Hands</span>
+			<span>Range</span><span>Category</span><span>Type</span><span>Tags</span><span>Cost</span><span>Load</span>${this.renderDescription()}</div>
+			${repeat(this.equipment,(item,index) => html`<weapon-view descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} id=${item.id} 
+			ability=${item.ability} damage=${item.damage} load=${item.load} cost=${item.cost}
 			description=${item.description} hands=${item.hands} range=${item.range} category=${item.category} type=${item.weapontype} tags=${item.tags}></weapon-view>`)}
+			${this.renderLoad()}
 			</div>`;
 	}
 }
@@ -295,8 +355,18 @@ class ArmorList extends EquipmentList {
 		return `DEX: ${item.DEX}, CON: ${item.CON}`;
 	}
 	
+	renderLoad() {
+		if(this.calculateload === 'true') {
+			return html`<div class='tr footer'><span></span><span></span><span></span><span></span><span>Total:</span><span class='right'>${this.load}</span></div>`;
+		}
+		return null;
+	}
+	
 	render() {
 		return html`<style>
+			.right {
+				text-align: right;
+			}
 			div.table { 
 				display: table; 
 				background-color: var(--topic-bg);
@@ -306,12 +376,16 @@ class ArmorList extends EquipmentList {
 			div.table span {
 				display: table-caption;
 				font-weight: bold;
-				font-size: 1.5em;
 			}
 			div.tr { 
 				display: table-row;
 				background-color: var(--theme-fg);
 				color: var(--theme-bg);
+				}
+			div.footer { 
+				border-top: 1px double black;
+				background-color: var(--theme-bg);
+				color: var(--theme-fg);
 				}
 			div.tr > span { 
 				display: table-cell; 
@@ -327,11 +401,12 @@ class ArmorList extends EquipmentList {
 			}
 		</style>
 		<div class='table'>
-			<span>Armor</span>
-			<div class='tr'><span>Type</span><span>DR</span><span>Load</span><span>Cost</span>
-			<span>DEX</span><span>CON</span><span>Description</span></div>
-			${repeat(this.equipment,(item,index) => html`<armor-view @click=${this.onClick} name=${item.name} id=${item.id} dr=${item.dr} dex=${item.DEX} con=${item.CON} 
+			<span part='equipmenttitle'>Armor</span>
+			<div part='tableheader' class='tr'><span>Type</span><span>DR</span>
+			<span>DEX</span><span>CON</span><span>Cost</span><span>Load</span>${this.renderDescription()}</div>
+			${repeat(this.equipment,(item,index) => html`<armor-view descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} id=${item.id} dr=${item.dr} dex=${item.DEX} con=${item.CON} 
 			cost=${item.cost} load=${item.load} description=${item.description}></armor-view>`)}
+			${this.renderLoad()}
 		</div>`;
 	}
 }
@@ -349,8 +424,18 @@ class GearList extends EquipmentList {
 		 </div>${this.renderButtons()}`;
 	}
 	
+	renderLoad() {
+		if(this.calculateload === 'true') {
+			return html`<div class='tr footer'><span></span><span>Total:</span><span class='right'>${this.load}</span></div>`;
+		}
+		return null;
+	}
+
 	render() {
 		return html`<style>
+			.right {
+				text-align: right;
+			}
 			div.table { 
 				display: table; 
 				background-color: var(--topic-bg);
@@ -360,12 +445,16 @@ class GearList extends EquipmentList {
 			div.table span {
 				display: table-caption;
 				font-weight: bold;
-				font-size: 1.5em;
 			}
 			div.tr { 
 				display: table-row;
 				background-color: var(--theme-fg);
 				color: var(--theme-bg);
+				}
+			div.footer { 
+				border-top: 1px double black;
+				background-color: var(--theme-bg);
+				color: var(--theme-fg);
 				}
 			div.tr > span { 
 				display: table-cell; 
@@ -381,10 +470,11 @@ class GearList extends EquipmentList {
 			}
 		</style>
 		<div class='table'>
-			<span>Gear &amp; Goods</span>
-			<div class='tr'><span>Name</span><span>Load</span><span>Cost</span><span>Description</span></div>
-			${repeat(this.equipment,(item,index) => html`<gear-view @click=${this.onClick} name=${item.name} id=${item.id} cost=${item.cost} load=${item.load}
+			<span part='equipmenttitle'>Gear &amp; Goods</span>
+			<div part='tableheader' class='tr'><span>Name</span><span>Cost</span><span>Load</span>${this.renderDescription()}</div>
+			${repeat(this.equipment,(item,index) => html`<gear-view descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} id=${item.id} cost=${item.cost} load=${item.load}
 			description=${item.description}></gear-view>`)}
+			${this.renderLoad()}
 		</div>`;
 	}
 }
@@ -403,8 +493,18 @@ class ToolList extends EquipmentList {
 		 </div>${this.renderButtons()}`;
 	}
 	
+	renderLoad() {
+		if(this.calculateload === 'true') {
+			return html`<div class='tr footer'><span></span><span></span><span>Total:</span><span class='right'>${this.load}</span></div>`;
+		}
+		return null;
+	}
+
 	render() {
 		return html`<style>
+			.right {
+				text-align: right;
+			}
 			div.table { 
 				display: table; 
 				background-color: var(--topic-bg);
@@ -414,12 +514,16 @@ class ToolList extends EquipmentList {
 			div.table span {
 				display: table-caption;
 				font-weight: bold;
-				font-size: 1.5em;
 			}
 			div.tr { 
 				display: table-row;
 				background-color: var(--theme-fg);
 				color: var(--theme-bg);
+				}
+			div.footer { 
+				border-top: 1px double black;
+				background-color: var(--theme-bg);
+				color: var(--theme-fg);
 				}
 			div.tr > span { 
 				display: table-cell; 
@@ -435,10 +539,11 @@ class ToolList extends EquipmentList {
 			}
 		</style>
 		<div class='table'>
-			<span>Tools</span>
-			<div class='tr'><span>Name</span><span>Ability</span><span>Load</span><span>Cost</span><span>Description</span></div>
-			${repeat(this.equipment,(item,index) => html`<tool-view @click=${this.onClick} name=${item.name} ability=${item.ability} id=${item.id} cost=${item.cost} load=${item.load}
+			<span part='equipmenttitle'>Tools</span>
+			<div part='tableheader' class='tr'><span>Name</span><span>Ability</span><span>Cost</span><span>Load</span>${this.renderDescription()}</div>
+			${repeat(this.equipment,(item,index) => html`<tool-view descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} ability=${item.ability} id=${item.id} cost=${item.cost} load=${item.load}
 			description=${item.description}></tool-view>`)}
+			${this.renderLoad()}
 		</div>`;
 	}
 }
@@ -457,12 +562,16 @@ class ImplementView extends LitElement {
 		description: {},
 		hands: {},
 		name: {},
-		descriptiondisabled: {}
+		load: {},
+		cost: {},
+		descriptiondisabled: {},
+		actionenabled: {}
 	};
 	
 	constructor() {
 		super();
 		this.descriptiondisabled = 'false';
+		this.actionenabled = 'false';
 	}
 	
 	renderDescription() {
@@ -470,6 +579,16 @@ class ImplementView extends LitElement {
 			return html`<span>${this.description}</span>`;
 		}
 		return null;
+	}
+	
+	takeAction() {
+		this.dispatchEvent(new CustomEvent('equipmentaction',{bubbles: true, composed: true, detail: {equipment: this.id}}));
+	}
+	
+	renderAction() {
+		if(this.actionenabled !== 'false') {
+			return html`<span><button @click=${this.takeAction}>${this.actionEnabled}</button></span>`;
+		}
 	}
 	
 	render() {
@@ -482,9 +601,12 @@ class ImplementView extends LitElement {
 			.centered {
 				text-align: center;
 			}
+			.right {
+				text-align: right;
+			}
 		</style>
 		<span>${this.name}</span><span class='centered'>${this.ability}</span><span class='centered'>${this.damage}</span>
-		<span class='centered'>${this.hands}</span>${this.renderDescription()}`;
+		<span class='centered'>${this.hands}</span><span>${this.cost}</span><span class='right'>${this.load}</span>${this.renderDescription()}`;
 	}
 }
 
@@ -502,6 +624,8 @@ class WeaponView extends LitElement {
 		category: {},
 		type: {},
 		tags: {},
+		load: {},
+		cost: {},
 		descriptiondisabled: {}
 	};
 	
@@ -527,10 +651,13 @@ class WeaponView extends LitElement {
 			.centered {
 				text-align: center;
 			}
+			.right {
+				text-align: right;
+			}
 		</style>
 		<span>${this.name}</span><span class='centered'>${this.ability}</span><span class='centered'>${this.damage}</span><span class='centered'>${this.hands}</span>
 		<span class='centered'>${this.range}</span><span class='centered'>${this.category}</span><span class='centered'>${this.type}</span>
-		<span class='centered'>${this.tags}</span>${this.renderDescription()}`;
+		<span class='centered'>${this.tags}</span><span>${this.cost}</span><span class='right'>${this.load}</span>${this.renderDescription()}`;
 	}
 }
 
@@ -546,12 +673,20 @@ class ArmorView extends LitElement {
 		dex: {},
 		con: {},
 		description: {},
+		descriptiondisabled: {}
 	};
 	
 	constructor() {
 		super();
 	}
 	
+	renderDescription() {
+		if(this.descriptiondisabled === 'false') {
+			return html`<span>${this.description}</span>`;
+		}
+		return null;
+	}
+
 	render() {
 		return html`<style>
 			span { 
@@ -562,9 +697,12 @@ class ArmorView extends LitElement {
 			.centered {
 				text-align: center;
 			}
+			.right {
+				text-align: right;
+			}
 		</style>
-		<span>${this.name}</span><span class='centered'>${this.dr}</span><span class='centered'>${this.load}</span><span class='centered'>${this.cost}</span>
-		<span class='centered'>${this.dex}</span><span class='centered'>${this.con}</span><span>${this.description}</span>`;
+		<span>${this.name}</span><span class='centered'>${this.dr}</span><span class='centered'>${this.dex}</span>
+		<span class='centered'>${this.con}</span><span class='centered'>${this.cost}</span><span class='right'>${this.load}</span>${this.renderDescription()}`;
 	}
 }
 
@@ -576,13 +714,21 @@ class GearView extends LitElement {
 		description: {},
 		name: {},
 		cost: {},
-		load: {}
+		load: {},
+		descriptiondisabled: {}
 	};
 	
 	constructor() {
 		super();
 	}
 	
+	renderDescription() {
+		if(this.descriptiondisabled === 'false') {
+			return html`<span>${this.description}</span>`;
+		}
+		return null;
+	}
+
 	render() {
 		return html`<style>
 			span { 
@@ -593,8 +739,11 @@ class GearView extends LitElement {
 			.centered {
 				text-align: center;
 			}
+			.right {
+				text-align: right;
+			}
 		</style>
-		<span>${this.name}</span><span class='centered'>${this.load}</span><span class='centered'>${this.cost}</span><span>${this.description}</span>`;
+		<span>${this.name}</span><span class='centered'>${this.cost}</span><span class='right'>${this.load}</span>${this.renderDescription()}`;
 	}
 }
 
@@ -607,13 +756,21 @@ class ToolView extends LitElement {
 		name: {},
 		cost: {},
 		load: {},
-		ability: {}
+		ability: {},
+		descriptiondisabled: {}
 	};
 	
 	constructor() {
 		super();
 	}
 	
+	renderDescription() {
+		if(this.descriptiondisabled === 'false') {
+			return html`<span>${this.description}</span>`;
+		}
+		return null;
+	}
+
 	render() {
 		return html`<style>
 			span { 
@@ -624,8 +781,11 @@ class ToolView extends LitElement {
 			.centered {
 				text-align: center;
 			}
+			.right {
+				text-align: right;
+			}
 		</style>
-		<span>${this.name}</span><span class='centered'>${this.ability}</span><span class='centered'>${this.load}</span><span class='centered'>${this.cost}</span><span>${this.description}</span>`;
+		<span>${this.name}</span><span class='centered'>${this.ability}</span><span class='centered'>${this.cost}</span><span class='right'>${this.load}</span>${this.renderDescription()}`;
 	}
 }
 

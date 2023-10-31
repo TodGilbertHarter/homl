@@ -697,19 +697,19 @@ SUBSECTION/
 /DIV=" floatright half"/
 /TABLE=" bodytable"/
 /THEAD
-/TR /TH Implement Type /TH/ Cost /TH/ Hands /TH/ Damage /TH/ Ability TH/ TR/
+/TR /TH Implement Type /TH/ Cost /TH/ Hands /TH/ Damage /TH/ Ability /TH/ Load TH/ TR/
 THEAD/
 /TBODY
-/TR /TD Rod /TD/ 10sp /TD/ 1 /TD/ 3 /TD/ CHA TD/ TR/
-/TR /TD Staff /TD/ 3cp /TD/ 2 /TD/ 4 /TD/ WIS TD/ TR/
-/TR /TD Wand /TD/ 8sp /TD/ 1 /TD/ 1 /TD/ INT TD/ TR/
-/TR /TD Tome /TD/ 15sp /TD/ 2 /TD/ 1 /TD/ INT TD/ TR/
-/TR /TD Orb /TD/ 20sp /TD/ 1 /TD/ 1 /TD/ CHA TD/ TR/
-/TR /TD Holy Symbol /TD/ 4cp /TD/ 1 /TD/ 0 /TD/ WIS TD/ TR/
-/TR /TD Totem /TD/ 1sp /TD/ 1 /TD/ 2 /TD/ WIS TD/ TR/
-/TR /TD Instrument /TD/ 15sp /TD/ 2 /TD/ 1 /TD/ CHA TD/ TR/
-/TR /TD Knife /TD/ 1cp /TD/ 1 /TD/ 3 /TD/ CHA TD/ TR/
-/TR /TD Rune Weapon /TD/ * /TD/ * /TD/ 3 /TD/ * TD/ TR/
+/TR /TD Rod /TD/ 10sp /TD/ 1 /TD/ 3 /TD/ CHA /TD/ 1 TD/ TR/
+/TR /TD Staff /TD/ 3cp /TD/ 2 /TD/ 4 /TD/ WIS /TD/ 3 TD/ TR/
+/TR /TD Wand /TD/ 8sp /TD/ 1 /TD/ 1 /TD/ INT /TD/ 1 TD/ TR/
+/TR /TD Tome /TD/ 15sp /TD/ 2 /TD/ 1 /TD/ INT /TD/ 3 TD/ TR/
+/TR /TD Orb /TD/ 20sp /TD/ 1 /TD/ 1 /TD/ CHA /TD/ 2 TD/ TR/
+/TR /TD Holy Symbol /TD/ 4cp /TD/ 1 /TD/ 0 /TD/ WIS /TD/ 1 TD/ TR/
+/TR /TD Totem /TD/ 1sp /TD/ 1 /TD/ 2 /TD/ WIS /TD/ 1 TD/ TR/
+/TR /TD Instrument /TD/ 15sp /TD/ 2 /TD/ 1 /TD/ CHA /TD/ 4 TD/ TR/
+/TR /TD Knife /TD/ 1cp /TD/ 1 /TD/ 3 /TD/ CHA /TD/ 1 TD/ TR/
+/TR /TD Rune Weapon /TD/ * /TD/ * /TD/ 3 /TD/ * /TD/ * TD/ TR/
 TBODY/
 TABLE/
 * Rune Weapons are specially prepared weapons which may be used as implements. To use a Rune Weapon the character must be proficient with it as an implement, weapon proficiency is not enough. The ability score associated with the implement is the same as that associated with the weapon, as is the number of hands required. Costs will be 15sp plus the cost of a normal weapon of that type.
@@ -729,6 +729,7 @@ TOPIC/
 /TOPIC" Implement Descriptions"/
 /UL
 /IMPLEMENT /ID" a64bad34-6568-11ee-ab97-c87f5455cfcc"/ /IMPLEMENTNAME Rod IMPLEMENTNAME/
+/IMPLEMENTCOST 10sp IMPLEMENTCOST/ /IMPLEMENTLOAD 1 IMPLEMENTLOAD/
 /IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 3 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY CHA IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
 The rod is an ancient symbol of power and is used when a caster wishes to project their power in order to awe and overwhelm the target. Most rods are not designed to be 
@@ -737,6 +738,7 @@ wood, most are composed of a shaft and some sort of head, usually constructed of
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
 /IMPLEMENT /ID" 9605cfa6-656b-11ee-a812-c87f5455cfcc"/ /IMPLEMENTNAME Staff IMPLEMENTNAME/
+/IMPLEMENTCOST 3cp IMPLEMENTCOST/ /IMPLEMENTLOAD 3 IMPLEMENTLOAD/
 /IMPLEMENTHANDS 2 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 4 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY WIS IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
 Since ancient times wise men have wielded staves of enormous magical potency. Even an ordinary staff makes a powerful implement which can produce mighty magical effects.
@@ -745,6 +747,7 @@ and are often inlaid with minerals or gems, shod with metal, etc. However even a
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
 /IMPLEMENT /ID" acc0fae0-656b-11ee-bc74-c87f5455cfcc"/ /IMPLEMENTNAME Instrument IMPLEMENTNAME/
+/IMPLEMENTCOST 15sp IMPLEMENTCOST/ /IMPLEMENTLOAD 4 IMPLEMENTLOAD/
 /IMPLEMENTHANDS 2 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 1 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY CHA IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
 This is a musical instrument of some sort. Instruments of all kinds can potentially be useful in the manipulation of power to create magical effects. Optionally some types of
@@ -754,6 +757,7 @@ further endowed with some enhanced attributes such as special strings. However e
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
 /IMPLEMENT /ID" c1abe0b4-656b-11ee-aa62-c87f5455cfcc"/ /IMPLEMENTNAME Wand IMPLEMENTNAME/
+/IMPLEMENTCOST 8sp IMPLEMENTCOST/ /IMPLEMENTLOAD 1 IMPLEMENTLOAD/
 /IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 1 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY INT IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
 The wand is the most classical symbol of magical power amongst all implements. It is a fine tool for the execution of exacting magics. Simple wands are easy enough to craft
@@ -761,6 +765,7 @@ and most users can make a passable one with simple tools. The more potent types 
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
 /IMPLEMENT /ID" d3abd08a-656b-11ee-aa4c-c87f5455cfcc"/ /IMPLEMENTNAME Tome IMPLEMENTNAME/
+/IMPLEMENTCOST 15sp IMPLEMENTCOST/ /IMPLEMENTLOAD 3 IMPLEMENTLOAD/
 /IMPLEMENTHANDS 2 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 1 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY INT IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
 Many practitioners of the magical arts rely on magical books to guide their casting. These are especially useful in the execution of intricate ritual magics and similar
@@ -769,6 +774,7 @@ requires at least a couple of days of time and requisite materials. Otherwise th
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
 /IMPLEMENT /ID" ee431246-656b-11ee-ac81-c87f5455cfcc"/ /IMPLEMENTNAME Orb IMPLEMENTNAME/
+/IMPLEMENTCOST 20sp IMPLEMENTCOST/ /IMPLEMENTLOAD 2 IMPLEMENTLOAD/
 /IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 1 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY CHA IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
 Orbs, AKA Crystal balls, are known to be powerful focuses for scrying and divinatory powers, and often act as a means of communication with far places and perhaps even
@@ -777,6 +783,7 @@ come by, but they can be found in civilized places, etc.
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
 /IMPLEMENT /ID" ffb7164e-656b-11ee-b520-c87f5455cfcc"/ /IMPLEMENTNAME Holy Symbol IMPLEMENTNAME/
+/IMPLEMENTCOST 4cp IMPLEMENTCOST/ /IMPLEMENTLOAD 1 IMPLEMENTLOAD/
 /IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 0 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY WIS IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
 Spiritual powers often have symbols associated with them, especially those revered as gods by mortals. Such symbols have a potency which belies their often ordinary nature
@@ -785,6 +792,7 @@ to be useful.
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
 /IMPLEMENT /ID" 0f4594fa-656c-11ee-b255-c87f5455cfcc"/ /IMPLEMENTNAME Totem IMPLEMENTNAME/
+/IMPLEMENTCOST 1sp IMPLEMENTCOST/ /IMPLEMENTLOAD 1 IMPLEMENTLOAD/
 /IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 2 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY WIS IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
 Totems are a bit like holy symbols, but they allow the possessor to tune into the natural life force which is present everywhere. Most totems consist of biological material
@@ -793,6 +801,7 @@ pieces of wood or even just a rock. In order to be potent they must be attuned t
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
 /IMPLEMENT /ID" 1b982aec-656c-11ee-a517-c87f5455cfcc"/ /IMPLEMENTNAME Knife IMPLEMENTNAME/
+/IMPLEMENTCOST 1cp IMPLEMENTCOST/ /IMPLEMENTLOAD 1 IMPLEMENTLOAD/
 /IMPLEMENTHANDS 1 IMPLEMENTHANDS/ /IMPLEMENTDAMAGE 3 IMPLEMENTDAMAGE/ /IMPLEMENTABILITY CHA IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
 Knives are common weapons, but they are also often used in the performance of magic. As such most knife implements possess more ornate decorative aspects, or are made of
@@ -801,6 +810,7 @@ ritual purpose. However, in a pinch a finely crafted knife can be used as an imp
 IMPLEMENTDESCRIPTION/
 IMPLEMENT/
 /IMPLEMENT /ID" 2c9cd202-656c-11ee-8688-c87f5455cfcc"/ /IMPLEMENTNAME Rune Weapon IMPLEMENTNAME/
+/IMPLEMENTCOST * IMPLEMENTCOST/ /IMPLEMENTLOAD * IMPLEMENTLOAD/
 /IMPLEMENTHANDS * IMPLEMENTHANDS/ /IMPLEMENTDAMAGE * IMPLEMENTDAMAGE/ /IMPLEMENTABILITY * IMPLEMENTABILITY/
 /IMPLEMENTDESCRIPTION
 Rune Weapons are fully functional weapons designed to be both a weapon and an implement in one. As such they have the attributes of the weapon type they are based on. Thus

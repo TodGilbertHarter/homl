@@ -35,6 +35,18 @@ const characterConverter = {
 					if(c[key] === undefined) { c[key] = {};}
 					c[key][bgkey] = nb;
 				};
+			} else if(key === "equipment") {
+				c[key] = {};
+				for(const [ekey,equiplist] of Object.entries(value)) {
+					c[key][ekey] = [];
+					for(var i = 0; i < equiplist.length; i++) {
+						const nequip = {
+							name: equiplist[i].name,
+							eqref: getReference(schema.equipment,equiplist[i].id)
+						}
+						c[key][ekey].push(nequip);
+					}
+				}
 			} else if(key === "boons") {
 				c[key] = {};
 				Object.keys(value).forEach((bkey) =>{

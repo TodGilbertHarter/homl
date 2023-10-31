@@ -273,6 +273,12 @@ class CharacterSheet extends HTMLElement {
 		return elem.boons;
 	}
 	
+	getEquipmentList() {
+		const id = 'equipmentselector';
+		const elem = this.getElement(id);
+		return elem.equipment;
+	}
+	
 	disconnectedCallback() {
 		
 	}
@@ -325,6 +331,19 @@ class CharacterSheet extends HTMLElement {
 		const boonselector = this.shadowRoot.getElementById('boonselector');
 		boonselector.boons = boons;
 	}
+	
+	setCharacterEquipment(equipment) {
+		const equipmentselector = this.getElement('equipmentselector');
+		const estructured = {};
+		for(var i = 0; i < equipment.length; i++) {
+			const type = equipment[i].type;
+			if(!estructured[type]) {
+				estructured[type] = [];
+			}
+			estructured[type].push(equipment[i])
+		}
+		equipmentselector.equipment = estructured;
+	}
 }
 
 window.customElements.define('character-sheet',CharacterSheet);
@@ -342,6 +361,9 @@ class EquipmentSelector extends LitElement {
 		this.refs = {};
 		this.refs['implement'] = createRef();
 		this.refs['weapon'] = createRef();
+		this.refs['armor'] = createRef();
+		this.refs['gear'] = createRef();
+		this.refs['tool'] = createRef();
 	}
 	
 	addClicked() {
@@ -349,7 +371,7 @@ class EquipmentSelector extends LitElement {
 		dialog.setAttribute('closewidget',true);
 		dialog.setAttribute('class','equipmentselector');
 		dialog.setAttribute('maxheight','600px');
-		dialog.setAttribute('maxwidth','1000px');
+		dialog.setAttribute('maxwidth','1200px');
 		const template = html`<div slot='content'><equipment-view selectable='true'></equipment-view></div>`;
 		render(template,dialog);
 		document.getElementsByTagName('body')[0].appendChild(dialog);
@@ -387,23 +409,48 @@ class EquipmentSelector extends LitElement {
 	}
 	
 	renderImplements() {
-		return html`<implement-list descriptiondisabled='true' ${ref(this.refs['implement'])}></implement-list>`;
+		return html`<implement-list class='sheet' calculateload='true' selectable='false' descriptiondisabled='true' ${ref(this.refs['implement'])}></implement-list>`;
 	}
 	
 	renderWeapons() {
-		return html`<weapon-list descriptiondisabled='true' ${ref(this.refs['weapon'])}></weapon-list>`;
+		return html`<weapon-list class='sheet' calculateload='true' selectable='false' descriptiondisabled='true' ${ref(this.refs['weapon'])}></weapon-list>`;
 	}
 	
+	renderArmor() {
+		return html`<armor-list class='sheet' calculateload='true' selectable='false' descriptiondisabled='true' ${ref(this.refs['armor'])}></armor-list>`;
+	}
+
+	renderGear() {
+		return html`<gear-list class='sheet' calculateload='true' selectable='false' descriptiondisabled='true' ${ref(this.refs['gear'])}></gear-list>`;
+	}
+
+	renderTools() {
+		return html`<tool-list class='sheet' calculateload='true' selectable='false' descriptiondisabled='true' ${ref(this.refs['tool'])}></tool-list>`;
+	}
+
 	render() {
 		return html`<style>
 			.equipmentcontainer {
-				width:50%;
+				display: flex;
+				flex-wrap: wrap;
+			}
+			implement-list, weapon-list, armor-list, gear-list, tool-list {
+				margin-right: 3px;
+			}
+			.sheet {
+				font-size: small;
+			}
+			implement-list::part(tableheader), weapon-list::part(tableheader), armor-list::part(tableheader), gear-list::part(tableheader), tool-list::part(tableheader) {
+				font-size: small;
 			}
 		</style>
 		<span class='boxlabel' part='label'>${this.label}</span><button @click=${this.addClicked}>Add</button>
 		<div class='equipmentcontainer'>
 			${this.renderImplements()}
 			${this.renderWeapons()}
+			${this.renderArmor()}
+			${this.renderGear()}
+			${this.renderTools()}
 		</div>`;
 	}
 }
@@ -641,7 +688,7 @@ class BoonSelector extends LitElement {
 		dialog.setAttribute('class','boonselector');
 		dialog.setAttribute('maxheight','600px');
 		dialog.setAttribute('maxwidth','1000px');
-		const template = html`<div slot='content'><boon-viewer></boon-viewer></div>`;
+		const template = html`<div slot='content'><boon-viewer selectable='true'></boon-viewer></div>`;
 		render(template,dialog);
 		document.getElementsByTagName('body')[0].appendChild(dialog);
 		dialog.addEventListener('boonselected',(e) => { 
@@ -1188,14 +1235,16 @@ class CharacterController {
 	originRepo;
 	characterRepo;
 	boonRepo;
+	equipmentRepo;
 
-    constructor(speciesRepo,callingRepo,backgroundRepo,originRepo,characterRepo,boonRepo) {
+    constructor(speciesRepo,callingRepo,backgroundRepo,originRepo,characterRepo,boonRepo,equipmentRepo) {
 		this.speciesRepo = speciesRepo;
 		this.callingRepo = callingRepo;
 		this.backgroundRepo = backgroundRepo;
 		this.originRepo = originRepo;
 		this.characterRepo = characterRepo;
 		this.boonRepo = boonRepo;
+		this.equipmentRepo = equipmentRepo;
     }
 
 	/**
@@ -1323,15 +1372,37 @@ class CharacterController {
         this.setBackground(sheet,character.background);
         this.setProficiencies(sheet,character.characterData.proficiencies);
         this.setBoons(sheet,character.characterData.boons);
+        this.setEquipment(sheet,character.characterData.equipment);
     }
 
 	getAllBoons(blist,action) {
 		const ulist = blist.filter((item) => !(item instanceof Boon));
 		const rlist = blist.filter((item) => item instanceof Boon);
-		const resolvedList = this.boonRepo.getReferencedBoons(ulist,(rboons) => { action([...rboons,...rlist])});
-		return resolvedList;
+		this.boonRepo.getReferencedBoons(ulist,(rboons) => { action([...rboons,...rlist])});
 	}
 	 
+	getAllEquipment(elist,action) {
+		const ulist = elist.filter((item) => !(item instanceof Equipment));
+		const rlist = elist.filter((item) => item instanceof Equipment);
+		this.equipmentRepo.getReferenced(ulist,(requipment) => { action([...requipment,...rlist])});
+	}
+	
+	setEquipment(sheet,equipment) {
+		const elist = [];
+		for(const [type,eqlist] of Object.entries(equipment)) {
+			for(var i = 0; i < eqlist.length; i++) {
+				if(eqlist[i].eqref) {
+					elist.push(eqlist[i].eqref);
+				} else {
+					elist.push(eqlist[i].equipment);
+				}
+			}
+		}
+		this.getAllEquipment(elist,(equipment) => {
+			sheet.setCharacterEquipment(equipment);
+		});
+	}
+	
     setBoons(sheet,boons) {
 		const blist = [];
 		for(const [association,abs] of Object.entries(boons)) {
@@ -1484,6 +1555,8 @@ class CharacterController {
 			boons[cboons[i].association].push(b);
 		}
 		character.characterData.boons = boons;
+		const cequip = sheet.getEquipmentList();
+		character.characterData.equipment = cequip;
     }
     
     calculate(character) {

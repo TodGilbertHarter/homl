@@ -98,7 +98,7 @@ class BoonDetailRenderer {
 	constructor(boon,dismissClickHandler,selectClickHandler) {
 		this.featRepo = window.gebApp.featRepo;
 		this.boon = boon;
-		this.selectable = false;
+		this.selectable = 'false';
 		this.dismissClickHandler = dismissClickHandler;
 		this.selectClickHandler = selectClickHandler;
 	}
@@ -135,7 +135,7 @@ class BoonDetailRenderer {
 	}
 
 	renderButtons() {
-		if(this.selectable) {
+		if(this.selectable === 'true') {
 			return html`<button class='dialogbutton' slot='buttonbar' id='boonselect' @click=${this.selectClickHandler}>select</button>
 			<button class='dialogbutton' slot='buttonbar' id='dismiss' @click=${this.dismissClickHandler}>dismiss</button>`;
 		}
@@ -193,7 +193,7 @@ class BoonList extends LitElement {
 		this.item = null;
 		this.detailRenderer = new BoonDetailRenderer(this.item,this.dismissClickHandler.bind(this),this.selectClickHandler.bind(this));
 		this.dialogselector = 'body';
-		this.selectable = false;
+		this.selectable = 'false';
 		this.dialog = null;
 		
 		this.onClick = (e) => {

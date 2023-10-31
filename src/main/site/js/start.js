@@ -47,7 +47,7 @@ class Application {
 		this.gameRepo = new GameRepository(this,firestore);
 		this.characterRepo = new CharacterRepository(this,firestore);
 		this.characterController = new CharacterController(this.speciesRepo,this.callingRepo
-			,this.backgroundRepo,this.originRepo,this.characterRepo,this.boonRepo);
+			,this.backgroundRepo,this.originRepo,this.characterRepo,this.boonRepo,this.equipmentRepo);
 		this.authenticator = new Authenticator(this,fbProject,this.playerRepo);
 		this.router = new Router({ mode: 'hash', root: '/'});
 		this.view = new NotView(this,this.theDocument);
