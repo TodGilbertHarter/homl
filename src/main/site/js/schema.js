@@ -20,7 +20,7 @@
  * related to the calling itself, along with things like choosers which allow for selecting of calling-related
  * options during chargen, etc.
  */
-import { doc } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
+import { doc } from 'firebase-firestore';
 
 const schema = {
 	backgrounds: 'backgrounds',

@@ -14,9 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { html, LitElement } from 'https://unpkg.com/lit@2/index.js?module';
+import { html, LitElement } from 'lit2';
 import { Game } from './game.js';
-import {ref, createRef } from 'https://unpkg.com/lit@2/directives/ref.js?module';
+import {ref, createRef } from 'lit2/ref';
 
 class GameCreate extends LitElement {
 	/** @private */ model;

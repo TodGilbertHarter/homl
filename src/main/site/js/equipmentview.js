@@ -15,9 +15,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { html, LitElement, render } from 'https://unpkg.com/lit@2/index.js?module';
-import {repeat} from 'https://unpkg.com/lit@2/directives/repeat.js?module';
-import {ref, createRef} from 'https://unpkg.com/lit@2/directives/ref.js?module';
+import { html, LitElement, render } from 'lit2';
+import {repeat} from 'lit2/repeat';
+import {ref, createRef} from 'lit2/ref';
 
 /**
  * Class to view all the equipment in the game.
@@ -104,7 +104,8 @@ class EquipmentList extends LitElement {
 		selectable: {},
 		dialogselector: {},
 		descriptiondisabled: {},
-		calculateload: {}
+		calculateload: {},
+		actionenabled: {}
 	}
 	
 	constructor() {
@@ -115,6 +116,7 @@ class EquipmentList extends LitElement {
 		this.selectable = 'false';
 		this.descriptiondisabled = 'false';
 		this.calculateload = 'false';
+		this.actionenabled = 'false';
 		this.dialog = null;
 		this.load = 'N/A';
 		this.cost = 'N/A';
@@ -155,6 +157,13 @@ class EquipmentList extends LitElement {
 		const tag = document.querySelector(this.dialogselector);
 		tag.removeChild(this.dialog);
 		this.dialog = null;
+	}
+	
+	renderAction() {
+		if(this.actionenabled !== 'false') {
+			return html`<span></span>`;
+		}
+		return null;
 	}
 	
 	renderDescription() {
@@ -249,9 +258,9 @@ class ImplementList extends EquipmentList {
 		</style>
 		<div class='table'>
 			<span part='equipmenttitle'>Implements</span>
-			<div part='tableheader' class='tr'><span>Name</span><span>Ability</span><span>Damage</span><span>Hands</span><span>Cost</span><span>Load</span>
+			<div part='tableheader' class='tr'>${this.renderAction()}<span>Name</span><span>Ability</span><span>Damage</span><span>Hands</span><span>Cost</span><span>Load</span>
 			${this.renderDescription()}</div>
-			${repeat(this.equipment,(item,index) => html`<implement-view descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} 
+			${repeat(this.equipment,(item,index) => html`<implement-view actionenabled=${this.actionenabled} @click=${this.onClick} descriptiondisabled=${this.descriptiondisabled} name=${item.name} 
 			id=${item.id} ability=${item.ability} damage=${item.damage} cost=${item.cost}
 			description=${item.description} hands=${item.hands} load=${item.load}></implement-view>`)}
 			${this.renderLoad()}
@@ -326,9 +335,9 @@ class WeaponList extends EquipmentList {
 		</style>
 		<div class='table'>
 			<span part='equipmenttitle'>Weapons</span>
-			<div part='tableheader' class='tr'><span>Name</span><span>Ability</span><span>Damage</span><span>Hands</span>
+			<div part='tableheader' class='tr'>${this.renderAction()}<span>Name</span><span>Ability</span><span>Damage</span><span>Hands</span>
 			<span>Range</span><span>Category</span><span>Type</span><span>Tags</span><span>Cost</span><span>Load</span>${this.renderDescription()}</div>
-			${repeat(this.equipment,(item,index) => html`<weapon-view descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} id=${item.id} 
+			${repeat(this.equipment,(item,index) => html`<weapon-view  actionenabled=${this.actionenabled} descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} id=${item.id} 
 			ability=${item.ability} damage=${item.damage} load=${item.load} cost=${item.cost}
 			description=${item.description} hands=${item.hands} range=${item.range} category=${item.category} type=${item.weapontype} tags=${item.tags}></weapon-view>`)}
 			${this.renderLoad()}
@@ -402,9 +411,9 @@ class ArmorList extends EquipmentList {
 		</style>
 		<div class='table'>
 			<span part='equipmenttitle'>Armor</span>
-			<div part='tableheader' class='tr'><span>Type</span><span>DR</span>
+			<div part='tableheader' class='tr'>${this.renderAction()}<span>Type</span><span>DR</span>
 			<span>DEX</span><span>CON</span><span>Cost</span><span>Load</span>${this.renderDescription()}</div>
-			${repeat(this.equipment,(item,index) => html`<armor-view descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} id=${item.id} dr=${item.dr} dex=${item.DEX} con=${item.CON} 
+			${repeat(this.equipment,(item,index) => html`<armor-view actionenabled=${this.actionenabled} descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} id=${item.id} dr=${item.dr} dex=${item.DEX} con=${item.CON} 
 			cost=${item.cost} load=${item.load} description=${item.description}></armor-view>`)}
 			${this.renderLoad()}
 		</div>`;
@@ -471,8 +480,8 @@ class GearList extends EquipmentList {
 		</style>
 		<div class='table'>
 			<span part='equipmenttitle'>Gear &amp; Goods</span>
-			<div part='tableheader' class='tr'><span>Name</span><span>Cost</span><span>Load</span>${this.renderDescription()}</div>
-			${repeat(this.equipment,(item,index) => html`<gear-view descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} id=${item.id} cost=${item.cost} load=${item.load}
+			<div part='tableheader' class='tr'>${this.renderAction()}<span>Name</span><span>Cost</span><span>Load</span>${this.renderDescription()}</div>
+			${repeat(this.equipment,(item,index) => html`<gear-view actionenabled=${this.actionenabled} descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} id=${item.id} cost=${item.cost} load=${item.load}
 			description=${item.description}></gear-view>`)}
 			${this.renderLoad()}
 		</div>`;
@@ -540,8 +549,8 @@ class ToolList extends EquipmentList {
 		</style>
 		<div class='table'>
 			<span part='equipmenttitle'>Tools</span>
-			<div part='tableheader' class='tr'><span>Name</span><span>Ability</span><span>Cost</span><span>Load</span>${this.renderDescription()}</div>
-			${repeat(this.equipment,(item,index) => html`<tool-view descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} ability=${item.ability} id=${item.id} cost=${item.cost} load=${item.load}
+			<div part='tableheader' class='tr'>${this.renderAction()}<span>Name</span><span>Ability</span><span>Cost</span><span>Load</span>${this.renderDescription()}</div>
+			${repeat(this.equipment,(item,index) => html`<tool-view actionenabled=${this.actionenabled} descriptiondisabled=${this.descriptiondisabled} @click=${this.onClick} name=${item.name} ability=${item.ability} id=${item.id} cost=${item.cost} load=${item.load}
 			description=${item.description}></tool-view>`)}
 			${this.renderLoad()}
 		</div>`;
@@ -572,6 +581,7 @@ class ImplementView extends LitElement {
 		super();
 		this.descriptiondisabled = 'false';
 		this.actionenabled = 'false';
+		this.selectionenabled = 'false';
 	}
 	
 	renderDescription() {
@@ -581,13 +591,14 @@ class ImplementView extends LitElement {
 		return null;
 	}
 	
-	takeAction() {
+	takeAction(e) {
+		e.cancelBubble = true;
 		this.dispatchEvent(new CustomEvent('equipmentaction',{bubbles: true, composed: true, detail: {equipment: this.id}}));
 	}
 	
 	renderAction() {
 		if(this.actionenabled !== 'false') {
-			return html`<span><button @click=${this.takeAction}>${this.actionEnabled}</button></span>`;
+			return html`<span><button @click=${this.takeAction}>${this.actionenabled}</button></span>`;
 		}
 	}
 	
@@ -605,8 +616,14 @@ class ImplementView extends LitElement {
 				text-align: right;
 			}
 		</style>
-		<span>${this.name}</span><span class='centered'>${this.ability}</span><span class='centered'>${this.damage}</span>
-		<span class='centered'>${this.hands}</span><span>${this.cost}</span><span class='right'>${this.load}</span>${this.renderDescription()}`;
+		${this.renderAction()}
+		<span>${this.name}</span>
+		<span class='centered'>${this.ability}</span>
+		<span class='centered'>${this.damage}</span>
+		<span class='centered'>${this.hands}</span>
+		<span>${this.cost}</span>
+		<span class='right'>${this.load}</span>
+		${this.renderDescription()}`;
 	}
 }
 
@@ -626,12 +643,14 @@ class WeaponView extends LitElement {
 		tags: {},
 		load: {},
 		cost: {},
-		descriptiondisabled: {}
+		descriptiondisabled: {},
+		actionenabled: {}
 	};
 	
 	constructor() {
 		super();
 		this.descriptiondisabled = 'false';
+		this.actionenabled = 'false';
 	}
 	
 	renderDescription() {
@@ -639,6 +658,17 @@ class WeaponView extends LitElement {
 			return html`<span>${this.description}</span>`;
 		}
 		return null;
+	}
+	
+	takeAction(e) {
+		e.cancelBubble = true;
+		this.dispatchEvent(new CustomEvent('equipmentaction',{bubbles: true, composed: true, detail: {equipment: this.id}}));
+	}
+	
+	renderAction() {
+		if(this.actionenabled !== 'false') {
+			return html`<span><button @click=${this.takeAction}>${this.actionenabled}</button></span>`;
+		}
 	}
 	
 	render() {
@@ -655,6 +685,7 @@ class WeaponView extends LitElement {
 				text-align: right;
 			}
 		</style>
+		${this.renderAction()}
 		<span>${this.name}</span><span class='centered'>${this.ability}</span><span class='centered'>${this.damage}</span><span class='centered'>${this.hands}</span>
 		<span class='centered'>${this.range}</span><span class='centered'>${this.category}</span><span class='centered'>${this.type}</span>
 		<span class='centered'>${this.tags}</span><span>${this.cost}</span><span class='right'>${this.load}</span>${this.renderDescription()}`;
@@ -673,11 +704,14 @@ class ArmorView extends LitElement {
 		dex: {},
 		con: {},
 		description: {},
-		descriptiondisabled: {}
+		descriptiondisabled: {},
+		actionenabled: {}
 	};
 	
 	constructor() {
 		super();
+		this.discriptiondiabled = 'false';
+		this.actionenabled = 'false';
 	}
 	
 	renderDescription() {
@@ -687,6 +721,17 @@ class ArmorView extends LitElement {
 		return null;
 	}
 
+	takeAction(e) {
+		e.cancelBubble = true;
+		this.dispatchEvent(new CustomEvent('equipmentaction',{bubbles: true, composed: true, detail: {equipment: this.id}}));
+	}
+	
+	renderAction() {
+		if(this.actionenabled !== 'false') {
+			return html`<span><button @click=${this.takeAction}>${this.actionenabled}</button></span>`;
+		}
+	}
+	
 	render() {
 		return html`<style>
 			span { 
@@ -701,6 +746,7 @@ class ArmorView extends LitElement {
 				text-align: right;
 			}
 		</style>
+		${this.renderAction()}
 		<span>${this.name}</span><span class='centered'>${this.dr}</span><span class='centered'>${this.dex}</span>
 		<span class='centered'>${this.con}</span><span class='centered'>${this.cost}</span><span class='right'>${this.load}</span>${this.renderDescription()}`;
 	}
@@ -715,11 +761,14 @@ class GearView extends LitElement {
 		name: {},
 		cost: {},
 		load: {},
-		descriptiondisabled: {}
+		descriptiondisabled: {},
+		actionenabled: {}
 	};
 	
 	constructor() {
 		super();
+		this.discriptiondiabled = 'false';
+		this.actionenabled = 'false';
 	}
 	
 	renderDescription() {
@@ -729,6 +778,17 @@ class GearView extends LitElement {
 		return null;
 	}
 
+	takeAction(e) {
+		e.cancelBubble = true;
+		this.dispatchEvent(new CustomEvent('equipmentaction',{bubbles: true, composed: true, detail: {equipment: this.id}}));
+	}
+	
+	renderAction() {
+		if(this.actionenabled !== 'false') {
+			return html`<span><button @click=${this.takeAction}>${this.actionenabled}</button></span>`;
+		}
+	}
+	
 	render() {
 		return html`<style>
 			span { 
@@ -743,6 +803,7 @@ class GearView extends LitElement {
 				text-align: right;
 			}
 		</style>
+		${this.renderAction()}
 		<span>${this.name}</span><span class='centered'>${this.cost}</span><span class='right'>${this.load}</span>${this.renderDescription()}`;
 	}
 }
@@ -757,11 +818,14 @@ class ToolView extends LitElement {
 		cost: {},
 		load: {},
 		ability: {},
-		descriptiondisabled: {}
+		descriptiondisabled: {},
+		actionenabled: {}
 	};
 	
 	constructor() {
 		super();
+		this.discriptiondiabled = 'false';
+		this.actionenabled = 'false';
 	}
 	
 	renderDescription() {
@@ -771,6 +835,17 @@ class ToolView extends LitElement {
 		return null;
 	}
 
+	takeAction(e) {
+		e.cancelBubble = true;
+		this.dispatchEvent(new CustomEvent('equipmentaction',{bubbles: true, composed: true, detail: {equipment: this.id}}));
+	}
+	
+	renderAction() {
+		if(this.actionenabled !== 'false') {
+			return html`<span><button @click=${this.takeAction}>${this.actionenabled}</button></span>`;
+		}
+	}
+	
 	render() {
 		return html`<style>
 			span { 
@@ -785,6 +860,7 @@ class ToolView extends LitElement {
 				text-align: right;
 			}
 		</style>
+		${this.renderAction()}
 		<span>${this.name}</span><span class='centered'>${this.ability}</span><span class='centered'>${this.cost}</span><span class='right'>${this.load}</span>${this.renderDescription()}`;
 	}
 }

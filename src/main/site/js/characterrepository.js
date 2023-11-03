@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { collection, doc, setDoc, query, where, getDocs, getDoc } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
+import { collection, doc, setDoc, query, where, getDocs, getDoc } from 'firebase-firestore';
 import { Character } from './character.js';
 import { schema, getReference, getDb } from './schema.js';
 

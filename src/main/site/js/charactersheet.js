@@ -15,13 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { html, LitElement, render } from 'https://unpkg.com/lit@2/index.js?module';
+import { html, LitElement, render } from 'lit2';
 import { Rules } from './rules.js';
 import { Background } from './background.js';
 import { Character } from './character.js';
 import { GetPlayerReference } from './playerrepository.js'
-import {ref, createRef} from 'https://unpkg.com/lit@2/directives/ref.js?module';
-import {repeat} from 'https://unpkg.com/lit@2/directives/repeat.js?module';
+import {ref, createRef} from 'lit2/ref';
+import {repeat} from 'lit2/repeat';
 import {BoonDetailRenderer} from './boonview.js';
 import { BoonRepository } from './boonrepository.js';
 import { Boon } from './boon.js';
@@ -356,7 +356,6 @@ class EquipmentSelector extends LitElement {
 	
 	constructor() {
 		super();
-		this.equipment = {};
 		this.label = "Equipment:";
 		this.refs = {};
 		this.refs['implement'] = createRef();
@@ -364,6 +363,43 @@ class EquipmentSelector extends LitElement {
 		this.refs['armor'] = createRef();
 		this.refs['gear'] = createRef();
 		this.refs['tool'] = createRef();
+		this._equipment = {};
+		this.addEventListener('equipmentaction',this.handleEquipmentAction);
+	}
+	
+	handleEquipmentAction(e) {
+		this.removeItemById(e.detail.equipment);
+	}
+
+	set equipment(equipment) {
+		this._equipment = equipment;
+		if(this.equipment['implement']) {
+			this.refs['implement'].value.setEquipmentList(this.equipment['implement']);
+		}
+		if(this.equipment['weapon']) {
+			this.refs['weapon'].value.setEquipmentList(this.equipment['weapon']);
+		}
+		if(this.equipment['armor']) {
+			this.refs['armor'].value.setEquipmentList(this.equipment['armor']);
+		}
+		if(this.equipment['gear']) {
+			this.refs['gear'].value.setEquipmentList(this.equipment['gear']);
+		}
+		if(this.equipment['tool']) {
+			this.refs['tool'].value.setEquipmentList(this.equipment['tool']);
+		}
+	}
+	
+	get equipment() {
+		return this._equipment;
+	}
+
+	addEquipment(nequipment) {
+		const equiptype = nequipment.type;
+		if(!this.equipment[equiptype]) { this.equipment[equiptype] = []}
+		this.equipment[equiptype].push(nequipment);
+		this.changed();
+		this.refs[equiptype].value.setEquipmentList(this.equipment[equiptype]);
 	}
 	
 	addClicked() {
@@ -378,30 +414,36 @@ class EquipmentSelector extends LitElement {
 		dialog.addEventListener('equipmentselected',(e) => { 
 			document.getElementsByTagName('body')[0].removeChild(dialog);
 			const nequipment = e.detail.equipment;
-			const equiptype = nequipment.type;
-			if(!this.equipment[equiptype]) { this.equipment[equiptype] = []}
-			this.equipment[equiptype].push(nequipment);
-			this.changed();
-			this.refs[equiptype].value.setEquipmentList(this.equipment[equiptype]);
+			this.addEquipment(nequipment);
 		});
 	}
 	
-	equipmentDeleteClicked(e) {
-		this.removeItemById(e.target.dataset.id);
+	removeItemById(id) {
+		var deleted = false;
+		deleted = this._removeItemById(id,this.equipment['implement']);
+		if(!deleted) deleted = this._removeItemById(id,this._equipment['weapon']);
+		if(!deleted) deleted = this._removeItemById(id,this._equipment['armor']);
+		if(!deleted) deleted = this._removeItemById(id,this._equipment['gear']);
+		if(!deleted) deleted = this._removeItemById(id,this._equipment['tool']);
+		if(deleted) {
+			this.equipment = this._equipment;
+			this.changed();
+			this.requestUpdate();
+		}
 	}
 	
-	removeItemById(id) {
+	_removeItemById(id,list) {
 		var equipIndex = -1;
-		for(var i = 0; i < this.equipment.length; i++) {
-			if(this.equipment[i].id === id) {
-				equipIndex = i;
-				break;
+		if(list) {
+			for(var i = 0; i < list.length; i++) {
+				if(list[i].id === id) {
+					equipIndex = i;
+					break;
+				}
 			}
+			if(equipIndex !== -1) list.splice(equipIndex,1);
 		}
-		if(equipIndex === -1) { throw new Error("tried to delete non-existent equipment "+id) }
-		this.equipment.splice(equipIndex,1);
-		this.changed();
-		this.requestUpdate();
+		return equipIndex > -1;
 	}
 	
 	changed() {
@@ -409,23 +451,23 @@ class EquipmentSelector extends LitElement {
 	}
 	
 	renderImplements() {
-		return html`<implement-list class='sheet' calculateload='true' selectable='false' descriptiondisabled='true' ${ref(this.refs['implement'])}></implement-list>`;
+		return html`<implement-list class='sheet' actionenabled='X' calculateload='true' selectable='false' descriptiondisabled='true' ${ref(this.refs['implement'])}></implement-list>`;
 	}
 	
 	renderWeapons() {
-		return html`<weapon-list class='sheet' calculateload='true' selectable='false' descriptiondisabled='true' ${ref(this.refs['weapon'])}></weapon-list>`;
+		return html`<weapon-list class='sheet' actionenabled='X' calculateload='true' selectable='false' descriptiondisabled='true' ${ref(this.refs['weapon'])}></weapon-list>`;
 	}
 	
 	renderArmor() {
-		return html`<armor-list class='sheet' calculateload='true' selectable='false' descriptiondisabled='true' ${ref(this.refs['armor'])}></armor-list>`;
+		return html`<armor-list class='sheet' actionenabled='X' calculateload='true' selectable='false' descriptiondisabled='true' ${ref(this.refs['armor'])}></armor-list>`;
 	}
 
 	renderGear() {
-		return html`<gear-list class='sheet' calculateload='true' selectable='false' descriptiondisabled='true' ${ref(this.refs['gear'])}></gear-list>`;
+		return html`<gear-list class='sheet' actionenabled='X' calculateload='true' selectable='false' descriptiondisabled='true' ${ref(this.refs['gear'])}></gear-list>`;
 	}
 
 	renderTools() {
-		return html`<tool-list class='sheet' calculateload='true' selectable='false' descriptiondisabled='true' ${ref(this.refs['tool'])}></tool-list>`;
+		return html`<tool-list class='sheet' actionenabled='X' calculateload='true' selectable='false' descriptiondisabled='true' ${ref(this.refs['tool'])}></tool-list>`;
 	}
 
 	render() {
