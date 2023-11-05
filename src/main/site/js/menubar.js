@@ -26,11 +26,21 @@ class MyMenuItem extends LitElement {
 	static properties = {
 		label: {},
 		target: {},
-		decoration: {}
+		decoration: {},
+		enabled: {}
 	}
 
 	constructor() {
 		super();
+		this.enabled = 'true'
+	}
+	
+	enable() {
+		this.enabled = 'true';
+	}
+	
+	disable() {
+		this.enabled = 'false';
 	}
 	
 	onClick(e) {

@@ -14,86 +14,68 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { collection, doc, setDoc, addDoc, query, where, getDocs, getDoc } from 'firebase-firestore';
+import { collection, doc, setDoc, addDoc, query, where, getDocs, getDoc, DocumentReference } from 'firebase-firestore';
 import { Player } from './player.js';
+import { BaseRepository } from './baserepository.js';
+import { schema, getDb, getReference } from './schema.js';
 
 const playerConverter = {
 	toFirestore(player) {
+		if(!player.handle) player.handle = player.email;
 		return {
+			id: player.id,
 			email: player.email,
 			loggedin: player.loggedIn,
-			characters: player.characters
+			characters: player.characters,
+			handle: player.handle
 		}
 	},
 	fromFirestore(snapshot,options) {
 		const id = snapshot.id;
 		const data = snapshot.data(options);
-		return new Player(id,data.email,data.loggedin,data.characters);
+		return new Player(id,data.email,data.loggedin,data.characters,data.handle);
 	}
 };
 
-const GetPlayerReference = (id) => {
-	const db = window.gebApp.firestore;
-	return doc(db,"players",id);
-};
+/**
+ * Player repository. Manages player objects in FireStore.
+ */
+class PlayerRepository extends BaseRepository {
 
-class PlayerRepository {
-	/*
-	Game repo, this fetches players for us from Firebase.
-	*/
-    /** @private */ db;
-    /** @private */ gebApp;
-
-    constructor(gebApp,firestore) {
-		this.gebApp = gebApp;
-        this.db = firestore;
+    constructor() {
+		super(playerConverter,schema.players);
     }
 
+	static GetPlayerReference(id) {
+		return getReference(schema.players,id);
+	};
+	
 	/**
 	 * Given a player reference, call the onSuccess callback when the corresponding player is available
 	 * If the playerRef is really a player, then simply call onSuccess immediately.
 	 */
 	getReferencedPlayer(playerRef,onSuccess) {
-		if(playerRef instanceof Player) {
-			onSuccess(playerRef); // Because it is actually a player, not a ref!
-		} else {
-			playerRef.withConverter(playerConverter);
-			getDoc(playerRef).then((player) => { 
-				onSuccess(player);
-			});
-		}
+		this.dtoFromReference(playerRef,onSuccess);
+	}
+	
+	getReferencedPlayers(playerRefs,onSuccess) {
+		this.dtosFromReferences(playerRefs,onSuccess);
 	}
 	
     getPlayerByEmail(email,onDataAvailable, onFailure) {
-		console.log("GOT to getPLayerByEmail");
-        const playersRef = collection(this.db,"players");
-        const q = query(playersRef,where("email", "==", email)).withConverter(playerConverter);
-        getDocs(q).then((doc) => { 
-            doc.forEach(r => { 
-                console.log("GOT "+r.id);
-                var player = r.data();
-                onDataAvailable(player);
-            } ) }).catch((e) => {
-				console.trace(e);
-				onFailure(e.message);
-			});
+		this.findDto("email",email,"==",onDataAvailable,onFailure);
     }
     
     savePlayer(player) {
-        console.log("Saving data of "+JSON.stringify(player));
-        if(player.hasOwnProperty('id') && player.id !== undefined) {
-            console.log("UPDATING, ID IS:"+player.id);
-            var id = player.id;
-            delete player.id;
-            setDoc(doc(this.db,'players',id).withConverter(playerConverter),player);
-            player.id = id;
-        } else {
-            console.log("CREATING, data is "+JSON.stringify(player));
-            addDoc(collection(this.db,'players').withConverter(playerConverter),player);
-        }
+		this.saveDto(player);
     }
+    
+    getPlayerById(playerId,onDataAvailable) {
+		var docRef = this.getReference(playerId);
+		this.dtoFromReference(docRef,onDataAvailable);
+	}
 
 }
 
-export { PlayerRepository, GetPlayerReference };
+export { PlayerRepository };
 

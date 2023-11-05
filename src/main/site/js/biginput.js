@@ -25,15 +25,20 @@ class BigInput extends LitElement {
 		rows: {type: Number},
 		cols: {type: Number},
 		max: {type: Number},
-		actual: {type: Number, reflect: true, default: 0},
+		actual: {type: Number, reflect: true},
 		value: {reflect: true},
-		wrap: {default: 'hard'}
+		wrap: {}
 	};
 	
 	/** @private */ taref = createRef();
 	
 	constructor() {
 		super();
+		this.rows = 10;
+		this.cols = 60;
+		this.actual = 0;
+		this.value = '';
+		this.wrap = 'hard';
  	}
 
 	render() {

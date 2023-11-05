@@ -19,12 +19,14 @@ class Player {
 	email;
 	loggedIn;
 	characters;
+	handle;
 	
-	constructor(id, email, loggedIn, characters) {
+	constructor(id, email, loggedIn, characters, handle) {
 		this.id = id;
 		this.email = email;
 		this.loggedIn = loggedIn;
 		this.characters = characters === undefined ? [] : characters;
+		this.handle = handle;
 	}
 	
 	toString() {

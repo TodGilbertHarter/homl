@@ -28,9 +28,10 @@ class Controller {
 	/** @private */ equipmentRepo;
 	/** @private */ boonRepo;
 	/** @private */ featRepo;
+	/** @private */ playerRepo;
 		
 	constructor(gebApp,view,authenticator,router,gameRepo,characterRepo,characterController,callingRepo,speciesRepo,
-		backgroundRepo,originRepo,equipmentRepo,boonRepo,featRepo) {
+		backgroundRepo,originRepo,equipmentRepo,boonRepo,featRepo,playerRepo) {
 		this.gebApp = gebApp;
 		this.view = view;
 		view.controller = this;
@@ -46,6 +47,7 @@ class Controller {
 		this.equipmentRepo = equipmentRepo;
 		this.boonRepo = boonRepo;
 		this.featRepo = featRepo;
+		this.playerRepo = playerRepo;
 		this.router.add(/signup/,() => { this.view.displaySignUpUI(); });
 		this.router.add(/signin/,() => { this.view.displaySignInUI(); });
 		this.router.add(/signout/,() => { this.view.displaySignOutUI(); });
@@ -54,14 +56,35 @@ class Controller {
 		this.router.add(/showcharacter\/(.*)/,(characterid) => { this.view.displayCharacterInfo(characterid); });
 		this.router.add(/creategame/,() => { this.view.displayCreateGameUI(); });
 		this.router.add(/equipment/,() => {this.view.displayEquipmentList(); });
+		this.router.add(/playersettings/,() => {this.view.displayPlayerSettings(this.getCurrentPlayer().id); });
 		this.router.add(/feats/,() => {this.view.displayFeatList(); });
 		this.router.add(/boons/,() => {this.view.displayBoonList(); });
-		const mm = this.view.getElement('mainmenu');
-		mm.menuHandler = (e) => { this.menuItemSelectionHandler(e) };
+		this.actions = {};
+	}
+	
+	registerAction(actionName,extensionPoint) {
+		if(!this.actions[actionName]) this.actions[actionName] = [];
+		this.actions[actionName].push(extensionPoint);
+	}
+	
+	enableAction(actionName) {
+		if(this.actions[actionName])
+			this.actions[actionName].forEach((extensionPoint) => extensionPoint());
+	}
+	
+	updatePlayer(player) {
+		this.playerRepo.savePlayer(player);
+		if(this.getCurrentPlayer().id === player.id) {
+			this.authenticator.player = player;
+		}
 	}
 	
 	displayEquipmentView() {
 		window.location.hash = '/equipment';
+	}
+	
+	displayPlayerSettingsView() {
+		window.location.hash = '/playersettings';
 	}
 	
 	displayFeatView() {
@@ -94,6 +117,21 @@ class Controller {
 	
 	getCurrentPlayer() {
 		return this.authenticator.player;
+	}
+	
+	/**
+	 * Get a given player and call onDataAvailable when it is returned by
+	 * the repo. Also synchronize the current player with the new data if it
+	 * has the same id.
+	 */
+	getPlayerById(playerId,onDataAvailable) {
+		this.playerRepo.getPlayerById(playerId, (player) => {
+			var cp = this.getCurrentPlayer();
+			if(cp.id === player.id) {
+				this.authenticator.player = player;
+			}
+			onDataAvailable(player);
+		});
 	}
 	
 	onCallingsChanged(callings) {
@@ -143,26 +181,6 @@ class Controller {
 	}
 	
 	/**
-	 * Handle menuitem selections on the main application menu.
-	 */
-	menuItemSelectionHandler(item) {
-		console.log("got a menu item selected event for item named "+item);
-		switch(item) {
-			case 'new game':
-				this.handleNewGame();
-				break;
-			case 'homl':
-				this.openHoML();
-				break;
-			case 'erithnoi':
-				this.openErithnoi();
-				break;
-			default:
-				console.error("no handler for menu selection "+item);
-		}
-	}
-	
-	/**
 	 * Open a copy of the rules in a separate window/tab.
 	 */
 	openHoML() {
@@ -205,6 +223,10 @@ class Controller {
 	 */
 	doSignOut() {
 		this.authenticator.signOut();
+	}
+	
+	getPlayers(players,onSuccess) {
+		this.playerRepo.getReferencedPlayers(players,onSuccess);
 	}
 	
 	/**

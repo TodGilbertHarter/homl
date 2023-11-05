@@ -46,6 +46,12 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 		displayarea.innerHTML = `<boon-viewer id='boonviewer'></boon-viewer>`;
 	}
 	
+	displayPlayerSettings(playerId) {
+		console.log("WHAT IS THE MFING ID! "+playerId);
+		const displayarea = this.theDocument.getElementById('mainappview');
+		displayarea.innerHTML = `<player-settings id='playersettingsviewer' playerid=${playerId}></player-settings>`;
+	}
+	
 	/**
 	 * Render the Create a game UI.
 	 */
@@ -196,12 +202,6 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 	displayCharacterInfo(characterId) {
 		const displayarea = this.theDocument.getElementById('mainappview');
 		characterSheetFactory(displayarea,characterId,this.gebApp.characterRepo,(sheet) => {
-/*			const c = displayarea.childNodes[0];
-			if(c !== 'undefined') { 
-				displayarea.replaceChild(sheet,c);
-			} else { // this area could be empty
-				displayarea.appendChild(sheet);
-			} */
 		});
 	}
 	

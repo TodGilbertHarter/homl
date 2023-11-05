@@ -6,8 +6,7 @@ GEB_NAME="geb-$1"
 PUBDIR="geb/$GEB_NAME"
 mkdir -p ./build/$PUBDIR
 cd ./build/site
-#hairball genrefs.hairball homl.hairball | tail -n +2 >>./refs.hairball
-#hairball gencontents.hairball homl.hairball | tail -n +2 >./toc.hairball
+hairball html.hairball message.hairball | tail -n +2 >./message.html
 hairball geb.hairball index.hairball | tail -n +2 >./index.html
 cd ..
 cp ./site/*.html ./$PUBDIR

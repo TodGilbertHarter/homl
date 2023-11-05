@@ -6,3 +6,4 @@ GEB_NAME="geb-$1"
 PUBDIR="geb/$GEB_NAME"
 mkdir -p ./build/site
 cp -r src/main/site/* ./build/site/
+cp src/main/rules/html.hairball ./build/site

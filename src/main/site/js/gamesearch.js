@@ -1,5 +1,5 @@
 /**
- * This software is Copyright (C) 2021 Tod G. Harter. All rights reserved.
+ * This software is Copyright (C) 2023 Tod G. Harter. All rights reserved.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,28 +15,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-/** @private */ const GameSearchtemplate = document.createElement('template');
-GameSearchtemplate.innerHTML = `<div class='gamesearch' part='container'>
-				<label for='name'>Name</label>
-				<input type='text' id='name'/>
-			</div>`;
+import { html, LitElement } from 'lit2';
 
-class GameSearch extends HTMLElement {
-	/** @private */ static template = GameSearchtemplate;
+class GameSearch extends LitElement {
 	
 	constructor() {
 		super();
-		const content = GameSearch.template.content;
-        const shadowRoot = this.attachShadow({mode: 'open'}).appendChild(content.cloneNode(true));
 	}
 
-	connectedCallback() {
-		this.shadowRoot.getElementById('name').addEventListener('change',this.onNameChange.bind(this));
+	render() {
+			return html`<div class='gamesearch' part='container'>
+				<label for='name'>Name</label>
+				<input type='text' id='name' @change=${this.onNameChange}/>
+			</div>`;		
 	}
 	
 	onNameChange(e) {
 		const displayId = this.getAttribute('displayid');
-//		const viewer = window.gebApp.view.getElement(displayId);
 		const viewer = this.parentElement.querySelector('#'+displayId);
 		window.gebApp.controller.registerGamesListener(viewer.getRenderFn());
 		window.gebApp.controller.doGameSearch(e.target.value);

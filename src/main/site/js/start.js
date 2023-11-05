@@ -53,7 +53,8 @@ class Application {
 		this.view = new NotView(this,this.theDocument);
 		this.controller = new Controller(this,this.view,this.authenticator,
 			this.router,this.gameRepo,this.characterRepo,this.characterController,
-			this.callingRepo,this.speciesRepo,this.backgroundRepo,this.originRepo,this.equipmentRepo,this.boonRepo,this.featRepo);
+			this.callingRepo,this.speciesRepo,this.backgroundRepo,this.originRepo,this.equipmentRepo,this.boonRepo,this.featRepo,
+			this.playerRepo);
 	}
 }
 

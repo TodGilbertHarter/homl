@@ -23,6 +23,7 @@
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase-auth';
 	import {until} from 'lit2/until';
 </script>
+/MODULE" js/baserepository.js"/
 /MODULE" js/biginput.js"/
 /MODULE" js/fbconfig.js"/
 /MODULE" js/sash.js"/
@@ -62,6 +63,8 @@
 /MODULE" js/boonrepository.js"/
 /MODULE" js/featview.js"/
 /MODULE" js/boonview.js"/
+/MODULE" js/notesview.js"/
+/MODULE" js/playersettings.js"/
 /SIGNINDIALOG SIGNINDIALOG/
 /SIGNUPDIALOG SIGNUPDIALOG/
 /SOURCE" embedded_charactersheet.html"/
@@ -78,7 +81,7 @@
 			</my-menu>
 		</my-menu-item><my-menu-item class="dropdown" label='Character'>
 			<my-menu class='vertical dropdown-menu' id="submenu2">
-				<my-menu-item label='New'></my-menu-item>
+				<my-menu-item label='New' onClick='window.gebApp.controller.displayCharacterViewClicked();'></my-menu-item>
 				<my-menu-item label='Find'></my-menu-item>
 				<my-menu-item label='Save'></my-menu-item>
 				<my-menu-item label='Recent'></my-menu-item>
@@ -96,7 +99,7 @@
 			</my-menu>
 		</my-menu-item><my-menu-item class="dropdown right" label='Settings'>
 			<my-menu class='vertical dropdown-menu' id="submenu4">
-				<my-menu-item label='Player'></my-menu-item>
+				<my-menu-item label='Player' onclick='window.gebApp.controller.displayPlayerSettingsView();'></my-menu-item>
 			</my-menu>
 		</my-menu-item>
 	</my-menu>
@@ -106,12 +109,13 @@ TOPBAR/
 /APPLICATION
 /LEFTSLOT 
 LEFTSLOT/
-/RIGHTSLOT The right one RIGHTSLOT/
+/RIGHTSLOT
+/SOURCE" message.html"/
+RIGHTSLOT/
 APPLICATION/
 /FOOTER
 Copyright &copy; Tod G. Harter 2023 All rights reserved.
 FOOTER/
-/* /SCRIPT" js/library.js"/ */
 /MODULE" js/start.js"/
 BODY/
 SITE/

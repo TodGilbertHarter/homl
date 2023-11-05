@@ -223,6 +223,7 @@ task copyGEBSite(type: Exec) {
 	description 'copy source files for GEB to temp area in build directory'
 	inputs.files(fileTree('src/main/site'))
 	inputs.file('scripts/copyGEBSite.sh')
+	inputs.file(file('src/main/rules/html.hairball'))
 	outputs.dir('build/site')
 	commandLine './scripts/copyGEBSite.sh', project.version
 }

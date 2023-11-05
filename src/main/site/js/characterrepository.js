@@ -14,9 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { collection, doc, setDoc, query, where, getDocs, getDoc } from 'firebase-firestore';
+import { getDoc,doc } from 'firebase-firestore';
 import { Character } from './character.js';
 import { schema, getReference, getDb } from './schema.js';
+import { BaseRepository } from './baserepository.js';
 
 const characterConverter = {
 	toFirestore(character) {
@@ -122,16 +123,13 @@ const characterConverter = {
 	}
 }
 
-class CharacterRepository {
-	/*
-	Character repo, this fetches characters for us from Firebase.
-	*/
-	/** @private */ gebApp;
-    /** @private */ db;
+/**
+ * Character repository, manages all character objects in repository
+ */
+class CharacterRepository extends BaseRepository {
 
-    constructor(gebApp,firestore) {
-		this.gebApp = gebApp;
-        this.db = firestore;
+    constructor() {
+		super(characterConverter,schema.characters);
     }
 
 	/**
@@ -158,29 +156,12 @@ class CharacterRepository {
 		});
 	}
 	
-   getCharacterByName(name,onDataAvailable) {
-        this.db.collection("characters").where("name", "==", name).get().then((doc) => { 
-            doc.forEach(r => { 
-                console.log("GOT "+r.id);
-                var data = r.data();
-                data.id = r.id;
-                console.log("Character data is:"+JSON.stringify(data));
-                onDataAvailable(data);
-            } ) });
+	getCharacterByName(name,onDataAvailable) {
+		this.findDto("name",name,"==",onDataAvailable,(message) => { throw new Error(message)});
     }
     
     getCharactersByName(name,onDataAvailable) {
-		const cRef = collection(this.db,"characters");
-		var q = query(cRef,where("name", "==", name));
-		q = q.withConverter(characterConverter);
-		getDocs(q).then((doc) => { 
-				console.log("GOT SOME DATA "+doc);
-				const results = [];
-				doc.forEach((gdata) => {
-					results.push(gdata.data());
-				});
-				onDataAvailable(results); 
-			});
+		this.findDtos("name",name,"==",onDataAvailable,(message) => { throw new Error(message)});
 	}
 
     /**
@@ -190,29 +171,12 @@ class CharacterRepository {
      * @Param {function([Character])} onDataAvailable data available callback.
      */
 	getCharacterById(id,onDataAvailable) {
-		console.log("WTF IS THE ID "+id);
-		var docRef = doc(this.db,"characters",id);
-		docRef = docRef.withConverter(characterConverter);
-		getDoc(docRef).then((doc) => {
-				console.log("GOT SOME DATA "+doc);
-				const results = [];
-				results.push(doc.data());
-				onDataAvailable(results[0]); 
-		});
+		var docRef = this.getReference(id);
+		this.dtoFromReference(docRef,onDataAvailable);
 	}
 	
     async saveCharacter(character) {
-        console.log("Saving data of "+JSON.stringify(character));
-        if(character.hasOwnProperty('id') && character.id !== undefined && character.id !== null) {
-            console.log("UPDATING, ID IS:"+character.id);
-            const id = character.id;
-            const ref = doc(this.db,"characters",id).withConverter(characterConverter);
-            await setDoc(ref,character);
-        } else {
-            console.log("CREATING, data is "+JSON.stringify(character));
-            const ref = doc(collection(this.db,"characters")).withConverter(characterConverter);
-            await setDoc(ref,character);
-        }
+		await this.saveDto(character);
     }
 }
 

@@ -46,7 +46,11 @@ class Character {
 				},
 				species: {},
 				origin: {},
-				calling: {}
+				calling: {},
+				notes: [],
+				name: '',
+				description: '',
+				wealth: 0,
 			}
 		}
 		this.characterData = data;
@@ -62,7 +66,9 @@ class Character {
 		if(typeof this.background === 'undefined') {
 			this.background = {};
 		}
-
+		if(typeof this.notes === 'undefined') {
+			this.notes = [];
+		}
 		this.clearDerivedData();
 	}
 	
@@ -74,6 +80,14 @@ class Character {
 	clearDerivedData() {
         this.dData = {
             levelbonus: 0,
+			size: 'medium',
+			vision: 'standard',
+			healingValue: 0,
+			speed: 0,
+			maxHitPoints: 0,
+			encumbrance: 'unencumbered',
+			load: 0,
+			maxload: 0,
             proficiencies: {
                 knacks: {
                     acrobatics: { },

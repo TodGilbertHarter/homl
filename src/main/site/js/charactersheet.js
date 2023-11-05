@@ -19,7 +19,7 @@ import { html, LitElement, render } from 'lit2';
 import { Rules } from './rules.js';
 import { Background } from './background.js';
 import { Character } from './character.js';
-import { GetPlayerReference } from './playerrepository.js'
+import { PlayerRepository } from './playerrepository.js'
 import {ref, createRef} from 'lit2/ref';
 import {repeat} from 'lit2/repeat';
 import {BoonDetailRenderer} from './boonview.js';
@@ -279,6 +279,12 @@ class CharacterSheet extends HTMLElement {
 		return elem.equipment;
 	}
 	
+	getNotesList() {
+		const id = 'notesselector';
+		const elem = this.getElement(id);
+		return elem.notes;
+	}
+	
 	disconnectedCallback() {
 		
 	}
@@ -344,9 +350,94 @@ class CharacterSheet extends HTMLElement {
 		}
 		equipmentselector.equipment = estructured;
 	}
+	
+	setCharacterNotes(notes) {
+		const notesselector = this.getElement('notesselector');
+		notesselector.notes = notes;
+	}
 }
 
 window.customElements.define('character-sheet',CharacterSheet);
+
+class NotesSelector extends LitElement {
+	static properties = {
+		label: {},
+		notes: {attribute: false, state: true}
+	}
+	
+	get notes() {
+		return this._notes;
+	}
+
+	set notes(notes) {
+		this._notes = notes;
+		this.viewerRef.value.notes = this._notes;
+		this.requestUpdate();
+	}	
+	
+	constructor() {
+		super();
+		this.label = "Notes:";
+		this._notes = [];
+		this.viewerRef = createRef();
+		this.addEventListener('noteaction', (e) => {
+			this.removeNote(e.detail.noteid);
+		});
+	}
+	
+	addNoteClicked(e) {
+		const dialog = document.createElement('dialog-widget');
+		const bigInputRef = createRef();
+		const cancelHandler = (e) => { document.getElementsByTagName('body')[0].removeChild(dialog); }
+		const selectHandler = (e) => { document.getElementsByTagName('body')[0].removeChild(dialog); this.addNote({text: bigInputRef.value.value}) }
+		dialog.setAttribute('class','noteselector');
+		const template = html`<div slot='content'><big-input ${ref(bigInputRef)} rows='20' cols='60' max='2000'></big-input></div>
+		<button class='dialogbutton' slot='buttonbar' id='boonselect' @click=${selectHandler}>select</button>
+		<button class='dialogbutton' slot='buttonbar' id='dismiss' @click=${cancelHandler}>cancel</button>`;
+		render(template,dialog);
+		document.getElementsByTagName('body')[0].appendChild(dialog);
+		dialog.addEventListener('noteupdated',(e) => { 
+			document.getElementsByTagName('body')[0].removeChild(dialog);
+			const note = e.detail.note;
+			this.addNote(note);
+		});
+	}
+	
+	addNote(note) {
+		//TODO: take care of an update
+		if(!note.id) note.id = crypto.randomUUID();
+		if(!note.timestamp) note.timestamp = Date.now();
+		this._notes.push(note);
+		this.viewerRef.value.notes = this._notes;
+		this.changed();
+	}
+	
+	removeNote(noteid) {
+		var noteindex = -1;
+		for(var i = 0; i < this._notes.length; i++ ) {
+			if(this._notes[i].id === noteid) {
+				noteindex = i;
+				break;
+			}
+		}
+		if(noteindex > -1) {
+			this._notes.splice(noteindex,1);
+			this.changed();
+		}
+	}
+	
+	changed() {
+		this.requestUpdate();
+		this.viewerRef.value.requestUpdate();
+		this.dispatchEvent(new Event('change',{bubbles: true, composed: true}));
+	}
+
+	render() {
+		return html`<span class='boxlabel' part='label'>${this.label}</span><button @click=${this.addNoteClicked}>Add</button><notes-viewer actionenabled='X' editEnabled='Edit' ${ref(this.viewerRef)}></notes-viewer>`;
+	}
+}
+
+window.customElements.define('notes-selector',NotesSelector);
 
 class EquipmentSelector extends LitElement {
 	static properties = {
@@ -1295,7 +1386,10 @@ class CharacterController {
 	 */
 	createCharacter(sheet) {
 		const char = new Character(null,null);
-		char.owner = GetPlayerReference(window.gebApp.controller.getCurrentPlayer().id);
+		const cp = window.gebApp.controller.getCurrentPlayer();
+		const cpid = cp.id;
+		const owner = PlayerRepository.GetPlayerReference(cpid);
+		char.owner = owner;
 		this.populateCharacter(sheet,char,() => {});
 	}
 	
@@ -1410,13 +1504,17 @@ class CharacterController {
         sheet.setCharacterData('characterdr',character.derivedData.damageReduction);
         sheet.setCharacterData('characterhealingvalue',character.derivedData.healingValue);
         sheet.setCharacterData('charactermaxpower',character.derivedData.maxPower);
+        sheet.setCharacterData('characterencumbrance',character.derivedData.encumbrance);
+        sheet.setCharacterData('characterload',character.derivedData.load);
+        sheet.setCharacterData('charactermaxload',character.derivedData.maxload);
         this.setPersonality(sheet,character.personality);
         this.setBackground(sheet,character.background);
         this.setProficiencies(sheet,character.characterData.proficiencies);
         this.setBoons(sheet,character.characterData.boons);
         this.setEquipment(sheet,character.characterData.equipment);
+        this.setNotes(sheet,character.characterData.notes);
     }
-
+    
 	getAllBoons(blist,action) {
 		const ulist = blist.filter((item) => !(item instanceof Boon));
 		const rlist = blist.filter((item) => item instanceof Boon);
@@ -1429,6 +1527,11 @@ class CharacterController {
 		this.equipmentRepo.getReferenced(ulist,(requipment) => { action([...requipment,...rlist])});
 	}
 	
+    setNotes(sheet,notes) {
+		sheet.setCharacterNotes(notes);
+	}
+
+
 	setEquipment(sheet,equipment) {
 		const elist = [];
 		for(const [type,eqlist] of Object.entries(equipment)) {
@@ -1599,6 +1702,8 @@ class CharacterController {
 		character.characterData.boons = boons;
 		const cequip = sheet.getEquipmentList();
 		character.characterData.equipment = cequip;
+		const notes = sheet.getNotesList();
+		character.characterData.notes = notes;
     }
     
     calculate(character) {
@@ -1729,9 +1834,14 @@ var characterSheetFactory = function(element,characterId,characterRepo,created) 
 	element.innerHTML = `<character-sheet characterid='${characterId}' id='cv${characterId}'></character-sheet>`;
 	const charSheet = document.getElementById(`cv${characterId}`);
 	const sctrlr = window.gebApp.characterController;
-	characterRepo.getCharacterById(characterId,(character) => {
-		sctrlr.populateCharacter(charSheet,character,created);
-	});
+	if(characterId !== 'undefined'){
+		characterRepo.getCharacterById(characterId,(character) => {
+			sctrlr.populateCharacter(charSheet,character,created);
+		});
+	} else {
+		sctrlr.createCharacter(charSheet);
+		created();
+	}
 }
 
 

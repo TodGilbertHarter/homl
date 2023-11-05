@@ -14,15 +14,76 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { getDoc } from 'firebase-firestore';
+import { html, LitElement } from 'lit2';
+import {repeat} from 'lit2/repeat';
 
-/** @private */ const GameListtemplate = document.createElement('template');
-GameListtemplate.innerHTML = `
-		<style>
-			div.list > div {
+class GameList extends LitElement {
+	
+	constructor() {
+		super();
+		this.model = [];
+		this.owners = [];
+ 	}
+
+	getRenderFn() {
+		return (gamelist) => { this.setModel(gamelist); }
+	}
+	
+	setModel(model) {
+		this.model = model;
+		this.getOwners();
+		this.requestUpdate();
+	}
+	
+	getOwners() {
+		const prefset = {};
+		this.model.forEach((game) => prefset[game.id] = game.owner);
+		const prefs = [];
+		Object.keys(prefset).forEach((pref) => prefs.push(prefset[pref]));
+		window.gebApp.controller.getPlayers(prefs,(players) => { this.owners = players; this.requestUpdate(); });
+	}
+	
+	gameClicked(e) {
+		const index = e.target.dataset.index;
+		const game = this.model[index];
+		console.log(`clicked on game named ${game.name} with id ${game.id}`);
+		window.gebApp.controller.displayGameViewClicked(game.id);
+	}
+	
+	renderOwner(index) {
+		const model = this.model[index];
+		if(model) {
+			const owner = model.owner;
+			if(owner) {
+				const ownerid = owner.id;
+				if(ownerid) {
+					const ownerArry = this.owners.map((owner) => owner.id === ownerid ? owner : false );
+					const owner = ownerArry[0];
+					if(owner)
+						return html`${owner.handle}`;
+					return "no mapped owner";
+				}
+				return 'no owner id';
+			}
+			return 'no owner'
+		}
+		return 'no model';
+	}
+
+	renderGames() {
+		if(this.model.length > 0) {
+			return html`${repeat(this.model,(game,index) => html`<div data-index=${index} class='clickable' @click=${this.gameClicked}>${game.name}</div><div>${this.renderOwner(index)}</div>`)}`;
+		} else {
+			return html`<span>No Results</span>`;
+		}
+	}
+	
+	render() {
+		return html`<style>
+			div.list {
 				display: flex;
 			}
-			div.list > div > div {
+			div.list > div {
 				flex: 1;
 			}
 			.clickable {
@@ -30,54 +91,12 @@ GameListtemplate.innerHTML = `
 			}
 		</style>
 		<div class='searchlist' part='container'>
-			<div part='list' id='list' class='list'></div>
+			<div part='list' id='list' class='list'>
+				${this.renderGames()}
+			</div>
 			<div part='pager' id='pager'></div>
 		</div>`;
-
-class GameList extends HTMLElement {
-	/** @private */ static template = GameListtemplate;
-	/** @private */ model;
-	
-	constructor() {
-		super();
-		const content = GameList.template.content;
-        const shadowRoot = this.attachShadow({mode: 'open'}).appendChild(content.cloneNode(true));
- 	}
-
-	connectedCallback() {
-		window.gebApp.view.gameListAttached(this);
 	}
-	
-	setModel(model) {
-		this.model = model;
-		this.render();
-	}
-	
-	getRenderFn() {
-		return this.setModel.bind(this);
-	}
-	
-	render() {
-		const list = this.shadowRoot.getElementById('list');
-		const model = this.model;
-		if(model != 'undefined') {
-			list.innerHTML = '';
-			model.forEach((game) => {
-				getDoc(game.owner).then((owner) => {
-				const gRow = window.gebApp.theDocument.createElement('div');
-				gRow.innerHTML = `<div class='clickable'>${game.name}</div><div>${owner.data().email}</div>` // game.data().name;
-				list.appendChild(gRow);
-				gRow.firstChild.addEventListener('click',(e) => { 
-					console.log(`clicked on game named ${game.name} with id ${game.id}`);
-					window.gebApp.controller.displayGameViewClicked(game.id);
-					});
-				});
-			});
-		} else {
-			list.innerHTML = 'no results';
-		}
-	}
-	
 }
 
 window.customElements.define('game-list',GameList);

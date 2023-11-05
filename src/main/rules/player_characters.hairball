@@ -249,6 +249,17 @@ SUBSECTION/
 This is a measure of how much the character is carrying. Each character is either unencumbered, encumbered, or overloaded. The 
 exact amount of total load which represents each value depends on the character's maximum load, which is determined primarily by 
 strength and size.
+
+If a character is carrying less than her maximum load, she is unencumbered. If a character carries more than her maximum load then she is encumbered. 
+When encumbered her speed is reduced by one and she has disadvantage on all checks based on Dexterity governed aspects. If a character carries more than
+twice her maximum load, then she is overloaded. When overloaded her speed is reduced to 0 and thus she cannot move, nor can she pass checks based on any
+Dexterity governed aspect. She will have to remove load in order to remedy this situation. Optionally a character might briefly achieve half speed by
+passing a Constitution check, heroes are superhuman after all!
+SUBSECTION/
+/SUBSECTION" Current Load "/
+
+This is simply the total load of all equipment and anything else a character happens to be carrying at a given moment. Equipment load is given in the
+equipment section for commonly encountered items. Other items can be extrapolated from those given.
 SUBSECTION/
 /SUBSECTION" Maximum Load "/
 
@@ -260,8 +271,6 @@ Normally a character can carry a load of items equal to 40 load plus 20 times th
 encumbered. This assumes the weight is reasonably distributed and easy to carry. 40 lbs of pillows might encumber anyone, a 
 40 lb piece of iron carried in a backpack probably wouldn't. 
 
-If a character carries more than her maximum load then she is encumbered. When encumbered her speed is reduced by one and she has 
-disadvantage on all checks based on Dexterity governed aspects.
 SUBSECTION/
 /SUBSECTION" Character Equipment"/
 
