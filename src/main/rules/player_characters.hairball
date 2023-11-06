@@ -179,7 +179,7 @@ SUBSECTION/
 
 Every character belongs to some species. This defines the character's basic physical parameters. A detailed description of 
 various possible choices of species available to heroes is presented in a later chapter. Species choice is generally up to the players. The choice 
-will make certain boons available, and apply some adjustments to the character. For example dwarg move more slowly than other 
+will make certain boons available, and apply some adjustments to the character. For example dvarg move more slowly than other 
 characters, but are also extremely resistant to certain kinds of effects. Humans are the most common type of character; other 
 species might be allowable depending on the desires of the participants in the game.
 SUBSECTION/
@@ -282,7 +282,7 @@ Every character has a wealth. This attribute is a basic description of how much 
 SUBSECTION/
 /SUBSECTION" Level"/
 
-Every character has a level. This determines the level of challenges which the character can face.
+Every character has a level. This determines the level of challenges which the character can face. It also determines the hero's level bonus.
 SUBSECTION/
 /SUBSECTION" Proficiencies"/
 

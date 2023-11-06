@@ -75,6 +75,7 @@ class DialogWidget extends LitElement {
 				border-bottom: 0px;
 				margin: 0px;
 				padding: 0px;
+				box-shadow: 3px 3px 5px 0px var(--shadow-color);
 			}
 			
 			div.buttonbar {

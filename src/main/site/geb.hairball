@@ -52,7 +52,7 @@ Hairball.
 /: TOPBAR/ </div> :/
 /: /LOGO <a href='./index.html'><img class='logo' src="images/logo.png"/></a> :/
 /: LOGO/ // :/
-/: /MAINMENU <div id='mainmenu' class='mainmenu'> :/
+/: /MAINMENU <div id='mainmenu' class='mainmenu component'> :/
 /: MAINMENU/ </div> :/
 /: /APPLICATION <horizontal-sash id='applicationarea'> :/
 /: /LEFTSLOT <tab-panel slot='sashleft' id='leftslottabpanel'> :/

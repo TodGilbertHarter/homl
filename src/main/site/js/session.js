@@ -16,7 +16,7 @@
 */
 
 /** @private */ const SessionWidgettemplate = document.createElement('template');
-SessionWidgettemplate.innerHTML = `<div class='sessionwidget' part='button' id='button'><slot name='text'><button id='signinbutton'>Sign In</button></slot></div>`;
+SessionWidgettemplate.innerHTML = `<style>.component { box-shadow: 3px 3px 5px 0px var(--shadow-color) }</style><div class='sessionwidget' part='button' id='button'><slot name='text'><button class='component' id='signinbutton'>Sign In</button></slot></div>`;
 
 class SessionWidget extends HTMLElement {
 	/**

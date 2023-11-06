@@ -16,63 +16,74 @@
 */
 
 import { html, LitElement } from 'lit2';
+import {ref, createRef} from 'lit2/ref';
 
 class GameView extends LitElement {
 	static properties = {
 		gameId: {},
-		value: {}
+		value: {},
+		model: {attribute: false, state: true}
 	};
 	
 	constructor() {
 		super();
+		this.gameViewRef = createRef();
+		this.characterListRef = createRef();
+		this.model = null;
 	}
 	
-	render() {
-		return html` <style>
-			div.gamedescription {
-				display: flex;
-				flex-wrap: wrap;
-			}
-			div.gamedescription > div.fieldlabel {
-				font-weight: bold;
-				flex:25%;
-			}
-			div.gamedescription > div.fieldvalue {
-				flex: 75%;
-			}
-		</style>
-		<div class='gameview' part='gameview' id='gameview'>
-		</div>`;
+	showGame(game) {
+		this.model = game;
 	}
-	
-	firstUpdated() {
-		const gameview = this.shadowRoot.getElementById('gameview');
-		gameview.innerHTML = `<p>Getting data for game ${this.gameId}</p>`;
-	}
-	
+
 	updated(changed) {
 		super.updated(changed);
-		this.displayGame();
-	}
-	
-	displayGame() {
-		const gameview = this.shadowRoot.getElementById('gameview');
-		const model = this.value;
-		if(typeof model !== 'undefined') {
-			model.getCharacters((characters) => {
-				gameview.innerHTML = `<div class="gamedescription"><div class='fieldlabel'>Game Name:</div><div class='fieldvalue'>${model.name}</div></div>
-				<div class='textdescription'>${model.description}</div>
-				<character-list class=characterlist id="characterlist"></character-list>`;
-				const clist = this.shadowRoot.getElementById('characterlist');
-				clist.setModel(characters);
+		if(this.model) {
+			this.model.getCharacters((characters) => {
+				this.characterListRef.value.setModel(characters);
 			});
 		}
 	}
 	
-	showGame(game) {
-		this.value = game;
+	render() {
+		return html` <style>
+			div.gameview {
+				width: auto;
+				max-width: 500px;
+				background-color: var(--box-bg);
+			}
+			div.gamedescription {
+				width: auto;
+			}
+			div.gamedescription > span.fieldlabel {
+				width: 8em;
+			}
+			div.gamedescription > span.fieldvalue {
+				width: auto;
+			}
+			div.textdescription {
+				border: 1px solid black;
+			}
+			.fieldlabel {
+				padding-right: .25em;
+				font-weight: bold;
+				font-size: 1.125em;
+			}
+		</style>
+		<div class='gameview' part='gameview' id='gameview' ${ref(this.gameViewRef)}>
+			${this.renderView()}
+		</div>`;
 	}
-		
+	
+	renderView() {
+		if(this.model) {
+			return html`<div class="gamedescription"><span class='fieldlabel'>Name:</span><span class='fieldvalue'>${this.model.name}</span></div>
+				<div class='textdescription'>${this.model.description}</div>
+				<character-list class=characterlist id="characterlist" ${ref(this.characterListRef)}></character-list>`;
+		} else {
+			return html`<p>Getting data for game ${this.gameId}</p>`;
+		}
+	}
 }
 
 window.customElements.define('game-view',GameView);

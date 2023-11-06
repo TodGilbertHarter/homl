@@ -46,7 +46,6 @@ class GameList extends LitElement {
 	gameClicked(e) {
 		const index = e.target.dataset.index;
 		const game = this.model[index];
-		console.log(`clicked on game named ${game.name} with id ${game.id}`);
 		window.gebApp.controller.displayGameViewClicked(game.id);
 	}
 	
@@ -72,7 +71,7 @@ class GameList extends LitElement {
 
 	renderGames() {
 		if(this.model.length > 0) {
-			return html`${repeat(this.model,(game,index) => html`<div data-index=${index} class='clickable' @click=${this.gameClicked}>${game.name}</div><div>${this.renderOwner(index)}</div>`)}`;
+			return html`${repeat(this.model,(game,index) => html`<div><div data-index=${index} class='clickable' @click=${this.gameClicked}>${game.name}</div><div>${this.renderOwner(index)}</div></div>`)}`;
 		} else {
 			return html`<span>No Results</span>`;
 		}
@@ -80,10 +79,13 @@ class GameList extends LitElement {
 	
 	render() {
 		return html`<style>
-			div.list {
+			div.list > div {
 				display: flex;
 			}
-			div.list > div {
+			div.list > div:nth-child(odd) {
+				background-color: var(--theme-bg-dark);
+			} 
+			div.list > div > div {
 				flex: 1;
 			}
 			.clickable {

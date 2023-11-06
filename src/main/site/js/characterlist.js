@@ -32,6 +32,9 @@ class CharacterList extends LitElement {
 			div.list > div {
 				display: flex;
 			}
+			div.list > div:nth-child(odd) {
+				background-color: var(--theme-bg-dark);
+			} 
 			div.list > div > div {
 				flex: 1;
 			}

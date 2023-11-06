@@ -76,7 +76,7 @@ TRIGGER/
 /EFFECTS
 You shift one square towards the triggering opponent. You may now make an opportunity attack as if you originally occupied the square you now find yourself in.
 EFFECTS/
-/FLAVOR Your staff moves quickly and takes its toll on your enemies, even if their are several of them. FLAVOR/
+/FLAVOR Your enemies have great difficulty disengaging from you. FLAVOR/
 FEAT/
 BENEFIT/
 BENEFITS/
@@ -176,6 +176,29 @@ DESCRIPTION/
 /COMPLETESUCCESS 2DD + weapon + STR damage. COMPLETESUCCESS/
 /SUCCESS DD + Weapon + STR damage. SUCCESS/
 /FLAVOR Your opponent is momentarily dazed by your powerful strike. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+/BOON /ID" 1e60ff3e-7c68-11ee-a6c1-c87f5455cfcc"/ /BOONNAME Master of Defense BOONNAME/
+/BOONSOURCE Level BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Monk Calling ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You are a master of defensive techniques.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+/FEAT /ID" 94095196-7c68-11ee-adb6-c87f5455cfcc"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Active Defense FEATNAME/
+/ORIGIN Master of Defense ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Defense ACTION/
+/TAGS Defense, unarmed TAGS/
+/DEFENSE unarmed DEFENSE/
+/ENHANCED 1DD + weapon + STR damage and the opponent is dazed. ENHANCED/
+/COMPLETESUCCESS 1DD damage COMPLETESUCCESS/
+/SUCCESS weapon + DEX damage. SUCCESS/
+/FLAVOR You lash out with your fists and feet, catching the attacker off balance. FLAVOR/
 FEAT/
 BENEFIT/
 BENEFITS/

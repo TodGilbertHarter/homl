@@ -27,7 +27,9 @@ class TabPanel extends LitElement {
 	}
 
 	render() {
-		return html`<div class='tabpanel' part='container'>
+		const rstyle = this.tabList.length > 0 ? '' : 'display: none;';
+		
+		return html`<div style='${rstyle}' class='tabpanel' part='container'>
 				<div part='tabs' id='tabs'>
 					<ul class='tabbar' part='tabbar'>
 					${this.tabList}

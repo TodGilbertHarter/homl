@@ -69,6 +69,7 @@
     --disease-fg: black;
     --wound-bg: Maroon;
     --wound-fg: white;
+    --shadow-color: #606393;
 }
 
 .theme-l5 {color:#000 !important; background-color:#fdfdfc !important}
@@ -112,8 +113,12 @@ body {
 	height: 100%;
 	float: left;
 	clear: left;
+	filter: drop-shadow(3px 3px 5px var(--shadow-color));
 }
 
+.component {
+	box-shadow: 3px 3px 5px 0px var(--shadow-color);
+}
 .mainmenu {
 	display: inline-block;
 	vertical-align: middle;
@@ -121,6 +126,10 @@ body {
 	top: 50%;
 	transform: translateY(-50%);
 	z-index: 100;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
 }
 
 .mainmenu my-menu {
@@ -505,6 +514,7 @@ horizontal-sash::part(dragbar) {
 	width: 6px;
 	float: left;
 	background-color: lightgrey;
+	box-shadow: 3px 3px 5px 0px var(--shadow-color);
 }
 
 horizontal-sash::part(container) {

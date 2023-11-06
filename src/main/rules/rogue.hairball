@@ -183,7 +183,7 @@ DESCRIPTION/
 /FEAT /ID" ed72765a-77aa-11ec-bc4a-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Flashing Blade FEATNAME/
 /ORIGIN Master Duelist ORIGIN/
 /LEVEL 4 LEVEL/
-/ACTION Free ACTION/
+/ACTION Rider ACTION/
 /TRIGGER You hit an enemy and achieve an enhanced success. TRIGGER/
 /EFFECTS The enemy takes an additional 2DD + weapon + DEX damage and the target is pushed one square. You may shift into the vacated square. EFFECTS/
 /FLAVOR You hit back hard and fast. FLAVOR/
@@ -204,7 +204,7 @@ DESCRIPTION/
 /FEAT /ID" fb3fe95c-77aa-11ec-9c1c-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER legendary TIER/ /FEATNAME Mark of the Legend FEATNAME/
 /ORIGIN Legendary Duelist ORIGIN/
 /LEVEL 9 LEVEL/
-/ACTION Free ACTION/
+/ACTION Rider ACTION/
 /TAGS Weapon TAGS/
 /REQUIREMENTS you must be wielding a light weapon REQUIREMENTS/
 /TRIGGER you hit an opponent with a close weapon attack and get an enhanced success TRIGGER/

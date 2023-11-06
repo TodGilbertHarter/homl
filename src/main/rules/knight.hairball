@@ -225,7 +225,7 @@ You gain access to the following feat: /BR
 /FEAT /ID" 68984b4a-77a9-11ec-bdb4-74d02b9c2012"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Vicious Chop FEATNAME/
 /ORIGIN Axe Fighter ORIGIN/
 /LEVEL 1 LEVEL/
-/ACTION Free ACTION/
+/ACTION Rider ACTION/
 /TAGS Weapon TAGS/
 /REQUIREMENTS You must be wielding an axe. REQUIREMENTS/
 /TRIGGER You achieve an enhanced success with a close weapon attack TRIGGER/
