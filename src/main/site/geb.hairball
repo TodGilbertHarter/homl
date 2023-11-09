@@ -48,7 +48,7 @@ Hairball.
 /: /SCRIPT" <script src=' /" /. '></script> :/
 /: /MODULE" <script type='module' src=' /" /. '></script> :/
 /: /STYLE" <link rel="stylesheet" type="text/css" href=" /" /. " media="screen"/> :/
-/: /TOPBAR <div class='topbar'> :/
+/: /TOPBAR <div class='topbar component'> :/
 /: TOPBAR/ </div> :/
 /: /LOGO <a href='./index.html'><img class='logo' src="images/logo.png"/></a> :/
 /: LOGO/ // :/

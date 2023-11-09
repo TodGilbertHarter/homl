@@ -38,6 +38,7 @@ div.header {
 	display: block;
 	width: 100%;
 	height: 130px;
+	margin-bottom: .75em;
 	clear: left;
 	background-color: black;
 }
@@ -71,24 +72,17 @@ div.header > div.bottomborder {
 button {
     margin: .25em;
     background-color: green;
-    border-color: black;
-    border-width: 1px;
+    border-color: var(--document-fg);
+    border-width: 3px;
     border-radius: 10px;
     font-weight: bold;
     font-size: 1.5em;
     color: var(--document-fg);
+    text-shadow: 1px 1px 3px black;
 }
 
 button:disabled {
 	opacity: 0.5;
-    margin: .25em;
-    background-color: green;
-    border-color: black;
-    border-width: 1px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 1.5em;
-    color: var(--document-fg);
 }
 
 span.sheetfield > input {
@@ -114,6 +108,10 @@ h1 {
 /*    display: block;
     margin-left: auto;
     margin-right: auto; */
+}
+
+.component {
+	box-shadow: 3px 3px 5px 0px var(--shadow-color);
 }
 
 personality-field::part(name) {
@@ -227,17 +225,7 @@ knack-field::part(totalbonus) {
     text-align: center;
 }
 
-.boxlabel {
-    font-weight: bold;
-    font-size: .75em;
-}
-
-boon-selector::part(label) {
-    font-weight: bold;
-    font-size: .75em;
-}
-
-equipment-selector::part(label) {
+boon-selector::part(label), equipment-selector::part(label), item-list::part(label), notes-selector::part(label), .boxlabel {
     font-weight: bold;
     font-size: .75em;
 }

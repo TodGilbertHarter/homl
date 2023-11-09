@@ -153,6 +153,54 @@ FEAT/
 BENEFIT/
 BENEFITS/
 BOON/
+/BOON /ID" 43e5ecf2-7d1b-11ee-bdc5-c87f5455cfcc"/ /BOONNAME Snake Technique BOONNAME/
+/BOONSOURCE Level BOONSOURCE/ /BOONLEVEL 4 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Monk Calling ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You have mastered the mysterious snake technique, allowing you to mesmerize your opponents.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+/FEAT /ID" f5a0e014-7d1b-11ee-96b0-c87f5455cfcc"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Snake Strike FEATNAME/
+/ORIGIN Snake Technique ORIGIN/
+/LEVEL 4 LEVEL/
+/ACTION Rider ACTION/
+/TAGS Unarmed TAGS/
+/REQUIREMENTS You must not be wielding a weapon. REQUIREMENTS/
+/EFFECTS You daze and immobilize your opponent. EFFECTS/
+/FLAVOR Your opponent is briefly mesmerized by your attack and loses the ability to respond effectively for a moment. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+/BOON /ID" d1f4639c-7d1c-11ee-8bbc-c87f5455cfcc"/ /BOONNAME Stunning Intensity BOONNAME/
+/BOONSOURCE Level BOONSOURCE/ /BOONLEVEL 8 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Monk Calling ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You are able to focus the intensity of your blows so much that you can project them at a distance.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+/FEAT /ID" 157167e6-7d1d-11ee-ae49-c87f5455cfcc"/ /SOURCE martial SOURCE/ /TIER legendary TIER/ /FEATNAME Projected Blow FEATNAME/
+/ORIGIN Stunning Intensity ORIGIN/
+/LEVEL 8 LEVEL/
+/ACTION Major ACTION/
+/TAGS Weapon TAGS/
+/TYPETARGET ranged weapon, one opponent TYPETARGET/
+/ATTACK weapon vs CON ATTACK/
+/ENHANCED 3DD + weapon + CON damage. Your opponent is pushed 2 squares and knocked prone. ENHANCED/
+/COMPLETESUCCESS 2DD + weapon + CON damage. Your opponent is knocked prone. COMPLETESUCCESS/
+/SUCCESS DD + Weapon + DEX damage. SUCCESS/
+/SPECIAL Any weapon used in this attack gains the ranged type and a range of 3/6 squares. SPECIAL/
+/FLAVOR The sheer force of your weapon's blow is projected through the air at your opponent. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+
+
 FLEXCELL/
 /FLEXCELL
 /BOON /ID" 6986a4a8-69f2-11ec-ad5d-74d02b9c2012"/ /BOONNAME Dragon Technique BOONNAME/

@@ -28,6 +28,6 @@ of HTML. Include this and a character data document, the result will be an HTML 
 <div class='container' id='characterview'>
 :/
 
-/: CHARACTER/ FLEXCELL/ FLEXROW/ FLEXROW/ <div class="panel"><button id='savebutton'>Save</button><button id='refreshbutton'>Refresh</button></div></div>
+/: CHARACTER/ FLEXCELL/ FLEXROW/ FLEXROW/ <div class="panel"><button id='savebutton2'>Save</button><button id='refreshbutton2'>Refresh</button></div></div>
 </div> 
 </template> :/

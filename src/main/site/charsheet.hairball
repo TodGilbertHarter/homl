@@ -36,7 +36,7 @@ of HTML. Include this and a character data document, the result will be an HTML 
 /: CALCULATEDFIELD/ </calculated-field> :/
 
 /: /SHEETTITLE 
-<div class="header">
+<div class="header component">
 	<div class='topborder'></div>
 	<div class='title'><span><button id='savebutton'>Save</button><button id='refreshbutton'>Refresh</button><button id='copybutton'>Copy</button></span><span>Heroes of Myth &amp; Legend Character Sheet</span></div>
     <div class='bottomborder'></div>
@@ -62,7 +62,7 @@ of HTML. Include this and a character data document, the result will be an HTML 
 <div class='container' id='characterview'>
 :/
 
-/: CHARACTER/ FLEXCELL/ FLEXROW/ FLEXROW/ <div class="panel"><button id='savebutton'>Save</button><button id='refreshbutton'>Refresh</button></div></div>
+/: CHARACTER/ FLEXCELL/ FLEXROW/ FLEXROW/ <div class="panel"><button id='savebutton2'>Save</button><button id='refreshbutton2'>Refresh</button></div></div>
 </div> 
 </template> :/
 

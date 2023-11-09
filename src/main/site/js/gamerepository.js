@@ -93,7 +93,7 @@ class GameRepository {
             console.log("UPDATING, ID IS:"+game.id);
             var id = game.id;
             const ref = doc(this.db,"games",id).withConverter(gameConverter);
-            await setDoc(ref.game);
+            await setDoc(ref,game);
         } else {
             console.log("CREATING, data is "+JSON.stringify(game));
             const ref = doc(collection(this.db,'games')).withConverter(gameConverter);

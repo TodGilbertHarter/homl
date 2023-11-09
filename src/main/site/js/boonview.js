@@ -197,7 +197,7 @@ class BoonList extends LitElement {
 		this.dialog = null;
 		
 		this.onClick = (e) => {
-			if(!this.dialog) {
+//			if(!this.dialog) {
 				const id = e.target.id;
 				this.dialog = document.createElement('dialog-widget');
 				this.dialog.setAttribute('left','550px');
@@ -208,7 +208,7 @@ class BoonList extends LitElement {
 				render(this.detailRenderer.render(),this.dialog);
 				const tag = document.querySelector(this.dialogselector);
 				tag.appendChild(this.dialog);
-			}
+//			}
 		}
 	}
 

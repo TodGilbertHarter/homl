@@ -14,6 +14,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+import { getReference, schema } from './schema.js';
+
 class Game {
 	id;
 	name;
@@ -43,6 +45,11 @@ class Game {
 	 */
 	getCharacters(onDataAvailable) {
 		return window.gebApp.characterRepo.getReferencedCharacters(this.characters,onDataAvailable);
+	}
+	
+	addCharacter(id) {
+		const cref = getReference(schema.characters,id);
+		this.characters.push(cref);
 	}
 }
 

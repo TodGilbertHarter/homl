@@ -387,6 +387,12 @@ equipment-view::part(sectiontitle) {
     text-align: center;
 }
 
+section.boonbox {
+    margin-bottom: .5em;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
 section.boon {
     border: 1px solid black;
     margin-bottom: .5em;
@@ -492,7 +498,7 @@ section.feat > .traits > .trait > :not(:first-child) {
 
 horizontal-sash {
 	display: block;
-	overflow: auto;
+/*	overflow: auto; */
 	height: 100%;
 }
 
@@ -506,6 +512,7 @@ horizontal-sash::part(sashright) {
 	clear: right;
 	float: left;
 	padding: 3px;
+	overflow-y: scroll;
 }
 
 horizontal-sash::part(dragbar) {

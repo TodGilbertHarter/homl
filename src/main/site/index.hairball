@@ -74,31 +74,31 @@
 /MAINMENU 
 	<my-menu class='horizontal'>
 		<my-menu-item class='dropdown left' label='Game'>
-			<my-menu class='vertical dropdown-menu' id="submenu1">
+			<my-menu class='vertical dropdown-menu component' id="submenu1">
 				<my-menu-item label='New' onclick='window.gebApp.controller.handleNewGame();'></my-menu-item>
 				<my-menu-item label='Find'></my-menu-item>
 				<my-menu-item label='Recent'></my-menu-item>
 			</my-menu>
 		</my-menu-item><my-menu-item class="dropdown" label='Character'>
-			<my-menu class='vertical dropdown-menu' id="submenu2">
+			<my-menu class='vertical dropdown-menu component' id="submenu2">
 				<my-menu-item label='New' onClick='window.gebApp.controller.displayCharacterViewClicked();'></my-menu-item>
 				<my-menu-item label='Find'></my-menu-item>
 				<my-menu-item label='Save'></my-menu-item>
 				<my-menu-item label='Recent'></my-menu-item>
 			</my-menu>
 		</my-menu-item><my-menu-item class="dropdown" label='Places'>
-			<my-menu class='vertical dropdown-menu' id="submenu3">
+			<my-menu class='vertical dropdown-menu component' id="submenu3">
 				<my-menu-item label='Erithnoi' onclick='window.gebApp.controller.openErithnoi();'></my-menu-item>
 				<my-menu-item label='Rules' onclick='window.gebApp.controller.openHoML();'></my-menu-item>
 			</my-menu>
 		</my-menu-item><my-menu-item class='dropdown' label='HoML'>
-			<my-menu class='vertical dropdown-menu' id='submenu5'>
+			<my-menu class='vertical dropdown-menu component' id='submenu5'>
 				<my-menu-item label='Equipment' onclick='window.gebApp.controller.displayEquipmentView();'></my-menu-item>
 				<my-menu-item label='Feats' onclick='window.gebApp.controller.displayFeatView();'></my-menu-item>
 				<my-menu-item label='Boons' onclick='window.gebApp.controller.displayBoonView();'></my-menu-item>
 			</my-menu>
 		</my-menu-item><my-menu-item class="dropdown right" label='Settings'>
-			<my-menu class='vertical dropdown-menu' id="submenu4">
+			<my-menu class='vertical dropdown-menu component' id="submenu4">
 				<my-menu-item label='Player' onclick='window.gebApp.controller.displayPlayerSettingsView();'></my-menu-item>
 			</my-menu>
 		</my-menu-item>

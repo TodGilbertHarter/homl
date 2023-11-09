@@ -55,11 +55,15 @@ class CharacterSheet extends HTMLElement {
 		this.characterId = this.getAttribute('characterid');
 		const savebutton = this.shadowRoot.getElementById('savebutton');
 		const refreshbutton = this.shadowRoot.getElementById('refreshbutton');
+		const savebutton2 = this.shadowRoot.getElementById('savebutton2');
+		const refreshbutton2 = this.shadowRoot.getElementById('refreshbutton2');
 		const copybutton = this.shadowRoot.getElementById('copybutton');
 		const sbh = this.saveButtonHandler.bind(this);
 		savebutton.addEventListener('click',sbh);
+		savebutton2.addEventListener('click',sbh);
 		const rbh = this.refreshButtonHandler.bind(this);
 		refreshbutton.addEventListener('click',rbh);
+		refreshbutton2.addEventListener('click',rbh);
 		const cbh = this.copyButtonHandler.bind(this);
 		copybutton.addEventListener('click',cbh);
 		const cview = this.shadowRoot.getElementById('characterview');
@@ -78,11 +82,13 @@ class CharacterSheet extends HTMLElement {
 	
 	set dirty(dirty) {
 		this.shadowRoot.getElementById('savebutton').disabled = !dirty;
+		this.shadowRoot.getElementById('savebutton2').disabled = !dirty;
 		this._dirty = dirty;
 	}
 	
 	set refreshed(refreshed) {
 		this.shadowRoot.getElementById('refreshbutton').disabled = refreshed;
+		this.shadowRoot.getElementById('refreshbutton2').disabled = refreshed;
 		this._refreshed = refreshed;
 	}
 	
@@ -675,11 +681,19 @@ class BoonSelector extends LitElement {
 		    text-align: center;
 		}
 
+		section.boonbox {
+		    border: 0px;
+		    margin: .5em;
+		    flex: 1;
+		    max-width: 600px;
+		}
+
 		section.boon {
 		    border: 0px;
 		    margin: .5em;
 		    flex: 1;
 		    max-width: 600px;
+	    	box-shadow: 3px 3px 5px 0px var(--shadow-color);
 		}
 		
 		section.boon > .traits > :first-child {
@@ -788,7 +802,7 @@ class BoonSelector extends LitElement {
 		</style>
 		<span class='boxlabel' part='label'>${this.label}</span><button @click=${this.addClicked}>Add</button>
 		<div class='booncontainer'>
-			${repeat(this.boons,(item,index) => html`<section id=${item.id} class='boon'>${this.renderBoon(item)}<div class='boondeletebtn'><button data-id='${item.id}' @click=${this.boonDeleteClicked}>delete</button></div></section>`)}
+			${repeat(this.boons,(item,index) => html`<section id=${item.id} class='boonbox'>${this.renderBoon(item)}<div class='boondeletebtn'><button data-id='${item.id}' @click=${this.boonDeleteClicked}>delete</button></div></section>`)}
 		</div>`;
 	}
 	
@@ -1030,7 +1044,7 @@ class ItemList extends LitElement {
 	
 	render() {
 		return html`<div>
-			<span class="boxlabel">${this.label}</span>
+			<span class="boxlabel" part='label'>${this.label}</span>
 			<div id='content'><slot></slot></div>
 			<div><button name='new' id='newbutton' @click="${this.newButtonHandler}">New</button></div>
 		</div>`;
@@ -1500,6 +1514,7 @@ class CharacterController {
         sheet.setCharacterData('charactervision',character.derivedData.vision);
         sheet.setCharacterData('charactersize',character.derivedData.size);
         sheet.setCharacterData('characterspeed',character.derivedData.speed);
+        sheet.setCharacterData('characterlevelbonus',character.derivedData.levelbonus);
         sheet.setCharacterData('characterinitiative',character.derivedData.initiative);
         sheet.setCharacterData('characterdr',character.derivedData.damageReduction);
         sheet.setCharacterData('characterhealingvalue',character.derivedData.healingValue);
@@ -1539,7 +1554,8 @@ class CharacterController {
 				if(eqlist[i].eqref) {
 					elist.push(eqlist[i].eqref);
 				} else {
-					elist.push(eqlist[i].equipment);
+//					elist.push(eqlist[i].equipment);
+					elist.push(eqlist[i]);
 				}
 			}
 		}

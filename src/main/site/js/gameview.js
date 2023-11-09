@@ -70,9 +70,24 @@ class GameView extends LitElement {
 				font-size: 1.125em;
 			}
 		</style>
-		<div class='gameview' part='gameview' id='gameview' ${ref(this.gameViewRef)}>
+		<div @dragover=${this.dragOver} @drop=${this.drop} class='gameview' part='gameview' id='gameview' ${ref(this.gameViewRef)}>
 			${this.renderView()}
 		</div>`;
+	}
+	
+	dragOver(de) {
+		de.preventDefault();
+	}
+	
+	saveGame() {
+		window.gebApp.gameRepo.saveGame(this.model);
+	}
+	
+	drop(de) {
+		const data = de.dataTransfer.getData("text/plain");
+		console.log("dropped character with id "+data);
+		this.model.addCharacter(data);
+		this.saveGame();
 	}
 	
 	renderView() {

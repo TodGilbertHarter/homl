@@ -70,11 +70,14 @@ class CharacterList extends LitElement {
 				this.playerRepo.getReferencedPlayer(character.owner, (owner) => {
 				const email = typeof owner === "undefined" ? "unknown" : owner.email;
 				const gRow = window.gebApp.theDocument.createElement('div');
-				gRow.innerHTML = `<div class='clickable'>${character.name}</div><div>${character.calling.name}</div>`;
+				gRow.innerHTML = `<div draggable='true' class='clickable'>${character.name}</div><div>${character.calling.name}</div>`;
 				list.appendChild(gRow);
 				gRow.firstChild.addEventListener('click',(e) => { 
-					console.log(`clicked on character named ${character.name}`);
-					window.gebApp.controller.displayCharacterViewClicked(character.id);
+						console.log(`clicked on character named ${character.name}`);
+						window.gebApp.controller.displayCharacterViewClicked(character.id);
+					});
+				gRow.firstChild.addEventListener('dragstart',(de) => {
+						de.dataTransfer.setData("text/plain",character.id);
 					});
 				});
 			});
