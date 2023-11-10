@@ -130,17 +130,28 @@ class BaseRepository {
 		const cRef = collection(getDb(),this.collectionName);
         const q = query(cRef,where(fieldName, op, fieldValue)).withConverter(this.converter);
 		getDocs(q).then((doc) => { 
-				const results = [];
-				doc.forEach((gdata) => {
-					results.push(gdata.data());
-				});
-				onDataAvailable(results); 
-			}).catch((e) => {
-				console.trace(e);
-				onFailure(e.message);
+			const results = [];
+			doc.forEach((gdata) => {
+				results.push(gdata.data());
 			});
+			onDataAvailable(results); 
+		}).catch((e) => {
+			console.trace(e);
+			onFailure(e.message);
+		});
 	}
-					
+				
+	async findDtosAsync(fieldName,fieldValue,op) {
+		const cRef = collection(getDb(),this.collectionName);
+        const q = query(cRef,where(fieldName, op, fieldValue)).withConverter(this.converter);
+		const doc = await getDocs(q);
+		const results = [];
+		doc.forEach((gdata) => {
+			results.push(gdata.data());
+		});
+		return results;
+	}
+	
 	/**
 	 * Use the repository's converter to convert a DTO back into
 	 * a FireStore entity.

@@ -65,6 +65,8 @@
 /MODULE" js/boonview.js"/
 /MODULE" js/notesview.js"/
 /MODULE" js/playersettings.js"/
+/MODULE" js/chat.js"/
+/MODULE" js/messageview.js"/
 /SIGNINDIALOG SIGNINDIALOG/
 /SIGNUPDIALOG SIGNUPDIALOG/
 /SOURCE" embedded_charactersheet.html"/

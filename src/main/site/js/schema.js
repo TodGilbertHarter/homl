@@ -32,7 +32,8 @@ const schema = {
 	origins: 'origins',
 	players: 'players',
 	species: 'species',
-	equipment: 'equipment'
+	equipment: 'equipment',
+	messages: 'messages'
 };
 
 const getReference = (schema,id) => {

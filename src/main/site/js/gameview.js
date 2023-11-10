@@ -34,6 +34,7 @@ class GameView extends LitElement {
 	
 	showGame(game) {
 		this.model = game;
+		this.gameViewRef.value.model = game;
 	}
 
 	updated(changed) {
@@ -70,9 +71,11 @@ class GameView extends LitElement {
 				font-size: 1.125em;
 			}
 		</style>
-		<div @dragover=${this.dragOver} @drop=${this.drop} class='gameview' part='gameview' id='gameview' ${ref(this.gameViewRef)}>
-			${this.renderView()}
-		</div>`;
+		<div @dragover=${this.dragOver} @drop=${this.drop} class='gameview' part='gameview' id='gameview'>
+			<game-info  ${ref(this.gameViewRef)} gameid=${this.gameId}></game-info>
+		</div>
+		<character-list class=characterlist id="characterlist" ${ref(this.characterListRef)}></character-list>
+		<conversation-viewer gameid=${this.gameId} threadid="1"></conversation-viewer>`;
 	}
 	
 	dragOver(de) {
@@ -90,15 +93,31 @@ class GameView extends LitElement {
 		this.saveGame();
 	}
 	
-	renderView() {
-		if(this.model) {
-			return html`<div class="gamedescription"><span class='fieldlabel'>Name:</span><span class='fieldvalue'>${this.model.name}</span></div>
-				<div class='textdescription'>${this.model.description}</div>
-				<character-list class=characterlist id="characterlist" ${ref(this.characterListRef)}></character-list>`;
-		} else {
-			return html`<p>Getting data for game ${this.gameId}</p>`;
-		}
-	}
 }
 
 window.customElements.define('game-view',GameView);
+
+class GameInfoView extends LitElement {
+	static properties = {
+		gameid: {},
+		_model: {attribute: false, state: true}
+	}
+	
+	constructor() {
+		super();
+		this._model = null;
+	}
+	
+	set model(model) {
+		this._model = model;
+	}
+	
+	render() {
+		return (this._model ? html`<div class="gamedescription">
+			<span class='fieldlabel'>Name:</span><span class='fieldvalue'>${this._model.name}</span>
+		</div>
+		<div class='textdescription'>${this._model.description}</div>` : html`<p>Getting data for game ${this.gameId}</p>`);
+	}
+}
+
+window.customElements.define('game-info',GameInfoView);

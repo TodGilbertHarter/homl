@@ -47,7 +47,11 @@ class Game {
 		return window.gebApp.characterRepo.getReferencedCharacters(this.characters,onDataAvailable);
 	}
 	
+	/**
+	 * Add a character, insuring that no character is added more than once.
+	 */
 	addCharacter(id) {
+		this.characters = this.characters.filter((c) => c.id !== id);
 		const cref = getReference(schema.characters,id);
 		this.characters.push(cref);
 	}
