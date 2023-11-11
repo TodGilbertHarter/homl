@@ -117,8 +117,8 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 	 * Display the default tab arrangement.
 	 */
 	displayTabs() {
-		this.displayGameLister(false);
-		this.displayCharacterLister(true);
+		this.displayGameLister(true);
+		this.displayCharacterLister(false);
 	}
 	
 	/**

@@ -67,6 +67,9 @@
 /MODULE" js/playersettings.js"/
 /MODULE" js/chat.js"/
 /MODULE" js/messageview.js"/
+/MODULE" js/npc.js"/
+/MODULE" js/npcrepository.js"/
+/MODULE" js/npcview.js"/
 /SIGNINDIALOG SIGNINDIALOG/
 /SIGNUPDIALOG SIGNUPDIALOG/
 /SOURCE" embedded_charactersheet.html"/

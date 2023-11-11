@@ -49,33 +49,34 @@ class GameView extends LitElement {
 	render() {
 		return html` <style>
 			div.gameview {
+				flex: 1;
 				width: auto;
 				max-width: 500px;
-				background-color: var(--box-bg);
 			}
-			div.gamedescription {
-				width: auto;
+			.gamewrapper {
+				display: flex;
 			}
-			div.gamedescription > span.fieldlabel {
-				width: 8em;
+			.characterlist {
+				flex: 1;
 			}
-			div.gamedescription > span.fieldvalue {
-				width: auto;
-			}
-			div.textdescription {
-				border: 1px solid black;
-			}
-			.fieldlabel {
-				padding-right: .25em;
-				font-weight: bold;
-				font-size: 1.125em;
+			.conversationviewer {
+				flex: 1;
 			}
 		</style>
-		<div @dragover=${this.dragOver} @drop=${this.drop} class='gameview' part='gameview' id='gameview'>
-			<game-info  ${ref(this.gameViewRef)} gameid=${this.gameId}></game-info>
-		</div>
-		<character-list class=characterlist id="characterlist" ${ref(this.characterListRef)}></character-list>
-		<conversation-viewer gameid=${this.gameId} threadid="1"></conversation-viewer>`;
+		<div class='gamewrapper'>
+			<div @dragover=${this.dragOver} @drop=${this.drop} class='gameview' part='gameview' id='gameview'>
+				<div>Game Info</div>
+				<game-info class='gameinfo' ${ref(this.gameViewRef)} gameid=${this.gameId}></game-info>
+			</div>
+			<div class='characterlist'>
+				<div>Characters</div>
+				<character-list id="characterlist" ${ref(this.characterListRef)}></character-list>
+			</div>
+			<div class='conversationviewer'>
+				<div>Conversations</div>
+				<conversation-viewer gameid=${this.gameId} threadid="1"></conversation-viewer>
+			</div>
+		</div>`;
 	}
 	
 	dragOver(de) {
@@ -113,7 +114,27 @@ class GameInfoView extends LitElement {
 	}
 	
 	render() {
-		return (this._model ? html`<div class="gamedescription">
+		return (this._model ? html`<style>
+			div.gamedescription {
+				width: auto;
+				background-color: var(--box-bg);
+			}
+			div.gamedescription > span.fieldlabel {
+				width: 8em;
+			}
+			div.gamedescription > span.fieldvalue {
+				width: auto;
+			}
+			div.textdescription {
+				border: 1px solid black;
+			}
+			.fieldlabel {
+				padding-right: .25em;
+				font-weight: bold;
+				font-size: 1.125em;
+			}
+		</style>
+		<div class="gamedescription">
 			<span class='fieldlabel'>Name:</span><span class='fieldvalue'>${this._model.name}</span>
 		</div>
 		<div class='textdescription'>${this._model.description}</div>` : html`<p>Getting data for game ${this.gameId}</p>`);

@@ -22,17 +22,20 @@ class Game {
 	owner;
 	characters;
 	players;
+	npcs;
 	description;
 	
-	constructor(id, name, owner, characters, players, description) {
+	constructor(id, name, owner, characters, players, npcs, description) {
 		this.id = id;
 		this.name = name;
 		this.owner = owner;
 		this.characters = characters;
 		this.players = players;
+		this.npcs = npcs;
 		this.description = description;
 		if(this.characters === undefined || this.characters === null) { this.characters = []; }
 		if(this.players === undefined || this.players === null) { this.players = []; }
+		if(this.npcs === undefined || this.npcs === null) { this.npcs = []; }
 	}
 	
 	toString() {
