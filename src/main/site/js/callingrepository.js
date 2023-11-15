@@ -16,6 +16,7 @@
 */
 import { collection, doc, setDoc, query, where, getDocs, getDoc } from 'firebase-firestore';
 import { Calling } from './calling.js';
+import { getDb, schema } from './schema.js';
 
 const callingConverter = {
 	toFirestore(calling) {
@@ -140,6 +141,17 @@ class CallingRepository {
 			console.trace();
 			console.log("Failed to get all callings "+e.message);
 		});
+	}
+	
+	async getAllCallingsAsync() {
+		if(this.allCallings !== undefined)
+			return this.allCallings;
+		var callingsRef = collection(getDb(),schema.callings);
+		callingsRef = callingsRef.withConverter(callingConverter);
+		const docs = [];
+		const results = await getDocs(callingsRef);
+		results.forEach(r => docs.push(r.data()));
+		return docs;
 	}
 	
     /**

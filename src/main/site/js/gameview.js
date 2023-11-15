@@ -17,11 +17,11 @@
 
 import { html, LitElement } from 'lit2';
 import {ref, createRef} from 'lit2/ref';
+import {Message, Chat } from './chat.js';
 
 class GameView extends LitElement {
 	static properties = {
 		gameId: {},
-		value: {},
 		model: {attribute: false, state: true}
 	};
 	
@@ -29,14 +29,34 @@ class GameView extends LitElement {
 		super();
 		this.gameViewRef = createRef();
 		this.characterListRef = createRef();
+		this.npcViewerRef = createRef();
+		this.conversationViewerRef = createRef();
+		this.imagesViewerRef = createRef();
 		this.model = null;
 	}
 	
 	showGame(game) {
 		this.model = game;
 		this.gameViewRef.value.model = game;
+		this.conversationViewerRef.value.gameid = game.id;
+		this.conversationViewerRef.value.threadid = game.threads[0];
+		this.imagesViewerRef.gameid = game.id;
+		window.gebApp.controller.getNpcs(game.npcs,(npcs) => {
+			this.npcViewerRef.value.npcs = npcs;		
+		});
+		window.gebApp.controller.getImages(game.images,(images) => {
+			this.imagesViewerRef.value.images = images;
+		})
 	}
 
+	firstUpdated() {
+		this.imagesViewerRef.value.addEventListener('imageaction',(e) => {
+//			alert("image action selected for image "+e.detail.uri);
+			console.debug("image action selected for image "+e.detail.uri);
+			this.imagesViewerRef.value.drawImage(e.detail.imageid);
+		});
+	}
+	
 	updated(changed) {
 		super.updated(changed);
 		if(this.model) {
@@ -67,14 +87,16 @@ class GameView extends LitElement {
 			<div @dragover=${this.dragOver} @drop=${this.drop} class='gameview' part='gameview' id='gameview'>
 				<div>Game Info</div>
 				<game-info class='gameinfo' ${ref(this.gameViewRef)} gameid=${this.gameId}></game-info>
+				<images-viewer actionenabled='display' gameid=${this.gameId} ${ref(this.imagesViewerRef)}></images-viewer>
 			</div>
 			<div class='characterlist'>
 				<div>Characters</div>
 				<character-list id="characterlist" ${ref(this.characterListRef)}></character-list>
+				<npcs-viewer ${ref(this.npcViewerRef)} label='NPCs'></npcs-viewer>
 			</div>
 			<div class='conversationviewer'>
 				<div>Conversations</div>
-				<conversation-viewer gameid=${this.gameId} threadid="1"></conversation-viewer>
+				<conversation-viewer messager='true' ${ref(this.conversationViewerRef)} gameid=${this.gameId}></conversation-viewer>
 			</div>
 		</div>`;
 	}
@@ -92,8 +114,7 @@ class GameView extends LitElement {
 		console.log("dropped character with id "+data);
 		this.model.addCharacter(data);
 		this.saveGame();
-	}
-	
+	}	
 }
 
 window.customElements.define('game-view',GameView);

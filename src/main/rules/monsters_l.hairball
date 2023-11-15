@@ -26,7 +26,7 @@ Lycanthropes can generally shapechange in a period of about one minute. For this
 a shapechange in the presence of immediate danger.
 /SUBTOPIC" Wereboar"/
 /LEFT=" half"/
-/MONSTER
+/MONSTER /ID" 9dafdf0e-81a8-11ee-8e47-c87f5455cfcc"/
 /MONSTERNAME Wereboar MONSTERNAME/ /MONSTERLEVEL 5 MONSTERLEVEL/ /MONSTERROLE Standard Skirmisher MONSTERROLE/
 /MONSTERSIZE standard MONSTERSIZE/ /MONSTERTAGS magical, beast, humanoid MONSTERTAGS/
 /MONSTERDEFENSES /MONSTERFORT 21 MONSTERFORT/ /MONSTERREF 23 MONSTERREF/ /MONSTERWILL 25 MONSTERWILL/ MONSTERDEFENSES/
@@ -36,12 +36,10 @@ a shapechange in the presence of immediate danger.
 /MONSTERVULNERABILITY silver MONSTERVULNERABILITY/ /MONSTERDR 2 MONSTERDR/
 /MONSTERSECTION /MONSTERSECTIONNAME Traits MONSTERSECTIONNAME/
 /MONSTERTRAIT /MONSTERTRAITNAME Regeneration MONSTERTRAITNAME/
-/MONSTERTRAITEFFECT Wereboars have regeneration 3, which will not function 
-until after the end of their next turn 
-if they are damaged by silver weapons MONSTERTRAITEFFECT/ MONSTERTRAIT/
+/MONSTERTRAITEFFECT Wereboars have regeneration 3, which will not function until after the end of their next turn if they are damaged by silver weapons MONSTERTRAITEFFECT/ MONSTERTRAIT/
 MONSTERSECTION/
 /MONSTERSECTION /MONSTERSECTIONNAME Move MONSTERSECTIONNAME/
-/MONSTERSPEED 7 MONSTERSPEED/
+/MONSTERSPEED /MONSTERSPEEDMODE walking MONSTERSPEEDMODE/ /MONSTERSPEEDVALUE 7 MONSTERSPEEDVALUE/ MONSTERSPEED/
 MONSTERSECTION/
 /MONSTERSECTION /MONSTERSECTIONNAME Major MONSTERSECTIONNAME/
 /MONSTERFEAT /MONSTERFEATNAME Tusks MONSTERFEATNAME/ /MONSTERFEATTAGS basic MONSTERFEATTAGS/ 
@@ -53,8 +51,7 @@ MONSTERFEAT/
 /MONSTERFEATUSAGE Recharge 4 MONSTERFEATUSAGE/
 /MONSTERFEATEFFECT The wereboar moves 3 squares and then makes the following attack MONSTERFEATEFFECT/
 /MONSTERFEATATTACK close 1 DC 22; one enemy MONSTERFEATATTACK/
-/MONSTERFEATSUCCESS 4d6+6 damage and the target is pushed 3 squares. The wereboar moves 3 squares, remaining
-adjacent to the target. MONSTERFEATSUCCESS/
+/MONSTERFEATSUCCESS 4d6+6 damage and the target is pushed 3 squares. The wereboar moves 3 squares, remaining adjacent to the target. MONSTERFEATSUCCESS/
 MONSTERFEAT/
 MONSTERSECTION/
 /MONSTERSECTION /MONSTERSECTIONNAME Stats MONSTERSECTIONNAME/

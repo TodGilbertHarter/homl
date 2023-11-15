@@ -15,32 +15,100 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { html, LitElement } from 'lit2';
+import {ref, createRef} from 'lit2/ref';
+import {repeat} from 'lit2/repeat';
+import {schema, getReference} from './schema.js';
 
 class CharacterSearch extends LitElement {
 	static properties = {
-		displayId: {}
+		displayId: {},
+		_callings: {state:true, attribute: false},
+		_species: {state:true, attribute: false},
+		_origins: {state:true, attribute: false}
 	}
 	
 	constructor() {
 		super();
+		this.nameRef = createRef();
+		this.callingRef = createRef();
+		this.speciesRef = createRef();
+		this.originsRef = createRef();
+		this._callings = {any: ''};
+		this._species = {any: ''};
+		this._origins = {any: ''};
+		this._getChoices();
+	}
+	
+	_getChoices() {
+		window.gebApp.controller.getAllCallings().then((callings) => {
+			const nc = {any: ''};
+			callings.forEach((calling) => nc[calling.name] = calling.id);
+			this._callings = nc;
+		});
+		window.gebApp.controller.getAllSpecies().then((species) => {
+			const nc = {any: ''};
+			species.forEach((specie) => nc[specie.name] = specie.id);
+			this._species = nc;
+		});
+		window.gebApp.controller.getAllOrigins().then((origins) => {
+			const nc = {any: ''};
+			origins.forEach((origin) => nc[origin.name] = origin.id);
+			this._origins = nc;
+		});
+	}
+	
+	_prepareSearchCriteria() {
+		const criteria = [];
+		const name = this.nameRef.value.value;
+		const calling = this.callingRef.value.value;
+		const species = this.speciesRef.value.value;
+		const origin = this.originsRef.value.value;
+		if(name !== '') {
+			criteria.push({fieldName: 'name', fieldValue: name, op: '=='});
+		}
+		if(calling !== '') {
+			criteria.push({fieldName: 'calling.callingref', fieldValue: getReference(schema.callings,calling), op: '=='})
+		}
+		if(species !== '') {
+			criteria.push({fieldName: 'species.speciesref', fieldValue: getReference(schema.species,species), op: '=='})
+		}
+		if(origin !== '') {
+			criteria.push({fieldName: 'origin.originref', fieldValue: getReference(schema.origins,origin), op: '=='})
+		}
+		return criteria;
 	}
 	
 	onChange(e) {
 		const viewer = this.parentElement.querySelector('#'+this.displayId);
-		window.gebApp.controller.registerCharactersListener(viewer.getRenderFn());
-		window.gebApp.controller.doCharacterSearch(e.target.value);
+//		window.gebApp.controller.registerCharactersListener(viewer.getRenderFn());
+		const criteria = this._prepareSearchCriteria();
+		window.gebApp.controller.doCharacterCriteriaSearch(criteria).then((characters) => viewer.getRenderFn()(characters));
 	}
 
+	renderCallings() {
+		return html`<span><label for='calling'>Calling</label><select ${ref(this.callingRef)} id='calling' @change=${this.onChange}>
+			${repeat(Object.keys(this._callings),(item) => html`<option value=${this._callings[item]}>${item}</option>`)}
+		</select>`;
+	}
+
+	renderSpecies() {
+		return html`<span><label for='species'>Species</label><select ${ref(this.speciesRef)} id='species' @change=${this.onChange}>
+			${repeat(Object.keys(this._species),(item) => html`<option  value=${this._species[item]}>${item}</option>`)}
+		</select>`;
+	}
+	
+	renderOrigins() {
+		return html`<span><label for='origins'>Origins</label><select ${ref(this.originsRef)} id='origins' @change=${this.onChange}>
+			${repeat(Object.keys(this._origins),(item) => html`<option  value=${this._origins[item]}>${item}</option>`)}
+		</select>`;
+	}
 	render() {
 		return html`<div class='charactersearch' part='container'>
 				<span><label for='name'>Name</label>
-				<input type='text' id='name' @change=${this.onChange}/></span>
-				<span><label for='calling'>Calling</label>
-				<select id='calling' @change=${this.onChange}><option>any</option></select>
-				<label for='species'>Species</label>
-				<select id='species' @change=${this.onChange}><option>any</option></select>
-				<label for='origin'>Origin</label>
-				<select id='origin' @change=${this.onChange}><option>any</option></select></span>
+				<input ${ref(this.nameRef)} type='text' id='name' @change=${this.onChange}/></span>
+				${this.renderCallings()}
+				${this.renderSpecies()}
+				${this.renderOrigins()}
 			</div>`
 	}
 }

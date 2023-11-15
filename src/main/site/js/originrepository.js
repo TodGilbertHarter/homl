@@ -16,6 +16,7 @@
 */
 import { collection, doc, setDoc, query, where, getDocs, getDoc } from 'firebase-firestore';
 import { Origin } from './origin.js';
+import { schema, getDb } from './schema.js';
 
 const originConverter = {
 	toFirestore(origin) {
@@ -128,6 +129,17 @@ class OriginRepository {
 			console.trace();
 			console.log("Failed to get all origins "+e.message);
 		});
+	}
+
+	async getAllOriginsAsync() {
+		if(this.allOrigins !== undefined)
+			return this.allOrigins;
+		var originsRef = collection(getDb(),schema.origins);
+		originsRef = originsRef.withConverter(originConverter);
+		const docs = [];
+		const results = await getDocs(originsRef);
+		results.forEach(r => docs.push(r.data()));
+		return docs;
 	}
 
     /**

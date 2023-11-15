@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { doc, getDoc, getDocs, setDoc, addDoc, DocumentReference, collection, query, where } from 'firebase-firestore';
+import { doc, getDoc, getDocs, setDoc, DocumentReference, collection, query, where } from 'firebase-firestore';
 import { getReference, getDb } from './schema.js';
 
 /**
@@ -89,6 +89,7 @@ class BaseRepository {
 			carry.forEach((doc) => { 
 				res.push(doc.data()); 
 			});
+			console.debug("Returning DTOs: count is: "+res.length);
 			onSuccess(res); 
 		});
 		
@@ -152,6 +153,30 @@ class BaseRepository {
 		return results;
 	}
 	
+	async searchDtos(params) {
+		const cRef = collection(getDb(),this.collectionName);
+		const qc = params.map((param) => where(param.fieldName,param.op,param.fieldValue));
+        const q = query(cRef,...qc).withConverter(this.converter);
+		const doc = await getDocs(q);
+		const results = [];
+		doc.forEach((gdata) => {
+			results.push(gdata.data());
+		});
+		return results;
+	}
+	
+	/**
+	 * Careful with this! It will do a full table scan of the collection.
+	 */
+	async getAllAsync() {
+		var coll = collection(getDb(),this.collectionName);
+		coll = coll.withConverter(this.converter);
+		const docs = [];
+		const results = await getDocs(coll);
+		results.forEach(r => docs.push(r.data()));
+		return docs;
+	}
+	
 	/**
 	 * Use the repository's converter to convert a DTO back into
 	 * a FireStore entity.
@@ -169,4 +194,15 @@ class BaseRepository {
 	}
 }
 
-export { BaseRepository };
+/**
+ * Utility to take an array which contains any set of objects
+ * which have an id property referencing the id of a FireStore
+ * object in the given schema and return a corresponding array
+ * of only docRefs.
+ */
+function ToReferences(schema,list) {
+	const drs = list.map(idable => getReference(schema,idable.id));
+	return drs;
+}
+
+export { BaseRepository, ToReferences };

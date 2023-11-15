@@ -70,6 +70,7 @@
     --wound-bg: Maroon;
     --wound-fg: white;
     --shadow-color: #606393;
+    --component-shadow: 3px 3px 5px 0px #606393;
 }
 
 .theme-l5 {color:#000 !important; background-color:#fdfdfc !important}
@@ -117,7 +118,7 @@ body {
 }
 
 .component {
-	box-shadow: 3px 3px 5px 0px var(--shadow-color);
+	box-shadow: var(--component-shadow);
 }
 .mainmenu {
 	display: inline-block;
@@ -254,7 +255,7 @@ my-menu-item:hover {
     display: flex;
 }
 
-boon-viewer::part(sectiontitle) {
+boon-viewer::part(sectiontitle), feat-viewer::part(sectiontitle), equipment-view::part(sectiontitle), monsters-viewer::part(sectiontitle)  {
     display: block;
     font-weight: bold;
     font-size: 2em;
@@ -264,30 +265,7 @@ boon-viewer::part(sectiontitle) {
     padding-right: 2%;
     background-color: black;
     color: var(--document-fg);
-}
-
-feat-viewer::part(sectiontitle) {
-    display: block;
-    font-weight: bold;
-    font-size: 2em;
-    font-style: italic;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-right: 2%;
-    background-color: black;
-    color: var(--document-fg);
-}
-
-equipment-view::part(sectiontitle) {
-    display: block;
-    font-weight: bold;
-    font-size: 2em;
-    font-style: italic;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-right: 2%;
-    background-color: black;
-    color: var(--document-fg);
+    box-shadow: var(--component-shadow);
 }
 
 .equipmentdetailrow {
@@ -521,7 +499,7 @@ horizontal-sash::part(dragbar) {
 	width: 6px;
 	float: left;
 	background-color: lightgrey;
-	box-shadow: 3px 3px 5px 0px var(--shadow-color);
+	box-shadow: var(--component-shadow);
 }
 
 horizontal-sash::part(container) {

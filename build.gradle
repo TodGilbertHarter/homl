@@ -397,6 +397,12 @@ task uploadEquipment(type: NodeTask) {
 	args = ['build/rules/compendium.json']
 }
 
+task uploadNpcs(type: NodeTask) {
+	description 'upload npc data to firestore'
+	script = file('./scripts/upload_npcs.js')
+	args = ['build/rules/compendium.json']
+}
+
 task uploadData {
 	description 'upload compendium data to firestore'
 	dependsOn 'uploadBoons'
@@ -406,6 +412,7 @@ task uploadData {
 	dependsOn 'uploadOrigins'
 	dependsOn 'uploadBackgrounds'
 	dependsOn 'uploadEquipment'
+	dependsOn 'uploadNpcs'
 }
 
 task closureCompile(type: NpxTask) {

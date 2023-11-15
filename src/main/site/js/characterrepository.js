@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { getDoc,doc } from 'firebase-firestore';
+import { getDoc, doc, collection, where } from 'firebase-firestore';
 import { Character } from './character.js';
 import { schema, getReference, getDb } from './schema.js';
 import { BaseRepository } from './baserepository.js';
@@ -178,6 +178,21 @@ class CharacterRepository extends BaseRepository {
     async saveCharacter(character) {
 		await this.saveDto(character);
     }
+    
+   	async searchCharacters(params) {
+		return this.searchDtos(params);
+		   
+/*		const cRef = collection(getDb(),this.collectionName);
+		const qc = params.map((param) => where(param.fieldName,param.op,param.fieldValue));
+        const q = query(cRef,...qc).withConverter(this.converter);
+		const doc = await getDocs(q);
+		const results = [];
+		doc.forEach((gdata) => {
+			results.push(gdata.data());
+		});
+		return results; */
+	}
+
 }
 
 export { CharacterRepository };

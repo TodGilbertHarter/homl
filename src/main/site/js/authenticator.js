@@ -33,7 +33,7 @@ class Authenticator {
 	}
 	
 	/** @private */ getPlayerFromRepo(onSuccess,onFailure) {
-		this.playerRepo.getPlayerByEmail(this.user.email,(data) => {
+		this.playerRepo.getPlayerByUid(this.user.uid,(data) => {
 			this.player = data;
 			onSuccess(this.user,this.player);
 		}, (message) => onFailure(message));
@@ -81,7 +81,7 @@ class Authenticator {
 			this.authenticated = true;
 		    this.user = userCredential.user;
 			this.errorCode = 0;
-		    this.player = new Player(null,email,Timestamp.fromDate(new Date()),null);
+		    this.player = new Player(null,this.user.uid,Timestamp.fromDate(new Date()),null);
 		    this.playerRepo.savePlayer(this.player);
 		    onSuccess(this.player);
 		  })

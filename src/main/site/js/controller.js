@@ -14,6 +14,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+import { schema, getReference } from './schema.js';
+
 class Controller {
 	/** @private */ gebApp;
 	/** @private */ view;
@@ -29,9 +31,12 @@ class Controller {
 	/** @private */ boonRepo;
 	/** @private */ featRepo;
 	/** @private */ playerRepo;
+	/** @private */ npcRepo;
+	/** @private */ imageRepo;
+	/** @private */ originRepo;
 		
 	constructor(gebApp,view,authenticator,router,gameRepo,characterRepo,characterController,callingRepo,speciesRepo,
-		backgroundRepo,originRepo,equipmentRepo,boonRepo,featRepo,playerRepo) {
+		backgroundRepo,originRepo,equipmentRepo,boonRepo,featRepo,playerRepo,npcRepo,imageRepo) {
 		this.gebApp = gebApp;
 		this.view = view;
 		view.controller = this;
@@ -48,6 +53,8 @@ class Controller {
 		this.boonRepo = boonRepo;
 		this.featRepo = featRepo;
 		this.playerRepo = playerRepo;
+		this.npcRepo = npcRepo;
+		this.imageRepo = imageRepo;
 		this.router.add(/signup/,() => { this.view.displaySignUpUI(); });
 		this.router.add(/signin/,() => { this.view.displaySignInUI(); });
 		this.router.add(/signout/,() => { this.view.displaySignOutUI(); });
@@ -59,6 +66,7 @@ class Controller {
 		this.router.add(/playersettings/,() => {this.view.displayPlayerSettings(this.getCurrentPlayer().id); });
 		this.router.add(/feats/,() => {this.view.displayFeatList(); });
 		this.router.add(/boons/,() => {this.view.displayBoonList(); });
+		this.router.add(/npcs/,() => {this.view.displayNpcList(); });
 		this.actions = {};
 	}
 	
@@ -79,6 +87,22 @@ class Controller {
 		}
 	}
 	
+	async getAllCallings() {
+		return this.callingRepo.getAllCallingsAsync();
+	}
+	
+	async getAllSpecies() {
+		return this.speciesRepo.getAllSpeciesAsync();
+	}
+	
+	async getAllOrigins() {
+		return this.originRepo.getAllOriginsAsync();
+	}
+
+	getNpcs(npcrefs,onSuccess) {
+		this.npcRepo.getReferencedNpcs(npcrefs,onSuccess);
+	}
+	
 	displayEquipmentView() {
 		window.location.hash = '/equipment';
 	}
@@ -93,6 +117,10 @@ class Controller {
 	
 	displayBoonView() {
 		window.location.hash = '/boons';
+	}
+	
+	displayNpcView() {
+		window.location.hash = '/npcs';
 	}
 	
 	/**
@@ -117,6 +145,18 @@ class Controller {
 	
 	getCurrentPlayer() {
 		return this.authenticator.player;
+	}
+	
+	getCurrentPlayerRef() {
+		return getReference(schema.players,this.authenticator.player.id);
+	}
+	
+	getImages(imageRefs,onSuccess) {
+		this.imageRepo.getReferencedImages(imageRefs,onSuccess);
+	}
+	
+	sendMessage(message) {
+		return this.messageRepo.saveDto(message);
 	}
 	
 	/**
@@ -256,6 +296,10 @@ class Controller {
 	
 	doCharacterSearch(name) {
 		this.characterRepo.getCharactersByName(name,this.onCharactersChanged.bind(this));
+	}
+	
+	async doCharacterCriteriaSearch(criteria) {
+		return await this.characterRepo.searchCharacters(criteria);
 	}
 	
 	onCharactersChanged(characters) {

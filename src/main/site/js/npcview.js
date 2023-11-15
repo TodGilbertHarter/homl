@@ -69,13 +69,15 @@ class NpcView extends LitElement {
 
 window.customElements.define('npc-view',NpcView);
 
-class NpcsViewer extends LitElement {
+class NpcsList extends LitElement {
 	static properties = {
 		actionenabled: {},
 		editenabled: {},
+		extended: {},
+		caption: {},
 		_npcs: {attribute: false, state: true}
 	}
-	
+
 	set npcs(npcs) {
 		this._npcs = npcs;
 	}
@@ -89,11 +91,147 @@ class NpcsViewer extends LitElement {
 		this.actionenabled = 'false';
 		this.editenabled = 'false';
 		this._npcs = [];
+		this.extended = 'false';
+		this.caption = null;
+	}
+
+	renderCaption() {
+		if(this.caption) {
+			return html`<span>${this.caption}</span>`
+		}
+		return null;
+	}
+	renderHeader() {
+		if(this.extended === 'true') {
+			return html`<div class='header'><span>Name</span><span class='right'>Level</span><span>Tags</span><span>Role</span><span>Size</span><span>FORT</span><span>REF</span><span>WILL</span></div>`;
+		}
+		return html`<div class='header'><span>Name</span><span>Level</span><span>Tags</span><span>Role</span></div>`;
+	}
+	
+	_mysteryCatenate(tags) {
+		var out = '';
+		for(var i = 0; i < tags.length; i++) {
+			out += tags[i]; if(i < tags.length - 1) out += ", ";
+		}
+		return out;
+	}
+	
+	renderRow(item) {
+		const joined = this._mysteryCatenate(item.tags);
+		if(this.extended === 'true') {
+			return html`<div class='tr'><span>${item.name}</span><span class='right'>${item.level}</span><span>${joined}</span><span>${item.role}</span>
+			<span>${item.size}</span><span>${item.fort}</span><span>${item.ref}</span><span>${item.will}</span></div>`;
+		}
+		return html`<div class='tr'><span>${item.name}</span><span class='right'>${item.level}</span><span>${joined}</span><span>${item.role}</span></div>`;
 	}
 	
 	render() {
-		return html`<span>${repeat(this.notes,(item,index) => html`<npc-view actionenabled='${this.actionenabled}' editenabled='${this.editenabled}' name="${item.name}" statblock=${item.statblock} id=${item.id}></npc-view>`)}</span>`;
+		return html`<style>
+			div.table { 
+				width: 100%;
+				display: table; 
+				background-color: var(--topic-bg);
+				border: 2px solid var(--theme-border);
+				margin-top: 1em;
+				}
+			div.table > span {
+				display: table-caption;
+				font-weight: bold;
+				font-size: 1.5em;
+			}
+			div.tr { 
+				display: table-row;
+				background-color: var(--theme-fg);
+				color: var(--theme-bg);
+				}
+			div.header { 
+				display: table-row;
+				background-color: var(--theme-fg);
+				color: var(--theme-bg);
+				}
+			div.header > span { 
+				display: table-cell; 
+				font-weight: bold;
+				padding-left: .5em;
+				padding-right: .5em;
+			}
+			div.tr > span { 
+				display: table-cell; 
+				padding-left: .5em;
+				padding-right: .5em;
+			}
+			div.tr:nth-child(even) {
+				background-color: var(--theme-bg-dark);
+			}
+			.right {
+				text-align: right;
+			}
+		</style>
+		<div class='table'>
+			${this.renderCaption()}
+			${this.renderHeader()}
+			${repeat(this._npcs,(item,index) => this.renderRow(item))}
+		</div>`;
+	}
+	
+}
+
+window.customElements.define('npcs-list',NpcsList);
+
+class NpcsViewer extends LitElement {
+	static properties = {
+		label: {},
+		actionenabled: {},
+		editenabled: {},
+		extended: {}
+	}
+	
+	set npcs(npcs) {
+		this.npcListViewRef.value.npcs = npcs;
+	}
+	
+	addNpcs(npcs) {
+		this.npcListViewRef.value.addNpcs(npcs);
+	}
+	
+	constructor() {
+		super();
+		this.actionenabled = 'false';
+		this.editenabled = 'false';
+		this.npcListViewRef = createRef();
+		this.extended = 'false';
+	}
+	
+	renderLabel() {
+		if(this.label) {
+			return html`<div part='label'>${this.label}</div>`;
+		}
+		return null;
+	}
+	
+	render() {
+		return html`<div>${this.renderLabel()}<npcs-list extended=${this.extended} actionenabled='${this.actionenabled}' editenabled='${this.editenabled}' ${ref(this.npcListViewRef)}></npcs-list></div>`;
 	}
 }
 
 window.customElements.define('npcs-viewer',NpcsViewer);
+
+class MonstersViewer extends LitElement {
+	
+	constructor() {
+		super();
+		this.npcsViewRef = createRef();
+	}
+
+	firstUpdated() {
+		window.gebApp.npcRepo.findDtos("statblock",true,'==',(monsters) => {this.npcsViewRef.value.npcs = monsters; },(msg) => { console.log("Monster view failed "+msg)});
+	}
+	
+	render() {
+		return html`<h1 part='sectiontitle'>Monsters &amp; NPCs</h1>
+		<npcs-viewer extended='true' ${ref(this.npcsViewRef)}></npcs-viewer>`;
+	}
+}
+
+window.customElements.define('monsters-viewer',MonstersViewer);
+

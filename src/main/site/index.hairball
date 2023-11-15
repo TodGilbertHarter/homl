@@ -10,7 +10,8 @@
 		"lit2/repeat": "https://unpkg.com/lit@2/directives/repeat.js?module",
 		"firebase-app": "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js",
 		"firebase-firestore": "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js",
-		"firebase-auth": "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"
+		"firebase-auth": "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js",
+		"glmatrix": "https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"
 	}
 }
 </script>
@@ -70,6 +71,10 @@
 /MODULE" js/npc.js"/
 /MODULE" js/npcrepository.js"/
 /MODULE" js/npcview.js"/
+/MODULE" js/imagesview.js"/
+/MODULE" js/image.js"/
+/MODULE" js/imagerepository.js"/
+/MODULE" js/imagerender.js"/
 /SIGNINDIALOG SIGNINDIALOG/
 /SIGNUPDIALOG SIGNUPDIALOG/
 /SOURCE" embedded_charactersheet.html"/
@@ -101,6 +106,7 @@
 				<my-menu-item label='Equipment' onclick='window.gebApp.controller.displayEquipmentView();'></my-menu-item>
 				<my-menu-item label='Feats' onclick='window.gebApp.controller.displayFeatView();'></my-menu-item>
 				<my-menu-item label='Boons' onclick='window.gebApp.controller.displayBoonView();'></my-menu-item>
+				<my-menu-item label='Monsters' onclick='window.gebApp.controller.displayNpcView();'></my-menu-item>
 			</my-menu>
 		</my-menu-item><my-menu-item class="dropdown right" label='Settings'>
 			<my-menu class='vertical dropdown-menu component' id="submenu4">

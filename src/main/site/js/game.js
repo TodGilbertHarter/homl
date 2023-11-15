@@ -24,8 +24,9 @@ class Game {
 	players;
 	npcs;
 	description;
+	threads;
 	
-	constructor(id, name, owner, characters, players, npcs, description) {
+	constructor(id, name, owner, characters, players, npcs, description, threads, images) {
 		this.id = id;
 		this.name = name;
 		this.owner = owner;
@@ -33,9 +34,13 @@ class Game {
 		this.players = players;
 		this.npcs = npcs;
 		this.description = description;
+		this.threads = threads;
+		this.images = images;
 		if(this.characters === undefined || this.characters === null) { this.characters = []; }
 		if(this.players === undefined || this.players === null) { this.players = []; }
 		if(this.npcs === undefined || this.npcs === null) { this.npcs = []; }
+		if(this.threads === undefined || this.threads === null) {this.threads = []}
+		if(this.images === undefined || this.images === null) {this.images = []}
 	}
 	
 	toString() {
@@ -57,6 +62,12 @@ class Game {
 		this.characters = this.characters.filter((c) => c.id !== id);
 		const cref = getReference(schema.characters,id);
 		this.characters.push(cref);
+	}
+	
+	addImage(id) {
+		this.images = this.images.filter((c) => c.id !== id);
+		const cref = getReference(schema.images,id);
+		this.images.push(cref);
 	}
 }
 

@@ -166,6 +166,140 @@ HEROICORIGINFEATURES/
 HEROICORIGINBOONS/
 HEROICORIGIN/
 SECTION/
+/HEROICORIGIN /ID" 57f8a4a4-827b-11ee-b820-c87f5455cfcc"/
+/ORIGINNAME Otherworldly Force ORIGINNAME/
+/TRAITS
+/HEROICORIGINDESCRIPTION You have been subjected to arcane forces HEROICORIGINDESCRIPTION/
+/HEROICORIGINWEAPONS pick one HEROICORIGINWEAPONS/
+/HEROICORIGINIMPLEMENTS pick one HEROICORIGINIMPLEMENTS/
+/HEROICORIGINKNACKS Arcana HEROICORIGINKNACKS/
+/HEROICORIGINBACKGROUNDS pick any 2 background elements which relate to your origin HEROICORIGINBACKGROUNDS/
+TRAITS/
+
+What was the nature of the force or forces to which you were exposed? It could be an unusual toxin,
+a magical elixir, or some sort of enchantment. Perhaps you were exposed to elemental forces of an
+extreme nature. Whatever happened, your mortal nature was altered and you became more than a mere
+ordinary mortal!
+/HEROICORIGINFEATURES
+/LABEL Choose one of the following LABEL/
+/FLEXROW
+/FLEXCELL
+/BOON /ID" 15e721c4-827d-11ee-913b-c87f5455cfcc"/ /BOONNAME Unnatural Speed BOONNAME/
+/BOONSOURCE Otherworldly Force Origin Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Otherworldly Force Origin ASSOCIATION/
+/PREREQUISITES Otherworldly Force Origin PREREQUISITES/
+/DESCRIPTION
+You have acquired great speed through exposure to some form of otherworldly force.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT 
+Your walking mode speed is increased by one.
+BENEFIT/
+/BENEFIT
+/FEAT /ID" 203e0336-827d-11ee-8f23-c87f5455cfcc"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Burst of Speed FEATNAME/
+/ORIGIN Unnatural Speed ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Defense ACTION/
+/TAGS defense, enchantment, life TAGS/
+/DEFENSE Dexterity vs Weapon, Implement DEFENSE/
+/ENHANCED The attack misses and you may shift up to your speed in squares. ENHANCED/
+/COMPLETESUCCESS The attack misses and you shift up to 2 squares COMPLETESUCCESS/
+/SUCCESS The attack misses SUCCESS/
+/FLAVOR You move with unnatural speed, evading danger. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /ID" f84ac7e8-8280-11ee-ac48-c87f5455cfcc"/ /BOONNAME Toxic BOONNAME/
+/BOONSOURCE Otherworldly Force Origin Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Otherworldly Force Origin ASSOCIATION/
+/PREREQUISITES Otherworldly Force Origin PREREQUISITES/
+/DESCRIPTION
+Your body, blood, etc is poisonous.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You gain resistance to poison type damage.
+BENEFIT/
+/BENEFIT
+/FEAT /ID" 7b4d1c4a-8281-11ee-a811-c87f5455cfcc"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Poison Spray FEATNAME/
+/ORIGIN Toxic ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Standard ACTION/
+/TAGS poison TAGS/
+/TYPETARGET close blast 2, all creatures TYPETARGET/
+/ATTACK Unarmed vs FORT ATTACK/
+/ENHANCED The target is blinded and takes DD+WIS poison damage. ENHANCED/
+/COMPLETESUCCESS The target is dazed and takes WIS+2 poison damage COMPLETESUCCESS/
+/SUCCESS The target is dazed SUCCESS/
+/FLAVOR You spit a cloud of noxious material which momentarily effects your enemies. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+FLEXROW/
+HEROICORIGINFEATURES/
+/HEROICORIGINBOONS
+HEROICORIGINBOONS/
+HEROICORIGIN/
+
+/HEROICORIGIN /ID" 9e43c53e-828e-11ee-b373-c87f5455cfcc"/
+/ORIGINNAME Lineage of Power ORIGINNAME/
+/TRAITS
+/HEROICORIGINDESCRIPTION Your people are the inheritors of great arcane power. HEROICORIGINDESCRIPTION/
+/HEROICORIGINWEAPONS none HEROICORIGINWEAPONS/
+/HEROICORIGINIMPLEMENTS pick one HEROICORIGINIMPLEMENTS/
+/HEROICORIGINKNACKS Arcana, History HEROICORIGINKNACKS/
+/HEROICORIGINBACKGROUNDS Legacy HEROICORIGINBACKGROUNDS/
+TRAITS/
+
+Your ancestors possessed vast magical power and were involved in affairs beyond the knowledge of ordinary mortals.
+How much of this knowledge do you still possess? Has your line declined in power? Are you cut off from their sources
+of this power? Or are you destined to take up the mantle of leadership which your ancient estate entitles you to?
+/HEROICORIGINFEATURES
+/LABEL Choose one of the following LABEL/
+/FLEXROW
+/FLEXCELL
+/BOON /ID" f074dcb0-8290-11ee-a6b5-c87f5455cfcc"/ /BOONNAME Remarkable Researcher BOONNAME/
+/BOONSOURCE Lineage of Power Origin Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Lineage of Power Origin ASSOCIATION/
+/PREREQUISITES Lineage of Power Origin PREREQUISITES/
+/DESCRIPTION
+You have an uncanny knowledge of books and research materials which allows you to extract maximum advantage from them.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT 
+You are able to acquire a ritual formula every time you advance a level. All you need to do is pay a significant cost of the
+level of the ritual and you may acquire it. You can only acquire rituals of up to your level in this fashion.
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /ID" 902a3d72-8291-11ee-8f8d-c87f5455cfcc"/ /BOONNAME Arcane Legacy BOONNAME/
+/BOONSOURCE Lineage of Power Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Lineage of Power Origin ASSOCIATION/
+/PREREQUISITES Lineage of Power Origin PREREQUISITES/
+/DESCRIPTION
+You have in your possession a magical implement which is an heirloom of your lineage and sign of your power.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You have a /REF Magical Implement REF/ of level 1 power.
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+FLEXROW/
+HEROICORIGINFEATURES/
+/HEROICORIGINBOONS
+HEROICORIGINBOONS/
+HEROICORIGIN/
+SECTION/
+
 /STRONG Note: STRONG/ The background elements are listed in tabular form with associated numbers. These could be used for random generation purposes. This isn't intended to 
 provide a character background generation subsystem. It is just provided so that a player can make a random selection if they so choose. This is often a helpful way to 
 kick-start the process of character backstory creation. Players are not obligated to roll on these tables, nor are they bound by any rolls they do make.

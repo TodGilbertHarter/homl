@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { Game } from './game.js';
-import { BaseRepository } from './BaseRepository.js';
+import { BaseRepository, ToReferences } from './baserepository.js';
 import { schema, getReference } from './schema.js';
 
 const gameConverter = {
@@ -25,6 +25,12 @@ const gameConverter = {
 			if(key === 'owner') {
 				const playerDocRef = getReference(schema.players,value.id);
 				g[key] = playerDocRef;
+			} else if(key === 'players') {
+				g[key] = ToReferences(schema.players,value);
+			} else if(key === 'npcs') {
+				g[key] = ToReferences(schema.npcs,value);
+			} else if(key === 'images') {
+				g[key] = ToReferences(schema.images,value);
 			} else {
 				g[key] = value;
 			}
@@ -36,7 +42,7 @@ const gameConverter = {
 		console.log("converting and id is "+snapshot.id);
 		const id = snapshot.id;
 		const data = snapshot.data(options);
-		return new Game(id,data.name,data.owner,data.characters,data.players,data.npcs,data.description);
+		return new Game(id,data.name,data.owner,data.characters,data.players,data.npcs,data.description, data.threads, data.images);
 	}
 }
 
@@ -56,7 +62,7 @@ class GameRepository extends BaseRepository {
 	}
 	
     getGamesByName(name,onDataAvailable) {
-		this.findDto("name",name,"==",onDataAvailable, () => { throw new Error("Can't find "+name)});
+		this.findDtos("name",name,"==",onDataAvailable, () => { throw new Error("Can't find "+name)});
 	}
     
     async saveGame(game) {
@@ -68,7 +74,7 @@ class GameRepository extends BaseRepository {
 		this.findDtos("owner",playerDocRef,"==",onDataAvailable,onFailure);
 	}
 	
-	getPlayerGames(player,onDataAvailable,onFailure) {
+	getPlayerGames(playerId,onDataAvailable,onFailure) {
 		const playerDocRef = getReference(schema.players,playerId);
 		this.findDtos("players",playerDocRef,"contains",onDataAvailable,onFailure);
 	}

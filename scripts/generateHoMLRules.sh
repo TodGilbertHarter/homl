@@ -19,6 +19,8 @@ cp src/main/rules/images/* ./build/$PUBDIR/images
 cd ./build/rules
 hairball genrefs.hairball homl.hairball | tail -n +2 >>./refs.hairball
 echo '{' >./compendium.json
+hairball refs.hairball gencompendium.hairball gennpcs.hairball homl.hairball | tail -n +2 >>./compendium.json
+echo "," >>./compendium.json
 hairball refs.hairball gencompendium.hairball genboons.hairball homl.hairball | tail -n +2 >>./compendium.json
 echo "," >>./compendium.json
 hairball refs.hairball gencompendium.hairball genfeats.hairball homl.hairball | tail -n +2 >>./compendium.json

@@ -16,6 +16,7 @@
 */
 import { collection, doc, setDoc, query, where, getDocs, getDoc } from 'firebase-firestore';
 import { Species } from './species.js';
+import { schema, getDb } from './schema.js';
 
 const speciesConverter = {
 	toFirestore(species) {
@@ -97,7 +98,7 @@ class SpeciesRepository {
 	 * various other methods can directly return results, and we can then set up listeners to allow
 	 * for handling any updated information which comes in later.
 	 */
-	allSpecies = [];
+	allSpecies;
 	loadAllSpecies() {
 		this.getAllSpecies((docs) => { this.allSpecies = docs; });
 		this.notifyListeners(this.allSpecies);
@@ -127,6 +128,17 @@ class SpeciesRepository {
 		}).catch(e => {
 			console.log("Failed to get all species "+e.message);
 		});
+	}
+	
+	async getAllSpeciesAsync() {
+		if(this.allSpecies !== undefined)
+			return this.allSpecies;
+		var speciesRef = collection(getDb(),schema.species);
+		speciesRef = speciesRef.withConverter(speciesConverter);
+		const docs = [];
+		const results = await getDocs(speciesRef);
+		results.forEach(r => docs.push(r.data()));
+		return docs;
 	}
 	
     /**

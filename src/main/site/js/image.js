@@ -14,32 +14,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-class Player {
+class Image {
 	id;
-	uid;
-	loggedIn;
-	characters;
-	handle;
+	owner;
+	description;
+	uri;
 	
-	constructor(id, uid, loggedIn, characters, handle) {
+	constructor(id, owner, description, uri) {
 		this.id = id;
-		this.uid = uid;
-		this.loggedIn = loggedIn;
-		this.characters = characters === undefined ? [] : characters;
-		this.handle = handle;
-	}
-	
-	toString() {
-		return this.email;
-	}
-	
-	/**
-	 * Get a list of characters
-	 * @param {function([Character])} onDataAvailable handler to process the data when it is returned.
-	 */
-	getCharacters(onDataAvailable) {
-		return window.gebApp.characterRepo.getReferencedCharacters(this.characters,onDataAvailable);
+		this.owner = owner;
+		this.description = description;
+		this.uri = uri;
 	}
 }
 
-export { Player };
+export { Image };

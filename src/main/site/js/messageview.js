@@ -18,6 +18,7 @@ import { html, LitElement } from 'lit2';
 import {ref, createRef} from 'lit2/ref';
 import {Chat, Message } from './chat.js';
 import {repeat} from 'lit2/repeat';
+import { schema, getReference } from './schema.js';
 
 class MessageView extends LitElement {
 	static properties = {
@@ -81,6 +82,8 @@ class ConversationViewer extends LitElement {
 	static properties = {
 		gameid: {},
 		threadid: {},
+		messager: {},
+		cols: {}
 	}
 	
 	constructor() {
@@ -88,19 +91,35 @@ class ConversationViewer extends LitElement {
 		this._chat = null;
 		this.listRef = createRef();
 		this.uh = this.updateHandler.bind(this);
+		this.messager = 'false';
+		this.cols = 100;
 	}
 	
+	renderMessager() {
+		if(this.messager === 'true') {
+			return html`<conversation-messager threadid=${this.threadid} cols=${this.cols} gameid=${this.gameid}></conversation-messager>`;
+		}
+		return null;
+	}
 	render() {
-		return html`<message-list ${ref(this.listRef)}></message-list>`
+		return html`<message-list ${ref(this.listRef)}></message-list>${this.renderMessager()}`
 	}
 
 	updateHandler(messages) {
 		this.listRef.value.messages = messages;
 	}
+
+	sendChatMessage(message) {
+		this._chat.sendMessage(message);
+	}
 	
 	firstUpdated() {
 		this._chat = new Chat(this.gameid);
 		this._chat.addListener(this.uh);
+		this.addEventListener('postaction', (e) => {
+			const message = new Message(null,this.threadid,window.gebApp.controller.getCurrentPlayerRef(),getReference(schema.games,this.gameid),e.detail.text,0);
+			this.sendChatMessage(message);
+		});
 	}
 	
 	disconnectedCallback() {
@@ -109,4 +128,38 @@ class ConversationViewer extends LitElement {
 }
 
 window.customElements.define('conversation-viewer',ConversationViewer);
+
+class Messager extends LitElement {
+	static properties = {
+		cols: {},
+		gameid: {},
+		threadid: {}
+	}
+	
+	constructor() {
+		super();
+		this.bigInputRef = createRef();
+		this.cols = 60;
+	}
+	
+	clearClicked() {
+		const ta = this.bigInputRef.value
+		ta.setValue('');
+	}
+	
+	postClicked() {
+		const v = this.bigInputRef.value.value;
+		if(v !== '')
+			this.dispatchEvent(new CustomEvent('postaction',{bubbles: true, composed: true, detail: {text: this.bigInputRef.value.value}}));
+	}
+	
+	render() {
+		return html`<div part='messager'>
+			<big-input placeholder='enter a message here' cols=${this.cols} ${ref(this.bigInputRef)}></big-input>
+			<button @click=${this.clearClicked}>Clear</button><button @click=${this.postClicked}>Post</button>
+		</div>`;
+	}
+}
+
+window.customElements.define('conversation-messager',Messager);
 

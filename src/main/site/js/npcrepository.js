@@ -18,19 +18,38 @@ import { collection, doc, setDoc, addDoc, query, where, getDocs, getDoc, Documen
 import { Player } from './player.js';
 import { BaseRepository } from './baserepository.js';
 import { schema, getDb, getReference } from './schema.js';
+import { Npc } from './npc.js';
 
 const npcConverter = {
 	toFirestore(npc) {
 		return {
 			id: npc.id,
 			name: npc.name,
-			statblock: npc.statblock
+			statblock: npc.statblock,
+			Major: npc.major,
+			Move: npc.move,
+			Stats: npc.stats,
+			fort: npc.fort,
+			hitpoints: npc.hitpoints,
+			immunity: npc.immunity,
+			initiative: npc.initiative,
+			level: npc.level,
+			power: npc.power,
+			protection: npc.protection,
+			ref: npc.ref,
+			role: npc.role,
+			size: npc.size,
+			tags: npc.tags,
+			vulnerability: npc.vulnerability,
+			will: npc.will
 		}
 	},
 	fromFirestore(snapshot,options) {
 		const id = snapshot.id;
 		const data = snapshot.data(options);
-		return new Npc(id,data.name,data.statblock);
+		return new Npc(id, data.name, data.statblock, data.Major, data.Move, data.Stats, data.fort, 	
+			data.hitpoints, data.immunity, data.initiative, data.level, data.power, data.protection, 
+			data.ref, data.role, data.size, data.tags, data.vulnerability, data.will);
 	}
 };
 

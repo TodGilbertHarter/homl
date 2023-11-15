@@ -355,8 +355,8 @@ for (i = 0; i < coll.length; i++) {
 /: AFFLICTIONDESCRIPTION/ DIV/ :/
 
 /* Monster stat block */
-/: /MONSTER <section class="monster"> :/
-/: /MONSTERNAME <div class="monsterheader"><div class="mrow"><div class="value"> :/ /: MONSTERNAME/ DIV/ :/
+/: /MONSTER <section class="monster" :/
+/: /MONSTERNAME ><div class="monsterheader"><div class="mrow"><div class="value"> :/ /: MONSTERNAME/ DIV/ :/
 /: /MONSTERLEVEL <div class="value"> Level /SPACE :/ /: MONSTERLEVEL/ /SPACE :/
 /: /MONSTERROLE // :/ /: MONSTERROLE/ DIV/ DIV/ :/
 /: /MONSTERSIZE <div class="mrow"><div class="value"> :/ /: MONSTERSIZE/ /SPACE :/
@@ -377,8 +377,10 @@ for (i = 0; i < coll.length; i++) {
 /: /MONSTERSECTIONNAME // :/
 /: MONSTERSECTIONNAME/ DIV/ :/
 /: MONSTERSECTION/ DIV/ :/
-/: /MONSTERSPEED <div class="mrow"> /BOLD Speed BOLD/ <span> &nbsp; :/ /: MONSTERSPEED/ </span> DIV/ :/
-
+/: /MONSTERSPEED <div class="mrow"> /BOLD Speed BOLD/ <span> &nbsp; :/
+/: /MONSTERSPEEDMODE // :/ /: MONSTERSPEEDMODE/ ; :/
+/: /MONSTERSPEEDVALUE /SPACE :/ /: MONSTERSPEEDVALUE/ // :/ 
+/: MONSTERSPEED/ </span> DIV/ :/
 /: /MONSTERFEAT <div class="mrow"> :/
 /: /MONSTERFEATNAME  /BOLD :/ /: MONSTERFEATNAME/ BOLD/ :/ 
 /: /MONSTERFEATTAGS ( :/ /: MONSTERFEATTAGS/ ) :/

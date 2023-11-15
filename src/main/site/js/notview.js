@@ -46,6 +46,11 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 		displayarea.innerHTML = `<boon-viewer id='boonviewer'></boon-viewer>`;
 	}
 	
+	displayNpcList() {
+		const displayarea = this.theDocument.getElementById('mainappview');
+		displayarea.innerHTML = `<monsters-viewer id='npcsviewer'></monsters-viewer>`;
+	}
+	
 	displayPlayerSettings(playerId) {
 		console.log("WHAT IS THE MFING ID! "+playerId);
 		const displayarea = this.theDocument.getElementById('mainappview');

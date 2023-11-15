@@ -22,11 +22,43 @@ class Npc {
 	id;
 	name;
 	statblock;
+	major;
+	move;
+	stats;
+	fort;
+	hitpoints;
+	immunity;
+	initiative;
+	level;
+	power;
+	protection;
+	ref;
+	role;
+	size;
+	tags;
+	vulnerability;
+	will;
 	
-	constructor(id, name, statblock) {
+	constructor(id, name, statblock,major,move,stats,fort,hitpoints,immunity,initiative,level,power,protection,ref,role,size,tags,vulnerability,will) {
 		this.id = id;
 		this.name = name;
 		this.statblock = statblock;
+		this.major = major;
+		this.move = move;
+		this.stats = stats;
+		this.fort = fort;
+		this.hitpoints = hitpoints;
+		this.immunity = immunity;
+		this.initiative = initiative;
+		this.level = level;
+		this.power = power;
+		this.protection = protection;
+		this.ref = ref;
+		this.role = role;
+		this.size = size;
+		this.tags = tags;
+		this.vulnerability = vulnerability;
+		this.will = will;
 	}
 	
 }

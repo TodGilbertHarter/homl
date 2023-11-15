@@ -17,7 +17,7 @@
 
 import { BaseRepository } from './baserepository.js';
 import { schema, getDb, getReference } from './schema.js';
-import { query, where, collection, onSnapshot } from 'firebase-firestore';
+import { query, where, collection, onSnapshot, Timestamp } from 'firebase-firestore';
 
 /**
  * Chat message class.
@@ -42,7 +42,16 @@ class Message {
 
 const messageConverter = {
 	toFirestore(message) {
-		
+		const d = {
+			content: message.content,
+			id: message.id,
+			threadid: message.threadId,
+			sendId: message.senderId,
+			gameId: message.gameId,
+			sendTime: message.sendTime
+		};
+		if(!(d.sendTime instanceof Timestamp)) d.sendTime = Timestamp.now();
+		return d;
 	},
 	
 	fromFirestore(snapshot, options) {
@@ -129,7 +138,7 @@ class Chat extends BaseRepository {
 	 */	
 	removeListener(listener) {
 		this._listeners = this._listeners.filter((l) => { l !== listener});
-		if(this._listeners.length === 0) { this.unsubscribe() }
+		if(this._listeners.length === 0) { this._unsubscribe() }
 	}
 }
 

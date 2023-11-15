@@ -19,12 +19,24 @@ import { Player } from './player.js';
 import { BaseRepository } from './baserepository.js';
 import { schema, getDb, getReference } from './schema.js';
 
+const random = (length = 8) => {
+    // Declare all characters
+    let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    // Pick characers randomly
+    let str = '';
+    for (let i = 0; i < length; i++) {
+        str += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return str;
+};
+
 const playerConverter = {
 	toFirestore(player) {
-		if(!player.handle) player.handle = player.email;
+		if(!player.handle) player.handle = random(20);
 		return {
 			id: player.id,
-			email: player.email,
+			uid: player.uid,
 			loggedin: player.loggedIn,
 			characters: player.characters,
 			handle: player.handle
@@ -33,7 +45,7 @@ const playerConverter = {
 	fromFirestore(snapshot,options) {
 		const id = snapshot.id;
 		const data = snapshot.data(options);
-		return new Player(id,data.email,data.loggedin,data.characters,data.handle);
+		return new Player(id,data.uid,data.loggedin,data.characters,data.handle);
 	}
 };
 
@@ -63,7 +75,12 @@ class PlayerRepository extends BaseRepository {
 	}
 	
     getPlayerByEmail(email,onDataAvailable, onFailure) {
-		this.findDto("email",email,"==",onDataAvailable,onFailure);
+//		this.findDto("email",email,"==",onDataAvailable,onFailure);
+		throw new Error("player's don't have email anymore");
+    }
+
+    getPlayerByUid(uid,onDataAvailable, onFailure) {
+		this.findDto("uid",uid,"==",onDataAvailable,onFailure);
     }
     
     savePlayer(player) {

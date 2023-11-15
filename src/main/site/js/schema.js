@@ -34,7 +34,8 @@ const schema = {
 	species: 'species',
 	equipment: 'equipment',
 	messages: 'messages',
-	npcs: 'npcs'
+	npcs: 'npcs',
+	images: 'images'
 };
 
 const getReference = (schema,id) => {

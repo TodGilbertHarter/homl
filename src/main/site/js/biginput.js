@@ -27,7 +27,8 @@ class BigInput extends LitElement {
 		max: {type: Number},
 		actual: {type: Number, reflect: true},
 		value: {reflect: true},
-		wrap: {}
+		wrap: {},
+		placeholder: {}
 	};
 	
 	/** @private */ taref = createRef();
@@ -39,6 +40,7 @@ class BigInput extends LitElement {
 		this.actual = 0;
 		this.value = '';
 		this.wrap = 'hard';
+		this.placeholder = '';
  	}
 
 	render() {
@@ -53,9 +55,14 @@ class BigInput extends LitElement {
 		}
 		</style>
 		<div class='container'>
-			<textarea rows=${this.rows} cols=${this.cols} @input=${this.onInput} ${ref(this.taref)} wrap=${this.wrap}>${this.value}</textarea>
+			<textarea placeholder=${this.placeholder} rows=${this.rows} cols=${this.cols} @input=${this.onInput} ${ref(this.taref)} wrap=${this.wrap}>${this.value}</textarea>
 			<div class='counter'>${this.actual}/${this.max}</div>
 		</div>`;
+	}
+	
+	setValue(v) {
+		this.value = v;
+		this.taref.value.value = v;
 	}
 	
 	onInput(e) {

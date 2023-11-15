@@ -13,6 +13,8 @@ import { BackgroundRepository } from './backgroundrepository.js';
 import { EquipmentRepository } from './equipmentrepository.js';
 import { BoonRepository } from './boonrepository.js';
 import { FeatRepository } from './featrepository.js';
+import { NpcRepository } from './npcrepository.js';
+import { ImageRepository } from './imagerepository.js';
 
 class Application {
 	featRepo;
@@ -25,6 +27,8 @@ class Application {
 	speciesRepo;
 	backgroundRepo;
 	originRepo;
+	npcRepo;
+	imageRepo;
 	authenticator;
 	router;
 	view;
@@ -46,6 +50,8 @@ class Application {
 		this.playerRepo = new PlayerRepository(this,firestore);
 		this.gameRepo = new GameRepository(this,firestore);
 		this.characterRepo = new CharacterRepository(this,firestore);
+		this.npcRepo = new NpcRepository(this,firestore);
+		this.imageRepo = new ImageRepository();
 		this.characterController = new CharacterController(this.speciesRepo,this.callingRepo
 			,this.backgroundRepo,this.originRepo,this.characterRepo,this.boonRepo,this.equipmentRepo);
 		this.authenticator = new Authenticator(this,fbProject,this.playerRepo);
@@ -54,7 +60,7 @@ class Application {
 		this.controller = new Controller(this,this.view,this.authenticator,
 			this.router,this.gameRepo,this.characterRepo,this.characterController,
 			this.callingRepo,this.speciesRepo,this.backgroundRepo,this.originRepo,this.equipmentRepo,this.boonRepo,this.featRepo,
-			this.playerRepo);
+			this.playerRepo,this.npcRepo,this.imageRepo);
 	}
 }
 
