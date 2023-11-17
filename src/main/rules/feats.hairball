@@ -218,6 +218,44 @@ When higher level PCs cast lower level rituals, they can pay lower level compone
 results commensurate with their level, they will pay the full cost. Thus a mythic character might cast a simple ritual with the effectiveness achievable at heroic tier. The cost will then be 
 insignificant, even if it was a major expense for heroic PCs; in that case the effectiveness would be equivalent to being cast by a heroic caster as well, which is sufficient in many cases.
 SUBSECTION/
+/SUBSECTION" Practice Descriptions"/
+
+This section describes many practices which have been invented over the ages. This is not meant to be exhaustive, but is indicative of the types of practice and ritual which are possible.
+/FLEXROW
+/FLEXCELL
+/FEAT /ID" ce953100-8379-11ee-846e-c87f5455cfcc"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Alarm FEATNAME/
+/ORIGIN General ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Practice ACTION/
+/TAGS Engineering TAGS/
+/CHECK Engineering CHECK/
+/ENHANCED Three nearby areas or approaches can be warded. ENHANCED/
+/COMPLETESUCCESS A second area can be warded which is nearby the first area. COMPLETESUCCESS/
+/SUCCESS An area is warded with alarms which will be triggered if any creature enters the area, unless they have been forwarned. The warded area is small, a single room, a pathway or approach, or something similar. If you are in or adjacent to the area when the alarms are triggered you will be made aware of the intrusion, even if you are asleep. SUCCESS/
+/EFFECTS When an alarm is triggered your engineering check result determines surprise, and engineering is the governing aspect. EFFECTS/
+/FLAVOR You have engineered some clever mechanisms which will detect approaching danger. FLAVOR/
+/COMPONENTS insignificant materials such as twine, sticks, stones, a bell, etc. COMPONENTS/
+/COSTS insignificant martial components COSTS/
+FEAT/
+FLEXCELL/
+/FLEXCELL
+/FEAT /ID" 44a11272-837c-11ee-b7b7-c87f5455cfcc"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Animal Messenger FEATNAME/
+/ORIGIN General ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Ritual ACTION/
+/TAGS enchantment TAGS/
+/CHECK Nature CHECK/
+/ENHANCED ENHANCED/
+/COMPLETESUCCESS COMPLETESUCCESS/
+/SUCCESS SUCCESS/
+/EFFECTS You target a non-hostile creature within 10 squares with the Animal keyword and which is lower in level than the level at which this ritual is cast. Once the ritual is complete the caster whispers a message of up to a couple of sentences to the animal and names a recipient and a location. The animal travels to the location in search of the recipient, avoiding danger along the route. Once the animal arrives in the vicinity of the recipient the message issues forth from its mouth, conveying the message. The animal then reverts to its natural behavior. EFFECTS/
+/FLAVOR You recruit a local animal to carry a message for you. FLAVOR/
+/COMPONENTS A handful of food appropriate to the animal type in question. COMPONENTS/
+/COSTS insignificant life components COSTS/
+FEAT/
+FLEXCELL/
+FLEXROW/
+SUBSECTION/
 SECTION/
 /SECTION" Power "/
 
