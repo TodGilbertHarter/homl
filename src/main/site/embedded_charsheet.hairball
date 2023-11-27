@@ -29,5 +29,5 @@ of HTML. Include this and a character data document, the result will be an HTML 
 :/
 
 /: CHARACTER/ FLEXCELL/ FLEXROW/ FLEXROW/ <div class="panel"><button id='savebutton2'>Save</button><button id='refreshbutton2'>Refresh</button></div></div>
-</div> 
+</div></div>
 </template> :/

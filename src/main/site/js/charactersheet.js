@@ -26,6 +26,7 @@ import {BoonDetailRenderer} from './boonview.js';
 import { BoonRepository } from './boonrepository.js';
 import { Boon } from './boon.js';
 import {Equipment} from './equipment.js';
+import {schema} from './schema.js';
 
 /** @private */ const CharacterSheettemplate = document.getElementById('charactersheettemplate');
 
@@ -1728,6 +1729,12 @@ class CharacterController {
     
     save(character) {
         this.characterRepo.saveCharacter(character);
+        if(character.owner.id === window.gebApp.controller.getCurrentPlayer().id)
+	        window.gebApp.controller.addOwned(character.id,schema.characters,character.name);
+	    else {
+			window.gebApp.controller.updatePlayerOwns(character.owner,schema.characters,character.name);
+		}
+	    	
     }
     
     // the rest of these functions are meant to be called from action functions at the UI layer.

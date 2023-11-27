@@ -19,12 +19,17 @@ import { Game } from './game.js';
 import {ref, createRef } from 'lit2/ref';
 
 class GameCreate extends LitElement {
-	/** @private */ model;
-	/** @private */ name = createRef();
-	/** @private */ description = createRef();
+	static properties = {
+		_model: {attribute:false, state: true},
+		name: {},
+		description: {}
+	}
 	
 	constructor() {
 		super();
+		this._model = null;
+		this.nameRef = createRef();
+		this.descriptionRef = createRef();
  	}
 
 	render() {
@@ -46,8 +51,8 @@ class GameCreate extends LitElement {
 			}
 		</style>
 		<div class='gamecreate' part='gamecreate' id='gamecreate'>
-			<label for='name'>Name:</label><input type='text' id='name' ${ref(this.name)}/>
-			<label for='description'>Description:</label><big-input rows='5' cols='100' max='500' ${ref(this.description)} id='description'></big-input>
+			<label for='name'>Name:</label><input type='text' value=${this.name} id='name' ${ref(this.nameRef)}/>
+			<label for='description'>Description:</label><big-input rows='5' cols='100' max='500' value=${this.description} ${ref(this.descriptionRef)} id='description'></big-input>
 			<button id='save' @click="${this.handleSaveButton}">Save</button>
 		</div>`;
 	}
@@ -55,13 +60,18 @@ class GameCreate extends LitElement {
 	firstUpdated() {
 		const nref = this.name.value;
 		nref?.focus();
-		this.model = new Game(null, 'new game', window.gebApp.authenticator.player, null, null, 'a new game' );
+	}
+
+	set model(newModel) {
+		this._model = newModel;
 	}
 	
 	handleSaveButton() {
-		this.model.name = this.name.value.value;
-		this.model.description = this.description.value.value;
-		window.gebApp.controller.handleSaveGame(this.model);
+		if(this._model === null)
+			this.model = new Game(null, 'new game', window.gebApp.authenticator.player, null, null, 'a new game' );
+		this._model.name = this.name.value.value;
+		this._model.description = this.description.value.value;
+		window.gebApp.controller.handleSaveGame(this._model);
 	}
 }
 

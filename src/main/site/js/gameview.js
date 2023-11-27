@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { html, LitElement } from 'lit2';
+import { html, LitElement, render } from 'lit2';
 import {ref, createRef} from 'lit2/ref';
 import {Message, Chat } from './chat.js';
 
@@ -66,37 +66,61 @@ class GameView extends LitElement {
 		}
 	}
 	
+	editInfo() {
+		const dialog = document.createElement('dialog-widget');
+		const cancelHandler = (e) => { document.getElementsByTagName('body')[0].removeChild(dialog); }
+		const selectHandler = (e) => { 
+			document.getElementsByTagName('body')[0].removeChild(dialog);
+			this.saveGame();
+			this.requestUpdate();
+		}
+//		dialog.setAttribute('class','noteselector');
+		const template = html`<div slot='content'><game-create name=${this.model.name} description=${this.model.description}></game-create></div>
+		<button class='dialogbutton' slot='buttonbar' id='boonselect' @click=${selectHandler}>select</button>
+		<button class='dialogbutton' slot='buttonbar' id='dismiss' @click=${cancelHandler}>cancel</button>`;
+		render(template,dialog);
+		document.getElementsByTagName('body')[0].appendChild(dialog);
+/*		dialog.addEventListener('gameupdated',(e) => { 
+			document.getElementsByTagName('body')[0].removeChild(dialog);
+			const note = e.detail.note;
+			this.addNote(note);
+		}); */
+		
+	}
+	
 	render() {
 		return html` <style>
-			div.gameview {
-				flex: 1;
-				width: auto;
-				max-width: 500px;
-			}
 			.gamewrapper {
 				display: flex;
 			}
-			.characterlist {
+			.gameColumn {
 				flex: 1;
-			}
-			.conversationviewer {
-				flex: 1;
+				margin-left: 2px;
+				margin-right: 2px;
+				overflow: clip;
 			}
 		</style>
 		<div class='gamewrapper'>
-			<div @dragover=${this.dragOver} @drop=${this.drop} class='gameview' part='gameview' id='gameview'>
-				<div>Game Info</div>
-				<game-info class='gameinfo' ${ref(this.gameViewRef)} gameid=${this.gameId}></game-info>
-				<images-viewer actionenabled='display' gameid=${this.gameId} ${ref(this.imagesViewerRef)}></images-viewer>
+			<div class='gameColumn'>
+				<div @dragover=${this.dragOver} @drop=${this.drop} class='gameview' part='gameview' id='gameview'>
+					<div>Game Info</div>
+					<game-info class='gameinfo' ${ref(this.gameViewRef)} gameid=${this.gameId}></game-info>
+					<div><button @click=${this.editInfo}>Edit</button></div>
+					<images-viewer actionenabled='display' gameid=${this.gameId} ${ref(this.imagesViewerRef)}></images-viewer>
+				</div>
 			</div>
-			<div class='characterlist'>
-				<div>Characters</div>
-				<character-list id="characterlist" ${ref(this.characterListRef)}></character-list>
-				<npcs-viewer ${ref(this.npcViewerRef)} label='NPCs'></npcs-viewer>
+			<div class='gameColumn'>
+				<div class='characterlist'>
+					<div>Characters</div>
+					<character-list id="characterlist" ${ref(this.characterListRef)}></character-list>
+					<npcs-viewer ${ref(this.npcViewerRef)} label='NPCs'></npcs-viewer>
+				</div>
 			</div>
-			<div class='conversationviewer'>
-				<div>Conversations</div>
-				<conversation-viewer messager='true' ${ref(this.conversationViewerRef)} gameid=${this.gameId}></conversation-viewer>
+			<div class='gameColumn'>
+				<div class='conversationviewer'>
+					<div>Conversations</div>
+					<conversation-viewer messager='true' ${ref(this.conversationViewerRef)} gameid=${this.gameId}></conversation-viewer>
+				</div>
 			</div>
 		</div>`;
 	}
@@ -106,7 +130,7 @@ class GameView extends LitElement {
 	}
 	
 	saveGame() {
-		window.gebApp.gameRepo.saveGame(this.model);
+		window.gebApp.controller.handleSaveGame(this.model);
 	}
 	
 	drop(de) {

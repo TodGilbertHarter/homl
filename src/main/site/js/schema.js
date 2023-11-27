@@ -38,10 +38,33 @@ const schema = {
 	images: 'images'
 };
 
+const repoRegistry = {
+	
+};
+
+/**
+ * Register a repository instance to handle resolveReference
+ * requests for a given FireStore collection. It is assumed this
+ * is the same collection the schema entry references.
+ */
+const registerRepository = (schema,repoInstance) => {
+	repoRegistry.schema = repoInstance;
+}
+
+const getRepository = (schema) => {
+	return repoRegistry.schema;
+}
+
+const resolveReference = (ref,onSuccess) => {
+	var schema = ref.path.split('/')[0];
+	var repo = getRepoForSchema(schema);
+	repo.dtoFromReference(ref,onSuccess);
+}
+
 const getReference = (schema,id) => {
 	return doc(getDb(),schema,id);
 }
 
 const getDb = () => { return window.gebApp.firestore }
 
-export { schema, getReference, getDb };
+export { schema, getReference, getDb, registerRepository, resolveReference, getRepository };

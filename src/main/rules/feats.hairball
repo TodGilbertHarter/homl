@@ -245,7 +245,7 @@ FLEXCELL/
 /ACTION Ritual ACTION/
 /TAGS enchantment TAGS/
 /CHECK Nature CHECK/
-/ENHANCED ENHANCED/
+/ENHANCED The  ENHANCED/
 /COMPLETESUCCESS COMPLETESUCCESS/
 /SUCCESS SUCCESS/
 /EFFECTS You target a non-hostile creature within 10 squares with the Animal keyword and which is lower in level than the level at which this ritual is cast. Once the ritual is complete the caster whispers a message of up to a couple of sentences to the animal and names a recipient and a location. The animal travels to the location in search of the recipient, avoiding danger along the route. Once the animal arrives in the vicinity of the recipient the message issues forth from its mouth, conveying the message. The animal then reverts to its natural behavior. EFFECTS/

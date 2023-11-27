@@ -10,7 +10,7 @@ of HTML. Include this and a character data document, the result will be an HTML 
 // :/ /* Prevent spurious <p> tags. */
 /: /GETMATCHING /DOER /DROP /W /W2L /MAKELITERAL /HERE! :/
 /: /VERSION <!-- character version :/
-/: VERSION/ --!> :/
+/: VERSION/ /SPACE --> :/
 
 /: /FIELD <attribute-field value=" /. " :/
 /: /FIELDNAME /SPACE label=" :/
@@ -63,7 +63,7 @@ of HTML. Include this and a character data document, the result will be an HTML 
 :/
 
 /: CHARACTER/ FLEXCELL/ FLEXROW/ FLEXROW/ <div class="panel"><button id='savebutton2'>Save</button><button id='refreshbutton2'>Refresh</button></div></div>
-</div> 
+</div></div>
 </template> :/
 
 /: /NAME /GETMATCHING NAME/ /DELIMITED /DUP /. <div><div> /SHEETTITLE /SHEETROW /FIELD /FIELDNAME Name: FIELDNAME/ /FIELDWIDTH 20em FIELDWIDTH/ /FIELDID charactername FIELDID/ FIELD/ :/
@@ -99,17 +99,17 @@ of HTML. Include this and a character data document, the result will be an HTML 
 /: /ATTRIBUTES <div class="attributetable"> :/
 /: /ATTRIBUTE <ability-field style="width: 10em;" /SPACE :/ /: ATTRIBUTE/ </ability-field> :/
 /: /STRENGTH /ATTRIBUTE label='Strength:' name="characterstrength" id="characterstrength" modifier='' value=" :/
-/: STRENGTH/ "/> ATTRIBUTE/ :/
+/: STRENGTH/ "> ATTRIBUTE/ :/
 /: /CONSTITUTION /ATTRIBUTE label='Constitution:' name='characterconstitution' id='characterconstitution' modifier='' value=" :/
-/: CONSTITUTION/ "/> ATTRIBUTE/ :/
+/: CONSTITUTION/ "> ATTRIBUTE/ :/
 /: /DEXTERITY /ATTRIBUTE label='Dexterity:' name='characterdexterity' id='characterdexterity' modifier='' value=" :/
-/: DEXTERITY/ "/> ATTRIBUTE/ :/
+/: DEXTERITY/ "> ATTRIBUTE/ :/
 /: /INTELLIGENCE /ATTRIBUTE label='Intelligence:' name='characterintelligence' id='characterintelligence' modifier='' value=" :/
-/: INTELLIGENCE/ "/> ATTRIBUTE/ :/
+/: INTELLIGENCE/ "> ATTRIBUTE/ :/
 /: /WISDOM /ATTRIBUTE label='Wisdom:' name='characterwisdom' id='characterwisdom' modifier='' value=" :/
-/: WISDOM/ "/> ATTRIBUTE/ :/
+/: WISDOM/ "> ATTRIBUTE/ :/
 /: /CHARISMA /ATTRIBUTE label='Charisma:' name='charactercharisma' id='charactercharisma' modifier='' value=" :/
-/: CHARISMA/ "/> ATTRIBUTE/ :/
+/: CHARISMA/ "> ATTRIBUTE/ :/
 /: ATTRIBUTES/ </div> :/
 
 /* /: /PASSIVEPERCEPTION /GETMATCHING PASSIVEPERCEPTION/ /DELIMITED /CALCULATEDFIELD /FIELDNAME Perception: FIELDNAME/ /FIELDWIDTH 5em FIELDWIDTH/ /FIELDID characterpassiveperception FIELDID/ CALCULATEDFIELD/ :/
@@ -143,7 +143,7 @@ of HTML. Include this and a character data document, the result will be an HTML 
 /: /DAMAGEREDUCTION /GETMATCHING DAMAGEREDUCTION/ /SHEETROW /DELIMITED /CALCULATEDFIELD /FIELDNAME DR: FIELDNAME/ /FIELDWIDTH 2em FIELDWIDTH/ /FIELDID characterdr FIELDID/ CALCULATEDFIELD/  :/
 /: DAMAGEREDUTION/ /[" Mismatch, DAMAGEREDUCTION/ must follow /DAMAGEREDUCTION "]/ /ABORT :/
 /: /WEALTH /ATTRIBUTE label='Wealth:' name="characterwealth" id="characterwealth" modifier='' value=" :/
-/: WEALTH/ "/> ATTRIBUTE/ :/
+/: WEALTH/ "> ATTRIBUTE/ :/
 /: /KNACKS /SHEETROW <div class='knacktable'> /FLEXROW  
 <div style="text-align: right; flex: 2.3">Name</div> 
 <div style="text-align: center; flex: 1.1">Ability</div> 
@@ -222,7 +222,7 @@ FLEXROW/ :/
 /: /BOON /SPACE <span class="value"> :/
 /: BOON/ </span> :/
 /: /EQUIPMENT /BOX <equipment-selector id="equipmentselector" label="Equipment:"> :/
-/: EQUIPMENT/ </equipment-selctor> BOX/ :/
+/: EQUIPMENT/ </equipment-selector> BOX/ :/
 /: /ITEM /SPACE <span class="value"> :/
 /: ITEM/ ,</span> :/
 /: /NOTES /BOX <notes-selector id='notesselector' label="Notes:"> :/

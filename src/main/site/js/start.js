@@ -15,6 +15,7 @@ import { BoonRepository } from './boonrepository.js';
 import { FeatRepository } from './featrepository.js';
 import { NpcRepository } from './npcrepository.js';
 import { ImageRepository } from './imagerepository.js';
+import { registerRepository, schema } from './schema.js';
 
 class Application {
 	featRepo;
@@ -41,17 +42,29 @@ class Application {
 		this.firestore = firestore;
 		this.theDocument = aDocument;
 		this.featRepo = new FeatRepository(this,firestore);
+		registerRepository(schema.feats,this.featRepo);
 		this.boonRepo = new BoonRepository(this,firestore);
+		registerRepository(schema.boons,this.boonRepo);
 		this.equipmentRepo = new EquipmentRepository(this,firestore);
+		registerRepository(schema.equipment,this.equipmentRepo);
 		this.callingRepo = new CallingRepository(this,firestore);
+		registerRepository(schema.callings,this.callingsRepo);
 		this.speciesRepo = new SpeciesRepository(this,firestore);
+		registerRepository(schema.species,this.speciesRepo);
 		this.backgroundRepo = new BackgroundRepository(this,firestore);
+		registerRepository(schema.backgrounds,this.backgroundRepo);
 		this.originRepo = new OriginRepository(this,firestore);
+		registerRepository(schema.origins,this.originsRepo);
 		this.playerRepo = new PlayerRepository(this,firestore);
+		registerRepository(schema.players,this.playerRepo);
 		this.gameRepo = new GameRepository(this,firestore);
+		registerRepository(schema.games,this.gameRepo);
 		this.characterRepo = new CharacterRepository(this,firestore);
+		registerRepository(schema.characters,this.characterRepo);
 		this.npcRepo = new NpcRepository(this,firestore);
+		registerRepository(schema.npcs,this.npcRepo);
 		this.imageRepo = new ImageRepository();
+		registerRepository(schema.images,this.imageRepo);
 		this.characterController = new CharacterController(this.speciesRepo,this.callingRepo
 			,this.backgroundRepo,this.originRepo,this.characterRepo,this.boonRepo,this.equipmentRepo);
 		this.authenticator = new Authenticator(this,fbProject,this.playerRepo);

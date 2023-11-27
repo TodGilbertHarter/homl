@@ -38,14 +38,15 @@ const playerConverter = {
 			id: player.id,
 			uid: player.uid,
 			loggedin: player.loggedIn,
-			characters: player.characters,
-			handle: player.handle
+			owned: player.owned,
+			handle: player.handle,
+			bookMarks: player.bookMarks
 		}
 	},
 	fromFirestore(snapshot,options) {
 		const id = snapshot.id;
 		const data = snapshot.data(options);
-		return new Player(id,data.uid,data.loggedin,data.characters,data.handle);
+		return new Player(id,data.uid,data.loggedin,data.owned,data.handle,data.bookMarks);
 	}
 };
 
@@ -69,27 +70,53 @@ class PlayerRepository extends BaseRepository {
 	getReferencedPlayer(playerRef,onSuccess) {
 		this.dtoFromReference(playerRef,onSuccess);
 	}
-	
+
+	/**
+	 * Get a group of players given their references.
+	 */	
 	getReferencedPlayers(playerRefs,onSuccess) {
 		this.dtosFromReferences(playerRefs,onSuccess);
 	}
 	
-    getPlayerByEmail(email,onDataAvailable, onFailure) {
-//		this.findDto("email",email,"==",onDataAvailable,onFailure);
-		throw new Error("player's don't have email anymore");
-    }
-
+	/**
+	 * Given a user id, get the corresponding player record.
+	 */
     getPlayerByUid(uid,onDataAvailable, onFailure) {
 		this.findDto("uid",uid,"==",onDataAvailable,onFailure);
     }
     
+    /**
+	 * Save the player.
+	 */
     savePlayer(player) {
 		this.saveDto(player);
     }
-    
+
+	/**
+	 * Get a player by their id and call the given callback when
+	 * the data is available. Use the async version in prefference
+	 * wherever possible.
+	 */    
     getPlayerById(playerId,onDataAvailable) {
 		var docRef = this.getReference(playerId);
 		this.dtoFromReference(docRef,onDataAvailable);
+	}
+
+	/**
+	 * Async version of getting a player from a reference.
+	 * Use this in preference to the callback version.
+	 */	
+	async getReferencedPlayerAsync(playerRef) {
+		return this.dtoFromReferenceAsync(playerRef);
+	}
+
+	/**
+	 * Async version of getting a player by their id. This is the
+	 * preferred method.
+	 */	
+	async getPlayerByIdAsync(playerId) {
+		var docRef = this.getReference(playerId);
+		return this.dtoFromReferenceAsync(docRef);
 	}
 
 }

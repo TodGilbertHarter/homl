@@ -1,3 +1,7 @@
+* {
+	   box-sizing: border-box;
+}
+
 :root {
     --bodytable-header-bg: DarkBlue;
     --bodytable-header-fg: white;

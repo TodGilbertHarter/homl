@@ -75,6 +75,8 @@
 /MODULE" js/image.js"/
 /MODULE" js/imagerepository.js"/
 /MODULE" js/imagerender.js"/
+/MODULE" js/bookmarklist.js"/
+/MODULE" js/ownedlist.js"/
 /SIGNINDIALOG SIGNINDIALOG/
 /SIGNUPDIALOG SIGNUPDIALOG/
 /SOURCE" embedded_charactersheet.html"/

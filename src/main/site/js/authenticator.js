@@ -16,6 +16,7 @@
 */
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase-auth';
 import { Timestamp } from 'firebase-firestore';
+import { Player } from './player.js';
 
 class Authenticator {
 	/** @private */ fb;
@@ -75,20 +76,21 @@ class Authenticator {
 		  });
 	}
 
-	createUserWithEmailAndPassword(email,password, onSuccess, onFailure) {
+	createUserWithEmailAndPassword(email, password, handle, onSuccess, onFailure) {
 		createUserWithEmailAndPassword(getAuth(), email, password)
 		  .then((userCredential) => {
 			this.authenticated = true;
 		    this.user = userCredential.user;
 			this.errorCode = 0;
-		    this.player = new Player(null,this.user.uid,Timestamp.fromDate(new Date()),null);
+		    this.player = new Player(null,this.user.uid,Timestamp.fromDate(new Date()),null,handle,null);
 		    this.playerRepo.savePlayer(this.player);
 		    onSuccess(this.player);
 		  })
 		  .catch((error) => {
-		    var errorCode = error.code;
+		    this.errorCode = error.code;
 		    var errorMessage = error.message;
-			onFailure(errorMessage);
+		    console.info(`User failed to log in with error code: ${this.errorCode}. Message was: ${errorMessage}`)
+			onFailure(errorMessage,this.errorCode);
 		  });
 	}
 

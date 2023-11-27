@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { schema, getReference } from './schema.js';
+import { schema, getReference, resolveReference } from './schema.js';
 
 class Controller {
 	/** @private */ gebApp;
@@ -34,6 +34,7 @@ class Controller {
 	/** @private */ npcRepo;
 	/** @private */ imageRepo;
 	/** @private */ originRepo;
+	/** @private */ preAuthPath;
 		
 	constructor(gebApp,view,authenticator,router,gameRepo,characterRepo,characterController,callingRepo,speciesRepo,
 		backgroundRepo,originRepo,equipmentRepo,boonRepo,featRepo,playerRepo,npcRepo,imageRepo) {
@@ -55,6 +56,7 @@ class Controller {
 		this.playerRepo = playerRepo;
 		this.npcRepo = npcRepo;
 		this.imageRepo = imageRepo;
+		this.preAuthPath = window.location.hash;
 		this.router.add(/signup/,() => { this.view.displaySignUpUI(); });
 		this.router.add(/signin/,() => { this.view.displaySignInUI(); });
 		this.router.add(/signout/,() => { this.view.displaySignOutUI(); });
@@ -68,6 +70,69 @@ class Controller {
 		this.router.add(/boons/,() => {this.view.displayBoonList(); });
 		this.router.add(/npcs/,() => {this.view.displayNpcList(); });
 		this.actions = {};
+	}
+
+	/**
+	 * Add an owned record to the current player's list of owned
+	 * items. This needs to be done in order to maintain the player's
+	 * list of owned items.
+	 */
+	addOwned(id,schema,name) {
+		this.updatePlayerOwns(this.getCurrentPlayer(),id,schema,name);
+	}
+
+	/**
+	 * Update the ownership for the given player.
+	 */	
+	updatePlayerOwns(player,id,schema,name) {
+		const owned = {id: id, name: name, ref: getReference(schema,id)};
+		player.addOwned(owned);
+		this.playerRepo.savePlayer(player);
+	}
+	
+	/**
+	 * Add a bookmark to the current player's bookmark list, and
+	 * save it.
+	 */
+	addUserBookMark(newMark) {
+		this.getCurrentPlayer().bookMarks.push(newMark);
+		this.updateCurrentPlayer();
+	}
+	
+	/**
+	 * This allows client code to simply ask the controller to resolve any
+	 * reference to any HoML object type stored in FireStore without needing
+	 * to know which type it is.
+	 */
+	resolveReference(ref,onSuccess) {
+		resolveReference(ref,onSuccess);
+	}
+	
+	/**
+	 * The path which was in the browser bar when the initial
+	 * application load happened is restored. This is primarily
+	 * intended to allow handling of deep links. A user follows a
+	 * deep link into HoML, but is not currently authenticated, so
+	 * they will not be able to properly view the link's contents.
+	 * When we first instantiate the controller we capture this URL
+	 * in the preAuthPath. Once login is complete the view will
+	 * call this function. If the preAuthPath is the initial landing
+	 * page, the router will do nothing, otherwise the page will be
+	 * re-rendered with the proper content. In principle that can be
+	 * called at any time, but I don't see other uses for it.
+	 */
+	goToPreAuthPath() {
+		if(this.preAuthPath) {
+			window.location.hash = this.preAuthPath;
+		}
+	}
+	
+	/**
+	 * Trigger the router to act as if the user just navigated to the current route.
+	 */
+	refresh() {
+		var hash = window.location.hash;
+		this.router.navigate(hash);
 	}
 	
 	registerAction(actionName,extensionPoint) {
@@ -124,14 +189,13 @@ class Controller {
 	}
 	
 	/**
-	 * Set up everything which needs to happen after logon, and then head to the route
-	 * which displays the logged in UI.
+	 * Do any additional work required after login is complete.
+	 * Currently we just record the existing path and then set the
+	 * path to '/authenticated', the view can display whatever it
+	 * wants at that point, using the recorded path to decide if a
+	 * deep link was hit, etc.
 	 */
 	authenticated() {
-/*		this.callingRepo.addListener(this.onCallingsChanged);
-		this.callingRepo.loadAllCallings();
-		this.speciesRepo.addListener(this.onSpeciesChanged);
-		this.speciesRepo.loadAllSpecies(); */
 		window.location.hash = '/authenticated';
 	}
 	
@@ -243,12 +307,24 @@ class Controller {
 
 	handleSaveGame(game) {
 		this.gameRepo.saveGame(game);
+		if(this.getCurrentPlayer().id === game.owner.id)
+			this.addOwned(game.id,schema.games,game.name);
+		else {
+			const owner = this.getPlayerById(game.owner.id);
+			this.updatePlayerOwns(owner,game.id,schema.games,game.name);
+		}
 	}
+
 	/**
 	 * Handle the actual signup process via the authenticator.
 	 */
-	doSignUp(email, password, onSuccess, onFailure) {
-		this.authenticator.createUserWithEmailAndPassword(email,password,onSuccess,onFailure);
+	doSignUp(email, password, handle, onSuccess, onFailure) {
+		this.authenticator.createUserWithEmailAndPassword(email,password,handle,onSuccess,onFailure);
+	}
+	
+	updateCurrentPlayer() {
+		const cp = this.getCurrentPlayer();
+		this.playerRepo.savePlayer(cp);
 	}
 	
 	/**

@@ -59,7 +59,7 @@ class Router {
     return this.clearSlashes(fragment);
   }
 
-navigate(path = '', state = null) {
+  navigate(path = '', state = null) {
 	if (this.mode === 'history') {
 		window.history.pushState(state, '', this.root + this.clearSlashes(path));
 	} else {

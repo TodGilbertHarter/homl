@@ -72,6 +72,18 @@ class BaseRepository {
 			});
 		}
 	}
+
+	/**
+	 * Async version of getting a DTO from a reference.
+	 */
+	async dtoFromReferenceAsync(ref) {
+		if(!(ref instanceof DocumentReference)) {
+			return ref; // it is already a DTO or something else, just return it.
+		}
+		var dr = ref.withConverter(this.converter);
+		var entity = await getDoc(dr);
+		return entity.data();
+	}
 	
 	/**
 	 * Given an array of references, get the associated

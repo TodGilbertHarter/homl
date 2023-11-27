@@ -18,27 +18,39 @@ class Player {
 	id;
 	uid;
 	loggedIn;
-	characters;
+	owned;
 	handle;
+	bookMarks;
 	
-	constructor(id, uid, loggedIn, characters, handle) {
+	constructor(id, uid, loggedIn, owned, handle, bookMarks) {
 		this.id = id;
 		this.uid = uid;
 		this.loggedIn = loggedIn;
-		this.characters = characters === undefined ? [] : characters;
+		this.owned = owned === undefined ? [] : owned;
 		this.handle = handle;
+		this.bookMarks = bookMarks === undefined ? [] : bookMarks;
 	}
 	
 	toString() {
-		return this.email;
+		return this.handle;
+	}
+
+	/**
+	 * Add a new owned item to the player while insuring that no duplicates are added.
+	 */
+	addOwned(newItem) {
+		const filtered =  this.owned.filter(item => !(item.id === newItem.id && item.schema === newItem.schema));
+		filtered.push(newItem);
+		this.owned = filtered;
 	}
 	
 	/**
-	 * Get a list of characters
-	 * @param {function([Character])} onDataAvailable handler to process the data when it is returned.
-	 */
-	getCharacters(onDataAvailable) {
-		return window.gebApp.characterRepo.getReferencedCharacters(this.characters,onDataAvailable);
+	 * Remove the bookmark with the given title from the player's bookmarks.
+	 */	
+	deleteBookMark(title) {
+		this.bookMarks = this.bookMarks.filter((bookmark) => {
+			return bookmark.title !== title;
+		});
 	}
 }
 

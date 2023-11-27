@@ -42,6 +42,15 @@ class TabPanel extends LitElement {
 	}
 	
 	/**
+	 * Clear the whole panel entirely.
+	 */
+	removeAll() {
+		this.tabList = [];
+		this.tabContents = [];
+		this.requestUpdate();
+	}
+
+	/**
 	 * Add a tab and associated contents, and make it active if isactive is true.
 	 */
 	addTab(tabtext,contents,isactive) {

@@ -37,7 +37,8 @@ Hairball.
 		<h1 class='dialogtitle'>Sign Up to Giant Electronic Brain</h1>
 		<div class='loginfield'><label for='logindialogemail'>Email:</label><input type='text' id='logindialogemail'></div>
       	<div class='loginfield'><label for='logindialogpassword'>Password:</label><input type='password' id='logindialogpassword'></div>
-      	<div style='clear: both;'><p>To create a new account, fill in your email and password, then click sign up.</p></div>
+      	<div class='loginfield'><label for='logindialoghandle'>Handle:</label><input type='text' id='logindialoghandle'></div>
+      	<div style='clear: both;'><p>To create a new account, fill in your email, handle, and password, then click sign up.</p></div>
 	</div>
 	<button class='dialogbutton' id='logindialogsignin' slot='buttonbar'>Sign Up</button>
 	<button class='dialogbutton' id='logindialogcancel' slot='buttonbar'>cancel</button>

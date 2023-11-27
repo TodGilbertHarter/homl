@@ -118,34 +118,54 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 		this.addTabToLeftPanel('Characters',content,isactive)
 	}
 	
+	displayBookMarks(isactive) {
+		const content = this.theDocument.createElement('tab-body');
+		content.innerHTML = "<bookmark-manager id='lefttabbookmarks' displayid='lefttabbookmarks'></bookmark-manager>";
+		this.addTabToLeftPanel('Bookmarks',content,isactive);
+	}
+
+	displayOwned(isactive) {
+		const content = this.theDocument.createElement('tab-body');
+		content.innerHTML = "<owned-manager id='lefttabowned' displayid='lefttabowned'></owned-manager>";
+		this.addTabToLeftPanel('Owned',content,isactive);
+	}
+	
 	/**
 	 * Display the default tab arrangement.
 	 */
 	displayTabs() {
 		this.displayGameLister(true);
 		this.displayCharacterLister(false);
+		this.displayBookMarks(false);
+		this.displayOwned(false);
 	}
 	
 	/**
 	 * Remove all elements from the tab bar.
 	 */
 	clearTabs() {
-		const tbar = this.theDocument.getElementById('leftslottabbar');
-		tbar.innerHTML = '';
 		const tabs = this.theDocument.getElementById('leftslottabpanel');
-		tabs.childNodes.forEach((t) => { if(t.nodeName === 'DIV') { t.parentElement.removeChild(t) } });
+		tabs.removeAll();
 	}
 	
 	displaySignOutUI() {
 		console.log("got to signed out UI");
-		this.getSessionWidget().signedIn(false);
+		this.getSessionWidget().setAttribute('signedin',false);
 		this.clearTabs();
 	}
-	
+
+	/**
+	 * This handles displaying any ui elements which are specific to authenticated
+	 * users, and then reroutes us to the original path that was present before the
+	 * user logged in, just in case this is a deep link, etc. 
+	 */	
 	displayAuthenticatedUI() {
 		console.log('got to authenticated UI');
-		this.getSessionWidget().signedIn(true);
+		const handle = this.controller.getCurrentPlayer().handle;
+		this.getSessionWidget().setAttribute('username',handle);
+		this.getSessionWidget().setAttribute('signedin',true);
 		this.displayTabs();
+		this.controller.goToPreAuthPath();
 	}
 	
 	gameListAttached(list) {
@@ -170,7 +190,8 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 				console.log('clicked sign up');
 				const email = dialog.querySelector('#logindialogemail').value;
 				const password = dialog.querySelector('#logindialogpassword').value;
-				this.controller.doSignUp(email,password,
+				const handle = dialog.querySelector('#logindialoghandle').value;
+				this.controller.doSignUp(email,password,handle,
 					() => { 
 						dialog.dismiss(); 
 						this.controller.signedUp(); 

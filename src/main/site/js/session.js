@@ -1,5 +1,5 @@
 /**
- * This software is Copyright (C) 2021 Tod G. Harter. All rights reserved.
+ * This software is Copyright (C) 2021-23 Tod G. Harter. All rights reserved.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,46 +15,49 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+import { html, LitElement } from 'lit2';
+
 /** @private */ const SessionWidgettemplate = document.createElement('template');
 SessionWidgettemplate.innerHTML = `<style>.component { box-shadow: 3px 3px 5px 0px var(--shadow-color) }</style><div class='sessionwidget' part='button' id='button'><slot name='text'><button class='component' id='signinbutton'>Sign In</button></slot></div>`;
 
-class SessionWidget extends HTMLElement {
-	/**
-	Implements a widget which shows login status and initiates login and logout.
-	 */
-
-	/** @private */ static template = SessionWidgettemplate;
+/**
+ * Implements a widget which shows login status and initiates login and logout.
+ */
+class SessionWidget extends LitElement {
+	static properties = {
+		signedin: {},
+		username: {}
+	}
+	
 	/** @private */ bch;
-	/** @private */ signedInState = false;
 
 	constructor() {
 		super();
-		const content = SessionWidget.template.content;
-        const shadowRoot = this.attachShadow({mode: 'open'}).appendChild(content.cloneNode(true));
-		this.bch = this.buttonClickHandler.bind(this);
-	}
-	
-	connectedCallback() {
-		const button = this.shadowRoot.getElementById('button');
-		button.addEventListener('click',this.bch);
-		this.signedInState = this.getAttribute('signedin');
+		this.signedin = "false";
+		this.userName = null;
 	}
 	
 	buttonClickHandler() {
-		if(this.signedInState) {
+		if(this.signedin === "true") {
 			window.gebApp.controller.signOutClicked();
 		} else {
 			window.gebApp.controller.signInClicked();
 		}
 	}
 	
-	signedIn(value) {
-		this.signedInState = value;
-		this.shadowRoot.getElementById('button').firstChild.firstChild.innerText = value ? 'Sign Out' : 'Sign In';
+	renderSignedIn() {
+		return this.signedin === "true" ? `Sign Out ${this.username}` : 'Sign In';
 	}
-	
-	toggleSignedInState() {
-		this.signedInState = !this.signedInState;
+
+	render() {
+		return html`<style>
+			.component { 
+				box-shadow: 3px 3px 5px 0px var(--shadow-color); 
+			}
+		</style>
+		<div class='sessionwidget' part='button' id='button'>
+			<slot name='text'><button class='component' id='signinbutton' @click=${this.buttonClickHandler}>${this.renderSignedIn()}</button></slot>
+		</div>`;
 	}
 }
 
