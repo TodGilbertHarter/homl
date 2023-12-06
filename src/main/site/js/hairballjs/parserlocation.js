@@ -19,3 +19,4 @@ class ParserLocation {
 		return `${eMsg} in ${this.source} at line ${this.line}, column ${this.column}`;
 	}
 }
+export default ParserLocation;

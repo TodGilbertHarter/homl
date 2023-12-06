@@ -159,6 +159,13 @@ export const CREATE_INSTANCE = new NativeToken('Create',(interpreter) => {
 
 export const COLON_INSTANCE = new InterpreterToken('Colon',[WORD_INSTANCE,CREATE_INSTANCE,COMPILING_INSTANCE,DOES_INSTANCE]);
 
+export const ALLOT_INSTANCE = new NativeToken('Allot',(interpreter) => {
+//	const length = interpreter.pop(); ES6 doesn't have a concept of a fixed-size array...
+	const array = [];
+	interpreter.push(array);
+	return true;
+});
+
 export const MAKELITERAL_INSTANCE = new NativeToken('MakeLiteral',(interpreter) => {
 	const value = interpreter.pop();
 	const lt = new LiteralToken('created_by_MAKELITERAL',value);
@@ -253,7 +260,7 @@ export const SLASHBRACKETQUOTECT_INSTANCE = new NativeToken('/["CT',(interpreter
 	return true;
 });
 
-const SBQRTERROR = new InterpreterToken('/["RT_ERROR',[new LiteralToken('errormsg','/[" cannot be called at runtime'),ABORT_INSTANCE]);
+export const SBQRTERROR_INSTANCE = new InterpreterToken('/["RT_ERROR',[new LiteralToken('errormsg','/[" cannot be called at runtime'),ABORT_INSTANCE]);
 
 export const GETTOMATCHING_INSTANCE = new NativeToken('getToMatching',(interpreter) => {
 	const pl = new ParserLocation(interpreter.parserContext.wordStream);
@@ -307,3 +314,205 @@ export const COMMENTIN_INSTANCE = new NativeToken('/*',(interpreter) => {
 
 export const COMMENTOUT_INSTANCE = new LiteralToken("CommentOutMsg","*/ must match with /*");
 
+export const SPACE_INSTANCE = new NativeToken("Space",(interpreter) => {
+	interpreter.parserContext.output.space();
+	return true;
+});
+
+export const FETCHOUTPUT_INSTANCE = new NativeToken("@Output",(interpreter) => {
+	interpreter.push(interpreter.parserContext.output);
+	return true;
+});
+
+export const SETOUTPUT_INSTANCE = new NativeToken("!Output",(interpreter) => {
+	interpreter.parserContext.output = interpreter.pop();
+	return true;
+});
+
+export const CLOSEOUTPUT_INSTANCE = new NativeToken("CloseOutput",(interpreter) => {
+	interpreter.pop().close();
+	return true;
+});
+
+export const WRITEOUTPUT_INSTANCE = new NativeToken("WriteOutput",(interpreter) => {
+	interpreter.pop().emit(interpreter.pop());
+	return true;
+});
+
+export const PUSHVOCAB_INSTANCE = new NativeToken("PushVocab",(interpreter) => {
+	const vocabName = interpreter.pop();
+	const vocab = interpreter.parserContext.dictionary.findVocabulary(vocabName.value);
+	interpreter.push(vocab);
+	return true;
+});
+
+export const CREATEVOCAB_INSTANCE = new NativeToken("CreateVocab",(interpreter) =>{
+	interpreter.parserContext.dictionary.createVocabulary(interpreter.pop().value);
+	return true;
+});
+
+export const ADDVOCABTOSTACK_INSTANCE = new NativeToken("AddVocabToStack",(interpreter) => {
+	interpreter.parserContext.dictionary.addVocabulary(interpreter.pop());
+	return true;
+});
+
+export const MAKEVOCABCURRENT_INSTANCE = new NativeToken("MakeVocabCurrent",(interpreter) => {
+	interpreter.parserContext.dictionary.makeCurrent(interpreter.pop());
+	return true;
+});
+
+export const NEWVOCABRT_INSTANCE = new InterpreterToken(":VOCAB",[WORD_INSTANCE,CREATEVOCAB_INSTANCE]);
+
+export const ADDVOCABRT_INSTANCE = new InterpreterToken("AddVocabRT",[WORD_INSTANCE,PUSHVOCAB_INSTANCE]);
+
+export const VOCABFETCH_INSTANCE = new InterpreterToken("@Vocab",[MAKEWORD_INSTANCE,PUSHVOCAB_INSTANCE]);
+
+export const INACTIVATEVOCABRT_INSTANCE = new NativeToken("InactivateVocabRT",(interpreter) => {
+	const vocab = interpreter.pop();
+	interpreter.parserContext.dictionary.remove(vocab);
+	return true;
+});
+
+export const FETCHVOCABS_INSTANCE = new NativeToken("@Vocabs",(interpreter) => {
+	interpreter.push(interpreter.parserContext.dictionary.getActiveVocabularies());
+	return true;
+});
+
+export const LOOKUP_INSTANCE = new NativeToken('Lookup',(interpreter) => {
+	const aword = interpreter.pop();
+	interpreter.push(interpreter.parserContext.dictionary.lookUp(aword));
+	return true;
+});
+
+export const GETTOKEN_INSTANCE = new InterpreterToken("GetToken",[WORD_INSTANCE,LOOKUP_INSTANCE,GETRUNTIME_INSTANCE]);
+
+export const NOW_INSTANCE = new NativeToken("Now",(interpreter) => {
+	interpreter.push(Date.now());
+	return true;
+});
+
+export const FORMATTIME_INSTANCE = new NativeToken("FormatTime",(interpreter) => {
+	const dtf = interpreter.pop();
+	const time = interpreter.pop();
+	const dt = new Date(time);
+	const formatted = dtf.format(dt);
+	interpreter.push(formatted);
+	return true;
+});
+
+export const MAKEFORMATTER_INSTANCE = new NativeToken("MakeFormatter",(interpreter) => {
+	const lang = interpreter.pop();
+	const options = interpreter.pop();
+	const dtf = new Intl.DateTimeFormat(lang,options);
+	interpreter.push(dtf.format); //will this work? not sure...
+	return true;
+});
+
+export const PARSEJSON_INSTANCE = new NativeToken("ParseJson",(interpreter) => {
+	const jsonStr = interpreter.pop();
+	const json = JSON.parse(jsonStr);
+	interpreter.push(json);
+	return true;
+});
+
+export const STRINGIFYJSON_INSTANCE = new NativeToken("SerializeJson",(interpreter) => {
+	const json = interpreter.pop();
+	interpreter.push(JSON.stringify(json));
+	return true;
+});
+
+export const TICKDTFFORMAT_INSTANCE = new VariableToken("'DateFormat",new Intl.DateTimeFormat('sv-SE',{
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    fractionalSecondDigits: 3,
+    hour12: false,
+}).format); // This is as close as you can get to ISO8601...
+
+export const MAKENOW_INSTANCE = new InterpreterToken('makeNow',[NOW_INSTANCE,TICKDTFFORMAT_INSTANCE,LFETCHRT_INSTANCE,FORMATTIME_INSTANCE]);
+
+export const DOTNOW_INSTANCE = new InterpreterToken('.NOW',[MAKENOW_INSTANCE,EMIT_INSTANCE]);
+
+export const NEWLINE_INSTANCE = new LiteralToken('\n',"\n");
+export const NEWLINERT_INSTANCE = new InterpreterToken("\nRT",[NEWLINE_INSTANCE,EMIT_INSTANCE]);
+
+export const VERSION_INSTANCE = new NativeToken('Version',(interpreter) => { interpreter.push(Hairball.VERSION); return true; });
+
+export const MAKEMAP_INSTANCE = new NativeToken('MakeMap',(interpreter) => {
+	interpreter.push({});
+	return true;
+});
+
+export const MAPSTORE_INSTANCE = new NativeToken('Map!',(interpreter) => {
+	const map = interpreter.pop();
+	const key = interpreter.pop();
+	const value = interpreter.pop();
+	map[key] = value;
+	return true;
+});
+
+export const MAPFETCH_INSTANCE = new NativeToken('Map@',(interpreter) => {
+	const map = interpreter.pop();
+	const key = interpreter.pop();
+	interpreter.push(map[key]);
+	return true;
+});
+
+export const ONEPLUS_INSTANCE = new NativeToken('!+',(interpreter) => {
+	interpreter.push(interpreter.pop()+1);
+	return true;
+});
+
+export const SETEMIT_INSTANCE = new NativeToken('SetEmit',(interpreter) => {
+	const parser = interpreter.parserContext.parser;
+	parser.setEmit(interpreter.pop());
+	return true;
+});
+
+export const ISNULL_INSTANCE = new NativeToken('isNull',(interpreter) => {
+	interpreter.push(interpreter.pop() === null);
+	return true;
+});
+
+export const BRANCH_INSTANCE = new NativeToken('branch',(interpreter) => {
+	const branchTarget = interpreter.pop();
+	const flag = interpreter.pop();
+	if(!flag) interpreter.setIp(branchTarget);
+	return true;
+});
+
+export const IFCT_INSTANCE = new NativeToken('IFCT',(interpreter) => {
+	const dictionary = interpreter.parserContext.dictionary;
+	const thenTarget = dictionary.here();
+	dictionary.addToken(new LiteralToken('dummy',0));
+	interpreter.push(thenTarget);
+	swap.execute(interpreter);
+	compile.execute(interpreter);
+	return true;
+});
+
+export const THENCT_INSTANCE = new NativeToken('THENCT',(interpreter) => {
+	const dictionary = interpreter.parserContext.dictionary;
+	const foo = interpreter.pop();
+	const thenTarget = interpreter.pop();
+	const thenOffset = dictionary.here();
+	dictionary.putToken(new LiteralToken("thenOffset",thenOffset),thenTarget);
+	dictionary.addToken(NOOP_INSTANCE);
+	return true;
+});
+
+export const TRUE_INSTANCE = new LiteralToken('true',true);
+export const FALSE_INSTANCE = new LiteralToken('false',false);
+export const NOT_INSTANCE = new NativeToken('not',(interpreter) => {
+	const value = interpreter.pop();
+	interpreter.push(!value);
+	return true;
+});
+
+export const TRIM_INSTANCE = new NativeToken('trim',(interpreter) => {
+	interpreter.push(interpreter.pop().trim());
+	return true;
+});

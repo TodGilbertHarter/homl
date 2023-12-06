@@ -35,7 +35,7 @@ class Dictionary {
 		this.name = name;
 		this.vocabularies = [];
 		this.currentDefinition = new EmptyDefinition();
-		vocabularyList = {};
+		this.vocabularyList = {};
 		this.does();
 	}
 	

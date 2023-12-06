@@ -1,7 +1,10 @@
+import { EMIT_INSTANCE } from './tokens.js';
+import ParserLocation from './parserlocation.js';
+
 class Parser {
 	interpreting = true;
 	currentContext;
-	emit = Emit.INSTANCE;
+	emit = EMIT_INSTANCE;
 	parserBehavior;
 	litAccum;
 
