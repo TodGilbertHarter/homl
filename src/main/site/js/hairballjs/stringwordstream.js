@@ -12,7 +12,9 @@ class StringReader {
 	}
 	
 	read() {
-		return this.data.charAt(this.pointer++);
+		if(this.pointer < this.data.length)
+			return this.data.charAt(this.pointer++);
+		return -1;
 	}
 	
 	ready() {
@@ -31,22 +33,22 @@ class StringWordStream {
 	columnNumber = 1;
 	inputScanner = null;
 	
-	constructor(input) {
+	constructor(inStr) {
 		this.inputScanner = new TokenScanner(input);
-		this.reader = new StringReader(input);
+		this.reader = new StringReader(inStr);
 	}
 
 	getNextWord() {
-		const next = getNext();
-		return next === null ? null : new Word(next);
+		const next = this.getNext();
+		return next == null ? null : new Word(next);
 	}
 	
 	getNext() {
 		if(this.inputScanner.hasNext()) {
 			return this.inputScanner.next();
 		} else {
-			this.input = this.readLine(this.reader);
-			if(this.input !== null) {
+			this.input = this._readLine(this.reader);
+			if(this.input != null) {
 				this.inputScanner = new TokenScanner(this.input);
 				if(this.inputScanner.hasNext()) {
 					return this.inputScanner.next(); 
@@ -59,12 +61,12 @@ class StringWordStream {
 	}
 	
 	_readLine(reader) {
-		isThereData = false;
+		var isThereData = false;
 		var buff = "";
 		var ch = reader.read();
 		while(ch !== -1) {
 			isThereData = true;
-			buff.append(ch);
+			buff += ch;
 			if(ch === "\n") {
 				this.lineNumber++;
 				return buff;
@@ -85,22 +87,24 @@ class StringWordStream {
 		var more = this.getNext();
 		var first = true;
 		while(more !== match) {
-			if(!first) sb.append(' ');
+			if(!first) sb += ' ';
 			first = false;
-			sb.append(more);
+			sb += more;
 			more = this.getNext();
+			if(more == null) break;
 		}
 		return sb;
 	}
 	
 	getToDelimiter(match) {
-		var sb = "";
-		var hasMatch = inputScanner.scanInput(match,sb);
+		var [hasMatch,sb] = this.inputScanner.scanInput(match);
 		if(hasMatch) return sb;
-		var line = this.readLine(this.reader);
-		while(line !== null) {
+		var line = this._readLine(this.reader);
+		while(line != null) {
 			this.inputScanner = new TokenScanner(line);
-			hasMatch = inputScanner.scanInput(match,sb);
+			var qb = "";
+			[hasMatch,qb] = this.inputScanner.scanInput(match);
+			sb += qb;
 			if(hasMatch) return sb;
 			line = this.readLine(this.reader);
 		}
@@ -108,7 +112,7 @@ class StringWordStream {
 	}
 	
 	close() {
-		if(this.reader !== null) this.reader.close();
+		if(this.reader != null) this.reader.close();
 	}
 	
 	getSource() {
@@ -116,7 +120,7 @@ class StringWordStream {
 	}
 	
 	get column() {
-		return this.inputScanner.getPointer();
+		return this.inputScanner.pointer;
 	}
 	
 	getCurrentLocation() {

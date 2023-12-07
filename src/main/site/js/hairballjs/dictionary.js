@@ -125,7 +125,7 @@ class Dictionary {
 	add(vocabulary) {
 		this.addToVocabularyList(vocabulary);
 		this.vocabularies.unshift(vocabulary);
-		if(this.currentVocabulary === null) this.makeCurrent(vocabulary);
+		if(this.currentVocabulary == null) this.makeCurrent(vocabulary);
 	}
 	
 	makeCurrent(vocabulary) {
@@ -153,10 +153,10 @@ class Dictionary {
 	}
 	
 	lookUp(word) {
-		this.vocabularies.forEach((vocabulary) => {
-			const def = vocabulary.lookUp(word);
-			if(def !== null) return def;
-		});
+		for(let i = 0; i < this.vocabularies.length; i++) {
+			const def = this.vocabularies[i].lookUp(word);
+			if(def != null) return def;
+		}
 		return null;
 	}
 	

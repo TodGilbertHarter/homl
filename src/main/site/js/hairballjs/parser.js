@@ -1,12 +1,13 @@
 import { EMIT_INSTANCE } from './tokens.js';
 import ParserLocation from './parserlocation.js';
+import LiteralToken from './literaltoken.js';
 
 class Parser {
 	interpreting = true;
 	currentContext;
 	emit = EMIT_INSTANCE;
-	parserBehavior;
-	litAccum;
+	parserBehavior = this.executeWord;
+	litAccum = "";
 
 	setEmit(anEmitter) {
 		const oldEmitter = this.emit;
@@ -31,8 +32,8 @@ class Parser {
 	parse() {
 		const wordStream = this.currentContext.wordStream;
 		try {
-			const word = wordStream.getNextWord();
-			while(word !== null) {
+			let word = wordStream.getNextWord();
+			while(word != null) {
 				const rv = this.parserBehavior(word);
 				if(!rv) break;
 				word = wordStream.getNextWord();
@@ -40,7 +41,7 @@ class Parser {
 			this.flushLitAccum(); 
 			return this.currentContext;
 		} catch(e) {
-			this.makeParserExceptionMessage(e,wordStream);
+			const msg = this.makeParserExceptionMessage(e,wordStream);
 			throw new Error(msg,e);
 		}
 	}
@@ -65,9 +66,9 @@ class Parser {
 	executeWord(word) {
 		var rv = true;
 		const definition = this.currentContext.dictionary.lookUp(word);
-		if(definition !== null) {
+		if(definition != null) {
 			this.flushLitAccum();
-			const runTime = definition.getRunTime();
+			const runTime = definition.runTime;
 			rv = this.currentContext.interpreter.execute(runTime);
 		} else {
 			if(!this.isNumber(word)) {
@@ -95,7 +96,7 @@ class Parser {
 	compileWord(word) {
 		var rv = true;
 		const definition = this.currentContext.dictionary.lookUp(word);
-		if(definition !== null) {
+		if(definition != null) {
 			this.flushLitAccum();
 			const compileTime = definition.getCompileTime();
 			this.currentContext.interpreter.push(definition);
@@ -107,9 +108,9 @@ class Parser {
 	
 	handleLiteralWord(lWord) {
 		if(this.litAccum.length > 0) {
-			this.litAccum.append(' ');
+			this.litAccum += ' ';
 		}
-		this.litAccum.append(lWord.value);
+		this.litAccum += lWord.value;
 	}
 	
 	flushLitAccum() {

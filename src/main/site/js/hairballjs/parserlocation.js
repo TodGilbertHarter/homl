@@ -5,8 +5,8 @@ class ParserLocation {
 	
 	constructor(source,line,column) {
 		this.source = source;
-		this.line = line;
-		this.column = column;
+		this.line = line ? line : source.lineNumber;
+		this.column = column ? column : source.pointer;
 	}
 	
 	fromWordStream(wordStream) {

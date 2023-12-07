@@ -9,12 +9,12 @@ class StringOutput {
 	
 	space() {
 		if(!this.open) throw new Error("can't write to a closed output");
-		this.out.append(' ');
+		this.out += ' ';
 	}
 	
 	emit(output) {
 		if(!this.open) throw new Error("can't write to a closed output");
-		this.out.append(output);
+		this.out += output;
 	}
 	
 	close() {

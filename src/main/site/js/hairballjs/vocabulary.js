@@ -8,11 +8,11 @@ class Vocabulary {
 	}
 	
 	lookUp(word) {
-		return this.definitions[word];
+		return this.definitions[word.value];
 	}
 	
 	add(newDefinition) {
-		this.definitions[newDefinition.name] = newDefinition;
+		this.definitions[newDefinition.name.value] = newDefinition;
 	}
 	
 	toString() {

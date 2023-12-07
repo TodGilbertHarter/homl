@@ -15,15 +15,16 @@
 			import StringOutput from './js/hairballjs/stringoutput.js';
 			import StringWordStream from './js/hairballjs/stringwordstream.js';
 			
-			let so = new StringOutput("");
-			let sws = new StringWordStream("");
-			let hb = new Hairball(sws,so);
+			let hb = new Hairball();
 			
 			let outdiv = document.getElementById('output');
 			let inarea = document.getElementById('input');
 			let doit = document.getElementById('doit');
 			doit.onclick = () => {
+				let so = new StringOutput("");
 				let intext = inarea.value;
+				let sws = new StringWordStream(intext);
+				hb.setIO(sws,so);
 				hb.execute();
 				outdiv.innerHTML = so.out;
 			}

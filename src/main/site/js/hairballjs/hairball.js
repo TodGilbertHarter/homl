@@ -12,11 +12,10 @@ class Hairball {
 	interpreter;
 	
 	constructor(input,output) {
-		const context = new Context();
 		this.rootDictionary = new Dictionary("root");
 		this.rootDictionary.add(HbVocabulary);
 		this.interpreter = new Interpreter();
-		this.parser = new Parser(context);
+		this.parser = new Parser();
 		if(input && output)
 			this.setIO(input,output);
 	}
@@ -24,7 +23,7 @@ class Hairball {
 	setIO(wordStream, output) {
 		const pcontext = new ParserContext(wordStream,this.rootDictionary,this.interpreter,output,this.parser);
 		this.interpreter.parserContext = pcontext;
-		this.parser.parserContext = pcontext;
+		this.parser.currentContext = pcontext;
 	}
 	
 	setInput(newWordStream) {

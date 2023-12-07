@@ -61,17 +61,17 @@ class Interpreter {
 	}
 	
 	executeNextToken() {
-		if(this.currentContext === null) return null; // End of program
+		if(this.currentContext == null) return null; // End of program
 		var nextToken = this.currentContext.getNextToken();
 		var tokenReturnValue = false;
-		if(nextToken !== null) {
+		if(nextToken != null) {
 			tokenReturnValue = nextToken.execute(this);
 		}
 		return tokenReturnValue ? nextToken : null;
 	}
 	
 	executeContext() {
-		while(this.executeNextToken() !== null) { }
+		while(this.executeNextToken() != null) { }
 		return this.currentContext;
 	}
 	

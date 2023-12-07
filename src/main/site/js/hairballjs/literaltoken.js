@@ -8,7 +8,7 @@ class LiteralToken {
 	}
 	
 	execute(interpreter) {
-		interpreter.push(data);
+		interpreter.push(this.data);
 		return true;
 	}
 }

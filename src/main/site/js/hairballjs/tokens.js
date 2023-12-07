@@ -25,7 +25,7 @@ export const EMIT_INSTANCE = new NativeToken('Emit',(interpreter) => {
 export const QUOTE_INSTANCE = new NativeToken('Quote',(interpreter) => {
 	const pl = new ParserLocation(interpreter.parserContext.wordStream);
 	let quoted = interpreter.parserContext.wordStream.getToDelimiter('"/');
-	if(quoted === null) {
+	if(quoted == null) {
 		throw new Error(pl.makeErrorMessage('/" failed to find matching "/'));
 	}
 	quoted = quoted.strip();
@@ -189,7 +189,7 @@ export const CONVERT_INSTANCE = new NativeToken('Convert',(interpreter) => {
 export const TOKEN_INSTANCE = new NativeToken('Token',(interpreter) => {
 	const pl = new ParserLocation(interpreter.parserContext.wordStream);
 	const aword = interpreter.parserContext.wordStream.getNext();
-	if(aword === null) throw new Error(pl.makeErrorMessage("Token can't be parsed from input"));
+	if(aword == null) throw new Error(pl.makeErrorMessage("Token can't be parsed from input"));
 	interpreter.push(aword);
 	return true;
 });
@@ -243,7 +243,7 @@ export const COLONSLASHRT_INSTANCE = new InterpreterToken('ColonSlashRT',[COLONS
 export const DOTQUOTECT_INSTANCE = new NativeToken('DotQuoteCT',(interpreter) => {
 	const pl = new ParserLocation(interpreter.parserContext.wordStream);
 	const quoted = interpreter.parserContext.wordStream.getToMatching('"/');
-	if(quoted === null) throw new Error(pl.makeErrorMessage('." could not find match "/ in input'));
+	if(quoted == null) throw new Error(pl.makeErrorMessage('." could not find match "/ in input'));
 	const lt = new LiteralToken('DotQuote_Literal',quoted);
 	interpreter.parserContext.dictionary.addToken(lt);
 	interpreter.parserContext.dictionary.addToken(EMIT_INSTANCE);
@@ -254,7 +254,7 @@ export const SLASHBRACKETQUOTECT_INSTANCE = new NativeToken('/["CT',(interpreter
 	const pl = new ParserLocation(interpreter.parserContext.wordStream);
 	interpreter.pop();
 	const quoted = interpreter.parserContext.wordStream.getToMatching('"]/');
-	if(quoted === null) throw new Error(pl.makeErrorMessage('/[" failed to parse input'));
+	if(quoted == null) throw new Error(pl.makeErrorMessage('/[" failed to parse input'));
 	const lt = new LiteralToken('/["CT_Literal',quoted);
 	interpreter.parserContext.dictionary.addToken(lt);
 	return true;
@@ -266,15 +266,15 @@ export const GETTOMATCHING_INSTANCE = new NativeToken('getToMatching',(interpret
 	const pl = new ParserLocation(interpreter.parserContext.wordStream);
 	const target = interpreter.pop();
 	const parsed = interpreter.parserContext.wordStream.getToDelimiter(target);
-	if(parsed === null) throw new Error(pl.makeErrorMessage(`Failed to find ${target} in input`));
+	if(parsed == null) throw new Error(pl.makeErrorMessage(`Failed to find ${target} in input`));
 	interpreter.push(parsed);
 	return true;
 });
 
 export const DOTQUOTERT_INSTANCE = new NativeToken('."RT',(interpreter) => {
 	const pl = new ParserLocation(interpreter.parserContext.wordStream);
-	const quoted = interpreter.parserContext.wordStream.getToMatching('"/');
-	if(quoted === null) throw new Error(pl.makeErrorMessage('Could not find matching "/'));
+	const quoted = interpreter.parserContext.wordStream.getToDelimiter('"/');
+	if(quoted == null) throw new Error(pl.makeErrorMessage('Could not find matching "/'));
 	interpreter.push(quoted);
 	EMIT_INSTANCE.execute(interpreter);
 	return true;
@@ -295,7 +295,7 @@ export const DOTS_INSTANCE = new NativeToken('DOTS',(interpreter) => {
 	output.space();
 	const stack = [];
 	interpreter.parameterStack.forEach((obj) => {
-		output.emit(obj === null ? "(null)" : obj.toString());
+		output.emit(obj == null ? "(null)" : obj.toString());
 		output.emit("\n");
 	});
 	return true;
@@ -308,7 +308,7 @@ export const QUIT_INSTANCE = new NativeToken("Quit",(interpreter) => {
 export const COMMENTIN_INSTANCE = new NativeToken('/*',(interpreter) => {
 	const pl = new ParserLocation(interpreter.parserContext.wordStream);
 	const commented = interpreter.parserContext.wordStream.getToMatching("*/");
-	if(commented === null) throw new Error(pl.makeErrorMessage("cannot find matching */"));
+	if(commented == null) throw new Error(pl.makeErrorMessage("cannot find matching */"));
 	return true;
 });
 
@@ -439,7 +439,7 @@ export const DOTNOW_INSTANCE = new InterpreterToken('.NOW',[MAKENOW_INSTANCE,EMI
 export const NEWLINE_INSTANCE = new LiteralToken('\n',"\n");
 export const NEWLINERT_INSTANCE = new InterpreterToken("\nRT",[NEWLINE_INSTANCE,EMIT_INSTANCE]);
 
-export const VERSION_INSTANCE = new NativeToken('Version',(interpreter) => { interpreter.push(Hairball.VERSION); return true; });
+export const VERSION_INSTANCE = new NativeToken('Version',(interpreter) => { interpreter.push("FOOFOO"); return true; });
 
 export const MAKEMAP_INSTANCE = new NativeToken('MakeMap',(interpreter) => {
 	interpreter.push({});
@@ -473,7 +473,7 @@ export const SETEMIT_INSTANCE = new NativeToken('SetEmit',(interpreter) => {
 });
 
 export const ISNULL_INSTANCE = new NativeToken('isNull',(interpreter) => {
-	interpreter.push(interpreter.pop() === null);
+	interpreter.push(interpreter.pop() == null);
 	return true;
 });
 
