@@ -3,8 +3,8 @@ class TokenScanner {
 	pointer; // where we are in the data.
 	_mark; // copy of pointer we can restore later, we only need one level of mark/restore
 	
-	constructor(data) {
-		this.data = data;
+	constructor(qqqdata) {
+		this.data = qqqdata;
 		this.pointer = 0;
 		this._mark = -1;
 	}

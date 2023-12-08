@@ -98,12 +98,14 @@ class Parser {
 		const definition = this.currentContext.dictionary.lookUp(word);
 		if(definition != null) {
 			this.flushLitAccum();
-			const compileTime = definition.getCompileTime();
+			const compileTime = definition.compileTime;
 			this.currentContext.interpreter.push(definition);
 			rv = this.currentContext.interpreter.execute(compileTime);
 		} else {
 			this.handleLiteralWord(word);
+			rv = true; // else definitions die after a literal! 
 		}
+		return rv;
 	}
 	
 	handleLiteralWord(lWord) {
@@ -122,7 +124,7 @@ class Parser {
 				this.emit.execute(this.currentContext.interpreter);
 			} else {
 				this.currentContext.dictionary.addToken(token);
-				this.currentContext.dictionary.addToken(Emit.INSTANCE);
+				this.currentContext.dictionary.addToken(EMIT_INSTANCE);
 			}
 		}
 	}

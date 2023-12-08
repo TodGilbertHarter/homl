@@ -1,6 +1,7 @@
 import Vocabulary from './vocabulary.js';
 import InterpreterToken from './interpretertoken.js';
 import Definition from './definition.js';
+import { COMPILE_INSTANCE } from './tokens.js';
 
 class EmptyDefinition {
 	name;
@@ -19,6 +20,10 @@ class EmptyDefinition {
 	
 	addRuntimeToken(token) {
 		this.runTime.push(token);
+	}
+	
+	makeDefinition() {
+		return new Definition(this.name,new InterpreterToken(`${name}_CT`,this.compileTime),new InterpreterToken(`${name}_RT`,this.runTime));
 	}
 }
 
@@ -91,7 +96,7 @@ class Dictionary {
 	isDoer() { return this.doer; }
 	
 	addToken(token) {
-		this.doerDoes.accept(token);
+		this.doerDoes(token);
 	}
 	
 	create(name) {
@@ -103,21 +108,15 @@ class Dictionary {
 	}
 	
 	addToRuntime(token) {
-		this.currentDefinition.addToRuntime(token);
+		this.currentDefinition.addRuntimeToken(token);
 	}
 	
 	define() {
 		if(this.currentDefinition.compileTime.length == 0) {
-			const compile = new NativeToken("compile",(interpreter) => {
-				const ourDef = interpreter.pop();
-				const rToken = ourDef.runTime;
-				interpreter.parserContext.dictionary.addToken(rToken);
-				return true;
-			});
-			currentDefinition.addCompileToken(compile);
+			this.currentDefinition.addCompileToken(COMPILE_INSTANCE);
 		}
-		const def = this.currentDefinition;
-		this.add(def);
+		const def = this.currentDefinition.makeDefinition();
+		this.addDefinition(def);
 		this.currentDefinition = new EmptyDefinition();
 		return def;
 	}

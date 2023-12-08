@@ -1,3 +1,5 @@
+import Context from './context.js';
+
 class InterpreterToken {
 	name;
 	tokens;
@@ -16,11 +18,11 @@ class InterpreterToken {
 	}
 	
 	execute(interpreter) {
-		var newContext = new Context(tokens,0);
+		var newContext = new Context(this.tokens,0);
 		interpreter.jumpToContext(newContext);
 		var ctx = interpreter.executeContext();
 		interpreter.returnFromContext();
-		return ctx.isContinue();
+		return ctx.continueFlag;
 	}
 }
 

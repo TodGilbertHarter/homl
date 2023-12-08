@@ -7,7 +7,7 @@
 		<title>Hairball Test Page</title>
 	</head>
 	<body>
-		<textarea cols='60' rows='20' id="input"></textarea>
+		<textarea cols='60' rows='20' wrap="hard" id="input"></textarea>
 		<button id="doit">Do It</button>
 		<div id="output"></div>
 		<script type="module">
@@ -22,7 +22,7 @@
 			let doit = document.getElementById('doit');
 			doit.onclick = () => {
 				let so = new StringOutput("");
-				let intext = inarea.value;
+				let intext = inarea.value.toString();
 				let sws = new StringWordStream(intext);
 				hb.setIO(sws,so);
 				hb.execute();
