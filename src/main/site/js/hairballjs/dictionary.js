@@ -54,7 +54,7 @@ class Dictionary {
 	
 	createVocabulary(name) {
 		const nVocab = new Vocabulary(name);
-		this.addVocabularyToList(nVocab);
+		this.addToVocabularyList(nVocab);
 		return nVocab;
 	}
 	

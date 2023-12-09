@@ -11,7 +11,8 @@
 		"firebase-app": "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js",
 		"firebase-firestore": "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js",
 		"firebase-auth": "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js",
-		"glmatrix": "https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"
+		"glmatrix": "https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js",
+		"rpgdice": "https://cdn.jsdelivr.net/npm/rpgdicejs@2.0.3/+esm"
 	}
 }
 </script>

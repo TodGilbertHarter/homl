@@ -34,7 +34,7 @@ class StringWordStream {
 	inputScanner = null;
 	
 	constructor(inStr) {
-		this.inputScanner = new TokenScanner(input);
+		this.inputScanner = new TokenScanner(this.input);
 		this.reader = new StringReader(inStr);
 	}
 

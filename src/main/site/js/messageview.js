@@ -148,9 +148,10 @@ class Messager extends LitElement {
 	}
 	
 	postClicked() {
-		const v = this.bigInputRef.value.value;
+		let v = this.bigInputRef.value.value;
+		v = window.gebApp.controller.runHairballProgram(v);
 		if(v !== '')
-			this.dispatchEvent(new CustomEvent('postaction',{bubbles: true, composed: true, detail: {text: this.bigInputRef.value.value}}));
+			this.dispatchEvent(new CustomEvent('postaction',{bubbles: true, composed: true, detail: {text: v}}));
 	}
 	
 	render() {

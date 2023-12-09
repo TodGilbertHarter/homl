@@ -15,6 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { schema, getReference, resolveReference } from './schema.js';
+import {gameContext} from './context.js';
 
 class Controller {
 	/** @private */ gebApp;
@@ -35,6 +36,7 @@ class Controller {
 	/** @private */ imageRepo;
 	/** @private */ originRepo;
 	/** @private */ preAuthPath;
+	/** @private */ context;
 		
 	constructor(gebApp,view,authenticator,router,gameRepo,characterRepo,characterController,callingRepo,speciesRepo,
 		backgroundRepo,originRepo,equipmentRepo,boonRepo,featRepo,playerRepo,npcRepo,imageRepo) {
@@ -57,6 +59,7 @@ class Controller {
 		this.npcRepo = npcRepo;
 		this.imageRepo = imageRepo;
 		this.preAuthPath = window.location.hash;
+		this.context = gameContext;
 		this.router.add(/signup/,() => { this.view.displaySignUpUI(); });
 		this.router.add(/signin/,() => { this.view.displaySignInUI(); });
 		this.router.add(/signout/,() => { this.view.displaySignOutUI(); });
@@ -70,6 +73,13 @@ class Controller {
 		this.router.add(/boons/,() => {this.view.displayBoonList(); });
 		this.router.add(/npcs/,() => {this.view.displayNpcList(); });
 		this.actions = {};
+	}
+
+	/**
+	 * Run some hairball using the application context's hairball interpreter.
+	 */
+	runHairballProgram(program) {
+		return this.context.runHairball(program);
 	}
 
 	/**

@@ -3,7 +3,8 @@ import HbVocabulary from './hairballvocabulary.js';
 import Interpreter from './interpreter.js';
 import Parser from './parser.js';
 import ParserContext from './parsercontext.js';
-import Context from './context.js';
+import StringOutput from './stringoutput.js';
+import StringWordStream from './stringwordstream.js';
 
 class Hairball {
 	static VERSION = 0.6; //figure out how to set this during build.
@@ -29,6 +30,18 @@ class Hairball {
 	setInput(newWordStream) {
 		const output = this.parser.context.output;
 		this.setIO(newWordStream,output);
+	}
+	
+	/**
+	 * This is the most straightforward way to use hairballjs, just
+	 * pass it a 'program' (any string) and it will return the output
+	 * resulting from running it.
+	 */
+	run(program) {
+		const so = new StringOutput("");
+		this.setIO(new StringWordStream(program),so);
+		this.execute();
+		return so.out;
 	}
 	
 	execute() {

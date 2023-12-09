@@ -28,7 +28,7 @@ export const QUOTE_INSTANCE = new NativeToken('Quote',(interpreter) => {
 	if(quoted == null) {
 		throw new Error(pl.makeErrorMessage('/" failed to find matching "/'));
 	}
-	quoted = quoted.strip();
+	quoted = quoted.trim();
 	interpreter.push(quoted);
 	return true;
 });
@@ -352,7 +352,7 @@ export const CREATEVOCAB_INSTANCE = new NativeToken("CreateVocab",(interpreter) 
 });
 
 export const ADDVOCABTOSTACK_INSTANCE = new NativeToken("AddVocabToStack",(interpreter) => {
-	interpreter.parserContext.dictionary.addVocabulary(interpreter.pop());
+	interpreter.parserContext.dictionary.add(interpreter.pop());
 	return true;
 });
 
