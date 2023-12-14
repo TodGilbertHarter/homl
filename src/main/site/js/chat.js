@@ -16,7 +16,7 @@
 */
 
 import { BaseRepository } from './baserepository.js';
-import { schema, getDb, getReference } from './schema.js';
+import { schema, getDb, getReference, refToId } from './schema.js';
 import { query, where, collection, onSnapshot, Timestamp } from 'firebase-firestore';
 
 /**
@@ -43,10 +43,11 @@ class Message {
 const messageConverter = {
 	toFirestore(message) {
 		const d = {
+			version: 1.0,
 			content: message.content,
 			id: message.id,
 			threadid: message.threadId,
-			sendId: message.senderId,
+			senderId: getReference(schema.messages,message.senderId),
 			gameId: message.gameId,
 			sendTime: message.sendTime
 		};
@@ -57,7 +58,8 @@ const messageConverter = {
 	fromFirestore(snapshot, options) {
 		const id = snapshot.id;
 		const data = snapshot.data(options);
-		return new Message(id,data.threadId,data.senderId,data.gameId,data.content,data.sendTime)
+		let sid = refToId(data.senderId);
+		return new Message(id,data.threadId,sid,data.gameId,data.content,data.sendTime);
 	}
 
 }
@@ -91,7 +93,8 @@ class Chat extends BaseRepository {
 	
 	_subscribe() {
 		if(!this._unsub) {
-			const q = query(collection(getDb(),schema.messages), where("gameId","==",getReference(schema.games,this.gameId)));
+			const q = query(collection(getDb(),schema.messages).withConverter(messageConverter),
+				where("gameId","==",getReference(schema.games,this.gameId)));
 			this._unsub = onSnapshot(q, (querySnapshot) => this._onUpdate(querySnapshot));
 		}
 	}

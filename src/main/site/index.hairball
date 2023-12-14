@@ -78,6 +78,7 @@
 /MODULE" js/imagerender.js"/
 /MODULE" js/bookmarklist.js"/
 /MODULE" js/ownedlist.js"/
+/MODULE" js/macros.js"/
 /SIGNINDIALOG SIGNINDIALOG/
 /SIGNUPDIALOG SIGNUPDIALOG/
 /SOURCE" embedded_charactersheet.html"/

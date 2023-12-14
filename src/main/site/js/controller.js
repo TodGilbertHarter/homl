@@ -81,6 +81,10 @@ class Controller {
 	runHairballProgram(program) {
 		return this.context.runHairball(program);
 	}
+	
+	addToContext(key,value) {
+		this.context[key] = value;
+	}
 
 	/**
 	 * Add an owned record to the current player's list of owned
@@ -330,11 +334,13 @@ class Controller {
 	 */
 	doSignUp(email, password, handle, onSuccess, onFailure) {
 		this.authenticator.createUserWithEmailAndPassword(email,password,handle,onSuccess,onFailure);
+		this.compileCurrentPlayerMacros();
 	}
 	
 	updateCurrentPlayer() {
 		const cp = this.getCurrentPlayer();
 		this.playerRepo.savePlayer(cp);
+		this.compileCurrentPlayerMacros();
 	}
 	
 	/**
@@ -342,8 +348,15 @@ class Controller {
 	 */
 	doSignIn(email, password, onSuccess, onFailure) {
 		this.authenticator.signInWithEmailAndPassword(email,password, onSuccess, onFailure);
+		this.compileCurrentPlayerMacros();
 	}
-	
+
+	compileCurrentPlayerMacros() {
+		const cp = this.getCurrentPlayer();
+		if(cp.macroset) {
+			this.context.compileMacroSet(cp.macroset);
+		}
+	}	
 	/**
 	 * Command the authenticator to sign the user out.
 	 */

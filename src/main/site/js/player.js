@@ -14,6 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+import { MacroSet } from './macros.js';
 class Player {
 	id;
 	uid;
@@ -21,14 +22,16 @@ class Player {
 	owned;
 	handle;
 	bookMarks;
+	macroset;
 	
-	constructor(id, uid, loggedIn, owned, handle, bookMarks) {
+	constructor(id, uid, loggedIn, owned, handle, bookMarks, macroset) {
 		this.id = id;
 		this.uid = uid;
 		this.loggedIn = loggedIn;
 		this.owned = owned === undefined ? [] : owned;
 		this.handle = handle;
 		this.bookMarks = bookMarks === undefined ? [] : bookMarks;
+		this.macroset = macroset === undefined ? new MacroSet(null,id,[],`${this.handle} macros`,`player macros for ${this.handle}`) : macroset;
 	}
 	
 	toString() {

@@ -25,11 +25,16 @@ class MessageView extends LitElement {
 		messageid: {},
 		senderid: {},
 		gameid: {},
-		sendtime: {}
+		sendtime: {},
+		_senderName: { state: true}
 	}
 	
 	constructor() {
 		super();
+	}
+	
+	firstUpdated() {
+		window.gebApp.controller.getPlayerById(this.senderid,(player) => { this._senderName = player.handle; });
 	}
 	
 	render() {
@@ -38,8 +43,22 @@ class MessageView extends LitElement {
 			border: 1px solid var(--theme-border);
 			border-radius: 6px;
 		}
+		.header {
+			display: flex;
+		}
+		.time {
+			flex: 1;
+			text-align: left;
+		}
+		.from {
+			flex: 1;
+			text-align: right;
+		}
 		</style>
-		<div class='messageview'><span>${this.sendtime}</span><slot></slot></div>`;
+		<div class='messageview'>
+			<div class='header'><div class='time'>${this.sendtime}</div><div class='from'>From: ${this._senderName}</div></div>
+			<slot></slot>
+		</div>`;
 	}
 }
 
@@ -72,7 +91,13 @@ class MessageListView extends LitElement {
 	
 	render() {
 		return html`
-		<div>${repeat(this._messages,(item,index) => { return html`<message-view sendtime='${this.renderSendTime(item.sendTime)}'><div>${item.content}</div></message-view>`})}</div>`;
+		<style>
+		.listcontainer {
+			overflow-y: scroll;
+			max-height: 100%;
+		}
+		</style>
+		<div class='listcontainer'>${repeat(this._messages,(item,index) => { return html`<message-view sendtime='${this.renderSendTime(item.sendTime)}' senderid=${item.senderId}><div>${item.content}</div></message-view>`})}</div>`;
 	}
 }
 
@@ -117,7 +142,13 @@ class ConversationViewer extends LitElement {
 		this._chat = new Chat(this.gameid);
 		this._chat.addListener(this.uh);
 		this.addEventListener('postaction', (e) => {
-			const message = new Message(null,this.threadid,window.gebApp.controller.getCurrentPlayerRef(),getReference(schema.games,this.gameid),e.detail.text,0);
+			const message = new Message(
+				null,
+				this.threadid,
+				window.gebApp.controller.getCurrentPlayer().id,
+				getReference(schema.games,this.gameid),
+				e.detail.text,
+				0);
 			this.sendChatMessage(message);
 		});
 	}

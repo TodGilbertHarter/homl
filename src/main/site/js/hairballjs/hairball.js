@@ -60,6 +60,10 @@ class Hairball {
 	getInterpreterContext() {
 		return this.interpreter.currentContext;
 	}
+	
+	getDictionary() {
+		return this.parser?.currentContext?.dictionary;
+	}
 }
 
 export default Hairball;

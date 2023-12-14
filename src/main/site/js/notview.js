@@ -52,7 +52,6 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 	}
 	
 	displayPlayerSettings(playerId) {
-		console.log("WHAT IS THE MFING ID! "+playerId);
 		const displayarea = this.theDocument.getElementById('mainappview');
 		displayarea.innerHTML = `<player-settings id='playersettingsviewer' playerid=${playerId}></player-settings>`;
 	}

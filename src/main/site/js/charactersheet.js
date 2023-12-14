@@ -23,7 +23,6 @@ import { PlayerRepository } from './playerrepository.js'
 import {ref, createRef} from 'lit2/ref';
 import {repeat} from 'lit2/repeat';
 import {BoonDetailRenderer} from './boonview.js';
-import { BoonRepository } from './boonrepository.js';
 import { Boon } from './boon.js';
 import {Equipment} from './equipment.js';
 import {schema} from './schema.js';
@@ -1825,6 +1824,7 @@ class CharacterController {
 	}
 	
 	populateCharacter(sheet,character,created) {
+		window.gebApp.controller.addToContext('currentCharacter',character);
 		this.speciesRepo.getAllSpecies((speciesList) => {
 			this.callingRepo.getAllCallings((callingsList) => {
 				this.backgroundRepo.getCategorizedBackgrounds((backgroundsMap) => {

@@ -18,6 +18,7 @@ import { collection, doc, setDoc, addDoc, query, where, getDocs, getDoc, Documen
 import { Player } from './player.js';
 import { BaseRepository } from './baserepository.js';
 import { schema, getDb, getReference } from './schema.js';
+import { macroConverter } from './macros.js';
 
 const random = (length = 8) => {
     // Declare all characters
@@ -40,13 +41,15 @@ const playerConverter = {
 			loggedin: player.loggedIn,
 			owned: player.owned,
 			handle: player.handle,
-			bookMarks: player.bookMarks
+			bookMarks: player.bookMarks,
+			macroset: macroConverter.toFirestore(player.macroset)
 		}
 	},
+	
 	fromFirestore(snapshot,options) {
 		const id = snapshot.id;
 		const data = snapshot.data(options);
-		return new Player(id,data.uid,data.loggedin,data.owned,data.handle,data.bookMarks);
+		return new Player(id,data.uid,data.loggedin,data.owned,data.handle,data.bookMarks,macroConverter.fromFirestore(data.id,data.macroset));
 	}
 };
 

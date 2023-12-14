@@ -28,10 +28,9 @@ class BigInput extends LitElement {
 		actual: {type: Number, reflect: true},
 		value: {reflect: true},
 		wrap: {},
-		placeholder: {}
+		placeholder: {},
+		enabled: {}
 	};
-	
-	/** @private */ taref = createRef();
 	
 	constructor() {
 		super();
@@ -41,8 +40,10 @@ class BigInput extends LitElement {
 		this.value = '';
 		this.wrap = 'hard';
 		this.placeholder = '';
+		this.enabled = 'true';
+		this.taref = createRef();
  	}
-
+ 	
 	render() {
 		return html`<style>
 		.container {
@@ -55,7 +56,7 @@ class BigInput extends LitElement {
 		}
 		</style>
 		<div class='container'>
-			<textarea placeholder=${this.placeholder} rows=${this.rows} cols=${this.cols} @input=${this.onInput} ${ref(this.taref)} wrap=${this.wrap}>${this.value}</textarea>
+			<textarea placeholder=${this.placeholder} rows=${this.rows} cols=${this.cols} @input=${this.handleInput} ${ref(this.taref)} wrap=${this.wrap}>${this.value}</textarea>
 			<div class='counter'>${this.actual}/${this.max}</div>
 		</div>`;
 	}
@@ -63,17 +64,30 @@ class BigInput extends LitElement {
 	setValue(v) {
 		this.value = v;
 		this.taref.value.value = v;
+		this.actual = v.length;
 	}
 	
-	onInput(e) {
+	handleInput(e) {
 		const ta = this.taref.value;
 		this.value = ta?.value;
 		this.actual = this.value.length;
+//		if(this.oninput)
+//			this.oninput(this.value);
 	}
 	
 	firstUpdated() {
 		const nref = this.taref.value;
 		this.actual = nref?.value.length;
+	}
+	
+	updated() {
+		const nref = this.taref.value;
+		
+		if(this.enabled === 'false') {
+			nref.disabled = true;
+		} else {
+			nref.disabled = false;
+		}
 	}
 }
 

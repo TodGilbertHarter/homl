@@ -35,7 +35,8 @@ const schema = {
 	equipment: 'equipment',
 	messages: 'messages',
 	npcs: 'npcs',
-	images: 'images'
+	images: 'images',
+	macros: 'macros'
 };
 
 const repoRegistry = {
@@ -61,10 +62,20 @@ const resolveReference = (ref,onSuccess) => {
 	repo.dtoFromReference(ref,onSuccess);
 }
 
+const resolveReferenceAsync = async (ref) => {
+	var schema = ref.path.split('/')[0];
+	var repo = getRepoForSchema(schema);
+	return await repo.dtoFromReferenceAsync(ref);
+}
+
 const getReference = (schema,id) => {
 	return doc(getDb(),schema,id);
 }
 
+const refToId = (ref) => {
+	return ref.id;
+}
+
 const getDb = () => { return window.gebApp.firestore }
 
-export { schema, getReference, getDb, registerRepository, resolveReference, getRepository };
+export { schema, getReference, getDb, registerRepository, resolveReference, resolveReferenceAsync, getRepository, refToId };

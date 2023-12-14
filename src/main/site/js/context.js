@@ -20,6 +20,7 @@ import * as TOKENS from './hairballjs/tokens.js';
 import Definition from './hairballjs/definition.js';
 import Word from './hairballjs/word.js';
 import NativeToken from './hairballjs/nativetoken.js';
+import Vocabulary from './hairballjs/vocabulary.js';
 
 /**
  * The purpose of this class is to supply an isolated context which will hold
@@ -92,6 +93,28 @@ Lets try rendering that last one: /ROLL" (3d6+4)/2"/ /RENDER /.
 	
 	runHairball(program) {
 		return this.hairball.run(program);
+	}
+	
+	/**
+	 * Compile a macro set. The result will be a vocabulary named
+	 * after the set, with definitions named after the macros in the
+	 * set.
+	 */
+	compileMacroSet(macroSet) {
+		const vocabName = macroSet.name;
+		const dict = this.hairball.getDictionary();
+		let vocab = dict.findVocabulary(vocabName);
+		if(!vocab || (vocab.ownerId === macroSet.ownerId) ) { // doesn't exist or is owned by same owner as macroset
+			vocab = new Vocabulary(vocabName);
+			vocab.ownerId = macroSet.ownerId; // so we can keep track of who defined what
+			macroSet.macros.forEach((macro) => {
+				dict.makeCurrent(vocab);
+				this.runHairball(`/: ${macro.name} ${macro.source} :/`);
+			});
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
