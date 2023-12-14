@@ -81,6 +81,9 @@
 /MODULE" js/macros.js"/
 /SIGNINDIALOG SIGNINDIALOG/
 /SIGNUPDIALOG SIGNUPDIALOG/
+/ABOUTPAGE
+/SOURCE" about.hairball"/
+ABOUTPAGE/
 /SOURCE" embedded_charactersheet.html"/
 /BODY
 /TOPBAR
@@ -115,6 +118,7 @@
 		</my-menu-item><my-menu-item class="dropdown right" label='Settings'>
 			<my-menu class='vertical dropdown-menu component' id="submenu4">
 				<my-menu-item label='Player' onclick='window.gebApp.controller.displayPlayerSettingsView();'></my-menu-item>
+				<my-menu-item label='About' onclick='window.gebApp.controller.displayAbout();'></my-menu-item>
 			</my-menu>
 		</my-menu-item>
 	</my-menu>

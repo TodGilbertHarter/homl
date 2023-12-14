@@ -31,6 +31,8 @@ Hairball.
 	<button class='dialogbutton' id='logindialogcancel' slot='buttonbar'>cancel</button>
 :/
 /: SIGNINDIALOG/ </template> :/
+/: /ABOUTPAGE <template id='abouttemplate'> :/
+/: ABOUTPAGE/ </template> :/
 /: /SIGNUPDIALOG
 	<template id='signup-dialog'>
 	<div slot='content' id='contents' style='width: 350px;'>
@@ -66,6 +68,8 @@ Hairball.
 /: /WIDGETPANEL <div class='widgetpanel'> :/
 /: /SESSION/ <session-widget id='sessionwidget'></session-widget> :/
 /: WIDGETPANEL/ </div> :/
+/: /H1 <h1> :/ /: H1/ </h1> :/
+/: /H2 <h2> :/ /: H2/ </h2> :/
 /* Enables double newline equivalency to a paragraph (implicit paragraphs). */
 /: /P <p> :/
 /:
