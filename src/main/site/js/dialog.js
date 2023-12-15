@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { html, LitElement } from 'lit2';
+import { html, LitElement } from 'lit3';
 
 class DialogWidget extends LitElement {
 	static properties = {

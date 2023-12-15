@@ -14,10 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { collection, doc, setDoc, addDoc, query, where, getDocs, getDoc, DocumentReference } from 'firebase-firestore';
 import { Player } from './player.js';
 import { BaseRepository } from './baserepository.js';
-import { schema, getDb, getReference } from './schema.js';
+import { schema, getReference } from './schema.js';
 import { macroConverter } from './macros.js';
 
 const random = (length = 8) => {

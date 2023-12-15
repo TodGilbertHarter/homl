@@ -15,9 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { html, LitElement } from 'lit2';
+import { html, LitElement, ref, createRef } from 'lit3';
 import { Player } from './player.js';
-import {ref, createRef} from 'lit2/ref';
 
 /**
  * Display and modify player settings.

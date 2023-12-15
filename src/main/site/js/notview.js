@@ -16,7 +16,7 @@
 */
 import { characterSheetFactory } from './charactersheet.js';
 
-class NotView { /* Closure Compiler had fits about the class name 'View', hence the weird name... */
+class NotView { 
 	/**
 	This class represents the application view. It should be used by all the other code to interface with
 	the DOM, etc. This allows us to abstract away the structure and organization of the UI's look.

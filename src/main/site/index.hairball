@@ -4,10 +4,10 @@
 <script type='importmap'>
 {
 	"imports": {
-		"lit2": "https://unpkg.com/lit@2/index.js?module",
-		"lit2/until": "https://unpkg.com/lit@2/directives/until.js?module",
+		"lit3": "https://cdn.jsdelivr.net/gh/lit/dist@3/all/lit-all.min.js",
+/*		"lit2/until": "https://unpkg.com/lit@2/directives/until.js?module",
 		"lit2/ref": "https://unpkg.com/lit@2/directives/ref.js?module",
-		"lit2/repeat": "https://unpkg.com/lit@2/directives/repeat.js?module",
+		"lit2/repeat": "https://unpkg.com/lit@2/directives/repeat.js?module", */
 		"firebase-app": "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js",
 		"firebase-firestore": "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js",
 		"firebase-auth": "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js",

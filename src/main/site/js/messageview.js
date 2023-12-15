@@ -14,10 +14,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { html, LitElement } from 'lit2';
-import {ref, createRef} from 'lit2/ref';
+import { html, LitElement, ref, createRef, repeat } from 'lit3';
 import {Chat, Message } from './chat.js';
-import {repeat} from 'lit2/repeat';
 import { schema, getReference } from './schema.js';
 
 class MessageView extends LitElement {

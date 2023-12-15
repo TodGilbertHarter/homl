@@ -15,8 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { html, LitElement, render } from 'lit2';
-import {ref, createRef} from 'lit2/ref';
+import { html, LitElement, render, ref, createRef } from 'lit3';
 import {Message, Chat } from './chat.js';
 
 class GameView extends LitElement {

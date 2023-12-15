@@ -14,9 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { html, LitElement } from 'lit2';
-import {ref, createRef} from 'lit2/ref';
-import {repeat} from 'lit2/repeat';
+import { html, LitElement, ref, createRef, repeat } from 'lit3';
 import {schema, getReference} from './schema.js';
 
 class CharacterSearch extends LitElement {

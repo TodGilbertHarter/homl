@@ -15,13 +15,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { html, LitElement, render } from 'lit2';
+import { html, LitElement, render, ref, createRef, repeat } from 'lit3';
 import { Rules } from './rules.js';
 import { Background } from './background.js';
 import { Character } from './character.js';
 import { PlayerRepository } from './playerrepository.js'
-import {ref, createRef} from 'lit2/ref';
-import {repeat} from 'lit2/repeat';
 import {BoonDetailRenderer} from './boonview.js';
 import { Boon } from './boon.js';
 import {Equipment} from './equipment.js';
