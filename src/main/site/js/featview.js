@@ -15,9 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { html, LitElement, render } from 'lit2';
-import {repeat} from 'lit2/repeat';
-import {ref, createRef} from 'lit2/ref';
+import { html, LitElement, render, repeat, ref, createRef } from 'lit3';
 
 /**
  * Class to view all the feats in the game.

@@ -15,10 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { html, LitElement } from 'lit2';
-
-/** @private */ const SessionWidgettemplate = document.createElement('template');
-SessionWidgettemplate.innerHTML = `<style>.component { box-shadow: 3px 3px 5px 0px var(--shadow-color) }</style><div class='sessionwidget' part='button' id='button'><slot name='text'><button class='component' id='signinbutton'>Sign In</button></slot></div>`;
+import { html, LitElement } from 'lit3';
 
 /**
  * Implements a widget which shows login status and initiates login and logout.

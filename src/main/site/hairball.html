@@ -5,9 +5,17 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Hairball Test Page</title>
+		<script type='importmap'>
+		{
+			"imports": {
+				"lit3": "https://cdn.jsdelivr.net/gh/lit/dist@3/all/lit-all.min.js"
+			}
+		}
+		</script>
+		<script type="module" src="js/biginput.js"></script>
 	</head>
 	<body>
-		<textarea cols='60' rows='20' wrap="hard" id="input"></textarea>
+		<big-input cols='60' rows='20' wrap="hard" id="input"></big-input>
 		<button id="doit">Do It</button>
 		<div id="output"></div>
 		<script type="module">

@@ -7,7 +7,6 @@ buildscript {
 	}
 	
 	dependencies {
-		classpath "com.google.javascript:closure-compiler:v20211201"
 		classpath group: 'com.timgroup',
 		name: 'gradle-webpack-plugin',
 		version: '1.1.0'
@@ -25,6 +24,7 @@ plugins {
 }
 
 apply plugin: com.timgroup.gradle.webpack.WebpackPlugin
+import org.apache.tools.ant.filters.ReplaceTokens
 
 configurations {
 	saxon
@@ -42,7 +42,7 @@ repositories {
  * not really relevant anymore. They are retained here mostly for historical purposes and can
  * be ignored or deleted as needed.
  */
- 
+
 task copySaxon(type: Copy) {
 	description 'get a copy of saxon binary into build dir'
 	from configurations.saxon
@@ -219,8 +219,18 @@ task deployHoMLRules(type: Exec) {
 	commandLine './scripts/deployHoMLRules.sh', project.version
 }
 
+task jsversion(type: Exec) {
+	description 'create version.js file'
+	dependsOn 'version'
+	commandLine './scripts/generateVersion.sh', project.version, 'src/main/site/version.template', "$buildDir/site/js/version.js" 	
+	inputs.file('scripts/generateVersion.sh')
+	inputs.file('src/main/site/version.template')
+	outputs.file("$buildDir/site/js/version.js")
+}
+
 task copyGEBSite(type: Exec) {
 	description 'copy source files for GEB to temp area in build directory'
+	dependsOn 'jsversion'
 	inputs.files(fileTree('src/main/site'))
 	inputs.file('scripts/copyGEBSite.sh')
 	inputs.file(file('src/main/rules/html.hairball'))

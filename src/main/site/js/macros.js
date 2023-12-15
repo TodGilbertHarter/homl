@@ -14,11 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { BaseRepository } from './baserepository.js';
-import { schema, getReference } from './schema.js';
-import { LitElement, html } from 'lit2'; 
-import {repeat} from 'lit2/repeat';
-import {ref, createRef} from 'lit2/ref';
+import { LitElement, html, repeat, ref, createRef } from 'lit3'; 
 
 /**
  * Everything related to macros goes in this module.

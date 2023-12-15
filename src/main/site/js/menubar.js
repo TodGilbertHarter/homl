@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { html, LitElement } from 'lit2';
+import { html, LitElement } from 'lit3';
 
 /**
  * List-based menuing system which uses templates and slots coupled with

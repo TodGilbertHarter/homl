@@ -72,9 +72,18 @@ class Controller {
 		this.router.add(/feats/,() => {this.view.displayFeatList(); });
 		this.router.add(/boons/,() => {this.view.displayBoonList(); });
 		this.router.add(/npcs/,() => {this.view.displayNpcList(); });
+		this.router.add(/about/,() => {this.view.displayAbout(this.version());});
 		this.actions = {};
 	}
 
+	displayAbout() {
+		window.location.hash = '/about';
+	}
+	
+	version() {
+		return gebApp.version();
+	}
+	
 	/**
 	 * Run some hairball using the application context's hairball interpreter.
 	 */
@@ -353,7 +362,7 @@ class Controller {
 
 	compileCurrentPlayerMacros() {
 		const cp = this.getCurrentPlayer();
-		if(cp.macroset) {
+		if(cp?.macroset) {
 			this.context.compileMacroSet(cp.macroset);
 		}
 	}	

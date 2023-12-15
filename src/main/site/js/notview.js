@@ -16,7 +16,7 @@
 */
 import { characterSheetFactory } from './charactersheet.js';
 
-class NotView { /* Closure Compiler had fits about the class name 'View', hence the weird name... */
+class NotView { 
 	/**
 	This class represents the application view. It should be used by all the other code to interface with
 	the DOM, etc. This allows us to abstract away the structure and organization of the UI's look.
@@ -153,6 +153,14 @@ class NotView { /* Closure Compiler had fits about the class name 'View', hence 
 		this.clearTabs();
 	}
 
+	displayAbout(version) {
+		const displayarea = this.theDocument.getElementById('mainappview');
+		const aboutTemplate = this.theDocument.getElementById('abouttemplate');
+		displayarea.innerHTML = aboutTemplate.innerHTML;
+		const v = displayarea.querySelector('#version');
+		v.innerText = window.gebApp.controller.version();
+	}
+	
 	/**
 	 * This handles displaying any ui elements which are specific to authenticated
 	 * users, and then reroutes us to the original path that was present before the

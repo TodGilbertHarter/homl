@@ -16,6 +16,7 @@ import { FeatRepository } from './featrepository.js';
 import { NpcRepository } from './npcrepository.js';
 import { ImageRepository } from './imagerepository.js';
 import { registerRepository, schema } from './schema.js';
+import VERSION from './version.js';
 
 class Application {
 	featRepo;
@@ -74,6 +75,10 @@ class Application {
 			this.router,this.gameRepo,this.characterRepo,this.characterController,
 			this.callingRepo,this.speciesRepo,this.backgroundRepo,this.originRepo,this.equipmentRepo,this.boonRepo,this.featRepo,
 			this.playerRepo,this.npcRepo,this.imageRepo);
+	}
+	
+	version() {
+		return VERSION();
 	}
 }
 

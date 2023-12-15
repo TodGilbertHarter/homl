@@ -4,10 +4,10 @@
 <script type='importmap'>
 {
 	"imports": {
-		"lit2": "https://unpkg.com/lit@2/index.js?module",
-		"lit2/until": "https://unpkg.com/lit@2/directives/until.js?module",
+		"lit3": "https://cdn.jsdelivr.net/gh/lit/dist@3/all/lit-all.min.js",
+/*		"lit2/until": "https://unpkg.com/lit@2/directives/until.js?module",
 		"lit2/ref": "https://unpkg.com/lit@2/directives/ref.js?module",
-		"lit2/repeat": "https://unpkg.com/lit@2/directives/repeat.js?module",
+		"lit2/repeat": "https://unpkg.com/lit@2/directives/repeat.js?module", */
 		"firebase-app": "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js",
 		"firebase-firestore": "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js",
 		"firebase-auth": "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js",
@@ -15,15 +15,6 @@
 		"rpgdice": "https://cdn.jsdelivr.net/npm/rpgdicejs@2.0.3/+esm"
 	}
 }
-</script>
-<script type="module">
-	import { html } from 'lit2';
- 	import {ref} from 'lit2/ref';
- 	import {repeat} from 'lit2/repeat';
-    import { initializeApp } from 'firebase-app';
-    import { getFirestore, collection, getDocs } from 'firebase-firestore';
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase-auth';
-	import {until} from 'lit2/until';
 </script>
 /MODULE" js/baserepository.js"/
 /MODULE" js/biginput.js"/
@@ -81,6 +72,9 @@
 /MODULE" js/macros.js"/
 /SIGNINDIALOG SIGNINDIALOG/
 /SIGNUPDIALOG SIGNUPDIALOG/
+/ABOUTPAGE
+/SOURCE" about.hairball"/
+ABOUTPAGE/
 /SOURCE" embedded_charactersheet.html"/
 /BODY
 /TOPBAR
@@ -115,6 +109,7 @@
 		</my-menu-item><my-menu-item class="dropdown right" label='Settings'>
 			<my-menu class='vertical dropdown-menu component' id="submenu4">
 				<my-menu-item label='Player' onclick='window.gebApp.controller.displayPlayerSettingsView();'></my-menu-item>
+				<my-menu-item label='About' onclick='window.gebApp.controller.displayAbout();'></my-menu-item>
 			</my-menu>
 		</my-menu-item>
 	</my-menu>
