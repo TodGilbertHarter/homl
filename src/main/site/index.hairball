@@ -16,15 +16,6 @@
 	}
 }
 </script>
-<script type="module">
-	import { html } from 'lit2';
- 	import {ref} from 'lit2/ref';
- 	import {repeat} from 'lit2/repeat';
-    import { initializeApp } from 'firebase-app';
-    import { getFirestore, collection, getDocs } from 'firebase-firestore';
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase-auth';
-	import {until} from 'lit2/until';
-</script>
 /MODULE" js/baserepository.js"/
 /MODULE" js/biginput.js"/
 /MODULE" js/fbconfig.js"/
