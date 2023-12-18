@@ -14,9 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { html, LitElement, ref, createRef, repeat } from 'lit3';
-import {Chat, Message } from './chat.js';
-import { schema, getReference } from './schema.js';
+import { html, css, LitElement, ref, createRef, repeat } from 'lit3';
+import { Task } from 'littask';
+import {Chat, Message, Conversation, ConversationRepository } from './chat.js';
+import { schema, getReference, getRepository } from './schema.js';
 import { EntityId, IdConverter } from './baserepository.js';
 
 class MessageView extends LitElement {
@@ -211,3 +212,73 @@ class Messager extends LitElement {
 
 window.customElements.define('conversation-messager',Messager);
 
+/** UI specific to stand-alone conversations */
+class ConversationClient extends LitElement {
+	static properties = {
+		playerid: { type: EntityId, converter: IdConverter}
+	}
+	
+	render() {
+		html`<h1>Conversations</h1>
+			<conversation-viewer messager='true' contextid=${this.contextid}></conversation-viewer>
+		`;
+	}	
+}
+
+window.customElements.define('conversation-client',ConversationClient);
+
+/**
+ * Lists all conversations containing the given player as a participant.
+ */
+class ConversationList extends LitElement {
+	static properties = {
+		playerid: { type: EntityId, converter: IdConverter },
+		_conversations: { state: true }
+	}
+	
+	_conversationsTask = new Task(this, {
+		task: async ([playerid]) => {
+			const convs = await window.gebApp.controller.getParticipantConversations(playerid);
+			return convs;
+		},
+		args: () => [this.playerid]
+	});
+	
+	constructor() {
+		super();
+		this.playerid = undefined;
+		this._conversations = [];
+	}
+		
+	static styles = css`
+	table {
+		width: 100%;
+	}
+	thead tr {
+		background-color: var(--theme-fg);
+		color: var(--theme-bg);
+	}
+	`;
+	
+	showConversation(e.target.//TODO: some dataset thing) {
+		window.gebApp.controller.displayConversation(id);
+	}
+	
+	render() {
+		return this._conversationsTask.render({
+			initial: () => '<p>Initializing</p>',
+			pending: () => '<p>Loading Data</p>',
+			complete: (value) => html`<table>
+					<thead>
+						<tr><th>Subject</th><th></th><th></th></tr>
+					</thead>
+					<tbody>
+						${repeat(value,(convo,index) => { return html`<tr><td>${convo.subject}</td><td><button @click=${this.showConversation}>Show</button></td><td><button>Leave</button></td></tr>`})}
+					</tbody>
+				</table>`,
+			error: (error) => html`<p>Failed to get conversations for user ${error}</p>`,
+		});
+	}
+}
+
+window.customElements.define('conversation-list',ConversationList);

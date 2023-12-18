@@ -16,7 +16,7 @@
 */
 import { characterSheetFactory } from './charactersheet.js';
 import { EntityId } from './baserepository.js';
-import { schema } from './schema.js';
+import { schema, getReference } from './schema.js';
 
 class NotView { 
 	/**
@@ -31,6 +31,11 @@ class NotView {
 	constructor(gebApp,adocument) {
 		this.gebApp = gebApp;
 		this.theDocument = adocument;
+	}
+	
+	displayConversation(id) {
+		const displayarea = this.theDocument.getElementById('mainappview');
+		displayarea.innerHTML = `<conversation-viewer contextid=${new EntityId(schema.conversations,id)} messager="true" threadid='1'></conversation-viewer>`;
 	}
 
 	displayPlayerMessages(playerId) {
@@ -136,6 +141,13 @@ class NotView {
 		this.addTabToLeftPanel('Owned',content,isactive);
 	}
 	
+	displayConversations(isactive) {
+		const currentplayerid = new EntityId(schema.players,this.controller.getCurrentPlayer().id);
+		const content = this.theDocument.createElement('tab-body');
+		content.innerHTML = `<conversation-list playerid='${currentplayerid}' id='lefttabconvlist' displayid='lefttabconvlist'></conversation-list>`;
+		this.addTabToLeftPanel('Chats',content,isactive);
+	}
+	
 	/**
 	 * Display the default tab arrangement.
 	 */
@@ -144,6 +156,7 @@ class NotView {
 		this.displayCharacterLister(false);
 		this.displayBookMarks(false);
 		this.displayOwned(false);
+		this.displayConversations(false);
 	}
 	
 	/**

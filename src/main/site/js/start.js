@@ -16,6 +16,7 @@ import { FeatRepository } from './featrepository.js';
 import { NpcRepository } from './npcrepository.js';
 import { ImageRepository } from './imagerepository.js';
 import { registerRepository, schema } from './schema.js';
+import { ConversationRepository } from './chat.js';
 import VERSION from './version.js';
 
 class Application {
@@ -31,6 +32,7 @@ class Application {
 	originRepo;
 	npcRepo;
 	imageRepo;
+	conversationRepo;
 	authenticator;
 	router;
 	view;
@@ -42,6 +44,8 @@ class Application {
 	constructor(firestore,fbProject,aDocument) {
 		this.firestore = firestore;
 		this.theDocument = aDocument;
+		this.conversationRepo = new ConversationRepository(this,firestore);
+		registerRepository(schema.conversations,this.conversationRepo);
 		this.featRepo = new FeatRepository(this,firestore);
 		registerRepository(schema.feats,this.featRepo);
 		this.boonRepo = new BoonRepository(this,firestore);
@@ -74,7 +78,7 @@ class Application {
 		this.controller = new Controller(this,this.view,this.authenticator,
 			this.router,this.gameRepo,this.characterRepo,this.characterController,
 			this.callingRepo,this.speciesRepo,this.backgroundRepo,this.originRepo,this.equipmentRepo,this.boonRepo,this.featRepo,
-			this.playerRepo,this.npcRepo,this.imageRepo);
+			this.playerRepo,this.npcRepo,this.imageRepo,this.conversationRepo);
 	}
 	
 	version() {

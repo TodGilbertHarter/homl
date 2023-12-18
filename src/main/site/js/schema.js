@@ -36,7 +36,8 @@ const schema = {
 	messages: 'messages',
 	npcs: 'npcs',
 	images: 'images',
-	macros: 'macros'
+	macros: 'macros',
+	conversations: 'conversations'
 };
 
 const repoRegistry = {

@@ -5,6 +5,7 @@
 {
 	"imports": {
 		"lit3": "https://cdn.jsdelivr.net/gh/lit/dist@3/all/lit-all.min.js",
+		"littask": "https://cdn.jsdelivr.net/npm/@lit/task/+esm",
 		"immer": "https://cdn.jsdelivr.net/npm/immer@10.0.3",
 		"firebase-app": "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js",
 		"firebase-firestore": "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js",

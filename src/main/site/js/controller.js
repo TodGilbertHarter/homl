@@ -35,11 +35,12 @@ class Controller {
 	/** @private */ npcRepo;
 	/** @private */ imageRepo;
 	/** @private */ originRepo;
+	/** @private */ conversationRepo;
 	/** @private */ preAuthPath;
 	/** @private */ context;
 		
 	constructor(gebApp,view,authenticator,router,gameRepo,characterRepo,characterController,callingRepo,speciesRepo,
-		backgroundRepo,originRepo,equipmentRepo,boonRepo,featRepo,playerRepo,npcRepo,imageRepo) {
+		backgroundRepo,originRepo,equipmentRepo,boonRepo,featRepo,playerRepo,npcRepo,imageRepo,convRepo) {
 		this.gebApp = gebApp;
 		this.view = view;
 		view.controller = this;
@@ -58,6 +59,7 @@ class Controller {
 		this.playerRepo = playerRepo;
 		this.npcRepo = npcRepo;
 		this.imageRepo = imageRepo;
+		this.conversationRepo = convRepo;
 		this.preAuthPath = window.location.hash;
 		this.context = gameContext;
 		this.router.add(/signup/,() => { this.view.displaySignUpUI(); });
@@ -70,6 +72,7 @@ class Controller {
 		this.router.add(/equipment/,() => {this.view.displayEquipmentList(); });
 		this.router.add(/playersettings/,() => {this.view.displayPlayerSettings(this.getCurrentPlayer().id); });
 		this.router.add(/playermessages\/(.*)/,(playerId) => {this.view.displayPlayerMessages(playerId); });
+		this.router.add(/conversations\/(.*)/,(id) => {this.view.displayConversation(id); });
 		this.router.add(/feats/,() => {this.view.displayFeatList(); });
 		this.router.add(/boons/,() => {this.view.displayBoonList(); });
 		this.router.add(/npcs/,() => {this.view.displayNpcList(); });
@@ -77,6 +80,14 @@ class Controller {
 		this.actions = {};
 	}
 
+	displayConversation(id) {
+		window.location.hash = `/conversations/${id}`;
+	}
+	
+	async getParticipantConversations(playerId) {
+		return await this.conversationRepo.getParticipantConversations(playerId);
+	}
+	
 	displayPlayerMessagesView(playerId) {
 		const useid = playerId ? playerId : this.getCurrentPlayer().id;
 		window.location.hash = `/playermessages/${useid}`;

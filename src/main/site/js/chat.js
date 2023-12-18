@@ -64,6 +64,53 @@ const messageConverter = {
 	}
 
 }
+
+class Conversation {
+	id;
+	participants;
+	subject;
+	
+	constructor(id,subject,participants) {
+		this.id = id ? id : new EntityId(schema.conversations);
+		this.subject = subject;
+		this.participants = participants ? participants : new Set();
+	}
+	
+}
+
+const conversationConverter = {
+	toFirestore(conversation) {
+		const d = {
+			version: 1.0,
+			id: conversation.id.idValue,
+			subject: conversation.subject,
+			participants: conversation.participants
+		};
+		return d;
+	},
+	
+	fromFirestore(snapshot, options) {
+		const id = new EntityId(schema.conversations,snapshot.id);
+		const data = snapshot.data(options);
+		return new Conversation(id, data.subject, data.participants);
+	}
+	
+}
+
+class ConversationRepository extends BaseRepository {
+	constructor() {
+		super(conversationConverter,schema.conversations);
+	}
+	
+	/**
+	 * Get all conversations a given player is a participant in.
+	 */
+	async getParticipantConversations(playerid) {
+		const pid = playerid.getReference();
+		return await this.findDtosAsync('participants',pid,'array-contains');
+	}
+}
+
 /**
  * Chat class, add a listener to this in order to be notified of any messages being sent for
  * the gameId/threadId this chat represents. Note that this will automatically manage subscribing and
@@ -147,4 +194,4 @@ class Chat extends BaseRepository {
 	}
 }
 
-export { Chat, Message};
+export { Chat, Message, Conversation, ConversationRepository};
