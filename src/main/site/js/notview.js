@@ -15,6 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { characterSheetFactory } from './charactersheet.js';
+import { EntityId } from './baserepository.js';
+import { schema } from './schema.js';
 
 class NotView { 
 	/**
@@ -29,6 +31,11 @@ class NotView {
 	constructor(gebApp,adocument) {
 		this.gebApp = gebApp;
 		this.theDocument = adocument;
+	}
+
+	displayPlayerMessages(playerId) {
+		const displayarea = this.theDocument.getElementById('mainappview');
+		displayarea.innerHTML = `<conversation-viewer contextid=${new EntityId(schema.players,playerId)} messager="true" threadid='1'></conversation-viewer>`;
 	}
 
 	displayEquipmentList() {

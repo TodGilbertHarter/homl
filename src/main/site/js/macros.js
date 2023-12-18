@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { LitElement, html, repeat, ref, createRef } from 'lit3'; 
+import { LitElement, html, css, repeat, ref, createRef } from 'lit3'; 
 
 /**
  * Everything related to macros goes in this module.
@@ -151,15 +151,36 @@ class MacroConsole extends LitElement {
 		this._macro.description = this.descriptionRef.value.value;
 		this._macro.source = this.sourceRef.value.value;
 	}
-	
+
+	static styles = css`
+		h1, h2 {
+			margin: 0px;
+		}
+		h2 {
+			font-size: 1.2em;
+		}
+		.macroConsole {
+			width: 100%;
+			border: 1px inset var(--theme-border);
+			border-radius: 6px;
+			padding-left: 3px;
+		}
+		#macroname {
+			width: 75%;
+		}
+		label {
+			margin-right: 2px;
+		}
+	`;
+
 	render() {
 		return html`<div class='macroConsole'>
 			<h2>Edit Macro</h2>
 			<label for='macroname'>Macro Name:</label><input id='macroname' type='text' value=${this._macro.name} ${ref(this.nameRef)} @input=${this.onInput}></input>
 			<h3>Description</h3>
-			<big-input value=${this._macro.description} enabled=${this.enabled} ${ref(this.descriptionRef)} @input=${this.onInput}></big-input>
+			<big-input cols='70' rows='5' value=${this._macro.description} enabled=${this.enabled} ${ref(this.descriptionRef)} @input=${this.onInput}></big-input>
 			<h3>Source</h3>
-			<big-input value=${this._macro.source} enabled=${this.enabled} ${ref(this.sourceRef)} @input=${this.onInput}></big-input>
+			<big-input cols='70' rows='5' value=${this._macro.source} enabled=${this.enabled} ${ref(this.sourceRef)} @input=${this.onInput}></big-input>
 		</div>`;
 	}
 }
@@ -233,24 +254,76 @@ class MacroSetManager extends LitElement {
 		this._macroset.description = this.macrosetDescriptionRef.value.value;
 	}
 	
+	static styles = css`
+		h1, h2 {
+			margin: 0px;
+		}
+		h2 {
+			font-size: 1.2em;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			border: 1px solid var(--theme-border);
+		}
+		thead tr {
+			font-size: 1.5em;
+			background-color: var(--theme-fg);
+			color: var(--theme-bg);
+		}
+		tbody tr {
+			background-color: var(--theme-bg);
+			color: var(-theme-fg);
+		}
+		tbody tr:nth-child(odd) {
+			background-color: var(--theme-bg-dark);
+		}
+		td {
+			padding-left: .5em;
+			padding-right: .5em;
+		}
+		th {
+			font-weight: bold;
+			padding-left: .5em;
+			padding-right: .5em;
+		}
+		.macroSetMgr {
+			margin-left: 2px;
+			width: 35em;
+			border: 1px solid var(--theme-border);
+			border-radius: 6px;
+			box-shadow: var(--component-shadow);
+			padding-left: 3px;
+		}
+		.ljcol {
+			text-align: left;
+		}
+		.ccol {
+			text-align: center;
+		}
+		#macrosetname {
+			width: 70%;
+		}
+	`;
+	
 	render() {
 		return html`<div class='macroSetMgr'>
 			<h1>Player Macros</h1>
 			<label for='macrosetname'>Macro Set Name:</label>
 			<input type='text' id='macrosetname' value=${this._macroset.name} @input=${this.onInput} ${ref(this.macrosetNameRef)}></input>
 			<h2>Description</h2>
-			<big-input value=${this._macroset.description} @input=${this.onInput} ${ref(this.macrosetDescriptionRef)}></big-input>
+			<big-input cols='70' rows='5' value=${this._macroset.description} @input=${this.onInput} ${ref(this.macrosetDescriptionRef)}></big-input>
 			<table>
 				<caption>Macros</caption>
 				<thead>
-					<tr><th>Macro Name</th><th>Description</th><th>Edit</th><th>Delete</th></tr>
+					<tr><th class='ljcol'>Macro Name</th><th class='ljcol'>Description</th><th class='ccol'>Edit</th><th class='ccol'>Delete</th></tr>
 				</thead>
 				<tbody>
 					${repeat(this._macroset.macros,(item,index) => html`<tr>
-						<td>${item.name}</td>
-						<td>${item.description}</td>
-						<td><button data-index=${index} @click=${this.editMacroClicked}>Edit</button></td>
-						<td><button data-index=${index} @click=${this.deleteMacroClicked}>X</button></td>
+						<td class='ljcol'>${item.name}</td>
+						<td class='ljcol'>${item.description}</td>
+						<td class='ccol'><button data-index=${index} @click=${this.editMacroClicked}>Edit</button></td>
+						<td class='ccol'><button data-index=${index} @click=${this.deleteMacroClicked}>X</button></td>
 					</tr>`)}
 				</tbody>
 			</table>

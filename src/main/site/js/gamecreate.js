@@ -14,14 +14,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { html, LitElement, ref, createRef } from 'lit3';
+import { html, LitElement, ref, createRef, nothing, css } from 'lit3';
 import { Game } from './game.js';
 
 class GameCreate extends LitElement {
 	static properties = {
 		_model: {attribute:false, state: true},
 		name: {},
-		description: {}
+		description: {},
+		save: {}
 	}
 	
 	constructor() {
@@ -29,30 +30,38 @@ class GameCreate extends LitElement {
 		this._model = null;
 		this.nameRef = createRef();
 		this.descriptionRef = createRef();
+		this.save = 'save';
  	}
 
+	renderSave() {
+		if(this.save !== 'save') return nothing;
+		return html`<button id='save' @click="${this.handleSaveButton}">Save</button>`;
+	}
+	
+	static styles = css`
+		div.list > div {
+			display: flex;
+		}
+		div.list > div > div {
+			flex: 1;
+		}
+		.clickable {
+			cursor: pointer;
+		}
+		.gamecreate {
+			width: fit-content;
+		}
+		input {
+			width: 97%;
+		}
+	`;
+	
 	render() {
-		return html`<style>
-			div.list > div {
-				display: flex;
-			}
-			div.list > div > div {
-				flex: 1;
-			}
-			.clickable {
-				cursor: pointer;
-			}
-			.gamecreate {
-				width: fit-content;
-			}
-			input {
-				width: 97%;
-			}
-		</style>
+		return html`
 		<div class='gamecreate' part='gamecreate' id='gamecreate'>
 			<label for='name'>Name:</label><input type='text' value=${this.name} id='name' ${ref(this.nameRef)}/>
 			<label for='description'>Description:</label><big-input rows='5' cols='100' max='500' value=${this.description} ${ref(this.descriptionRef)} id='description'></big-input>
-			<button id='save' @click="${this.handleSaveButton}">Save</button>
+			${this.renderSave()}
 		</div>`;
 	}
 	

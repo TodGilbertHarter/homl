@@ -69,11 +69,17 @@ class Controller {
 		this.router.add(/creategame/,() => { this.view.displayCreateGameUI(); });
 		this.router.add(/equipment/,() => {this.view.displayEquipmentList(); });
 		this.router.add(/playersettings/,() => {this.view.displayPlayerSettings(this.getCurrentPlayer().id); });
+		this.router.add(/playermessages\/(.*)/,(playerId) => {this.view.displayPlayerMessages(playerId); });
 		this.router.add(/feats/,() => {this.view.displayFeatList(); });
 		this.router.add(/boons/,() => {this.view.displayBoonList(); });
 		this.router.add(/npcs/,() => {this.view.displayNpcList(); });
 		this.router.add(/about/,() => {this.view.displayAbout(this.version());});
 		this.actions = {};
+	}
+
+	displayPlayerMessagesView(playerId) {
+		const useid = playerId ? playerId : this.getCurrentPlayer().id;
+		window.location.hash = `/playermessages/${useid}`;
 	}
 
 	displayAbout() {

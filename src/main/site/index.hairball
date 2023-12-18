@@ -5,9 +5,7 @@
 {
 	"imports": {
 		"lit3": "https://cdn.jsdelivr.net/gh/lit/dist@3/all/lit-all.min.js",
-/*		"lit2/until": "https://unpkg.com/lit@2/directives/until.js?module",
-		"lit2/ref": "https://unpkg.com/lit@2/directives/ref.js?module",
-		"lit2/repeat": "https://unpkg.com/lit@2/directives/repeat.js?module", */
+		"immer": "https://cdn.jsdelivr.net/npm/immer@10.0.3",
 		"firebase-app": "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js",
 		"firebase-firestore": "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js",
 		"firebase-auth": "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js",
@@ -106,9 +104,10 @@ ABOUTPAGE/
 				<my-menu-item label='Boons' onclick='window.gebApp.controller.displayBoonView();'></my-menu-item>
 				<my-menu-item label='Monsters' onclick='window.gebApp.controller.displayNpcView();'></my-menu-item>
 			</my-menu>
-		</my-menu-item><my-menu-item class="dropdown right" label='Settings'>
+		</my-menu-item><my-menu-item class="dropdown right" label='Tools'>
 			<my-menu class='vertical dropdown-menu component' id="submenu4">
-				<my-menu-item label='Player' onclick='window.gebApp.controller.displayPlayerSettingsView();'></my-menu-item>
+				<my-menu-item label='Settings' onclick='window.gebApp.controller.displayPlayerSettingsView();'></my-menu-item>
+				<my-menu-item label='Messages' onclick='window.gebApp.controller.displayPlayerMessagesView();'></my-menu-item>
 				<my-menu-item label='About' onclick='window.gebApp.controller.displayAbout();'></my-menu-item>
 			</my-menu>
 		</my-menu-item>

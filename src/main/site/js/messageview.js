@@ -17,12 +17,13 @@
 import { html, LitElement, ref, createRef, repeat } from 'lit3';
 import {Chat, Message } from './chat.js';
 import { schema, getReference } from './schema.js';
+import { EntityId, IdConverter } from './baserepository.js';
 
 class MessageView extends LitElement {
 	static properties = {
-		messageid: {},
-		senderid: {},
-		gameid: {},
+		messageid: { converter: IdConverter, type: EntityId },
+		senderid: { converter: IdConverter, type: EntityId },
+		contextid: { converter: IdConverter, type: EntityId },
 		sendtime: {},
 		_senderName: { state: true}
 	}
@@ -31,8 +32,10 @@ class MessageView extends LitElement {
 		super();
 	}
 	
+	
+	
 	firstUpdated() {
-		window.gebApp.controller.getPlayerById(this.senderid,(player) => { this._senderName = player.handle; });
+		window.gebApp.controller.getPlayerById(this.senderid.idValue,(player) => { this._senderName = player.handle; });
 	}
 	
 	render() {
@@ -64,20 +67,25 @@ window.customElements.define('message-view',MessageView);
 
 class MessageListView extends LitElement {
 	static properties = {
+		order: {},
 		_messages: {state: true, attribute: false}
 	}
 
 	set messages(messages) {
-		this._messages = messages.sort((a,b) => { return a.sendTime === b.sendTime ? 0 : (a.sendTime > b.sendTime ? 1 : -1) });
+		this._messages = messages.sort(this._sorter);
 	}
 	
 	addMessages(messages) {
-		this.messages = [...this._messages,...messages].sort((a,b) => { return a.sendTime === b.sendTime ? 0 : (a.sendTime > b.sendTime ? 1 : -1) });
+		this.messages = [...this._messages,...messages].sort(this._sorter);
 	}
 	
 	constructor() {
 		super();
 		this.messages = [];
+		this.order = 'newest';
+		this._sorter = (a,b) => { 
+			return a.sendTime === b.sendTime ? 0 : (a.sendTime > b.sendTime ? (this.order !== 'newest' ? 1 : -1) : (this.order !== 'newest' ? -1 : 1));
+		};
 	}
 	
 	renderSendTime(sendTime) {
@@ -95,7 +103,11 @@ class MessageListView extends LitElement {
 			max-height: 100%;
 		}
 		</style>
-		<div class='listcontainer'>${repeat(this._messages,(item,index) => { return html`<message-view sendtime='${this.renderSendTime(item.sendTime)}' senderid=${item.senderId}><div>${item.content}</div></message-view>`})}</div>`;
+		<div class='listcontainer'>
+			${repeat(this._messages,(item,index) => { 
+				return html`<message-view sendtime='${this.renderSendTime(item.sendTime)}' senderid=${item.senderId}><div>${item.content}</div></message-view>`})
+			}
+		</div>`;
 	}
 }
 
@@ -103,10 +115,11 @@ window.customElements.define('message-list',MessageListView);
 
 class ConversationViewer extends LitElement {
 	static properties = {
-		gameid: {},
+		contextid: { type: EntityId, converter: IdConverter},
 		threadid: {},
 		messager: {},
-		cols: {}
+		cols: {},
+		order: {}
 	}
 	
 	constructor() {
@@ -116,16 +129,21 @@ class ConversationViewer extends LitElement {
 		this.uh = this.updateHandler.bind(this);
 		this.messager = 'false';
 		this.cols = 100;
+		this.order = 'newest';
 	}
 	
 	renderMessager() {
 		if(this.messager === 'true') {
-			return html`<conversation-messager threadid=${this.threadid} cols=${this.cols} gameid=${this.gameid}></conversation-messager>`;
+			return html`<conversation-messager threadid=${this.threadid} cols=${this.cols} contextid=${this.contextid}></conversation-messager>`;
 		}
 		return null;
 	}
 	render() {
-		return html`<message-list ${ref(this.listRef)}></message-list>${this.renderMessager()}`
+		if(this.order !== 'newest') {
+			return html`<message-list order=${this.order} ${ref(this.listRef)}></message-list>${this.renderMessager()}`;
+		} else {
+			return html`${this.renderMessager()}<message-list order=${this.order} ${ref(this.listRef)}></message-list>`;
+		}
 	}
 
 	updateHandler(messages) {
@@ -137,14 +155,14 @@ class ConversationViewer extends LitElement {
 	}
 	
 	firstUpdated() {
-		this._chat = new Chat(this.gameid);
+		this._chat = new Chat(this.contextid);
 		this._chat.addListener(this.uh);
 		this.addEventListener('postaction', (e) => {
 			const message = new Message(
 				null,
 				this.threadid,
-				window.gebApp.controller.getCurrentPlayer().id,
-				getReference(schema.games,this.gameid),
+				new EntityId(schema.players,window.gebApp.controller.getCurrentPlayer().id),
+				this.contextid,
 				e.detail.text,
 				0);
 			this.sendChatMessage(message);
@@ -161,7 +179,7 @@ window.customElements.define('conversation-viewer',ConversationViewer);
 class Messager extends LitElement {
 	static properties = {
 		cols: {},
-		gameid: {},
+		contextid: { type: EntityId, converter: IdConverter},
 		threadid: {}
 	}
 	

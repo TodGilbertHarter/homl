@@ -17,6 +17,8 @@
 
 import { html, LitElement, render, ref, createRef } from 'lit3';
 import {Message, Chat } from './chat.js';
+import {EntityId} from './baserepository.js';
+import {schema} from './schema.js';
 
 class GameView extends LitElement {
 	static properties = {
@@ -74,7 +76,7 @@ class GameView extends LitElement {
 			this.requestUpdate();
 		}
 //		dialog.setAttribute('class','noteselector');
-		const template = html`<div slot='content'><game-create name=${this.model.name} description=${this.model.description}></game-create></div>
+		const template = html`<div slot='content'><game-create save='no' name=${this.model.name} description=${this.model.description}></game-create></div>
 		<button class='dialogbutton' slot='buttonbar' id='boonselect' @click=${selectHandler}>select</button>
 		<button class='dialogbutton' slot='buttonbar' id='dismiss' @click=${cancelHandler}>cancel</button>`;
 		render(template,dialog);
@@ -118,7 +120,7 @@ class GameView extends LitElement {
 			<div class='gameColumn'>
 				<div class='conversationviewer'>
 					<div>Conversations</div>
-					<conversation-viewer messager='true' ${ref(this.conversationViewerRef)} gameid=${this.gameId}></conversation-viewer>
+					<conversation-viewer messager='true' ${ref(this.conversationViewerRef)} contextid=${new EntityId(schema.games,this.gameId)}></conversation-viewer>
 				</div>
 			</div>
 		</div>`;

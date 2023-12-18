@@ -19,6 +19,78 @@ import { doc, getDoc, getDocs, setDoc, DocumentReference, collection, query, whe
 import { getReference, getDb } from './schema.js';
 
 /**
+ * Represents the identifier within the data store of a given entity.
+ * This allows us to do ID comparisons, convert ids back and forth from
+ * strings, and to and from Firestore references.
+ */
+class EntityId {
+	schema;
+	idValue;
+
+	/**
+	 * Build a new Entity Id.
+	 */	
+	constructor(schema,idValue) {
+		this.schema = schema;
+		if(idValue)
+			this.idValue = idValue;
+		else
+			this.idValue = crypto.randomUUID();
+	}
+
+	/**
+	 * Return the FireStore reference pointing to this entity in the data store.
+	 */	
+	getReference() {
+		return getReference(this.schema,this.idValue);
+	}
+
+	/**
+	 * Test this id against another one for equivalency.
+	 */	
+	isEqual(otherEntityId) {
+		return (otherEntityId instanceof EntityId) 
+			&& this.schema === otherEntityId.schema
+			&& this.idValue === otherEntityId.idValue;
+	}
+
+	/**
+	 * Construct the string representation of this id, useful for passing
+	 * around in HTML attributes. In this form it can be easily remade as an object.
+	 */	
+	toString() {
+		return `${this.schema}/${this.idValue}`
+	}
+	
+	/**
+	 * Factory method to create a new EntityId object from its
+	 * string representation.
+	 */
+	static EntityIdFromString(refString) {
+		var parts = refString.split('/');
+		return new EntityId(parts[0],parts[1]);
+	}
+	
+	/**
+	 * Construct an EntityId from a Firestore reference.
+	 */
+	static EntityIdFromReference(reference) {
+		var parts = reference.path.split('/');
+		return new EntityId(parts[0],parts[1]);
+	}
+}
+
+/** Used by Lit to allow us to automagically convert to/from attributes. */
+const IdConverter = {
+	fromAttribute: (value, type) => {
+		return EntityId.EntityIdFromString(value);
+	},
+	toAttribute: (value, type) => {
+		return value.ToString();
+	}
+}
+
+/**
  * Base repository class for FireStore repositories.
  */
 class BaseRepository {
@@ -107,12 +179,16 @@ class BaseRepository {
 		
 	}
 
+	/**
+	 * Save a DTO into the repository async.
+	 */
     async saveDto(dto) {
         console.log("Saving data of "+JSON.stringify(dto));
         if(dto.id === undefined || dto.id === null) {
 			dto.id = crypto.randomUUID();
 		}
-        await setDoc(doc(getDb(),this.collectionName,dto.id).withConverter(this.converter),dto);
+		const idStr = dto.id instanceof EntityId ? dto.id.idValue : dto.id;
+        await setDoc(doc(getDb(),this.collectionName,idStr).withConverter(this.converter),dto);
         return dto.id;
     }
 
@@ -217,4 +293,4 @@ function ToReferences(schema,list) {
 	return drs;
 }
 
-export { BaseRepository, ToReferences };
+export { BaseRepository, ToReferences, EntityId, IdConverter };

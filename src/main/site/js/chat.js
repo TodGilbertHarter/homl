@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { BaseRepository } from './baserepository.js';
+import { BaseRepository, EntityId } from './baserepository.js';
 import { schema, getDb, getReference, refToId } from './schema.js';
 import { query, where, collection, onSnapshot, Timestamp } from 'firebase-firestore';
 
@@ -27,14 +27,14 @@ class Message {
 	threadId;
 	senderId;
 	content;
-	gameId;
+	contextId;
 	sendTime = 0;
 	
-	constructor(messageId,threadId,senderId,gameId,content,sendTime) {
-		this.id = messageId;
+	constructor(messageId,threadId,senderId,contextId,content,sendTime) {
+		if(messageId) this.id = messageId; else this.id = new EntityId(schema.messages);
 		this.threadId = threadId;
 		this.senderId = senderId;
-		this.gameId = gameId;
+		this.contextId = contextId;
 		this.content = content;
 		this.sendTime = sendTime;
 	}
@@ -45,10 +45,10 @@ const messageConverter = {
 		const d = {
 			version: 1.0,
 			content: message.content,
-			id: message.id,
+			id: message.id.idValue,
 			threadid: message.threadId,
-			senderId: getReference(schema.messages,message.senderId),
-			gameId: message.gameId,
+			senderId: message.senderId.getReference(),
+			contextId: message.contextId.getReference(),
 			sendTime: message.sendTime
 		};
 		if(!(d.sendTime instanceof Timestamp)) d.sendTime = Timestamp.now();
@@ -56,10 +56,11 @@ const messageConverter = {
 	},
 	
 	fromFirestore(snapshot, options) {
-		const id = snapshot.id;
+		const id = new EntityId(schema.messages,snapshot.id);
 		const data = snapshot.data(options);
-		let sid = refToId(data.senderId);
-		return new Message(id,data.threadId,sid,data.gameId,data.content,data.sendTime);
+		let sid = EntityId.EntityIdFromReference(data.senderId);
+		let cid = EntityId.EntityIdFromReference(data.contextId);
+		return new Message(id,data.threadId,sid,cid,data.content,data.sendTime);
 	}
 
 }
@@ -72,16 +73,16 @@ const messageConverter = {
 class Chat extends BaseRepository {
 	_unsub;
 	_listeners;
-	gameId;
+	contextId;
 	
 	/**
 	 * Create a chat handler for all threads related to the given game.
 	 */
-	constructor(gameId) {
+	constructor(contextId) {
 		super(messageConverter,schema.messages);
 		this._listeners = [];
 		this._unsub = null;
-		this.gameId = gameId;
+		this.contextId = contextId;
 	}
 
 	/**
@@ -93,8 +94,9 @@ class Chat extends BaseRepository {
 	
 	_subscribe() {
 		if(!this._unsub) {
+			const r = this.contextId.getReference();
 			const q = query(collection(getDb(),schema.messages).withConverter(messageConverter),
-				where("gameId","==",getReference(schema.games,this.gameId)));
+				where("contextId","==",r));
 			this._unsub = onSnapshot(q, (querySnapshot) => this._onUpdate(querySnapshot));
 		}
 	}
@@ -108,7 +110,7 @@ class Chat extends BaseRepository {
 	}
 
 	/**
-	 * Retrieve all messages for a given thread in this game.
+	 * Retrieve all messages for a given thread in this context.
 	 */	
 	async getThread(threadId) {
 		return await this.findDtosAsync('threadId',threadId,'==')

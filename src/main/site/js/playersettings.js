@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { html, LitElement, ref, createRef } from 'lit3';
+import { html, css, LitElement, ref, createRef } from 'lit3';
 import { Player } from './player.js';
 
 /**
@@ -62,21 +62,36 @@ class PlayerSettings extends LitElement {
 		window.gebApp.controller.updateCurrentPlayer();
 	}
 	
+	static styles = css`
+		.playerSettings {
+			margin-left: 3px;
+		}
+		.playerAttributes {
+			margin-top: 3px;
+			margin-bottom: 3px;
+			display: flex;
+		}
+		.name {
+			flex: 25em;
+		}
+		.buttons {
+			flex: 10em;
+		}
+	`;
+	
 	render() {
-		return html`<div>
-			<div>
-				<span>
+		return html`<div class='playerSettings'>
+			<div class='playerAttributes'>
+				<span class='name'>
 					<label for='handle'>Handle:</label>
 					<input type='text' name='handle' value=${this.player.handle} @change=${this.updateHandle} ${ref(this.handleRef)}></input>
 				</span>
-				<span>
+				<span class='buttons'>
 					<button @click=${this.saveUpdates}>Accept</button>
 					<button @click=${this.revertHandle}>Revert</button>
 				</span>
 			</div>
-			<div>
-				<macroset-manager ${ref(this.macroSetMgrRef)}></macroset-manager>
-			</div>
+			<macroset-manager ${ref(this.macroSetMgrRef)}></macroset-manager>
 		</div>`;
 	}
 }
