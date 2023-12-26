@@ -14,20 +14,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { getDoc, doc, collection, where } from 'firebase-firestore';
 import { Character } from './character.js';
-import { schema, getReference, getDb } from './schema.js';
-import { BaseRepository } from './baserepository.js';
+import { collections } from './schema.js';
+import { WriteRepository, EntityId } from './baserepository.js';
 
 const characterConverter = {
 	toFirestore(character) {
-		const c = {};
+		const c = { version: 1.0 };
 		const cd = character.characterData;
-		c.id = character.id;
+//		c.id = character.id;
 		for(const [key, value] of Object.entries(cd)) {
 			if(key === "background") {
 				for(const [bgkey, bg] of Object.entries(value)) {
-					const docRef = getReference(schema.backgrounds,bg.background.id);
+					const docRef = bg.background.id.getReference();
 					const nb = {
 						bgref: docRef,
 						description: bg.description,
@@ -43,7 +42,7 @@ const characterConverter = {
 					for(var i = 0; i < equiplist.length; i++) {
 						const nequip = {
 							name: equiplist[i].name,
-							eqref: getReference(schema.equipment,equiplist[i].id)
+							eqref: equiplist[i].id.getReference()
 						}
 						c[key][ekey].push(nequip);
 					}
@@ -55,7 +54,7 @@ const characterConverter = {
 					for(var i = 0; i < blist.length; i++) {
 						const boonRecord = value[bkey][i];
 						if(boonRecord.boon) {
-							const docRef = getReference(schema.boons,boonRecord.boon.id);
+							const docRef = boonRecord.boon.id.getReference();
 							const nbr = {
 								bref: docRef,
 								name: boonRecord.boon.name,
@@ -69,21 +68,21 @@ const characterConverter = {
 				});
 			} else if(key === "species") {
 				if(value.species !== undefined && value.species !== null) {
-					const docRef = getReference(schema.species,value.species.id);
+					const docRef = value.species.id.getReference();
 					c[key] = { name: value.species.name, speciesref: docRef};
 				} else {
 					throw new Error("bad species when trying to save character");
 				}
 			} else if(key === "origin") {
 				if(value.origin !== undefined && value.origin !== null) {
-					const docRef = getReference(schema.origins,value.origin.id);
+					const docRef = value.origin.id.getReference();
 					c[key] = { name: value.origin.name, originref: docRef};
 				} else {
 					throw new Error("bad origin when trying to save character");
 				}
 			} else if(key === "calling") {
 				if(value.calling !== undefined && value.calling !== null) {
-					const docRef = getReference(schema.callings,value.calling.id);
+					const docRef = value.calling.id.getReference();
 					c[key] = { name: value.calling.name, callingref: docRef};
 				} else {
 					throw new Error("bad calling when trying to save character");
@@ -92,7 +91,7 @@ const characterConverter = {
 				c[key] = {tools: [], implements: [], weapons: []};
 				const profs = value;
 				c[key]['knacks'] = profs['knacks'];
-				const fixProfLink = (id) => { return getReference(schema.equipment,id); };
+				const fixProfLink = (id) => { return id.getReference(); };
 				for(var i = 0; i < profs['weapons'].length; i++) {
 					const p = profs['weapons'][i];
 					const link = fixProfLink(p.id);
@@ -108,6 +107,8 @@ const characterConverter = {
 					const link = fixProfLink(p.id);
 					c[key]['implements'][i] = { id: link, name: p.name};
 				}				
+			} else if (key === 'id') {
+				//DO NOTHING, stop storing an extra redundant id field!
 			} else {
 				c[key] = value;
 			}
@@ -118,81 +119,71 @@ const characterConverter = {
 	fromFirestore(snapshot, options) {
 		console.log("converting character and id is "+snapshot.id);
 		const id = snapshot.id;
+		const eid = EntityId.create(collections.characters,id);
 		const data = snapshot.data(options);
-		return new Character(id,data);
+		for(const [key, value] of Object.entries(data)) {
+			if(key === 'species') {
+				data[key].speciesref = EntityId.EntityIdFromReference(value.speciesref);
+			}
+			if(key === 'calling') {
+				data[key].callingref = EntityId.EntityIdFromReference(value.callingref);
+			}
+			if(key === 'origin') {
+				data[key].originref = EntityId.EntityIdFromReference(value.originref);
+			}
+			if(key === 'boons') {
+				for(const [bkey,bvalue] of Object.entries(value)) {
+					for(var i = 0; i < bvalue.length; i++) {
+						bvalue[i].bref = EntityId.EntityIdFromReference(bvalue[i].bref);
+					}
+				}
+			}
+			if(key === 'equipment') {
+				for(const [ekey,evalue] of Object.entries(value)) {
+					for(var i = 0; i < evalue.length; i++) {
+						evalue[i].eqref = EntityId.EntityIdFromReference(evalue[i].eqref);
+					}
+				}
+			}
+			if(key === 'owner') {
+				data[key] = EntityId.EntityIdFromReference(value);
+			}
+			if(key === 'proficiencies') {
+				const subst = (type) => {
+					for(var i = 0; i < value[type].length; i++) {
+						 value[type][i].id = EntityId.EntityIdFromReference(value[type][i].id); 
+					}
+				}
+				subst('implements');
+				subst('weapons');
+				subst('tools');
+			}
+			if(key === 'background') {
+				for(const [ekey,evalue] of Object.entries(value)) {
+					value[ekey].bgref = EntityId.EntityIdFromReference(value[ekey].bgref);
+				}
+			}
+		}
+		return new Character(eid,data);
 	}
 }
 
 /**
  * Character repository, manages all character objects in repository
  */
-class CharacterRepository extends BaseRepository {
+class CharacterRepository extends WriteRepository {
 
     constructor() {
-		super(characterConverter,schema.characters);
+		super(characterConverter,collections.characters);
     }
 
-	/**
-	 * Convert a collection of character document references into Character objects by looking them
-	 * up in firestore. This is intended to handle converting lists of characters from a game or a
-	 * player into Character objects.
-	 *
-	 * @param {[docs]} characters an array of character docrefs.
-	 * @param {function([Character])} onDataAvailable callback to handle the results.
-	 */
- 	getReferencedCharacters(characters,onDataAvailable) {
-		const results = [];
-		characters.forEach((docRef) => {
-			const dr = docRef.withConverter(characterConverter);
-			const cp = getDoc(dr);
-			results.push(cp);
-		});
-		Promise.all(results).then((carry) => {
-			const res = [];
-			carry.forEach((doc) => { 
-				res.push(doc.data()); 
-			});
-			onDataAvailable(res); 
-		});
-	}
-	
-	getCharacterByName(name,onDataAvailable) {
-		this.findDto("name",name,"==",onDataAvailable,(message) => { throw new Error(message)});
+	async getCharacterByName(name) {
+		return this.findEntity("name",name,"==");
     }
     
-    getCharactersByName(name,onDataAvailable) {
-		this.findDtos("name",name,"==",onDataAvailable,(message) => { throw new Error(message)});
+    async getCharactersByName(name) {
+		return this.findDtos("name",name,"==");
 	}
-
-    /**
-     * Get a character given its id.
-     *
-     * @param {string} id Document id of the character to get.
-     * @Param {function([Character])} onDataAvailable data available callback.
-     */
-	getCharacterById(id,onDataAvailable) {
-		var docRef = this.getReference(id);
-		this.dtoFromReference(docRef,onDataAvailable);
-	}
-	
-    async saveCharacter(character) {
-		await this.saveDto(character);
-    }
-    
-   	async searchCharacters(params) {
-		return this.searchDtos(params);
-		   
-/*		const cRef = collection(getDb(),this.collectionName);
-		const qc = params.map((param) => where(param.fieldName,param.op,param.fieldValue));
-        const q = query(cRef,...qc).withConverter(this.converter);
-		const doc = await getDocs(q);
-		const results = [];
-		doc.forEach((gdata) => {
-			results.push(gdata.data());
-		});
-		return results; */
-	}
-
 }
 
 export { CharacterRepository };

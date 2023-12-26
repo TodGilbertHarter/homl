@@ -14,10 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+import { Entity, EntityId } from './baserepository.js';
+import { collections } from './schema.js';
 
 /* base class for all types of HoML equipment */
-class Equipment {
-	id;
+class Equipment extends Entity {
 	name;
 	type;
 	cost;
@@ -25,7 +26,7 @@ class Equipment {
 	description;
 	
 	constructor(id,name,type,cost,load,description) {
-		this.id = id;
+		super(id ? id : EntityId.create(collections.equipment));
 		this.name = name;
 		this.type = type;
 		this.cost = cost;

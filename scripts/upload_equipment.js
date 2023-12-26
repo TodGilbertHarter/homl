@@ -13,11 +13,11 @@ const arg1 = process.argv[2]
 const data = require("../"+arg1);
 
 Object.keys(data["equipment"]).forEach((equipment) => {
-	handleEquipment(data['equipment'][equipment]);
+	handleEquipment(data['equipment'][equipment],equipment);
 });
 
-function handleEquipment(equipment) {
-	upload(equipment,['equipment',equipment.id]);
+function handleEquipment(equipment,id) {
+	upload(equipment,['equipment',id]);
 }
 
 async function upload(data, path) {

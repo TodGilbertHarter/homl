@@ -15,11 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+import { Entity, EntityId } from './baserepository.js';
+import { collections } from './schema.js';
+
 /**
   * Model for a heroic origin.
   */
-class Origin {
-	id;
+class Origin extends Entity {
 	backgrounds;
 	name;
 	description;
@@ -30,7 +32,7 @@ class Origin {
 	weapons;
 		
 	constructor(id,backgrounds,name,description,boons,features,implementProfs,knacks,weaponProfs) {
-		this.id = id;
+		super(id ? id : EntityId.create(collections.origins));
 		this.backgrounds = backgrounds;
 		this.name = name;
 		this.description = description;

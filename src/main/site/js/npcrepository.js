@@ -14,14 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { BaseRepository } from './baserepository.js';
-import { schema, getReference } from './schema.js';
+import { BaseRepository, EntityId } from './baserepository.js';
+import { collections } from './schema.js';
 import { Npc } from './npc.js';
 
 const npcConverter = {
 	toFirestore(npc) {
 		return {
-			id: npc.id,
 			name: npc.name,
 			statblock: npc.statblock,
 			Major: npc.major,
@@ -39,13 +38,15 @@ const npcConverter = {
 			size: npc.size,
 			tags: npc.tags,
 			vulnerability: npc.vulnerability,
-			will: npc.will
+			will: npc.will,
+			version: 1.0
 		}
 	},
 	fromFirestore(snapshot,options) {
 		const id = snapshot.id;
+		const eid = EntityId.create(collections.npcs,id);
 		const data = snapshot.data(options);
-		return new Npc(id, data.name, data.statblock, data.Major, data.Move, data.Stats, data.fort, 	
+		return new Npc(eid, data.name, data.statblock, data.Major, data.Move, data.Stats, data.fort, 	
 			data.hitpoints, data.immunity, data.initiative, data.level, data.power, data.protection, 
 			data.ref, data.role, data.size, data.tags, data.vulnerability, data.will);
 	}
@@ -57,38 +58,13 @@ const npcConverter = {
 class NpcRepository extends BaseRepository {
 
     constructor() {
-		super(npcConverter,schema.npcs);
+		super(npcConverter,collections.npcs);
     }
 
-	static GetNpcReference(id) {
-		return getReference(schema.npcs,id);
-	};
-	
-	/**
-	 * Given an npc reference, call the onSuccess callback when the corresponding npc is available
-	 * If the npcRef is really an npc, then simply call onSuccess immediately.
-	 */
-	getReferencedNpc(npcRef,onSuccess) {
-		this.dtoFromReference(npcRef,onSuccess);
-	}
-	
-	getReferencedNpcs(npcRefs,onSuccess) {
-		this.dtosFromReferences(npcRefs,onSuccess);
-	}
-	
-    getNpcByName(name,onDataAvailable, onFailure) {
-		this.findDto("name",name,"==",onDataAvailable,onFailure);
+    async getNpcByName(name) {
+		return this.findDto("name",name,"==");
     }
     
-    saveNpc(npc) {
-		this.saveDto(npc);
-    }
-    
-    getNpcById(npcId,onDataAvailable) {
-		var docRef = this.getReference(npcId);
-		this.dtoFromReference(docRef,onDataAvailable);
-	}
-
 }
 
 export { NpcRepository };

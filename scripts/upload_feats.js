@@ -13,11 +13,11 @@ const arg1 = process.argv[2]
 const data = require("../"+arg1);
 
 Object.keys(data["feats"]).forEach((feat) => {
-	handleFeat(data['feats'][feat]);
+	handleFeat(data['feats'][feat],feat);
 });
 
-function handleFeat(feat) {
-	upload(feat,['feats',feat.id]);
+function handleFeat(feat,id) {
+	upload(feat,['feats',id]);
 }
 
 async function upload(data, path) {

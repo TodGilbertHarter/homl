@@ -13,17 +13,17 @@ const arg1 = process.argv[2]
 const data = require("../"+arg1);
 
 Object.keys(data["npcs"]).forEach((npc) => {
-	handleNpc(data['npcs'][npc]);
+	handleNpc(data['npcs'][npc],npc);
 });
 
 function splitField(value) {
 	return value.split(',').map((value) => value.trim());
 }
 
-function handleNpc(npc) {
+function handleNpc(npc,id) {
 	if(npc.name !== 'Monster Name') { // get rid of example stat block
 		npc.tags = splitField(npc.tags);
-		upload(npc,['npcs',npc.id]);
+		upload(npc,['npcs',id]);
 	}
 }
 

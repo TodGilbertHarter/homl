@@ -14,12 +14,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
+import { Entity, EntityId } from './baserepository.js';
+import { schema, collections } from './schema.js';
 /**
   * Model for boons.
   */
-class Boon {
-	id;
+class Boon extends Entity {
 	name;
 	source;
 	level;
@@ -31,7 +31,7 @@ class Boon {
 	restrictions;
 		
 	constructor(id,name,source,level,type,association,description,benefits,disadvantages,restrictions,manifestation) {
-		this.id = id;
+		super(id ? id : EntityId.create(collections.boons));
 		this.name = name;
 		this.source = source;
 		this.level = level;

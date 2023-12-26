@@ -15,11 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+import { EntityId, Entity } from './baserepository.js';
+import { collections } from './schema.js';
+
 /**
  * Non-player character (monster, etc.) DTO definition.
  */
-class Npc {
-	id;
+class Npc extends Entity {
 	name;
 	statblock;
 	major;
@@ -40,7 +42,7 @@ class Npc {
 	will;
 	
 	constructor(id, name, statblock,major,move,stats,fort,hitpoints,immunity,initiative,level,power,protection,ref,role,size,tags,vulnerability,will) {
-		this.id = id;
+		super(id ? id : EntityId.create(collections.npcs));
 		this.name = name;
 		this.statblock = statblock;
 		this.major = major;

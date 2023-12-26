@@ -21,9 +21,10 @@
  * options during chargen, etc.
  */
 import { Calculation } from "./rules.js";
+import { Entity, EntityId } from './baserepository.js';
+import { collections } from './schema.js';
 
-class Species {
-	id;
+class Species extends Entity {
 	name;
 	size;
 	speed;
@@ -33,7 +34,7 @@ class Species {
 	boons;
 	
 	constructor(id,name,size,speed,vision,height,weight,boons) {
-		this.id = id;
+		super(id ? id : EntityId.create(collections.species));
 		this.name = name;
 		this.size = size;
 		this.speed = speed;

@@ -18,8 +18,10 @@
 /**
   * Model for a background.
   */
-class Background {
-	id;
+import { Entity, EntityId } from "./baserepository.js";
+import { schema } from './schema.js';
+
+class Background extends Entity {
 	type;
 	name;
 	text;
@@ -27,7 +29,7 @@ class Background {
 	knacks;
 		
 	constructor(id,type,name,text,boons,knacks) {
-		this.id = id;
+		super(id ? id : EntityId.create(collection.backgrounds));
 		this.type = type;
 		this.name = name;
 		this.text = text;

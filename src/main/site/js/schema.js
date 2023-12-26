@@ -22,7 +22,9 @@
  */
 import { doc } from 'firebase-firestore';
 
-const schema = {
+/** list of collection names by well-known alias. */
+
+const collections = {
 	backgrounds: 'backgrounds',
 	boons: 'boons',
 	callings: 'callings',
@@ -38,45 +40,16 @@ const schema = {
 	images: 'images',
 	macros: 'macros',
 	conversations: 'conversations'
+}
+
+/** Registry of repositories keyed by collection name */
+const schema = {
 };
-
-const repoRegistry = {
-	
-};
-
-/**
- * Register a repository instance to handle resolveReference
- * requests for a given FireStore collection. It is assumed this
- * is the same collection the schema entry references.
- */
-const registerRepository = (schema,repoInstance) => {
-	repoRegistry.schema = repoInstance;
-}
-
-const getRepository = (schema) => {
-	return repoRegistry.schema;
-}
-
-const resolveReference = (ref,onSuccess) => {
-	var schema = ref.path.split('/')[0];
-	var repo = getRepoForSchema(schema);
-	repo.dtoFromReference(ref,onSuccess);
-}
-
-const resolveReferenceAsync = async (ref) => {
-	var schema = ref.path.split('/')[0];
-	var repo = getRepoForSchema(schema);
-	return await repo.dtoFromReferenceAsync(ref);
-}
 
 const getReference = (schema,id) => {
 	return doc(getDb(),schema,id);
 }
 
-const refToId = (ref) => {
-	return ref.id;
-}
-
 const getDb = () => { return window.gebApp.firestore }
 
-export { schema, getReference, getDb, registerRepository, resolveReference, resolveReferenceAsync, getRepository, refToId };
+export { schema, collections, getReference, getDb };

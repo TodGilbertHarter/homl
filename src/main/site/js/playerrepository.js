@@ -15,8 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { Player } from './player.js';
-import { BaseRepository } from './baserepository.js';
-import { schema, getReference } from './schema.js';
+import { WriteRepository, EntityId } from './baserepository.js';
+import { collections } from './schema.js';
 import { macroConverter } from './macros.js';
 
 const random = (length = 8) => {
@@ -34,94 +34,48 @@ const random = (length = 8) => {
 const playerConverter = {
 	toFirestore(player) {
 		if(!player.handle) player.handle = random(20);
-		return {
-			id: player.id,
+		const p = {
 			uid: player.uid,
 			loggedin: player.loggedIn,
 			owned: player.owned,
 			handle: player.handle,
 			bookMarks: player.bookMarks,
-			macroset: macroConverter.toFirestore(player.macroset)
+			macroset: macroConverter.toFirestore(player.macroset),
+			version: 1.0
 		}
+		p.owned = p.owned.map((owned) => { return { name: owned.name, ref: owned.ref.getReference()}})
+		return p;
 	},
 	
 	fromFirestore(snapshot,options) {
 		const id = snapshot.id;
+		const eid = EntityId.create(collections.players,id);
 		const data = snapshot.data(options);
-		return new Player(id,data.uid,data.loggedin,data.owned,data.handle,data.bookMarks,macroConverter.fromFirestore(data.id,data.macroset));
+		const owned = data.owned.map((owned) => { return {
+			name: owned.name,
+			ref: EntityId.EntityIdFromReference(owned.ref)
+			}
+		});
+		return new Player(eid,data.uid,data.loggedin,owned,data.handle,data.bookMarks,macroConverter.fromFirestore(eid,data.macroset));
 	}
 };
 
 /**
  * Player repository. Manages player objects in FireStore.
  */
-class PlayerRepository extends BaseRepository {
+class PlayerRepository extends WriteRepository {
 
     constructor() {
-		super(playerConverter,schema.players);
+		super(playerConverter,collections.players);
     }
 
-	static GetPlayerReference(id) {
-		return getReference(schema.players,id);
-	};
-	
-	/**
-	 * Given a player reference, call the onSuccess callback when the corresponding player is available
-	 * If the playerRef is really a player, then simply call onSuccess immediately.
-	 */
-	getReferencedPlayer(playerRef,onSuccess) {
-		this.dtoFromReference(playerRef,onSuccess);
-	}
-
-	/**
-	 * Get a group of players given their references.
-	 */	
-	getReferencedPlayers(playerRefs,onSuccess) {
-		this.dtosFromReferences(playerRefs,onSuccess);
-	}
-	
 	/**
 	 * Given a user id, get the corresponding player record.
 	 */
-    getPlayerByUid(uid,onDataAvailable, onFailure) {
-		this.findDto("uid",uid,"==",onDataAvailable,onFailure);
+    async getPlayerByUid(uid) {
+		return this.findEntity("uid",uid,"==");
     }
-    
-    /**
-	 * Save the player.
-	 */
-    savePlayer(player) {
-		this.saveDto(player);
-    }
-
-	/**
-	 * Get a player by their id and call the given callback when
-	 * the data is available. Use the async version in prefference
-	 * wherever possible.
-	 */    
-    getPlayerById(playerId,onDataAvailable) {
-		var docRef = this.getReference(playerId);
-		this.dtoFromReference(docRef,onDataAvailable);
-	}
-
-	/**
-	 * Async version of getting a player from a reference.
-	 * Use this in preference to the callback version.
-	 */	
-	async getReferencedPlayerAsync(playerRef) {
-		return this.dtoFromReferenceAsync(playerRef);
-	}
-
-	/**
-	 * Async version of getting a player by their id. This is the
-	 * preferred method.
-	 */	
-	async getPlayerByIdAsync(playerId) {
-		var docRef = this.getReference(playerId);
-		return this.dtoFromReferenceAsync(docRef);
-	}
 
 }
 
 export { PlayerRepository };
-

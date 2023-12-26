@@ -18,7 +18,7 @@
 import { html, LitElement, render, ref, createRef } from 'lit3';
 import {Message, Chat } from './chat.js';
 import {EntityId} from './baserepository.js';
-import {schema} from './schema.js';
+import {collections} from './schema.js';
 
 class GameView extends LitElement {
 	static properties = {
@@ -120,7 +120,7 @@ class GameView extends LitElement {
 			<div class='gameColumn'>
 				<div class='conversationviewer'>
 					<div>Conversations</div>
-					<conversation-viewer messager='true' ${ref(this.conversationViewerRef)} contextid=${new EntityId(schema.games,this.gameId)}></conversation-viewer>
+					<conversation-viewer messager='true' ${ref(this.conversationViewerRef)} contextid=${EntityId.create(collections.games,this.gameId)}></conversation-viewer>
 				</div>
 			</div>
 		</div>`;

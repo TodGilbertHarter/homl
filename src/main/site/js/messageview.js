@@ -17,7 +17,6 @@
 import { html, css, LitElement, ref, createRef, repeat } from 'lit3';
 import { Task } from 'littask';
 import {Chat, Message, Conversation, ConversationRepository } from './chat.js';
-import { schema, getReference, getRepository } from './schema.js';
 import { EntityId, IdConverter } from './baserepository.js';
 
 class MessageView extends LitElement {
@@ -162,7 +161,7 @@ class ConversationViewer extends LitElement {
 			const message = new Message(
 				null,
 				this.threadid,
-				new EntityId(schema.players,window.gebApp.controller.getCurrentPlayer().id),
+				window.gebApp.controller.getCurrentPlayer().id,
 				this.contextid,
 				e.detail.text,
 				0);
@@ -199,7 +198,7 @@ class Messager extends LitElement {
 		let v = this.bigInputRef.value.value;
 		v = window.gebApp.controller.runHairballProgram(v);
 		if(v !== '')
-			this.dispatchEvent(new CustomEvent('postaction',{bubbles: true, composed: true, detail: {text: v}}));
+			this.dispatchEvent(new CustomEvent('postaction',{bubbles: true, composed: true, detail: {text: v, contextid: this.contextid}}));
 	}
 	
 	render() {
@@ -253,6 +252,7 @@ class ConversationList extends LitElement {
 	static styles = css`
 	table {
 		width: 100%;
+		border-collapse: collapse;
 	}
 	thead tr {
 		background-color: var(--theme-fg);
@@ -260,8 +260,16 @@ class ConversationList extends LitElement {
 	}
 	`;
 	
-	showConversation(e.target.//TODO: some dataset thing) {
-		window.gebApp.controller.displayConversation(id);
+	showConversation(e) {
+		const contextId = e.target.dataset.contextId;
+		const eid = EntityId.EntityIdFromString(contextId);
+		window.gebApp.controller.displayConversation(eid);
+	}
+	
+	async leaveConversation(conversation) {
+		conversation.removeParticipant(this.playerid);
+		await window.gebApp.controller.saveConversation(conversation);
+		this.requestUpdate();
 	}
 	
 	render() {
@@ -273,7 +281,9 @@ class ConversationList extends LitElement {
 						<tr><th>Subject</th><th></th><th></th></tr>
 					</thead>
 					<tbody>
-						${repeat(value,(convo,index) => { return html`<tr><td>${convo.subject}</td><td><button @click=${this.showConversation}>Show</button></td><td><button>Leave</button></td></tr>`})}
+						${repeat(value,(convo,index) => { return html`<tr><td>${convo.subject}</td>
+						<td><button data-context-id=${convo.id} @click=${this.showConversation}>Show</button></td>
+						<td><button data-context-id=${convo.id} @click=${() => this.leaveConversation(convo)}>Leave</button></td></tr>`})}
 					</tbody>
 				</table>`,
 			error: (error) => html`<p>Failed to get conversations for user ${error}</p>`,

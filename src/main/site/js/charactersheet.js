@@ -1531,13 +1531,13 @@ class CharacterController {
 	getAllBoons(blist,action) {
 		const ulist = blist.filter((item) => !(item instanceof Boon));
 		const rlist = blist.filter((item) => item instanceof Boon);
-		this.boonRepo.getReferencedBoons(ulist,(rboons) => { action([...rboons,...rlist])});
+		this.boonRepo.getBoonsFromIds(ulist,(rboons) => { action([...rboons,...rlist])});
 	}
 	 
 	getAllEquipment(elist,action) {
 		const ulist = elist.filter((item) => !(item instanceof Equipment));
 		const rlist = elist.filter((item) => item instanceof Equipment);
-		this.equipmentRepo.getReferenced(ulist,(requipment) => { action([...requipment,...rlist])});
+		this.equipmentRepo.dtosFromIds(ulist,(requipment) => { action([...requipment,...rlist])});
 	}
 	
     setNotes(sheet,notes) {
@@ -1586,7 +1586,7 @@ class CharacterController {
 		toolProfs.forEach((toolProf) => { 
 					const newItem = document.createElement('proficiency-field');
 					newItem.setAttribute('type','tool');
-					newItem.setAttribute('equipmentId',typeof toolProf.id === 'string' ? toolProf.id : toolProf.id.id);
+					newItem.setAttribute('equipmentId',toolProf.id);
 					newItem.setAttribute('name',toolProf.name);
 					pis.push(newItem);
 				} 
@@ -1594,7 +1594,7 @@ class CharacterController {
 		weaponProfs.forEach((weaponProf) => { 
 					const newItem = document.createElement('proficiency-field');
 					newItem.setAttribute('type','weapon');
-					newItem.setAttribute('equipmentId',typeof weaponProf.id === 'string' ? weaponProf.id : weaponProf.id.id);
+					newItem.setAttribute('equipmentId',weaponProf.id);
 					newItem.setAttribute('name',weaponProf.name);
 					pis.push(newItem);
 				} 
@@ -1602,7 +1602,7 @@ class CharacterController {
 		implementProfs.forEach((implementProf) => { 
 					const newItem = document.createElement('proficiency-field');
 					newItem.setAttribute('type','implement');
-					newItem.setAttribute('equipmentId',typeof implementProf.id === 'string' ? implementProf.id : implementProf.id.id);
+					newItem.setAttribute('equipmentId',implementProf.id);
 					newItem.setAttribute('name',implementProf.name);
 					pis.push(newItem);
 				} 
@@ -1726,10 +1726,11 @@ class CharacterController {
     
     save(character) {
         this.characterRepo.saveCharacter(character);
-        if(character.owner.id === window.gebApp.controller.getCurrentPlayer().id)
+        if(character.owner.id === window.gebApp.controller.getCurrentPlayer().id) {
 	        window.gebApp.controller.addOwned(character.id,schema.characters,character.name);
-	    else {
-			window.gebApp.controller.updatePlayerOwns(character.owner,schema.characters,character.name);
+	    } else {
+//TODO: ownership rules... the character is not owned by the player who is saving it! for now do nothing.
+//			window.gebApp.controller.updatePlayerOwns(character.owner,schema.characters,character.name);
 		}
 	    	
     }
@@ -1771,9 +1772,9 @@ class CharacterController {
 	
 	setSpeciesFromList(character,speciesList) {
 		if(character.species.name === undefined || character.species.name === null) { return false; }
-		const id = character.species.speciesref?.id;
+		const id = character.species.speciesref;
 		for(var i = 0; i < speciesList.length; i++) {
-			if(id === speciesList[i].id) {
+			if(speciesList[i].id === id) {
 				character.species.name = speciesList[i].name;
 				character.species.species = speciesList[i];
 				return true;
@@ -1783,9 +1784,9 @@ class CharacterController {
 	
 	setCallingFromList(character,callingsList)	{
 		if(character.calling.name === undefined || character.calling.name === null) { return false; }
-		const id = character.calling.callingref?.id;
+		const id = character.calling.callingref;
 		for(var i = 0; i < callingsList.length; i++) {
-			if(id === callingsList[i].id) {
+			if(callingsList[i].id === id) {
 				character.calling.name = callingsList[i].name;
 				character.calling.calling = callingsList[i];
 				return true;
@@ -1795,9 +1796,9 @@ class CharacterController {
 	
 	setOriginFromList(character,originsList) {
 		if(character.origin.name === undefined || character.origin.name === null) { return false; }
-		const id = character.origin.originref?.id;
+		const id = character.origin.originref;
 		for(var i = 0; i < originsList.length; i++) {
-			if(id === originsList[i].id) {
+			if(originsList[i].id === id) {
 				character.origin.name = originsList[i].name;
 				character.origin.origin = originsList[i];
 				return true;
@@ -1814,7 +1815,7 @@ class CharacterController {
 			if(bgref === undefined) { bgref = character.background[cbKey].background; }
 			Object.keys(backgrounds[cbKey]).forEach((bgKey) => {
 				var bg = backgrounds[cbKey][bgKey];
-				if(bg.id === bgref.id) {
+				if(bgref === bg.id) {
 					character.background[cbKey].background = bg;
 				}
 			});

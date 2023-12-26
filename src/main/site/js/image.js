@@ -14,14 +14,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-class Image {
-	id;
+import { Entity, EntityId } from './baserepository.js';
+import { collections } from './schema.js';
+class Image extends Entity {
 	owner;
 	description;
 	uri;
 	
 	constructor(id, owner, description, uri) {
-		this.id = id;
+		super(id ? id : EntityId.create(collections.images));
 		this.owner = owner;
 		this.description = description;
 		this.uri = uri;

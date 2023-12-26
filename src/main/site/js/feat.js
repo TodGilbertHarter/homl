@@ -14,12 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+import { Entity, EntityId } from './baserepository.js';
+import { collections } from './schema.js';
 
 /**
   * Model for feats.
   */
-class Feat {
-	id;
+class Feat extends Entity {
 	name;
 	source;
 	level;
@@ -47,7 +48,7 @@ class Feat {
 		
 	constructor(id,name,source,level,origin,tags,tier,effects,costs,components,action,attack,completesuccess,enhancedsuccess,success,failure,
 	flavortext,special,typetarget,trigger,check,defense,duration,requirements) {
-		this.id = id;
+		super(id ? id : EntityId.create(collections.feats));
 		this.name = name;
 		this.source = source;
 		this.level = level;

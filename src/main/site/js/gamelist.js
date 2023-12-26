@@ -35,11 +35,9 @@ class GameList extends LitElement {
 	}
 	
 	getOwners() {
-		const prefset = {};
-		this.model.forEach((game) => prefset[game.id] = game.owner);
-		const prefs = [];
-		Object.keys(prefset).forEach((pref) => prefs.push(prefset[pref]));
-		window.gebApp.controller.getPlayers(prefs,(players) => { this.owners = players; this.requestUpdate(); });
+		const ownerids = new Set(this.model.map((game) => game.owner));
+		const oidArry = [...ownerids.values()];
+		window.gebApp.controller.getPlayers(oidArry,(players) => { this.owners = players; this.requestUpdate(); });
 	}
 	
 	gameClicked(e) {
@@ -53,15 +51,11 @@ class GameList extends LitElement {
 		if(model) {
 			const owner = model.owner;
 			if(owner) {
-				const ownerid = owner.id;
-				if(ownerid) {
-					const ownerArry = this.owners.map((owner) => owner.id === ownerid ? owner : false );
-					const owner = ownerArry[0];
-					if(owner)
-						return html`${owner.handle}`;
-					return "no mapped owner";
-				}
-				return 'no owner id';
+				const ownerArry = this.owners.map((anowner) => owner === anowner.id ? anowner : false );
+				const anowner = ownerArry[0];
+				if(anowner)
+					return html`${anowner.handle}`;
+				return "no mapped owner";
 			}
 			return 'no owner'
 		}

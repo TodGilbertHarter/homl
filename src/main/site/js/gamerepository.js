@@ -15,22 +15,24 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { Game } from './game.js';
-import { BaseRepository, ToReferences } from './baserepository.js';
-import { schema, getReference } from './schema.js';
+import { BaseRepository, EntityId, ToReferences } from './baserepository.js';
+import { collections, getReference } from './schema.js';
 
 const gameConverter = {
 	toFirestore(game) {
-		const g = {};
+		const g = { version: 1.0 };
 		for(const [key,value] of Object.entries(game)) {
 			if(key === 'owner') {
-				const playerDocRef = getReference(schema.players,value.id);
+				const playerDocRef = getReference(collections.players,value.id);
 				g[key] = playerDocRef;
 			} else if(key === 'players') {
-				g[key] = ToReferences(schema.players,value);
+				g[key] = ToReferences(value);
 			} else if(key === 'npcs') {
-				g[key] = ToReferences(schema.npcs,value);
+				g[key] = ToReferences(value);
 			} else if(key === 'images') {
-				g[key] = ToReferences(schema.images,value);
+				g[key] = ToReferences(value);
+			} else if(key = 'id') {
+				//DO NOT put ids in the data.
 			} else {
 				g[key] = value;
 			}
@@ -41,8 +43,14 @@ const gameConverter = {
 	fromFirestore(snapshot, options) {
 		console.log("converting and id is "+snapshot.id);
 		const id = snapshot.id;
+		const eid = EntityId.create(collections.games,id);
 		const data = snapshot.data(options);
-		return new Game(id,data.name,data.owner,data.characters,data.players,data.npcs,data.description, data.threads, data.images);
+		const owner = EntityId.EntityIdFromReference(data.owner);
+		const characters = data.characters.map((character) => EntityId.EntityIdFromReference(character));
+		const images = data.images.map((image) => EntityId.EntityIdFromReference(image));
+		const npcs = data.npcs.map((npc) => EntityId.EntityIdFromReference(npc));
+		const players = data.players.map((player) => EntityId.EntityIdFromReference(player));
+		return new Game(eid,data.name,owner,characters,players,npcs,data.description, data.threads,images);
 	}
 }
 
@@ -53,7 +61,7 @@ const GetGameReference = (id) => {
 class GameRepository extends BaseRepository {
     
     constructor() {
-		super(gameConverter,schema.games);
+		super(gameConverter,collections.games);
     }
     
 	getGameById(id,onDataAvailable) {
@@ -65,10 +73,6 @@ class GameRepository extends BaseRepository {
 		this.findDtos("name",name,"==",onDataAvailable, () => { throw new Error("Can't find "+name)});
 	}
     
-    async saveGame(game) {
-		return await this.saveDto(game);
-    }
-
 	getGamesByOwner(playerId,onDataAvailable,onFailure) {
 		const playerDocRef = getReference(schema.players,playerId);
 		this.findDtos("owner",playerDocRef,"==",onDataAvailable,onFailure);

@@ -13,14 +13,14 @@ const arg1 = process.argv[2]
 const data = require("../"+arg1);
 
 Object.keys(data["origins"]).forEach((origin) => {
-	handleOrigin(data['origins'][origin]);
+	handleOrigin(data['origins'][origin],origin);
 });
 
-function handleOrigin(origin) {
+function handleOrigin(origin,id) {
 	if(!origin.hasOwnProperty('features')) { origin.features = []; }
 	if(typeof origin.features !== 'undefined') {
 		origin.features = origin.features.map((feature) => {
-			return admin.firestore().doc(`features/${feature}`);
+			return admin.firestore().doc(`boons/${feature}`);
 		});
 	}
 	
@@ -30,7 +30,7 @@ function handleOrigin(origin) {
 			return admin.firestore().doc(`boons/${boon}`);
 		});
 	}
-	upload(origin,['origins',origin.id]);
+	upload(origin,['origins',id]);
 }
 
 async function upload(data, path) {

@@ -46,14 +46,12 @@ class BoonViewer extends LitElement {
 	
 	connectedCallback() {
 		super.connectedCallback();
-		this.boonRepo.addListener(this.boonsUpdated);
 		this.boonRepo.getAllBoons((boons) => { this.boonsUpdated(boons);  });
 		this.addEventListener('boonselected',this.hbs);
 	}
 	
 	disconnectedCallback() {
 		super.disconnectedCallback();
-		this.boonRepo.removeListener(this.boonsUpdated);
 		this.removeEventListener('boonselected',this.hbs);
 	}
 	

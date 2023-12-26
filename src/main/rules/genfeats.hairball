@@ -3,7 +3,7 @@
 */
 /NEWVOCABULARY /FEATS
 /VOCABULARY /FEATS /CURRENT
-/: /ID" /" " /DUP /. ": { "version": "1.0", "id": " /. " :/
+/: /ID" /" " /DUP /. ": { "version": 1.0 :/
 /: /TAGS , "tags": " :/ 
 /: TAGS/ " :/
 /VOCABULARY /COMPENDIUM /CURRENT

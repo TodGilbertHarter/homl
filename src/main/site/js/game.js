@@ -14,10 +14,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { getReference, schema } from './schema.js';
+import { getReference, collections } from './schema.js';
+import { Entity, EntityId } from './baserepository.js';
+import { immerable } from 'immer';
 
-class Game {
-	id;
+class Game extends Entity {
+	[immerable] = true;
 	name;
 	owner;
 	characters;
@@ -27,7 +29,7 @@ class Game {
 	threads;
 	
 	constructor(id, name, owner, characters, players, npcs, description, threads, images) {
-		this.id = id;
+		super(id ? id : EntityId.create(collections.games));
 		this.name = name;
 		this.owner = owner;
 		this.characters = characters;
@@ -52,7 +54,7 @@ class Game {
 	 * @param {function([Character])} onDataAvailable handler to process the data when it is returned.
 	 */
 	getCharacters(onDataAvailable) {
-		return window.gebApp.characterRepo.getReferencedCharacters(this.characters,onDataAvailable);
+		window.gebApp.controller.getCharactersByIds(this.characters,onDataAvailable);
 	}
 	
 	/**

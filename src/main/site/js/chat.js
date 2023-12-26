@@ -15,23 +15,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { BaseRepository, EntityId } from './baserepository.js';
-import { schema, getDb, getReference, refToId } from './schema.js';
+import { WriteRepository, EntityId, Entity, IdSet } from './baserepository.js';
+import { schema, getDb } from './schema.js';
 import { query, where, collection, onSnapshot, Timestamp } from 'firebase-firestore';
 
 /**
  * Chat message class.
  */
-class Message {
-	id;
+class Message extends Entity {
 	threadId;
 	senderId;
 	content;
 	contextId;
 	sendTime = 0;
 	
-	constructor(messageId,threadId,senderId,contextId,content,sendTime) {
-		if(messageId) this.id = messageId; else this.id = new EntityId(schema.messages);
+	constructor(id,threadId,senderId,contextId,content,sendTime) {
+		super(id ? id : EntityId.create(schema.messages));
 		this.threadId = threadId;
 		this.senderId = senderId;
 		this.contextId = contextId;
@@ -56,7 +55,7 @@ const messageConverter = {
 	},
 	
 	fromFirestore(snapshot, options) {
-		const id = new EntityId(schema.messages,snapshot.id);
+		const id = EntityId.create(schema.messages,snapshot.id);
 		const data = snapshot.data(options);
 		let sid = EntityId.EntityIdFromReference(data.senderId);
 		let cid = EntityId.EntityIdFromReference(data.contextId);
@@ -65,39 +64,49 @@ const messageConverter = {
 
 }
 
-class Conversation {
-	id;
+class Conversation extends Entity {
 	participants;
 	subject;
 	
 	constructor(id,subject,participants) {
-		this.id = id ? id : new EntityId(schema.conversations);
+		super(id ? id : EntityId.create(schema.conversations));
 		this.subject = subject;
-		this.participants = participants ? participants : new Set();
+		this.participants = participants ? participants : new IdSet();
 	}
 	
+	addParticipant(participant) {
+		this.participants.add(participant);
+	}
+	
+	removeParticipant(participant) {
+		this.participants.delete(participant);
+	}
 }
 
 const conversationConverter = {
 	toFirestore(conversation) {
+//		const pArry = conversation.participants.map((participant) => { return participant.getReference(); });
+		let pArry = Array.from(conversation.participants.values());
+		pArry = pArry.map((participant) => { return participant.getReference(); });
 		const d = {
 			version: 1.0,
 			id: conversation.id.idValue,
 			subject: conversation.subject,
-			participants: conversation.participants
+			participants: pArry
 		};
 		return d;
 	},
 	
 	fromFirestore(snapshot, options) {
-		const id = new EntityId(schema.conversations,snapshot.id);
+		const id = EntityId.create(schema.conversations,snapshot.id);
 		const data = snapshot.data(options);
-		return new Conversation(id, data.subject, data.participants);
+		const participants = new IdSet(data.participants.map((ref) => EntityId.EntityIdFromReference(ref)));
+		return new Conversation(id, data.subject, participants);
 	}
 	
 }
 
-class ConversationRepository extends BaseRepository {
+class ConversationRepository extends WriteRepository {
 	constructor() {
 		super(conversationConverter,schema.conversations);
 	}
@@ -117,7 +126,7 @@ class ConversationRepository extends BaseRepository {
  * unsubscribing. When there are no listeners, the subscription will be removed, if there are
  * any it will be activated.
  */
-class Chat extends BaseRepository {
+class Chat extends WriteRepository {
 	_unsub;
 	_listeners;
 	contextId;

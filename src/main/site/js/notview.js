@@ -17,6 +17,7 @@
 import { characterSheetFactory } from './charactersheet.js';
 import { EntityId } from './baserepository.js';
 import { schema, getReference } from './schema.js';
+import { Chat, Message } from './chat.js';
 
 class NotView { 
 	/**
@@ -33,14 +34,28 @@ class NotView {
 		this.theDocument = adocument;
 	}
 	
+	displaySendMessageRequester(contextId) {
+		const dialog = this.theDocument.createElement('dialog-widget');
+		dialog.innerHTML = `<conversation-messager slot='content' cols='60' contextid='${contextId}'></conversation-messager>`;
+		dialog.addEventListener('postaction',(e) => {
+			const contextId = e.detail.contextid;
+			const text = e.detail.text;
+			const chat = new Chat(contextId);
+			const senderId = this.controller.getCurrentPlayer().id;
+			const msg = new Message(null,1,senderId,contextId,text,null);
+			chat.sendMessage(msg);
+		})
+		this.theDocument.getElementsByTagName('body')[0].appendChild(dialog);
+	}
+	
 	displayConversation(id) {
 		const displayarea = this.theDocument.getElementById('mainappview');
-		displayarea.innerHTML = `<conversation-viewer contextid=${new EntityId(schema.conversations,id)} messager="true" threadid='1'></conversation-viewer>`;
+		displayarea.innerHTML = `<conversation-viewer contextid=${id} messager="true" threadid='1'></conversation-viewer>`;
 	}
 
-	displayPlayerMessages(playerId) {
+	displayPlayer(playerId) {
 		const displayarea = this.theDocument.getElementById('mainappview');
-		displayarea.innerHTML = `<conversation-viewer contextid=${new EntityId(schema.players,playerId)} messager="true" threadid='1'></conversation-viewer>`;
+		displayarea.innerHTML = `<player-view playerid=${playerId}></player-view>`;
 	}
 
 	displayEquipmentList() {
@@ -142,10 +157,16 @@ class NotView {
 	}
 	
 	displayConversations(isactive) {
-		const currentplayerid = new EntityId(schema.players,this.controller.getCurrentPlayer().id);
+		const currentplayerid = this.controller.getCurrentPlayer().id;
 		const content = this.theDocument.createElement('tab-body');
 		content.innerHTML = `<conversation-list playerid='${currentplayerid}' id='lefttabconvlist' displayid='lefttabconvlist'></conversation-list>`;
 		this.addTabToLeftPanel('Chats',content,isactive);
+	}
+	
+	displayPlayers(isactive) {
+		const content = this.theDocument.createElement('tab-body');
+		content.innerHTML = `<player-list></player-list>`;
+		this.addTabToLeftPanel('Players',content,isactive);
 	}
 	
 	/**
@@ -157,6 +178,7 @@ class NotView {
 		this.displayBookMarks(false);
 		this.displayOwned(false);
 		this.displayConversations(false);
+		this.displayPlayers(false);
 	}
 	
 	/**
@@ -249,7 +271,7 @@ class NotView {
 		const displayarea = this.theDocument.getElementById('mainappview');
 		displayarea.innerHTML = `<game-view gameid='${gameId}' id='gv${gameId}'></game-view>`;
 		const gameview = this.theDocument.getElementById(`gv${gameId}`);
-		this.controller.doGameInfoDisplay(gameview);
+		this.controller.getGameById(gameId).then(game => gameview.showGame(game));
 	}
 	
 	displayCharacterInfo(characterId) {

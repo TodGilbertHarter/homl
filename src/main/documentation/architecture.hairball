@@ -1,0 +1,25 @@
+/DOCUMENT" HoML Architecture"/
+/BODY
+/CHAPTER" HoML Site Architecture"/
+
+The Heroes of Myth &amp; Legend site is a single page web application written in Javascript using Firestore. This means that the entirety of the application itself is client-side. Firestore provides authz and object persistence. Static storage and web serving is via a Google storage bucket and proxy set up to serve the domain via https. There are currently
+/EM no EM/ server side components in use, although it is perfectly feasible to deploy such if necessary using any of the various Google services available.
+
+Code is simply served up as-is, no transpilation or other post-processing is done on the Javascript. This means there is very little development tooling in use. HTML on the other hand is entirely generated from Hairball in roughly the same was as the rules themselves are.
+/SECTION" SPA Design"/
+
+The SPA itself consists of several major parts, the application code, deployment scripts, gradle task definitions, and ECMAscript tooling code which is run from Gradle using a GraalVM nodejs emulator, though actual Node.js should work fine as well. In order to provision the Google Firestore libraries required by this code npm is used via Gradle to download those libraries.
+/SUBSECTION" Deployment Scripts"/
+
+The scripts used by the site portion of HoML are part of the overall set of scripts which are used by HoML generally to process and deploy content. These scripts are found in the project's /scripts directory. They are normally invoked from Gradle.
+SUBSECTION/
+/SUBSECTION" ECMAScript Tooling"/
+
+These are scripts which also live in the /scripts directory and consist of the 'upload_*.js' set of scripts. Each one processes a file, compendium.json, and extracts data from it, and uploads that data to the HoML Firestore database. This mechanism allows the rules themselves to serve as the sole source of HoML data. If something like a power is changed in the HoML rules document, then Gradle can be used to go from rules hairball text to produce the compendium.json, which can then be processed and uploaded, guaranteeing consistency and preventing divergence between the rules and the database.
+SUBSECTION/
+SECTION/
+/SECTION" SPA Software Architecture"/
+<img src='./images/MVC-Process.svg'/>
+SECTION/
+
+DOCUMENT/

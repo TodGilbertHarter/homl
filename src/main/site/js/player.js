@@ -15,8 +15,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { MacroSet } from './macros.js';
-class Player {
-	id;
+import { Entity, EntityId } from './baserepository.js';
+import { collections } from './schema.js';
+import { immerable } from 'immer';
+
+class Player extends Entity {
+	[immerable] = true;
 	uid;
 	loggedIn;
 	owned;
@@ -25,7 +29,7 @@ class Player {
 	macroset;
 	
 	constructor(id, uid, loggedIn, owned, handle, bookMarks, macroset) {
-		this.id = id;
+		super(id ? id : EntityId.create(collections.players));
 		this.uid = uid;
 		this.loggedIn = loggedIn;
 		this.owned = owned === undefined ? [] : owned;

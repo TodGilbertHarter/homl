@@ -15,15 +15,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { Rules } from './rules.js';
+import { Entity, EntityId } from './baserepository.js';
+import { collections } from './schema.js';
 
-class Character {
-	id;
+class Character extends Entity {
+	[immerable] = true;
 	chardata;
 	dData;
 	rules;
 		
 	constructor(id,data) {
-		this.id = id;
+		super(id ? id : EntityId.create(collections.characters));
 		if(data === null || data === undefined) { 
 			data = {
 				level: 1,

@@ -5,7 +5,7 @@
 /VARIABLE /FIRSTFEAT /TRUE /FIRSTFEAT /V!
 /NEWVOCABULARY /SPECIES
 /VOCABULARY /SPECIES /CURRENT
-/: /ID" /" " /DUP /. ": { "version": "1.0", "id": " /. " :/
+/: /ID" /" " /DUP /. ": { "version": 1.0 :/
 /VOCABULARY /COMPENDIUM /CURRENT
 
 /NEWVOCABULARY /BOONS

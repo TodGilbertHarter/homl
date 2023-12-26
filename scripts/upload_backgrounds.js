@@ -13,16 +13,16 @@ const arg1 = process.argv[2]
 const data = require("../"+arg1);
 
 Object.keys(data["backgrounds"]).forEach((background) => {
-	handleBackground(data['backgrounds'][background]);
+	handleBackground(data['backgrounds'][background],background);
 });
 
-function handleBackground(background) {
+function handleBackground(background,id) {
 	if(!background.hasOwnProperty('boons')) { background.boons = []; }
 	background.boons = background.boons.map((boon) => {
 		return admin.firestore().doc(`boons/${boon}`);
 	});
 // console.log("WTF IS WRONG HERE "+JSON.stringify(calling));
-	upload(background,['backgrounds',background.id]);
+	upload(background,['backgrounds',id]);
 }
 
 async function upload(data, path) {

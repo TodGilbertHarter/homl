@@ -13,10 +13,10 @@ const arg1 = process.argv[2]
 const data = require("../"+arg1);
 
 Object.keys(data["boons"]).forEach((boon) => {
-	handleBoon(data['boons'][boon]);
+	handleBoon(data['boons'][boon],boon);
 });
 
-function handleBoon(boon) {
+function handleBoon(boon,id) {
 	if(!boon.hasOwnProperty('benefits')) { boon.benefits = []; }
 //	const pattern = /id=\[([a-e|0-9|\-])+\]/;
 	const pattern = /id=\[([0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12})\]/;
@@ -37,7 +37,7 @@ function handleBoon(boon) {
 		});
 	}
 	boon.benefits = benefits;
-	upload(boon,['boons',boon.id]);
+	upload(boon,['boons',id]);
 }
 
 async function upload(data, path) {

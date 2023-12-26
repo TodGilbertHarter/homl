@@ -21,9 +21,10 @@
  * options during chargen, etc.
  */
 import { Calculation } from "./rules.js";
+import { Entity, EntityId } from './baserepository.js';
+import { collections } from './schema.js';
 
-class Calling {
-	id;
+class Calling extends Entity {
 	name;
 	features = [];
 	hitPoints;
@@ -40,7 +41,7 @@ class Calling {
 			,powerSource,weaponProfs
 			,implementProfs,proficiencies
 			,startingHitPoints,boons) {
-		this.id = id;
+		super(id ? id : EntityId.create(collections.callings));
 		this.name = name;
 		if(features !== 'undefined') {
 			this.features = features; 

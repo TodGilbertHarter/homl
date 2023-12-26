@@ -15,8 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { Image } from './image.js';
-import { BaseRepository } from './baserepository.js';
-import { schema, getDb, getReference } from './schema.js';
+import { BaseRepository, EntityId } from './baserepository.js';
+import { collections } from './schema.js';
 
 /**
  * Repository for holding references to images and related meta-data.
@@ -24,16 +24,17 @@ import { schema, getDb, getReference } from './schema.js';
 const imageConverter = {
 	toFirestore(image) {
 		return {
-			id: image.id,
 			owner: image.owner,
 			description: image.description,
-			uri: image.uri
+			uri: image.uri,
+			version: 1.0
 		}
 	},
 	fromFirestore(snapshot,options) {
 		const id = snapshot.id;
+		const eid = EntityId.create(collections.images,id);
 		const data = snapshot.data(options);
-		return new Image(id,data.owner,data.description,data.uri);
+		return new Image(eid,data.owner,data.description,data.uri);
 	}
 };
 
@@ -43,33 +44,8 @@ const imageConverter = {
 class ImageRepository extends BaseRepository {
 
     constructor() {
-		super(imageConverter,schema.images);
+		super(imageConverter,collections.images);
     }
-
-	static GetImageReference(id) {
-		return getReference(schema.images,id);
-	};
-	
-	/**
-	 * Given aa image reference, call the onSuccess callback when the corresponding image is available
-	 * If the imageRef is really an image, then simply call onSuccess immediately.
-	 */
-	getReferencedImage(imageRef,onSuccess) {
-		this.dtoFromReference(imageRef,onSuccess);
-	}
-	
-	getReferencedImages(imageRefs,onSuccess) {
-		this.dtosFromReferences(imageRefs,onSuccess);
-	}
-	
-    saveImage(image) {
-		this.saveDto(image);
-    }
-    
-    getImageById(imageId,onDataAvailable) {
-		var docRef = this.getReference(imageId);
-		this.dtoFromReference(docRef,onDataAvailable);
-	}
 
 }
 

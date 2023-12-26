@@ -15,37 +15,31 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase-auth';
-import { Timestamp } from 'firebase-firestore';
-import { Player } from './player.js';
 
 class Authenticator {
-	/** @private */ fb;
-	/** @private */ gebApp;
-	/** @private */ playerRepo;
+	controller;
+	authenticated = false;
 	user;
-	/** @private */ authenticated = false;
 	errorCode;
 	player;
 	
-	constructor(gebApp,firebase,playerRepo) {
-		this.gebApp - gebApp;
-		this.fb = firebase;
-		this.playerRepo = playerRepo;
+	constructor(controller) {
+		this.controller = controller;
 	}
 	
 	/** @private */ getPlayerFromRepo(onSuccess,onFailure) {
-		this.playerRepo.getPlayerByUid(this.user.uid,(data) => {
+		this.controller.getPlayerByUid(this.user.uid).then((data) => {
 			this.player = data;
 			onSuccess(this.user,this.player);
-		}, (message) => onFailure(message));
+		}).catch((message) => onFailure(message));
 	}
 	
 	signOut(onComplete) {
 		getAuth().signOut().then(() => {
+				onComplete(this.player);
 				this.authenticated = false;
 				this.user = null;
 				this.player = null;
-				onComplete();
 			}
 		)
 		.catch((e) => {
@@ -60,8 +54,7 @@ class Authenticator {
 		    this.user = userCredential.user;
 			this.errorCode = 0;
 			this.getPlayerFromRepo((user,player) => {
-				player.loggedIn = Timestamp.fromDate(new Date());
-				this.playerRepo.savePlayer(player);
+				this.controller.updatePlayerLoginTime(player);
 				onSuccess();
 				},
 			onFailure);
@@ -82,8 +75,7 @@ class Authenticator {
 			this.authenticated = true;
 		    this.user = userCredential.user;
 			this.errorCode = 0;
-		    this.player = new Player(null,this.user.uid,Timestamp.fromDate(new Date()),null,handle,null);
-		    this.playerRepo.savePlayer(this.player);
+			this.player = this.controller.createNewPlayer(this.user.uid,(player) => {this.player = player});
 		    onSuccess(this.player);
 		  })
 		  .catch((error) => {

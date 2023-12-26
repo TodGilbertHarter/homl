@@ -14,65 +14,41 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { schema, getReference, resolveReference } from './schema.js';
+import { schema } from './schema.js';
 import {gameContext} from './context.js';
+import {EntityId, Search, SearchParam} from './baserepository.js';
+import {Authenticator} from './authenticator.js';
+import {Router} from './router.js';
+import { Timestamp } from 'firebase-firestore';
 
 class Controller {
-	/** @private */ gebApp;
 	/** @private */ view;
 	/** @private */ authenticator;
 	/** @private */ router;
-	/** @private */ gameRepo;
-	/** @private */ gamesListeners;
-	/** @private */ characterListeners;
-	/** @private */ characterRepo;
 	/** @private */ characterController;
-	/** @private */ callingRepo;
-	/** @private */ equipmentRepo;
-	/** @private */ boonRepo;
-	/** @private */ featRepo;
-	/** @private */ playerRepo;
-	/** @private */ npcRepo;
-	/** @private */ imageRepo;
-	/** @private */ originRepo;
-	/** @private */ conversationRepo;
 	/** @private */ preAuthPath;
 	/** @private */ context;
 		
-	constructor(gebApp,view,authenticator,router,gameRepo,characterRepo,characterController,callingRepo,speciesRepo,
-		backgroundRepo,originRepo,equipmentRepo,boonRepo,featRepo,playerRepo,npcRepo,imageRepo,convRepo) {
-		this.gebApp = gebApp;
+	constructor(view,characterController) {
 		this.view = view;
-		view.controller = this;
-		this.authenticator = authenticator;
-		this.router = router;
-		this.gameRepo = gameRepo;
-		this.characterRepo = characterRepo;
+		this.view.controller = this;
 		this.characterController = characterController;
-		this.callingRepo = callingRepo;
-		this.speciesRepo = speciesRepo;
-		this.backgroundRepo = backgroundRepo;
-		this.originRepo = originRepo;
-		this.equipmentRepo = equipmentRepo;
-		this.boonRepo = boonRepo;
-		this.featRepo = featRepo;
-		this.playerRepo = playerRepo;
-		this.npcRepo = npcRepo;
-		this.imageRepo = imageRepo;
-		this.conversationRepo = convRepo;
+		this.authenticator = new Authenticator(this);
+		this.router = new Router({ mode: 'hash', root: '/'});;
 		this.preAuthPath = window.location.hash;
 		this.context = gameContext;
 		this.router.add(/signup/,() => { this.view.displaySignUpUI(); });
 		this.router.add(/signin/,() => { this.view.displaySignInUI(); });
 		this.router.add(/signout/,() => { this.view.displaySignOutUI(); });
 		this.router.add(/authenticated/,() => { this.view.displayAuthenticatedUI(); });
-		this.router.add(/showgame\/(.*)/,(gameid) => { this.view.displayGameInfo(gameid); });
-		this.router.add(/showcharacter\/(.*)/,(characterid) => { this.view.displayCharacterInfo(characterid); });
+		this.router.add(/showgame\/(.*)/,(gameid) => { this.view.displayGameInfo(EntityId.EntityIdFromString(gameid)); });
+		this.router.add(/showcharacter\/(.*)/,(characterid) => { this.view.displayCharacterInfo(EntityId.EntityIdFromString(characterid)); });
 		this.router.add(/creategame/,() => { this.view.displayCreateGameUI(); });
 		this.router.add(/equipment/,() => {this.view.displayEquipmentList(); });
 		this.router.add(/playersettings/,() => {this.view.displayPlayerSettings(this.getCurrentPlayer().id); });
-		this.router.add(/playermessages\/(.*)/,(playerId) => {this.view.displayPlayerMessages(playerId); });
-		this.router.add(/conversations\/(.*)/,(id) => {this.view.displayConversation(id); });
+		this.router.add(/playermessages\/(.*)/,(playerId) => {this.view.displayPlayerMessages(EntityId.EntityIdFromString(playerId)); });
+		this.router.add(/conversations\/(.*)/,(id) => {this.view.displayConversation(EntityId.EntityIdFromString(id)); });
+		this.router.add(/player\/(.*)/,(id) => {this.view.displayPlayer(EntityId.EntityIdFromString(id)); });
 		this.router.add(/feats/,() => {this.view.displayFeatList(); });
 		this.router.add(/boons/,() => {this.view.displayBoonList(); });
 		this.router.add(/npcs/,() => {this.view.displayNpcList(); });
@@ -80,8 +56,66 @@ class Controller {
 		this.actions = {};
 	}
 
+	currentPlayerListener = (player) => { this.authenticator.player = player }
+	
+	/**
+	 * Return the player associated with a given uid.
+	 */
+	async getPlayerByUid(uid) {
+		const sparam = new SearchParam("uid",uid,"==");
+		const s = new Search([sparam],'players');
+		const results = await schema.players.search(s,this.currentPlayerListener);
+		return results[0];
+	}
+	
+	signout() {
+		this.authenticator.signout((player) => { 
+			schema.players.unregister(player,this.currentPlayerListener);
+		});
+	}
+	
+	async updatePlayerLoginTime(player) {
+		await schema.players.update(player,(draft) => { draft.loggedIn = Timestamp.fromDate(new Date());},true );
+	}
+
+	async createNewPlayer(uid,listener) {
+	    this.player = new Player(null,this.user.uid,Timestamp.fromDate(new Date()),null,handle,null);
+	    return await schema.players.update(player,() => {},true,listener);
+	}
+	
+	async getAllCallings(listener) {
+		return schema.callings.fetchAll(listener);
+	}
+	
+	async getAllSpecies(listener) {
+		return schema.species.fetchAll(listener);
+	}
+	
+	async getAllOrigins(listener) {
+		return schema.origins.fetchAll(listener);
+	}
+
+	async doCharacterCriteriaSearch(criteria) {
+		return await this.characterRepo.searchCharacters(criteria);
+	}
+
+	/********************************************************** */
+
 	displayConversation(id) {
 		window.location.hash = `/conversations/${id}`;
+	}
+	
+	displayPlayer(id) {
+		window.location.hash = `/player/${id}`;
+	}
+
+	/** this will need a filter of some sort! */	
+	async getAllPlayers() {
+		return await this.playerRepo.getAllAsync();
+	}
+	
+	async saveConversation(conversation) {
+		return await this.conversationRepo.saveDto(conversation);
 	}
 	
 	async getParticipantConversations(playerId) {
@@ -192,20 +226,9 @@ class Controller {
 		}
 	}
 	
-	async getAllCallings() {
-		return this.callingRepo.getAllCallingsAsync();
-	}
-	
-	async getAllSpecies() {
-		return this.speciesRepo.getAllSpeciesAsync();
-	}
-	
-	async getAllOrigins() {
-		return this.originRepo.getAllOriginsAsync();
-	}
-
-	getNpcs(npcrefs,onSuccess) {
-		this.npcRepo.getReferencedNpcs(npcrefs,onSuccess);
+	getNpcs(npcIds,onSuccess) {
+		this.npcRepo.dtosFromIds(npcIds,onSuccess);
+//		this.npcRepo.getReferencedNpcs(npcrefs,onSuccess);
 	}
 	
 	displayEquipmentView() {
@@ -255,12 +278,16 @@ class Controller {
 		return getReference(schema.players,this.authenticator.player.id);
 	}
 	
-	getImages(imageRefs,onSuccess) {
-		this.imageRepo.getReferencedImages(imageRefs,onSuccess);
+	getImages(imageIds,onSuccess) {
+		this.imageRepo.dtosFromIds(imageIds,onSuccess);
 	}
 	
 	sendMessage(message) {
 		return this.messageRepo.saveDto(message);
+	}
+	
+	getCharactersByIds(ids,onSuccess) {
+		this.characterRepo.dtosFromIds(ids,onSuccess);
 	}
 	
 	/**
@@ -276,6 +303,10 @@ class Controller {
 			}
 			onDataAvailable(player);
 		});
+	}
+	
+	async getPlayer(playerId) {
+		return await this.playerRepo.getPlayerByIdAsync(playerId);
 	}
 	
 	onCallingsChanged(callings) {
@@ -391,7 +422,8 @@ class Controller {
 	}
 	
 	getPlayers(players,onSuccess) {
-		this.playerRepo.getReferencedPlayers(players,onSuccess);
+		this.playerRepo.dtosFromIds(players,onSuccess);
+//		this.playerRepo.getReferencedPlayers(players,onSuccess);
 	}
 	
 	/**
@@ -404,39 +436,18 @@ class Controller {
 	/**
 	 * Initiate a search for a game by name.
 	 */
-	doGameSearch(name) {
-		this.gameRepo.getGamesByName(name,this.onGamesChanged.bind(this));
+	async doGameSearch(name) {
+		return new Promise((resolve) => {
+			this.gameRepo.getGamesByName(name,resolve);
+		});
 	}
 	
-	/**
-	 * Register a handler to handle an update to the list of games.
-	 */
-	registerGamesListener(handler) {
-		this.gamesListener = handler;
+	async doCharacterSearch(name) {
+		return new Promise((resolve) => {
+			this.characterRepo.getCharactersByName(name,resolve);
+		});
 	}
 	
-	registerCharactersListener(handler) {
-		this.characterListener = handler;
-	}
-	
-	doCharacterSearch(name) {
-		this.characterRepo.getCharactersByName(name,this.onCharactersChanged.bind(this));
-	}
-	
-	async doCharacterCriteriaSearch(criteria) {
-		return await this.characterRepo.searchCharacters(criteria);
-	}
-	
-	onCharactersChanged(characters) {
-		this.characterListener(characters);
-	}
-	
-	/**
-	 * Call the listener for updates to the list of games.
-	 */
-	onGamesChanged(games) {
-		this.gamesListener(games);
-	}
 	
 	/**
 	 * Handle a request to display a specific id of game in the main view.
@@ -444,16 +455,19 @@ class Controller {
 	displayGameViewClicked(gameId) {
 		window.location.hash = `/showgame/${gameId}`;
 	}
-	
-	doGameInfoDisplay(gameview) {
-		this.gameRepo.getGameById(gameview.gameId,gameview.showGame.bind(gameview));
+
+	async getGameById(gameId) {
+		return this.gameRepo.entityFromId(gameId);
 	}
+	
+/*	doGameInfoDisplay(gameview) {
+		this.gameRepo.getGameById(gameview.gameId,gameview.showGame.bind(gameview));
+	} */
 	
 	displayCharacterViewClicked(characterId) {
 		window.location.hash = `/showcharacter/${characterId}`;
 	}
-	
+
 }
 
 export { Controller };
-

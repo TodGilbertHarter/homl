@@ -16,6 +16,7 @@
 */
 
 import { html, LitElement, render, repeat, ref, createRef } from 'lit3';
+import { EntityId } from './baserepository.js';
 
 /**
  * Class to view all the equipment in the game.
@@ -39,7 +40,7 @@ class EquipmentView extends LitElement {
 	
 	connectedCallback() {
 		super.connectedCallback();
-		this.equipmentRepo.addListener(this.equipmentUpdated);
+//		this.equipmentRepo.addListener(this.equipmentUpdated);
 		this.equipmentRepo.getAllEquipment((equipment) => { this.equipmentUpdated(equipment);  });
 	}
 	
@@ -120,7 +121,7 @@ class EquipmentList extends LitElement {
 		this.cost = 'N/A';
 		this.detailTemplate = (item) => html`<div slot='content'>Details: ${item.name}</div>${this.renderButtons()}`;
 		this.onClick = (e) => {
-			const id = e.target.id;
+			const id = EntityId.EntityIdFromString(e.target.id);
 			this.dialog = document.createElement('dialog-widget');
 			this.item = this.lookupItem(id);
 			render(this.detailTemplate(this.item),this.dialog);

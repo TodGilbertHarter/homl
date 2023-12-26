@@ -13,10 +13,10 @@ const arg1 = process.argv[2]
 const data = require("../"+arg1);
 
 Object.keys(data["callings"]).forEach((calling) => {
-	handleCalling(data['callings'][calling]);
+	handleCalling(data['callings'][calling],calling);
 });
 
-function handleCalling(calling) {
+function handleCalling(calling,id) {
 	if(!calling.hasOwnProperty('features')) { calling.features = []; }
 	if(typeof calling.features !== 'undefined') {
 		calling.features = calling.features.map((feature) => {
@@ -30,7 +30,7 @@ function handleCalling(calling) {
 			return admin.firestore().doc(`boons/${boon}`);
 		});
 	}
-	upload(calling,['callings',calling.id]);
+	upload(calling,['callings',id]);
 }
 
 async function upload(data, path) {

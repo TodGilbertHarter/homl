@@ -18,23 +18,26 @@
 import { html, LitElement } from 'lit3';
 
 class GameSearch extends LitElement {
+	static properties = {
+		displayId: {}
+	}
 	
 	constructor() {
 		super();
 	}
 
 	render() {
-			return html`<div class='gamesearch' part='container'>
-				<label for='name'>Name</label>
-				<input type='text' id='name' @change=${this.onNameChange}/>
-			</div>`;		
+		return html`<div class='gamesearch' part='container'>
+			<label for='name'>Name</label>
+			<input type='text' id='name' @change=${this.onNameChange}/>
+		</div>`;		
 	}
 	
 	onNameChange(e) {
-		const displayId = this.getAttribute('displayid');
-		const viewer = this.parentElement.querySelector('#'+displayId);
-		window.gebApp.controller.registerGamesListener(viewer.getRenderFn());
-		window.gebApp.controller.doGameSearch(e.target.value);
+		const viewer = this.parentElement.querySelector('#'+this.displayId);
+		window.gebApp.controller.doGameSearch(e.target.value).then((results) => {
+			viewer.setModel(results);
+		});
 	}
 }
 

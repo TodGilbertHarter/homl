@@ -6,7 +6,7 @@
 
 /NEWVOCABULARY /CALLINGS
 /VOCABULARY /CALLINGS /CURRENT
-/: /ID" /" " /DUP /. ": { "version": "1.0", "id": " /. " :/
+/: /ID" /" " /DUP /. ": { "version": 1.0 :/
 /: /ROLE , "role": " :/
 /: ROLE/ " :/
 /VOCABULARY /COMPENDIUM /CURRENT

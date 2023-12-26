@@ -16,7 +16,56 @@
 */
 
 import { doc, getDoc, getDocs, setDoc, DocumentReference, collection, query, where } from 'firebase-firestore';
-import { getReference, getDb } from './schema.js';
+import { getReference, getDb, schema } from './schema.js';
+
+/**
+ * Passes search criteria into a repository search, and provides
+ * a mechanism for identifying a specific search.
+ */
+class SearchParam {
+	fieldValue;
+	fieldName;
+	op;
+
+	constructor(fieldName,fieldValue,op) {
+		this.fieldName = fieldName;
+		this.fieldValue = fieldValue;
+		this.op = op;
+	}
+}
+
+class Search {
+	parameters;
+	listener;
+	id;
+	
+	constructor(parameters,collectionName,listener) {
+		this.parameters = parameters;
+		this.listener = listener;
+		this.id = schema[collectionName].createEntityId(schema,this.hash(collectionName));
+	}
+	
+	/**
+	 * Construct a fairly decent cheap hash of the parameters.
+	 */
+	hash(collectionName) {
+		const strvals = this.parameters.map((parameter) => { return `${parameter.fieldValue}/${parameter.fieldName}/${parameter.op}` })
+		const str = collectionName + strvals.join();
+		const seed = 0;
+	    let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+	    for(let i = 0, ch; i < str.length; i++) {
+	        ch = str.charCodeAt(i);
+	        h1 = Math.imul(h1 ^ ch, 2654435761);
+	        h2 = Math.imul(h2 ^ ch, 1597334677);
+	    }
+	    h1  = Math.imul(h1 ^ (h1 >>> 16), 2246822507);
+	    h1 ^= Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+	    h2  = Math.imul(h2 ^ (h2 >>> 16), 2246822507);
+	    h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+	  
+	    return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+	}
+}
 
 /**
  * Represents the identifier within the data store of a given entity.
@@ -24,34 +73,33 @@ import { getReference, getDb } from './schema.js';
  * strings, and to and from Firestore references.
  */
 class EntityId {
-	schema;
+	collection;
 	idValue;
 
 	/**
-	 * Build a new Entity Id.
+	 * Build a new Entity Id. WARNING, do not call this
+	 * constructor! Call the factory method EntityId.create()
+	 * instead! This will insure that every instance of an id
+	 * referring to the same entity will always be the same
+	 * object. Failure to obey this rule WILL create problems!
 	 */	
-	constructor(schema,idValue) {
-		this.schema = schema;
+	constructor(collection,idValue) {
+		this.collection = collection;
 		if(idValue)
 			this.idValue = idValue;
 		else
 			this.idValue = crypto.randomUUID();
 	}
 
+	static create(collection,idValue) {
+		return schema[collection].createEntityId(collection,idValue);
+	}
+
 	/**
 	 * Return the FireStore reference pointing to this entity in the data store.
 	 */	
 	getReference() {
-		return getReference(this.schema,this.idValue);
-	}
-
-	/**
-	 * Test this id against another one for equivalency.
-	 */	
-	isEqual(otherEntityId) {
-		return (otherEntityId instanceof EntityId) 
-			&& this.schema === otherEntityId.schema
-			&& this.idValue === otherEntityId.idValue;
+		return getReference(this.collection,this.idValue);
 	}
 
 	/**
@@ -59,7 +107,7 @@ class EntityId {
 	 * around in HTML attributes. In this form it can be easily remade as an object.
 	 */	
 	toString() {
-		return `${this.schema}/${this.idValue}`
+		return `${this.collection}/${this.idValue}`
 	}
 	
 	/**
@@ -68,7 +116,7 @@ class EntityId {
 	 */
 	static EntityIdFromString(refString) {
 		var parts = refString.split('/');
-		return new EntityId(parts[0],parts[1]);
+		return EntityId.create(parts[0],parts[1]);
 	}
 	
 	/**
@@ -76,7 +124,7 @@ class EntityId {
 	 */
 	static EntityIdFromReference(reference) {
 		var parts = reference.path.split('/');
-		return new EntityId(parts[0],parts[1]);
+		return EntityId.create(parts[0],parts[1]);
 	}
 }
 
@@ -91,7 +139,86 @@ const IdConverter = {
 }
 
 /**
- * Base repository class for FireStore repositories.
+ * A usable set of Entity Ids, since the built-in ES6 Set is basically worthless...
+ * Note that, aside from the equality comparison this should closely emulate native Set
+ * in most respects, though I'm sure it is a bit less performant.
+ */
+class IdSet {
+	contents;
+	
+	constructor(ids) {
+		ids ? this.contents = new Map(ids.map(eid => [eid.toString(), eid])) : new Map();
+	}
+	
+	add(eid) {
+		return this.contents.add(eid.toString(), eid);
+	}
+	
+	delete(eid) {
+		return this.contents.delete(eid.toString());
+	}
+	
+	get(idStr) {
+		return this.contents.get(idStr);
+	}
+	
+	has(eid) {
+		return this.contents.has(eid.toString());
+	}
+	
+	clear() {
+		return this.contents.clear();
+	}
+	
+	get size() {
+		return this.contents.size;
+	}
+	
+	forEach(lambda) {
+		this.contents.forEach((key,value) => lambda(value,value));
+	}
+	
+	keys() {
+		return this.contents.values();
+	}
+	
+	entries() {
+		return this.contents.map((key,value) => [value, value]);
+	}
+	
+	values() {
+		return this.contents.values();
+	}
+}
+
+/**
+ * Base class for all HoML entities.
+ */
+class Entity {
+	id;
+	
+	constructor(id) {
+		if(!id) throw new Error("Every entity must have an id");
+		this.id = id;
+	}
+	
+	getReference() {
+		return this.id.getReference();
+	}
+	
+	toString() {
+		return this.id.toString();
+	}
+	
+	get collection() {
+		return this.id.collection;
+	}
+}
+
+/**
+ * Base repository class for FireStore repositories. This gives us just
+ * the ability to read data and handle the converter specific to the
+ * entity class stored here.
  */
 class BaseRepository {
 	converter;
@@ -102,66 +229,106 @@ class BaseRepository {
 		this.collectionName = collectionName;
 	}
 
-	/**
-	 * Given an object id, return a document reference to
-	 * the object.
-	 */
-	getReference(id) {
-		return getReference(this.collectionName,id);
+	async entityFromId(eid) {
+		const ref = eid.getReference();
+		return this._entityFromReferenceAsync(ref);
 	}
 
 	/**
-	 * Given an entity return a reference to it.
+	 * Return a group of entities given a list of ids.
 	 */
-	getReferenceFromEntity(entity) {
-		return this.getReference(entity.id);
+	async entitiesFromIds(ids) {
+		const refs = ids.map((id) => id.getReference());
+		return new Promise((resolve) => {
+			this._entitiesFromReferences(refs,resolve);
+		});
 	}
 	
 	/**
-	 * Look up a FireStore document entity given a FireStore document reference.
+	 * Do a simple search for a DTO on the named field, compared with the named value, using the named op
+	 * and call the given callbacks on success or failure. This should cover a large percentage of all 
+	 * basic database queries.
 	 */
-	entityFromReference(ref,onSuccess) {
-		if(!(ref instanceof DocumentReference)) {
-			onSuccess(ref); // Because it is actually an entity, not a ref!
-		} else {
-			getDoc(ref).then((dto) => { 
-				onSuccess(dto);
-			});
-		}
+	async findEntity(fieldName,fieldValue,op) {
+        const ref = collection(getDb(),this.collectionName);
+        const q = query(ref,where(fieldName, op, fieldValue)).withConverter(this.converter);
+        return await getDocs(q);
 	}
-
+	
 	/**
-	 * Look up an entity based on a reference and use this repo's converter
-	 * to convert it into a dto, and call back to onSuccess.
-	 */	
-	dtoFromReference(ref,onSuccess) {
-		if(!(ref instanceof DocumentReference)) {
-			onSuccess(ref); // Because it is actually an entity, not a ref!
-		} else {
-			var dr = ref.withConverter(this.converter);
-			getDoc(dr).then((dto) => { 
-				onSuccess(dto.data()); 
-			});
-		}
+	 * Find entities based on a single simple where condition.  
+	 */				
+	async findEntities(fieldName,fieldValue,op) {
+		const cRef = collection(getDb(),this.collectionName);
+        const q = query(cRef,where(fieldName, op, fieldValue)).withConverter(this.converter);
+		const doc = await getDocs(q);
+		const results = [];
+		doc.forEach((gdata) => {
+			results.push(gdata.data());
+		});
+		return results;
 	}
-
+	
 	/**
-	 * Async version of getting a DTO from a reference.
+	 * Do a search for entities using a complex where clause.
 	 */
-	async dtoFromReferenceAsync(ref) {
-		if(!(ref instanceof DocumentReference)) {
-			return ref; // it is already a DTO or something else, just return it.
-		}
-		var dr = ref.withConverter(this.converter);
-		var entity = await getDoc(dr);
-		return entity.data();
+	async searchEntities(params) {
+		const cRef = collection(getDb(),this.collectionName);
+		const qc = params.map((param) => where(param.fieldName,param.op,param.fieldValue));
+        const q = query(cRef,...qc).withConverter(this.converter);
+		const doc = await getDocs(q);
+		const results = [];
+		doc.forEach((gdata) => {
+			results.push(gdata.data());
+		});
+		return results;
+	}
+	
+	/**
+	 * Careful with this! It will do a full table scan of the collection.
+	 * This will return every entity in the entire Firestore collection. It
+	 * is pretty useful for smaller collections containing a limited number
+	 * of objects, like callings, but open-ended collections like players will
+	 * override this with a 'not implemented' to prevent catastrophic bad
+	 * things from happening.
+	 */
+	async getAllAsync() {
+		var coll = collection(getDb(),this.collectionName);
+		coll = coll.withConverter(this.converter);
+		const docs = [];
+		const results = await getDocs(coll);
+		results.forEach(r => docs.push(r.data()));
+		return docs;
+	}
+	
+	/**
+	 * This is a better version, it includes a (possibly blank) search
+	 * criteria, a field to order by, a (again possibly blank) starting record,
+	 * and a page size.
+	 */
+	
+	async getPaged(params,sort,start,size) {
+		const cRef = collection(getDb(),this.collectionName);
+		const qc = params.map((param) => where(param.fieldName,param.op,param.fieldValue));
+		let q = undefined;
+		if(start) {
+			const startDao = toDao(start);
+	        q = query(cRef,...qc,orderBy(sort),limit(size),startAfter(startDao)).withConverter(this.converter);
+	    } else {
+	        q = query(cRef,...qc,orderBy(sort),limit(size)).withConverter(this.converter);
+	    }
+		const doc = await getDocs(q);
+		const results = [];
+		doc.forEach((gdata) => {
+			results.push(gdata.data());
+		});
 	}
 	
 	/**
 	 * Given an array of references, get the associated
 	 * dtos and call onSuccess when they are all available.
 	 */
-	dtosFromReferences(refs,onSuccess) {
+	_entitiesFromReferences(refs,onSuccess) {
 		const results = [];
 		refs.forEach((docRef) => {
 			const dr = docRef.withConverter(this.converter);
@@ -178,119 +345,61 @@ class BaseRepository {
 		});
 		
 	}
-
+	
 	/**
-	 * Save a DTO into the repository async.
+	 * Async version of getting a DTO from a reference.
 	 */
-    async saveDto(dto) {
-        console.log("Saving data of "+JSON.stringify(dto));
-        if(dto.id === undefined || dto.id === null) {
-			dto.id = crypto.randomUUID();
+	async _entityFromReferenceAsync(ref) {
+		if(!(ref instanceof DocumentReference)) {
+			return ref; // it is already a DTO or something else, just return it.
 		}
-		const idStr = dto.id instanceof EntityId ? dto.id.idValue : dto.id;
-        await setDoc(doc(getDb(),this.collectionName,idStr).withConverter(this.converter),dto);
-        return dto.id;
-    }
-
-	/**
-	 * Do a simple search for a DTO on the named field, compared with the named value, using the named op
-	 * and call the given callbacks on success or failure. This should cover a large percentage of all 
-	 * basic database queries. onDataAvailable will be called once for each result if there are more than
-	 * one matches.
-	 */
-	findDto(fieldName,fieldValue,op,onDataAvailable,onFailure) {
-        const ref = collection(getDb(),this.collectionName);
-        const q = query(ref,where(fieldName, op, fieldValue)).withConverter(this.converter);
-        getDocs(q).then((doc) => { 
-            doc.forEach(r => { 
-                var data = r.data();
-                onDataAvailable(data);
-            } ) }).catch((e) => {
-				console.trace(e);
-				onFailure(e.message);
-			});
+		var dr = ref.withConverter(this.converter);
+		var entity = await getDoc(dr);
+		return entity.data();
 	}
 	
 	/**
-	 * This is similar to findDto but calls onDataAvailable once with an
-	 * array of results.
-	 */
-	findDtos(fieldName,fieldValue,op,onDataAvailable,onFailure) {
-		const cRef = collection(getDb(),this.collectionName);
-        const q = query(cRef,where(fieldName, op, fieldValue)).withConverter(this.converter);
-		getDocs(q).then((doc) => { 
-			const results = [];
-			doc.forEach((gdata) => {
-				results.push(gdata.data());
-			});
-			onDataAvailable(results); 
-		}).catch((e) => {
-			console.trace(e);
-			onFailure(e.message);
-		});
-	}
-				
-	async findDtosAsync(fieldName,fieldValue,op) {
-		const cRef = collection(getDb(),this.collectionName);
-        const q = query(cRef,where(fieldName, op, fieldValue)).withConverter(this.converter);
-		const doc = await getDocs(q);
-		const results = [];
-		doc.forEach((gdata) => {
-			results.push(gdata.data());
-		});
-		return results;
-	}
-	
-	async searchDtos(params) {
-		const cRef = collection(getDb(),this.collectionName);
-		const qc = params.map((param) => where(param.fieldName,param.op,param.fieldValue));
-        const q = query(cRef,...qc).withConverter(this.converter);
-		const doc = await getDocs(q);
-		const results = [];
-		doc.forEach((gdata) => {
-			results.push(gdata.data());
-		});
-		return results;
-	}
-	
-	/**
-	 * Careful with this! It will do a full table scan of the collection.
-	 */
-	async getAllAsync() {
-		var coll = collection(getDb(),this.collectionName);
-		coll = coll.withConverter(this.converter);
-		const docs = [];
-		const results = await getDocs(coll);
-		results.forEach(r => docs.push(r.data()));
-		return docs;
-	}
-	
-	/**
-	 * Use the repository's converter to convert a DTO back into
-	 * a FireStore entity.
+	 * Use the repository's converter to convert an entity into
+	 * a Firestore DAO.
 	 */	
-	toEntity(dto) {
-		return this.converter.toFirestore(dto);
+	toDao(entity) {
+		return this.converter.toFirestore(entity);
 	}
 
 	/**
-	 * Convert from a FireStore entity into a DTO using the
+	 * Convert from a FireStore DAO into an entity using the
 	 * repository's converter.
 	 */	
-	fromEntity(entity) {
-		return this.converter.fromFirestore(entity);
+	toEntity(dao) {
+		return this.converter.fromFirestore(dao);
 	}
 }
 
 /**
- * Utility to take an array which contains any set of objects
- * which have an id property referencing the id of a FireStore
- * object in the given schema and return a corresponding array
- * of only docRefs.
+ * This version allows both read and write access.
  */
-function ToReferences(schema,list) {
-	const drs = list.map(idable => getReference(schema,idable.id));
+class WriteRepository extends BaseRepository {
+	
+	/**
+	 * Save an Entity into the repository async.
+	 */
+    async saveEntity(entity) {
+        console.log("Saving data of "+JSON.stringify(entity));
+        if(entity.id === undefined || entity.id === null) {
+			entity.id = crypto.randomUUID();
+		}
+		const idStr = entity.id.idValue;
+        await setDoc(doc(getDb(),this.collectionName,idStr).withConverter(this.converter),entity);
+        return entity.id;
+    }
+}
+
+/**
+ * Given a list of EntityIds, return a list of references.
+ */
+function ToReferences(list) {
+	const drs = list.map(idable => idable.getReference());
 	return drs;
 }
 
-export { BaseRepository, ToReferences, EntityId, IdConverter };
+export { BaseRepository, ToReferences, EntityId, IdConverter, Entity, IdSet, WriteRepository, SearchParam, Search };

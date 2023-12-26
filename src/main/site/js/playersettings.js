@@ -17,13 +17,14 @@
 
 import { html, css, LitElement, ref, createRef } from 'lit3';
 import { Player } from './player.js';
+import { EntityId, IdConverter } from './baserepository.js';
 
 /**
  * Display and modify player settings.
  */
 class PlayerSettings extends LitElement {
 	static properties = {
-		playerid: {},
+		playerid: { type: EntityId, converter: IdConverter },
 		player: {state: true }
 	}
 	

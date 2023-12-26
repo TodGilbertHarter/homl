@@ -13,16 +13,16 @@ const arg1 = process.argv[2]
 const data = require("../"+arg1);
 
 Object.keys(data["species"]).forEach((species) => {
-	handleSpecies(data['species'][species]);
+	handleSpecies(data['species'][species],species);
 });
 
-function handleSpecies(species) {
+function handleSpecies(species,id) {
 	if(!species.hasOwnProperty('boons')) { species.boons = []; }
 	species.boons = species.boons.map((boon) => {
 		return admin.firestore().doc(`boons/${boon}`);
 	});
 // console.log("WTF IS WRONG HERE "+JSON.stringify(calling));
-	upload(species,['species',species.id]);
+	upload(species,['species',id]);
 }
 
 async function upload(data, path) {

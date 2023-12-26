@@ -24,7 +24,7 @@ import { LitElement, html, css, repeat, ref, createRef } from 'lit3';
 export const macroConverter = {
 	toFirestore(macroset) {
 		const data = {
-			ownerId: macroset.ownerId,
+			ownerId: macroset.ownerId.idValue,
 			description: macroset.description,
 			name: macroset.name,
 			macros: [],

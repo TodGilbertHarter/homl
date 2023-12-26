@@ -16,6 +16,7 @@
 */
 import { html, LitElement, ref, createRef, repeat } from 'lit3';
 import {schema, getReference} from './schema.js';
+import {EntityId} from './baserepository.js';
 
 class CharacterSearch extends LitElement {
 	static properties = {
@@ -37,18 +38,31 @@ class CharacterSearch extends LitElement {
 		this._getChoices();
 	}
 	
+	
+	_callingsListener = (calling) => {
+		this._callings[calling.name] = calling.id;
+	}
+
+	_speciesListener = (species) => {
+		this._species[species.name] = species.id;
+	}
+	
+	_originsListener = (origin) => {
+		this._origins[origin.name] = origin.id;
+	}
+	
 	_getChoices() {
-		window.gebApp.controller.getAllCallings().then((callings) => {
+		window.gebApp.controller.getAllCallings(this._callingsListener).then((callings) => {
 			const nc = {any: ''};
 			callings.forEach((calling) => nc[calling.name] = calling.id);
 			this._callings = nc;
 		});
-		window.gebApp.controller.getAllSpecies().then((species) => {
+		window.gebApp.controller.getAllSpecies(this._speciesListener).then((species) => {
 			const nc = {any: ''};
 			species.forEach((specie) => nc[specie.name] = specie.id);
 			this._species = nc;
 		});
-		window.gebApp.controller.getAllOrigins().then((origins) => {
+		window.gebApp.controller.getAllOrigins(this._originsListener).then((origins) => {
 			const nc = {any: ''};
 			origins.forEach((origin) => nc[origin.name] = origin.id);
 			this._origins = nc;
@@ -65,13 +79,13 @@ class CharacterSearch extends LitElement {
 			criteria.push({fieldName: 'name', fieldValue: name, op: '=='});
 		}
 		if(calling !== '') {
-			criteria.push({fieldName: 'calling.callingref', fieldValue: getReference(schema.callings,calling), op: '=='})
+			criteria.push({fieldName: 'calling.callingref', fieldValue: EntityId.EntityIdFromString(calling).getReference(), op: '=='});
 		}
 		if(species !== '') {
-			criteria.push({fieldName: 'species.speciesref', fieldValue: getReference(schema.species,species), op: '=='})
+			criteria.push({fieldName: 'species.speciesref', fieldValue: EntityId.EntityIdFromString(species).getReference(), op: '=='})
 		}
 		if(origin !== '') {
-			criteria.push({fieldName: 'origin.originref', fieldValue: getReference(schema.origins,origin), op: '=='})
+			criteria.push({fieldName: 'origin.originref', fieldValue: EntityId.EntityIdFromString(origin).getReference(), op: '=='})
 		}
 		return criteria;
 	}
