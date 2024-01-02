@@ -21,5 +21,15 @@ SECTION/
 /SECTION" SPA Software Architecture"/
 <img src='./images/MVC-Process.svg'/>
 SECTION/
+CHAPTER/
+/CHAPTER" Client"/
+Since HoML is built using /LINK /URL https://firebase.google.com/ URL/ /LINKTEXT Google Cloud Firestore LINKTEXT/ LINK/ almost all of its code is client-side. 
+/SECTION" Toolchain"/
+The HoML client is written in ECMAScript ES2021, which is compatible with all 'evergreen' desktop browsers, as well as the majority of mobile browsers. All code is served 'as-is', there is no transpilation or other transformation performed. As described earlier, code is simply uploaded to a GCS bucket as static assets and served via a GCP Proxy mapped to the domain (currently www.giantelectronicbrain.com). This greatly simplifies troubleshooting and allows quick patching. 
+SECTION/
+/SECTION" Dependencies"/
+HoML does have dependencies on several libraries, primarily the Google Firestore/Firebase client libaries, as well as the Lit library and some additional Lit modules. Immer is utilized to provide immutability and object patch/merge functionality require for collaboration between multiple players.
+SECTION/
+CHAPTER/
 
 DOCUMENT/

@@ -18,6 +18,7 @@
 import { WriteRepository, EntityId, Entity, IdSet } from './baserepository.js';
 import { schema, getDb } from './schema.js';
 import { query, where, collection, onSnapshot, Timestamp } from 'firebase-firestore';
+import { immerable } from 'immer';
 
 /**
  * Chat message class.
@@ -65,6 +66,7 @@ const messageConverter = {
 }
 
 class Conversation extends Entity {
+	[immerable] = true;
 	participants;
 	subject;
 	
@@ -75,17 +77,20 @@ class Conversation extends Entity {
 	}
 	
 	addParticipant(participant) {
-		this.participants.add(participant);
+		schema.conversations.update(this,(draft) => {draft.participants.add(participant);}, true)
 	}
 	
 	removeParticipant(participant) {
-		this.participants.delete(participant);
+		schema.conversations.update(this,(draft) => {draft.participants.delete(participant);}, true)
+	}
+	
+	updateSubject(subject) {
+		schema.conversations.update(this,(draft) => { draft.subject = subject},true);
 	}
 }
 
 const conversationConverter = {
 	toFirestore(conversation) {
-//		const pArry = conversation.participants.map((participant) => { return participant.getReference(); });
 		let pArry = Array.from(conversation.participants.values());
 		pArry = pArry.map((participant) => { return participant.getReference(); });
 		const d = {

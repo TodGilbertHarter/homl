@@ -146,7 +146,8 @@ class NotView {
 	
 	displayBookMarks(isactive) {
 		const content = this.theDocument.createElement('tab-body');
-		content.innerHTML = "<bookmark-manager id='lefttabbookmarks' displayid='lefttabbookmarks'></bookmark-manager>";
+		const id = this.controller.getCurrentPlayer().id;
+		content.innerHTML = `<bookmark-manager id='lefttabbookmarks' displayid='lefttabbookmarks' playerid='${id}'></bookmark-manager>`;
 		this.addTabToLeftPanel('Bookmarks',content,isactive);
 	}
 

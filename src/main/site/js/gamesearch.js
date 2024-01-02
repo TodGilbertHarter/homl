@@ -35,7 +35,7 @@ class GameSearch extends LitElement {
 	
 	onNameChange(e) {
 		const viewer = this.parentElement.querySelector('#'+this.displayId);
-		window.gebApp.controller.doGameSearch(e.target.value).then((results) => {
+		window.gebApp.controller.doGameSearch(e.target.value,null,(results) => {viewer.setModel(results)}).then((results) => {
 			viewer.setModel(results);
 		});
 	}

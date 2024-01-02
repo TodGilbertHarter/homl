@@ -16,7 +16,7 @@
 */
 import { MacroSet } from './macros.js';
 import { Entity, EntityId } from './baserepository.js';
-import { collections } from './schema.js';
+import { collections, schema } from './schema.js';
 import { immerable } from 'immer';
 
 class Player extends Entity {
@@ -46,18 +46,20 @@ class Player extends Entity {
 	 * Add a new owned item to the player while insuring that no duplicates are added.
 	 */
 	addOwned(newItem) {
-		const filtered =  this.owned.filter(item => !(item.id === newItem.id && item.schema === newItem.schema));
-		filtered.push(newItem);
-		this.owned = filtered;
+		return schema.players.update(this,(draft) => {
+			const filtered =  draft.owned.filter(item => !(item.id === newItem.id && item.schema === newItem.schema));
+			filtered.push(newItem);
+			draft.owned = filtered;
+		},true);
 	}
 	
 	/**
 	 * Remove the bookmark with the given title from the player's bookmarks.
 	 */	
 	deleteBookMark(title) {
-		this.bookMarks = this.bookMarks.filter((bookmark) => {
-			return bookmark.title !== title;
-		});
+		return schema.players.update(this,(draft) => {
+			draft.bookMarks = draft.bookMarks.filter((bookmark) => { return bookmark.title !== title});
+		},true);
 	}
 }
 

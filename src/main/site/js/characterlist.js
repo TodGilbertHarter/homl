@@ -14,21 +14,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { html, LitElement } from 'lit3';
+import { html, LitElement, repeat, css } from 'lit3';
 
 class CharacterList extends LitElement {
 	static properties = {
-		model: {}
+		_model: {state: true}
 	}
 	
 	constructor() {
 		super();
-		this.playerRepo = window.gebApp.playerRepo;
+		this._model = [];
 	}
 	
-	render() {
-		return html`
-		<style>
+	static styles = css`
 			div.list > div {
 				display: flex;
 			}
@@ -41,27 +39,40 @@ class CharacterList extends LitElement {
 			.clickable {
 				cursor: pointer;
 			}
-		</style>
-		<div class='searchlist' part='container'>
-			<div part='list' id='list' class='list'></div>
+	`;
+	
+	render() {
+		return html`<div class='searchlist' part='container' @click=${this.onClick} @drag=${this.onDrag}>
+			<div part='list' id='list' class='list'>
+				${this._model.map((character) => {return this.renderCharacter(character)})}
+			</div>
 			<div part='pager' id='pager'></div>
 		</div>`;
 	}
 
-	updated(changed) {
-		super.updated(changed);
-		this.displayList();
+	renderCharacter(character) {
+		return html`<div><div draggable='true' class='clickable' data-characterid=${character.id}>${character.name}</div><div>${character.calling.name}</div></div>`;
+	}
+
+	set model(model) {
+		this._model = model;
+	}
+
+	onClick(e) {
+		if(e.target !== e.currentTarget) {
+			const cid = e.target.dataset.characterid;
+			console.log(`clicked on character with id ${cid}`);
+			window.gebApp.controller.displayCharacterViewClicked(cid);
+		}
 	}
 	
-	setModel(model) {
-		this.model = model;
+	onDrag(e) {
+		const cid = e.target.dataset.characterid;
+		console.log(`Dragging character with id ${cid}`);
+		e.dataTransfer.setData("text/plain",cid);
 	}
 	
-	getRenderFn() {
-		return this.setModel.bind(this);
-	}
-	
-	displayList() {
+/*	displayList() {
 		const list = this.shadowRoot.getElementById('list');
 		const model = this.model;
 		if(model !== undefined && model !== null) {
@@ -84,7 +95,7 @@ class CharacterList extends LitElement {
 		} else {
 			list.innerHTML = 'no results';
 		}
-	}
+	} */
 	
 }
 

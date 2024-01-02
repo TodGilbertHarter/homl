@@ -126,9 +126,12 @@ class DataManager {
 	 * Return the fetched entity.
 	 */	
 	async fetch(entityId,listener) {
-		const entity = _idMap.get(entityId);
-		if(!entity) {
+		const mentry = _idMap.get(entityId);
+		let entity;
+		if(!mentry) {
 			entity = this.repository.entityFromId(entityId);
+		} else {
+			entity = mentry.entity;
 		}
 		if(listener && entity) {
 			this.register(entity,listener);

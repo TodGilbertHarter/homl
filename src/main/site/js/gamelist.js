@@ -31,13 +31,14 @@ class GameList extends LitElement {
 	setModel(model) {
 		this.model = model;
 		this.getOwners();
-		this.requestUpdate();
 	}
 	
 	getOwners() {
 		const ownerids = new Set(this.model.map((game) => game.owner));
 		const oidArry = [...ownerids.values()];
-		window.gebApp.controller.getPlayers(oidArry,(players) => { this.owners = players; this.requestUpdate(); });
+		window.gebApp.controller.getPlayers(oidArry,(players) => { this.owners = players; this.requestUpdate(); }).then(
+			(owners) => { this.owners = owners; this.requestUpdate(); }
+		);
 	}
 	
 	gameClicked(e) {

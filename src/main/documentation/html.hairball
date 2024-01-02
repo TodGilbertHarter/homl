@@ -63,6 +63,12 @@ Hairball.
 /: TOPIC/ </section> :/
 /: /STRONG /SPACE <strong> :/
 /: STRONG/ </strong> /SPACE :/
+/: /LINK /SPACE <a href=" :/
+/: LINK/ </a> /SPACE :/ 
+/: /URL // :/
+/: URL/ "> :/
+/: /LINKTEXT <span class='linktext'> :/
+/: LINKTEXT/ </span> :/
 
 /* Table support */
 /: /TABLE <table> :/

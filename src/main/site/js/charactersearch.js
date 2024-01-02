@@ -15,8 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { html, LitElement, ref, createRef, repeat } from 'lit3';
-import {schema, getReference} from './schema.js';
-import {EntityId} from './baserepository.js';
+import {EntityId, Search, SearchParam} from './baserepository.js';
 
 class CharacterSearch extends LitElement {
 	static properties = {
@@ -76,25 +75,27 @@ class CharacterSearch extends LitElement {
 		const species = this.speciesRef.value.value;
 		const origin = this.originsRef.value.value;
 		if(name !== '') {
-			criteria.push({fieldName: 'name', fieldValue: name, op: '=='});
+			criteria.push(new SearchParam('name',name,'=='));
 		}
 		if(calling !== '') {
-			criteria.push({fieldName: 'calling.callingref', fieldValue: EntityId.EntityIdFromString(calling).getReference(), op: '=='});
+			criteria.push(new SearchParam('calling.callingref', EntityId.EntityIdFromString(calling).getReference(),'=='));
 		}
 		if(species !== '') {
-			criteria.push({fieldName: 'species.speciesref', fieldValue: EntityId.EntityIdFromString(species).getReference(), op: '=='})
+			criteria.push(new SearchParam('species.speciesref', EntityId.EntityIdFromString(species).getReference(), '=='));
 		}
 		if(origin !== '') {
-			criteria.push({fieldName: 'origin.originref', fieldValue: EntityId.EntityIdFromString(origin).getReference(), op: '=='})
+			criteria.push(new SearchParam('origin.originref', EntityId.EntityIdFromString(origin).getReference(), '=='));
 		}
 		return criteria;
 	}
 	
 	onChange(e) {
 		const viewer = this.parentElement.querySelector('#'+this.displayId);
-//		window.gebApp.controller.registerCharactersListener(viewer.getRenderFn());
 		const criteria = this._prepareSearchCriteria();
-		window.gebApp.controller.doCharacterCriteriaSearch(criteria).then((characters) => viewer.getRenderFn()(characters));
+		window.gebApp.controller.doCharacterCriteriaSearch(criteria).then(
+			(characters) => { 
+				viewer.model = characters; 
+			});
 	}
 
 	renderCallings() {

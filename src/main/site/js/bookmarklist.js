@@ -15,6 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { html, LitElement, repeat, ref, createRef } from 'lit3';
+import { IdConverter, EntityId } from './baserepository.js';
+import { Task } from 'littask';
 
 class BookMarkList extends LitElement {
 	static properties = {
@@ -71,35 +73,47 @@ class BookMarkList extends LitElement {
 
 window.customElements.define('bookmark-list',BookMarkList);
 
+/**
+ * Manage bookmarks for a player given by playerid.
+ */
 class BookMarkManager extends LitElement {
+	static properties = {
+		playerid: { type: EntityId, converter: IdConverter},
+		_player: { state: true }
+	}
 	
 	constructor() {
 		super();
+		this._player = undefined;
 		this.listRef = createRef();
 		this.titleRef = createRef();
 		this.urlRef = createRef();
+		this.playerListener = (player) => {this._player = player};
 		this.addEventListener('bookmarkaction',this.handleDelete);
+	}
+	
+	connectedCallback() {
+		super.connectedCallback();
+		window.gebApp.controller.getPlayer(this.playerid,this.playerListener).then((player) => { this._player = player});
+	}
+	
+	disconnectedCallback() {
+		super.disconnectedCallback();
+		schema.players.unregister(this._player,this.playerListener);
 	}
 	
 	handleDelete(e) {
 		const title = e.detail.bookmark;
-		window.gebApp.controller.getCurrentPlayer().deleteBookMark(title);
-		window.gebApp.controller.updateCurrentPlayer();
-		this.listRef.value.model = window.gebApp.controller.getCurrentPlayer().bookMarks;
-	}
-	
-	firstUpdated() {
-		this.listRef.value.model = window.gebApp.controller.getCurrentPlayer().bookMarks;
+		this._player.deleteBookMark(title);
 	}
 	
 	addBookMark() {
 		const title = this.titleRef.value.value;
 		const value = this.urlRef.value.value;
 		const newMark = {title: title, value: value};
-		window.gebApp.controller.addUserBookMark(newMark);
+		this._player.addUserBookMark(newMark);
 		this.titleRef.value.value = '';
 		this.urlRef.value.value = '';
-		this.listRef.value.requestUpdate();
 	}
 	
 	render() {
@@ -108,7 +122,7 @@ class BookMarkManager extends LitElement {
 			<input type='text' ${ref(this.titleRef)} placeholder='title'>
 			<button @click=${this.addBookMark}>Add</button>
 		</div>
-		<bookmark-list part='list' ${ref(this.listRef)} actionButton='x'></bookmark-list>`;
+		<bookmark-list part='list' ${ref(this.listRef)} .model=${this._player?.bookMarks ? this._player.bookMarks : []} actionButton='x'></bookmark-list>`;
 	}
 }
 

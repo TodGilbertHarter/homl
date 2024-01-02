@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import { schema } from './schema.js';
+import { schema, collections } from './schema.js';
 import {gameContext} from './context.js';
 import {EntityId, Search, SearchParam} from './baserepository.js';
 import {Authenticator} from './authenticator.js';
@@ -63,7 +63,7 @@ class Controller {
 	 */
 	async getPlayerByUid(uid) {
 		const sparam = new SearchParam("uid",uid,"==");
-		const s = new Search([sparam],'players');
+		const s = new Search([sparam],collections.players);
 		const results = await schema.players.search(s,this.currentPlayerListener);
 		return results[0];
 	}
@@ -80,7 +80,7 @@ class Controller {
 
 	async createNewPlayer(uid,listener) {
 	    this.player = new Player(null,this.user.uid,Timestamp.fromDate(new Date()),null,handle,null);
-	    return await schema.players.update(player,() => {},true,listener);
+	    return schema.players.update(player,() => {},true,listener);
 	}
 	
 	async getAllCallings(listener) {
@@ -95,11 +95,39 @@ class Controller {
 		return schema.origins.fetchAll(listener);
 	}
 
-	async doCharacterCriteriaSearch(criteria) {
-		return await this.characterRepo.searchCharacters(criteria);
+	async doCharacterCriteriaSearch(criteria,resultListener,entityListener) {
+		const s = new Search(criteria,collections.characters,resultListener);
+		return schema.characters.search(s,entityListener);
 	}
 
-	/********************************************************** */
+	async getPlayer(playerId,listener) {
+		return schema.players.fetch(playerId,listener);
+	}
+	
+	/**
+	 * Initiate a search for a game by name.
+	 */
+	async doGameSearch(name,resultListener,entityListener) {
+		const sparam = new SearchParam("name",name,"==");
+		const s = new Search([sparam],collections.games,resultListener)
+		return schema.games.search(s,entityListener);
+	}
+	
+	async getPlayers(players,listener) {
+		return schema.players.fetchMany(players,listener);
+	}
+
+	async getNpcs(npcIds,listener) {
+		return schema.npcs.fetchMany(npcIds,listener);
+	}
+	
+	async saveConversation(conversation,mutator) {
+		return schema.conversations.update(conversation,mutator,true);
+	}
+	
+	async getParticipantConversations(playerId) {
+		return this.conversationRepo.getParticipantConversations(playerId);
+	}
 
 	displayConversation(id) {
 		window.location.hash = `/conversations/${id}`;
@@ -109,19 +137,6 @@ class Controller {
 		window.location.hash = `/player/${id}`;
 	}
 
-	/** this will need a filter of some sort! */	
-	async getAllPlayers() {
-		return await this.playerRepo.getAllAsync();
-	}
-	
-	async saveConversation(conversation) {
-		return await this.conversationRepo.saveDto(conversation);
-	}
-	
-	async getParticipantConversations(playerId) {
-		return await this.conversationRepo.getParticipantConversations(playerId);
-	}
-	
 	displayPlayerMessagesView(playerId) {
 		const useid = playerId ? playerId : this.getCurrentPlayer().id;
 		window.location.hash = `/playermessages/${useid}`;
@@ -147,42 +162,6 @@ class Controller {
 	}
 
 	/**
-	 * Add an owned record to the current player's list of owned
-	 * items. This needs to be done in order to maintain the player's
-	 * list of owned items.
-	 */
-	addOwned(id,schema,name) {
-		this.updatePlayerOwns(this.getCurrentPlayer(),id,schema,name);
-	}
-
-	/**
-	 * Update the ownership for the given player.
-	 */	
-	updatePlayerOwns(player,id,schema,name) {
-		const owned = {id: id, name: name, ref: getReference(schema,id)};
-		player.addOwned(owned);
-		this.playerRepo.savePlayer(player);
-	}
-	
-	/**
-	 * Add a bookmark to the current player's bookmark list, and
-	 * save it.
-	 */
-	addUserBookMark(newMark) {
-		this.getCurrentPlayer().bookMarks.push(newMark);
-		this.updateCurrentPlayer();
-	}
-	
-	/**
-	 * This allows client code to simply ask the controller to resolve any
-	 * reference to any HoML object type stored in FireStore without needing
-	 * to know which type it is.
-	 */
-	resolveReference(ref,onSuccess) {
-		resolveReference(ref,onSuccess);
-	}
-	
-	/**
 	 * The path which was in the browser bar when the initial
 	 * application load happened is restored. This is primarily
 	 * intended to allow handling of deep links. A user follows a
@@ -199,36 +178,6 @@ class Controller {
 		if(this.preAuthPath) {
 			window.location.hash = this.preAuthPath;
 		}
-	}
-	
-	/**
-	 * Trigger the router to act as if the user just navigated to the current route.
-	 */
-	refresh() {
-		var hash = window.location.hash;
-		this.router.navigate(hash);
-	}
-	
-	registerAction(actionName,extensionPoint) {
-		if(!this.actions[actionName]) this.actions[actionName] = [];
-		this.actions[actionName].push(extensionPoint);
-	}
-	
-	enableAction(actionName) {
-		if(this.actions[actionName])
-			this.actions[actionName].forEach((extensionPoint) => extensionPoint());
-	}
-	
-	updatePlayer(player) {
-		this.playerRepo.savePlayer(player);
-		if(this.getCurrentPlayer().id === player.id) {
-			this.authenticator.player = player;
-		}
-	}
-	
-	getNpcs(npcIds,onSuccess) {
-		this.npcRepo.dtosFromIds(npcIds,onSuccess);
-//		this.npcRepo.getReferencedNpcs(npcrefs,onSuccess);
 	}
 	
 	displayEquipmentView() {
@@ -251,21 +200,6 @@ class Controller {
 		window.location.hash = '/npcs';
 	}
 	
-	/**
-	 * Do any additional work required after login is complete.
-	 * Currently we just record the existing path and then set the
-	 * path to '/authenticated', the view can display whatever it
-	 * wants at that point, using the recorded path to decide if a
-	 * deep link was hit, etc.
-	 */
-	authenticated() {
-		window.location.hash = '/authenticated';
-	}
-	
-	getProficienciesByType(type,onAvailable) {
-		this.equipmentRepo.getEquipmentByType(type,onAvailable);
-	}
-	
 	getAuthenticatedUser() {
 		return this.authenticator.user;
 	}
@@ -274,48 +208,6 @@ class Controller {
 		return this.authenticator.player;
 	}
 	
-	getCurrentPlayerRef() {
-		return getReference(schema.players,this.authenticator.player.id);
-	}
-	
-	getImages(imageIds,onSuccess) {
-		this.imageRepo.dtosFromIds(imageIds,onSuccess);
-	}
-	
-	sendMessage(message) {
-		return this.messageRepo.saveDto(message);
-	}
-	
-	getCharactersByIds(ids,onSuccess) {
-		this.characterRepo.dtosFromIds(ids,onSuccess);
-	}
-	
-	/**
-	 * Get a given player and call onDataAvailable when it is returned by
-	 * the repo. Also synchronize the current player with the new data if it
-	 * has the same id.
-	 */
-	getPlayerById(playerId,onDataAvailable) {
-		this.playerRepo.getPlayerById(playerId, (player) => {
-			var cp = this.getCurrentPlayer();
-			if(cp.id === player.id) {
-				this.authenticator.player = player;
-			}
-			onDataAvailable(player);
-		});
-	}
-	
-	async getPlayer(playerId) {
-		return await this.playerRepo.getPlayerByIdAsync(playerId);
-	}
-	
-	onCallingsChanged(callings) {
-		this.characterController.onCallingsChanged(callings);
-	}
-	
-	onSpeciesChanged(species) {
-		this.characterController.onSpeciesChanged(species);
-	}
 	/**
 	 * Signed up implies we are authenticated, so just do the same thing.
 	 */
@@ -370,37 +262,6 @@ class Controller {
 	}
 	
 	/**
-	 * Handle creating a new game.
-	 */
-	handleNewGame() {
-		window.location.hash = '/creategame';
-	}
-
-	handleSaveGame(game) {
-		this.gameRepo.saveGame(game);
-		if(this.getCurrentPlayer().id === game.owner.id)
-			this.addOwned(game.id,schema.games,game.name);
-		else {
-			const owner = this.getPlayerById(game.owner.id);
-			this.updatePlayerOwns(owner,game.id,schema.games,game.name);
-		}
-	}
-
-	/**
-	 * Handle the actual signup process via the authenticator.
-	 */
-	doSignUp(email, password, handle, onSuccess, onFailure) {
-		this.authenticator.createUserWithEmailAndPassword(email,password,handle,onSuccess,onFailure);
-		this.compileCurrentPlayerMacros();
-	}
-	
-	updateCurrentPlayer() {
-		const cp = this.getCurrentPlayer();
-		this.playerRepo.savePlayer(cp);
-		this.compileCurrentPlayerMacros();
-	}
-	
-	/**
 	 * Handle signin using the authenticator.
 	 */
 	doSignIn(email, password, onSuccess, onFailure) {
@@ -413,7 +274,8 @@ class Controller {
 		if(cp?.macroset) {
 			this.context.compileMacroSet(cp.macroset);
 		}
-	}	
+	}
+	
 	/**
 	 * Command the authenticator to sign the user out.
 	 */
@@ -421,9 +283,154 @@ class Controller {
 		this.authenticator.signOut();
 	}
 	
-	getPlayers(players,onSuccess) {
-		this.playerRepo.dtosFromIds(players,onSuccess);
-//		this.playerRepo.getReferencedPlayers(players,onSuccess);
+	/**
+	 * Handle a request to display a specific id of game in the main view.
+	 */
+	displayGameViewClicked(gameId) {
+		window.location.hash = `/showgame/${gameId}`;
+	}
+
+	displayCharacterViewClicked(characterId) {
+		window.location.hash = `/showcharacter/${characterId}`;
+	}
+
+	/**
+	 * Handle the actual signup process via the authenticator.
+	 */
+	doSignUp(email, password, handle, onSuccess, onFailure) {
+		this.authenticator.createUserWithEmailAndPassword(email,password,handle,onSuccess,onFailure);
+		this.compileCurrentPlayerMacros();
+	}
+	
+	/**
+	 * Do any additional work required after login is complete.
+	 * Currently we just record the existing path and then set the
+	 * path to '/authenticated', the view can display whatever it
+	 * wants at that point, using the recorded path to decide if a
+	 * deep link was hit, etc.
+	 */
+	authenticated() {
+		window.location.hash = '/authenticated';
+	}
+	
+	/**
+	 * Trigger the router to act as if the user just navigated to the current route.
+	 */
+	refresh() {
+		var hash = window.location.hash;
+		this.router.navigate(hash);
+	}
+	
+	/**
+	 * Handle creating a new game.
+	 */
+	handleNewGame() {
+		window.location.hash = '/creategame';
+	}
+
+	/********************************************************** */
+
+	/** this will need a filter of some sort! */	
+	async getAllPlayers() {
+		return await this.playerRepo.getAllAsync();
+	}
+	
+	
+	/**
+	 * Add an owned record to the current player's list of owned
+	 * items. This needs to be done in order to maintain the player's
+	 * list of owned items.
+	 */
+	addOwned(id,schema,name) {
+		this.updatePlayerOwns(this.getCurrentPlayer(),id,schema,name);
+	}
+
+	/**
+	 * Update the ownership for the given player.
+	 */	
+	updatePlayerOwns(player,id,schema,name) {
+		const owned = {id: id, name: name, ref: getReference(schema,id)};
+		player.addOwned(owned);
+		this.playerRepo.savePlayer(player);
+	}
+	
+	/**
+	 * Add a bookmark to the current player's bookmark list, and
+	 * save it.
+	 */
+	addUserBookMark(newMark) {
+		this.getCurrentPlayer().bookMarks.push(newMark);
+		this.updateCurrentPlayer();
+	}
+	
+	
+	registerAction(actionName,extensionPoint) {
+		if(!this.actions[actionName]) this.actions[actionName] = [];
+		this.actions[actionName].push(extensionPoint);
+	}
+	
+	enableAction(actionName) {
+		if(this.actions[actionName])
+			this.actions[actionName].forEach((extensionPoint) => extensionPoint());
+	}
+	
+	getProficienciesByType(type,onAvailable) {
+		this.equipmentRepo.getEquipmentByType(type,onAvailable);
+	}
+	
+	getCurrentPlayerRef() {
+		return getReference(schema.players,this.authenticator.player.id);
+	}
+	
+	getImages(imageIds,onSuccess) {
+		this.imageRepo.dtosFromIds(imageIds,onSuccess);
+	}
+	
+	sendMessage(message) {
+		return this.messageRepo.saveDto(message);
+	}
+	
+	getCharactersByIds(ids,onSuccess) {
+		this.characterRepo.dtosFromIds(ids,onSuccess);
+	}
+	
+	/**
+	 * Get a given player and call onDataAvailable when it is returned by
+	 * the repo. Also synchronize the current player with the new data if it
+	 * has the same id.
+	 */
+	getPlayerById(playerId,onDataAvailable) {
+		this.playerRepo.getPlayerById(playerId, (player) => {
+			var cp = this.getCurrentPlayer();
+			if(cp.id === player.id) {
+				this.authenticator.player = player;
+			}
+			onDataAvailable(player);
+		});
+	}
+	
+	onCallingsChanged(callings) {
+		this.characterController.onCallingsChanged(callings);
+	}
+	
+	onSpeciesChanged(species) {
+		this.characterController.onSpeciesChanged(species);
+	}
+
+	handleSaveGame(game) {
+		this.gameRepo.saveGame(game);
+		if(this.getCurrentPlayer().id === game.owner.id)
+			this.addOwned(game.id,schema.games,game.name);
+		else {
+			const owner = this.getPlayerById(game.owner.id);
+			this.updatePlayerOwns(owner,game.id,schema.games,game.name);
+		}
+	}
+
+	updateCurrentPlayer() {
+		const cp = this.getCurrentPlayer();
+		this.playerRepo.savePlayer(cp);
+		this.compileCurrentPlayerMacros();
 	}
 	
 	/**
@@ -433,29 +440,8 @@ class Controller {
 		this.gameRepo.getGamesByOwner(owner.id,this.onGamesChanged.bind(this));
 	}
 	
-	/**
-	 * Initiate a search for a game by name.
-	 */
-	async doGameSearch(name) {
-		return new Promise((resolve) => {
-			this.gameRepo.getGamesByName(name,resolve);
-		});
-	}
-	
-	async doCharacterSearch(name) {
-		return new Promise((resolve) => {
-			this.characterRepo.getCharactersByName(name,resolve);
-		});
-	}
 	
 	
-	/**
-	 * Handle a request to display a specific id of game in the main view.
-	 */
-	displayGameViewClicked(gameId) {
-		window.location.hash = `/showgame/${gameId}`;
-	}
-
 	async getGameById(gameId) {
 		return this.gameRepo.entityFromId(gameId);
 	}
@@ -464,10 +450,6 @@ class Controller {
 		this.gameRepo.getGameById(gameview.gameId,gameview.showGame.bind(gameview));
 	} */
 	
-	displayCharacterViewClicked(characterId) {
-		window.location.hash = `/showcharacter/${characterId}`;
-	}
-
 }
 
 export { Controller };

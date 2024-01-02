@@ -17,6 +17,7 @@
 import { Rules } from './rules.js';
 import { Entity, EntityId } from './baserepository.js';
 import { collections } from './schema.js';
+import { immerable } from 'immer';
 
 class Character extends Entity {
 	[immerable] = true;
