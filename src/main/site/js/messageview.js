@@ -16,7 +16,7 @@
 */
 import { html, css, LitElement, ref, createRef, repeat } from 'lit3';
 import { Task } from 'littask';
-import {Chat, Message, Conversation, ConversationRepository } from './chat.js';
+import {Chat, Message, Conversation } from './chat.js';
 import { EntityId, IdConverter } from './baserepository.js';
 
 class MessageView extends LitElement {
@@ -32,10 +32,8 @@ class MessageView extends LitElement {
 		super();
 	}
 	
-	
-	
 	firstUpdated() {
-		window.gebApp.controller.getPlayerById(this.senderid.idValue,(player) => { this._senderName = player.handle; });
+		this._sendername = window.gebApp.controller.getPlayer(this.senderid,(player) => { this._senderName = player.handle; }).then(player => this._senderName = player.handle);
 	}
 	
 	render() {
@@ -124,7 +122,6 @@ class ConversationViewer extends LitElement {
 	
 	constructor() {
 		super();
-		this._chat = null;
 		this.listRef = createRef();
 		this.uh = this.updateHandler.bind(this);
 		this.messager = 'false';
@@ -151,12 +148,11 @@ class ConversationViewer extends LitElement {
 	}
 
 	sendChatMessage(message) {
-		this._chat.sendMessage(message);
+		window.gebApp.controller.sendMessage(message);
 	}
 	
 	firstUpdated() {
-		this._chat = new Chat(this.contextid);
-		this._chat.addListener(this.uh);
+		window.gebApp.controller.subscribe(this.contextid,this.uh);
 		this.addEventListener('postaction', (e) => {
 			const message = new Message(
 				null,
@@ -170,7 +166,7 @@ class ConversationViewer extends LitElement {
 	}
 	
 	disconnectedCallback() {
-		this._chat.removeListener(this.uh);
+		this.gebApp.controller.unsubscribe(this.contextid,this.uh);
 	}
 }
 

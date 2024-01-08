@@ -17,6 +17,7 @@
 
 import { html, LitElement, render, repeat, ref, createRef } from 'lit3';
 import { EntityId } from './baserepository.js';
+import { schema } from './schema.js';
 
 /**
  * Class to view all the equipment in the game.
@@ -28,7 +29,6 @@ class EquipmentView extends LitElement {
 	
 	constructor() {
 		super();
-		this.equipmentRepo = window.gebApp.equipmentRepo;
 		this.equipment = [];
 		this.selectable = 'false';
 		this.implementRef = createRef();
@@ -40,13 +40,11 @@ class EquipmentView extends LitElement {
 	
 	connectedCallback() {
 		super.connectedCallback();
-//		this.equipmentRepo.addListener(this.equipmentUpdated);
-		this.equipmentRepo.getAllEquipment((equipment) => { this.equipmentUpdated(equipment);  });
+		schema.equipment.fetchAll().then((equipment) => { this.equipmentUpdated(equipment);  });
 	}
 	
 	disconnectedCallback() {
 		super.disconnectedCallback();
-		this.equipmentRepo.removeListener(this.equipmentUpdated);
 	}
 	
 	equipmentUpdated(equipment) {

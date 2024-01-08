@@ -16,7 +16,7 @@
 */
 import { Rules } from './rules.js';
 import { Entity, EntityId } from './baserepository.js';
-import { collections } from './schema.js';
+import { collections, schema } from './schema.js';
 import { immerable } from 'immer';
 
 class Character extends Entity {
@@ -116,17 +116,18 @@ class Character extends Entity {
         };
 	}
 	
-    calculate() {
-        this.rules.calculate(this);
+    async calculate() {
+        return await schema.characters.update(this,(draft) => { draft.rules.calculate(draft) }, false);
     }
-    
-   get background() {
-	return this.characterData.background;
-   }
+
+	get background() {
+		return this.characterData.background;
+	}
    
-   set background(value) {
-	this.characterData.background = value;
-}
+	set background(value) {
+		this.characterData.background = value;
+	}
+	
    get owner() {
 	return this.characterData.owner;
    }

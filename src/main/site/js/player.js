@@ -45,14 +45,29 @@ class Player extends Entity {
 	/**
 	 * Add a new owned item to the player while insuring that no duplicates are added.
 	 */
-	addOwned(newItem) {
+	addOwned(newItemId,name) {
 		return schema.players.update(this,(draft) => {
-			const filtered =  draft.owned.filter(item => !(item.id === newItem.id && item.schema === newItem.schema));
-			filtered.push(newItem);
+			const filtered =  draft.owned.filter(item => !(item.id === newItemId));
+			const owned = {id: newItemId, name: name, ref: newItemId};
+			filtered.push(owned);
 			draft.owned = filtered;
 		},true);
 	}
 	
+	deleteOwned(removedId) {
+		return schema.players.update(this,(draft) => {
+			draft.owned = draft.owned.filter(item => (item.id === removedId));
+		},true);
+	}
+	
+	/**
+	 * Add a bookmark with the given title.
+	 */
+	addBookMark(title,value) {
+		return schema.players.update(this, (draft) => {
+			draft.bookMarks.push({title: title, value: value});
+		},true);
+	}
 	/**
 	 * Remove the bookmark with the given title from the player's bookmarks.
 	 */	

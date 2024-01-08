@@ -277,7 +277,7 @@ class NotView {
 	
 	displayCharacterInfo(characterId) {
 		const displayarea = this.theDocument.getElementById('mainappview');
-		characterSheetFactory(displayarea,characterId,this.gebApp.characterRepo,(sheet) => {
+		characterSheetFactory(displayarea,characterId,(sheet) => {
 		});
 	}
 	

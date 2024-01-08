@@ -15,6 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { html, LitElement, repeat, ref, createRef } from 'lit3';
+import { Search, SearchParam } from './baserepository.js';
+import { schema, collections } from './schema.js';
 
 class NpcView extends LitElement {
 	static properties = {
@@ -222,7 +224,9 @@ class MonstersViewer extends LitElement {
 	}
 
 	firstUpdated() {
-		window.gebApp.npcRepo.findDtos("statblock",true,'==',(monsters) => {this.npcsViewRef.value.npcs = monsters; },(msg) => { console.log("Monster view failed "+msg)});
+		const sp = new SearchParam("statblock",true,"==");
+		const s = new Search([sp],collections.npcs);
+		schema.npcs.search(s).then((monsters) => {this.npcsViewRef.value.npcs = monsters; });
 	}
 	
 	render() {

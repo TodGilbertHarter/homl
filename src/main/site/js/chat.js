@@ -16,14 +16,15 @@
 */
 
 import { WriteRepository, EntityId, Entity, IdSet } from './baserepository.js';
-import { schema, getDb } from './schema.js';
-import { query, where, collection, onSnapshot, Timestamp } from 'firebase-firestore';
+import { schema, collections } from './schema.js';
+import { collection, Timestamp } from 'firebase-firestore';
 import { immerable } from 'immer';
 
 /**
  * Chat message class.
  */
 class Message extends Entity {
+	[immerable] = true;
 	threadId;
 	senderId;
 	content;
@@ -31,7 +32,7 @@ class Message extends Entity {
 	sendTime = 0;
 	
 	constructor(id,threadId,senderId,contextId,content,sendTime) {
-		super(id ? id : EntityId.create(schema.messages));
+		super(id ? id : EntityId.create(collections.messages));
 		this.threadId = threadId;
 		this.senderId = senderId;
 		this.contextId = contextId;
@@ -45,7 +46,6 @@ const messageConverter = {
 		const d = {
 			version: 1.0,
 			content: message.content,
-			id: message.id.idValue,
 			threadid: message.threadId,
 			senderId: message.senderId.getReference(),
 			contextId: message.contextId.getReference(),
@@ -56,13 +56,12 @@ const messageConverter = {
 	},
 	
 	fromFirestore(snapshot, options) {
-		const id = EntityId.create(schema.messages,snapshot.id);
+		const id = EntityId.create(collection.messages,snapshot.id);
 		const data = snapshot.data(options);
 		let sid = EntityId.EntityIdFromReference(data.senderId);
 		let cid = EntityId.EntityIdFromReference(data.contextId);
 		return new Message(id,data.threadId,sid,cid,data.content,data.sendTime);
 	}
-
 }
 
 class Conversation extends Entity {
@@ -71,7 +70,7 @@ class Conversation extends Entity {
 	subject;
 	
 	constructor(id,subject,participants) {
-		super(id ? id : EntityId.create(schema.conversations));
+		super(id ? id : EntityId.create(collections.conversations));
 		this.subject = subject;
 		this.participants = participants ? participants : new IdSet();
 	}
@@ -103,7 +102,7 @@ const conversationConverter = {
 	},
 	
 	fromFirestore(snapshot, options) {
-		const id = EntityId.create(schema.conversations,snapshot.id);
+		const id = EntityId.create(collections.conversations,snapshot.id);
 		const data = snapshot.data(options);
 		const participants = new IdSet(data.participants.map((ref) => EntityId.EntityIdFromReference(ref)));
 		return new Conversation(id, data.subject, participants);
@@ -112,8 +111,9 @@ const conversationConverter = {
 }
 
 class ConversationRepository extends WriteRepository {
+	
 	constructor() {
-		super(conversationConverter,schema.conversations);
+		super(conversationConverter,collections.conversations);
 	}
 	
 	/**
@@ -132,80 +132,14 @@ class ConversationRepository extends WriteRepository {
  * any it will be activated.
  */
 class Chat extends WriteRepository {
-	_unsub;
-	_listeners;
-	contextId;
 	
 	/**
 	 * Create a chat handler for all threads related to the given game.
 	 */
-	constructor(contextId) {
-		super(messageConverter,schema.messages);
-		this._listeners = [];
-		this._unsub = null;
-		this.contextId = contextId;
+	constructor() {
+		super(messageConverter,collections.messages);
 	}
 
-	/**
-	 * Send a message.
-	 */	
-	async sendMessage(newMessage) {
-		return await this.saveDto(newMessage);
-	}
-	
-	_subscribe() {
-		if(!this._unsub) {
-			const r = this.contextId.getReference();
-			const q = query(collection(getDb(),schema.messages).withConverter(messageConverter),
-				where("contextId","==",r));
-			this._unsub = onSnapshot(q, (querySnapshot) => this._onUpdate(querySnapshot));
-		}
-	}
-	
-	_onUpdate(querySnapshot) {
-		const messages = [];
-		querySnapshot.forEach((doc) => {
-			messages.push(doc.data());
-		});
-		this._notifyListeners(messages);
-	}
-
-	/**
-	 * Retrieve all messages for a given thread in this context.
-	 */	
-	async getThread(threadId) {
-		return await this.findDtosAsync('threadId',threadId,'==')
-	}
-	
-	_unsubscribe() {
-		if(this._unsub) {
-			this._unsub();
-			this._unsub = null;
-		}
-	}
-	
-	_notifyListeners(messages) {
-		this._listeners.forEach((listener) => { listener(messages); });
-	}
-	
-	/**
-	 * Add a function which will be called whenever FireStore notifies us of
-	 * incoming messages. If we're not already subscribed, then we will get a
-	 * subscription.
-	 */
-	addListener(listener) {
-		this._listeners.push(listener);
-		this._subscribe();
-	}
-
-	/**
-	 * Remove a listener function, and perform an automatic unsubscribe action
-	 * if no more listeners exist on this game.
-	 */	
-	removeListener(listener) {
-		this._listeners = this._listeners.filter((l) => { l !== listener});
-		if(this._listeners.length === 0) { this._unsubscribe() }
-	}
 }
 
 export { Chat, Message, Conversation, ConversationRepository};

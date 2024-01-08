@@ -16,7 +16,7 @@
 */
 import { Boon } from './boon.js';
 import { collections } from './schema.js';
-import { BaseRepository } from './baserepository.js';
+import { BaseRepository, EntityId } from './baserepository.js';
 
 const boonConverter = {
 	toFirestore(boon) {
@@ -27,7 +27,8 @@ const boonConverter = {
 		const id = snapshot.id;
 		const eid = EntityId.create(collections.boons,id);
 		const data = snapshot.data(options);
-		return new Boon(eid,data.name,data.source,data.level,data.type,data.association,data.description,data.benefits
+		const benefits = data.benefits.map((benefit) => { return typeof benefit === 'string' ? benefit : EntityId.EntityIdFromReference(benefit)});
+		return new Boon(eid,data.name,data.source,data.level,data.type,data.association,data.description,benefits
 			,data.disadvantages,data.restrictions,data.manifestation);
 	}
 }

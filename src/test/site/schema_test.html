@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<base target="_top">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 	
+		<title>Test the Schema Functions</title>
+		<link rel="stylesheet" type="text/css" href="../css/geb.css" media="screen"/>
+		<script type='importmap'>
+			{
+				"imports": {
+				"lit3": "https://cdn.jsdelivr.net/gh/lit/dist@3/all/lit-all.min.js",
+				"littask": "https://cdn.jsdelivr.net/npm/@lit/task/+esm",
+				"immer": "https://cdn.jsdelivr.net/npm/immer@10.0.3/+esm",
+				"firebase-app": "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js",
+				"firebase-firestore": "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js",
+				"firebase-auth": "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js",
+				"glmatrix": "https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js",
+				"rpgdice": "https://cdn.jsdelivr.net/npm/rpgdicejs@2.0.3/+esm"
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<script type='module'>
+			import { schema, collections, getReference, getDb, eMap } from '../js/schema.js';
+			window.schema = schema;
+			window.collections = collections;
+			window.getReference = getReference;
+			window.getDb = getDb;
+			window.eMap = eMap;
+		</script>
+	</body>
+</html>

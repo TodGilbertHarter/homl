@@ -107,6 +107,8 @@ const characterConverter = {
 					const link = fixProfLink(p.id);
 					c[key]['implements'][i] = { id: link, name: p.name};
 				}				
+			} else if (key === 'owner') {
+				c[key] = value.getReference();
 			} else if (key === 'id') {
 				//DO NOTHING, stop storing an extra redundant id field!
 			} else {

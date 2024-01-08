@@ -110,8 +110,7 @@ class BookMarkManager extends LitElement {
 	addBookMark() {
 		const title = this.titleRef.value.value;
 		const value = this.urlRef.value.value;
-		const newMark = {title: title, value: value};
-		this._player.addUserBookMark(newMark);
+		this._player.addBookMark(title,value);
 		this.titleRef.value.value = '';
 		this.urlRef.value.value = '';
 	}

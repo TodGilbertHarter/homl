@@ -139,13 +139,6 @@ task installTests(type: Copy) {
 	into "${project.buildDir}/local/tests"
 }
 
-task runAllJSTests(type: NpxTask) {
-	command = 'playwright'
-	args = ['test']
-	dependsOn installPWBrowsers
-	dependsOn installTests
-}
-
 task generateErithnoi(type: Exec) {
 	description 'compile all the xwiki-derived hairball to HTML'
 	inputs.dir("src/main/erithnoi")
@@ -272,6 +265,30 @@ task deployAll(type: Exec) {
 	dependsOn 'generateLocalSite'
 	inputs.dir("$buildDir/local");
 	commandLine './scripts/deployAll.sh', project.version
+}
+
+task runAllJSTests(type: NpxTask) {
+	command = 'playwright'
+	args = ['test']
+	dependsOn installPWBrowsers
+	dependsOn installTests
+	dependsOn generateLocalSite
+}
+
+task runAllJSTestsUI(type: NpxTask) {
+	command = 'playwright'
+	args = ['test','--ui']
+	dependsOn installPWBrowsers
+	dependsOn installTests
+	dependsOn generateLocalSite
+}
+
+task runAllJSTestsDbg(type: NpxTask) {
+	command = 'playwright'
+	args = ['test','--debug']
+	dependsOn installPWBrowsers
+	dependsOn installTests
+	dependsOn generateLocalSite
 }
 
 /**

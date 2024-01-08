@@ -16,6 +16,8 @@
 */
 
 import { html, LitElement, render, repeat, ref, createRef } from 'lit3';
+import { schema } from './schema.js';
+import { EntityId } from './baserepository.js';
 
 /**
  * Class to view all the feats in the game.
@@ -24,20 +26,17 @@ class FeatViewer extends LitElement {
 	
 	constructor() {
 		super();
-		this.featRepo = window.gebApp.featRepo;
 		this.feats = [];
 		this.featsRef = createRef();
 	}
 	
 	connectedCallback() {
 		super.connectedCallback();
-		this.featRepo.addListener(this.featsUpdated);
-		this.featRepo.getAllFeats((feats) => { this.featsUpdated(feats);  });
+		schema.feats.fetchAll().then((feats) => { this.featsUpdated(feats);  });
 	}
 	
 	disconnectedCallback() {
 		super.disconnectedCallback();
-		this.featRepo.removeListener(this.featsUpdated);
 	}
 	
 	featsUpdated(feats) {
@@ -186,7 +185,7 @@ class FeatList extends LitElement {
 		this.detailRenderer = new FeatDetailRenderer(this.item);
 		
 		this.onClick = (e) => {
-			const id = e.target.id;
+			const id = EntityId.EntityIdFromString(e.target.id);
 			const dialog = document.createElement('dialog-widget');
 			this.item = this.lookupItem(id);
 			this.detailRenderer.feat = this.item;

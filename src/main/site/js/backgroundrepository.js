@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { Background } from './background.js';
-import { BaseRepository } from './baserepository.js';
+import { BaseRepository, EntityId } from './baserepository.js';
 import { collections } from './schema.js';
 
 const backgroundConverter = {

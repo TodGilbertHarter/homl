@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { produce, enableMapSet, enablePatches } from 'immer';
-import { schema } from './schema.js';
+import { schema, eMap } from './schema.js';
 import { EntityId } from './baserepository.js';
 import { ConversationRepository } from './chat.js';
 import { FeatRepository } from './featrepository.js';
@@ -30,13 +30,12 @@ import { GameRepository } from './gamerepository.js';
 import { CharacterRepository } from './characterrepository.js';
 import { NpcRepository } from './npcrepository.js';
 import { ImageRepository } from './imagerepository.js';
+import { Chat } from './chat.js';
 
 enableMapSet();
 enablePatches();
 
 const _idMap = new WeakMap();
-const _eMap = new Map();
-
 
 /**
  * Manage the state of all data within a running HoML instance. This
@@ -82,13 +81,7 @@ class DataManager {
 	 * an EntityId object.
 	 */
 	createEntityId(collection,idValue) {
-		const key = `${collection}/${idValue}`;
-		let eid = _eMap.get(key);
-		if(!eid) {
-			eid = new EntityId(collection,idValue);
-			_eMap.set(key,eid);
-		}
-		return eid;
+		return EntityId.create(collection,idValue);
 	}
 	
 	/**
@@ -128,8 +121,11 @@ class DataManager {
 	async fetch(entityId,listener) {
 		const mentry = _idMap.get(entityId);
 		let entity;
-		if(!mentry) {
-			entity = this.repository.entityFromId(entityId);
+		const isItUndef = typeof(mentry) === "undefined";
+		const isItNull = mentry === null;
+		const isUndefined = isItUndef || isItNull;
+		if(isUndefined) {
+			entity = await this.repository.entityFromId(entityId);
 		} else {
 			entity = mentry.entity;
 		}
@@ -202,7 +198,7 @@ class DataManager {
 			mapEntry.listeners.delete(listener);
 			if(mapEntry.listeners.size === 0) {
 				_idMap.delete(entityId);
-				_eMap.delete(entityId.toString());
+				eMap.delete(entityId.toString());
 			}
 		}
 	}
@@ -223,20 +219,33 @@ class DataManager {
 			return entity;
 		}
 	}
+	
+	/**
+	 * Subscribe and unsubscribe a search in order to get updates
+	 * from a firestore snapshot subscription.
+	 */
+	async subscribe(search) {
+		return this.repository.subscribe(search);
+	}
+	
+	async unsubscribe(search) {
+		return this.repository.unsubscribe(search);
+	}
 }
 
 schema.conversations = new DataManager('conversations',new ConversationRepository());
-schema.feats = new DataManager('feats',new FeatRepository());
-schema.boons = new DataManager('boons',new BoonRepository());
-schema.equipment = new DataManager('equipment', new EquipmentRepository());
-schema.callings = new DataManager('callings', new CallingRepository());
-schema.species = new DataManager('species',new SpeciesRepository());
-schema.backgrounds = new DataManager('backgrounds',new BackgroundRepository());
-schema.origins = new DataManager('origins', new OriginRepository());
+schema.feats = new FeatRepository();
+schema.boons = new BoonRepository();
+schema.equipment = new EquipmentRepository();
+schema.callings = new CallingRepository();
+schema.species = new SpeciesRepository();
+schema.backgrounds = new BackgroundRepository();
+schema.origins = new OriginRepository();
 schema.players = new DataManager('players', new PlayerRepository());
 schema.games = new DataManager('games',new GameRepository());
 schema.characters = new DataManager('characters', new CharacterRepository());
 schema.npcs = new DataManager('npcs', new NpcRepository());
 schema.images = new DataManager('images',new ImageRepository());
+schema.messages = new DataManager('messages', new Chat());
 
 export { EntityId, DataManager };

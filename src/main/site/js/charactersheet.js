@@ -19,11 +19,11 @@ import { html, LitElement, render, ref, createRef, repeat } from 'lit3';
 import { Rules } from './rules.js';
 import { Background } from './background.js';
 import { Character } from './character.js';
-import { PlayerRepository } from './playerrepository.js'
 import {BoonDetailRenderer} from './boonview.js';
 import { Boon } from './boon.js';
 import {Equipment} from './equipment.js';
 import {schema} from './schema.js';
+import {EntityId} from './baserepository.js';
 
 /** @private */ const CharacterSheettemplate = document.getElementById('charactersheettemplate');
 
@@ -965,7 +965,7 @@ class ProficiencyField extends LitElement {
 	}
 	
 	setNamesByType(t) {
-		window.gebApp.controller.getProficienciesByType(t, (profs) => { 
+		window.gebApp.controller.getProficienciesByType(t).then((profs) => { 
 			const nprofs = [];
 			for(var i = 0; i < profs.length; i++) {
 				const p = {
@@ -1374,22 +1374,9 @@ window.customElements.define('knack-field',KnackField);
 CharacterController is the controller, responsible for carrying out all the character sheet logical operations.
 */      
 class CharacterController {
-   	speciesRepo;
-	callingRepo;
-	backgroundRepo;
-	originRepo;
-	characterRepo;
-	boonRepo;
-	equipmentRepo;
+	controller;
 
-    constructor(speciesRepo,callingRepo,backgroundRepo,originRepo,characterRepo,boonRepo,equipmentRepo) {
-		this.speciesRepo = speciesRepo;
-		this.callingRepo = callingRepo;
-		this.backgroundRepo = backgroundRepo;
-		this.originRepo = originRepo;
-		this.characterRepo = characterRepo;
-		this.boonRepo = boonRepo;
-		this.equipmentRepo = equipmentRepo;
+    constructor() {
     }
 
 	/**
@@ -1398,10 +1385,9 @@ class CharacterController {
 	 */
 	createCharacter(sheet) {
 		const char = new Character(null,null);
-		const cp = window.gebApp.controller.getCurrentPlayer();
+		const cp = this.controller.getCurrentPlayer();
 		const cpid = cp.id;
-		const owner = PlayerRepository.GetPlayerReference(cpid);
-		char.owner = owner;
+		char.owner = cpid;
 		this.populateCharacter(sheet,char,() => {});
 	}
 	
@@ -1531,13 +1517,13 @@ class CharacterController {
 	getAllBoons(blist,action) {
 		const ulist = blist.filter((item) => !(item instanceof Boon));
 		const rlist = blist.filter((item) => item instanceof Boon);
-		this.boonRepo.getBoonsFromIds(ulist,(rboons) => { action([...rboons,...rlist])});
+		schema.boons.fetchMany(ulist).then((rboons) => { action([...rboons,...rlist])});
 	}
 	 
 	getAllEquipment(elist,action) {
 		const ulist = elist.filter((item) => !(item instanceof Equipment));
 		const rlist = elist.filter((item) => item instanceof Equipment);
-		this.equipmentRepo.dtosFromIds(ulist,(requipment) => { action([...requipment,...rlist])});
+		schema.equipment.fetchMany(ulist).then((requipment) => { action([...requipment,...rlist])});
 	}
 	
     setNotes(sheet,notes) {
@@ -1631,119 +1617,117 @@ class CharacterController {
 	}
 	
 	/**
-	 * Update a character with data entered on a sheet.
+	 * Update a character with data entered on a sheet and return an updated version of the character object.
      *
 	 * @param {CharacterSheet} sheet the sheet to get data from.
 	 * @param {Character} character the character to update.
 	 */
     readForm(sheet,character) {
-        character.name = sheet.getCharacterData('charactername');
-        character.level = parseInt(sheet.getCharacterData('characterlevel'),10);
-		character.calling.calling = this.getCalling(sheet,sheet.getCharacterData('charactercalling'));
-		character.calling.name = character.calling.calling.name;
-		character.calling.callingref = null;
-		character.species.species = this.getSpecies(sheet,sheet.getCharacterData('characterspecies'));
-		character.species.name = character.species.species.name;
-		character.species.speciesref = null;
-		character.origin.origin = this.getOrigin(sheet,sheet.getCharacterData('characterorigin'));
-		character.origin.name = character.origin.origin.name;
-		character.origin.originref = null;
-        character.fate = sheet.getCharacterData('characterfate');
-        character.description = sheet.getCharacterData('characterdescription');
-        character.hitpoints = parseInt(sheet.getCharacterData('characterhitpoints'),10);
-        character.power = parseInt(sheet.getCharacterData('characterpower'),10);
-        character.wealth = parseInt(sheet.getCharacterData('characterwealth'),10);
-        character.strength = parseInt(sheet.getCharacterData('characterstrength'),10);
-        character.constitution = parseInt(sheet.getCharacterData('characterconstitution'),10);
-        character.dexterity = parseInt(sheet.getCharacterData('characterdexterity'),10);
-        character.intelligence = parseInt(sheet.getCharacterData('characterintelligence'),10);
-        character.wisdom = parseInt(sheet.getCharacterData('characterwisdom'),10);
-        character.charisma = parseInt(sheet.getCharacterData('charactercharisma'),10);
-        
-        const knacks = character.proficiencies.knacks;
-        knacks.acrobatics = sheet.getCharacterData('characteracrobatics');
-        knacks.arcana = sheet.getCharacterData('characterarcana');
-        knacks.athletics = sheet.getCharacterData('characterathletics');
-        knacks.bluff = sheet.getCharacterData('characterbluff');
-        knacks.diplomacy = sheet.getCharacterData('characterdiplomacy');
-        knacks.engineering = sheet.getCharacterData('characterengineering');
-        knacks.healing = sheet.getCharacterData('characterhealing');
-        knacks.history = sheet.getCharacterData('characterhistory');
-        knacks.insight = sheet.getCharacterData('characterinsight');
-        knacks.intimidation = sheet.getCharacterData('characterintimidation');
-        knacks.leadership = sheet.getCharacterData('characterleadership');
-        knacks.nature = sheet.getCharacterData('characternature');
-        knacks.perception = sheet.getCharacterData('characterperception');
-        knacks.religion = sheet.getCharacterData('characterreligion');
-        knacks.stealth = sheet.getCharacterData('characterstealth');
-        knacks.streetwise = sheet.getCharacterData('characterstreetwise');
-        knacks.survival = sheet.getCharacterData('charactersurvival');
-        knacks.thievery = sheet.getCharacterData('characterthievery');
-        character.personality = {};
-        const plist = sheet.getPersonalityList();
-        plist.forEach((item) => character.personality[item.name] = item.value);
-//        character.background = {};
-        const blist = sheet.getBackgroundList();
-        console.log("fork munch "+blist);
-        const cbg = {};
-        const bglist = sheet.backgrounds;
-        blist.forEach((item) => {
-			const bgitem = bglist[item.type][item.name];
-			const bg = {
-				background: bgitem,
-				bgref: item.bgref,
-				description: item.description,
-				name: item.name,
-				type: item.type
+		return schema.characters.update(character,(draft) => {
+	        draft.name = sheet.getCharacterData('charactername');
+	        draft.level = parseInt(sheet.getCharacterData('characterlevel'),10);
+			draft.calling.calling = this.getCalling(sheet,sheet.getCharacterData('charactercalling'));
+			draft.calling.name = character.calling.calling.name;
+			draft.calling.callingref = null;
+			draft.species.species = this.getSpecies(sheet,sheet.getCharacterData('characterspecies'));
+			draft.species.name = character.species.species.name;
+			draft.species.speciesref = null;
+			draft.origin.origin = this.getOrigin(sheet,sheet.getCharacterData('characterorigin'));
+			draft.origin.name = character.origin.origin.name;
+			draft.origin.originref = null;
+	        draft.fate = sheet.getCharacterData('characterfate');
+	        draft.description = sheet.getCharacterData('characterdescription');
+	        draft.hitpoints = parseInt(sheet.getCharacterData('characterhitpoints'),10);
+	        draft.power = parseInt(sheet.getCharacterData('characterpower'),10);
+	        draft.wealth = parseInt(sheet.getCharacterData('characterwealth'),10);
+	        draft.strength = parseInt(sheet.getCharacterData('characterstrength'),10);
+	        draft.constitution = parseInt(sheet.getCharacterData('characterconstitution'),10);
+	        draft.dexterity = parseInt(sheet.getCharacterData('characterdexterity'),10);
+	        draft.intelligence = parseInt(sheet.getCharacterData('characterintelligence'),10);
+	        draft.wisdom = parseInt(sheet.getCharacterData('characterwisdom'),10);
+	        draft.charisma = parseInt(sheet.getCharacterData('charactercharisma'),10);
+	        
+	        const knacks = draft.proficiencies.knacks;
+	        knacks.acrobatics = sheet.getCharacterData('characteracrobatics');
+	        knacks.arcana = sheet.getCharacterData('characterarcana');
+	        knacks.athletics = sheet.getCharacterData('characterathletics');
+	        knacks.bluff = sheet.getCharacterData('characterbluff');
+	        knacks.diplomacy = sheet.getCharacterData('characterdiplomacy');
+	        knacks.engineering = sheet.getCharacterData('characterengineering');
+	        knacks.healing = sheet.getCharacterData('characterhealing');
+	        knacks.history = sheet.getCharacterData('characterhistory');
+	        knacks.insight = sheet.getCharacterData('characterinsight');
+	        knacks.intimidation = sheet.getCharacterData('characterintimidation');
+	        knacks.leadership = sheet.getCharacterData('characterleadership');
+	        knacks.nature = sheet.getCharacterData('characternature');
+	        knacks.perception = sheet.getCharacterData('characterperception');
+	        knacks.religion = sheet.getCharacterData('characterreligion');
+	        knacks.stealth = sheet.getCharacterData('characterstealth');
+	        knacks.streetwise = sheet.getCharacterData('characterstreetwise');
+	        knacks.survival = sheet.getCharacterData('charactersurvival');
+	        knacks.thievery = sheet.getCharacterData('characterthievery');
+	        draft.personality = {};
+	        const plist = sheet.getPersonalityList();
+	        plist.forEach((item) => draft.personality[item.name] = item.value);
+	//        character.background = {};
+	        const blist = sheet.getBackgroundList();
+	        console.log("fork munch "+blist);
+	        const cbg = {};
+	        const bglist = sheet.backgrounds;
+	        blist.forEach((item) => {
+				const bgitem = bglist[item.type][item.name];
+				const bg = {
+					background: bgitem,
+					bgref: item.bgref,
+					description: item.description,
+					name: item.name,
+					type: item.type
+				};
+				cbg[item.type] = bg;
+			});
+			draft.background = cbg;
+			const cprofs = draft.characterData.proficiencies;
+			cprofs.tools = []; cprofs.weapons = []; cprofs.implements = [];
+			const cplist = sheet.getProficiencyList();
+			for(var i = 0; i < cplist.length; i++) {
+				const p = {id: EntityId.EntityIdFromString(cplist[i].equipmentId), name: cplist[i].name};
+				cprofs[cplist[i].type+'s'].push(p);
 			};
-			cbg[item.type] = bg;
-		});
-		character.background = cbg;
-		const cprofs = character.characterData.proficiencies;
-		cprofs.tools = []; cprofs.weapons = []; cprofs.implements = [];
-		const cplist = sheet.getProficiencyList();
-		for(var i = 0; i < cplist.length; i++) {
-			const p = {id: cplist[i].equipmentId, name: cplist[i].name};
-			cprofs[cplist[i].type+'s'].push(p);
-		};
-		const cboons = sheet.getBoonList();
-		const boons = {};
-		for(var i = 0; i < cboons.length; i++) {
-			const b = {name: cboons[i].name, boon: cboons[i]};
-			if(!boons[cboons[i].association]) { boons[cboons[i].association] = []; }
-			boons[cboons[i].association].push(b);
-		}
-		character.characterData.boons = boons;
-		const cequip = sheet.getEquipmentList();
-		character.characterData.equipment = cequip;
-		const notes = sheet.getNotesList();
-		character.characterData.notes = notes;
+			const cboons = sheet.getBoonList();
+			const boons = {};
+			for(var i = 0; i < cboons.length; i++) {
+				const b = {name: cboons[i].name, boon: cboons[i]};
+				if(!boons[cboons[i].association]) { boons[cboons[i].association] = []; }
+				boons[cboons[i].association].push(b);
+			}
+			draft.characterData.boons = boons;
+			const cequip = sheet.getEquipmentList();
+			draft.characterData.equipment = cequip;
+			const notes = sheet.getNotesList();
+			draft.characterData.notes = notes;
+		},false);
     }
     
     calculate(character) {
-       character.calculate();
+       return character.calculate();
     }
     
     save(character) {
-        this.characterRepo.saveCharacter(character);
-        if(character.owner.id === window.gebApp.controller.getCurrentPlayer().id) {
-	        window.gebApp.controller.addOwned(character.id,schema.characters,character.name);
-	    } else {
-//TODO: ownership rules... the character is not owned by the player who is saving it! for now do nothing.
-//			window.gebApp.controller.updatePlayerOwns(character.owner,schema.characters,character.name);
-		}
-	    	
+		this.controller.saveCharacter(character);
     }
     
     // the rest of these functions are meant to be called from action functions at the UI layer.
     
     refresh(sheet,character,action) {
 		console.log("refresh called");
-    	this.readForm(sheet,character);
-    	this.populateCharacter(sheet,character, (charSheet) => { 
-				this.calculate(character);
-				action(charSheet,character);
+//    	let updatedCharacter = this.readForm(sheet,character);
+    	this.readForm(sheet,character).then((updatedCharacter) => {
+	    	this.populateCharacter(sheet,updatedCharacter, (charSheet) => { 
+				this.calculate(updatedCharacter).then((calculated) => {
+					action(charSheet,calculated);
+				});
 			});
+		});
     }
     
     saveCharacter(sheet,character) {
@@ -1761,105 +1745,118 @@ class CharacterController {
     }
 
     recalculateCharacter(character) {
-        this.calculate(character);
+        return this.calculate(character);
     }
     
     render(sheet,character) {
-		sheet.model = character;
-		this.calculate(character);
-		this.display(sheet,character);
+		this.calculate(character).then((calculated) => {
+			sheet.model = calculated;
+			this.display(sheet,calculated);
+		});
 	}
 	
-	setSpeciesFromList(character,speciesList) {
-		if(character.species.name === undefined || character.species.name === null) { return false; }
+	async setSpeciesFromList(character,speciesList) {
+		if(character.species.name === undefined || character.species.name === null) { return character; } // probably a new character
 		const id = character.species.speciesref;
 		for(var i = 0; i < speciesList.length; i++) {
 			if(speciesList[i].id === id) {
-				character.species.name = speciesList[i].name;
-				character.species.species = speciesList[i];
-				return true;
+				const updated = await schema.characters.update(character,(draft) => {
+					draft.species.name = speciesList[i].name;
+					draft.species.species = speciesList[i];
+				},false);
+				return updated; //yay! You now have a species
 			}
 		}
+		return character; // this one is basically an error, you are not any defined species!
 	}
 	
-	setCallingFromList(character,callingsList)	{
-		if(character.calling.name === undefined || character.calling.name === null) { return false; }
+	async setCallingFromList(character,callingsList)	{
+		if(character.calling.name === undefined || character.calling.name === null) { return character; } // probably new
 		const id = character.calling.callingref;
 		for(var i = 0; i < callingsList.length; i++) {
 			if(callingsList[i].id === id) {
-				character.calling.name = callingsList[i].name;
-				character.calling.calling = callingsList[i];
-				return true;
+				const updated = await schema.characters.update(character,(draft) => {
+					draft.calling.name = callingsList[i].name;
+					draft.calling.calling = callingsList[i];
+				});
+				return updated; //yay! you now have a calling
 			}
 		}
+		return character; // not really possible, you have an undefined calling.
 	}
 	
-	setOriginFromList(character,originsList) {
-		if(character.origin.name === undefined || character.origin.name === null) { return false; }
+	async setOriginFromList(character,originsList) {
+		if(character.origin.name === undefined || character.origin.name === null) { return character; } // probably new
 		const id = character.origin.originref;
 		for(var i = 0; i < originsList.length; i++) {
 			if(originsList[i].id === id) {
-				character.origin.name = originsList[i].name;
-				character.origin.origin = originsList[i];
-				return true;
+				const updated = await schema.characters.update(character,(draft) => {
+					draft.origin.name = originsList[i].name;
+					draft.origin.origin = originsList[i];
+				});
+				return updated; //yay! you have an origin
 			}
 		}
+		return character; //funny guy, your origin doesn't compute!
 	}
 	
 	/**
 	 * Replace references to backgrounds in the character object with the corresponding entities.
 	 */
 	setBackgroundsFromList(character,backgrounds) {
+		let updated = character;
 		Object.keys(character.background).forEach((cbKey) => {
 			var bgref = character.background[cbKey].bgref;
 			if(bgref === undefined) { bgref = character.background[cbKey].background; }
-			Object.keys(backgrounds[cbKey]).forEach((bgKey) => {
+			Object.keys(backgrounds[cbKey]).forEach(async (bgKey) => {
 				var bg = backgrounds[cbKey][bgKey];
 				if(bgref === bg.id) {
-					character.background[cbKey].background = bg;
+					updated = await schema.characters.update(character,(draft) => {
+						draft.background[cbKey].background = bg;
+					});
 				}
 			});
 		});
+		return updated;
 	}
 	
-	populateCharacter(sheet,character,created) {
-		window.gebApp.controller.addToContext('currentCharacter',character);
-		this.speciesRepo.getAllSpecies((speciesList) => {
-			this.callingRepo.getAllCallings((callingsList) => {
-				this.backgroundRepo.getCategorizedBackgrounds((backgroundsMap) => {
-					this.originRepo.getAllOrigins((originsList) => {
-						try {
-//							const charSheet = document.getElementById(`cv${character.id}`);
-							sheet.setSelections(speciesList,callingsList,backgroundsMap,originsList);
-							sheet.controller = window.gebApp.characterController;
-							this.setSpeciesFromList(character,speciesList);
-							this.setCallingFromList(character,callingsList);
-							this.setOriginFromList(character,originsList);
-							this.setBackgroundsFromList(character,backgroundsMap);
-							const theRules =  new Rules(character.calling.calling,character.species.species,character.backgrounds,character.origin.origin);
-							sheet.rules = theRules;
-							character.rules = theRules;
-							created(sheet);
-							sheet.controller.render(sheet,character);
-						} catch (e) {
-							console.log(e.stack);
-							console.log("cannot create character sheet "+e.message+" at "+e.lineNumber);
-						}
-					});
-				});
-			});
-		});	
+	async populateCharacter(sheet,character,created) {
+//		window.gebApp.controller.addToContext('currentCharacter',character);
+		const speciesList = await schema.species.fetchAll();
+		const callingsList = await schema.callings.fetchAll();
+		const originsList = await schema.origins.fetchAll();
+		const backgroundsMap = await schema.backgrounds.getCategorizedBackgrounds();
+		
+		sheet.setSelections(speciesList,callingsList,backgroundsMap,originsList);
+		sheet.controller = this;
+		let updatedChar = await this.setSpeciesFromList(character,speciesList);
+		updatedChar = await this.setCallingFromList(updatedChar,callingsList);
+		updatedChar = await this.setOriginFromList(updatedChar,originsList);
+		updatedChar = this.setBackgroundsFromList(updatedChar,backgroundsMap);
+		const theRules =  new Rules(updatedChar.calling.calling,updatedChar.species.species,updatedChar.backgrounds,updatedChar.origin.origin);
+		sheet.rules = theRules;
+		updatedChar = await schema.characters.update(updatedChar,(draft) => {
+		      draft.rules = theRules;
+		},false);
+		created(sheet);
+		this.render(sheet,updatedChar);
+		return updatedChar;
 	}
 }
 
-var characterSheetFactory = function(element,characterId,characterRepo,created) {
+var characterSheetFactory = async function(element,characterId,created) {
 	element.innerHTML = `<character-sheet characterid='${characterId}' id='cv${characterId}'></character-sheet>`;
 	const charSheet = document.getElementById(`cv${characterId}`);
 	const sctrlr = window.gebApp.characterController;
 	if(characterId !== 'undefined'){
-		characterRepo.getCharacterById(characterId,(character) => {
+		let character = await schema.characters.fetch(characterId);
+		/* ,(character) => {
+			// Currently we will just overwrite the existing character on teh sheet with whatever the updated version is.
+			// Ultimately this is probably not the best plan, there should be a merge of what is on the sheet with what is
+			// being updated. Immer can probably handle that :)
 			sctrlr.populateCharacter(charSheet,character,created);
-		});
+		});*/
+		sctrlr.populateCharacter(charSheet,character,created);
 	} else {
 		sctrlr.createCharacter(charSheet);
 		created();

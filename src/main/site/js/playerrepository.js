@@ -51,11 +51,11 @@ const playerConverter = {
 		const id = snapshot.id;
 		const eid = EntityId.create(collections.players,id);
 		const data = snapshot.data(options);
-		const owned = data.owned.map((owned) => { return {
+		const owned = data.owned ? data.owned.map((owned) => { return {
 			name: owned.name,
 			ref: EntityId.EntityIdFromReference(owned.ref)
 			}
-		});
+		}) : undefined;
 		return new Player(eid,data.uid,data.loggedin,owned,data.handle,data.bookMarks,macroConverter.fromFirestore(eid,data.macroset));
 	}
 };

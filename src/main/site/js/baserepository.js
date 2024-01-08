@@ -15,8 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import { doc, getDoc, getDocs, setDoc, DocumentReference, collection, query, where } from 'firebase-firestore';
-import { getReference, getDb, schema } from './schema.js';
+import { doc, getDoc, getDocs, setDoc, DocumentReference, collection, query, where, onSnapshot } from 'firebase-firestore';
+import { getReference, getDb, schema, eMap } from './schema.js';
 
 /**
  * Passes search criteria into a repository search, and provides
@@ -42,7 +42,9 @@ class Search {
 	constructor(parameters,collectionName,listener) {
 		this.parameters = parameters;
 		this.listener = listener;
-		this.id = schema[collectionName].createEntityId(schema,this.hash(collectionName));
+		const hash = this.hash(collectionName);
+		const dm = schema[collectionName];
+		this.id = dm.createEntityId(collectionName,hash);
 	}
 	
 	/**
@@ -91,8 +93,44 @@ class EntityId {
 			this.idValue = crypto.randomUUID();
 	}
 
+	/**
+	 * Actually create an entity id, or get an existing
+	 * one from the map if it already exists. This insures
+	 * that every eid is the same instance for objects
+	 * which are themselves the same. Even if 2 copies
+	 * of an entity exist in memory, they will share
+	 * an EntityId object.
+	 */
 	static create(collection,idValue) {
-		return schema[collection].createEntityId(collection,idValue);
+		if(!idValue) idValue = crypto.randomUUID();
+		const key = `${collection}/${idValue}`;
+		let eentry = eMap.get(key);
+		let eid = eentry?.id;
+		if(!eid) {
+			eid = new EntityId(collection,idValue);
+			eMap.set(key,{id: eid, count: 1});
+		} else {
+			eentry.count += 1;
+		}
+		return eid;
+	}
+
+	/**
+	 * Deregister use of an EntityId. If the id's refcount becomes zero
+	 * then remove the entry. In theory this should result in the dataManager
+	 * cleaning up it's reference to the id as well, though this is not
+	 * really guaranteed...
+	 */	
+	static destroy(entityId) {
+		const key = entityId.toString();
+		let eentry = eMap.get(key);
+		if(eentry) {
+			if(eentry.count <= 1) {
+				eMap.delete(key);
+			} else {
+				eentry.count += -1;
+			}
+		}
 	}
 
 	/**
@@ -373,12 +411,43 @@ class BaseRepository {
 	toEntity(dao) {
 		return this.converter.fromFirestore(dao);
 	}
+
+/** 
+ * Adapter methods which replicate the data access API of DataManager. This allows us to put readonly repos directly in the
+ * schema map since there is no advantage to putting those queries through dataManager.
+ */
+
+	/**
+	 * Same as searchEntities but conforming to the API of dataManager.
+	 */
+	async search(search) {
+		return this.searchEntities(search.parameters);
+	}
+	
+	async fetchAll() {
+		return this.getAllAsync();
+	}
+	
+	async fetchMany(entityIds) {
+		return this.entitiesFromIds(entityIds);
+	}
+	
+	async fetch(entityId) {
+		return this.entityFromId(entityId);
+	}
 }
 
 /**
- * This version allows both read and write access.
+ * This version allows both read and write access. It also allows 
+ * for the ability to subscribe a search to a firestore listener.
  */
 class WriteRepository extends BaseRepository {
+	_subscriptions;
+	
+	constructor(converter,collectionName) {
+		super(converter,collectionName);
+		this._subscriptions = {};
+	}
 	
 	/**
 	 * Save an Entity into the repository async.
@@ -392,6 +461,61 @@ class WriteRepository extends BaseRepository {
         await setDoc(doc(getDb(),this.collectionName,idStr).withConverter(this.converter),entity);
         return entity.id;
     }
+
+/**
+ * The rest of these methods support Firestore snapshot subscriptions, which allow highly efficient
+ * registering to watch specific search results in Firestore. This is primarily useful for implementing
+ * chat, but potentially has additional uses for collaboration, presence, etc.
+ */
+	/**
+	 * Add a subscription to a particular Firestore result. The search's listener will be invoked
+	 * whenever Firestore updates the snapshot.
+	 */
+	subscribe(search) {
+		const shash = search.hash();
+		let sub = this._subscriptions[shash];
+		if(!sub) {
+			sub = {search: search, listeners: [search.listener]};
+			this._subscriptions[shash] = sub;
+			const cRef = collection(getDb(),this.collectionName);
+			const qc = search.parameters.map((param) => where(param.fieldName,param.op,param.fieldValue));
+	        const q = query(cRef,...qc).withConverter(this.converter);
+	        const unsub = onSnapshot(q, (querySnapshot) => this._onUpdate(querySnapshot,shash));
+	        sub.unsub = unsub;
+		} else {
+			sub.listeners.push(search.listener);
+		}
+	}
+	
+	_onUpdate(querySnapshot,searchHash) {
+		const messages = [];
+		querySnapshot.forEach((doc) => {
+			messages.push(doc.data());
+		});
+		this._notifyListeners(messages,searchHash);
+	}
+
+	/**
+	 * Remove the specific listener from a subscription to the given search, if it
+	 * was subscribed, and unsub() the snapshot if no more listeners remain. 
+	 */
+	unsubscribe(search) {
+		const shash = search.hash();
+		const sub = this._subscriptions[shash];
+		if(sub) {
+			const listeners = sub.listeners.filter((listener) => search.listener !== listener);
+			if(listeners.length < 1) {
+				sub.unsub();
+				delete this._subscriptions[shash];
+			}
+		}
+	}
+	
+	_notifyListeners(messages,searchHash) {
+		const listeners = this._subscriptions[searchHash].listeners;
+		listeners.forEach((listener) => { listener(messages); });
+	}
+
 }
 
 /**

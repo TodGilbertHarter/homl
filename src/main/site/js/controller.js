@@ -33,6 +33,7 @@ class Controller {
 		this.view = view;
 		this.view.controller = this;
 		this.characterController = characterController;
+		characterController.controller = this;
 		this.authenticator = new Authenticator(this);
 		this.router = new Router({ mode: 'hash', root: '/'});;
 		this.preAuthPath = window.location.hash;
@@ -126,7 +127,25 @@ class Controller {
 	}
 	
 	async getParticipantConversations(playerId) {
-		return this.conversationRepo.getParticipantConversations(playerId);
+		const sp = new SearchParam('participants',playerId.getReference(),'array-contains');
+		const search = new Search([sp],collections.conversations);
+		return schema.conversations.search(search);
+	}
+	
+	async sendMessage(message) {
+		return schema.messages.update(message,() => {},true);
+	}
+	
+	async subscribe(contextid,handler) {
+		const sparam = new SearchParam("contextId",contextid.getReference(),"==");
+		const search = new Search([sparam],collections.messages,handler);
+		return schema.messages.subscribe(search);
+	}
+	
+	async unsubscribe(contextid,handler) {
+		const sparam = new SearchParam("contextId",contextid.getReference(),"==");
+		const search = new Search([sparam],collections.messages,handler);
+		return schema.messages.unsubscribe(search);
 	}
 
 	displayConversation(id) {
@@ -328,32 +347,48 @@ class Controller {
 		window.location.hash = '/creategame';
 	}
 
-	/********************************************************** */
-
-	/** this will need a filter of some sort! */	
-	async getAllPlayers() {
-		return await this.playerRepo.getAllAsync();
-	}
-	
-	
 	/**
 	 * Add an owned record to the current player's list of owned
 	 * items. This needs to be done in order to maintain the player's
 	 * list of owned items.
 	 */
-	addOwned(id,schema,name) {
-		this.updatePlayerOwns(this.getCurrentPlayer(),id,schema,name);
+	addOwned(id,name) {
+		this.updatePlayerOwns(this.getCurrentPlayer(),id,name);
 	}
 
 	/**
 	 * Update the ownership for the given player.
 	 */	
-	updatePlayerOwns(player,id,schema,name) {
-		const owned = {id: id, name: name, ref: getReference(schema,id)};
-		player.addOwned(owned);
-		this.playerRepo.savePlayer(player);
+	updatePlayerOwns(player,id,name) {
+		return player.addOwned(id,name);
 	}
 	
+	removeOwned(id) {
+		this.removePlayerOwns(this.getCurrentPlayer(),id);
+	}
+	
+	removePlayerOwns(player,id) {
+		return player.deleteOwned(id);
+	}
+	
+	saveCharacter(character) {
+		schema.players.fetch(character.owner).then((owner) => {
+	        this.updatePlayerOwns(owner,character.id,character.name);
+			schema.characters.update(character,() => {},true);
+		});
+	}
+	
+	async getProficienciesByType(type) {
+		return await schema.equipment.getEquipmentByType(type);
+	}
+	
+	/** this will need a filter of some sort! */	
+	async getAllPlayers() {
+		return await schema.players.fetchAll();
+	}
+
+	/********************************************************** */
+
 	/**
 	 * Add a bookmark to the current player's bookmark list, and
 	 * save it.
@@ -374,20 +409,12 @@ class Controller {
 			this.actions[actionName].forEach((extensionPoint) => extensionPoint());
 	}
 	
-	getProficienciesByType(type,onAvailable) {
-		this.equipmentRepo.getEquipmentByType(type,onAvailable);
-	}
-	
 	getCurrentPlayerRef() {
 		return getReference(schema.players,this.authenticator.player.id);
 	}
 	
 	getImages(imageIds,onSuccess) {
 		this.imageRepo.dtosFromIds(imageIds,onSuccess);
-	}
-	
-	sendMessage(message) {
-		return this.messageRepo.saveDto(message);
 	}
 	
 	getCharactersByIds(ids,onSuccess) {

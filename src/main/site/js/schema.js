@@ -22,6 +22,8 @@
  */
 import { doc } from 'firebase-firestore';
 
+const eMap = new Map();
+
 /** list of collection names by well-known alias. */
 
 const collections = {
@@ -39,7 +41,7 @@ const collections = {
 	npcs: 'npcs',
 	images: 'images',
 	macros: 'macros',
-	conversations: 'conversations'
+	conversations: 'conversations',
 }
 
 /** Registry of repositories keyed by collection name */
@@ -52,4 +54,4 @@ const getReference = (schema,id) => {
 
 const getDb = () => { return window.gebApp.firestore }
 
-export { schema, collections, getReference, getDb };
+export { schema, collections, getReference, getDb, eMap };

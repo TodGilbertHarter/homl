@@ -15,6 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { html, LitElement, repeat, ref, createRef } from 'lit3';
+import { EntityId } from './baserepository.js';
 
 class OwnedList extends LitElement {
 	static properties = {
@@ -30,7 +31,7 @@ class OwnedList extends LitElement {
 	
 	renderAction(item) {
 		if(this.actionButton) {
-			return html`<div><button data-itemid=${item.id} @click=${this.buttonAction}>${this.actionButton}</button></div>`;
+			return html`<div><button data-itemid=${item.ref} @click=${this.buttonAction}>${this.actionButton}</button></div>`;
 		}
 		return null;
 	}
@@ -80,8 +81,8 @@ class OwnedManager extends LitElement {
 	}
 	
 	handleDelete(e) {
-		const id = e.detail.itemid;
-		//TODO: figure this out
+		const id = EntityId.EntityIdFromString(e.detail.itemid);
+		window.gebApp.controller.removeOwned(id);
 	}
 	
 	firstUpdated() {

@@ -17,6 +17,8 @@
 
 import { html, LitElement, render, repeat, ref, createRef, until } from 'lit3';
 import { FeatDetailRenderer } from './featview.js';
+import { schema } from './schema.js';
+import { EntityId } from './baserepository.js';
 
 /**
  * Class to view all the feats in the game.
@@ -33,7 +35,6 @@ class BoonViewer extends LitElement {
 	
 	constructor() {
 		super();
-		this.boonRepo = window.gebApp.boonRepo;
 		this.boons = [];
 		this.boonsRef = createRef();
 		this.dialogselector = 'body';
@@ -46,7 +47,7 @@ class BoonViewer extends LitElement {
 	
 	connectedCallback() {
 		super.connectedCallback();
-		this.boonRepo.getAllBoons((boons) => { this.boonsUpdated(boons);  });
+		schema.boons.fetchAll().then((boons) => { this.boonsUpdated(boons);  });
 		this.addEventListener('boonselected',this.hbs);
 	}
 	
@@ -91,7 +92,6 @@ class BoonDetailRenderer {
 	selectClickHandler;
 	
 	constructor(boon,dismissClickHandler,selectClickHandler) {
-		this.featRepo = window.gebApp.featRepo;
 		this.boon = boon;
 		this.selectable = 'false';
 		this.dismissClickHandler = dismissClickHandler;
@@ -111,7 +111,7 @@ class BoonDetailRenderer {
 	}
 	
 	resolveFeat(featRef) {
-		return this.featRepo.getReferencedFeatAsync(featRef).then(r => new FeatDetailRenderer(r).render());
+		return schema.feats.fetch(featRef).then(r => new FeatDetailRenderer(r).render());
 	}
 	
 	renderFeatRef(featRef) {
@@ -193,7 +193,7 @@ class BoonList extends LitElement {
 		
 		this.onClick = (e) => {
 //			if(!this.dialog) {
-				const id = e.target.id;
+				const id = EntityId.EntityIdFromString(e.target.id);
 				this.dialog = document.createElement('dialog-widget');
 				this.dialog.setAttribute('left','550px');
 				this.dialog.setAttribute('top','220px');

@@ -53,15 +53,13 @@ class PlayerList extends LitElement {
 	
 	showPlayer(e) {
 		const contextId = e.target.dataset.contextId;
-//		const eid = EntityId.EntityIdFromString(contextId);
-//TODO: fix entity ids...
-		const eid = EntityId.create(schema.players,contextId);
+		const eid = EntityId.EntityIdFromString(contextId);
 		window.gebApp.controller.displayPlayer(eid);
 	}
 	
 	sendMessage(e) {
 		const contextId = e.target.dataset.contextId;
-		const eid = EntityId.create(schema.players,contextId);
+		const eid = EntityId.EntityIdFromString(contextId);
 		window.gebApp.view.displaySendMessageRequester(eid);
 	}
 	

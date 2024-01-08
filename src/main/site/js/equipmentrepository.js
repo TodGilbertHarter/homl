@@ -64,7 +64,7 @@ class EquipmentRepository extends BaseRepository {
 	 * called for each one, but this kind of duplication should not exist in practice.
 	 */ 
     async getEquipmentByName(name) {
-		return this.findEntity("name",name,"==",onDataAvailable);
+		return this.findEntity("name",name,"==");
 	}
 
 	filterByType(type,data) {
@@ -83,7 +83,7 @@ class EquipmentRepository extends BaseRepository {
 	}
 	
     async getEquipmentByType(type) {
-		return this.findEntities("type",type,"==",onDataAvailable);
+		return this.findEntities("type",type,"==");
 	}
 }
 
