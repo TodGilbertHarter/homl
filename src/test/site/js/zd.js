@@ -43,16 +43,27 @@ function assert(asserted,label) {
 	}
 }
 
-function given() {
-	
+const tests = [];
+function initializeTest(label) {
+	tests.push(label);
 }
 
-function when() {
-	
+function record(label) {
+	//TODO: something
 }
 
-function then() {
-	
+function recordFailure(label,exception) {
+	//TODO: something
 }
 
-export { TestFailure, assert };
+function plan(label,test) {
+	try {
+		initializeTest(label);
+		test();
+		record(label);
+	} catch (e) {
+		recordFailure(label,e);
+	}
+}
+
+export { TestFailure, assert, plan };

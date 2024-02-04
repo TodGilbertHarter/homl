@@ -16,18 +16,37 @@
 				"firebase-firestore": "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js",
 				"firebase-auth": "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js",
 				"glmatrix": "https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js",
-				"rpgdice": "https://cdn.jsdelivr.net/npm/rpgdicejs@2.0.3/+esm"
+				"rpgdice": "https://cdn.jsdelivr.net/npm/rpgdicejs@2.0.3/+esm",
+				"zd": "./js/zd.js"
 				}
 			}
 		</script>
 	</head>
 	<body>
 		<script type='module'>
-			import { collections, eMap } from '../js/schema.js';
+			import { TestFailure, assert, plan } from 'zd';
+
+			// Given an entity id map
+			import { eMap, collections } from '../js/schema.js';
 			import { EntityId } from '../js/baserepository.js';
-			window.e1 = EntityId.create(collections.players,'foob');
-			window.e2 = EntityId.create(collections.players,'foob');
-			window.e3 = EntityId.create(collections.players,'foob2');
+
+			plan('test entity id map behavior for equal objects', () => {
+				// When we insert two identical ids
+				const e1 = EntityId.create(collections.players,'foob');
+				const e2 = EntityId.create(collections.players,'foob');
+
+				assert(eMap.size == 1,'There should only be one entry in the map.');
+				assert(e1 === e2,'Identical entity ids should be same object.');
+			});
+
+			plan('test entity id map behavior for unequal objects', () => { 
+				const e1 = EntityId.create(collections.players,'foob');
+				const e2 = EntityId.create(collections.players,'foob2');
+
+				assert(eMap.size == 2,'Unequal ids should each have an entry in the map.');
+				assert(e1 !== e2,'Unequal ids should be unequal.');
+			});
+
 		</script>
 	</body>
 </html>

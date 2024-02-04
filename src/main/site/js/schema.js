@@ -15,11 +15,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-/*
- * Represents a HoML calling. It contains the rules calculator(s) for doing basic character calculations
- * related to the calling itself, along with things like choosers which allow for selecting of calling-related
- * options during chargen, etc.
- */
 import { doc } from 'firebase-firestore';
 
 const eMap = new Map();
