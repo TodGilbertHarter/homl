@@ -16,34 +16,79 @@ Sorcerers have taken attunement to the elemental forces to an extreme; they are 
 /LABEL Choose one of the following LABEL/
 /FLEXROW
 /FLEXCELL
-/BOON /ID" 7207fd06-69f3-11ec-a94a-74d02b9c2012"/ /BOONNAME Draconic Bloodline BOONNAME/
+/BOON /ID" 7207fd06-69f3-11ec-a94a-74d02b9c2012"/ /BOONNAME Elemental Bloodline BOONNAME/
 /BOONSOURCE Sorcerer Calling Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
 /ASSOCIATION Sorcerer Calling ASSOCIATION/
 /PREREQUISITES Sorcerer Calling PREREQUISITES/
 /DESCRIPTION
-Somewhere in your ancestry is the blood of dragons. Members of your family sometimes exhibit astonishing natural magical power. 
+Somewhere in your ancestry are elementals. Members of your family sometimes exhibit astonishing natural magical power. 
 DESCRIPTION/
 /BENEFITS
 /BENEFIT 
-Choose one of the following damage types: Fire, Cold, Lightning, and Caustic.You gain the following benefits.
+Choose one of the following damage types: Fire, Cold, Lightning, and Caustic. You gain the following benefits.
 BENEFIT/
 /BENEFIT 
-    •  You gain a +1 permanent bonus to attack rolls of attacks doing the chosen damage type.
+You gain a +1 permanent bonus to attack rolls of attacks doing the chosen damage type.
 BENEFIT/
 /BENEFIT 
-    • Once per turn you may inflict 2d10 bonus damage to one target of an attack doing the chose damage type. This damage bonus increases to 3d10 at legendary levels and 5d10 at mythic levels.
+Once per turn you may inflict 1DD bonus damage to one target of an attack doing the chose damage type.
 BENEFIT/
 /BENEFIT 
-    • Spend one Vitality Point and exchange any one selected power you have for another power choice granted by a boon or class feature possessed by you of a level you could use. Your selection reverts to your usual selection after the next recovery.
+You have protection from the same damage type selected above.
 BENEFIT/
 /BENEFIT 
-    • You have protection from the same damage type selected above.
-BENEFIT/
-/BENEFIT 
-You gain the Dragon tag
+You gain the elemental keyword
 BENEFIT/
 /BENEFIT
-You can speak with dragons; they may or may not listen.
+You can speak with elementals; they may or may not listen.
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /ID" ee3b23aa-df2e-11ee-b7e2-c87f5455cfcc"/ /BOONNAME Cosmic Conduit BOONNAME/
+/BOONSOURCE Sorcerer Calling Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Sorcerer Calling ASSOCIATION/
+/PREREQUISITES Sorcerer Calling PREREQUISITES/
+/DESCRIPTION
+You have an unusually direct connection to the Elemental Chaos which allows you to directly tap its power. This process is instinctive and hard to control. You may sometimes cause unwanted mayhem.
+
+After each rest or recovery roll on the following table to determine which element and damage type you are now channeling.
+/TABLE=" internaltable"/
+/THEAD /TR /TH Roll /TH/ Element /TH/ Damage Type TH/ TR/ THEAD/
+/TBODY 
+/TR /TD 1 /TD/ Acid /TD/ Caustic TD/ TR/
+/TR /TD 2 /TD/ Water /TD/ Cold TD/ TR/
+/TR /TD 3 /TD/ Fire /TD/ Fire TD/ TR/
+/TR /TD 4 /TD/ Earth /TD/ Force TD/ TR/
+/TR /TD 5 /TD/ Air /TD/ Lightning TD/ TR/
+/TR /TD 6 /TD/ Poison /TD/ Toxic TD/ TR/
+TBODY/
+TABLE/
+Whenever you spend an Elemental Power Point roll on the following table.
+/TABLE=" internaltable"/
+/THEAD /TR /TH Die Roll /TH/ Effect TH/ TR/ THEAD/
+/TBODY
+/TR /TD 1 /TD/ Change the element you are channeling to any element you choose. TD/ TR/
+/TR /TD 2 /TD/ You take 5 points of damage of the type you are channeling. This increases to 10 at legendary tier, and 20 at mythic tier TD/ TR/
+/TR /TD 3 /TD/ One of your allies within 10 squares, selected at random, takes 5 points of damage of the type you are channeling. This increases to 10 points at legendary tier, and 20 at mythic tier. TD/ TR/
+/TR /TD 4 /TD/ Heal damage equal to one healing value. TD/ TR/
+/TR /TD 5 /TD/ Add the damage type you are channeling to the next attack made during this round. TD/ TR/
+/TR /TD 6 /TD/ Slide one of your allies within 2 squares of you 4 squares. TD/ TR/
+/TR /TD 7 /TD/ Pick one enemy, you are invisible to that creature until the start of your next turn TD/ TR/
+/TR /TD 8 /TD/ You teleport 1d4 squares in a random direction. TD/ TR/
+TBODY/
+TABLE/
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You gain protection against the damage type associated with the channeled element.
+BENEFIT/
+/BENEFIT 
+All attacks you make gain this damage keyword.
+BENEFIT/
+/BENEFIT 
+Once per turn you may inflict 1DD bonus damage to one target of an attack doing the damage type of the channeled element.
 BENEFIT/
 BENEFITS/
 BOON/

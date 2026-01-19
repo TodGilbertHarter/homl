@@ -11,14 +11,14 @@ TRAITS/
 These creatures have been known by many names throughout the ages, dwarf, dvarg, tvarg, twarg, dver, etc. Whatever 
 they are called they are a species of humanoid beings who are reputed to be both enemies of the elves and the finest 
 craftsmen in the world. They generally live underground but may also hail from another world. They are human-like 
-but generally slightly shorter and stouter than humans. Dvarg are often martial but may also be spirit classes. 
+but generally slightly shorter and stouter than humans. Dvarg are often martial but often attune to the spirit source. 
 They are rarely rogues. It is rare for Dvarg to align themselves with the shadow power source, but some powerful 
 forge masters are known to be elemental specialists; and while dvarg have a reputation for building and technical 
 things, there are definitely individuals who are strongly connected with the life power source, usually berserkers.
 
-Said to be made of the stone itself dwarves are creatures of the earth, and they have the toughness of earth and stone 
-as well. It is very difficult to poison a dwarf, and they are legendary for their endurance and toughness. All things 
-to do with rock, stone, and the spaces beneath the earth is the ordinary domain of every dwarf. Even dwarves who do 
+Said to be made of the stone itself dvarg are creatures of the earth, and they have the toughness of earth and stone 
+as well. It is very difficult to poison a dvarg, and they are legendary for their endurance and toughness. All things 
+to do with rock, stone, and the spaces beneath the earth is the ordinary domain of every dvarg. Even dvarg who do 
 not pursue the crafts of mining, stonework, and masonry have a knack for this sort of knowledge and can often spot 
 things about stonework which would escape any other person.
 /SUBSECTION" Culture"/
@@ -88,6 +88,30 @@ using an Engineering check. This would include things like who passed by recentl
 etc. EFFECTS/
 /FLAVOR The very stones speak to you. FLAVOR/
 FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+/BOON /ID" 98862c9e-df28-11ee-bbff-c87f5455cfcc"/ /BOONNAME Rock Commando BOONNAME/
+/BOONSOURCE Species BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Dvarg ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You are one of the elite dvarg rock commandoes. Elite fighters who have been trained in the specialized art of fighting in rocky places.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You gain access to the following feat: /BR
+/FEAT /ID" 2ebd4e68-df29-11ee-823d-c87f5455cfcc"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Stone Scramble FEATNAME/
+/ORIGIN Rock Commando ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Move ACTION/
+/TAGS earth TAGS/
+/EFFECTS You move your normal movement rate and may climb natural stone surfaces or move across difficult terrain consisting of natural stone at your full movement rate. EFFECTS/
+/FLAVOR You scramble amongst the stones with amazing agility. FLAVOR/
+FEAT/
+BENEFIT/
+/BENEFIT
+Gain advantage when making a Stealth check in rocky terrain or stonework.
 BENEFIT/
 BENEFITS/
 BOON/

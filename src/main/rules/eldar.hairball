@@ -1,0 +1,85 @@
+/SPECIES /ID" f535cdfc-de77-11ee-95c1-c87f5455cfcc"/
+/SPECIESNAME Eldar SPECIESNAME/
+/TRAITS
+/SIZE Medium SIZE/
+/SPEED 6 SPEED/
+/HEIGHT 152cm - 185cm HEIGHT/
+/WEIGHT 45kg - 100kg WEIGHT/
+/VISION standard VISION/
+TRAITS/
+The eldar are an ancient race of magical human-like beings who possess mysterious arcane knowledge and inhabit a hidden other-world, the realm of Fairy. They are often called elves or faeries, but the eldar race is not so easily categorized, as its members may take a variety of forms. Each eldar has a normal form, but some eldar master the art of changing their form. Eldar are also bound by the mysterious laws of magic, which can impose a whole variety of limitations on them. The eldar presented here may be considered a fairly typical example. Eldar are often witches, sorcerers, and alchemists, but may also be rogues and priests. They are rarely other martial classes.
+
+In the realms of Fairy the eldar are great wizards and nature worshipers, living in ancient graceful cities and isolated towers throughout the land. Often the eldar visit the natural world, following hidden pathways leading from the deepest woods and highest mountains into and out of Fairy. Sometimes eldar towers or even entire cities are said to appear in the world on certain nights of the year. 
+
+A few of the eldar choose to remain in the natural world, temporarily making a home here while they explore and seek out knowledge, others might be exiles or fugitives.
+
+The eldar are a long-lived race, often enduring in their native realm for 100's or even 1,000's of years. Often when they visit the natural world they age more rapidly. This doesn't tend to bother them too much as the eldar philosophy of life is that quantity is far less important than the quality of the life lived. Due to their long lives most eldar have a wider variety of life experiences than humans. Even 'young' eldar may have raised families, pursued several careers, and spent long periods of time traveling or studying.
+SUBSECTION/
+/SUBSECTION" Benefits"/
+/FLEXROW
+/FLEXCELL
+/SPECIESFEATURES
+All eldar have the following species features.
+/BOON /ID" 98f1d710-de78-11ee-a0ed-c87f5455cfcc"/ /BOONNAME Fey Blooded BOONNAME/
+/BOONSOURCE Species Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Eldar ASSOCIATION/
+/PREREQUISITES Eldar PREREQUISITES/
+/DESCRIPTION
+You are a fey creature, ruled by the inherently magical nature of your kind.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You are inherently resistant to mind altering effects. You gain a +1 permanent bonus to all defensive checks related to illusions or any form of compulsion.
+BENEFIT/
+/BENEFIT
+You have the fey keyword.
+BENEFIT/
+/BENEFIT
+You gain an additional knack. This does not count as one of your 4 allowed knacks at character creation.
+BENEFIT/
+BENEFITS/
+BOON/
+SPECIESFEATURES/
+FLEXCELL/
+/FLEXCELL
+/SPECIESBOONS
+Eldar characters may select from the following boons.
+/BOON /ID" ed9d84e8-de79-11ee-a257-c87f5455cfcc"/ /BOONNAME Scion of the Eldar BOONNAME/
+/BOONSOURCE Species BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Eldar ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You were brought up as a child of the mighty eldar.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You are familiar with the realm of Fairy and have a basic understanding of its common properties and rules.
+BENEFIT/
+/BENEFIT
+You can speak the eldar language.
+BENEFIT/
+/BENEFIT
+You gain proficiency in Arcana.
+BENEFIT/
+/BENEFIT
+You gain proficiency with the Arming Sword.
+BENEFIT/
+/BENEFIT
+You gain access to the following feat: /BR
+/FEAT /ID" de9f4c6e-de7a-11ee-80b1-c87f5455cfcc"/ /SOURCE shadow SOURCE/ /TIER heroic TIER/ /FEATNAME Glamour FEATNAME/
+/ORIGIN Eldar ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Major ACTION/
+/TAGS illusion, fey TAGS/
+/TYPETARGET self TYPETARGET/
+/EFFECTS Make a Bluff check. The result is the DV for anyone seeing through your glamour with Insight. You appear to be any sort of small or medium sized humanoid figure. You can only attempt to imitate figures you have seen. If you imitate a specific individual make the check with disadvantage. EFFECTS/
+/FLAVOR You obscure your appearance with magic. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+SPECIESBOONS/
+FLEXCELL/
+FLEXROW/
+SUBSECTION/
+SPECIES/

@@ -31,6 +31,7 @@ import { CharacterRepository } from './characterrepository.js';
 import { NpcRepository } from './npcrepository.js';
 import { ImageRepository } from './imagerepository.js';
 import { Chat } from './chat.js';
+import { MapRepository } from './maprepository.js';
 
 enableMapSet();
 enablePatches();
@@ -247,5 +248,6 @@ schema.characters = new DataManager('characters', new CharacterRepository());
 schema.npcs = new DataManager('npcs', new NpcRepository());
 schema.images = new DataManager('images',new ImageRepository());
 schema.messages = new DataManager('messages', new Chat());
+schema.maps = new DataManager('maps', new MapRepository());
 
 export { EntityId, DataManager };

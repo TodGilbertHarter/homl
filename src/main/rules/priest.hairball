@@ -74,7 +74,55 @@ BENEFITS/
 BOON/
 FLEXCELL/
 FLEXROW/
+/BOON /ID" be2417c0-69f2-11ec-9b4a-74d02b9c2012"/ /BOONNAME Healer BOONNAME/
+/BOONSOURCE Priest Calling Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Priest ASSOCIATION/
+/PREREQUISITES Priest PREREQUISITES/
+/DESCRIPTION
+You have the power to heal your allies. DESCRIPTION/
+/BENEFITS
+/BENEFIT
+/FEAT /ID" ac391748-77aa-11ec-bbfe-74d02b9c2012"/ /SOURCE spirit SOURCE/ /TIER heroic TIER/ /FEATNAME Healing Word FEATNAME/ 
+/ORIGIN Healer ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Free ACTION/
+/TAGS healing TAGS/
+/REQUIREMENTS It must be your turn. REQUIREMENTS/
+/TYPETARGET close touch, one ally or self TYPETARGET/
+/EFFECTS The target is allowed to spend a power point in order to receive healing with a bonus of 1d6 extra points, 2d6 at legendary tier, or 3d6 at mythic tier. EFFECTS/
+/SPECIAL This feat may only be used twice per action sequence, and only once per turn. SPECIAL/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
 FEATURES/
 /BOONS
+/FLEXROW
+/FLEXCELL
+/BOON /ID" 0eb1f3be-ea30-11ee-935d-c87f5455cfcc"/ /BOONNAME Forest Domain BOONNAME/
+/BOONSOURCE Priest BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Priest ASSOCIATION/
+/PREREQUISITES Priest PREREQUISITES/
+/DESCRIPTION
+You are a priest of the domain of Hunting and the Forest.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+/FEAT /ID" a688ce88-ea30-11ee-9c3b-c87f5455cfcc"/ /SOURCE spirit SOURCE/ /TIER heroic TIER/ /FEATNAME Direct the Hunt FEATNAME/ 
+/ORIGIN Forest Domain ORIGIN/ /LEVEL 1 LEVEL/ /ACTION Major ACTION/
+/TAGS  TAGS/
+/TYPETARGET range 5, one creature TYPETARGET/
+/EFFECTS
+Every attack made on the target does an additional 1d6 damage, 2d6 at legendary tier, and 3d6 damage at mythic tier.
+EFFECTS/
+/DURATION Concentration DURATION/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+
+
+
+FLEXCELL/
+FLEXROW/
+FEATURES/
 BOONS/
 CALLING/

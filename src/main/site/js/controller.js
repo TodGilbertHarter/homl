@@ -387,6 +387,18 @@ class Controller {
 		return await schema.players.fetchAll();
 	}
 
+	async getGameById(gameId, onUpdate) {
+		return await schema.games.fetch(gameId, (game) => { console.log(`got a game updated notice for ${game.id}`); onUpdate(game)});
+	}
+	
+	async getImages(imageIds, onUpdate) {
+		return await schema.images.fetchMany(imageIds, (images) => {console.log("some images were updated"); onUpdate(images)});
+	}
+
+	async getCharactersByIds(ids,onUpdate) {
+		return await schema.characters.fetchMany(ids,onUpdate);
+	}
+	
 	/********************************************************** */
 
 	/**
@@ -413,13 +425,6 @@ class Controller {
 		return getReference(schema.players,this.authenticator.player.id);
 	}
 	
-	getImages(imageIds,onSuccess) {
-		this.imageRepo.dtosFromIds(imageIds,onSuccess);
-	}
-	
-	getCharactersByIds(ids,onSuccess) {
-		this.characterRepo.dtosFromIds(ids,onSuccess);
-	}
 	
 	/**
 	 * Get a given player and call onDataAvailable when it is returned by
@@ -468,10 +473,6 @@ class Controller {
 	}
 	
 	
-	
-	async getGameById(gameId) {
-		return this.gameRepo.entityFromId(gameId);
-	}
 	
 /*	doGameInfoDisplay(gameview) {
 		this.gameRepo.getGameById(gameview.gameId,gameview.showGame.bind(gameview));

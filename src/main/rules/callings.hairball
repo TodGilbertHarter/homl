@@ -13,15 +13,30 @@ SUBSECTION/
 /SUBSECTION" Role "/
 
 Every calling has a role, which indicates the type of job that this calling is most suitable for in action situations, particularly combat. There are four of these roles and most characters of a given calling will fall into the role defined for their calling. That being said, roles are intended to help define the themes of callings, and to help the players develop a well-rounded team which can take on various opponents successfully. Roles are not meant to be absolute unbreakable things which every character must adhere to. It may well be that a given player creates a character with a given role, and then acquires boons and makes role playing choices which lead to the character acting more in a different role. This is fine, the character is simply not the most typical example of their calling. They should still be effective as played however.
+/TOPIC" Striker"/
+
+Striker is the most straightforward combat role to describe. A striker's job is to inflict pain on their opponents. Strikers generally have d8 damage dice and calling features which allow them to inflict bonus damage. On the other hand, most strikers are less durable than heroes who fill some of the other roles, thus they require their comrade's support in order to be most effective. A striker could be mostly melee oriented, or they could be more focused on making powerful ranged or area attacks.
+TOPIC/
+/TOPIC" Defender"/
+
+The defender role screens and shields other heroes from harm, and acts as a front line blocker, holding choke points or pinning down hostile creatures. Defenders are generally quite tough, possess d6 damage dice, and have calling features which allow them to lock down or otherwise disadvantage opponents who attempt to get past them. This is usually coupled with higher hit point totals, allowing them to better survive in direct contact with the enemy. Almost all defenders focus on close attacks, though some may be area effects.
+TOPIC/
+/TOPIC" Enabler"/
+
+The enabler role is primarily focused on enhancing the abilities of themselves and other heroes using specialized techniques. This can range from healing to buffing allies, debuffing enemies, or possibly other forms of assistance. Enablers enhance the effectiveness of the entire team, as well as limiting the effectiveness of their opposition. Enablers generally have moderately effective attacks, but are not usually as tough as defenders. 
+TOPIC/
+/TOPIC" Controller"/
+
+The controller role is all about directing the flow of battle by either facilitating the heroes' plans, or thwarting those of the enemy. This can be accomplished by changing the terrain, generating damaging and persistent area effects, or temporarily disabling opponents. Controllers generally do weak d4 damage, and lack the toughness of other roles, but their powerful effects and control-oriented calling features can allow them to force the enemy to fight on the heroes' own terms and punish them if they don't.
+TOPIC/
 SUBSECTION/
 /SUBSECTION" Other Attributes "/
 
 /UL
 /LI /LABEL Proficiencies LABEL/ Each calling may have certain weapons, implements, and other tools with which they are especially capable. Characters of this calling are automatically granted proficiencies as described. LI/
-/LI /LABEL Defense modifier LABEL/ Every calling grants a permanent modifier to one or more defenses LI/
 /LI /LABEL Knacks LABEL/ This lists the knacks which typical characters of this calling are likely to have. These are suggestions, not requirements. LI/
 /LI /LABEL Damage die LABEL/ The size of the calling's damage die. LI/
-/LI /LABEL Features LABEL/ These are boons which every character of the given calling possesses, they don't count against the character's four starting boons. In some cases the calling asks the player to choose one choice out of several. Normally only characters with this calling may possess these boons, and they are normally only chosen during character creation. LI/
+/LI /LABEL Features LABEL/ These are boons which every character of the given calling possesses. In some cases the calling asks the player to choose one choice out of several. Normally only characters with this calling may possess these boons, and they are normally only chosen during character creation. LI/
 /LI /LABEL Boons LABEL/ These are additional boons which might be selected by the character at start up. They might also be acquired later, like any other boon. LI/
 /LI /LABEL Hit points LABEL/ The number of hit points gained per level when taking this calling. LI/
 /LI /LABEL Starting hit points LABEL/ The base number of hit points a character with this calling starts with. LI/
@@ -38,17 +53,18 @@ The following table lists some of the basic attributes of each calling which is 
 /TR /THW=" 34%"/ Power Source /THW/=" 33%"/ Calling /THW/=" 33%"/ Role TH/ TR/
 THEAD/
 /TBODY
-/TR=" martial"/ /TDR=" 3"/ Martial /TD/ Knight /TD/ Defender TD/ TR/
-/TR=" martial"/ /TD Rogue /TD/ Striker TD/ TR/
-/TR=" martial"/ /TD Monk /TD/ Defender TD/ TR/
-/TR=" elemental"/ /TDR=" 3"/ Elemental /TD/ Spell Blade /TD/ Defender TD/ TR/
-/TR=" elemental"/ /TD Alchemist /TD/ Enabler TD/ TR/
-/TR=" elemental"/ /TD Sorcerer /TD/ Striker TD/ TR/
-/TR=" spirit"/ /TD Spirit /TD/ Priest /TD/ Enabler TD/ TR/
-/TR=" life"/ /TDR=" 2"/ Life /TD/ Beast Master /TD/ Defender TD/ TR/
-/TR=" life"/ /TD Berserker /TD/ Striker TD/ TR/
-/TR=" shadow"/ /TD Shadow /TD/ Illusionist /TD/ Controller TD/ TR/
-/TR /TD Varies /TD/ Wizard /TD/ Controller TD/ TR/
+/TR=" martial"/ /TDR=" 3"/ Martial /TD/ /REF Knight REF/ /TD/ Defender TD/ TR/
+/TR=" martial"/ /TD /REF Rogue REF/ /TD/ Striker TD/ TR/
+/TR=" martial"/ /TD /REF Monk REF/ /TD/ Defender TD/ TR/
+/TR=" elemental"/ /TDR=" 3"/ Elemental /TD/ /REF Spell Blade REF/ /TD/ Defender TD/ TR/
+/TR=" elemental"/ /TD /REF Alchemist REF/ /TD/ Enabler TD/ TR/
+/TR=" elemental"/ /TD /REF Sorcerer REF/ /TD/ Striker TD/ TR/
+/TR=" spirit"/ /TD Spirit /TD/ /REF Priest REF/ /TD/ Enabler TD/ TR/
+/TR=" life"/ /TDR=" 3"/ Life /TD/ /REF Beast Master REF/ /TD/ Defender TD/ TR/
+/TR=" life"/ /TD /REF Berserker REF/ /TD/ Striker TD/ TR/
+/TR=" life"/ /TD /REF Druid REF/ /TD/ Controller TD/ TR/
+/TR=" shadow"/ /TD Shadow /TD/ /REF Illusionist REF/ /TD/ Controller TD/ TR/
+/TR /TD Varies /TD/ /REF Wizard REF/ /TD/ Controller TD/ TR/
 TBODY/
 TABLE/
 DIV/
@@ -103,7 +119,7 @@ There are actually many paths to elemental power. While all of them require stud
 
 In any case, every practitioner of elemental power must infuse a certain amount of this power into their being, taking elemental substances into their bodies in order to estblish links with the elemental chaos from which it emerges.
 
-All characters with an elemental calling gain the boon Elemental Infusion.
+All characters with an elemental calling gain the boon Elemental Fusion.
 
 The following callings draw their power from the elemental power source.
 /SOURCE" spellblade.hairball"/
@@ -136,6 +152,7 @@ All characters with a life calling gain the Life Attunement boon:
 The following callings draw their power from the life power source.
 /SOURCE" berserker.hairball"/
 /SOURCE" beastmaster.hairball"/
+/SOURCE" druid.hairball"/
 SUBSECTION/
 /SUBSECTION" Spirit Callings"/
 /RIGHT=" half"/

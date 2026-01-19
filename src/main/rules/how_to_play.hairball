@@ -117,7 +117,7 @@ Tags are a core concept in HoML. A tag may be attached to almost any element of 
 
 /CODE Cold Iron Sword – bonus: +4 permanent modifier to all attacks on fey creatures when using this weapon. CODE/
 
-This rule would be triggered when an attack was made on an eldar character. Likewise if a feat or effect has a tag, such as 'poison' this might interact with a dwarf character's 'Resistant' trait, granting him a +5 permanent modifier on any checks related to poison.
+This rule would be triggered when an attack was made on an eldar character. Likewise if a feat or effect has a tag, such as 'poison' this might interact with a dvarg character's 'Resistant' trait, granting him a +5 permanent modifier on any checks related to poison.
 
 Tags frequently appear in another context, they describe damage. For instance a magical fireball might produce damage with the tag 'fire'. Characters may have immunity from, vulnerability to, or protection from specific tags. Otherwise damage tags largely work in the same way as other tags, providing an extra level of narrative description and allowing the GM and players to make changes to the mechanics where narratively appropriate. For example a GM might determine that fire damage is halved when the target is under water. 
 
@@ -158,6 +158,7 @@ Some of the most common tags are listed in the following table, along with a bri
 /TR /TD Beast /TD/ A creature which is non-human in body plan but animal-like in general nature. Animals are beasts. TD/ TR/
 /TR /TD Magical /TD/ A creature which is unnatural and has an unnatural origin. TD/ TR/
 /TR /TD Undead /TD/ A dead being which is animated by necromantic magic. TD/ TR/
+/TR /TD Shapechange /TD/ A type of magic which alters the form of a living creature TD/ TR/
 TABLE/
 DIV/
 SUBSECTION/

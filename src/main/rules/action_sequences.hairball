@@ -367,6 +367,10 @@ If a creature cannot make attacks, due to some condition or effect presumably, t
 
 Note that tiny creatures normally have zero reach, and specifically use tiny weapons which have range zero. This means they normally only attack other creatures within their own square and their Zone of Control only extends to the square they are in. Should such a creature have a melee weapon with reach 1, then they will exert a ZoC in squares surrounding them as usual.
 SUBSECTION/
+/SUBSECTION" Encumbrance and Movement"/
+
+If a character is carrying less than her maximum load, she is unencumbered. If a character carries more than her maximum load then she is encumbered. When encumbered her speed is reduced by one and she has disadvantage on all checks based on Dexterity governed aspects. If a character carries more than twice her maximum load, then she is overloaded. When overloaded her speed is reduced to 0 and thus she cannot move, nor can she pass checks based on any Dexterity governed aspect. She will have to remove load in order to remedy this situation. Optionally a character might briefly achieve half speed by passing a Constitution check, heroes are superhuman after all!
+SUBSECTION/
 SECTION/
 /SECTION" Combat"/
 

@@ -1,0 +1,204 @@
+/CALLING /ID" 2c24b18a-e19c-11ee-8db5-c87f5455cfcc"/
+/CALLINGNAME Druid CALLINGNAME/
+/TRAITS
+/ROLE Controller ROLE/
+/POWERSOURCE Life POWERSOURCE/
+/DAMAGEDIE D6 DAMAGEDIE/
+/WEAPONS Any 1 WEAPONS/
+/IMPLEMENTS Totem IMPLEMENTS/
+/KNACKS Nature, Survival KNACKS/
+/HITPOINTS 5 HITPOINTS/
+/STARTHITPOINTS 9 STARTHITPOINTS/
+TRAITS/
+Druids are servants of nature. Whereas priests may worship gods of nature, druids serve the life force itself directly, thus they have a deep connection with the land and are able to draw power from it. Likewise they have deep and subtle connections with all living things, even to the extent of being able to warp the forms of their very bodies in order to take on
+the features and attributes of beasts. Druids conserve, and preserve, life above all other things, believing that life force originates with and also sustains living creatures.
+/FEATURES
+/FLEXROW
+/FLEXCELL
+/BOON /ID" 093b5fc4-e19d-11ee-a7ed-c87f5455cfcc"/ /BOONNAME Grasping Earth BOONNAME/
+/BOONSOURCE Druid Calling Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Druid Calling ASSOCIATION/
+/PREREQUISITES Druid Calling PREREQUISITES/
+/DESCRIPTION
+The land itself is your ally.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+Whenever you hit an opponent with an attack using a life power, that opponent is slowed until the end of its next turn. Any opponent entering a zone created by your life powers, or starting its turn in such a zone is also slowed until the end of its turn.
+BENEFIT/
+/BENEFIT
+Once per encounter you may impose the grabbed condition on one opponent you hit with one of your life powers, regardless of the distance between you and that opponent. The condition lasts until you move or the opponent breaks free.
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /ID" 8dae11b6-e19d-11ee-ad97-c87f5455cfcc"/ /BOONNAME Servant of Nature BOONNAME/
+/BOONSOURCE Druid Calling Feature BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Druid Calling ASSOCIATION/
+/PREREQUISITES Druid Calling PREREQUISITES/
+/DESCRIPTION
+You are a true servant of nature and have a spiritual bond with the life force of the world.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You know a great deal about the natural world. Make all Nature and Survival checks with a +3 permanent bonus.
+BENEFIT/
+/BENEFIT
+Pick one type of difficult natural terrain (forest, swamp, etc.) and gain terrain walk in that type of terrain.
+BENEFIT/
+/BENEFIT
+Local natural animals and plants may serve your needs in some way. You can substitute a Nature check for ome other type of check which this fact explains. Treat this as if you had used a practice.
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+FLEXROW/
+FEATURES/
+/BOONS
+/FLEXROW
+/FLEXCELL
+/BOON /ID" 49d0f2fa-e19e-11ee-8355-c87f5455cfcc"/ /BOONNAME Natural Form BOONNAME/
+/BOONSOURCE Level BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Druid ASSOCIATION/
+/PREREQUISITES Druid PREREQUISITES/
+/DESCRIPTION
+Due to your deep spiritual association with natural creatures you may assume the form of a wild beast.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You gain access to the following feat: /BR
+/FEAT /ID" 9a92d99c-e19e-11ee-bdb4-c87f5455cfcc"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Wild Shape FEATNAME/
+/ORIGIN Natural Form ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Major ACTION/
+/TAGS life, alteration, shapechange TAGS/
+/TYPETARGET self TYPETARGET/
+/EFFECTS You assume the shape of an animal of roughly humans size (medium) and a level no greater than yours. The new form is assumed at the start of your next turn. See the /REF Shapeshifting REF/ rules for more information. If you are incapacitated or killed while in this form you will revert to your normal form. EFFECTS/
+/SPECIAL You may use this same feat to return to your normal form. SPECIAL/
+/DURATION rest or recovery DURATION/
+/FLAVOR Your flesh warps and flows, taking on the form of an animal of roughly human size. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+/BOON /ID" 56b9a4ce-e1a0-11ee-8e8a-c87f5455cfcc"/ /BOONNAME One With Nature BOONNAME/
+/BOONSOURCE Level BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Druid ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+Through deep communion with the natural world you have acquired some unusual natural properties.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You acquire a DR of 4 when you are not wearing any form of armor. This DR increases to 6 at level 9 and 10 at level 17. If you have Natural Form this bonus applies even when you are Wild Shaped.
+BENEFIT/
+/BENEFIT
+Once per day, during a rest, you may decide to invoke protection from one of the following damage types, fire, lightning, caustic, or cold. This protection lasts until the next rest.
+BENEFIT/
+BENEFITS/
+BOON/
+/BOON /ID" 08bc47e2-e94b-11ee-a23f-c87f5455cfcc"/ /BOONNAME Student of What is Beneath BOONNAME/
+/BOONSOURCE Level BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Druid ASSOCIATION/
+/PREREQUISITES Life Power Source Attunement PREREQUISITES/
+/DESCRIPTION
+You have developed a connection with the small things of the natural world which lurk beneath most people's feet. 
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You can speak with insects, and they can tell you what they have observed or other similar information.
+BENEFIT/
+/BENEFIT
+You gain access to the following feat: /BR
+/FEAT /ID" ef905860-e94c-11ee-8771-c87f5455cfcc"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Crawling Doom FEATNAME/
+/ORIGIN Student of What is Beneath ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Major ACTION/
+/TAGS Implement, Psychic, Poison, Summoning TAGS/
+/TYPETARGET Area 1 at Range 10, all creatures TYPETARGET/
+/ATTACK Implement vs FORT ATTACK/
+/ENHANCED
+2DD + Implement + WIS damage. The target is dazed.
+ENHANCED/
+/COMPLETESUCCESS
+2DD + Implement Damage.
+COMPLETESUCCESS/
+/SUCCESS
+DD + Implement Damage.
+SUCCESS/
+/FLAVOR A wave of tiny biting, stinging things fills the area you designate, making it very unpleasant for all who are there. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+/BOON /ID" 827f0d28-e94e-11ee-8744-c87f5455cfcc"/ /BOONNAME Animal Master BOONNAME/
+/BOONSOURCE Level BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Druid ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You connect with animal life at a deep level.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You are able to speak with animals.
+BENEFIT/
+/BENEFIT
+You gain access to the following feat: /BR
+/FEAT /ID" bbc5cbee-e94e-11ee-9744-c87f5455cfcc"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Compel Animal FEATNAME/
+/ORIGIN Animal Master ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Major ACTION/
+/TAGS Implement, Charm, Psychic TAGS/
+/TYPETARGET Range 5, one natural beast TYPETARGET/
+/ATTACK Implement vs WILL ATTACK/
+/ENHANCED 2DD + Implement + INT damage, push the target 2 squares. ENHANCED/
+/COMPLETESUCCESS 2DD + Implement + INT damage, push the target 1 square. COMPLETESUCCESS/
+/SUCCESS 2DD + Implement damage. SUCCESS/
+/SPECIAL An animal reduced to 0 hit points is not slain. Instead it acquires the Broken condition and will surrender to you if it cannot flee. SPECIAL/
+/FLAVOR By sheer force of will and persuasion you break an animal. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+/FLEXCELL
+/BOON /ID" 03cd36ea-e952-11ee-a72f-c87f5455cfcc"/ /BOONNAME Thorn Lord BOONNAME/
+/BOONSOURCE Level BOONSOURCE/ /BOONLEVEL 1 BOONLEVEL/ /BOONTYPE Major BOONTYPE/
+/ASSOCIATION Druid ASSOCIATION/
+/PREREQUISITES None PREREQUISITES/
+/DESCRIPTION
+You have learned the ways of certain plants.
+DESCRIPTION/
+/BENEFITS
+/BENEFIT
+You are unhindered by any difficult terrain which consists of plants, ignore it and treat it as normal terrain.
+BENEFIT/
+/BENEFIT
+You gain access to the following feat: /BR
+/FEAT /ID" dad46a64-e952-11ee-8b94-c87f5455cfcc"/ /SOURCE life SOURCE/ /TIER heroic TIER/ /FEATNAME Thorn Patch FEATNAME/
+/ORIGIN Thorn Lord ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Major ACTION/
+/TAGS Summoning TAGS/
+/TYPETARGET
+Area 1 at Range 5
+TYPETARGET/
+/DURATION
+Scene
+DURATION/
+/EFFECTS 
+You create an area of difficult terrain. Any creature moving through this area, or starting its turn within it, takes DD + Implement damage.
+EFFECTS/
+/SPECIAL
+If you enhance the effect, increase the size of the area by one square.
+SPECIAL/
+/FLAVOR You create an area filled with thorns and vines. FLAVOR/
+FEAT/
+BENEFIT/
+BENEFITS/
+BOON/
+FLEXCELL/
+FLEXROW/
+BOONS/
+CALLING/

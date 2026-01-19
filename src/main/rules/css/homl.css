@@ -848,6 +848,9 @@ div.book > subtitle {
 }
 
 p {
+	font-family: "Merriweather", serif;
+	font-weight: 400;
+	font-style: normal;
     margin-left: .5em;
     text-indent: .5em;
 }
@@ -898,6 +901,46 @@ p {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
+
+.internaltable {
+    background-color: var(--bodytable-bg);
+    border-collapse: collapse;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+.internaltable th {
+    color: var(--bodytable-header-fg);
+    background-color: var(--bodytable-header-bg);
+    font-weight: bold;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.internaltable tbody th {
+    color: var(--bodytable-subheader-fg);
+    background-color: var(--bodytable-subheader-bg);
+    font-weight: bold;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.internaltable td {
+	color: var(--bodytable-fg);
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
 
 .general {
 	background-color: var(--affliction-bg);
@@ -1057,7 +1100,7 @@ div.benefit {
     padding-top: 20px;
     font-weight: bold;
     text-align: center;
-    background-image: url('../images/perseus.jpg');
+    background-image: url('../images/perseus.webp');
     background-repeat: no-repeat;
     background-position: left top;
     background-attachment: scroll;
@@ -1073,7 +1116,7 @@ div.benefit {
     padding-top: 20px;
     font-weight: bold;
     text-align: center;
-    background-image: url('../images/unknown_species.jpg');
+    background-image: url('../images/unknown_species.webp');
     background-repeat: no-repeat;
     background-position: left top;
     background-attachment: scroll;
@@ -1089,7 +1132,7 @@ div.benefit {
     padding-top: 20px;
     font-weight: bold;
     text-align: center;
-    background-image: url('../images/ancient_city.jpg');
+    background-image: url('../images/ancient_city.webp');
     background-repeat: no-repeat;
     background-position: left top;
     background-attachment: scroll;

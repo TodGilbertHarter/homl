@@ -16,16 +16,17 @@
 */
 import { html, LitElement, render, repeat, ref, createRef } from 'lit3';
 import { DrawImageInstruction } from './imagerender.js';
+import { EntityId, IdConverter } from './baserepository.js';
 
 /**
  * Displays information about an image.
  */
 class ImageView extends LitElement {
 	static properties = {
-		id: {},
+		imageid: {converter: IdConverter, type: EntityId},
 		uri: {},
 		description: {},
-		ownerid: {},
+		ownerid: {converter: IdConverter, type: EntityId},
 		editenabled: {},
 		actionenabled: {}
 	}
@@ -35,13 +36,13 @@ class ImageView extends LitElement {
 		this.uri = null;
 		this.description = null;
 		this.ownerid = null;
-		this.id = null;
+		this.imageid = null;
 		this.editenabled = 'false';
 		this.actionenabled = false;
 	}
 
 	actionSelected() {
-		this.dispatchEvent(new CustomEvent('imageaction',{bubbles: true, composed: true, detail: {imageid: this.id, uri: this.uri}}));
+		this.dispatchEvent(new CustomEvent('imageaction',{bubbles: true, composed: true, detail: {imageid: this.imageid, uri: this.uri}}));
 	}
 	
 	renderActionButton() {
@@ -112,7 +113,7 @@ class ImagesViewer extends LitElement {
 	}
 	
 	renderImage(image) {
-		return html`<image-view actionenabled=${this.actionenabled} editenabled=${this.editenabled} description=${image.description} id=${image.id} uri=${image.uri}></image-view>`
+		return html`<image-view actionenabled=${this.actionenabled} editenabled=${this.editenabled} description=${image.description} imageid=${image.id} uri=${image.uri}></image-view>`
 	}
 	
 	render() {

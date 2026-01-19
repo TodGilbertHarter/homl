@@ -325,6 +325,12 @@ class HttpPlugin implements Plugin<Project>, HttpHandler {
 				mimeType = "application/javascript; charset=UTF-8";
 			} else if(".css".equals(extension)) {
 				mimeType = "text/css; charset=UTF-8";
+			} else if(".jpg".equals(extension)) {
+				mimeType = "image/jpeg";
+			} else if(".png".equals(extension)) {
+				mimeType = "image/png";
+			} else if(".webp".equals(extension)) {
+				mimeType = "image/webp";
 			}
 			if(!"".equals(mimeType))
 				h.set("Content-Type", mimeType);

@@ -37,6 +37,7 @@ const collections = {
 	images: 'images',
 	macros: 'macros',
 	conversations: 'conversations',
+	maps: 'maps'
 }
 
 /** Registry of repositories keyed by collection name */

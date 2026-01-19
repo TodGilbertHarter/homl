@@ -8,8 +8,11 @@ One of the basic use conditions related to feats is level. A hero must be at lea
 This doesn't necessarily prevent a hero from acquiring such a feat, but they simply are not yet capable of using it. The GM might allow this rule to be broken, for example by requiring the
 player to expend the hero's fate in a particularly dramatic situation in order to invoke power greater than they would normally possess. 
 
+/SECTION" Basic Feats"/
+
 There are a few basic feats which any character can use. These are simply actions which are best described using the feat format, such as basic weapon use, but which any person would be able 
-to accomplish. A number of these are listed in the section /REF Action Descriptions REF/ of the /REF Action Sequences REF/ chapter.
+to accomplish. A number of these are listed in the section /REF Action Descriptions REF/ of the /REF Action Sequences REF/ chapter. Others are described under /REF Knacks and Aspects REF/ . All of them should be found in the master feat list appendix.
+SECTION/
 /SECTION" Reading a Feat"/
 /LEFT=" half"/
 /FEAT /ID" cf1adec4-77a8-11ec-8153-74d02b9c2012"/ /SOURCE elemental SOURCE/ /TIER heroic TIER/ /FEATNAME Fireball FEATNAME/
@@ -280,9 +283,6 @@ SUBSECTION/
 The other situation is when the feat is a practice and it has a supplementary cost which includes one or more power points. In this case the check is simply assumed to be a success, not a 
 failure, nor a complete or enhanced success, but simply a success. This represents the expertise of the character with this practice, that they are strong enough to always succeed if they 
 dig into their reserves, etc.
-/TOPIC" Attunement"/
-
-TOPIC/
 SUBSECTION/
 SECTION/
 CHAPTER/

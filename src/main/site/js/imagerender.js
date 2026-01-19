@@ -15,9 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import { html, LitElement, ref, createRef } from 'lit3';
+import { Application, Assets, Sprite } from 'pixijs';
+import { Grid, GridTypes } from './graphics.js';
 
 /**
- * Encapsulate a canvas in a web component
+ * Encapsulate a PIXI Application in a web component. This is intended
+ * to allow for creating relatively static layered map-like renderings, or
+ * simply displaying images.
  */
 class Renderer extends LitElement {
 	static properties = {
@@ -30,9 +34,9 @@ class Renderer extends LitElement {
 		super();
 		this.width = 300;
 		this.height = 150;
-		this.canvasRef = createRef();
+		this._pixiApplication = new Application({width: this.width, height: this.height});
+		this._ref = createRef();
 		this._instructions = [];
-		this._context = null;
 	}
 
 	set instructions(instructions) {
@@ -41,23 +45,21 @@ class Renderer extends LitElement {
 
 	addInstruction(instruction) {
 		this._instructions.push(instruction);
-		if(this._context)
-			instruction.execute(this.canvasRef.value,this._context);
+		if(this._ref.value)
+			instruction.execute(this._pixiApplication);
 	}
 	
 	render() {
-		return html`<canvas ${ref(this.canvasRef)} part='canvas' width=${this.width} height=${this.height}></canvas>`;
+		return html`<div ${ref(this._ref)} part='renderer' width=${this.width} height=${this.height}></div>`;
 	}
 
 	firstUpdated() {
-		const canvas = this.canvasRef.value;
-		this._context = canvas.getContext("2d");
+		this._ref.value.appendChild(this._pixiApplication.view);
 	}
 	
 	updated() {
-		const canvas = this.canvasRef.value;
 		this._instructions.forEach((instruction) => {
-			instruction.execute(canvas,this._context);
+			instruction.execute(this._pixiApplication);
 		});
 	}	
 }
@@ -75,18 +77,18 @@ class RenderInstruction {
 		this._deferredExec();
 	}
 	
-	_deferExecution(canvas,context) {
-		this._deferredExec = () => { this.execute(canvas,context)}
+	_deferExecution(pixiApplication) {
+		this._deferredExec = () => { this.execute(pixiApplication)}
 	}	
 	
-	execute(canvas,context) {
+	execute(pixiApplication) {
 		console.debug("executed render instruction called:" + this.name);
 	}
 }
 
 class DrawImageInstruction extends RenderInstruction {
 	src;
-	img;
+	asset;
 	loaded;
 	xoffset;
 	yoffset;
@@ -97,21 +99,45 @@ class DrawImageInstruction extends RenderInstruction {
 		this.yoffset = yoffset;
 		this.loaded = false;
 		this.src = src;
-		this.img = new Image();
-		this.img.addEventListener('load',() => {
+// Dunno why the 'Assets' stuff doesn't work, but it is borked.
+/*		Assets.load(this.src).then((asset) => {
+			this.asset = asset;
 			this.loaded = true;
 			this._executeDeferred();
-		});
-		this.img.src = this.src; 
+		}); */
+		this.asset = Sprite.from(this.src);
+		this.loaded = true;
+		this._executeDeferred();
 	}
 
-	execute(canvas,context) {
+	execute(application) {
 		if(this.loaded === false) {
-			this._deferExecution(canvas,context);
+			this._deferExecution(application);
 		} else {
-			super.execute(canvas);
-			context.drawImage(this.img,this.xoffset,this.yoffset);
+			super.execute(application);
+			application.stage.addChild(this.asset);
 		}
+	}
+}
+
+class DrawGridInstruction extends RenderInstruction {
+	rows;
+	cols;
+	gridType;
+	gridColor;
+	grid;
+	
+	constructor(name,rows, cols, gridType, gridColor) {
+		super(name);
+		this.rows = rows;
+		this.cols = cols;
+		this.gridType = gridType;
+		this.gridColor = gridColor;
+	}
+	
+	execute(application) {
+		super.execute(application);
+		this.grid = new Grid(rows,cols,application.stage,gridType,gridColor,null);
 	}
 }
 

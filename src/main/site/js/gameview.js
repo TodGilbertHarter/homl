@@ -36,18 +36,19 @@ class GameView extends LitElement {
 		this.model = null;
 	}
 	
-	showGame(game) {
+	async showGame(game) {
 		this.model = game;
 		this.gameViewRef.value.model = game;
 		this.conversationViewerRef.value.gameid = game.id;
 		this.conversationViewerRef.value.threadid = game.threads[0];
 		this.imagesViewerRef.gameid = game.id;
 		window.gebApp.controller.getNpcs(game.npcs,(npcs) => {
-			this.npcViewerRef.value.npcs = npcs;		
+			this.npcViewerRef.value.npcs = npcs;
 		});
-		window.gebApp.controller.getImages(game.images,(images) => {
+		const fooberry = await window.gebApp.controller.getImages(game.images,(images) => {
 			this.imagesViewerRef.value.images = images;
-		})
+		});
+		this.imagesViewerRef.value.images = fooberry;
 	}
 
 	firstUpdated() {

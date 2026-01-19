@@ -1,15 +1,15 @@
 /CHAPTER" Heroes "/
 
-Heroes AKA player characters, or PCs, are the alter-egos of the players in HoML. Each player normally plays the role of a single hero 
+Heroes, AKA player characters, or PCs, are the alter-egos of the players in HoML. Each player normally plays the role of a single hero 
 which they utilize in a HoML session; although they might switch characters or play different heroes at different times. 
 The rules in this chapter explain how to construct a hero and then discusses what happens when a hero advances in level.
 /SECTION" Characteristics of heroes "/
 
-This section lists all the major attributes commonly possessed by PCs. Rules for determining their values are given under the /REF  Character Generation REF/ and 
-/REF Character Advancement REF/ sections.
+This section lists all the major attributes commonly possessed by heroes. Rules for determining their values are given under the /REF  Hero Generation REF/ and 
+/REF Hero Advancement REF/ sections.
 /SUBSECTION" Ability Scores "/
 
-These are the most basic attributes of all characters. They help to define the basic capabilities of the character. Each of the six abilities listed below has a value from 
+These are the most basic attributes of all characters; even NPCs have ability scores. They help to define the basic capabilities of the character. Each of the six abilities listed below has a value from 
 the following table. The value for each attribute determines its associated ability modifier.
 
 /TABLE=" bodytable "/
@@ -77,8 +77,8 @@ them to do things, negotiate, and generally to get by in social situations of al
 TOPIC/
 /TOPIC" Ability Modifier Notations "/
 
-Ability modifiers are generally noted by a 3 letter abbreviation, STR for Strength, CON for Constitution, DEX for Dexterity, 
-INT for Intelligence, WIS for Wisdom, and CHA for Charisma. For instance an attack might have a damage expression of 1d8+STR, 
+Ability modifiers are generally noted by a 3 letter abbreviation, /EM STR EM/ for Strength, /EM CON EM/ for Constitution, /EM DEX EM/ for Dexterity, 
+/EM INT EM/ for Intelligence, /EM WIS EM/ for Wisdom, and /EM CHA EM/ for Charisma. For instance an attack might have a damage expression of 1d8+STR, 
 meaning that the hero's strength ability modifier is added to the results of a roll of 1d8.
 TOPIC/
 SUBSECTION/
@@ -94,7 +94,7 @@ Each character has hit points. This attribute has a numeric value which is used 
 and how much more physical and mental punishment the character can take before dying, surrendering, or giving up as the situation 
 dictates. Each character begins with a specific number of hit points based on her constitution and other factors; the character’s 
 maximum hit points. Each calling indicates a base number of hit points for that calling. As a hero increases in level 
-her maximum hit point value will also increase based on the calling.
+her maximum hit point value will also increase based on her calling.
 SUBSECTION/
 /SUBSECTION" Damage Resistance "/
 
@@ -117,14 +117,18 @@ In any case where damage has multiple tags, the character is protected from it i
 the character is vulnerable if any one tag matches his vulnerability. If a character is both vulnerable and protected, then the 
 two cancel out.
 SUBSECTION/
-/SUBSECTION" Calling "/
+/SUBSECTION" Immunity"/
+
+Even more extreme than protection is immunity. If a character is immune to damage with a certain keyword, then any damage with that keyword is reduced to 0, and any other effects which would be produced by the attack in question are also ignored.
+SUBSECTION/
+/SUBSECTION" Heroic Calling "/
 
 Every hero has a calling, which is a general indication of the hero's role in the world; a knight is a member of a hereditary 
 caste of specialists in fighting with weapons; a wizard is a practitioner and student of magic, etc. Most callings will define a 
 power source for the hero; this is their primary source of power. They might also call on other sources at times, 
 but the source associated with their calling is the basis of their power as a hero.
 
-Calling defines the hero's core combat role; each calling is associated with a particular role, and a character will 
+Calling also defines the hero's core combat role; each calling is associated with a particular role, and a character will 
 generally function well in that role, although they may also be capable of filling other roles. Thus a knight calling has a 
 defender role, and a wizard calling has a controller role. In a fight most knights will stand in the front lines against their 
 opponents, prevent them from going where they please, and engage in melee combat with them. A wizard on the other hand will use 
@@ -152,10 +156,10 @@ expend his hero's power points, the current total is reduced accordingly.
 TOPIC/
 /TOPIC" Power Source"/
 
-Every character has a power source which they are attuned to, which is determined initially by their calling. This is one of the five sources of power within the game which are the motivating energies of the world. These are discussed in detail in their chapter /REF Power Sources REF/ . The sources are:
+Every character has a power source which they are attuned to, which is determined initially by their calling. This is one of the five sources of power within the game which are the motivating energies of the world. These are discussed in detail in their own chapter, /REF Power Sources REF/ . The sources are:
 /UL
     /LI /LABEL Martial LABEL/ Also known by other names, such as chi, this is the interior force of character, will, and discipline. It is often called 'martial' because it is the easiest of all sources to attune, though also the most difficult to fully master. Thus many warriors are trained to apply it to their weapon skills, and the traditions of this power source are mostly martial. It can also accomplish other things however, such as control of the body, self-healing, etc. LI/
-    /LI /LABEL Spirit LABEL/ This is the power of the spirit world. It is raw psychic energy given form and purpose. Spirit power flows from the spirit world and is accessed by making contact with the spirits. This can take the form of shamanism, worship of gods, making pacts with the spirits, etc. It is a powerful force which gives access to many capabilities. However, the spirits and gods don't do anything entirely for free. What power they give, they can also take. LI/
+    /LI /LABEL Spirit LABEL/ This is the power of the spirit world. It is raw psychic energy given form and purpose. Spirit power flows from the spirit world and is accessed by making contact with the spirits. This can take the form of shamanism, worship of gods, making pacts with the spirits, etc. It is a powerful force which gives access to many capabilities. However, the spirits and gods don't do anything entirely for free; what power they give, they can also take. LI/
     /LI /LABEL Elemental LABEL/ This is the raw force of physical creation and matter. All things which have a material existence flow with elemental power. There is also said to be an infinite realm of elemental chaos from which this energy, and all matter, originates. Characters can tap into this power but it is dangerous and unpredictable. Great care, knowledge, and study are required in order to master the forms and words required in order to command it. Mistakes can have unfortunate consequences. LI/
     /LI /LABEL Life LABEL/ The life force is a universal force which binds together living things and gives them the ability to grow and heal. It is sometimes confused with nature, but the life force exists everywhere, not only in wild places. However, it is strongest where there is life, or perhaps life is strongest where this force is most present. Those who attune to the life force are great healers and masters of living and growing things. LI/
     /LI /LABEL Shadow LABEL/ This is the force of both animation and of dissolution and death. It is a complement to the life force in that life without motion towards its end is mere static existence. It is the most difficult of all the forces to understand and master, but it also grants great powers. Its practitioners can cloud the mind, misdirect the senses, and even whither the living or bring about undeath. Its practitioners are rare, and often ostracized in many lands. LI/
@@ -164,8 +168,8 @@ TOPIC/
 /TOPIC" Using Power"/
 
 When a character needs power to enable a feat, they will need power of the correct type. A character can only spend power points 
-on feats which are associated with power sources they are attuned to. Thus a knight can spend points to enhance martial feats. 
-A priest can spend them to enhance a blessing, but not to conjure up a fireball; however, characters can acquire additional 
+on feats which are associated with power sources they are attuned to, unless some kind of effect states otherwise. Thus a knight can spend power to enhance martial feats; 
+a priest can spend it to enhance a blessing, but not to conjure up a fireball. However, characters can acquire additional 
 attunements in the form of boons. This is generally difficult, but many heroes are able to tap into more than one power source. 
 There may also be magical objects, places, or effects which can grant access to additional sources of power. These are quite 
 difficult to find.
@@ -195,10 +199,11 @@ are several categories of background element:
 /OL
     /LI /LABEL Parentage LABEL/ Who were the characters parents, what was their position in society, etc. LI/
     /LI /LABEL Occupation LABEL/ What did the character do before he became a hero? LI/
-    /LI /LABEL Society LABEL/ What was the character's role and position in society? LI/
-    /LI /LABEL Geography LABEL/ Where did the character live? LI/
-    /LI /LABEL Bonds LABEL/ Who did the character know? LI/
+    /LI /LABEL Society LABEL/ What is the character's role and position in society? LI/
+    /LI /LABEL Geography LABEL/ Where did the character originate from? LI/
+    /LI /LABEL Bonds LABEL/ Who does the character know? LI/
 OL/
+
 Most heroes will have at most one of each of these five categories of background element, but these are only suggestions, 
 players should feel free to add other types, forgo using some of these, or even use more than one of the same type if it works 
 for them.
@@ -215,7 +220,8 @@ feats, or other benefits which apply to the hero's other attributes.
 
 Limitations are similar to boons, but have a negative effect on a hero. They are recorded in the same way.
 All heroes start the game with one or more boons or limitations as a result of choices of calling, species, background, GM 
-decree, story considerations, etc. Usually more boons are acquired during the course of a hero's adventures.
+decree, story considerations, etc. Usually more boons are acquired during the course of a hero's adventures. Limitations might be acquired as a consequence
+of surviving an affliction or for some other reason.
 SUBSECTION/
 /SUBSECTION" Size "/
 
@@ -242,19 +248,15 @@ tag associated with the speed, thus for example: speed = 6, flying, would indica
 When no mode tag is provided it is assumed the speed is a walking speed. Note that flying and swimming speeds may also have an 
 associated maneuverability class.
 
-Normal humans and similar creatures have a speed of 6. A horse would have a speed of about 8, and a cheetah a speed of about 12.
+Normal humans and similar creatures have a speed of 6. A horse would have a speed of about 8, and a cheetah a speed of about 12. Speed is mostly important in /REF Action Sequences REF/ but it can also serve as a comparison of relative swiftness in general, thus a speed 8 horse will definitely outrun a speed 5 dvarg.
 SUBSECTION/
 /SUBSECTION" Encumbrance "/
 
 This is a measure of how much the character is carrying. Each character is either unencumbered, encumbered, or overloaded. The 
 exact amount of total load which represents each value depends on the character's maximum load, which is determined primarily by 
-strength and size.
+strength and size. Optionally an overloaded hero might briefly achieve half speed by
+passing a Constitution check, heroes are superhuman after all! See /REF Encumbrance and Movement REF/ for an explanation of the specific effects of encumbrance.
 
-If a character is carrying less than her maximum load, she is unencumbered. If a character carries more than her maximum load then she is encumbered. 
-When encumbered her speed is reduced by one and she has disadvantage on all checks based on Dexterity governed aspects. If a character carries more than
-twice her maximum load, then she is overloaded. When overloaded her speed is reduced to 0 and thus she cannot move, nor can she pass checks based on any
-Dexterity governed aspect. She will have to remove load in order to remedy this situation. Optionally a character might briefly achieve half speed by
-passing a Constitution check, heroes are superhuman after all!
 SUBSECTION/
 /SUBSECTION" Current Load "/
 
@@ -274,7 +276,7 @@ encumbered. This assumes the weight is reasonably distributed and easy to carry.
 SUBSECTION/
 /SUBSECTION" Character Equipment"/
 
-Characters have equipment. These are the possessions which they carry around with them. This may include things like tools, weapons, armor, adventuring gear, etc. A later chapter goes into more detail on equipment. Note that changes to equipment also changes encumbrance.
+Characters have equipment. These are the possessions which they carry around with them. This may include things like tools, weapons, armor, adventuring gear, etc. The /REF Equipment REF/ chapter goes into more detail on equipment. Note that changes to equipment also changes encumbrance.
 SUBSECTION/
 /SUBSECTION" Character Wealth"/
 
@@ -317,8 +319,8 @@ SECTION/
 The previous section detailed most of the things which appear on character sheets. This section details how to build a hero from scratch.
 /SUBSECTION" Starting Level"/
 
-Normally characters start at level 1. Sometimes you may generate a character which is higher level. This will require allocating a major boon for each level beyond first. 
-Note that in this case the character will have a non-zero level modifier, remember to incorporate this. Note the hero's level and level modifier on their sheet.
+Normally heroes start at level 1. Sometimes you may generate a character which is higher level. This will require allocating a major boon for each level beyond first. 
+Note that in this case the character will have a non-zero level modifier, remember to incorporate this. Note the hero's level and level modifier on their sheet, as well as taking care of any additional things due to a character of the given level (ability adjustments, damage dice, etc.).
 SUBSECTION/
 /SUBSECTION" Hero Species"/
 
@@ -328,7 +330,7 @@ be significant later.
 SUBSECTION/
 /SUBSECTION" Hero Calling"/
 
-Second the player will pick a calling for their hero. Is it a knight, a wizard, a priest perhaps? As with species this choice might be dictated by circumstances. 
+Second the player will pick a calling for their hero. Is she a knight, a wizard, a priest perhaps? As with species this choice might be dictated by circumstances. 
 Players will probably want to discuss with each other who wishes to play what. Pay attention to the combat role of the calling, it is a good idea for the players to make 
 sure they cover all the bases. A party will work fine without heroes of every role, but a player might want to keep in mind which ones are and are not represented 
 in the party when picking starting boons.
@@ -447,7 +449,7 @@ that knack plus their ability modifier for the ability associated with that knac
 might get from other sources.
 SUBSECTION/
 SECTION/
-/SECTION" Character Advancement"/
+/SECTION" Hero Advancement"/
 
 As explained above, each hero has a level, which determines the sorts of challenges they should be capable of 
 facing. As heroes have adventures, they will inevitably increase in level. The following rules govern this process.

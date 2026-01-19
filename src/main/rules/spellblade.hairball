@@ -68,8 +68,9 @@ DESCRIPTION/
 /TRIGGER When an enemy engaged by you attacks someone other than you. TRIGGER/
 /TYPETARGET range 5, triggering opponent TYPETARGET/
 /ATTACK arcane vs REF ATTACK/
-/COMPLETESUCCESS 1DD and the target's triggering attack automatically fails. COMPLETESUCCESS/
-/SUCCESS 1DD and the target gains disadvantage on the triggering attack. SUCCESS/
+/ENHANCED 2DD and the triggering attack automatically fails. ENHANCED/
+/COMPLETESUCCESS 1DD and the triggering attack automatically fails. COMPLETESUCCESS/
+/SUCCESS 1DD and the target of the triggering attack gains advantage on their defense check. SUCCESS/
 /SPECIAL This feat does not grant an opportunity to opponents when used. SPECIAL/
 /FLAVOR You keep your opponent engaged, even at a distance. FLAVOR/
 FEAT/

@@ -71,10 +71,53 @@ SUBSECTION/
 /SUBSECTION" Arcane "/
 /KNACK /ID" f49cd33e-63cc-11ee-877f-c87f5455cfcc"/ /KNACKNAME Arcana KNACKNAME/ /KNACKABILITYMOD INT KNACKABILITYMOD/ KNACK/
 
-This aspect governs all sorts of situations in which a character needs esoteric or specialized knowledge of magical or otherworldly things. Reading magical writing, detecting magic, analyzing magic, or otherworldly forces. Performing research on magical topics and procedures, properly performing rituals, these are all topics related to arcana. 
+This aspect governs all sorts of situations in which a character needs esoteric or specialized knowledge of magical or otherworldly things. Reading magical writing, detecting magic, analyzing magic, or otherworldly forces. Performing research on magical topics and procedures, properly performing rituals, these are all topics related to arcana. Several feats are associated specifically with the arcane aspect and use of arcana.
+
+/FLEXROW
+/FLEXCELL
+/FEAT /ID" 6b7f5b0e-de6e-11ee-abc2-c87f5455cfcc"/ /SOURCE spirit SOURCE/ /TIER heroic TIER/ /FEATNAME Read Magic FEATNAME/
+/ORIGIN N/A ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Standard ACTION/
+/TAGS Spirit, Arcane, Divination TAGS/
+/REQUIREMENTS You must be proficient in Arcana to use this feat. REQUIREMENTS/
+/ENHANCED Arcane spirits provide you with some additional information about the writing, its author, etc. ENHANCED/
+/COMPLETESUCCESS You glean the entire meaning from the text. COMPLETESUCCESS/
+/SUCCESS You are able to understand the gist of the text. SUCCESS/
+/FLAVOR You tap into your deep knowledge of the arcane to decipher the mystical phrases of magic writing. FLAVOR/
+FEAT/
+/FEAT /ID" 4613b0c8-de72-11ee-8695-c87f5455cfcc"/ /SOURCE martial SOURCE/ /TIER heroic TIER/ /FEATNAME Dispel Magic FEATNAME/
+/ORIGIN N/A ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Standard ACTION/
+/TAGS Martial, Arcane, Evocation TAGS/
+/TYPETARGET range 5, one effect TYPETARGET/
+/REQUIREMENTS You must be proficient in Arcana to use this feat. REQUIREMENTS/
+/ENHANCED You permanently dispel the effect. ENHANCED/
+/COMPLETESUCCESS You dispel the effect for a duration of recovery. COMPLETESUCCESS/
+/SUCCESS You dispel the effect until the end of your next turn, or for a moment outside of an action sequence. SUCCESS/
+/SPECIAL The target of this feat must be an effect with a duration greater than instantaneous which has any of the keywords alteration, conjuration, enchantment, illusion, summoning, divination, evocation, or necromancy. SPECIAL/
+/FLAVOR By virtue of your internal discipline you are able to rearrange the flow of magic in order to disrupt a permanent or durable effect. FLAVOR/
+FEAT/
+FLEXCELL/
+/FLEXCELL
+/FEAT /ID" 0e3a85f2-de70-11ee-8fa3-c87f5455cfcc"/ /SOURCE shadow SOURCE/ /TIER heroic TIER/ /FEATNAME Sense Magic FEATNAME/
+/ORIGIN N/A ORIGIN/
+/LEVEL 1 LEVEL/
+/ACTION Standard ACTION/
+/TAGS Shadow, Arcane, Divination TAGS/
+/REQUIREMENTS You must be proficient in Arcana to use this feat. REQUIREMENTS/
+/ENHANCED As with complete success, plus you know all of the keywords of the effect. ENHANCED/
+/COMPLETESUCCESS As with success, plus you can determine the level of the effect and one of its keywords. COMPLETESUCCESS/
+/SUCCESS You can sense the existence and location of an effect with any of the keywords alteration, conjuration, enchantment, illusion, summoning, divination, evocation, or necromancy. SUCCESS/
+/FLAVOR Using mysterious arcane disciplines you project your mind into the environment, sensing the existence and nature of magic. FLAVOR/
+FEAT/
+FLEXCELL/
+FLEXROW/
+
 SUBSECTION/
 /SUBSECTION" Athletic "/
-/KNACK /ID" 0ea34f92-63cd-11ee-ba6e-c87f5455cfcc"/ /KNACKNAME Athletic KNACKNAME/ /KNACKABILITYMOD STR KNACKABILITYMOD/ KNACK/
+/KNACK /ID" 0ea34f92-63cd-11ee-ba6e-c87f5455cfcc"/ /KNACKNAME Athletics KNACKNAME/ /KNACKABILITYMOD STR KNACKABILITYMOD/ KNACK/
 
 This aspect deals with anything requiring strength, power, and overall athletic ability, such as running, jumping, climbing, swimming, etc. Anything that mostly requires a strong body and benefits from athletic practice is governed by the athletic aspect. This is particularly appropriate for actions which are mostly or completely strength related.
 SUBSECTION/
